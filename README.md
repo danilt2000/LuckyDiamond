@@ -26,5 +26,7 @@ https://github.com/sp-worlds/api-docs
 <h2>Bootstrap 5 Tutorial </h2>
  <p>Если получится то использовать его для фронта</p>
      https://www.w3schools.com/bootstrap5/
+<h2>Диаграмма базы данных на монго</h2>
+     https://drive.google.com/file/d/1vZ44UWp2S2QPaH49bL1A9w875RQiCaPJ/view?usp=sharing
 </body>
 </html>
