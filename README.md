@@ -21,5 +21,10 @@ https://visage.surgeplay.com/index.html
 https://github.com/sp-worlds/api-docs
 <h2>Discord api </h2>
      https://discord.com/developers/docs/topics/oauth2#oauth2
+
+
+<h2>Bootstrap 5 Tutorial </h2>
+ <p>Если получится то использовать его для фронта</p>
+     https://www.w3schools.com/bootstrap5/
 </body>
 </html>
