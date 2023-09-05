@@ -12,14 +12,14 @@
 <body>
 
   
-Важные ссылки 
-<h1>Отображение головы</h1>
+<h1>Важные ссылки</h1> 
+<h2>Отображение головы</h2>
 https://visage.surgeplay.com/index.html
 
    ![image](https://visage.surgeplay.com/head/512/Hepatir.png)
-<h1>Sp api</h1>
+<h2>Sp api</h2>
 https://github.com/sp-worlds/api-docs
-<h1>Discord api </h1>
+<h2>Discord api </h2>
      https://discord.com/developers/docs/topics/oauth2#oauth2
 </body>
 </html>
