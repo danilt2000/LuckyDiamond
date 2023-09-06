@@ -29,7 +29,7 @@ https://github.com/sp-worlds/api-docs
 <h2>Диаграмма базы данных на монго</h2>
      https://drive.google.com/file/d/1vZ44UWp2S2QPaH49bL1A9w875RQiCaPJ/view?usp=sharing
 
-<img src="https://github.com/danilt2000/LuckyDiamond/assets/75219332/0ec03f8f-8268-4a18-89ab-f0d06eefc63e"></img>
+<img src="https://github.com/danilt2000/LuckyDiamond/assets/75219332/e1c4b9ae-ff12-4cad-b1ab-5790ae266a85"></img>
      
 </body>
 </html>
