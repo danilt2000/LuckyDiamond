@@ -37,6 +37,8 @@ https://github.com/sp-worlds/api-docs
 
 ![image](https://github.com/danilt2000/LuckyDiamond/assets/75219332/2e595cfe-19b9-412a-8fd4-e21669f02065)
 
+Id и AUTHTOKEN будут главными индексами
+
 </body>
 </html>
  
