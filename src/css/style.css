@@ -30,3 +30,162 @@
     font-weight: 800;
     src: url('../fonts/montserrat-alternates-v17-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
+
+  body::after {
+    content: "";
+    background-image: url('../img/main/BG/BG.png'); /* Замените на реальный путь к вашей прозрачной картинке */
+    opacity: 1; /* Уровень прозрачности (0 - полностью прозрачно, 1 - непрозрачно) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Позволяет положить этот слой под остальные элементы */
+    background-size: cover;
+  }
+  .sidebar {
+    background-color: #1D202B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0; /* Добавьте это свойство, чтобы прижать к правому краю */
+    background-image: url('../img/basic/sidebgcolor.png'); /* Замените путь к вашей фоновой картинке */
+    background-size: cover;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+    margin-top: 36px;
+    margin-left: 138px;
+  }
+  .WebSiteNameUp {
+    width: 63px;
+    height: 17px;
+    flex-shrink: 0;
+    color: #FFB400;
+    text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.25);
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  .WebSiteName {
+    width: 220px;
+    height: 36px;
+    flex-shrink: 0;
+    color: #B6AAAA;
+    text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.25);
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .top-texts {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center; /* Измените на flex-end, чтобы прижать тексты к правому краю */
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px; /* Высота блока с текстами (можете изменить по необходимости) */
+  }
+  .top-text {
+    width: 91px;
+    height: 17px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0 30px; /* Расстояние между текстами */
+  }
+  .top-text.active {
+    color: #FFB400; /* Измените цвет текста кнопки Главная */
+  }
+  .profile-panel {
+    width: 10%;
+    height: 2%;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #1D202B;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 4px 3px 4px 0px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0px; /* Расстояние от верхнего края */
+    right: 0px; /* Расстояние от правого края */
+    z-index: 1; /* Уровень слоя, чтобы панель была поверх других элементов */
+  }
+  .chat-panel{
+    width: 10%;
+    height: 92;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #1D202B;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 4px 3px 4px 0px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    bottom: 0px; /* Расстояние от верхнего края */
+    right: 0px; /* Расстояние от правого края */
+    z-index: 1; /* Уровень слоя, чтобы панель была поверх других элементов */
+  }
+  /* Добавьте содержимое вашей панели здесь */
+  .top-text.active::after {
+    content: "";
+    width: 77.062px;
+    height: 0px;
+    flex-shrink: 0;
+    stroke-width: 2.3px;
+    stroke: #FFB400; /* Измените цвет линии под текстом Главная */
+    display: inline-block;
+    margin-left: 5px; /* Оставьте зазор таким же, как вам нужно */
+  }
+  .sidebar {
+    width: 6%;
+    background-color: #1D202B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+  }
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px; /* Расстояние между картинками (измените на нужное значение) */
+  }
+  
+  .icon img {
+    float: left;
+    width: 60%;
+    height: 60%;
+  }
+  .banner {
+    width: 900px;
+    height: 280px;
+    flex-shrink: 0;
+    border-radius: 27px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, 0.25);
+    margin: 1% 24% 0 auto; /* Отступ сверху 135px и центрирование по горизонтали */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
