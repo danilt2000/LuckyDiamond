@@ -1,4 +1,12 @@
-.left_board{
-    max-width: 88px;
-    max-height: 80%;
-}
+.rectangle-77, .rectangle-77 * {
+    box-sizing: border-box;
+    }
+.rectangle-77 {
+   background: #17181c;
+    border-radius: 20px;
+    width: 1362px;
+    height: 87px;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+   }
+
