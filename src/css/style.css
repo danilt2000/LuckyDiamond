@@ -48,6 +48,9 @@
     display: flex;
     margin-left: 369px;
     margin-top: -70.5px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
 }
 
 .main_div {
@@ -56,14 +59,14 @@
 }
 
 .header_other_text {
-    width: 91px;
-    height: 17px;
+    /* width: 91px;
+    height: 17px; */
     color: #FFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Montserrat Alternates;
     font-size: 18px;
     font-weight: 700;
-    margin-left: 75px;
+    /* margin-left: 75px; */
 }
 
 .bal {
@@ -109,3 +112,65 @@
     font-size: 16px;
     font-weight: 600;
 }
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .flex-container > div {
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+
+  .wallet_element_money {
+    background: #22252F;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 55%;
+    z-index: 4;
+}
+  
+.wallet_element_image {
+    margin-top: 8px;
+}
+  
+  .wallet_element_numbers {
+    text-align: left;
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: Montserrat Alternates;
+  }
+
+.wallet_element {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    border: 10px;
+    width: 55%;
+    height: 10%;
+    border-radius: 9px;
+    background: #EF4444;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 45px;
+    z-index: 5;
+    margin-left: -5px;
+  }
+
+  .wallet_elements{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .wallet_text{
+    margin-inline: 10px;
+  }
+  
