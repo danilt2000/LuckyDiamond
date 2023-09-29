@@ -127,6 +127,7 @@
   }
 
   .wallet_element_money {
+    margin-top: 2px;
     background: #22252F;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
