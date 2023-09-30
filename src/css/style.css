@@ -46,7 +46,7 @@
 
 .menu {
     display: flex;
-    margin-left: 369px;
+    margin-left: 100px;
     margin-top: -70.5px;
     flex-wrap: wrap;
     align-content: center;
@@ -59,41 +59,6 @@
 }
 
 .header_other_text {
-    /* width: 91px;
-    height: 17px; */
-    color: #FFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Montserrat Alternates;
-    font-size: 18px;
-    font-weight: 700;
-    /* margin-left: 75px; */
-}
-
-.bal {
-    display: flex;
-}
-
-.bal_bac {
-    width: 139px;
-    height: 48px;
-    border-radius: 9px;
-    background: #22252F;
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.bal_button {
-    width: 134px;
-    height: 54px;
-    border-radius: 13px;
-    background: #EF4444;
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.bal_text {
-    width: 59px;
-    height: 15px;
-    flex-direction: column;
-    justify-content: center;
     color: #FFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Montserrat Alternates;
@@ -101,32 +66,28 @@
     font-weight: 700;
 }
 
-.bal_button_text {
-    width: 88px;
-    height: 13px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
+.header_other_text_menu {
     color: #FFF;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 600;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
-  }
+}
 
-  .flex-container > div {
+.flex-container>div {
     width: 100px;
     margin: 10px;
     text-align: center;
     line-height: 75px;
     font-size: 30px;
-  }
+}
 
-  .wallet_element_money {
+.wallet_element_money {
     margin-top: 2px;
     background: #22252F;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -138,22 +99,22 @@
     width: 55%;
     z-index: 4;
 }
-  
+
 .wallet_element_image {
     margin-top: 8px;
 }
-  
-  .wallet_element_numbers {
+
+.wallet_element_numbers {
     text-align: left;
     margin-right: 10px;
     font-weight: bold;
     font-family: Montserrat Alternates;
-  }
+}
 
 .wallet_element {
     display: flex;
-    justify-content: center; 
-    align-items: center;     
+    justify-content: center;
+    align-items: center;
     border: 10px;
     width: 55%;
     height: 10%;
@@ -162,16 +123,46 @@
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
     height: 45px;
     z-index: 5;
-    margin-left: -5px;
-  }
+    margin-left: -8px;
+}
 
-  .wallet_elements{
+.wallet_elements {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-  }
+}
 
-  .wallet_text{
+.wallet_text {
     margin-inline: 10px;
-  }
-  
+}
+
+.login_elements {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.login_elements_box {
+    width: 134px;
+    height: 54px;
+    border-radius: 13px;
+    background: #5865F2;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.login_elements_text {
+    color: #000;
+    display: flex;
+    width: 88px;
+    height: 13px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.login_elements_img {
+    display: flex;
+}
