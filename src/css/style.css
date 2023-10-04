@@ -54,7 +54,7 @@
 }
 
 .main_div {
-    margin-left: 73px;
+    margin-left: 250px;
     margin-top: 16.5px;
 }
 
@@ -131,6 +131,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 55px;
 }
 
 .wallet_text {
@@ -138,12 +139,8 @@
 }
 
 .login_start {
-    display: flex;
-    justify-content: flex-end;
-}
 
-.login {
-    display: flex;
+    justify-content: flex-end;
 }
 
 .login_text {
@@ -157,8 +154,115 @@
     margin-right: -50px;
 }
 
-.login_img {
-    display: flex;
-    margin-top: 20px;
-    justify-content: flex-end;
+.login_logo {
+    margin-top: -60px;
 }
+
+
+.left_panel_home {
+    margin-top: 9px;
+    margin-left: 7px;
+}
+
+.left_panel_box{
+    margin-left: 7px;
+    width: 73px;
+    height: 404px;
+    background: rgba(217, 217, 217, 0.12);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px
+    
+}
+
+.left_panel_settings {
+    margin-top: 160px;
+}
+
+.left_panel_diamond {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.left_panel_rullet{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.left_panel_rocet{
+    margin-left: 12px;
+    margin-top: 20px;
+}
+
+.left_panel_cub{
+    margin-left: 12px;
+    margin-top: 20px;
+}
+
+.left_panel_boom{
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+.main_img{
+    width: 1165px;
+height: 240px;
+border-radius: 40px;
+background: #EF4444;
+box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+margin-left: 125px;
+margin-top: -650px;
+}
+
+.online{
+    display: flex;
+    width: 270px;
+    height: 95px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+font-family: Montserrat;
+font-size: 32px;
+font-weight: 700;
+margin-left: 450px;
+}
+
+.main_title{
+    display: flex;
+    width: 884px;
+    height: 299px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat Alternates;
+    font-size: 91px;
+    font-weight: 700;
+    margin-left: 115px;
+    margin-top: -160px;
+}
+
+.mine{
+    display: flex;
+    width: 384px;
+    height: 95px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+font-family: Montserrat;
+font-size: 24px;
+font-weight: 700;
+margin-left: 420px;
+margin-top: -200px;
+}
+
+.game_mode{
+    margin-top: 20px;
+    margin-left: 120px;
+}
+
+
+
+
