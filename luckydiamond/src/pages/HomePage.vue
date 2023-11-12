@@ -17,6 +17,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.home {
+  margin-top: 60px;
+  padding: 20px;
+}
 </style>
