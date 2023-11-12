@@ -1,12 +1,15 @@
 <template>
+  <header-element-page></header-element-page>
   <div class="home">
     <h1>test</h1>
   </div>
 </template>
 
 <script>
+import HeaderElementPage from "@/pages/HeaderElement.vue";
 export default {
-  name: 'HomePage'
+  name: 'HomePage',
+  components: {HeaderElementPage }
 }
 </script>
 
