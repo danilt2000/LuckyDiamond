@@ -21,6 +21,7 @@ export default {
   top: 0;
   width: 100%;
   z-index: 1;
+  user-select: none;
 }
 .header__content {
   padding: 10px;
