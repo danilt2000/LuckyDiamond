@@ -15,5 +15,14 @@ export default {
 </script>
 
 <style scoped>
-
+.header {
+  margin-left: 88px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.header__content {
+  padding: 10px;
+}
 </style>
