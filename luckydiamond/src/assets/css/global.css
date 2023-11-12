@@ -1,0 +1,17 @@
+/* Global Settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* /Global Settings */
+
+/* Header */
+
+.header {
+    background: #161924;
+}
+
+/* /Header */
