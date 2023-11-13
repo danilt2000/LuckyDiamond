@@ -58,14 +58,17 @@ export default {
   position: relative;
   z-index: 1;
 }
+.header__logo {
+  padding: 2% 3%;
+  user-select: none;
+}
+
 .header__nav {
   flex-grow: 0.69;
   display: flex;
   justify-content: center;
 }
-.header__logo {
-  padding: 26px 58px;
-  user-select: none;
-}
+.header__nav nav a {
 
+}
 </style>
