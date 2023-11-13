@@ -11,6 +11,9 @@
             <a href="#">Помощь</a>
           </nav>
       </div>
+      <div class="header__balance">
+        <h1>25000</h1>
+      </div>
     </div>
   </header>
 </template>
@@ -59,16 +62,17 @@ export default {
   z-index: 1;
 }
 .header__logo {
-  padding: 2% 3%;
+  padding: 2% 1.5%;
   user-select: none;
 }
-
 .header__nav {
   flex-grow: 0.69;
   display: flex;
   justify-content: center;
 }
 .header__nav nav a {
-
+  font-size: 21px;
+  margin-right: 75px;
+  color: #fff;
 }
 </style>
