@@ -1,6 +1,7 @@
 <template>
   <aside class="bar">
     <div class="bar__content">
+      <div class="bar__blurry-bg"></div>
       <div class="bar__buttons">
         <a href="#" class="bar__button--home"> <img src="../assets/icons/icon-home-button.png"> </a>
         <div class="bar__settings">
@@ -21,18 +22,35 @@ export default {
 .bar {
   width: 88px;
   height: 100vh;
-  background: #1D202B;
   position: fixed;
   top: 0;
   left: 0;
   user-select: none;
+  overflow: hidden;
 }
-.bar__content  {
+.bar__content {
   padding-top: 26px;
   justify-content: center;
+  background: #1D202B;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+.bar__blurry-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #051B53;
+  filter: blur(39px);
+  z-index: -1;
+}
+.bar__buttons {
+  z-index: 2;
 }
 .bar__settings {
   position: absolute;
