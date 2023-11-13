@@ -3,9 +3,9 @@
 
   <header-element-page></header-element-page>
 
-  <div class="home">
-    <h1>test</h1>
-  </div>
+  <section class="home">
+
+  </section>
 </template>
 
 <script>
