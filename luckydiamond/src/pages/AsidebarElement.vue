@@ -58,5 +58,6 @@ export default {
 }
 .bar__settings .bar__button--settings img {
   margin-bottom: 15px;
+  display: block;
 }
 </style>
