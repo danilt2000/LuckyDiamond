@@ -6,7 +6,6 @@
   <section class="home">
     <div class="home__content">
       <div class="home__banner">
-
       </div>
     </div>
   </section>
