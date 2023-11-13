@@ -12,7 +12,11 @@
           </nav>
       </div>
       <div class="header__balance">
-        <h1>25000</h1>
+        <div class="header__balance--content">
+          <div class="balance__count">
+            <h2><img src="../assets/icons/icon-deepslate_diamond_ore.png">{{ balance }}</h2>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -20,7 +24,12 @@
 
 <script>
 export default {
-  name: 'Header-Element-page'
+  name: 'Header-Element-page',
+  data() {
+    return {
+      balance: 25000
+    }
+  }
 }
 </script>
 
@@ -92,5 +101,22 @@ export default {
   background: #ffb400;
   bottom: -7px;
   left: 0;
+}
+.balance__count {
+  border-radius: 9px;
+  padding: 10px 10px;
+  background: #22252F;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.balance__count h2 {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: Montserrat Alternates;
+  font-weight: 700;
+  font-size: 18px;
+}
+.balance__count h2 img {
+  margin-right: 6px;
 }
 </style>
