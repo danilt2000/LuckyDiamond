@@ -6,7 +6,7 @@
       </div>
       <div class="header__nav">
           <nav>
-            <a href="#">Главная</a>
+            <a href="#" id="btn--now">Главная</a>
             <a href="#">Профиль</a>
             <a href="#">Помощь</a>
           </nav>
@@ -41,7 +41,7 @@ export default {
   width: 100%;
   height: 100%;
   background: #DF85FF99;
-  filter: blur(215px);
+  filter: blur(265px);
   z-index: -1;
 }
 .header::after {
@@ -52,7 +52,7 @@ export default {
   width: 60%;
   height: 100%;
   background: #7000FF;
-  filter: blur(190px);
+  filter: blur(265px);
   z-index: -2;
 }
 .header__content {
@@ -74,5 +74,8 @@ export default {
   font-size: 21px;
   margin-right: 75px;
   color: #fff;
+}
+#btn--now {
+  color: #ffb400;
 }
 </style>
