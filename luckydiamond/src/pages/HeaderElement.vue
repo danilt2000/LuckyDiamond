@@ -13,8 +13,15 @@
       </div>
       <div class="header__balance">
         <div class="header__balance--content">
-          <div class="balance__count">
-            <h2><img src="../assets/icons/icon-deepslate_diamond_ore.png">{{ balance }}</h2>
+          <div class="count__card">
+            <div class="balance__count">
+              <h2><img src="../assets/icons/icon-deepslate_diamond_ore.png">{{ balance }}</h2>
+            </div>
+          </div>
+          <div class="wallet__card">
+            <div class="balance__wallet">
+              <h2>кошелёк</h2>
+            </div>
           </div>
         </div>
       </div>
@@ -102,11 +109,16 @@ export default {
   bottom: -7px;
   left: 0;
 }
+.header__balance--content {
+  display: flex;
+  align-items: center;
+}
 .balance__count {
   border-radius: 9px;
-  padding: 10px 10px;
+  padding: 10px 16px;
   background: #22252F;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
 }
 .balance__count h2 {
   display: flex;
@@ -118,5 +130,20 @@ export default {
 }
 .balance__count h2 img {
   margin-right: 6px;
+  user-select: none;
+}
+.balance__wallet {
+  border-radius: 13px;
+  padding: 18px 23px 21px 23px;
+  background: #ffb400;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  margin-left: -15px;
+}
+.balance__wallet h2 {
+  text-transform: uppercase;
+  font-family: Montserrat Alternates;
+  font-weight: 600;
+  font-size: 16px;
 }
 </style>
