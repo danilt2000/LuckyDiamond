@@ -4,6 +4,13 @@
       <div class="header__logo">
         <img src="../assets/logo.svg" alt="LuckyDiamond">
       </div>
+      <div class="header__nav">
+          <nav>
+            <a href="#">Главная</a>
+            <a href="#">Профиль</a>
+            <a href="#">Помощь</a>
+          </nav>
+      </div>
     </div>
   </header>
 </template>
@@ -21,7 +28,6 @@ export default {
   top: 0;
   width: 100%;
   z-index: 1;
-  user-select: none;
   overflow: hidden;
 }
 .header::before {
@@ -47,10 +53,19 @@ export default {
   z-index: -2;
 }
 .header__content {
+  display: flex;
+  align-items: center;
   position: relative;
   z-index: 1;
 }
+.header__nav {
+  flex-grow: 0.69;
+  display: flex;
+  justify-content: center;
+}
 .header__logo {
   padding: 26px 58px;
+  user-select: none;
 }
+
 </style>
