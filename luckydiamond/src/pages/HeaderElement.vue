@@ -71,11 +71,26 @@ export default {
   justify-content: center;
 }
 .header__nav nav a {
-  font-size: 21px;
+  text-decoration: none;
+  font-size: 19px;
   margin-right: 75px;
   color: #fff;
+  font-family: Montserrat Alternates;
+  font-weight: 700;
 }
 #btn--now {
   color: #ffb400;
+  font-family: Montserrat Alternates;
+  font-weight: 700;
+  position: relative;
+}
+#btn--now::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #ffb400;
+  bottom: -7px;
+  left: 0;
 }
 </style>
