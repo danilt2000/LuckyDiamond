@@ -41,7 +41,7 @@ export default {
   width: 100%;
   height: 100%;
   background: #DF85FF99;
-  filter: blur(115px);
+  filter: blur(215px);
   z-index: -1;
 }
 .header::after {
