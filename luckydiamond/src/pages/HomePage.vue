@@ -6,7 +6,18 @@
   <section class="home">
     <div class="home__content">
       <div class="home__banner">
-        <h1>123</h1>
+        <div class="home__banner--content">
+          <div class="home__banner--subtitle">
+            <h2>онлайн-казино</h2>
+          </div>
+          <div class="home__banner--title">
+            <h1>lucky diamond</h1>
+          </div>
+          <div class="home__banner--paragraph">
+            <h3>minecraft casino - spm</h3>
+          </div>
+          <img src="../assets/person-banner-img.png">
+        </div>
       </div>
     </div>
   </section>
@@ -46,7 +57,7 @@ export default {
 .home::after {
   content: '';
   position: absolute;
-  top: 0%;
+  top: 0;
   left: 50%;
   width: 100%;
   height: 50%;
@@ -60,11 +71,47 @@ export default {
 }
 .home__banner {
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
   width: 1276px;
   height: 299px;
-  background: radial-gradient(circle at center, #DF85FF99, #7000FF);
+  background: linear-gradient(60deg, #DF85FF99, #7000FF);
+  border-radius: 27px;
+  box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, 0.25);
+}
+.home__banner--content {
+  margin-left: 36px;
+}
+.home__banner--subtitle h2 {
+  font-size: 32px;
+  color: #ffb400;
+  font-family: Montserrat Alternates;
+  font-weight: 700;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 42px;
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+.home__banner--title h1 {
+  color: #ffb400;
+  font-size: 91px;
+  font-family: Montserrat Alternates;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.home__banner--paragraph h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 24px;
+  color: #ffb400;
+  font-family: Montserrat Alternates;
+  font-weight: 700;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.home__banner--content img {
+  position: relative;
+  float: right;
+  left: 35%;
+  bottom: 83%;
 }
 </style>
