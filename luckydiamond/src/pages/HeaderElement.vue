@@ -48,7 +48,6 @@ export default {
   width: 100%;
   z-index: 1;
   overflow: hidden;
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
 }
 .header::before {
   content: '';

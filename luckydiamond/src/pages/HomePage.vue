@@ -67,9 +67,10 @@ export default {
   z-index: -1;
 }
 .home__content {
-  margin-top: 200px;
+  margin-top: 70px;
 }
 .home__banner {
+  user-select: none;
   display: flex;
   margin: 0 auto;
   width: 1276px;
