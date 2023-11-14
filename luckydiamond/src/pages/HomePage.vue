@@ -21,14 +21,68 @@
       </div>
     </div>
   </section>
+
+  <section class="gamemode">
+    <div class="gamemode__content">
+      <div class="gamemode__main">
+        <ul>
+          <li
+              v-for="mode in mainGameMode"
+              :key="mode.id"
+          >
+            {{ mode.title }}
+          </li>
+        </ul>
+      </div>
+      <div class="gamemode__line--first">
+        <ul>
+          <li
+              v-for="mode in firstlineGameMode"
+              :key="mode.id"
+          >
+            {{ mode.title }}
+          </li>
+        </ul>
+      </div>
+      <div class="gamemode__line--two">
+        <ul>
+          <li
+              v-for="mode in TwolineGameMode"
+              :key="mode.id"
+          >
+            {{ mode.title }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
 </template>
 
 <script>
 import HeaderElementPage from "@/pages/HeaderElement.vue";
 import AsideBarElement from "@/pages/AsidebarElement.vue";
+import gameModes from "@/mocks/GameModes";
+
 export default {
   name: 'HomePage',
-  components: {AsideBarElement, HeaderElementPage }
+  components: {AsideBarElement, HeaderElementPage },
+  data() {
+    return {
+      gameModes
+    }
+  },
+  computed: {
+    mainGameMode() {
+      return this.gameModes.filter(mode => [1].includes(mode.id))
+    },
+    firstlineGameMode() {
+      return this.gameModes.filter(mode => [2,4].includes(mode.id))
+    },
+    TwolineGameMode() {
+      return this.gameModes.filter(mode => [3,5].includes(mode.id))
+    }
+  }
 }
 </script>
 
