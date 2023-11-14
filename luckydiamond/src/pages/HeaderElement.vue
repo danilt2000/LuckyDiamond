@@ -54,22 +54,22 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 50%;
   height: 100%;
   background: #DF85FF99;
-  filter: blur(265px);
+  filter: blur(125px);
   z-index: -1;
 }
 .header::after {
   content: '';
   position: absolute;
   top: 0;
-  left: 22%;
-  width: 60%;
+  left: 50%;
+  width: 100%;
   height: 100%;
   background: #7000FF;
-  filter: blur(265px);
-  z-index: -2;
+  filter: blur(125px);
+  z-index: -1;
 }
 .header__content {
   display: flex;
