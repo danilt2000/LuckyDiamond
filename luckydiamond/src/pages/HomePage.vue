@@ -6,6 +6,7 @@
   <section class="home">
     <div class="home__content">
       <div class="home__banner">
+        <h1>123</h1>
       </div>
     </div>
   </section>
@@ -53,5 +54,17 @@ export default {
   background: #7000FF;
   filter: blur(465px);
   z-index: -1;
+}
+.home__content {
+  margin-top: 200px;
+}
+.home__banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 1276px;
+  height: 299px;
+  background: radial-gradient(circle at center, #DF85FF99, #7000FF);
 }
 </style>
