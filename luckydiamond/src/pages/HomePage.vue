@@ -33,7 +33,8 @@
                   :key="mode.id"
               >
                 <div class="line__content" style="margin: 16px 38px 0px 0px" :id="'maincard-' + mode.id">
-                  {{ mode.title }}
+                  <h1>{{ mode.title }}</h1>
+                  <img src="../assets/icons-gamemode/diamond-icon-main.png">
                 </div>
               </li>
             </ul>
@@ -215,5 +216,21 @@ export default {
 }
 .gamemode__line--two #linetwo-5 {
   background: url("../assets/bg-gamemode/bg-mg.png");
+}
+
+.gamemode__main .line__content  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 5px;
+}
+.gamemode__main .line__content h1 {
+  text-shadow: 6px 12px 9px rgba(0, 0, 0, 0.25);
+  font-family: 'Press Start 2P';
+  font-size: 64px;
+  color: #FFB400;
+  text-transform: uppercase;
 }
 </style>
