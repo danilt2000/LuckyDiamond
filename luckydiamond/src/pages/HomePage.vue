@@ -22,7 +22,10 @@
     </div>
 
     <section class="gamemode">
-      <div class="gamemode__content">
+      <div class="gamemode__content--text">
+        <h2>Режимы игры</h2>
+      </div>
+      <div class="gamemode__content--card">
         <div class="gamemode__main">
           <div class="line__content">
             <ul>
@@ -41,23 +44,23 @@
                 v-for="mode in firstlineGameMode"
                 :key="mode.id"
             >
-              <div class="line__content--linefirst">
+              <div class="line__content">
                 {{ mode.title }}
               </div>
             </li>
           </ul>
         </div>
         <div class="gamemode__line--two">
-          <div class="line__content">
-            <ul>
-              <li
-                  v-for="mode in TwolineGameMode"
-                  :key="mode.id"
-              >
+          <ul>
+            <li
+                v-for="mode in TwolineGameMode"
+                :key="mode.id"
+            >
+              <div class="line__content">
                 {{ mode.title }}
-              </li>
-            </ul>
-          </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -179,15 +182,15 @@ export default {
 .gamemode {
   margin: 0px 0px 0px 200px;
 }
+.gamemode__content--card {
+  display: flex;
+}
 .gamemode__main .line__content {
   width: 400px;
   height: 438px;
   background: #fff;
 }
-.gamemode__content {
-  display: flex;
-}
-.gamemode__line--first .line__content--linefirst {
+.line__content {
   width: 400px;
   height: 212px;
   background: #d5d5d5;
