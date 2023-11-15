@@ -27,7 +27,7 @@
       </div>
       <div class="gamemode__content--card">
         <div class="gamemode__main">
-          <div class="line__content">
+          <div class="line__content" style="margin: 16px 38px 0px 0px">
             <ul>
               <li
                   v-for="mode in mainGameMode"
@@ -44,7 +44,7 @@
                 v-for="mode in firstlineGameMode"
                 :key="mode.id"
             >
-              <div class="line__content">
+              <div class="line__content" style="margin: 16px 38px 20px 0px">
                 {{ mode.title }}
               </div>
             </li>
@@ -56,7 +56,7 @@
                 v-for="mode in TwolineGameMode"
                 :key="mode.id"
             >
-              <div class="line__content">
+              <div class="line__content" style="margin: 16px 38px 20px 0px">
                 {{ mode.title }}
               </div>
             </li>
@@ -179,11 +179,13 @@ export default {
   bottom: 83%;
 }
 
-.gamemode {
-  margin: 0px 0px 0px 200px;
+.gamemode__content--text {
+  display: flex;
+  margin: 2% 0 0 14.5%;
 }
 .gamemode__content--card {
   display: flex;
+  justify-content: center;
 }
 .gamemode__main .line__content {
   width: 400px;
