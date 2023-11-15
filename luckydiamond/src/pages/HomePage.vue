@@ -32,6 +32,7 @@
               <li
                   v-for="mode in mainGameMode"
                   :key="mode.id"
+                  :id="'maincard-' + mode.id"
               >
                 {{ mode.title }}
               </li>
@@ -43,6 +44,7 @@
             <li
                 v-for="mode in firstlineGameMode"
                 :key="mode.id"
+                :id="'linefirst-' + mode.id"
             >
               <div class="line__content" style="margin: 16px 38px 20px 0px">
                 {{ mode.title }}
@@ -55,6 +57,7 @@
             <li
                 v-for="mode in TwolineGameMode"
                 :key="mode.id"
+                :id="'linetwo-' + mode.id"
             >
               <div class="line__content" style="margin: 16px 38px 20px 0px">
                 {{ mode.title }}
@@ -175,7 +178,7 @@ export default {
 .home__banner--content img {
   position: relative;
   float: right;
-  left: 35%;
+  left: 39%;
   bottom: 83%;
 }
 
