@@ -35,6 +35,12 @@
                 <div class="line__content" style="margin: 16px 38px 0px 0px" :id="'maincard-' + mode.id">
                   <h1>{{ mode.title }}</h1>
                   <img src="../assets/icons-gamemode/diamond-icon-main.png">
+                  <div class="line__players--main">
+                    <h4><span><img src="../assets/icons-gamemode/players-icon.png"></span>{{ mode.players }} player</h4>
+                  </div>
+                  <div class="line__btn--main">
+                    <a href="#">play ></a>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -226,11 +232,45 @@ export default {
   text-align: center;
   padding-top: 5px;
 }
+.gamemode__main .line__content img {
+  user-select: none;
+}
 .gamemode__main .line__content h1 {
   text-shadow: 6px 12px 9px rgba(0, 0, 0, 0.25);
   font-family: 'Press Start 2P';
   font-size: 64px;
   color: #FFB400;
   text-transform: uppercase;
+}
+.gamemode__main .line__players--main {
+  position: relative;
+}
+.gamemode__main .line__players--main h4 {
+  margin-top: -50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-family: Montserrat;
+  color: #FFB400;
+  font-weight: 700;
+  font-size: 20px;
+  text-shadow: 1px 5px 6px rgba(0, 0, 0, 0.25);
+}
+.gamemode__main .line__btn--main {
+  padding: 20px 0px 20px 0px;
+}
+.gamemode__main .line__btn--main a {
+  font-size: 36px;
+  color: #000;
+  font-family: Montserrat;
+  font-weight: 700;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 21px 21px;
+  border-radius: 21px;
+  background: #FFB400;
+  box-shadow: 0px 4px 40px 1px #FFB400;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
 }
 </style>
