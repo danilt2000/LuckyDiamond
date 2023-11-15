@@ -27,26 +27,24 @@
       </div>
       <div class="gamemode__content--card">
         <div class="gamemode__main">
-          <div class="line__content" style="margin: 16px 38px 0px 0px">
             <ul>
               <li
                   v-for="mode in mainGameMode"
                   :key="mode.id"
-                  :id="'maincard-' + mode.id"
               >
-                {{ mode.title }}
+                <div class="line__content" style="margin: 16px 38px 0px 0px" :id="'maincard-' + mode.id">
+                  {{ mode.title }}
+                </div>
               </li>
             </ul>
-          </div>
         </div>
         <div class="gamemode__line--first">
           <ul>
             <li
                 v-for="mode in firstlineGameMode"
                 :key="mode.id"
-                :id="'linefirst-' + mode.id"
             >
-              <div class="line__content" style="margin: 16px 38px 20px 0px">
+              <div class="line__content" style="margin: 16px 38px 20px 0px" :id="'linefirst-' + mode.id">
                 {{ mode.title }}
               </div>
             </li>
@@ -57,9 +55,8 @@
             <li
                 v-for="mode in TwolineGameMode"
                 :key="mode.id"
-                :id="'linetwo-' + mode.id"
             >
-              <div class="line__content" style="margin: 16px 38px 20px 0px">
+              <div class="line__content" style="margin: 16px 38px 20px 0px" :id="'linetwo-' + mode.id">
                 {{ mode.title }}
               </div>
             </li>
@@ -203,5 +200,20 @@ export default {
   width: 400px;
   height: 212px;
   background: #d5d5d5;
+}
+.gamemode__main #maincard-1 {
+  background: url("../assets/bg-gamemode/bg-main.png");
+}
+.gamemode__line--first #linefirst-2 {
+  background: url("../assets/bg-gamemode/bg-dg.png");
+}
+.gamemode__line--first #linefirst-3 {
+  background: url("../assets/bg-gamemode/bg-cg.png");
+}
+.gamemode__line--two #linetwo-4 {
+  background: url("../assets/bg-gamemode/bg-jg.png");
+}
+.gamemode__line--two #linetwo-5 {
+  background: url("../assets/bg-gamemode/bg-mg.png");
 }
 </style>
