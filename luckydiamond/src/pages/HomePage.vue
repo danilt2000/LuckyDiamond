@@ -83,10 +83,10 @@ export default {
       return this.gameModes.filter(mode => [1].includes(mode.id))
     },
     firstlineGameMode() {
-      return this.gameModes.filter(mode => [2,4].includes(mode.id))
+      return this.gameModes.filter(mode => [2,3].includes(mode.id))
     },
     TwolineGameMode() {
-      return this.gameModes.filter(mode => [3,5].includes(mode.id))
+      return this.gameModes.filter(mode => [4,5].includes(mode.id))
     }
   }
 }
