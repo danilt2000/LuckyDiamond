@@ -27,6 +27,7 @@ export default {
   left: 0;
   user-select: none;
   overflow: hidden;
+  z-index: 1000;
 }
 .bar__content {
   padding-top: 26px;

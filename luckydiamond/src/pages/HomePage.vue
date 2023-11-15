@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <section class="gamemode">
+    <div class="gamemode">
       <div class="gamemode__content--text">
         <h2>Режимы игры</h2>
       </div>
@@ -90,7 +90,7 @@
           </ul>
         </div>
       </div>
-    </section>
+    </div>
 
   </section>
 </template>
@@ -129,7 +129,7 @@ export default {
   width: 100%;
   position: relative;
   top: 0;
-  z-index: -1;
+  z-index: 1;
   overflow: hidden;
 }
 .home::before {
@@ -157,7 +157,7 @@ export default {
   z-index: -1;
 }
 .home__content {
-  margin-top: 70px;
+  margin-top: 62px;
 }
 .home__banner {
   user-select: none;
@@ -206,6 +206,10 @@ export default {
   bottom: 83%;
 }
 
+.gamemode {
+  position: relative;
+  z-index: 1;
+}
 .gamemode__content--text {
   display: flex;
   margin: 2% 0 0 14.5%;
@@ -291,7 +295,6 @@ export default {
   box-shadow: 0px 4px 40px 1px #FFB400;
   text-transform: uppercase;
   text-decoration: none;
-  cursor: pointer;
 }
 
 .line__header {
