@@ -6,22 +6,22 @@ export default [
     },
     {
         id: 2,
-        title: 'double game',
+        title: 'double',
         players: 0
     },
     {
         id: 3,
-        title: 'crash game',
+        title: 'crash',
         players: 0
     },
     {
         id: 4,
-        title: 'jackpot game',
+        title: 'jackpot',
         players: 0
     },
     {
         id: 5,
-        title: 'mines game',
+        title: 'mines',
         players: 0
     }
 ]
