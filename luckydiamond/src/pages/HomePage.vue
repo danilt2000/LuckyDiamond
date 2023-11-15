@@ -52,7 +52,17 @@
                 :key="mode.id"
             >
               <div class="line__content" style="margin: 16px 38px 20px 0px" :id="'linefirst-' + mode.id">
-                {{ mode.title }}
+                <div class="line__header">
+                  <h2><span><img src="../assets/icons-gamemode/players-icon.png"></span>{{ mode.players }} player</h2>
+                  <img v-if="mode.id === 2" src="../assets/icons-gamemode/doublegame-icon.png">
+                  <img  v-else src="../assets/icons-gamemode/crashgame-icon.png">
+                </div>
+                <div class="line__footer">
+                  <h2>{{ mode.title }}<br>game</h2>
+                  <div class="line__btn">
+                    <a href="#">play ></a>
+                  </div>
+                </div>
               </div>
             </li>
           </ul>
@@ -64,7 +74,17 @@
                 :key="mode.id"
             >
               <div class="line__content" style="margin: 16px 38px 20px 0px" :id="'linetwo-' + mode.id">
-                {{ mode.title }}
+                <div class="line__header">
+                  <h2><span><img src="../assets/icons-gamemode/players-icon.png"></span>{{ mode.players }} player</h2>
+                  <img v-if="mode.id === 4" src="../assets/icons-gamemode/jackoptgame-icon.png">
+                  <img  v-else src="../assets/icons-gamemode/minesgame-icon.png">
+                </div>
+                <div class="line__footer">
+                  <h2>{{ mode.title }}<br>game</h2>
+                  <div class="line__btn">
+                    <a href="#">play ></a>
+                  </div>
+                </div>
               </div>
             </li>
           </ul>
@@ -272,5 +292,55 @@ export default {
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+}
+
+.line__header {
+  display: flex;
+  justify-content: space-between;
+}
+.line__header h2 {
+  padding: 14px 0px 0px 14px;
+  display: flex;
+  align-items: center;
+  color: #FFB400;
+  font-size: 20px;
+  font-family: Montserrat;
+  text-shadow: 1px 5px 6px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+}
+.line__header img {
+  padding: 2px 6px 0px 0px;
+}
+
+.line__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 55%;
+}
+.line__footer h2 {
+  padding-left: 12px;
+  font-family: 'Press Start 2P';
+  font-weight: 400;
+  font-size: 30px;
+  color: #FFB400;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+}
+.line__footer .line__btn {
+  padding-right: 14px;
+}
+.line__footer .line__btn a {
+  font-size: 24px;
+  font-family: Montserrat;
+  font-weight: 700;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 16px;
+  background: #FFB400;
+  border-radius: 21px;
+  box-shadow: 0px 4px 40px 1px #FFB400;
 }
 </style>
