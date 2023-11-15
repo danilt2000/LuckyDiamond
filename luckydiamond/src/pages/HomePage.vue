@@ -20,43 +20,43 @@
         </div>
       </div>
     </div>
-  </section>
 
-  <section class="gamemode">
-    <div class="gamemode__content">
-      <div class="gamemode__main">
-        <ul>
-          <li
-              v-for="mode in mainGameMode"
-              :key="mode.id"
-          >
-            {{ mode.title }}
-          </li>
-        </ul>
+    <section class="gamemode">
+      <div class="gamemode__content">
+        <div class="gamemode__main">
+          <ul>
+            <li
+                v-for="mode in mainGameMode"
+                :key="mode.id"
+            >
+              {{ mode.title }}
+            </li>
+          </ul>
+        </div>
+        <div class="gamemode__line--first">
+          <ul>
+            <li
+                v-for="mode in firstlineGameMode"
+                :key="mode.id"
+            >
+              {{ mode.title }}
+            </li>
+          </ul>
+        </div>
+        <div class="gamemode__line--two">
+          <ul>
+            <li
+                v-for="mode in TwolineGameMode"
+                :key="mode.id"
+            >
+              {{ mode.title }}
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="gamemode__line--first">
-        <ul>
-          <li
-              v-for="mode in firstlineGameMode"
-              :key="mode.id"
-          >
-            {{ mode.title }}
-          </li>
-        </ul>
-      </div>
-      <div class="gamemode__line--two">
-        <ul>
-          <li
-              v-for="mode in TwolineGameMode"
-              :key="mode.id"
-          >
-            {{ mode.title }}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </section>
 
+  </section>
 </template>
 
 <script>
