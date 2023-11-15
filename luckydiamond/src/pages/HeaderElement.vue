@@ -91,12 +91,12 @@ export default {
   font-size: 19px;
   margin-right: 75px;
   color: #fff;
-  font-family: Montserrat Alternates;
+  font-family: Montserrat;
   font-weight: 700;
 }
 #btn--now {
   color: #ffb400;
-  font-family: Montserrat Alternates;
+  font-family: Montserrat;
   font-weight: 700;
   position: relative;
 }
@@ -124,7 +124,7 @@ export default {
   display: flex;
   align-items: center;
   color: #fff;
-  font-family: Montserrat Alternates;
+  font-family: Montserrat;
   font-weight: 700;
   font-size: 18px;
 }
@@ -142,7 +142,7 @@ export default {
 }
 .balance__wallet h2 {
   text-transform: uppercase;
-  font-family: Montserrat Alternates;
+  font-family: Montserrat;
   font-weight: 600;
   font-size: 16px;
 }

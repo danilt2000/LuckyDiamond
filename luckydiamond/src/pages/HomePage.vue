@@ -148,7 +148,7 @@ export default {
 .home__banner--subtitle h2 {
   font-size: 32px;
   color: #ffb400;
-  font-family: Montserrat Alternates;
+  font-family: Montserrat;
   font-weight: 700;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: 42px;
@@ -159,7 +159,7 @@ export default {
 .home__banner--title h1 {
   color: #ffb400;
   font-size: 91px;
-  font-family: Montserrat Alternates;
+  font-family: Montserrat;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -168,7 +168,7 @@ export default {
   text-align: center;
   font-size: 24px;
   color: #ffb400;
-  font-family: Montserrat Alternates;
+  font-family: Montserrat;
   font-weight: 700;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -182,6 +182,10 @@ export default {
 .gamemode__content--text {
   display: flex;
   margin: 2% 0 0 14.5%;
+  color: #fff;
+  font-size: 20px;
+  font-family: Montserrat;
+  font-weight: 400;
 }
 .gamemode__content--card {
   display: flex;
