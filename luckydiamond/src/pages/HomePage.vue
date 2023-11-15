@@ -24,14 +24,16 @@
     <section class="gamemode">
       <div class="gamemode__content">
         <div class="gamemode__main">
-          <ul>
-            <li
-                v-for="mode in mainGameMode"
-                :key="mode.id"
-            >
-              {{ mode.title }}
-            </li>
-          </ul>
+          <div class="line__content">
+            <ul>
+              <li
+                  v-for="mode in mainGameMode"
+                  :key="mode.id"
+              >
+                {{ mode.title }}
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="gamemode__line--first">
           <ul>
@@ -39,19 +41,23 @@
                 v-for="mode in firstlineGameMode"
                 :key="mode.id"
             >
-              {{ mode.title }}
+              <div class="line__content--linefirst">
+                {{ mode.title }}
+              </div>
             </li>
           </ul>
         </div>
         <div class="gamemode__line--two">
-          <ul>
-            <li
-                v-for="mode in TwolineGameMode"
-                :key="mode.id"
-            >
-              {{ mode.title }}
-            </li>
-          </ul>
+          <div class="line__content">
+            <ul>
+              <li
+                  v-for="mode in TwolineGameMode"
+                  :key="mode.id"
+              >
+                {{ mode.title }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -168,5 +174,22 @@ export default {
   float: right;
   left: 35%;
   bottom: 83%;
+}
+
+.gamemode {
+  margin: 0px 0px 0px 200px;
+}
+.gamemode__main .line__content {
+  width: 400px;
+  height: 438px;
+  background: #fff;
+}
+.gamemode__content {
+  display: flex;
+}
+.gamemode__line--first .line__content--linefirst {
+  width: 400px;
+  height: 212px;
+  background: #d5d5d5;
 }
 </style>
