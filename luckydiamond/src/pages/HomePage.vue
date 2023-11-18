@@ -70,7 +70,7 @@
         <div class="gamemode__line--two">
           <ul>
             <li
-                v-for="mode in TwolineGameMode"
+                v-for="mode in twolineGameMode"
                 :key="mode.id"
             >
               <div class="line__content" style="margin: 16px 38px 20px 0px" :id="'linetwo-' + mode.id">
