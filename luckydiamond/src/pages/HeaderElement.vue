@@ -17,7 +17,7 @@
             <h2><img src="@/assets/icons-header/diamond-ore-icon.png">{{ balance }}</h2>
           </div>
           <div class="header__btn--wallet">
-            <a href=""></a>
+            <a href="">кошелёк</a>
           </div>
         </div>
       </div>
