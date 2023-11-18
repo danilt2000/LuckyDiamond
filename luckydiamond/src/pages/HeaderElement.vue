@@ -30,7 +30,9 @@
           <img src="@/assets/icons-test/person-icon.svg" alt="test-ico">
         </div>
         <div class="header__card--auth">
-          <h2>discord</h2>
+          <div class="auth__card--content">
+            <a href="#"><span><img width="30" height="30" src="@/assets/icons-header/discord-icon.png"></span>Вход</a>
+          </div>
         </div>
       </div>
     </div>
