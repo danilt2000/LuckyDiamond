@@ -115,7 +115,7 @@ export default {
     firstlineGameMode() {
       return this.GameModes.filter(mode => [2,3].includes(mode.id))
     },
-    TwolineGameMode() {
+    twolineGameMode() {
       return this.GameModes.filter(mode => [4,5].includes(mode.id))
     }
   }
