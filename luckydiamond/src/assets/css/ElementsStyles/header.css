@@ -38,3 +38,23 @@
     left: 0;
     z-index: 1;
 }
+
+.header__balance {
+    border-radius: 9px;
+    background: #22252F;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px 15px 8px 8px;
+}
+
+.header__content--balance .header__card--balance h2 {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Montserrat Alternates;;
+}
+
+.header__content--balance .header__card--balance h2 img {
+    margin-right: 7px;
+}

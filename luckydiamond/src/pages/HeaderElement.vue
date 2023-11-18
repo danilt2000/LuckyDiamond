@@ -12,8 +12,14 @@
         </nav>
       </div>
       <div class="header__balance">
-        <h2><img src="@/assets/icons-header/diamond-ore-icon.png">{{ balance }}</h2>
-        <a href=""></a>
+        <div class="header__content--balance">
+          <div class="header__card--balance">
+            <h2><img src="@/assets/icons-header/diamond-ore-icon.png">{{ balance }}</h2>
+          </div>
+          <div class="header__btn--wallet">
+            <a href=""></a>
+          </div>
+        </div>
       </div>
       <div class="header__auth--discord">
         <div class="header__card--discord">
