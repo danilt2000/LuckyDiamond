@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import '@/assets/css/ElementsStyles/header.css'
+
 export default {
   name: 'Header-Element-page',
   data() {
