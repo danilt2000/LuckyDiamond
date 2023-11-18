@@ -2,11 +2,13 @@
   <div class="content-grid">
     <aside-bar-element></aside-bar-element>
 
+    <chat-element></chat-element>
+
     <header-element-page></header-element-page>
 
-    <section class="main">
+    <main class="main">
 
-    </section>
+    </main>
 
     <section class="gamemode">
 
@@ -17,11 +19,12 @@
 <script>
 import HeaderElementPage from "@/pages/HeaderElement.vue";
 import AsideBarElement from "@/pages/AsidebarElement.vue";
+import ChatElement from "@/pages/ChatElement.vue";
 import GameModes from "@/mocks/GameModes";
 
 export default {
   name: 'HomePage',
-  components: {AsideBarElement, HeaderElementPage },
+  components: {AsideBarElement, HeaderElementPage, ChatElement },
   data() {
     return {
       GameModes

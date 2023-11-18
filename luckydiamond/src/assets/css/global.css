@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #fff;
 }
 
 ul {
@@ -22,7 +23,10 @@ body, html {
     display: grid;
     grid-template-areas:
     'menu header header header header header'
-    ;
+    'menu main main main main chat'
+    'menu main main main main chat'
+    'menu gamemode gamemode gamemode gamemode chat'
+    'menu gamemode gamemode gamemode gamemode chat';
 }
 
 /* /Content Grid */
@@ -42,6 +46,14 @@ body, html {
 }
 
 /* /Menu */
+
+/* Chat */
+
+.chat {
+    grid-area: chat;
+}
+
+/* /Chat */
 
 /* Main */
 
