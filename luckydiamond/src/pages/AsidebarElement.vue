@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .bar {
   width: 88px;
   height: 100vh;
