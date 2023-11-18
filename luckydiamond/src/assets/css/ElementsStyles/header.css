@@ -76,3 +76,48 @@
     text-decoration: none;
     margin-left: -10px;
 }
+
+.header__auth--discord {
+    display: flex;
+    margin-right: 22px;
+}
+
+.header__card--discord {
+    margin-right: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.discord__card--name {
+    margin-right: 10px;
+}
+
+.discord__card--name h2 {
+    font-size: 15px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-weight: 700;
+}
+
+.discord__card--name a {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.50);
+    font-weight: 700;
+    font-family: Montserrat;
+    border-radius: 8px;
+    background: #30323E;
+    filter: blur(.4px);
+    padding: 6px 2px 6px 2px;
+}
+
+.discord__card--name a span img {
+    margin-left: 5px;
+    display: flex;
+}
+
+.header__card--discord img {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}

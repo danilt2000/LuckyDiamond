@@ -22,8 +22,12 @@
         </div>
       </div>
       <div class="header__auth--discord">
-        <div class="header__card--discord">
-          <h2>test</h2>
+        <div v-if="auth" class="header__card--discord">
+          <div class="discord__card--name">
+            <h2>Artemka</h2>
+            <a href="#">Выход<span><img src="@/assets/icons-header/exit-icon.png"></span></a>
+          </div>
+          <img src="@/assets/icons-test/person-icon.svg" alt="test-ico">
         </div>
         <div class="header__card--auth">
           <h2>discord</h2>
@@ -40,7 +44,8 @@ export default {
   name: 'Header-Element-page',
   data() {
     return {
-      balance: 25000
+      balance: 25000,
+      auth: true
     }
   }
 }
