@@ -7,11 +7,13 @@
 </template>
 
 <script>
+import '@/assets/css/ElementsStyles/chat.css'
+
 export default {
 
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
