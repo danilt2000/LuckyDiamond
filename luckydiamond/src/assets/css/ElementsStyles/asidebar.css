@@ -24,6 +24,7 @@
 .menu__content--gamemodes {
     background: rgba(217, 217, 217, 0.12);
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+    width: 90%;
     border-radius: 20px;
 }
 
