@@ -13,9 +13,7 @@
         </div>
       </div>
       <div class="menu__btn--settings">
-        <div class="menu__content--settings">
-          <a href="#"><img  src="../assets/icons-home/settings-icon.svg"></a>
-        </div>
+        <a href="#"><img width="73" height="73" src="../assets/icons-home/settings-icon.svg"></a>
       </div>
     </div>
   </aside>

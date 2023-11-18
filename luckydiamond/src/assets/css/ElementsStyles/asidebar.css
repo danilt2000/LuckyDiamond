@@ -1,9 +1,6 @@
 .menu {
-    margin: 4px 6px 0 6px;
+    margin: 4% 6% 0% 6%;
     height: 99.5vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     user-select: none;
 }
 
@@ -11,13 +8,14 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 
+.menu__btn--home {
+    margin-top: 12px;
+}
+
 .menu__btns--gamemodes {
-    border-radius: 20px;
-    text-align: center;
     display: flex;
     align-items: center;
     height: 100%;
@@ -33,19 +31,12 @@
     padding: 20px 0px 20px 0px;
 }
 
-.menu__btn--home {
-    margin-top: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
 .menu__content--gamemodes {
     display: flex;
-    justify-content: center;
     text-align: center;
-    align-items: center;
     flex-direction: column;
+}
+
+.menu__btn--settings {
     margin-bottom: 12px;
 }
