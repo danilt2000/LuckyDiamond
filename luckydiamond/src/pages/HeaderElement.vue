@@ -1,7 +1,28 @@
 <template>
   <header class="header">
     <div class="header__content">
-      <h1>HEADER</h1>
+      <div class="header__logo">
+        <img src="@/assets/logo.svg" alt="">
+      </div>
+      <div class="header__nav">
+        <nav>
+          <a href="#" class="header__nav--now">Главная</a>
+          <a href="#">Профиль</a>
+          <a href="#">Помощь</a>
+        </nav>
+      </div>
+      <div class="header__balance">
+        <h2><img src="@/assets/icons-header/diamond-ore-icon.png">{{ balance }}</h2>
+        <a href=""></a>
+      </div>
+      <div class="header__auth--discord">
+        <div class="header__card--discord">
+          <h2>test</h2>
+        </div>
+        <div class="header__card--auth">
+          <h2>discord</h2>
+        </div>
+      </div>
     </div>
   </header>
 </template>
