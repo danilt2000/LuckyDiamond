@@ -13,6 +13,8 @@ ul {
 
 body, html {
     background: #121212;
+    height: 100%;
+    margin: 0;
 }
 
 /* /Global Settings */
@@ -21,7 +23,7 @@ body, html {
 
 .content-grid {
     display: grid;
-    grid-template-columns: .3fr repeat(5, 1fr) 1.2fr;
+    grid-template-columns: .35fr repeat(5, 1fr) 1.2fr;
     grid-template-rows: repeat(6, 1fr);
     grid-auto-columns: 1fr;
     gap: 0px 0px;
@@ -57,7 +59,6 @@ body, html {
     background: #17181C;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    height: 100%;
 }
 
 /* /Menu */
