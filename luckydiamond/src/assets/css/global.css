@@ -10,20 +10,9 @@ ul {
     list-style: none;
 }
 
+body, html {
+    background: #121212;
+}
+
 /* /Global Settings */
 
-/* Header */
-
-.header {
-
-}
-
-/* /Header */
-
-/* Home */
-
-.home {
-
-}
-
-/* /Home */
