@@ -19,30 +19,6 @@ body, html {
 
 /* /Global Settings */
 
-/* Fonts */
-
-@font-face {
-    font-family: 'M-A-Regular';
-    src: url("../fonts/montserrat-alternates-v17-latin-regular.woff2");
-}
-
-@font-face {
-    font-family: 'M-A-600';
-    src: url("../fonts/montserrat-alternates-v17-latin-600.woff2");
-}
-
-@font-face {
-    font-family: 'M-A-700';
-    src: url("../fonts/montserrat-alternates-v17-latin-700.woff2");
-}
-
-@font-face {
-    font-family: 'M-A-800';
-    src: url("../fonts/montserrat-alternates-v17-latin-800.woff2");
-}
-
-/* /Fonts */
-
 /* Content Grid */
 
 .content-grid {
