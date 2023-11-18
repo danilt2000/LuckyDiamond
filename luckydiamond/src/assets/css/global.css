@@ -16,3 +16,45 @@ body, html {
 
 /* /Global Settings */
 
+/* Content Grid */
+
+.content-grid {
+    display: grid;
+    grid-template-areas:
+    'menu header header header header header'
+    ;
+}
+
+/* /Content Grid */
+
+/* Header */
+
+.header {
+    grid-area: header;
+}
+
+/* /Header */
+
+/* Menu */
+
+.menu {
+    grid-area: menu;
+}
+
+/* /Menu */
+
+/* Main */
+
+.main {
+    grid-area: main;
+}
+
+/* /Main */
+
+/* GameMode */
+
+.gamemode {
+    grid-area: gamemode;
+}
+
+/* /GameMode */

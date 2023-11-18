@@ -1,8 +1,17 @@
 <template>
-  <aside-bar-element></aside-bar-element>
+  <div class="content-grid">
+    <aside-bar-element></aside-bar-element>
 
-  <header-element-page></header-element-page>
+    <header-element-page></header-element-page>
 
+    <section class="main">
+
+    </section>
+
+    <section class="gamemode">
+
+    </section>
+  </div>
 </template>
 
 <script>

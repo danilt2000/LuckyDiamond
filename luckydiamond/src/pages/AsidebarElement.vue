@@ -1,6 +1,8 @@
 <template>
   <aside class="menu">
+    <div class="menu__content">
 
+    </div>
   </aside>
 </template>
 
