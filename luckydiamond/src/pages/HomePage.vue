@@ -98,25 +98,25 @@
 <script>
 import HeaderElementPage from "@/pages/HeaderElement.vue";
 import AsideBarElement from "@/pages/AsidebarElement.vue";
-import gameModes from "@/mocks/GameModes";
+import GameModes from "@/mocks/GameModes";
 
 export default {
   name: 'HomePage',
   components: {AsideBarElement, HeaderElementPage },
   data() {
     return {
-      gameModes
+      GameModes
     }
   },
   computed: {
     mainGameMode() {
-      return this.gameModes.filter(mode => [1].includes(mode.id))
+      return this.GameModes.filter(mode => [1].includes(mode.id))
     },
     firstlineGameMode() {
-      return this.gameModes.filter(mode => [2,3].includes(mode.id))
+      return this.GameModes.filter(mode => [2,3].includes(mode.id))
     },
     TwolineGameMode() {
-      return this.gameModes.filter(mode => [4,5].includes(mode.id))
+      return this.GameModes.filter(mode => [4,5].includes(mode.id))
     }
   }
 }
