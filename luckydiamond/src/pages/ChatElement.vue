@@ -93,19 +93,16 @@
         </div>
       </div>
     </div>
-    <div class="write">
-      <div class="write__content">
-        <h1>123</h1>
-      </div>
-    </div>
+    <writechat-component></writechat-component>
   </aside>
 </template>
 
 <script>
 import '@/assets/css/ElementsStyles/chat.css'
+import WritechatComponent from "@/components/WritechatComponent.vue";
 
 export default {
-
+  components: { WritechatComponent }
 }
 </script>
 

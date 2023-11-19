@@ -1,5 +1,6 @@
 .chat {
     margin: 9px 12px 0px 0px;
+
 }
 
 .chat__content {
@@ -70,4 +71,41 @@
 
 .content p {
     margin-top: 5px;
+}
+
+.write {
+    position: absolute;
+    bottom: 0;
+    margin: 24px 87px 22px 16px;
+    user-select: none;
+    width: 50%;
+}
+
+.write__content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.write__content input {
+    padding: 14px 35% 14px 12px;
+    border-radius: 13px;
+    background: #22252F;
+    color: #A9A99D;
+    border: none;
+}
+
+.write__content input::placeholder {
+    color: #A9A99D;
+    font-weight: 800;
+    font-family: Montserrat;
+    font-size: 12px;
+}
+
+.write__content button {
+    padding: 8px 9px;
+    margin-left: -20px;
+    border-radius: 6px;
+    background: #3D3F48;
+    border: none;
 }
