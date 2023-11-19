@@ -8,8 +8,6 @@
 
 .chat__container--title {
     display: flex;
-    align-items: center;
-    text-align: center;
     user-select: none;
 }
 
@@ -63,17 +61,9 @@
 
 .user__icon {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
     margin-left: 13px;
     color: #fff;
     font-size: 12px;
@@ -96,7 +86,6 @@
 .write__content {
     display: flex;
     align-items: center;
-    text-align: center;
 }
 
 .write__content input {
