@@ -1,0 +1,35 @@
+.chat__content {
+    width: 30%;
+}
+
+.chat__container--title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+}
+
+.chat__title {
+    width: 100%;
+    margin: 13px 0px 0px 16px;
+    border-radius: 8px;
+    background: #30323E;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.chat__container--title h2 {
+    padding: 3px 11px 6px 7px;
+    color: #A9A99D;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 18px;
+}
+
+.chat__icon {
+    margin-top: 10px;
+    margin-left: -2px;
+    padding: 6px 6px 6px 7px;
+    border-radius: 6px;
+    background: #3D3F48;
+}
