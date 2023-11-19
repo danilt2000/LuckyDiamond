@@ -10,6 +10,17 @@
         </div>
       </div>
     </div>
+    <div class="chat__content--users">
+      <div class="card__user">
+        <div class="user__icon">
+          <img src="@/assets/icons-test/person-icon-chat.png">
+        </div>
+        <div class="content">
+          <h3>User Name</h3>
+          <p>msg content</p>
+        </div>
+      </div>
+    </div>
   </aside>
 </template>
 

@@ -37,3 +37,29 @@
     border-radius: 6px;
     background: #3D3F48;
 }
+
+.chat__content--users {
+    height: 70%;
+}
+
+.card__user {
+    margin-top: 24px;
+    margin: 24px 70px 0px 23px;
+    display: flex;
+}
+
+.user__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-left: 23px;
+}
