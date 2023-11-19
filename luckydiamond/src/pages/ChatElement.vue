@@ -12,7 +12,7 @@
     </div>
     <div class="chat__content--users">
       <ul>
-        <transition-group name="fade" mode="out-in">
+        <transition-group name="fade">
           <li
               v-for="msg in array"
               :key="msg"
