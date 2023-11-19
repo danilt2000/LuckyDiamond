@@ -54,6 +54,10 @@ export default {
       }
 
       this.array.push(MsgUser)
+
+      if(this.array.length > 7) {
+        this.array.shift()
+      }
     }
   }
 }
