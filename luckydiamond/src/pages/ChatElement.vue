@@ -16,9 +16,86 @@
           <img src="@/assets/icons-test/person-icon-chat.png">
         </div>
         <div class="content">
-          <h3>User Name</h3>
+          <h1>User Name</h1>
           <p>msg content</p>
         </div>
+      </div>
+      <div class="card__user">
+        <div class="user__icon">
+          <img src="@/assets/icons-test/person-icon-chat.png">
+        </div>
+        <div class="content">
+          <h1>User Name</h1>
+          <p>msg content</p>
+        </div>
+      </div>
+      <div class="card__user">
+        <div class="user__icon">
+          <img src="@/assets/icons-test/person-icon-chat.png">
+        </div>
+        <div class="content">
+          <h1>User Name</h1>
+          <p>msg content</p>
+        </div>
+      </div>
+      <div class="card__user">
+        <div class="user__icon">
+          <img src="@/assets/icons-test/person-icon-chat.png">
+        </div>
+        <div class="content">
+          <h1>User Name</h1>
+          <p>msg content</p>
+        </div>
+      </div>
+      <div class="card__user">
+        <div class="user__icon">
+          <img src="@/assets/icons-test/person-icon-chat.png">
+        </div>
+        <div class="content">
+          <h1>User Name</h1>
+          <p>msg content</p>
+        </div>
+      </div>
+      <div class="card__user">
+        <div class="user__icon">
+          <img src="@/assets/icons-test/person-icon-chat.png">
+        </div>
+        <div class="content">
+          <h1>User Name</h1>
+          <p>msg content</p>
+        </div>
+      </div>
+      <div class="card__user">
+        <div class="user__icon">
+          <img src="@/assets/icons-test/person-icon-chat.png">
+        </div>
+        <div class="content">
+          <h1>User Name</h1>
+          <p>msg content</p>
+        </div>
+      </div>
+      <div class="card__user">
+        <div class="user__icon">
+          <img src="@/assets/icons-test/person-icon-chat.png">
+        </div>
+        <div class="content">
+          <h1>User Name</h1>
+          <p>msg content</p>
+        </div>
+      </div>
+      <div class="card__user">
+        <div class="user__icon">
+          <img src="@/assets/icons-test/person-icon-chat.png">
+        </div>
+        <div class="content">
+          <h1>User Name</h1>
+          <p>msg content</p>
+        </div>
+      </div>
+    </div>
+    <div class="write">
+      <div class="write__content">
+        <h1>123</h1>
       </div>
     </div>
   </aside>

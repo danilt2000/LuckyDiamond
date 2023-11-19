@@ -61,5 +61,13 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
-    margin-left: 23px;
+    margin-left: 13px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    font-family: Montserrat;
+}
+
+.content p {
+    margin-top: 5px;
 }
