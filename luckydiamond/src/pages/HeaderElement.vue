@@ -29,7 +29,7 @@
           </div>
           <img src="@/assets/icons-test/person-icon.svg" alt="test-ico">
         </div>
-        <div class="header__card--auth">
+        <div v-else class="header__card--auth">
           <div class="auth__card--content">
             <a href="#" @click="auth = true"><span><img width="30" height="30" src="@/assets/icons-header/discord-icon.png"></span>Вход</a>
           </div>
