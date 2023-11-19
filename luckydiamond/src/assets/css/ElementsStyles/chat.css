@@ -108,4 +108,9 @@
     border-radius: 6px;
     background: #3D3F48;
     border: none;
+    cursor: pointer;
+}
+
+.write__content button:disabled {
+    cursor: not-allowed;
 }
