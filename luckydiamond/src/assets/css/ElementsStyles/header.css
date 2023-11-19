@@ -1,5 +1,6 @@
 .header {
     margin-top: 4px;
+    user-select: none;
 }
 
 .header__content {
@@ -108,7 +109,7 @@
     font-family: Montserrat;
     border-radius: 8px;
     background: #30323E;
-    filter: blur(.4px);
+    text-decoration: none;
     padding: 6px 2px 6px 2px;
 }
 
