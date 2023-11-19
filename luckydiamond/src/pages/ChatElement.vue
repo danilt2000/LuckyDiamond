@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-    <div class="chat__content--users" @dataclaim="ClaimDatamsg">
+    <div class="chat__content--users">
       <ul>
         <li
             v-for="msg in array"
@@ -28,25 +28,32 @@
         </li>
       </ul>
     </div>
-    <writechat-component></writechat-component>
+    <writechat-component @send="ClaimDatamsg"></writechat-component>
   </aside>
 </template>
 
 <script>
 import '@/assets/css/ElementsStyles/chat.css'
-import ChatHistory from "@/mocks/ChatHistory";
 import WritechatComponent from "@/components/WritechatComponent.vue";
 
 export default {
   components: { WritechatComponent },
   data() {
     return {
-      array: ChatHistory
+      array: [],
+      id: 0,
     }
   },
   methods: {
-    ClaimDatamsg() {
-      this.array = ChatHistory
+    ClaimDatamsg(msg) {
+      const MsgUser = {
+        id: this.id + 1,
+        msg: msg[0],
+        username: msg[1],
+        icon: msg[2]
+      }
+
+      this.array.push(MsgUser)
     }
   }
 }

@@ -14,14 +14,13 @@
 </template>
 
 <script>
-import ChatHistory from "@/mocks/ChatHistory";
 
 export default {
   data() {
     return {
       msg: '',
       username: 'TEST USER',
-      icon: '@/assets/icon-test/person-icon-chat.png'
+      icon: require('../assets/icons-test/person-icon-chat.png'),
     }
   },
   methods: {
@@ -29,18 +28,8 @@ export default {
       return this.msg === ''
     },
     SendmsgData() {
-      const object = {
-        msg: this.msg,
-        username: this.username,
-        icon: this.icon
-      }
-
-      ChatHistory.push(object)
-      console.log(ChatHistory)
-
+      this.$emit('send', [this.msg, this.username, this.icon])
       this.msg = ''
-
-      return this.$emit('dataclaim')
     }
   }
 }
