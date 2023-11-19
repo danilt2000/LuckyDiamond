@@ -10,88 +10,23 @@
         </div>
       </div>
     </div>
-    <div class="chat__content--users">
-      <div class="card__user">
-        <div class="user__icon">
-          <img src="@/assets/icons-test/person-icon-chat.png">
-        </div>
-        <div class="content">
-          <h1>User Name</h1>
-          <p>msg content</p>
-        </div>
-      </div>
-      <div class="card__user">
-        <div class="user__icon">
-          <img src="@/assets/icons-test/person-icon-chat.png">
-        </div>
-        <div class="content">
-          <h1>User Name</h1>
-          <p>msg content</p>
-        </div>
-      </div>
-      <div class="card__user">
-        <div class="user__icon">
-          <img src="@/assets/icons-test/person-icon-chat.png">
-        </div>
-        <div class="content">
-          <h1>User Name</h1>
-          <p>msg content</p>
-        </div>
-      </div>
-      <div class="card__user">
-        <div class="user__icon">
-          <img src="@/assets/icons-test/person-icon-chat.png">
-        </div>
-        <div class="content">
-          <h1>User Name</h1>
-          <p>msg content</p>
-        </div>
-      </div>
-      <div class="card__user">
-        <div class="user__icon">
-          <img src="@/assets/icons-test/person-icon-chat.png">
-        </div>
-        <div class="content">
-          <h1>User Name</h1>
-          <p>msg content</p>
-        </div>
-      </div>
-      <div class="card__user">
-        <div class="user__icon">
-          <img src="@/assets/icons-test/person-icon-chat.png">
-        </div>
-        <div class="content">
-          <h1>User Name</h1>
-          <p>msg content</p>
-        </div>
-      </div>
-      <div class="card__user">
-        <div class="user__icon">
-          <img src="@/assets/icons-test/person-icon-chat.png">
-        </div>
-        <div class="content">
-          <h1>User Name</h1>
-          <p>msg content</p>
-        </div>
-      </div>
-      <div class="card__user">
-        <div class="user__icon">
-          <img src="@/assets/icons-test/person-icon-chat.png">
-        </div>
-        <div class="content">
-          <h1>User Name</h1>
-          <p>msg content</p>
-        </div>
-      </div>
-      <div class="card__user">
-        <div class="user__icon">
-          <img src="@/assets/icons-test/person-icon-chat.png">
-        </div>
-        <div class="content">
-          <h1>User Name</h1>
-          <p>msg content</p>
-        </div>
-      </div>
+    <div class="chat__content--users" @dataclaim="ClaimDatamsg">
+      <ul>
+        <li
+            v-for="msg in array"
+            :key="msg"
+        >
+          <div class="card__user">
+            <div class="user__icon">
+              <img :src="msg.icon">
+            </div>
+            <div class="content">
+              <h1>{{ msg.username }}</h1>
+              <p>{{ msg.msg }}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
     <writechat-component></writechat-component>
   </aside>
@@ -99,10 +34,21 @@
 
 <script>
 import '@/assets/css/ElementsStyles/chat.css'
+import ChatHistory from "@/mocks/ChatHistory";
 import WritechatComponent from "@/components/WritechatComponent.vue";
 
 export default {
-  components: { WritechatComponent }
+  components: { WritechatComponent },
+  data() {
+    return {
+      array: ChatHistory
+    }
+  },
+  methods: {
+    ClaimDatamsg() {
+      this.array = ChatHistory
+    }
+  }
 }
 </script>
 
