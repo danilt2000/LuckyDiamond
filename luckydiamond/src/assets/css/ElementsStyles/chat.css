@@ -63,6 +63,11 @@
     display: flex;
 }
 
+.user__icon img {
+    width: 40px;
+    height: 40px;
+}
+
 .content {
     margin-left: 13px;
     color: #fff;
