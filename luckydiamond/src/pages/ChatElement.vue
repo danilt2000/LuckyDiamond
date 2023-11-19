@@ -12,20 +12,22 @@
     </div>
     <div class="chat__content--users">
       <ul>
-        <li
-            v-for="msg in array"
-            :key="msg"
-        >
-          <div class="card__user">
-            <div class="user__icon">
-              <img :src="msg.icon">
+        <transition-group name="fade" mode="out-in">
+          <li
+              v-for="msg in array"
+              :key="msg"
+          >
+            <div class="card__user">
+              <div class="user__icon">
+                <img :src="msg.icon">
+              </div>
+              <div class="content">
+                <h1>{{ msg.username }}</h1>
+                <p>{{ msg.msg }}</p>
+              </div>
             </div>
-            <div class="content">
-              <h1>{{ msg.username }}</h1>
-              <p>{{ msg.msg }}</p>
-            </div>
-          </div>
-        </li>
+          </li>
+        </transition-group>
       </ul>
     </div>
     <writechat-component @send="ClaimDatamsg"></writechat-component>
