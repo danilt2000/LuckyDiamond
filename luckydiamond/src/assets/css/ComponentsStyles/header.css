@@ -81,6 +81,7 @@
 .header__auth--discord {
     display: flex;
     margin-right: 22px;
+    width: 10%;
 }
 
 .header__card--discord {
