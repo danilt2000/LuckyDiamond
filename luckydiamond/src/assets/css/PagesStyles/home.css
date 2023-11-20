@@ -3,7 +3,7 @@
 .main {
     display: flex;
     justify-content: center;
-    margin-top: 48px;
+    padding-top: 48px;
     border-radius: 40px;
     background: #EF4444;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -39,16 +39,26 @@
 }
 
 @keyframes RaindowAnimate {
-    0% { color: red; }
-    25% { color: orange; }
-    50% { color: yellow; }
-    75% { color: green; }
-    100% { color: blue; }
+    from {
+        color: #6666ff;
+    }
+    10% {
+        color: #0099ff;
+    }
+    50% {
+        color: #00ff00;
+    }
+    75% {
+        color: #ff3399;
+    }
+    100% {
+        color: #6666ff;
+    }
 }
 
 .main__content h4 span {
     animation: RaindowAnimate 5s infinite;
-    animation-delay: 1s;
+    animation-delay: 5s;
 }
 
 /* /Main */
