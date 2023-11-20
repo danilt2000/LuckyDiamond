@@ -84,7 +84,9 @@ body, html {
 .main {
     grid-area: main;
     background: #999;
-    align-self: start;
+    width: 60%;
+    height: 50%;
+    margin: 0 auto;
 }
 
 /* /Main */

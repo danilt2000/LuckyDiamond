@@ -25,6 +25,7 @@ import HeaderElementPage from "@/pages/HeaderElement.vue";
 import AsideBarElement from "@/pages/AsidebarElement.vue";
 import ChatElement from "@/pages/ChatElement.vue";
 import GameModes from "@/mocks/GameModes";
+import '@/assets/css/PagesStyles/home.css'
 
 export default {
   name: 'HomePage',
