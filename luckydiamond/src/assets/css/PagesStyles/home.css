@@ -39,7 +39,7 @@
 
 @keyframes RaindowAnimate {
     from {
-        color: #6666ff;
+        color: #6EEB21;
     }
     10% {
         color: #0099ff;
@@ -51,7 +51,7 @@
         color: #ff3399;
     }
     100% {
-        color: #6666ff;
+        color: #6EEB21;
     }
 }
 
