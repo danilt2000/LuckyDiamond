@@ -3,7 +3,6 @@
 .main {
     display: flex;
     justify-content: center;
-    padding-top: 48px;
     border-radius: 40px;
     background: #EF4444;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);

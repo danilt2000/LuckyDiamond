@@ -85,7 +85,7 @@ body, html {
     grid-area: main;
     width: 80%;
     height: 90%;
-    margin: 0 auto;
+    margin: 48px auto 0;
 }
 
 /* /Main */
