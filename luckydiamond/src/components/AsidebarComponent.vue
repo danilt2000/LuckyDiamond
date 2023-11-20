@@ -6,10 +6,10 @@
       </div>
       <div class="menu__btns--gamemodes">
         <div class="menu__content--gamemodes">
-          <a href="#"><img src="@/assets/icons-menu/slots-icon.svg"></a>
-          <a href="#"><img src="@/assets/icons-menu/crush-icon.svg"></a>
-          <a href="#"><img src="@/assets/icons-menu/case-icon.png"></a>
-          <a href="#"><img src="@/assets/icons-menu/bomb-icon.svg"></a>
+          <a href="#"><img src="../assets/icons-menu/slots-icon.svg"></a>
+          <a href="#"><img src="../assets/icons-menu/crush-icon.svg"></a>
+          <a href="#"><img src="../assets/icons-menu/case-icon.png"></a>
+          <a href="#"><img src="../assets/icons-menu/bomb-icon.svg"></a>
         </div>
       </div>
       <div class="menu__btn--settings">

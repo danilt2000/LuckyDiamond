@@ -23,9 +23,9 @@
 </template>
 
 <script>
-import HeaderElementPage from "@/pages/HeaderComponent.vue";
-import AsideBarElement from "@/pages/AsidebarComponent.vue";
-import ChatElement from "@/pages/ChatComponent.vue";
+import HeaderElementPage from "@/components/HeaderComponent.vue";
+import AsideBarElement from "@/components/AsidebarComponent.vue";
+import ChatElement from "@/components/ChatComponent.vue";
 import GameModes from "@/mocks/GameModes";
 import '@/assets/css/PagesStyles/home.css'
 
