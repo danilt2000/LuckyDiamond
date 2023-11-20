@@ -1,6 +1,6 @@
 <template>
   <div class="content-grid">
-    <aside-bar-element></aside-bar-element>
+    <aside-bar-element @animationchange="claimSettings"></aside-bar-element>
 
     <chat-element></chat-element>
 
@@ -10,7 +10,7 @@
       <div class="main__content">
         <h3>онлайн-казино</h3>
         <h1>lucky diamond</h1>
-        <h4>minecraft casino - <span>spm</span></h4>
+        <h4>minecraft casino - <span :class="{ 'animate__text--main__block': !AnimationOff, 'default__text--main__block': AnimationOff }">spm</span></h4>
       </div>
     </main>
 
@@ -34,7 +34,13 @@ export default {
   components: {AsideBarElement, HeaderElementPage, ChatElement },
   data() {
     return {
-      GameModes
+      GameModes,
+      AnimationOff: false
+    }
+  },
+  methods: {
+    claimSettings(value) {
+      this.AnimationOff = value
     }
   },
   computed: {

@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="menu__btn--settings">
-        <a href="#"><img width="73" height="73" src="../assets/icons-menu/settings-icon.svg"></a>
+        <a @click="ChangeAnimation" href="#"><img width="73" height="73" src="../assets/icons-menu/settings-icon.svg"></a>
       </div>
     </div>
   </aside>
@@ -24,7 +24,18 @@
 import '@/assets/css/ComponentsStyles/asidebar.css'
 
 export default {
-  name: 'AsideBar-Element'
+  name: 'AsideBar-Element',
+  data() {
+    return {
+      AnimationOff: false
+    }
+  },
+  methods: {
+    ChangeAnimation() {
+      this.AnimationOff = !this.AnimationOff
+      return this.$emit('animationchange', this.AnimationOff)
+    }
+  }
 }
 </script>
 
