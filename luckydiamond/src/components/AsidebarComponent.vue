@@ -21,7 +21,7 @@
 
 
 <script>
-import '@/assets/css/ElementsStyles/asidebar.css'
+import '@/assets/css/ComponentsStyles/asidebar.css'
 
 export default {
   name: 'AsideBar-Element'

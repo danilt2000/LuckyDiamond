@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import '@/assets/css/ElementsStyles/header.css'
+import '@/assets/css/ComponentsStyles/header.css'
 
 export default {
   name: 'Header-Element-page',

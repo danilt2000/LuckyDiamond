@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import '@/assets/css/ElementsStyles/chat.css'
+import '@/assets/css/ComponentsStyles/chat.css'
 import WritechatComponent from "@/components/WritechatComponent.vue";
 
 export default {
