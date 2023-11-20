@@ -5,9 +5,6 @@
         <div class="chat__title">
           <h2>Чат</h2>
         </div>
-        <div class="chat__icon">
-          <img src="@/assets/icons-chat/chat-icon.png">
-        </div>
       </div>
     </div>
     <div class="chat__content--users">
