@@ -83,9 +83,8 @@ body, html {
 
 .main {
     grid-area: main;
-    background: #999;
-    width: 60%;
-    height: 50%;
+    width: 80%;
+    height: 90%;
     margin: 0 auto;
 }
 

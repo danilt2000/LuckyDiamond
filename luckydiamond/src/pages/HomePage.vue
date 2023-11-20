@@ -8,11 +8,13 @@
 
     <main class="main">
       <div class="main__content">
-        <h1>MAIN</h1>
+        <h3>онлайн-казино</h3>
+        <h1>lucky diamond</h1>
+        <h4>minecraft casino - <span>spm</span></h4>
       </div>
     </main>
 
-    <section class="gamemode">
+    <section style="margin-top: 200px;" class="gamemode">
       <div class="gamemode__content">
         <h1>GAMEMODE</h1>
       </div>
