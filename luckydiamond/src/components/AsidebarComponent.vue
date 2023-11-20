@@ -17,14 +17,17 @@
       </div>
     </div>
   </aside>
+  <notiicationwindow-component :isAnimationOn = "AnimationOff"></notiicationwindow-component>
 </template>
 
 
 <script>
+import NotiicationwindowComponent from "@/components/NotiicationwindowComponent.vue";
 import '@/assets/css/ComponentsStyles/asidebar.css'
 
 export default {
   name: 'AsideBar-Element',
+  components: { NotiicationwindowComponent },
   data() {
     return {
       AnimationOff: false
