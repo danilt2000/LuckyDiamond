@@ -17,7 +17,7 @@
       </div>
     </div>
   </aside>
-  <notiicationwindow-component :isAnimationOn = "AnimationOff"></notiicationwindow-component>
+  <notiicationwindow-component :isAnimationOn = "AnimationOff" @animationchange="NotificationRemove"></notiicationwindow-component>
 </template>
 
 
@@ -33,10 +33,14 @@ export default {
       AnimationOff: false
     }
   },
+  emits: ['animationchange'],
   methods: {
     ChangeAnimation() {
       this.AnimationOff = !this.AnimationOff
       return this.$emit('animationchange', this.AnimationOff)
+    },
+    NotificationRemove(value) {
+      this.AnimationOff = value
     }
   }
 }
