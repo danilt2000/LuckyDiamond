@@ -27,7 +27,7 @@
                 v-for="mode in mainGameMode"
                 :key="mode.id"
             >
-              <div class="line__content" style="margin: 16px 38px 0px 0px" :id="'maincard-' + mode.id">
+              <div class="line__content">
                 <h3>{{ mode.title }}</h3>
                 <div class="line__footer">
                   <img src="../assets/icons-gamemodes/bomb-icon.svg">
@@ -45,10 +45,14 @@
                 v-for="mode in firstlineGameMode"
                 :key="mode.id"
             >
-              .line__
+              <div class="line__img">
+                <img src="@/assets/icons-gamemodes/case-icon.png">
+              </div>
               <div :class="'linecontent-' + mode.id">
-                <h1>{{ mode.title }}</h1>
-                <a href="#" class="line__btn">play</a>
+                <div class="container">
+                  <h1>{{ mode.title }}</h1>
+                  <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
+                </div>
               </div>
             </li>
           </ul>

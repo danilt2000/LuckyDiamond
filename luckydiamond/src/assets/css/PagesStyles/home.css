@@ -122,7 +122,7 @@
 .line__footer {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     padding-top: 12%;
 }
 
@@ -145,12 +145,12 @@
 }
 
 
-
-
 .line__btn--main a span {
     color: #000;
     font-size: 38px;
 }
+
+
 
 .gamemode__firstline {
     background: #EF4444;
@@ -158,9 +158,14 @@
     border-radius: 40px;
     width: 50%;
     height: 100%;
+    margin: 0 0 18px 35px;
 }
 
-.
+.line__img {
+    float: right;
+    margin:  10px 66px 10px 47px;
+}
+
 
 .line__btn {
     border-radius: 21px;
@@ -174,6 +179,27 @@
     padding: 11px 11px;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.line__btn--elm {
+    color: #000;
+    font-size: 38px;
+}
+
+.linecontent-2 {
+    display: flex;
+    padding: 6px 6px;
+}
+
+.linecontent-2 h1 {
+    font-size: 91px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
 /* /GameMode */
