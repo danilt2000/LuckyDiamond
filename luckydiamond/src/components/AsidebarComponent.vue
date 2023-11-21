@@ -17,31 +17,30 @@
       </div>
     </div>
   </aside>
-  <notiicationwindow-component :isAnimationOn = "AnimationOff" @animationchange="NotificationRemove"></notiicationwindow-component>
 </template>
 
 
 <script>
-import NotiicationwindowComponent from "@/components/NotiicationwindowComponent.vue";
+// import NotiicationwindowComponent from "@/components/NotiicationwindowComponent.vue";
 import '@/assets/css/ComponentsStyles/asidebar.css'
 
 export default {
   name: 'AsideBar-Element',
-  components: { NotiicationwindowComponent },
+  // components: { NotiicationwindowComponent },
   data() {
     return {
       AnimationOff: false
     }
   },
-  emits: ['animationchange'],
+  // emits: ['animationchange'],
   methods: {
     ChangeAnimation() {
       this.AnimationOff = !this.AnimationOff
       return this.$emit('animationchange', this.AnimationOff)
     },
-    NotificationRemove(value) {
-      this.AnimationOff = value
-    }
+    // NotificationRemove(value) {
+    //   this.AnimationOff = value
+    // }
   }
 }
 </script>
