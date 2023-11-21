@@ -72,12 +72,6 @@
     width: 80%;
 }
 
-.gamemode__content--text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
 .gamemode__content--text h2 {
     margin: 2% 0 .5% 10%;
 }
@@ -90,16 +84,17 @@
 }
 
 .gamemode__content--card {
-    width: 100%;
-    height: 100%;
+    display: flex;
+    margin-top: 14px;
 }
 
 .gamemode__main {
     border-radius: 40px;
     background: #EF4444;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 30%;
+    width: 32%;
     height: 100%;
+    margin-left: 8%;
 }
 
 .gamemode__main .line__content1 {
@@ -108,23 +103,77 @@
     text-align: center;
 }
 
-.gamemode__main .line__content1 h3 {
-    color: #FFF;
-    padding-top: 10px;
-    text-transform: uppercase;
-    font-size: 91px;
-    font-weight: 700;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Montserrat Alternates;
-}
-
-.gamemode__main .content .icon1 {
-    width: 50%;
-}
-
 .gamemode__main .content {
     display: flex;
     justify-content: space-between;
+    align-self: flex-end;
+}
+
+.line__content h3 {
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 91px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.line__footer {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 12%;
+}
+
+.line__footer img {
+    width: 60%;
+}
+
+.line__btn--main a {
+    border-radius: 21px;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 11px 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+
+
+.line__btn--main a span {
+    color: #000;
+    font-size: 38px;
+}
+
+.gamemode__firstline {
+    background: #EF4444;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 40px;
+    width: 50%;
+    height: 100%;
+}
+
+.
+
+.line__btn {
+    border-radius: 21px;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 11px 11px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 /* /GameMode */
