@@ -156,8 +156,6 @@
     background: #EF4444;
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 40px;
-    width: 50%;
-    height: 100%;
     margin: 0 0 18px 35px;
 }
 
@@ -179,6 +177,9 @@
     padding: 11px 11px;
     text-decoration: none;
     text-transform: uppercase;
+    position: relative;
+    bottom: 5%;
+    left: 2%;
 }
 
 .line__btn--elm {
@@ -200,6 +201,14 @@
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 30px;
+}
+
+.gamemode__twoline--first__element {
+    background: #EF4444;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 40px;
+    width: 40%;
+    margin: 18px 36px 0 35px;
 }
 
 /* /GameMode */

@@ -39,25 +39,39 @@
             </li>
           </ul>
         </div>
-        <div class="gamemode__firstline">
-          <ul>
-            <li
-                v-for="mode in firstlineGameMode"
-                :key="mode.id"
-            >
-              <div class="line__img">
-                <img src="@/assets/icons-gamemodes/case-icon.png">
-              </div>
-              <div :class="'linecontent-' + mode.id">
-                <div class="container">
-                  <h1>{{ mode.title }}</h1>
-                  <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
+        <div class="gamemode__lines">
+          <div class="gamemode__firstline">
+            <ul>
+              <li
+                  v-for="mode in firstlineGameMode"
+                  :key="mode.id"
+              >
+                <div class="line__img">
+                  <img src="@/assets/icons-gamemodes/case-icon.png">
                 </div>
-              </div>
-            </li>
-          </ul>
+                <div :class="'linecontent-' + mode.id">
+                  <div class="container">
+                    <h1>{{ mode.title }}</h1>
+                    <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="gamemode__twoline--first__element">
+            <ul>
+              <li
+                  v-for="mode in twolinefirstelementGameMode"
+                  :key="mode"
+              >
+                <div :class="'linecontent-' + mode.id">
+                  <h3>{{ mode.title }}</h3>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+        </div>
     </section>
   </div>
 </template>
@@ -90,8 +104,8 @@ export default {
     firstlineGameMode() {
       return this.GameModes.filter(mode => [2].includes(mode.id))
     },
-    twolineGameMode() {
-      return this.GameModes.filter(mode => [3, 4].includes(mode.id))
+    twolinefirstelementGameMode() {
+      return this.GameModes.filter(mode => [3].includes(mode.id))
     }
   }
 }
