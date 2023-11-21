@@ -1,27 +1,22 @@
 export default [
     {
         id: 1,
-        title: 'slots',
+        title: 'сапёр',
         players: 0
     },
     {
         id: 2,
-        title: 'double',
+        title: 'кейсы',
         players: 0
     },
     {
         id: 3,
-        title: 'crash',
+        title: 'слоты',
         players: 0
     },
     {
         id: 4,
-        title: 'jackpot',
-        players: 0
-    },
-    {
-        id: 5,
-        title: 'mines',
+        title: 'краш',
         players: 0
     }
 ]

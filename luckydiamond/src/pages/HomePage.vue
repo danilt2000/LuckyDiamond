@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../assets/css/PagesStyles/home.css">
 <template>
   <div class="content-grid">
     <aside-bar-element @animationchange="claimSettings"></aside-bar-element>
@@ -14,9 +15,28 @@
       </div>
     </main>
 
-    <section style="margin-top: 200px;" class="gamemode">
-      <div class="gamemode__content">
-        <h1>GAMEMODE</h1>
+    <section class="gamemode">
+      <div class="gamemode__content--text">
+        <h2>режимы игры</h2>
+        <div></div>
+      </div>
+      <div class="gamemode__content--card">
+        <div class="gamemode__main">
+          <ul>
+            <li
+                v-for="mode in mainGameMode"
+                :key="mode.id"
+            >
+              <div :class="'line__content' + mode.id">
+                <h3>{{ mode.title }}</h3>
+              </div>
+              <div class="content">
+                <img :class="'icon' + mode.id" src="@/assets/icons-gamemodes/bomb-icon.svg">
+                <a href="#">play <span><img src="@/assets/icons-gamemodes/icon-right-array.svg"></span></a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   </div>
@@ -48,10 +68,10 @@ export default {
       return this.GameModes.filter(mode => [1].includes(mode.id))
     },
     firstlineGameMode() {
-      return this.GameModes.filter(mode => [2,3].includes(mode.id))
+      return this.GameModes.filter(mode => [2].includes(mode.id))
     },
     twolineGameMode() {
-      return this.GameModes.filter(mode => [4,5].includes(mode.id))
+      return this.GameModes.filter(mode => [3, 4].includes(mode.id))
     }
   }
 }

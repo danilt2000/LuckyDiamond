@@ -65,3 +65,66 @@
 }
 
 /* /Main */
+
+/* GameMode */
+
+.gamemode {
+    width: 80%;
+}
+
+.gamemode__content--text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.gamemode__content--text h2 {
+    margin: 2% 0 .5% 10%;
+}
+
+.gamemode__content--text div {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #fff;
+    height: 1px;
+}
+
+.gamemode__content--card {
+    width: 100%;
+    height: 100%;
+}
+
+.gamemode__main {
+    border-radius: 40px;
+    background: #EF4444;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 30%;
+    height: 100%;
+}
+
+.gamemode__main .line__content1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.gamemode__main .line__content1 h3 {
+    color: #FFF;
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-size: 91px;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+}
+
+.gamemode__main .content .icon1 {
+    width: 50%;
+}
+
+.gamemode__main .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* /GameMode */

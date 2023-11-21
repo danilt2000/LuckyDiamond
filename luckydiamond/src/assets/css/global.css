@@ -95,8 +95,8 @@ body, html {
 
 .gamemode {
     grid-area: gamemode;
-    background: #123123;
-    align-self: start;
+    height: 70%;
+    width: 100%;
 }
 
 /* /GameMode */
