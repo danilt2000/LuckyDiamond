@@ -66,7 +66,7 @@
                     :key="mode"
                 >
                   <div :class="'linecontent-' + mode.id">
-                    <h3>{{ mode.title }}</h3>
+                    <h3 class="title-twoline">{{ mode.title }}</h3>
                   </div>
                   <div class="container">
                     <a href="#" class="line__btn">play <span class="line__btn--elm ">></span></a>
@@ -82,7 +82,7 @@
                     :key="mode.id"
                 >
                   <div :class="'linecontent-' + mode.id">
-                    <h3>{{ mode.title }}</h3>
+                    <h3 class="title-twoline">{{ mode.title }}</h3>
                   </div>
                   <div class="container">
                     <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
