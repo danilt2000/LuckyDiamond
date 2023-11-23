@@ -68,10 +68,6 @@
 
 /* GameMode */
 
-.gamemode {
-    width: 80%;
-}
-
 .gamemode__content--text h2 {
     margin: 2% 0 .5% 10%;
     text-transform: uppercase;
@@ -94,10 +90,13 @@
     margin-top: 14px;
 }
 
-.gamemode__main {
+.bg-card {
     border-radius: 40px;
     background: #EF4444;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.gamemode__main {
     width: 32%;
     height: 100%;
     margin-left: 8%;
@@ -171,9 +170,6 @@
 }
 
 .gamemode__firstline {
-    background: #EF4444;
-    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 40px;
     margin: 0 0 18px 35px;
 }
 
@@ -222,9 +218,6 @@
 }
 
 .gamemode__twoline--first__element {
-    background: #EF4444;
-    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 40px;
     width: 100%;
     margin: 18px 36px 0 35px;
     min-height: 180px;
@@ -261,9 +254,6 @@
 }
 
 .gamemode__twoline--two__element {
-    border-radius: 40px;
-    background: #EF4444;
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-top: 18px;
     width: 100%;
     min-height: 180px;

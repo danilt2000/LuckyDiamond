@@ -21,7 +21,7 @@
         <div></div>
       </div>
       <div class="gamemode__content--card">
-        <div class="gamemode__main">
+        <div class="gamemode__main bg-card">
           <ul>
             <li
                 v-for="mode in mainGameMode"
@@ -40,7 +40,7 @@
           </ul>
         </div>
         <div class="gamemode__lines">
-          <div class="gamemode__firstline">
+          <div class="gamemode__firstline bg-card">
             <ul>
               <li
                   v-for="mode in firstlineGameMode"
@@ -59,7 +59,7 @@
             </ul>
           </div>
           <div class="gamemode__twolines">
-            <div class="gamemode__twoline--first__element">
+            <div class="gamemode__twoline--first__element bg-card">
               <ul>
                 <li
                     v-for="mode in twolinefirstelementGameMode"
@@ -75,7 +75,7 @@
                 </li>
               </ul>
             </div>
-            <div class="gamemode__twoline--two__element">
+            <div class="gamemode__twoline--two__element bg-card">
               <ul>
                 <li
                     v-for="mode in twolinetwoelementGameMode"
