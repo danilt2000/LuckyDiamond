@@ -28,11 +28,11 @@
                 :key="mode.id"
             >
               <div class="line__content">
-                <h3>{{ mode.title }}</h3>
+                <h3 class="title-firstline">{{ mode.title }}</h3>
                 <div class="line__footer">
                   <img src="../assets/icons-gamemodes/bomb-icon.svg">
                   <div class="line__btn--main">
-                    <a href="#">play <span>></span></a>
+                    <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
                   </div>
                 </div>
               </div>
@@ -51,7 +51,7 @@
                 </div>
                 <div :class="'linecontent-' + mode.id">
                   <div class="container">
-                    <h1>{{ mode.title }}</h1>
+                    <h1 class="title-firstline">{{ mode.title }}</h1>
                     <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
                   </div>
                 </div>
