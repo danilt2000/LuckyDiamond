@@ -245,6 +245,7 @@
     font-family: Montserrat Alternates;
     font-size: 87px;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .gamemode__twoline--first__element .container {
