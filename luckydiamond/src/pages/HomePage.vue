@@ -74,6 +74,14 @@
               </li>
             </ul>
           </div>
+          <div class="gamemode__twoline--two__element">
+            <ul>
+              <li
+                  v-for="mode in two"
+              >
+              </li>
+            </ul>
+          </div>
         </div>
         </div>
     </section>
@@ -110,6 +118,9 @@ export default {
     },
     twolinefirstelementGameMode() {
       return this.GameModes.filter(mode => [3].includes(mode.id))
+    },
+    twolinetwoelementGameMode() {
+      return this.GameModes.filter(mode => [4].includes(mode.id))
     }
   }
 }
