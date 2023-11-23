@@ -67,6 +67,10 @@
                 <div :class="'linecontent-' + mode.id">
                   <h3>{{ mode.title }}</h3>
                 </div>
+                <div class="container">
+                  <a href="#" class="line__btn">play <span class="line__btn--elm ">></span></a>
+                  <img src="@/assets/icons-gamemodes/slots-icon.png">
+                </div>
               </li>
             </ul>
           </div>
