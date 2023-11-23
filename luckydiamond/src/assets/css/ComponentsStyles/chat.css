@@ -1,5 +1,5 @@
 .chat {
-    margin: 9px 12px 0px 0px;
+    margin: 1% 1.2% 0 0;
 }
 
 .chat__content {
@@ -12,7 +12,7 @@
 }
 
 .chat__title {
-    margin: 16px 0px 0px 23px;
+    margin: 16% 0 0 23%;
 }
 
 .chat__container--title h2 {
@@ -34,7 +34,7 @@
 }
 
 .card__user {
-    margin: 24px 70px 0px 23px;
+    margin: 4.8% 7.4% 0px 5%;
     display: flex;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .content {
-    margin-left: 13px;
+    margin-left: 4%;
     color: #fff;
     font-size: 12px;
     font-weight: 800;
@@ -64,13 +64,13 @@
 }
 
 .content p {
-    margin-top: 5px;
+    margin-top: 2%;
 }
 
 .write {
     position: absolute;
     bottom: 0;
-    margin: 24px 87px 22px 16px;
+    margin: 24% 87% 6% 2%;
     user-select: none;
     width: 50%;
 }
@@ -97,7 +97,7 @@
 
 .write__content button {
     padding: 8px 9px;
-    margin-left: -20px;
+    margin-left: -15%;
     border-radius: 6px;
     background: #3D3F48;
     border: none;
