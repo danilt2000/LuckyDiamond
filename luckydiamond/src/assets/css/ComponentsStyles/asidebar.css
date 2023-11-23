@@ -12,7 +12,7 @@
 }
 
 .menu__btn--home {
-    margin-top: 12px;
+    margin-top: 12%;
 }
 
 .menu__btns--gamemodes {
@@ -38,7 +38,7 @@
 }
 
 .menu__content--gamemodes a  {
-    padding: 20px 10px;
+    padding: 35% 7%;
 }
 
 .menu__content--gamemodes a img {
@@ -53,5 +53,5 @@
 .menu__btn--settings {
     position: absolute;
     bottom: 0;
-    margin-bottom: 12px;
+    margin-bottom: 1.2%;
 }
