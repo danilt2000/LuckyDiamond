@@ -1,0 +1,238 @@
+/* Main */
+
+.main {
+    display: flex;
+    justify-content: center;
+    border-radius: 40px;
+    background: #EF4444;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.main__content {
+    text-align: center;
+    color: #FFF;
+}
+
+.main__content h3 {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 3% 0 -3% 0;
+}
+
+.main__content h1 {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 91px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.main__content h4 {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@keyframes RaindowAnimate {
+    from {
+        color: #6EEB21;
+    }
+    10% {
+        color: #0099ff;
+    }
+    50% {
+        color: #00ff00;
+    }
+    75% {
+        color: #ff3399;
+    }
+    100% {
+        color: #6EEB21;
+    }
+}
+
+.default__text--main__block {
+    color: #6EEB21;
+}
+
+.animate__text--main__block {
+    animation: RaindowAnimate 5s infinite;
+    animation-delay: 5s;
+}
+
+/* /Main */
+
+/* GameMode */
+
+.gamemode__content--text h2 {
+    margin: 2% 0 .5% 10%;
+    text-transform: uppercase;
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.gamemode__content--text div {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #fff;
+}
+
+.gamemode__content--card {
+    display: flex;
+    margin-top: 1.8%;
+}
+
+.bg-card {
+    border-radius: 40px;
+    background: #EF4444;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.gamemode__main {
+    width: 32%;
+    height: 100%;
+    margin-left: 8%;
+}
+
+.gamemode__main .line__content1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.gamemode__main .content {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+.title-firstline {
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 91px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.line__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12%;
+}
+
+.line__footer img {
+    width: 60%;
+}
+
+.gamemode__lines {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+
+.gamemode__firstline {
+    margin: 0 0 0 5%;
+}
+
+.line__img {
+    float: right;
+    margin:  1% 6.6% 1% 4.7%;
+}
+
+
+.line__btn {
+    border-radius: 21px;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 11px 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 5%;
+    left: 2%;
+}
+
+.line__btn--elm {
+    color: #000;
+    font-size: 38px;
+}
+
+.linecontent-2 {
+    display: flex;
+    padding: 0.6% 0.6%;
+}
+
+.linecontent-2 h1 {
+    margin-bottom: 7%;
+}
+
+.gamemode__twolines {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.gamemode__twoline--first__element {
+    width: 100%;
+    margin: 3% 3.6% 0 5.5%;
+    min-height: 180px;
+}
+
+.linecontent-3 {
+    display: flex;
+    justify-content: center;
+}
+
+.title-twoline {
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 87px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.gamemode__twoline--first__element .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamemode__twoline--first__element .container a {
+    margin-right: 10%;
+    padding: 12px 10px;
+}
+
+.gamemode__twoline--two__element {
+    margin-top: 3%;
+    width: 100%;
+    min-height: 180px;
+}
+
+.gamemode__twoline--two__element .container {
+    display: flex;
+    justify-content: center;
+}
+
+.gamemode__twoline--two__element .container a {
+    margin-right: 10%;
+}
+
+/* /GameMode */
