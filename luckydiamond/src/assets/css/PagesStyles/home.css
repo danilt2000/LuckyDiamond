@@ -18,7 +18,7 @@
     font-family: Montserrat;
     font-size: 32px;
     font-weight: 700;
-    margin: 20px 0 -25px 0;
+    margin: 3% 0 -3% 0;
 }
 
 .main__content h1 {
@@ -86,7 +86,7 @@
 
 .gamemode__content--card {
     display: flex;
-    margin-top: 14px;
+    margin-top: 1.8%;
 }
 
 .bg-card {
@@ -142,12 +142,12 @@
 }
 
 .gamemode__firstline {
-    margin: 0 0 18px 35px;
+    margin: 0 0 0 5%;
 }
 
 .line__img {
     float: right;
-    margin:  10px 66px 10px 47px;
+    margin:  1% 6.6% 1% 4.7%;
 }
 
 
@@ -175,11 +175,11 @@
 
 .linecontent-2 {
     display: flex;
-    padding: 6px 6px;
+    padding: 0.6% 0.6%;
 }
 
 .linecontent-2 h1 {
-    margin-bottom: 30px;
+    margin-bottom: 7%;
 }
 
 .gamemode__twolines {
@@ -190,7 +190,7 @@
 
 .gamemode__twoline--first__element {
     width: 100%;
-    margin: 18px 36px 0 35px;
+    margin: 3% 3.6% 0 5.5%;
     min-height: 180px;
 }
 
@@ -221,7 +221,7 @@
 }
 
 .gamemode__twoline--two__element {
-    margin-top: 18px;
+    margin-top: 3%;
     width: 100%;
     min-height: 180px;
 }
