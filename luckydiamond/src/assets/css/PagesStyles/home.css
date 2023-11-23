@@ -159,11 +159,15 @@
 .gamemode__lines {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    height: 100%;
 }
 
 .gamemode__twolines {
     display: flex;
     align-items: flex-start;
+    height: 100%;
+    width: 100%;
 }
 
 .gamemode__firstline {
@@ -221,9 +225,9 @@
     background: #EF4444;
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 40px;
-    width: 55%;
-    height: 50%;
+    width: 100%;
     margin: 18px 36px 0 35px;
+    min-height: 180px;
 }
 
 .linecontent-3 {
@@ -252,13 +256,34 @@
 
 .gamemode__twoline--first__element .container a {
     margin-right: 10%;
-    padding: 20px 20px;
+    padding: 12px 10px;
 }
 
 .gamemode__twoline--two__element {
     border-radius: 40px;
     background: #EF4444;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 18px;
+    width: 100%;
+    min-height: 180px;
+}
+
+.gamemode__twoline--two__element .linecontent-4 h3 {
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 6px 12px 9px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 87px;
+}
+
+.gamemode__twoline--two__element .container {
+    display: flex;
+    justify-content: center;
+}
+
+.gamemode__twoline--two__element .container a {
+    margin-right: 10%;
 }
 
 /* /GameMode */

@@ -81,8 +81,12 @@
                     v-for="mode in twolinetwoelementGameMode"
                     :key="mode.id"
                 >
-                  <div :class="'linecontent' + mode.id">
+                  <div :class="'linecontent-' + mode.id">
                     <h3>{{ mode.title }}</h3>
+                  </div>
+                  <div class="container">
+                    <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
+                    <img src="@/assets/icons-gamemodes/crush-icon.svg">
                   </div>
                 </li>
               </ul>
