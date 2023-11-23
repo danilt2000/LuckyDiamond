@@ -82,7 +82,6 @@
     width: 80%;
     margin: 0 auto;
     border: 1px solid #fff;
-    height: 1px;
 }
 
 .gamemode__content--card {
@@ -185,7 +184,6 @@
 
 .gamemode__twolines {
     display: flex;
-    align-items: flex-start;
     height: 100%;
     width: 100%;
 }
@@ -199,8 +197,6 @@
 .linecontent-3 {
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .title-twoline {
@@ -213,15 +209,10 @@
     text-transform: uppercase;
 }
 
-.gamemode__twoline--first__element .linecontent-3 h3 {
-    padding-left: 5%;
-}
-
 .gamemode__twoline--first__element .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 .gamemode__twoline--first__element .container a {
