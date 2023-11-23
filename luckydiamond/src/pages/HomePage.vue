@@ -58,29 +58,35 @@
               </li>
             </ul>
           </div>
-          <div class="gamemode__twoline--first__element">
-            <ul>
-              <li
-                  v-for="mode in twolinefirstelementGameMode"
-                  :key="mode"
-              >
-                <div :class="'linecontent-' + mode.id">
-                  <h3>{{ mode.title }}</h3>
-                </div>
-                <div class="container">
-                  <a href="#" class="line__btn">play <span class="line__btn--elm ">></span></a>
-                  <img src="@/assets/icons-gamemodes/slots-icon.png">
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="gamemode__twoline--two__element">
-            <ul>
-              <li
-                  v-for="mode in two"
-              >
-              </li>
-            </ul>
+          <div class="gamemode__twolines">
+            <div class="gamemode__twoline--first__element">
+              <ul>
+                <li
+                    v-for="mode in twolinefirstelementGameMode"
+                    :key="mode"
+                >
+                  <div :class="'linecontent-' + mode.id">
+                    <h3>{{ mode.title }}</h3>
+                  </div>
+                  <div class="container">
+                    <a href="#" class="line__btn">play <span class="line__btn--elm ">></span></a>
+                    <img src="@/assets/icons-gamemodes/slots-icon.png">
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="gamemode__twoline--two__element">
+              <ul>
+                <li
+                    v-for="mode in twolinetwoelementGameMode"
+                    :key="mode.id"
+                >
+                  <div :class="'linecontent' + mode.id">
+                    <h3>{{ mode.title }}</h3>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         </div>
