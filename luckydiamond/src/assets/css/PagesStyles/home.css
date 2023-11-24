@@ -127,7 +127,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 2.5%;
+    padding-top: 10.6%;
 }
 
 .line__content .line__btn--main .line__btn {
@@ -214,6 +214,7 @@
     font-size: 87px;
     font-weight: 700;
     text-transform: uppercase;
+    padding: 4.5% 2.2%;
 }
 
 .gamemode__twoline--first__element .container {
@@ -225,6 +226,7 @@
 .gamemode__twoline--first__element .container a {
     margin-right: 10%;
     padding: 12px 10px;
+    margin-bottom: 3%;
 }
 
 .gamemode__twoline--two__element {
