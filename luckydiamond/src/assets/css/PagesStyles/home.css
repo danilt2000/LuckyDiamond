@@ -79,8 +79,8 @@
 }
 
 .gamemode__content--text div {
-    width: 84%;
-    margin: 0 auto;
+    width: 82%;
+    margin-left: 8%;
     border: 1px solid #fff;
 }
 
