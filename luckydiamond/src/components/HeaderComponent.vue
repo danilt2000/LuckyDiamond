@@ -1,3 +1,17 @@
+<script>
+import '@/assets/css/ComponentsStyles/header.css'
+// import { myFunction } from '@/assets/js/AuthService.js';
+
+export default {
+  name: 'Header-Element-page',
+  data() {
+    return {
+      balance: 25000,
+      auth: false
+    }
+  }
+}
+</script>
 <template>
   <header class="header">
     <div class="header__content">
@@ -38,20 +52,6 @@
     </div>
   </header>
 </template>
-
-<script>
-import '@/assets/css/ComponentsStyles/header.css'
-
-export default {
-  name: 'Header-Element-page',
-  data() {
-    return {
-      balance: 25000,
-      auth: false
-    }
-  }
-}
-</script>
 
 <style scoped>
 
