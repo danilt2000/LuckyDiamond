@@ -6,7 +6,7 @@
       </div>
       <div class="header__nav">
         <nav>
-          <a href="#" class="header__nav--now">Главная</a>
+          <a href="#" @click="$router.push({ name: 'home' })" class="header__nav--now">Главная</a>
           <a href="#">Профиль</a>
           <a href="#">Помощь</a>
         </nav>
