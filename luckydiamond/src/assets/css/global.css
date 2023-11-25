@@ -47,12 +47,12 @@ body, html {
     grid-auto-flow: row;
     grid-template-areas:
     "menu header header header header header header"
-    "menu profile profile payments payments payments chat"
-    "menu profile profile payments payments payments chat"
-    "menu profile profile payments payments payments chat"
-    "menu profile profile payments payments payments chat"
-    "menu profile profile payments payments payments chat"
-    "menu profile profile payments payments payments chat";
+    "menu profile profile profile profile profile chat"
+    "menu profile profile profile profile profile chat"
+    "menu profile profile profile profile profile chat"
+    "menu profile profile profile profile profile chat"
+    "menu profile profile profile profile profile chat"
+    "menu profile profile profile profile profile chat";
     grid-gap: 10px;
     height: 100%;
 }

@@ -6,7 +6,16 @@
 
     <header-component></header-component>
 
+  <section class="profile">
+    <div class="profile__content">
 
+    </div>
+    <div class="payments">
+      <div class="payments__content">
+
+      </div>
+    </div>
+  </section>
   </div>
 </template>
 
