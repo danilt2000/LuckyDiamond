@@ -61,7 +61,7 @@ export default {
         <!-- <div v-else class="header__card--auth"> -->
         <div class="header__card--auth">
           <div class="auth__card--content">
-            <a href="https://discord.com/api/oauth2/authorize?client_id=1148644854797176932&redirect_uri=https%3A%2F%2Flucky-diamond.vercel.app%2F&response_type=code&scope=identify" @click="auth = true"><span><img width="30" height="30" src="../assets/icons-header/discord-icon.svg"></span>Вход</a>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1148644854797176932&redirect_uri=https%3A%2F%2Flucky-diamond.vercel.app&response_type=code&scope=identify" @click="auth = true"><span><img width="30" height="30" src="../assets/icons-header/discord-icon.svg"></span>Вход</a>
           </div>
         </div>
       </div>
