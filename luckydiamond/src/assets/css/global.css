@@ -24,7 +24,7 @@ body, html {
 
 .content-grid {
     display: grid;
-    grid-template-columns: .35fr repeat(5, 1fr) 1.2fr;
+    grid-template-columns: .35fr repeat(5, 1fr) 1fr;
     grid-template-rows: auto 0fr repeat(4, 1fr);
     grid-auto-columns: 1fr;
     grid-auto-flow: row;
@@ -84,9 +84,9 @@ body, html {
 
 .main {
     grid-area: main;
-    width: 80%;
+    width: 82%;
     height: 90%;
-    margin: 2.7% auto 0;
+    margin: 2.7% auto 0 8%;
 }
 
 /* /Main */
