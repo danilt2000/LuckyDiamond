@@ -123,6 +123,8 @@ body, html {
 
 .profile {
     grid-area: profile;
+    height: 100%;
+    background: #fff;
 }
 
 /* /Profile */
@@ -131,6 +133,8 @@ body, html {
 
 .payments {
     grid-area: payments;
+    background: #d5d5d5;
+    height: 100%;
 }
 
 /* /Payments */
