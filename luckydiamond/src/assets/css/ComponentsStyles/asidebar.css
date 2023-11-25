@@ -31,13 +31,25 @@
     border-radius: 20px;
 }
 
+.menu__content--slots-icon {
+    margin-left: 5px
+}
+
+.menu__content--cruch-icon {
+    margin-left: 6px
+}
+
+.menu__content--bomb-icon {
+    margin-left: 6px
+}
+
 .menu__content--gamemodes {
     display: flex;
     text-align: center;
     flex-direction: column;
 }
 
-.menu__content--gamemodes a  {
+.menu__content--gamemodes a {
     padding: 35% 7%;
 }
 
