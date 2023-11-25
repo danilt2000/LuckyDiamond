@@ -7,6 +7,6 @@ export default createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/', component: HomePage, name: 'home' },
-        { path: '/', component: ProfilePage, name: 'profile' }
+        { path: '/profile', component: ProfilePage, name: 'profile' }
     ]
 })
