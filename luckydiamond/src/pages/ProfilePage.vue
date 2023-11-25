@@ -6,6 +6,13 @@
 
     <header-component></header-component>
 
+    <div class="profile">
+
+    </div>
+
+    <div class="payments">
+
+    </div>
   </div>
 </template>
 
