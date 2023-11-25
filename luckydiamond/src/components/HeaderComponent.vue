@@ -6,8 +6,8 @@
       </div>
       <div class="header__nav">
         <nav>
-          <a href="#" @click="$router.push({ name: 'home' })" class="header__nav--now">Главная</a>
-          <a href="#" @click="$router.push({ name: 'profile' })">Профиль</a>
+          <a href="#" @click="$router.push({ name: 'home' })" :class="{ 'header__nav--now' : route === 'home' }">Главная</a>
+          <a href="#" @click="$router.push({ name: 'profile' })" :class="{ 'header__nav--now' : route === 'profile' }">Профиль</a>
           <a href="#">Помощь</a>
         </nav>
       </div>
@@ -47,8 +47,12 @@ export default {
   data() {
     return {
       balance: 25000,
-      auth: false
+      auth: false,
+      route: ''
     }
+  },
+  mounted() {
+    this.route = this.$route.name
   }
 }
 </script>
