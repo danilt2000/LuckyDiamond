@@ -11,16 +11,19 @@ export default {
       auth: false
     }
   }, created() {
-    let authCode = this.$route.query.code;
+    try {
+      let authCode = this.$route.query.code;
+      console.log('Auth Code:', authCode);
 
-    LogIn(authCode).then(data => {
-    console.log(data);
-    // Обработка данных, возвращённых LogIn
-    this.auth = true; // Обновляем состояние, основываясь на данных
-  }).catch(error => {
-    console.log(error)
-})
-    console.log(authCode)
+      if (authCode) {
+        const data =  LogIn(authCode);
+        console.log('Auth Data:', data);
+      } else {
+        console.log('Auth Code отсутствует');
+      }
+    } catch (error) {
+      console.error('Ошибка при аутентификации:', error);
+    }
   }
 }
 </script>
@@ -48,16 +51,17 @@ export default {
         </div>
       </div>
       <div class="header__auth--discord">
-        <div v-if="auth" class="header__card--discord">
+        <!-- <div v-if="auth" class="header__card--discord">
           <div class="discord__card--name">
             <h2>Artemka</h2>
             <a href="#" @click="auth = false">Выход<span><img src="../assets/icons-header/exit-icon.png"></span></a>
           </div>
           <img src="../assets/icons-test/person-icon.svg" alt="test-ico">
-        </div>
-        <div v-else class="header__card--auth">
+        </div> -->
+        <!-- <div v-else class="header__card--auth"> -->
+        <div class="header__card--auth">
           <div class="auth__card--content">
-            <a href="#" @click="auth = true"><span><img width="30" height="30" src="../assets/icons-header/discord-icon.svg"></span>Вход</a>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1148644854797176932&redirect_uri=https%3A%2F%2Flucky-diamond.vercel.app%2F&response_type=code&scope=identify" @click="auth = true"><span><img width="30" height="30" src="../assets/icons-header/discord-icon.svg"></span>Вход</a>
           </div>
         </div>
       </div>
