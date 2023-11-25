@@ -1,0 +1,80 @@
+.profile__content {
+    width: 35%;
+    margin-left: 36px;
+}
+
+.profile__content .profile__user--img {
+    margin: 88px 42px 5px 0;
+}
+
+.profile__card {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__card h1 {
+    color: #FFF;
+    font-weight: 700;
+    font-family: Montserrat;
+    font-size: 40px;
+}
+
+.profile__card h2 {
+    border-radius: 20px;
+    background: #22252F;
+    width: 32%;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-weight: 700;
+    font-family: Montserrat Alternates;
+    font-size: 28px;
+}
+
+.profile__card h2 img {
+    margin-right: 7px;
+}
+
+.profile__btns--payments {
+    margin-top: 39px;
+    display: flex;
+    flex-direction: column;
+}
+
+.deposit-icon {
+    margin: 3px 0 0 10px;
+}
+
+.withdraw-icon {
+    margin-left: 33px;
+}
+
+.btn-bg {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 36%;
+}
+
+.btn-margin {
+    padding: 9px 0 13px 13px;
+    margin-bottom: 11px;
+}
+
+.btn-display {
+    display: flex;
+    align-items: center;
+}
+
+.text-btn {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 18px;
+}
+
+.withdraw {
+    padding: 9px 0 13px 13px;
+}

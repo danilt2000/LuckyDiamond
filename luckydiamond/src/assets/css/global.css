@@ -123,19 +123,11 @@ body, html {
 
 .profile {
     grid-area: profile;
-    height: 100%;
-    width: 100%;
-    background: #fff;
+    height: 95%;
+    border-radius: 50px;
+    background: #17181C;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 10px 39px 18px 13px;
 }
 
 /* /Profile */
-
-/* Payments */
-
-.payments {
-    grid-area: payments;
-    background: #d5d5d5;
-    height: 100%;
-}
-
-/* /Payments */
