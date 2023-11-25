@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="../assets/css/PagesStyles/home.css">
 <template>
   <div class="content-grid">
-    <aside-bar-element @animationchange="claimSettings"></aside-bar-element>
+    <aside-bar-component></aside-bar-component>
 
-    <chat-element></chat-element>
+    <chat-component></chat-component>
 
-    <header-element-page></header-element-page>
+    <header-component></header-component>
 
     <main class="main">
       <div class="main__content">
@@ -99,15 +99,15 @@
 </template>
 
 <script>
-import HeaderElementPage from "@/components/HeaderComponent.vue";
-import AsideBarElement from "@/components/AsidebarComponent.vue";
-import ChatElement from "@/components/ChatComponent.vue";
+import HeaderComponent from "@/components/HeaderComponent.vue";
+import AsideBarComponent from "@/components/AsidebarComponent.vue";
+import ChatComponent from "@/components/ChatComponent.vue";
 import GameModes from "@/mocks/GameModes";
 import '@/assets/css/PagesStyles/home.css'
 
 export default {
   name: 'HomePage',
-  components: {AsideBarElement, HeaderElementPage, ChatElement },
+  components: { AsideBarComponent, HeaderComponent, ChatComponent },
   data() {
     return {
       GameModes,
@@ -115,9 +115,9 @@ export default {
     }
   },
   methods: {
-    claimSettings(value) {
-      this.AnimationOff = value
-    }
+    // claimSettings(value) {
+    //   this.AnimationOff = value
+    // }
   },
   computed: {
     mainGameMode() {
