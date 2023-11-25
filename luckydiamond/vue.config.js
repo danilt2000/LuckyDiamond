@@ -6,6 +6,22 @@
 //     : '/'
 // }
 
+// module.exports = {
+//   publicPath: '/'
+// }
+
+const path = require('path');
+
 module.exports = {
-  publicPath: '/'
-}
+  // Установка базового URL-адреса для проекта
+  publicPath: '/',
+
+  // Настройка Webpack
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src/'), // Настройка алиаса '@' для каталога 'src/'
+      }
+    }
+  }
+};

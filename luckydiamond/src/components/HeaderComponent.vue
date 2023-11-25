@@ -1,6 +1,7 @@
 <script>
 import '@/assets/css/ComponentsStyles/header.css'
-// import { myFunction } from '@/assets/js/AuthService.js';
+// import { GetAuthCodeFromCurrentPath } from '@/assets/js/authentication/LoggingMiddleware.js';
+import { LogIn } from '@/assets/js/authentication/AuthService.js';
 
 export default {
   name: 'Header-Element-page',
@@ -9,6 +10,17 @@ export default {
       balance: 25000,
       auth: false
     }
+  }, created() {
+    let authCode = this.$route.query.code;
+
+    LogIn(authCode).then(data => {
+    console.log(data);
+    // Обработка данных, возвращённых LogIn
+    this.auth = true; // Обновляем состояние, основываясь на данных
+  }).catch(error => {
+    console.log(error)
+})
+    console.log(authCode)
   }
 }
 </script>
