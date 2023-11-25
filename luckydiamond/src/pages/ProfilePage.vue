@@ -20,7 +20,31 @@
     </div>
     <div class="payments">
       <div class="payments__content">
-
+        <div class="payments__types">
+          <div class="types types-margin types-text">
+            <h3>Игрок и вид транзакции</h3>
+            <h3>Дата</h3>
+            <h3>Сумма</h3>
+          </div>
+          <div class="types-line"></div>
+        </div>
+        <div class="payments__history">
+          <div class="payments__card">
+            <div class="user-info">
+              <img src="@/assets/icons-test/person-icon-profile-userinfo.png">
+              <div class="user-name user-name__text">
+                <h3>{{ username }}</h3>
+                <p>test</p>
+              </div>
+            </div>
+            <div class="data-info data-info__text">
+              <h3>5ч назад</h3>
+            </div>
+            <div class="transaction-info transaction-info__text">
+              <h3>-1 АР</h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

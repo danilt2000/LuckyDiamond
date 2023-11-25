@@ -78,3 +78,82 @@
 .withdraw {
     padding: 9px 0 13px 13px;
 }
+
+
+.payments {
+    margin: 29px 0 0 -60px;
+}
+
+.types {
+    display: flex;
+}
+
+.types-margin h3 {
+    margin-right: 125px;
+}
+
+.types-text h3 {
+    color: #ABABB4;
+    font-weight: 600;
+    font-family: Montserrat;
+    font-size: 14px;
+}
+
+.types-line {
+    margin-top: 12px;
+    background: #38383E;
+    width: 86%;
+    height: 3px;
+}
+
+.payments__card {
+    margin-top: 29px;
+    display: flex;
+    align-items: start;
+}
+
+.user-info {
+    display: flex;
+}
+
+.user-name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.user-name__text h3 {
+    color: #FFF;
+    font-weight: 700;
+    font-family: Montserrat;
+    font-size: 20px;
+}
+
+.user-name__text p {
+    color: #A9A9A9;
+    font-weight: 400;
+    font-family: Montserrat;
+    font-size: 20px;
+}
+
+.data-info {
+    margin-left: 115px;
+}
+
+.data-info__text h3 {
+    color: #A9A9A9;
+    font-weight: 400;
+    font-family: Montserrat;
+    font-size: 17px;
+}
+
+.transaction-info {
+    margin-left: 90px;
+}
+
+.transaction-info__text h3 {
+    color: #EA3D38;
+    font-weight: 500;
+    font-family: Montserrat;
+    font-size: 22px;
+}
