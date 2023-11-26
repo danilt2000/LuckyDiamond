@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="../assets/css/PagesStyles/home.css">
 <template>
-  <div class="content-grid">
+  <homemobile-page v-if="mobile"></homemobile-page>
+  <div class="content-grid" v-if="!mobile">
     <aside-bar-component></aside-bar-component>
 
     <chat-component></chat-component>
@@ -102,22 +102,38 @@
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
+import HomemobilePage from "@/pages/adaptive-pages/HomemobilePage.vue";
 import GameModes from "@/mocks/GameModes";
 import '@/assets/css/PagesStyles/home.css'
 
 export default {
   name: 'HomePage',
-  components: { AsideBarComponent, HeaderComponent, ChatComponent },
+  components: { AsideBarComponent, HeaderComponent, ChatComponent, HomemobilePage },
   data() {
     return {
       GameModes,
-      AnimationOff: false
+      AnimationOff: false,
+      mobile: false,
+      currentPage: 'Desktop'
     }
   },
   methods: {
     // claimSettings(value) {
     //   this.AnimationOff = value
-    // }
+    // },
+    checkWindowSize() {
+      this.mobile = window.innerWidth <= 600
+
+      this.currentPage = this.mobile ? 'Mobile' : 'Desktop'
+    }
+  },
+  mounted() {
+    this.checkWindowSize()
+
+    window.addEventListener('resize', this.checkWindowSize)
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkWindowSize)
   },
   computed: {
     mainGameMode() {
