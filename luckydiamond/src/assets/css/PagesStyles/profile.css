@@ -1,10 +1,10 @@
 .profile__content {
     width: 35%;
-    margin-left: 36px;
+    margin-left: 3%;
 }
 
 .profile__content .profile__user--img {
-    margin: 88px 42px 5px 0;
+    margin: 17.6% 8.4% 1% 0;
 }
 
 .profile__card {
@@ -32,11 +32,11 @@
 }
 
 .profile__card h2 img {
-    margin-right: 7px;
+    margin-right: 4.4%;
 }
 
 .profile__btns--payments {
-    margin-top: 39px;
+    margin-top: 7.9%;
     display: flex;
     flex-direction: column;
 }
@@ -57,7 +57,7 @@
 }
 
 .btn-margin {
-    padding: 9px 0 13px 13px;
+    padding: 1.8% 0 2% 2%;
     margin-bottom: 11px;
 }
 
@@ -76,12 +76,12 @@
 }
 
 .withdraw {
-    padding: 9px 0 13px 13px;
+    padding: 1.8% 0 2% 2%;
 }
 
 
 .payments {
-    margin: 29px 0 0 -60px;
+    margin: 2% 0 0 -4.25%;
 }
 
 .types {
@@ -89,7 +89,7 @@
 }
 
 .types-margin h3 {
-    margin-right: 125px;
+    margin-right: 7.813em;
 }
 
 .types-text h3 {
@@ -100,14 +100,14 @@
 }
 
 .types-line {
-    margin-top: 12px;
+    margin-top: 2.1%;
     background: #38383E;
     width: 86%;
     height: 3px;
 }
 
 .payments__card {
-    margin-top: 29px;
+    margin-top: 4.9%;
     display: flex;
     align-items: start;
 }
@@ -119,7 +119,7 @@
 .user-name {
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: 0.625em;
 }
 
 .user-name__text h3 {
@@ -137,7 +137,7 @@
 }
 
 .data-info {
-    margin-left: 95px;
+    margin-left: 13%;
 }
 
 .data-info__text h3 {
@@ -148,7 +148,7 @@
 }
 
 .transaction-info {
-    margin-left: 95px;
+    margin-left: 13%;
 }
 
 .transaction-info__text h3 {
