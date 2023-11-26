@@ -48,7 +48,7 @@
       </div>
     </div>
   </section>
-    <payments-modal v-if="openModal" @closemodal="openModal = false" :payments="payments"></payments-modal>
+    <payments-modal v-if="openModal" @deposit="claimDataDeposit" @withdraw="claimDataWithdraw" @closemodal="openModal = false" :payments="payments"></payments-modal>
   </div>
 </template>
 
@@ -66,7 +66,8 @@ export default {
       username: 'Artemka',
       balance: 25000,
       openModal: false,
-      payments: true
+      payments: true,
+      arrayHistory: [],
     }
   },
   methods: {
@@ -77,6 +78,26 @@ export default {
     withdrawClick() {
       this.openModal = true
       this.payments = false
+    },
+    claimDataDeposit(amount) {
+      const historyPayments = {
+        name: 'TEST USER',
+        comment: 'test',
+        data: '5ч назад',
+        amount: amount
+      }
+
+      this.arrayHistory.push(historyPayments)
+    },
+    claimDataWithdraw(amount) {
+      const historyPayments = {
+        name: 'TEST USER',
+        comment: 'test',
+        data: '5ч назад',
+        amount: -amount
+      }
+
+      this.arrayHistory.push(historyPayments)
     }
   }
 }

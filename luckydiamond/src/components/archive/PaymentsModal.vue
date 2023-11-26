@@ -45,6 +45,7 @@ export default {
       return this.$emit('closemodal')
     },
     detectorMethod(method) {
+      this.closeModal()
       if (method === 'dep') {
         return this.$emit('deposit', this.amount)
       }
