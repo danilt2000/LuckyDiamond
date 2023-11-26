@@ -11,7 +11,18 @@
         <button type="submit">Подтвердить</button>
       </div>
     </div>
-    <div v-else class="payments-modal__withdraw payments-input__color payments__margin payments__button">
+    <div v-else class="payments-modal__withdraw payments__input--color payments__margin payments__button">
+      <div class="count-withdraw">
+        <label>Введите сумму для снятия</label>
+        <input type="number">
+      </div>
+      <div class="number-card">
+        <label>Введите номер карты</label>
+        <input type="number">
+      </div>
+      <div class="payments-modal__content--btn">
+        <button type="submit">Подтвердить</button>
+      </div>
     </div>
   </div>
 </template>
