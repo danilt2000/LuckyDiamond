@@ -152,8 +152,15 @@
 }
 
 .transaction-info__text h3 {
-    color: #EA3D38;
     font-weight: 500;
     font-family: Montserrat;
     font-size: 22px;
+}
+
+.deposit-color h3 {
+    color: #32C966;
+}
+
+.withdraw-color h3 {
+    color: #EA3D38;
 }

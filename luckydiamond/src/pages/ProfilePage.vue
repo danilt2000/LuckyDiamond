@@ -40,7 +40,7 @@
             <div class="data-info data-info__text">
               <h3>{{ payment.data }}</h3>
             </div>
-            <div class="transaction-info transaction-info__text">
+            <div class="transaction-info transaction-info__text" :class="{ 'withdraw-color': payment.amount < 0, 'deposit-color': payment.amount > 0 }">
               <h3>{{ payment.amount }} АР</h3>
             </div>
           </div>
