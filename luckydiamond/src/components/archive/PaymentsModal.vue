@@ -6,22 +6,22 @@
     </div>
     <div v-if="payments" class="payments-modal__deposit payments__input--color payments__margin payments__button">
       <label>Введите сумму пополнения</label>
-      <input type="number">
+      <input v-model="amount" type="number">
       <div class="payments-modal__content--btn">
-        <button type="submit">Подтвердить</button>
+        <button type="submit" @click="detectorMethod('dep')">Подтвердить</button>
       </div>
     </div>
     <div v-else class="payments-modal__withdraw payments__input--color payments__margin payments__button">
       <div class="count-withdraw">
         <label>Введите сумму для снятия</label>
-        <input type="number">
+        <input v-model="amount" type="number">
       </div>
       <div class="number-card">
         <label>Введите номер карты</label>
-        <input type="number">
+        <input v-model="card" type="number">
       </div>
       <div class="payments-modal__content--btn">
-        <button type="submit">Подтвердить</button>
+        <button type="submit" @click="detectorMethod('with')">Подтвердить</button>
       </div>
     </div>
   </div>
@@ -36,11 +36,25 @@ export default {
   ],
   data() {
     return {
+      amount: 1,
+      card: 0,
     }
   },
   methods: {
     closeModal() {
       return this.$emit('closemodal')
+    },
+    detectorMethod(method) {
+      if (method === 'dep') {
+        return this.$emit('deposit', this.amount)
+      }
+      else if (method === 'with') {
+        return this.$emit('withdraw', this.amount, this.card)
+      }
+      else {
+        console.log('Произошла ошибка при взаимодействие')
+        return
+      }
     }
   }
 }
