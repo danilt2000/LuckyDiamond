@@ -1,3 +1,32 @@
+<script>
+import '@/assets/css/ComponentsStyles/header.css'
+// import { GetAuthCodeFromCurrentPath } from '@/assets/js/authentication/LoggingMiddleware.js';
+import { LogIn } from '@/assets/js/authentication/AuthService.js';
+
+export default {
+  name: 'Header-Element-page',
+  data() {
+    return {
+      balance: 25000,
+      auth: false
+    }
+  }, created() {
+    try {
+      let authCode = this.$route.query.code;
+      console.log('Auth Code:', authCode);
+
+      if (authCode) {
+        const data =  LogIn(authCode);
+        console.log('Auth Data:', data);
+      } else {
+        console.log('Auth Code отсутствует');
+      }
+    } catch (error) {
+      console.error('Ошибка при аутентификации:', error);
+    }
+  }
+}
+</script>
 <template>
   <header class="header">
     <div class="header__content">
@@ -22,16 +51,17 @@
         </div>
       </div>
       <div class="header__auth--discord">
-        <div v-if="auth" class="header__card--discord">
+        <!-- <div v-if="auth" class="header__card--discord">
           <div class="discord__card--name">
             <h2>Artemka</h2>
             <a href="#" @click="auth = false">Выход<span><img src="../assets/icons-header/exit-icon.png"></span></a>
           </div>
           <img src="../assets/icons-test/person-icon.svg" alt="test-ico">
-        </div>
-        <div v-else class="header__card--auth">
+        </div> -->
+        <!-- <div v-else class="header__card--auth"> -->
+        <div class="header__card--auth">
           <div class="auth__card--content">
-            <a href="#" @click="auth = true"><span><img width="30" height="30" src="../assets/icons-header/discord-icon.svg"></span>Вход</a>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1148644854797176932&redirect_uri=https%3A%2F%2Flucky-diamond.vercel.app&response_type=code&scope=identify" @click="auth = true"><span><img width="30" height="30" src="../assets/icons-header/discord-icon.svg"></span>Вход</a>
           </div>
         </div>
       </div>
@@ -39,6 +69,7 @@
   </header>
 </template>
 
+<<<<<<< HEAD
 <script>
 import '@/assets/css/ComponentsStyles/header.css'
 
