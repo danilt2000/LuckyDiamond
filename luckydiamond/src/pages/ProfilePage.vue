@@ -14,8 +14,8 @@
         <h2><img src="@/assets/icons-profile/icon-diamond-ore.png">{{ balance }}</h2>
       </div>
       <div class="profile__btns--payments">
-        <a href="#" class="text-btn btn-bg btn-margin btn-display">Пополнить <img class="deposit-icon" src="@/assets/icons-profile/icon-deposit.svg"></a>
-        <a href="#" class="withdraw text-btn btn-bg btn-display">Вывести <img class="withdraw-icon" src="@/assets/icons-profile/icon-withdraw.svg"></a>
+        <a href="#" class="text-btn btn-bg btn-margin btn-display" @click="withdrawClick">Пополнить <img class="deposit-icon" src="@/assets/icons-profile/icon-deposit.svg"></a>
+        <a href="#" class="withdraw text-btn btn-bg btn-display" @click="depositClick">Вывести <img class="withdraw-icon" src="@/assets/icons-profile/icon-withdraw.svg"></a>
       </div>
     </div>
     <div class="payments">
@@ -48,6 +48,7 @@
       </div>
     </div>
   </section>
+    <payments-modal v-if="openModal" @closemodal="openModal = false" :payments="payments"></payments-modal>
   </div>
 </template>
 
@@ -55,16 +56,28 @@
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import PaymentsModal from "@/components/archive/PaymentsModal.vue";
 import '@/assets/css/PagesStyles/profile.css'
 
 export default {
-  components: { HeaderComponent, AsideBarComponent, ChatComponent },
+  components: { HeaderComponent, AsideBarComponent, ChatComponent, PaymentsModal },
   data() {
     return {
       username: 'Artemka',
-      balance: 25000
+      balance: 25000,
+      openModal: false,
+      payments: true
+    }
+  },
+  methods: {
+    withdrawClick() {
+      this.openModal = true
+      this.payments = false
+    },
+    depositClick() {
+      this.openModal = true
+      this.payments = true
     }
   }
-
 }
 </script>
