@@ -1,0 +1,35 @@
+.content-grid__mobile-home {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr repeat(2, 0.5fr) 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "header-mobile header-mobile header-mobile header-mobile"
+    "main-mobile main-mobile main-mobile main-mobile"
+    "main-mobile main-mobile main-mobile main-mobile"
+    "footer-mobile footer-mobile footer-mobile footer-mobile";
+    height: 100%;
+    width: 100%;
+}
+
+.header-mobile {
+    grid-area: header-mobile;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.main-mobile {
+    grid-area: main-mobile;
+    width: 100%;
+    height: 100%;
+    background: #983838;
+}
+
+.footer-mobile {
+    grid-area: footer-mobile;
+    width: 100%;
+    height: 100%;
+    background: #73ce36;
+}
