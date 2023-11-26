@@ -29,19 +29,19 @@
           <div class="types-line"></div>
         </div>
         <div class="payments__history">
-          <div class="payments__card">
+          <div class="payments__card" v-for="payment in arrayHistory" :key="payment.id">
             <div class="user-info">
               <img src="@/assets/icons-test/person-icon-profile-userinfo.png">
               <div class="user-name user-name__text">
-                <h3>{{ username }}</h3>
-                <p>test</p>
+                <h3>{{ payment.name }}</h3>
+                <p>{{ payment.comment }}</p>
               </div>
             </div>
             <div class="data-info data-info__text">
-              <h3>5ч назад</h3>
+              <h3>{{ payment.data }}</h3>
             </div>
             <div class="transaction-info transaction-info__text">
-              <h3>-1 АР</h3>
+              <h3>{{ payment.amount }} АР</h3>
             </div>
           </div>
         </div>
