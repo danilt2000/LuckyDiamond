@@ -1,32 +1,3 @@
-<script>
-import '@/assets/css/ComponentsStyles/header.css'
-// import { GetAuthCodeFromCurrentPath } from '@/assets/js/authentication/LoggingMiddleware.js';
-import { LogIn } from '@/assets/js/authentication/AuthService.js';
-
-export default {
-  name: 'Header-Element-page',
-  data() {
-    return {
-      balance: 25000,
-      auth: false
-    }
-  }, created() {
-    try {
-      let authCode = this.$route.query.code;
-      console.log('Auth Code:', authCode);
-
-      if (authCode) {
-        const data =  LogIn(authCode);
-        console.log('Auth Data:', data);
-      } else {
-        console.log('Auth Code отсутствует');
-      }
-    } catch (error) {
-      console.error('Ошибка при аутентификации:', error);
-    }
-  }
-}
-</script>
 <template>
   <header class="header">
     <div class="header__content">
@@ -69,9 +40,9 @@ export default {
   </header>
 </template>
 
-<<<<<<< HEAD
 <script>
 import '@/assets/css/ComponentsStyles/header.css'
+import { LogIn } from '@/assets/js/authentication/AuthService.js';
 
 export default {
   name: 'Header-Element-page',
@@ -84,6 +55,21 @@ export default {
   },
   mounted() {
     this.route = this.$route.name
+  },
+  created() {
+    try {
+      let authCode = this.$route.query.code;
+      console.log('Auth Code:', authCode);
+
+      if (authCode) {
+        const data =  LogIn(authCode);
+        console.log('Auth Data:', data);
+      } else {
+        console.log('Auth Code отсутствует');
+      }
+    } catch (error) {
+      console.error('Ошибка при аутентификации:', error);
+    }
   }
 }
 </script>
