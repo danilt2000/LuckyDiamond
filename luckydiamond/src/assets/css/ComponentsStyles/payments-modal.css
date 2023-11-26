@@ -2,12 +2,12 @@
     position: absolute;
     top: 20%;
     left: 35%;
-}
-
-.payments-modal__content {
     background: #000;
     width: 400px;
     height: 200px;
+}
+
+.payments-modal__content {
     text-align: center;
     display: flex;
     justify-content: space-between;
@@ -20,5 +20,32 @@
     width: 40px;
     height: 40px;
     font-size: 40px;
+    cursor: pointer;
+}
+
+.payments__input--color input {
+    color: #000;
+}
+
+.payments__margin {
+    margin: 40px 0 0 20px;
+}
+
+.payments__margin input {
+    margin-left: 10px;
+}
+
+.payments__button .payments-modal__content--btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.payments__button .payments-modal__content--btn button {
+    background: #fff;
+    color: #000;
+    font-weight: 700;
+    padding: 10px 10px;
+    border: none;
     cursor: pointer;
 }

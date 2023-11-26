@@ -1,8 +1,17 @@
 <template>
-  <div class="payment-modal" :class="{ 'deposit-modal': payments, 'withdraw-modal': !payments }">
+  <div class="payment-modal">
     <div class="payments-modal__content">
-      <h1>{{ payments ? 'Вывод' : 'Пополнить' }}</h1>
+      <h1>{{ payments ? 'Пополнить' : 'Вывод' }}</h1>
       <button @click="closeModal">X</button>
+    </div>
+    <div v-if="payments" class="payments-modal__deposit payments__input--color payments__margin payments__button">
+      <label>Введите сумму пополнения</label>
+      <input type="number">
+      <div class="payments-modal__content--btn">
+        <button type="submit">Подтвердить</button>
+      </div>
+    </div>
+    <div v-else class="payments-modal__withdraw payments-input__color payments__margin payments__button">
     </div>
   </div>
 </template>
