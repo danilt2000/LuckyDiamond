@@ -41,10 +41,6 @@
     justify-content: space-between;
 }
 
-.header-mobile__nav {
-    display: flex;
-}
-
 .header-mobile__logo {
     padding: 23px 0 11px 17px;
 }
@@ -53,19 +49,43 @@
     width: 170px;
 }
 
-.balance-mobile__card {
-    align-self: start;
+.header-mobile__balance--content {
     display: flex;
+    align-items: center;
 }
 
-.card-balance h2 {
+.header-mobile__card {
     border-radius: 7px;
     background: #22252F;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card-display h2 {
     display: flex;
-    text-align: center;
-    align-items: center;
-    font-size: 0.813em;
+    align-items: flex-end;
+    padding: 6px 15px 6px 5px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-text {
+    color: #FFF;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 13px;
+}
+
+.btn-card img {
+    width: 40px;
+    height: 40px;
+}
+
+.btn-card__margin {
+    margin-left: -10px;
 }
 
 /* /Header */
