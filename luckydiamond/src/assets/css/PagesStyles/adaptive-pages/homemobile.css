@@ -17,14 +17,13 @@
     border-radius: 20px;
     background: #17181C;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    height: 45%;
+    height: 55%;
 }
 
 .main-mobile {
     grid-area: main-mobile;
     width: 100%;
     height: 100%;
-    background: #983838;
 }
 
 .footer-mobile {
@@ -94,12 +93,31 @@
 /* Main */
 
 .main-mobile {
-    margin-top: 40%;
+    margin-top: 30%;
 }
 
 .main-mobile__content {
     display: flex;
     justify-content: center;
+}
+
+.bg-mobile {
+    border-radius: 10px;
+    background: #EF4444;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 150px;
+    height: 105px;
+}
+
+.card-mobile__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-first {
+    margin-left: 10px;
 }
 
 /* /Main */

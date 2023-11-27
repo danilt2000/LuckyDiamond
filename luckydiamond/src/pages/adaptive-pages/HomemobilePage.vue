@@ -20,7 +20,17 @@
     </header>
     <main class="main-mobile">
       <div class="main-mobile__content">
-
+        <div class="main-mobile__first-line" v-for="mode in firstlineGameMode" :key="mode">
+          <div class="card-mobile__content bg-mobile card-first">
+            <h2>{{ mode.title }}</h2>
+            <div class="card-mobile__btn">
+              <a href="#">Play ></a>
+            </div>
+          </div>
+        </div>
+        <div class="main-mobile__two-line" v-for="mode in twolineGameMode" :key="mode">
+          <h1>1</h1>
+        </div>
       </div>
     </main>
     <footer class="footer-mobile">
@@ -31,9 +41,23 @@
 
 <script>
 import '@/assets/css/PagesStyles/adaptive-pages/homemobile.css'
+import '@/mocks/GameModes'
+import GameModes from "@/mocks/GameModes";
 
 export default {
-
+  data() {
+    return {
+      GameModes
+    }
+  },
+  computed: {
+    firstlineGameMode() {
+      return this.GameModes.filter(mode => [1, 2].includes(mode.id))
+    },
+    twolineGameMode() {
+      return this.GameModes.filter(mode => [3, 4].includes(mode.id))
+    }
+  }
 }
 </script>
 
