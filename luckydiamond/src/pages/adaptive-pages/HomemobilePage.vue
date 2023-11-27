@@ -19,7 +19,9 @@
       </div>
     </header>
     <main class="main-mobile">
-      <h1>main</h1>
+      <div class="main-mobile__content">
+
+      </div>
     </main>
     <footer class="footer-mobile">
       <h1>footer</h1>
