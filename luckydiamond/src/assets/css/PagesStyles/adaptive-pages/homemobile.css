@@ -1,3 +1,7 @@
+body {
+    overflow-y: scroll;
+}
+
 .content-grid__mobile-home {
     display: grid;
     grid-auto-columns: 1fr;
