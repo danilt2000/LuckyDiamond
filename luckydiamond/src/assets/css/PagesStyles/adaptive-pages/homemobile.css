@@ -102,7 +102,9 @@ body {
 
 .main-mobile__content {
     display: flex;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .bg-mobile {
@@ -113,7 +115,15 @@ body {
     height: 105px;
 }
 
-.card-mobile__content {
+.main-mobile__first-line {
+    display: flex;
+}
+
+.main-mobile__two-line {
+    display: flex;
+}
+
+.card-mobile__content { /* text display */
     display: flex;
     flex-direction: column;
     justify-content: space-around;

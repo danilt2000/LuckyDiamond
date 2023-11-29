@@ -20,16 +20,21 @@
     </header>
     <main class="main-mobile">
       <div class="main-mobile__content">
-        <div class="main-mobile__first-line" v-for="mode in firstlineGameMode" :key="mode">
-          <div class="card-mobile__content bg-mobile card-first">
+        <div class="main-mobile__first-line">
+          <div class="card-mobile__content bg-mobile card-first" v-for="mode in firstlineGameMode" :key="mode">
             <h2>{{ mode.title }}</h2>
             <div class="card-mobile__btn">
               <a href="#">Play ></a>
             </div>
           </div>
         </div>
-        <div class="main-mobile__two-line" v-for="mode in twolineGameMode" :key="mode">
-          <h1>1</h1>
+        <div class="main-mobile__two-line">
+          <div class="card-mobile__content bg-mobile card-two" v-for="mode in twolineGameMode" :key="mode">
+            <h2>{{ mode.title }}</h2>
+            <div class="card-mobile__btn">
+              <a href="#">Play ></a>
+            </div>
+          </div>
         </div>
       </div>
     </main>
