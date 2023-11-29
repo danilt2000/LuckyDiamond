@@ -39,7 +39,8 @@
       </div>
     </main>
     <footer class="footer-mobile">
-      <h1>footer</h1>
+      <div class="footer-mobile__content">
+      </div>
     </footer>
   </div>
 </template>
