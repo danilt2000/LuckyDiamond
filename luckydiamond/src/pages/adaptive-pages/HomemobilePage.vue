@@ -24,7 +24,7 @@
           <div class="card-mobile__content bg-mobile card-first card-game__text" v-for="mode in firstlineGameMode" :key="mode">
             <h2>{{ mode.title }}</h2>
             <div class="card-mobile__btn">
-              <a href="#">Play ></a>
+              <a href="#">Play <span>></span></a>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
           <div class="card-mobile__content bg-mobile card-two card-game__text" v-for="mode in twolineGameMode" :key="mode">
             <h2>{{ mode.title }}</h2>
             <div class="card-mobile__btn">
-              <a href="#">Play ></a>
+              <a href="#">Play <span>></span></a>
             </div>
           </div>
         </div>
