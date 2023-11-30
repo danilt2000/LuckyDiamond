@@ -48,11 +48,11 @@ body {
 }
 
 .header-mobile__logo {
-    padding: 23px 0 11px 17px;
+    padding: 6% 0 2.5% 4%;
 }
 
 .header-mobile__logo img {
-    width: 170px;
+    width: 85%;
 }
 
 .header-mobile__balance--content {
@@ -69,7 +69,7 @@ body {
 .card-display h2 {
     display: flex;
     align-items: flex-end;
-    padding: 6px 15px 6px 5px;
+    padding: 8% 15px 8% 7%;
 }
 
 .card-img img {
@@ -86,12 +86,12 @@ body {
 }
 
 .btn-card img {
-    width: 40px;
+    width: 90%;
     height: 40px;
 }
 
 .btn-card__margin {
-    margin-left: -10px;
+    margin-left: -8%;
 }
 
 /* /Header */
@@ -99,7 +99,7 @@ body {
 /* Main */
 
 .main-mobile__content {
-    margin-top: 60px;
+    margin-top: 12%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,7 +111,7 @@ body {
     background: #EF4444;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 100%;
-    height: 120px;
+    height: 10em;
 }
 
 .main-mobile__first-line {
@@ -132,14 +132,13 @@ body {
 }
 
 .card-first {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 2.5% 0 3%;
 }
 
 .card-game__text h2 {
     color: #FFF;
     font-weight: 700;
-    font-size: 45px;
+    font-size: 41px;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Montserrat Alternates;
@@ -147,9 +146,7 @@ body {
 }
 
 .card-two {
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 5.1% 2.5% 0 3%;
 }
 
 .card-mobile__btn a {
@@ -178,7 +175,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 2%;
 }
 .chat-icon a,
 .home-icon a,
@@ -190,11 +187,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 65px;
-    height: 65px;
+    width: 90%;
+    height: 4em;
     background: #D9D9D91F;
     border-radius: 20px;
-    margin: 0 10px;
+    margin: 0 .8em;
 }
 
 
