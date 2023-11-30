@@ -186,17 +186,14 @@ body {
     height: 65px;
 }
 
-.icons-margin img {
+.icons-margin a {
     margin: 0 10px;
 }
 
-.footer-mobile__block img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #D9D9D91F;
-
+.chat-icon a,
+.home-icon a,
+.settings-icon a {
+    background: #000;
 }
-
 
 /* /Footer */

@@ -40,14 +40,20 @@
     </main>
     <footer class="footer-mobile">
       <div class="footer-mobile__content icons-size">
-        <div class="footer-mobile__block icons-margin">
-          <img src="@/assets/icons-adaptive/home-adaptive/icon-chat.svg">
+        <div class="footer-mobile__block chat-icon icons-margin">
+          <a href="#">
+            <img src="@/assets/icons-adaptive/home-adaptive/icon-chat.svg">
+          </a>
         </div>
-        <div class="footer-mobile__block icons-margin">
-          <img src="@/assets/icons-adaptive/home-adaptive/icon-home.svg">
+        <div class="footer-mobile__block home-icon icons-margin">
+          <a href="#">
+            <img src="@/assets/icons-adaptive/home-adaptive/icon-home.svg">
+          </a>
         </div>
-        <div class="footer-mobile__block icons-margin">
-          <img src="@/assets/icons-adaptive/home-adaptive/icon-settings.png">
+        <div class="footer-mobile__block settings-icon icons-margin">
+          <a href="#">
+            <img src="@/assets/icons-adaptive/home-adaptive/icon-settings.png">
+          </a>
         </div>
       </div>
     </footer>
