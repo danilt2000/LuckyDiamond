@@ -39,7 +39,16 @@
       </div>
     </main>
     <footer class="footer-mobile">
-      <div class="footer-mobile__content">
+      <div class="footer-mobile__content icons-size">
+        <div class="footer-mobile__block icons-margin">
+          <img src="@/assets/icons-adaptive/home-adaptive/icon-chat.svg">
+        </div>
+        <div class="footer-mobile__block icons-margin">
+          <img src="@/assets/icons-adaptive/home-adaptive/icon-home.svg">
+        </div>
+        <div class="footer-mobile__block icons-margin">
+          <img src="@/assets/icons-adaptive/home-adaptive/icon-settings.png">
+        </div>
       </div>
     </footer>
   </div>

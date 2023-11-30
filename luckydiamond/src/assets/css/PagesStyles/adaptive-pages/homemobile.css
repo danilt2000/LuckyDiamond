@@ -33,7 +33,7 @@ body {
 .footer-mobile {
     grid-area: footer-mobile;
     width: 100%;
-    height: 20%;
+    height: 10%;
     background: #17181C;
     position: fixed;
     bottom: 0;
@@ -173,5 +173,30 @@ body {
 /* /Main */
 
 /* Footer */
+
+.footer-mobile__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.icons-size img {
+    width: 65px;
+    height: 65px;
+}
+
+.icons-margin img {
+    margin: 0 10px;
+}
+
+.footer-mobile__block img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #D9D9D91F;
+
+}
+
 
 /* /Footer */
