@@ -46,7 +46,7 @@
           </a>
         </div>
         <div class="footer-mobile__block home-icon">
-          <a href="#">
+          <a href="#" @click="$router.push({ name: 'home' })">
             <img src="@/assets/icons-adaptive/home-adaptive/icon-home.svg">
           </a>
         </div>
