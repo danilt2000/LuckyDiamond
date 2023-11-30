@@ -39,18 +39,18 @@
       </div>
     </main>
     <footer class="footer-mobile">
-      <div class="footer-mobile__content icons-size">
-        <div class="footer-mobile__block chat-icon icons-margin">
+      <div class="footer-mobile__content">
+        <div class="footer-mobile__block chat-icon">
           <a href="#">
             <img src="@/assets/icons-adaptive/home-adaptive/icon-chat.svg">
           </a>
         </div>
-        <div class="footer-mobile__block home-icon icons-margin">
+        <div class="footer-mobile__block home-icon">
           <a href="#">
             <img src="@/assets/icons-adaptive/home-adaptive/icon-home.svg">
           </a>
         </div>
-        <div class="footer-mobile__block settings-icon icons-margin">
+        <div class="footer-mobile__block settings-icon">
           <a href="#">
             <img src="@/assets/icons-adaptive/home-adaptive/icon-settings.png">
           </a>

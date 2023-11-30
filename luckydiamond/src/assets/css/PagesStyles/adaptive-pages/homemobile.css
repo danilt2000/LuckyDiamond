@@ -180,20 +180,22 @@ body {
     align-items: center;
     margin-top: 10px;
 }
-
-.icons-size img {
-    width: 65px;
-    height: 65px;
-}
-
-.icons-margin a {
-    margin: 0 10px;
-}
-
 .chat-icon a,
 .home-icon a,
 .settings-icon a {
     background: #000;
 }
+
+.footer-mobile__block a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    background: #D9D9D91F;
+    border-radius: 20px;
+    margin: 0 10px;
+}
+
 
 /* /Footer */
