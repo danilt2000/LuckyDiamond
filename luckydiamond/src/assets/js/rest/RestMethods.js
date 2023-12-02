@@ -29,7 +29,7 @@ export async function GetCurrentMoney(authToken, searchToken) {
     SearchToken: searchToken
   };
   try {
-    const response = await fetch(url, {
+    const response = await fetch(`${BackendApiUrl}/Payment/GetCurrentMoney`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
