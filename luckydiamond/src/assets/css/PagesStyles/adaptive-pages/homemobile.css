@@ -183,6 +183,16 @@ body {
     background: #000;
 }
 
+.home-icon a img {
+    padding-left: 6px;
+}
+
+.settings-icon a img {
+    width: 75px;
+    height: 75px;
+    padding: 9px 0 0 6px;
+}
+
 .footer-mobile__block a {
     display: flex;
     justify-content: center;

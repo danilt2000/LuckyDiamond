@@ -52,7 +52,7 @@
         </div>
         <div class="footer-mobile__block settings-icon">
           <a href="#">
-            <img src="@/assets/icons-adaptive/home-adaptive/icon-settings.png">
+            <img width="" src="@/assets/icons-adaptive/home-adaptive/icon-settings.png">
           </a>
         </div>
       </div>
