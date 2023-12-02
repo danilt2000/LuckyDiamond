@@ -1,41 +1,49 @@
+import { BackendApiUrl } from '@/properties/Сonfig.js';
+
+
 export async function Post(url = "", data = {}) {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+      redirect: "follow"
+    });
 
-  // Default options are marked with *
-  // try {
-  //     const response = await fetch(url, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       redirect: "follow",
-  //       referrerPolicy: "no-referrer",
-  //       body: JSON.stringify(data),
-  //     });
-  //     if (!response.ok) {
-  //       console.log("Fetch error:", response.status);
-  //     }
-  //     return await response.json();
-  //   } catch (error) {
-  //     console.log("Fetch error:", error);
-  //   }
+    if (!response.ok) {
+      console.log("Fetch error:", response.status);
+    }
 
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
-  var raw = JSON.stringify(data);
-
-
-  var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
-
-  fetch(url, requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-
-
+    return await response.json();
+  } catch (error) {
+    console.log("Fetch error:", error);
+  }
 }
+
+export async function GetCurrentMoney(authToken) {
+
+  try {
+      const response = await fetch(`${BackendApiUrl}/Payment/GetCurrentMoney`, {
+          method: 'GET',
+          headers: {
+              'AuthToken': authToken,
+          }
+      });
+
+      if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data); // Здесь вы можете обработать полученные данные
+      return data;
+  } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+  }
+}
+
+
+
+

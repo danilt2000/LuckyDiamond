@@ -13,9 +13,9 @@ import { BackendApiUrl } from '@/properties/Сonfig.js';
 export async function LogIn(authCode) {
     try {
         const response = await Post(BackendApiUrl + "/Authorize/LogIn", { code: authCode });
-        console.log(response);
+
         return response;
     } catch (error) {
-        console.error('Ошибка в LogIn:', error);
+        console.error('Error in LogIn:', error);
     }
 }
