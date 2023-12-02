@@ -282,10 +282,11 @@
         font-size: 3.238em;
     }
     .line__btn {
-        font-size: 1.563em;
+        font-size: 28px;
+        padding: 6px 11px;
     }
-    .line__btn--elm {
-        font-size: 1.75em;
+    .gamemode__twoline--first__element .container a {
+        padding: 6px 11px;
     }
     .write {
         position: static;
