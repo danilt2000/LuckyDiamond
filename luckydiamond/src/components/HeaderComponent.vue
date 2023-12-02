@@ -35,7 +35,7 @@ export default {
             console.log("Auth Data:", response);
             SetCookie("UserId", response.userId);
             SetCookie("SpUserName", response.spUserName);
-            SetCookie("AUTHTOKEN", response.authToken);
+            SetCookie("AUTHTOKEN", response.authtoken);
             SetCookie("SearchToken", response.searchToken);
 
             this.imageUrl = this.imageUrl + `${response.spUserName}.png`;
