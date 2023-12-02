@@ -48,36 +48,23 @@ export default {
                 console.log(response);
               })
               .catch((error) => {
-                // Обработка ошибки
                 console.error(error);
               });
-
-            // let currentMoney = GetCurrentMoney(
-            //   response.authtoken,
-            //   response.searchToken
-            // );
-            // this.balance = currentMoney;
           })
           .catch(() => {
             let currentUserName = GetCookie("SpUserName");
-
-            // let currentMoney = GetCurrentMoney(
-            //   GetCookie("AUTHTOKEN"),
-            //   GetCookie("SearchToken")
-            // ).then(response);
-
             GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
               .then((response) => {
                 this.balance = response.currentMoney;
                 console.log(response);
               })
               .catch((error) => {
-                // Обработка ошибки
                 console.error(error);
               });
 
             if (currentUserName) {
               this.imageUrl = this.imageUrl + `${currentUserName}.png`;
+              this.userName = GetCookie("SpUserName");
               this.auth = true;
             } else {
               this.auth = false;
@@ -98,6 +85,7 @@ export default {
 
         if (currentUserName) {
           this.imageUrl = this.imageUrl + `${currentUserName}.png`;
+          this.userName = GetCookie("SpUserName");
           this.auth = true;
         } else {
           this.auth = false;
