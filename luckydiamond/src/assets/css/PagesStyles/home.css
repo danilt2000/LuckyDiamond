@@ -245,3 +245,46 @@
 }
 
 /* /GameMode */
+
+/* Media */
+
+@media screen and (max-width: 1280px) {
+    .main__content h1 {
+        font-size: 4.5em;
+    }
+    .gamemode__firstline img {
+        width: 9.938em;
+        height: 9.938em;
+    }
+    .gamemode__firstline .title-firstline {
+        font-size: 3.625em;
+    }
+    .gamemode__twolines img {
+        display: none;
+    }
+    .gamemode__twolines .title-twoline {
+        font-size: 3.238em;
+    }
+    .line__btn {
+        font-size: 25px;
+    }
+    .line__btn--elm {
+        font-size: 28px;
+    }
+    .write {
+        position: static;
+        margin: 62% 87% 6% 3%;
+    }
+    .write__content input {
+        padding: 10px 1% 14px 12px;
+    }
+    .write__content input::placeholder {
+        font-size: 11.5px;
+    }
+    .write__content button {
+        margin-left: -15%;
+        padding: 6px 6px;
+    }
+}
+
+/* /Media */
