@@ -252,6 +252,22 @@
     .main__content h1 {
         font-size: 4.5em;
     }
+    .gamemode__main {
+        height: auto;
+    }
+    .title-firstline {
+        font-size: 75px;
+    }
+    .line__footer {
+        flex-direction: column;
+    }
+    .line__footer img {
+        margin-top: -40px;
+    }
+    .line__content .line__btn--main .line__btn {
+        left: 0;
+        top: 0;
+    }
     .gamemode__firstline img {
         width: 9.938em;
         height: 9.938em;
