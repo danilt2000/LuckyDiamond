@@ -256,13 +256,13 @@
         height: auto;
     }
     .title-firstline {
-        font-size: 75px;
+        font-size: 4.688em;
     }
     .line__footer {
         flex-direction: column;
     }
     .line__footer img {
-        margin-top: -40px;
+        margin-top: 2.5em;
     }
     .line__content .line__btn--main .line__btn {
         left: 0;
@@ -282,24 +282,24 @@
         font-size: 3.238em;
     }
     .line__btn {
-        font-size: 25px;
+        font-size: 1.563em;
     }
     .line__btn--elm {
-        font-size: 28px;
+        font-size: 1.75em;
     }
     .write {
         position: static;
         margin: 62% 87% 6% 3%;
     }
     .write__content input {
-        padding: 10px 1% 14px 12px;
+        padding: 0.625em 1% 14px 0.75em;
     }
     .write__content input::placeholder {
         font-size: 11.5px;
     }
     .write__content button {
         margin-left: -15%;
-        padding: 6px 6px;
+        padding: 0.375em 0.375em;
     }
 }
 
