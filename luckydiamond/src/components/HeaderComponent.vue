@@ -41,39 +41,62 @@ export default {
             this.imageUrl = this.imageUrl + `${response.spUserName}.png`;
             this.userName = response.spUserName;
             this.auth = true;
-            let currentMoney = GetCurrentMoney(
-              response.authtoken,
-              response.searchToken
-            );
-            this.balance = currentMoney;
+            GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+              .then((response) => {
+                this.balance = response.currentMoney;
+                console.log(response);
+              })
+              .catch((error) => {
+                // Обработка ошибки
+                console.error(error);
+              });
+
+            // let currentMoney = GetCurrentMoney(
+            //   response.authtoken,
+            //   response.searchToken
+            // );
+            // this.balance = currentMoney;
           })
           .catch(() => {
             let currentUserName = GetCookie("SpUserName");
-            let currentMoney = GetCurrentMoney(
-              GetCookie("AUTHTOKEN"),
-              GetCookie("SearchToken")
-            );
+
+            // let currentMoney = GetCurrentMoney(
+            //   GetCookie("AUTHTOKEN"),
+            //   GetCookie("SearchToken")
+            // ).then(response);
+
+            GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+              .then((response) => {
+                this.balance = response.currentMoney;
+                console.log(response);
+              })
+              .catch((error) => {
+                // Обработка ошибки
+                console.error(error);
+              });
 
             if (currentUserName) {
               this.imageUrl = this.imageUrl + `${currentUserName}.png`;
               this.auth = true;
-              this.balance = currentMoney;
             } else {
               this.auth = false;
             }
-
           });
       } else {
         let currentUserName = GetCookie("SpUserName");
-        let currentMoney = GetCurrentMoney(
-          GetCookie("AUTHTOKEN"),
-          GetCookie("SearchToken")
-        );
+        GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+          .then((response) => {
+            this.balance = response.currentMoney;
+            console.log(response);
+          })
+          .catch((error) => {
+            // Обработка ошибки
+            console.error(error);
+          });
 
         if (currentUserName) {
           this.imageUrl = this.imageUrl + `${currentUserName}.png`;
           this.auth = true;
-          this.balance = currentMoney;
         } else {
           this.auth = false;
         }
