@@ -27,11 +27,11 @@ export async function GetCurrentMoney(authToken, searchToken) {
   try {
     const response = await fetch(`${BackendApiUrl}/Payment/GetCurrentMoney`, {
       method: 'GET',
-      
       redirect: 'follow',
       headers: {
         'AUTHTOKEN': authToken,
-        'SearchToken': searchToken
+        'SearchToken': searchToken,
+        'Access-Control-Allow-Origin': '*'
       }
     });
 
