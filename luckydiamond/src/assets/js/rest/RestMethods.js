@@ -27,7 +27,7 @@ export async function GetCurrentMoney(authToken, searchToken) {
   try {
     const response = await fetch(`${BackendApiUrl}/Payment/GetCurrentMoney`, {
       method: 'GET',
-      mode: 'no-cors',
+      
       redirect: 'follow',
       headers: {
         'AUTHTOKEN': authToken,
