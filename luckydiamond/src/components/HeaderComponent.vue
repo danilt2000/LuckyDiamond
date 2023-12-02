@@ -41,13 +41,21 @@ export default {
             this.imageUrl = this.imageUrl + `${response.spUserName}.png`;
             this.userName = response.spUserName;
             this.auth = true;
+            let currentMoney = GetCurrentMoney(
+              GetCookie("AuthToken"),
+              GetCookie("SearchToken")
+            );
+          this.balance = currentMoney;
           })
           .catch((error) => {
             console.error("Auth Code error:", error);
           });
       } else {
         let currentUserName = GetCookie("SpUserName");
-
+        let currentMoney = GetCurrentMoney(
+              GetCookie("AuthToken"),
+              GetCookie("SearchToken")
+            );
         // let currentMoney = GetCurrentMoney(
         //   "2405bf72008f835c9f5b336a84d3efbd7a742b828ca41fcaab1c40ca842e6425"
         // );
@@ -56,7 +64,7 @@ export default {
         if (currentUserName) {
           this.imageUrl = this.imageUrl + `${currentUserName}.png`;
           this.auth = true;
-          // this.balance = currentMoney;
+          this.balance = currentMoney;
         } else {
           this.auth = false;
         }
