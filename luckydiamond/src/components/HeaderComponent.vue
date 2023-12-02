@@ -14,6 +14,7 @@ export default {
   methods: {
     logout() {
       this.auth = false;
+      this.balance = 0;
       DeleteAllCookie();
     },
   },
@@ -80,6 +81,7 @@ export default {
               this.auth = true;
             } else {
               this.auth = false;
+              this.balance = 0;
             }
           });
       } else {
@@ -99,6 +101,7 @@ export default {
           this.auth = true;
         } else {
           this.auth = false;
+          this.balance = 0;
         }
       }
     } catch (error) {
