@@ -262,7 +262,7 @@
         flex-direction: column;
     }
     .line__footer img {
-        margin-top: 2.5em;
+        margin-top: -2em;
     }
     .line__content .line__btn--main .line__btn {
         left: 0;
