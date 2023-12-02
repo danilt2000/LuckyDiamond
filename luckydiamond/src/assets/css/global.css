@@ -91,7 +91,7 @@ body, html {
     background: #16171B;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 20px;
-    height: 100%;
+    height: 90%;
     position: relative;
     z-index: 3;
 }
