@@ -47,7 +47,7 @@ export default {
             );
             this.balance = currentMoney;
           })
-          .catch((error) => {
+          .catch(() => {
             let currentUserName = GetCookie("SpUserName");
             let currentMoney = GetCurrentMoney(
               GetCookie("AUTHTOKEN"),
@@ -61,6 +61,7 @@ export default {
             } else {
               this.auth = false;
             }
+
           });
       } else {
         let currentUserName = GetCookie("SpUserName");
