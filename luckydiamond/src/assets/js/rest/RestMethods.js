@@ -27,8 +27,8 @@ export async function GetCurrentMoney(authToken, searchToken) {
   try {
     const response = await fetch(`${BackendApiUrl}/Payment/GetCurrentMoney`, {
       method: 'GET',
+      redirect: 'follow',
       headers: {
-        "Content-Type": "application/json",
         'AUTHTOKEN': authToken,
         'SearchToken': searchToken
       }
@@ -39,7 +39,7 @@ export async function GetCurrentMoney(authToken, searchToken) {
     }
 
     const data = await response.json();
-    console.log(data); 
+    console.log(data);
     return data;
   } catch (error) {
     console.error('There was a problem with the fetch operation:', error);
