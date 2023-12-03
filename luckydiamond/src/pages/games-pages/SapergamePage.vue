@@ -23,6 +23,24 @@
               </ul>
             </div>
           </div>
+          <div class="saper-start__choises diamonds diamonds-input__margin">
+            <h3>Сумма депозита</h3>
+            <div class="diamonds__choises">
+              <img class="diamond-icon" src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
+              <input type="number" id="diamonds-input">
+              <div class="diamonds__btns btn-style__diamonds">
+                <ul class="diamonds-btns__display">
+                  <li v-for="(item, index) in SaperNumbers" :key="index">
+                    <button :id="item.diamonds === 'max' ? 'max-button' : null" v-if="item.diamonds !== undefined">{{ item.diamonds }}</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="saper-start__btns btn-start btn-claim">
+            <button>Начать игру</button>
+            <button>Забрать 15 АР</button>
+          </div>
         </div>
       </div>
     </section>
