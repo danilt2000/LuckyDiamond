@@ -1,41 +1,73 @@
-export async function Post(url = "", data = {}) {
+import { BackendApiUrl } from '@/properties/Сonfig.js';
 
-  // Default options are marked with *
+
+export async function Post(url = "", data = {}) {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+      redirect: "follow"
+    });
+
+    if (!response.ok) {
+      console.log("Fetch error:", response.status);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.log("Fetch error:", error);
+  }
+}
+
+export async function GetCurrentMoney(authToken, searchToken) {
+
+  const data = {
+    AUTHTOKEN: authToken,
+    SearchToken: searchToken
+  };
+  try {
+    const response = await fetch(`${BackendApiUrl}/Payment/GetCurrentMoney`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+      redirect: "follow"
+    });
+
+    if (!response.ok) {
+      console.log("Fetch error:", response.status);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.log("Fetch error:", error);
+  }
   // try {
-  //     const response = await fetch(url, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       redirect: "follow",
-  //       referrerPolicy: "no-referrer",
-  //       body: JSON.stringify(data),
-  //     });
-  //     if (!response.ok) {
-  //       console.log("Fetch error:", response.status);
+  //   const response = await fetch(`${BackendApiUrl}/Payment/GetCurrentMoney`, {
+  //     method: 'GET',
+  //     redirect: 'follow',
+  //     headers: {
+  //       'AUTHTOKEN': authToken,
+  //       'SearchToken': searchToken
   //     }
-  //     return await response.json();
-  //   } catch (error) {
-  //     console.log("Fetch error:", error);
+  //   });
+
+  //   if (!response.ok) {
+  //     throw new Error(`HTTP error! status: ${response.status}`);
   //   }
 
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
-  var raw = JSON.stringify(data);
-
-
-  var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
-
-  fetch(url, requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-
-
+  //   const data = await response.json();
+  //   console.log(data);
+  //   return data;
+  // } catch (error) {
+  //   console.error('There was a problem with the fetch operation:', error);
+  // }
 }
+
+
+
+
