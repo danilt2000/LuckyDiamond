@@ -32,8 +32,12 @@ import '@/assets/css/PagesStyles/games-pages/saper.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
 
 export default {
-  components: {ChatComponent, HeaderElementPage, AsideBarElement }
-
+  components: {ChatComponent, HeaderElementPage, AsideBarElement },
+  data() {
+    return {
+      SaperNumbers
+    }
+  }
 }
 </script>
 
