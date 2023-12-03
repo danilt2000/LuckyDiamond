@@ -148,3 +148,11 @@ body, html {
 }
 
 /* /Profile */
+
+/* Saper */
+
+.saper {
+    grid-area: saper;
+}
+
+/* /Saper */
