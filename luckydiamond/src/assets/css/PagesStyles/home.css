@@ -268,9 +268,12 @@
         left: 0;
         top: 0;
     }
+    .line__img {
+        margin: 1% -15% 0 2%;
+    }
     .gamemode__firstline img {
-        width: 9.938em;
-        height: 9.938em;
+        width: 60%;
+        height: 60%;
     }
     .gamemode__firstline .title-firstline {
         font-size: 3.625em;
