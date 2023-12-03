@@ -174,7 +174,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .diamonds-btns__display {
     display: flex;
-    margin-left: -4px;
+    margin-left: -1%;
 }
 
 .btn-style__diamonds button {
