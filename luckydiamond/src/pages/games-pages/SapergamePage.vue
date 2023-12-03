@@ -6,8 +6,11 @@
 
     <chat-component></chat-component>
 
-    <div class="saper">
-      <h1>123</h1>
+    <div class="saper-start">
+      <div class="saper-start__content">
+        <h2>Сапёр</h2>
+        <p>Находи изумруды на поле и избегай кристалы</p>
+      </div>
     </div>
   </div>
 </template>
