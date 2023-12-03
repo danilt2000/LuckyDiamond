@@ -307,4 +307,16 @@
     }
 }
 
+@media screen and (max-width: 1100px) {
+    .main__content h1 {
+        font-size: 3.5em;
+    }
+    .title-firstline {
+        font-size: 3.4em;
+    }
+    .line__img {
+        margin: -1% -18% 0 2%;
+    }
+}
+
 /* /Media */
