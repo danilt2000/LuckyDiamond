@@ -1,3 +1,4 @@
+
 <script>
 import "@/assets/css/ComponentsStyles/header.css";
 // import { GetAuthCodeFromCurrentPath } from '@/assets/js/authentication/LoggingMiddleware.js';
@@ -106,8 +107,8 @@ export default {
       </div>
       <div class="header__nav">
         <nav>
-          <a href="#" class="header__nav--now">Главная</a>
-          <a href="#">Профиль</a>
+          <a href="#" @click="$router.push({ name: 'home' })" :class="{ 'header__nav--now' : route === 'home' }">Главная</a>
+          <a href="#" @click="$router.push({ name: 'profile' })" :class="{ 'header__nav--now' : route === 'profile' }">Профиль</a>
           <a href="#">Помощь</a>
         </nav>
       </div>
@@ -156,6 +157,5 @@ export default {
     </div>
   </header>
 </template>
-
 <style scoped>
 </style>

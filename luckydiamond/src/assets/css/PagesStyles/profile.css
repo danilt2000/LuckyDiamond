@@ -1,0 +1,166 @@
+.profile__content {
+    width: 35%;
+    margin-left: 3%;
+}
+
+.profile__content .profile__user--img {
+    margin: 17.6% 8.4% 1% 0;
+}
+
+.profile__card {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__card h1 {
+    color: #FFF;
+    font-weight: 700;
+    font-family: Montserrat;
+    font-size: 40px;
+}
+
+.profile__card h2 {
+    border-radius: 20px;
+    background: #22252F;
+    width: 32%;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-weight: 700;
+    font-family: Montserrat Alternates;
+    font-size: 28px;
+}
+
+.profile__card h2 img {
+    margin-right: 4.4%;
+}
+
+.profile__btns--payments {
+    margin-top: 7.9%;
+    display: flex;
+    flex-direction: column;
+}
+
+.deposit-icon {
+    margin: 3px 0 0 10px;
+}
+
+.withdraw-icon {
+    margin-left: 33px;
+}
+
+.btn-bg {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 36%;
+}
+
+.btn-margin {
+    padding: 1.8% 0 2% 2%;
+    margin-bottom: 11px;
+}
+
+.btn-display {
+    display: flex;
+    align-items: center;
+}
+
+.text-btn {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 18px;
+}
+
+.withdraw {
+    padding: 1.8% 0 2% 2%;
+}
+
+
+.payments {
+    margin: 2% 0 0 -4.25%;
+}
+
+.types {
+    display: flex;
+}
+
+.types-margin h3 {
+    margin-right: 7.813em;
+}
+
+.types-text h3 {
+    color: #ABABB4;
+    font-weight: 600;
+    font-family: Montserrat;
+    font-size: 14px;
+}
+
+.types-line {
+    margin-top: 2.1%;
+    background: #38383E;
+    width: 86%;
+    height: 3px;
+}
+
+.payments__card {
+    margin-top: 4.9%;
+    display: flex;
+    align-items: start;
+}
+
+.user-info {
+    display: flex;
+}
+
+.user-name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.625em;
+}
+
+.user-name__text h3 {
+    color: #FFF;
+    font-weight: 700;
+    font-family: Montserrat;
+    font-size: 20px;
+}
+
+.user-name__text p {
+    color: #A9A9A9;
+    font-weight: 400;
+    font-family: Montserrat;
+    font-size: 20px;
+}
+
+.data-info {
+    margin-left: 13%;
+}
+
+.data-info__text h3 {
+    color: #A9A9A9;
+    font-weight: 400;
+    font-family: Montserrat;
+    font-size: 17px;
+}
+
+.transaction-info {
+    margin-left: 13%;
+}
+
+.transaction-info__text h3 {
+    font-weight: 500;
+    font-family: Montserrat;
+    font-size: 22px;
+}
+
+.deposit-color h3 {
+    color: #32C966;
+}
+
+.withdraw-color h3 {
+    color: #EA3D38;
+}

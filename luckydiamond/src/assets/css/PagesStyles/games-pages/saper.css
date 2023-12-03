@@ -1,0 +1,243 @@
+#chat {
+    height: 95%;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.saper {
+    padding-top: 10%;
+    border-radius: 20px;
+    background: #17181C;
+    backdrop-filter: blur(100px);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.bg {
+    background: #293561;
+    filter: blur(120px);
+    position: absolute;
+    top: 250px;
+    transform: rotate(180deg);
+    left: 200px;
+    width: 40%;
+    height: 55%;
+    z-index: -1;
+}
+
+.bg-two {
+    background: #293561;
+    filter: blur(120px);
+    position: absolute;
+    top: 220px;
+    transform: rotate(330deg);
+    left: 600px;
+    width: 60%;
+    height: 35%;
+    z-index: -1;
+}
+
+.saper-start {
+    z-index: 1;
+    margin-left: 5%;
+    border-radius: 20px;
+    background: #22252F;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 27%;
+    height: 70%;
+}
+
+.padding-elements {
+    padding-left: 5%;
+}
+
+.title-saper h2 {
+    padding: 16px 0 5px 0;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 31px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+    font-family: Montserrat Alternates;
+    font-size: 26px;
+}
+
+.saper-start__content p {
+    color: #FFFFFF84;
+    font-weight: 700;
+    line-height: 31px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 13px;
+}
+
+.crystals h3,
+.diamonds h3 {
+    color: #44C6EF54;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 31px;
+}
+
+.crystals .crystals__choises input,
+.diamonds .diamonds__choises input {
+    width: 110px;
+    height: 38px;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 31px;
+    font-family: Montserrat Alternates;
+    font-size: 12px;
+    border-radius: 10px;
+    padding-left: 25px;
+    border: 2px solid #2B3458;
+    background: #22252F;
+}
+
+.crystals__choises {
+    display: flex;
+    align-items: center;
+}
+
+.crystals .crystals__choises input:focus,
+.diamonds .diamonds__choises input:focus {
+    outline: none;
+}
+
+.crystals-input__margin {
+    margin-left: -5.5%;
+}
+
+.crystals-btns__choices button,
+.btn-style__diamonds button {
+    margin-left: 5px;
+    border-radius: 10px;
+    background: #252C47;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 31px;
+    font-family: Montserrat Alternates;
+    font-size: 12px;
+    padding: 4px 23px;
+}
+
+.crystal-icon,
+.diamond-icon  {
+    position: relative;
+    left: 25px;
+    top: 2px;
+}
+
+.crystals-btns__display {
+    display: flex;
+}
+
+#diamonds-input {
+    width: 347px;
+    height: 38px;
+}
+
+.diamonds h3 {
+    margin: 1.2% 0 0 5.8%;
+}
+
+.diamonds-input__margin {
+    margin-left: -5.6%;
+}
+
+.diamonds .diamonds__choises input {
+    padding-left: 35px;
+}
+
+.diamond-icon {
+    top: 12px;
+    left: 35px;
+}
+
+.diamonds__btns {
+    margin: 2.5% 0 0 5.5%;
+}
+
+.diamonds-btns__display {
+    display: flex;
+    margin-left: -1%;
+}
+
+.btn-style__diamonds button {
+    padding: 4px 20px;
+}
+
+#max-button {
+    text-transform: uppercase;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 4px 15px;
+}
+
+.saper-start__btns {
+    margin: 3.7% 2.7% 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.saper-start__btns button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 19px;
+    font-style: normal;
+    font-family: Inter;
+    font-size: 16px;
+
+}
+
+.btn-start {
+    border-radius: 10px;
+    background: #EF4444;
+}
+
+.btn-claim {
+    border-radius: 10px;
+    background: #252C47;
+}
+
+.saper-start__steps {
+    margin-top: 2.8%;
+}
+
+.steps-btns__display {
+    display: flex;
+}
+
+.btns-style__steps button {
+    border-radius: 10px;
+    background: #252C47;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 31px;
+    font-family: Montserrat Alternates;
+    font-size: 12px;
+    padding: 6px 16px;
+    margin-right: 8px;
+}

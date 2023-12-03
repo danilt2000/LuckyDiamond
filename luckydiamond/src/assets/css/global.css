@@ -39,6 +39,40 @@ body, html {
     grid-gap: 10px;
 }
 
+.content__grid-profile {
+    display: grid;
+    grid-template-columns: .35fr repeat(5, 1fr) 1fr;
+    grid-template-rows: auto 0fr repeat(4, 1fr);
+    grid-auto-columns: 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "menu header header header header header header"
+    "menu profile profile profile profile profile chat"
+    "menu profile profile profile profile profile chat"
+    "menu profile profile profile profile profile chat"
+    "menu profile profile profile profile profile chat"
+    "menu profile profile profile profile profile chat"
+    "menu profile profile profile profile profile chat";
+    grid-gap: 10px;
+    height: 100%;
+}
+
+.content-grid--saper {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: .35fr repeat(5, 1fr) 1fr;
+    grid-template-rows: auto 0fr repeat(4, 1fr);
+    grid-template-areas:
+    "menu header header header header header header"
+    "menu saper saper saper saper saper chat"
+    "menu saper saper saper saper saper chat"
+    "menu saper saper saper saper saper chat"
+    "menu saper saper saper saper saper chat"
+    "menu saper saper saper saper saper chat"
+    "menu saper saper saper saper saper chat";
+    grid-gap: 10px;
+}
+
 
 /* /Content Grid */
 
@@ -100,3 +134,26 @@ body, html {
 }
 
 /* /GameMode */
+
+/* Profile */
+
+.profile {
+    display: flex;
+    grid-area: profile;
+    height: 95%;
+    border-radius: 50px;
+    background: #17181C;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 10px 39px 18px 13px;
+}
+
+/* /Profile */
+
+/* Saper */
+
+.saper {
+    grid-area: saper;
+    height: 95.5%;
+}
+
+/* /Saper */

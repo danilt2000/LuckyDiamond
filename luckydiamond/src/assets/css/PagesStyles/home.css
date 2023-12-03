@@ -127,7 +127,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 7.6%;
+    padding-top: 8.7%;
 }
 
 .line__content .line__btn--main .line__btn {
@@ -245,3 +245,78 @@
 }
 
 /* /GameMode */
+
+/* Media */
+
+@media screen and (max-width: 1280px) {
+    .main__content h1 {
+        font-size: 4.5em;
+    }
+    .gamemode__main {
+        height: auto;
+    }
+    .title-firstline {
+        font-size: 4.1em;
+    }
+    .line__footer {
+        flex-direction: column;
+    }
+    .line__footer img {
+        margin-top: -2em;
+    }
+    .line__content .line__btn--main .line__btn {
+        left: 0;
+        top: .5em;
+    }
+    .line__img {
+        margin: 1% -15% 0 2%;
+    }
+    .gamemode__firstline img {
+        width: 60%;
+        height: 60%;
+    }
+    .gamemode__firstline .title-firstline {
+        font-size: 3.2em;
+    }
+    .gamemode__twolines img {
+        display: none;
+    }
+    .gamemode__twolines .title-twoline {
+        font-size: 3.238em;
+    }
+    .line__btn {
+        font-size: 28px;
+        padding: 6px 11px;
+    }
+    .gamemode__twoline--first__element .container a {
+        padding: 6px 11px;
+    }
+    .write {
+        position: static;
+        margin: 45% 87% 6% 2%;
+    }
+    .write__content input {
+        padding: 0.625em 1% 14px 0.75em;
+    }
+    .write__content input::placeholder {
+        font-size: 11.5px;
+    }
+    .write__content button {
+        margin-left: -15%;
+        padding: 0.375em 0.375em;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .main__content h1 {
+        font-size: 3.5em;
+    }
+    .title-firstline {
+        font-size: 3.4em;
+    }
+    .line__img {
+        margin: -1% -18% 0 2%;
+    }
+}
+
+/* /Media */

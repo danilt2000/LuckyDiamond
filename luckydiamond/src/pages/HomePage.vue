@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="../assets/css/PagesStyles/home.css">
 <template>
-  <div class="content-grid">
-    <aside-bar-element @animationchange="claimSettings"></aside-bar-element>
+  <homemobile-page v-if="mobile"></homemobile-page>
+  <div class="content-grid" v-if="!mobile">
+    <aside-bar-component></aside-bar-component>
 
-    <chat-element></chat-element>
+    <chat-component></chat-component>
 
-    <header-element-page></header-element-page>
+    <header-component></header-component>
 
     <main class="main">
       <div class="main__content">
@@ -32,7 +32,7 @@
                 <div class="line__footer">
                   <img src="../assets/icons-gamemodes/bomb-icon.svg">
                   <div class="line__btn--main">
-                    <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
+                    <a href="#" @click="$router.push({ name: 'saper' })" class="line__btn">play <span class="line__btn--elm">></span></a>
                   </div>
                 </div>
               </div>
@@ -99,25 +99,41 @@
 </template>
 
 <script>
-import HeaderElementPage from "@/components/HeaderComponent.vue";
-import AsideBarElement from "@/components/AsidebarComponent.vue";
-import ChatElement from "@/components/ChatComponent.vue";
+import HeaderComponent from "@/components/HeaderComponent.vue";
+import AsideBarComponent from "@/components/AsidebarComponent.vue";
+import ChatComponent from "@/components/ChatComponent.vue";
+import HomemobilePage from "@/pages/adaptive-pages/HomemobilePage.vue";
 import GameModes from "@/mocks/GameModes";
 import '@/assets/css/PagesStyles/home.css'
 
 export default {
   name: 'HomePage',
-  components: {AsideBarElement, HeaderElementPage, ChatElement },
+  components: { AsideBarComponent, HeaderComponent, ChatComponent, HomemobilePage },
   data() {
     return {
       GameModes,
-      AnimationOff: false
+      AnimationOff: false,
+      mobile: false,
+      currentPage: 'Desktop'
     }
   },
   methods: {
-    claimSettings(value) {
-      this.AnimationOff = value
+    // claimSettings(value) {
+    //   this.AnimationOff = value
+    // },
+    checkWindowSize() {
+      this.mobile = window.innerWidth <= 600
+
+      this.currentPage = this.mobile ? 'Mobile' : 'Desktop'
     }
+  },
+  mounted() {
+    this.checkWindowSize()
+
+    window.addEventListener('resize', this.checkWindowSize)
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkWindowSize)
   },
   computed: {
     mainGameMode() {

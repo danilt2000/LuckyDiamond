@@ -1,0 +1,208 @@
+body {
+    overflow-y: scroll;
+}
+
+.content-grid__mobile-home {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+    "header-mobile header-mobile header-mobile header-mobile"
+    "main-mobile main-mobile main-mobile main-mobile"
+    "main-mobile main-mobile main-mobile main-mobile"
+    "footer-mobile footer-mobile footer-mobile footer-mobile";
+    height: 100%;
+    width: 100%;
+}
+
+.header-mobile {
+    grid-area: header-mobile;
+    border-radius: 20px;
+    background: #17181C;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 45%;
+}
+
+.main-mobile {
+    grid-area: main-mobile;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-mobile {
+    grid-area: footer-mobile;
+    width: 100%;
+    height: 10%;
+    background: #17181C;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Header */
+
+.header-mobile__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-mobile__logo {
+    padding: 6% 0 2.5% 4%;
+}
+
+.header-mobile__logo img {
+    width: 85%;
+}
+
+.header-mobile__balance--content {
+    display: flex;
+    align-items: center;
+}
+
+.header-mobile__card {
+    border-radius: 7px;
+    background: #22252F;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card-display h2 {
+    display: flex;
+    align-items: flex-end;
+    padding: 8% 15px 8% 7%;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-text {
+    color: #FFF;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 13px;
+}
+
+.btn-card img {
+    width: 90%;
+    height: 40px;
+}
+
+.btn-card__margin {
+    margin-left: -8%;
+}
+
+/* /Header */
+
+/* Main */
+
+.main-mobile__content {
+    margin-top: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bg-mobile {
+    border-radius: 10px;
+    background: #EF4444;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 10em;
+}
+
+.main-mobile__first-line {
+    display: flex;
+    width: 100%;
+}
+
+.main-mobile__two-line {
+    display: flex;
+    width: 100%;
+}
+
+.card-mobile__content { /* text display */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-first {
+    margin: 0 2.5% 0 3%;
+}
+
+.card-game__text h2 {
+    color: #FFF;
+    font-weight: 700;
+    font-size: 41px;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    text-transform: uppercase;
+}
+
+.card-two {
+    margin: 5.1% 2.5% 0 3%;
+}
+
+.card-mobile__btn a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 30px;
+    border-radius: 21px;
+    background: #FFF;
+    padding: 6px 11px;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card-mobile__btn span {
+    font-size: 29px;
+    color: #000;
+}
+
+/* /Main */
+
+/* Footer */
+
+.footer-mobile__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+.chat-icon a,
+.home-icon a,
+.settings-icon a {
+    background: #000;
+}
+
+.home-icon a img {
+    padding-left: 6px;
+}
+
+.settings-icon a img {
+    width: 75px;
+    height: 75px;
+    padding: 9px 0 0 6px;
+}
+
+.footer-mobile__block a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 4em;
+    background: #D9D9D91F;
+    border-radius: 20px;
+    margin: 0 .8em;
+}
+
+
+/* /Footer */

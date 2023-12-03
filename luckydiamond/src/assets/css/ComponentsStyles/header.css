@@ -15,10 +15,10 @@
 }
 
 .header__nav nav a {
-    margin-right: 30%;
     text-decoration: none;
     font-family: Montserrat Alternates;
     font-weight: 700;
+    margin-right: 3em;
 }
 
 .header__nav--now {
