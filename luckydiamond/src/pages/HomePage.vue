@@ -32,7 +32,7 @@
                 <div class="line__footer">
                   <img src="../assets/icons-gamemodes/bomb-icon.svg">
                   <div class="line__btn--main">
-                    <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
+                    <a href="#" @click="$router.push({ name: 'saper' })" class="line__btn">play <span class="line__btn--elm">></span></a>
                   </div>
                 </div>
               </div>
