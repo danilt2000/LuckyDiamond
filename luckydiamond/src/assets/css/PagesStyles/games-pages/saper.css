@@ -36,6 +36,18 @@ input[type="number"]::-webkit-outer-spin-button {
     z-index: -1;
 }
 
+.bg-two {
+    background: #293561;
+    filter: blur(120px);
+    position: absolute;
+    top: 220px;
+    transform: rotate(330deg);
+    left: 800px;
+    width: 40%;
+    height: 25%;
+    z-index: -1;
+}
+
 .saper-start {
     z-index: 1;
     margin-left: 5%;

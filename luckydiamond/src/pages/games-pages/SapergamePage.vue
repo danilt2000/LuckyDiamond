@@ -8,6 +8,7 @@
 
     <section class="saper">
       <div class="bg"></div>
+      <div class="bg-two"></div>
       <div class="saper-start">
         <div class="saper-start__content title-saper padding-elements">
           <h2>Сапёр</h2>
