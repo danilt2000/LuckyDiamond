@@ -57,6 +57,22 @@ body, html {
     height: 100%;
 }
 
+.content-grid--saper {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: .35fr repeat(5, 1fr) 1fr;
+    grid-template-rows: auto 0fr repeat(4, 1fr);
+    grid-template-areas:
+    "menu header header header header header header"
+    "menu saper saper saper saper saper chat"
+    "menu saper saper saper saper saper chat"
+    "menu saper saper saper saper saper chat"
+    "menu saper saper saper saper saper chat"
+    "menu saper saper saper saper saper chat"
+    "menu saper saper saper saper saper chat";
+    grid-gap: 10px;
+}
+
 
 /* /Content Grid */
 
