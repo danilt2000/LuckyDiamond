@@ -162,7 +162,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .saper-start__btns button {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
     margin-bottom: 5px;
     border: none;
     color: #FFF;
@@ -182,4 +182,22 @@ input[type="number"]::-webkit-outer-spin-button {
 .btn-claim {
     border-radius: 10px;
     background: #252C47;
+}
+
+.steps-btns__display {
+    display: flex;
+}
+
+.btns-style__steps button {
+    border-radius: 10px;
+    background: #252C47;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 31px;
+    font-family: Montserrat Alternates;
+    font-size: 12px;
+    padding: 6px 16px;
+    margin-right: 8px;
 }

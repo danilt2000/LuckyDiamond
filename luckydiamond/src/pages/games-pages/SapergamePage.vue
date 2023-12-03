@@ -41,6 +41,13 @@
             <button class="btn-start">Начать игру</button>
             <button class="btn-claim">Забрать 15 АР</button>
           </div>
+          <div class="saper-start__steps btns-style__steps">
+            <ul class="steps-btns__display">
+              <li v-for="(item, index) in SaperNumbers" :key="index">
+                <button v-if="item.steps !== undefined">{{ item.steps }}</button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
