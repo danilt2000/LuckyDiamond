@@ -42,9 +42,9 @@ input[type="number"]::-webkit-outer-spin-button {
     position: absolute;
     top: 220px;
     transform: rotate(330deg);
-    left: 800px;
-    width: 40%;
-    height: 25%;
+    left: 600px;
+    width: 60%;
+    height: 35%;
     z-index: -1;
 }
 
