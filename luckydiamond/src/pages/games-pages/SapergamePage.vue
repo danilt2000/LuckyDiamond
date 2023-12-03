@@ -19,6 +19,7 @@
 import ChatComponent from "@/components/ChatComponent.vue";
 import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
+import '@/assets/css/PagesStyles/games-pages/saper.css'
 
 export default {
   components: {ChatComponent, HeaderElementPage, AsideBarElement }
