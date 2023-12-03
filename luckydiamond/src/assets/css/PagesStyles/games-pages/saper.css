@@ -164,9 +164,22 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 100%;
     padding: 14px;
     margin-bottom: 5px;
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 19px;
+    font-style: normal;
+    font-family: Inter;
+    font-size: 16px;
 
 }
 
 .btn-start {
+    border-radius: 10px;
+    background: #EF4444;
+}
 
+.btn-claim {
+    border-radius: 10px;
+    background: #252C47;
 }

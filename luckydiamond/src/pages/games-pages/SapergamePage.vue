@@ -37,9 +37,9 @@
               </div>
             </div>
           </div>
-          <div class="saper-start__btns btn-start btn-claim">
-            <button>Начать игру</button>
-            <button>Забрать 15 АР</button>
+          <div class="saper-start__btns">
+            <button class="btn-start">Начать игру</button>
+            <button class="btn-claim">Забрать 15 АР</button>
           </div>
         </div>
       </div>
