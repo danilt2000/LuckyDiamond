@@ -266,7 +266,7 @@
     }
     .line__content .line__btn--main .line__btn {
         left: 0;
-        top: 0;
+        top: .5em;
     }
     .line__img {
         margin: 1% -15% 0 2%;
@@ -276,7 +276,7 @@
         height: 60%;
     }
     .gamemode__firstline .title-firstline {
-        font-size: 3.625em;
+        font-size: 3.2em;
     }
     .gamemode__twolines img {
         display: none;
