@@ -94,11 +94,15 @@ input[type="number"]::-webkit-outer-spin-button {
     line-height: 31px;
     font-family: Montserrat Alternates;
     font-size: 12px;
-    padding: 4px 13px;
+    padding: 4px 23px;
 }
 
 .crystal-icon {
     position: relative;
     left: 25px;
     top: 5px;
+}
+
+.crystals-btns__display {
+    display: flex;
 }

@@ -16,9 +16,9 @@
             <div class="crystals__choises crystals-input__margin crystals-btns__choices">
               <img class="crystal-icon" width="25" height="25" src="@/assets/icons-games/saper-game/icon-crystall-saper.svg">
               <input type="number">
-              <ul>
-                <li>
-                  <button>123</button>
+              <ul class="crystals-btns__display">
+                <li v-for="(item, index) in SaperNumbers" :key="index">
+                  <button v-if="item.crystals !== undefined">{{ item.crystals }}</button>
                 </li>
               </ul>
             </div>
