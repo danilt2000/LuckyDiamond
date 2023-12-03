@@ -11,6 +11,13 @@
         <div class="saper-start__content">
           <h2>Сапёр</h2>
           <p>Находи изумруды на поле и избегай кристалы</p>
+          <div class="saper-start__choises crystals">
+            <h3>Количество кристалов</h3>
+            <div class="crystals__choises crystals-input__margin">
+              <img class="crystal-icon" width="25" height="25" src="@/assets/icons-games/saper-game/icon-crystall-saper.svg">
+              <input type="text">
+            </div>
+          </div>
         </div>
       </div>
     </section>

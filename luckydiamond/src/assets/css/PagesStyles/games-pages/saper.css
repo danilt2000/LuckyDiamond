@@ -17,3 +17,15 @@
     width: 25%;
     height: 70%;
 }
+
+.crystals-input__margin {
+    margin-left: -15px;
+}
+
+
+
+.crystal-icon {
+    position: relative;
+    left: 23px;
+    top: 11px;
+}
