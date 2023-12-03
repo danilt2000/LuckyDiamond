@@ -4,7 +4,7 @@
 
     <header-element-page></header-element-page>
 
-    <chat-component></chat-component>
+    <chat-component id="chat"></chat-component>
 
     <section class="saper">
       <div class="saper-start">
