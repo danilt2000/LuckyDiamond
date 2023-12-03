@@ -2,6 +2,12 @@
     height: 95%;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .saper {
     padding-top: 15%;
     border-radius: 20px;
@@ -14,18 +20,63 @@
     border-radius: 20px;
     background: #22252F;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 25%;
-    height: 70%;
+    width: 27%;
+    height: 75%;
+}
+
+.padding-elements {
+    padding-left: 22px;
+}
+
+.title-saper h2 {
+    padding: 16px 0 5px 0;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 31px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+    font-family: Montserrat Alternates;
+    font-size: 26px;
+}
+
+.saper-start__content p {
+    color: #FFFFFF84;
+    font-weight: 700;
+    line-height: 31px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 13px;
+}
+
+.crystals h3 {
+    color: #44C6EF54;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 31px;
+}
+
+.crystals .crystals__choises input {
+    width: 110px;
+    height: 38px;
+    border-radius: 10px;
+    padding-left: 25px;
+    border: 2px solid #2B3458;
+    background: #22252F;
+}
+
+.crystals .crystals__choises input:focus {
+    outline: none;
 }
 
 .crystals-input__margin {
-    margin-left: -15px;
+    margin-left: -22px;
 }
 
 
 
 .crystal-icon {
     position: relative;
-    left: 23px;
+    left: 25px;
     top: 11px;
 }
