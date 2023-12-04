@@ -57,6 +57,7 @@ input[type="number"]::-webkit-outer-spin-button {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 27%;
     height: 70%;
+    margin-top: 2.6%;
 }
 
 .padding-elements {
@@ -246,7 +247,7 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Saper Game */
 
 .saper-game {
-    margin: -40px 0 0 75px;
+    margin: -2.75% 0 0 5.1%;
 }
 
 .saper-game__content {
@@ -254,8 +255,8 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 20px;
     background: #22252F;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 760px;
-    height: 577px;
+    width: 85%;
+    height: 83%;
 }
 
 .square {
@@ -272,19 +273,19 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .margin-lines .firstline {
-    margin-top: 26px;
+    margin-top: 5%;
 }
 
 .margin-lines {
-    padding-left: 26px;
+    padding-left: 2%;
 }
 
 .margin-lines li {
-    margin: 10px 10px 2px 0;
+    margin: 2% 10px 1% 0;
 }
 
 .info-emeralds {
-    margin: 26px 0 0 21px;
+    margin: 13.5% 0 0 10.5%;
 }
 
 .card-info {
@@ -292,12 +293,12 @@ input[type="number"]::-webkit-outer-spin-button {
     border: 1px solid #2B4D6C;
     background: linear-gradient(180deg, #252C47 0%, #252C47 8.33%, rgba(37, 44, 71, 0.00) 100%);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 170px;
-    height: 250px;
+    width: 85%;
+    height: 100%;
 }
 
 .text-style__subtitle h2 {
-    margin: 13px 0 6px 10px;
+    margin: 8% 0 6px 6.3%;
     color: #FFF;
     font-weight: 800;
     line-height: 18px;
@@ -308,7 +309,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .text-style__comment p {
-    margin-left: 10px;
+    margin-left: 6.3%;
     color: #9CA5C7;
     font-weight: 400;
     line-height: 13px;
@@ -318,7 +319,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .info-crystals {
-    margin: 26px 0 0 21px;
+    margin: 13.5% 0 0 10.5%;
 }
 
 /* /Saper Game */
