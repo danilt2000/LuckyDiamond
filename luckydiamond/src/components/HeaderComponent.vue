@@ -76,7 +76,7 @@ export default {
         let currentUserName = GetCookie("SpUserName");
         GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
           .then((response) => {
-            console.log(`route - ${this.$route}`)
+            console.log(`route - ${this.$route.name}`)
             this.balance = response.currentMoney;
             console.log(response);
           })
