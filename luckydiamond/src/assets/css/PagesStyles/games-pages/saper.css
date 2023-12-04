@@ -17,6 +17,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .saper {
+    display: flex;
     padding-top: 10%;
     border-radius: 20px;
     background: #17181C;
@@ -241,3 +242,43 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 6px 16px;
     margin-right: 8px;
 }
+
+/* Saper Game */
+
+.saper-game {
+    margin: -40px 0 0 75px;
+}
+
+.saper-game__content {
+    border-radius: 20px;
+    background: #22252F;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 760px;
+    height: 577px;
+}
+
+.square {
+    border-radius: 10px;
+    background: #252C47;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 95px;
+    height: 95px;
+}
+
+.display-lines {
+    display: flex;
+}
+
+.margin-lines .firstline {
+    margin-top: 26px;
+}
+
+.margin-lines {
+    padding-left: 26px;
+}
+
+.margin-lines li {
+    margin: 10px 10px 2px 0;
+}
+
+/* /Saper Game */

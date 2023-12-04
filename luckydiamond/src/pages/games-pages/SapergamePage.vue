@@ -53,7 +53,45 @@
         </div>
       </div>
       <div class="saper-game">
-
+        <div class="saper-game__content">
+          <div class="game">
+            <div class="game-firstline">
+              <ul class="display-lines margin-lines">
+                <li class="firstline" v-for="index in 5" :key="index">
+                  <div class="square"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="game-default-line">
+              <ul class="display-lines margin-lines">
+                <li v-for="index in 5" :key="index">
+                  <div class="square"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="game-default-line">
+              <ul class="display-lines margin-lines">
+                <li v-for="index in 5" :key="index">
+                  <div class="square"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="game-default-line">
+              <ul class="display-lines margin-lines">
+                <li v-for="index in 5" :key="index">
+                  <div class="square"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="game-default-line">
+              <ul class="display-lines margin-lines">
+                <li v-for="index in 5" :key="index">
+                  <div class="square"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
