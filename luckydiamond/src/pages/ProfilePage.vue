@@ -2,7 +2,7 @@
   <div class="content__grid-profile">
     <aside-bar-component></aside-bar-component>
 
-    <chat-component></chat-component>
+    <chat-component id="chat-profile"></chat-component>
 
     <header-component></header-component>
 
