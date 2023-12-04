@@ -91,6 +91,24 @@
               </ul>
             </div>
           </div>
+          <div class="game-info">
+            <div class="game-info__content text-style__subtitle text-style__comment">
+              <div class="info-emeralds">
+                <div class="info-emeralds__content card-info">
+                  <h2>Изумруды</h2>
+                  <p>Открывай ячейки с изумрудами</p>
+                  <img src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" width="170" height="170">
+                </div>
+              </div>
+              <div class="info-crystals">
+                <div class="info-crystals__content card-info">
+                  <h2>кристаллы</h2>
+                  <p>Остерегайся кристаллов, чтобы не проиграть</p>
+                  <img src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" width="170" height="170">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

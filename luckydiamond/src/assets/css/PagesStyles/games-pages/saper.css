@@ -250,6 +250,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .saper-game__content {
+    display: flex;
     border-radius: 20px;
     background: #22252F;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -263,6 +264,7 @@ input[type="number"]::-webkit-outer-spin-button {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 95px;
     height: 95px;
+    cursor: pointer;
 }
 
 .display-lines {
@@ -279,6 +281,44 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .margin-lines li {
     margin: 10px 10px 2px 0;
+}
+
+.info-emeralds {
+    margin: 26px 0 0 21px;
+}
+
+.card-info {
+    border-radius: 15px;
+    border: 1px solid #2B4D6C;
+    background: linear-gradient(180deg, #252C47 0%, #252C47 8.33%, rgba(37, 44, 71, 0.00) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 170px;
+    height: 250px;
+}
+
+.text-style__subtitle h2 {
+    margin: 13px 0 6px 10px;
+    color: #FFF;
+    font-weight: 800;
+    line-height: 18px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+    font-family: Montserrat Alternates;
+    font-size: 17px;
+}
+
+.text-style__comment p {
+    margin-left: 10px;
+    color: #9CA5C7;
+    font-weight: 400;
+    line-height: 13px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+    font-family: Montserrat Alternates;
+    font-size: 13px;
+}
+
+.info-crystals {
+    margin: 26px 0 0 21px;
 }
 
 /* /Saper Game */
