@@ -103,7 +103,7 @@ export default {
   <header class="header">
     <div class="header__content">
       <div class="header__logo">
-        <img src="../assets/logo.svg" alt="" />
+        <img @click="$router.push({ name: 'home' })" src="../assets/logo.svg" alt="" />
       </div>
       <div class="header__nav">
         <nav>
