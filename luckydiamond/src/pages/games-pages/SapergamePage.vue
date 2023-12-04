@@ -52,6 +52,9 @@
           </div>
         </div>
       </div>
+      <div class="saper-game">
+
+      </div>
     </section>
   </div>
 </template>
