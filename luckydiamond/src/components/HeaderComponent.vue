@@ -108,8 +108,8 @@ export default {
       </div>
       <div class="header__nav">
         <nav>
-          <a href="#" @click="$router.push({ name: 'home' })" :class="{ 'header__nav--now' : $route === 'home' }">Главная</a>
-          <a href="#" @click="$router.push({ name: 'profile' })" :class="{ 'header__nav--now' : $route === 'profile' }">Профиль</a>
+          <a href="#" @click="$router.push({ name: 'home' })" :class="{ 'header__nav--now' : $route.name === 'home' }">Главная</a>
+          <a href="#" @click="$router.push({ name: 'profile' })" :class="{ 'header__nav--now' : $route.name === 'profile' }">Профиль</a>
           <a href="#">Помощь</a>
         </nav>
       </div>
