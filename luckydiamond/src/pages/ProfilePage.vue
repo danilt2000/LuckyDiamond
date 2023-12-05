@@ -56,7 +56,7 @@
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
-import PaymentsModal from "@/components/archive/PaymentsModal.vue";
+import PaymentsModal from "@/components/PaymentsModal.vue";
 import '@/assets/css/PagesStyles/profile.css'
 
 export default {

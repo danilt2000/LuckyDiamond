@@ -1,14 +1,17 @@
 <template>
   <div class="payment-modal">
-    <div class="payments-modal__content">
+    <div class="payments-modal__content close-modal__icon text-styles__margin">
       <h1>{{ payments ? 'Пополнить' : 'Вывод' }}</h1>
-      <button @click="closeModal">X</button>
+      <img @click="closeModal" src="@/assets/icons-other/icon-payments-modal-close.svg">
     </div>
-    <div v-if="payments" class="payments-modal__deposit payments__input--color payments__margin payments__button">
-      <label>Введите сумму пополнения</label>
-      <input v-model="amount" type="number">
-      <div class="payments-modal__content--btn">
-        <button type="submit" @click="detectorMethod('dep')">Подтвердить</button>
+    <div v-if="payments" class="payments-modal__deposit">
+      <div class="deposit-input deposit-text deposit-icon-diamond deposit-icon__input">
+        <h3>Сумма пополнения</h3>
+        <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
+        <input type="number">
+        <div class="deposit-btns">
+
+        </div>
       </div>
     </div>
     <div v-else class="payments-modal__withdraw payments__input--color payments__margin payments__button">

@@ -1,10 +1,22 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
 .payment-modal {
     position: absolute;
     top: 20%;
     left: 35%;
-    background: #000;
-    width: 400px;
-    height: 200px;
+    border-radius: 25px;
+    background: #22252F;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 390px;
+    height: 462px;
 }
 
 .payments-modal__content {
@@ -13,39 +25,53 @@
     justify-content: space-between;
 }
 
-.payments-modal__content button {
-    background: #fff;
-    border: none;
-    color: #ff0000;
-    width: 40px;
-    height: 40px;
-    font-size: 40px;
+.close-modal__icon img {
+    margin: 17px 22px 0 0;
     cursor: pointer;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.payments__input--color input {
-    color: #000;
+.text-styles__margin h1 {
+    margin: 16px 0 0 26px;
 }
 
-.payments__margin {
-    margin: 40px 0 0 20px;
-}
-
-.payments__margin input {
-    margin-left: 10px;
-}
-
-.payments__button .payments-modal__content--btn {
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-}
-
-.payments__button .payments-modal__content--btn button {
-    background: #fff;
-    color: #000;
+.payments-modal__content h1 {
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-weight: 700;
-    padding: 10px 10px;
-    border: none;
-    cursor: pointer;
+    font-family: Montserrat Alternates;
+    font-size: 20px;
+}
+
+.payments-modal__deposit {
+    margin-left: 26px;
+}
+
+.deposit-text h3 {
+    color: rgba(68, 198, 239, 0.33);
+    font-weight: 700;
+    line-height: 31px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+.deposit-icon-diamond img {
+    position: absolute;
+    top: 17%;
+    left: 10%;
+}
+
+.deposit-icon__input input {
+    width: 350px;
+    height: 44px;
+    border-radius: 15px;
+    border: 2px solid #2B3458;
+    background: #22252F;
+    color: rgba(148, 148, 148, 0.95);
+    font-weight: 700;
+    font-family: Montserrat Alternates;
+    font-size: 12px;
+    padding-left: 40px;
 }
