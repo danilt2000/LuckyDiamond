@@ -322,4 +322,32 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 13.5% 0 0 10.5%;
 }
 
+.circles__content {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 7px;
+}
+
+.circles {
+    position: absolute;
+}
+
+.circles-1 {
+    top: 125px;
+}
+
+.circles-2 {
+    top: 235px;
+}
+
+.circles-3 {
+    top: 345px;
+}
+
+.circles-4 {
+    top: 455px;
+}
+
 /* /Saper Game */

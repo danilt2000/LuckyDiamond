@@ -55,6 +55,12 @@
       <div class="saper-game">
         <div class="saper-game__content">
           <div class="game">
+            <div class="circles__content">
+              <img src="@/assets/icons-games/saper-game/circles.png" class="circles circles-1">
+              <img src="@/assets/icons-games/saper-game/circles.png" class="circles circles-2">
+              <img src="@/assets/icons-games/saper-game/circles.png" class="circles circles-3">
+              <img src="@/assets/icons-games/saper-game/circles.png" class="circles circles-4">
+            </div>
             <div class="game-firstline">
               <ul class="display-lines margin-lines">
                 <li class="firstline" v-for="index in 5" :key="index">
