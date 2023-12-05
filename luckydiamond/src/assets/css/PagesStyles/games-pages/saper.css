@@ -266,6 +266,12 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 95px;
     height: 95px;
     cursor: pointer;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.square-fliper {
+    transform: rotateY(180deg);
 }
 
 .display-lines {

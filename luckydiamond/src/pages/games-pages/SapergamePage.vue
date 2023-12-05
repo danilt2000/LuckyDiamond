@@ -64,35 +64,35 @@
             <div class="game-firstline">
               <ul class="display-lines margin-lines">
                 <li class="firstline" v-for="index in 5" :key="index">
-                  <div class="square"></div>
+                  <div @click="flipCard(index)" :class="[ 'square', `square-${index}`, { 'square-fliper' : flippedCards.includes(index) } ]"></div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div class="square"></div>
+                  <div @click="flipCard(index + 5)" :class="[ 'square', `square-${index + 5}`, { 'square-fliper' : flippedCards.includes(index + 5) } ]"></div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div class="square"></div>
+                  <div @click="flipCard(index + 10)" :class="[ 'square', `square-${index + 10}`, { 'square-fliper' : flippedCards.includes(index + 10) } ]"></div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div class="square"></div>
+                  <div @click="flipCard(index + 15)" :class="[ 'square', `square-${index + 15}`, { 'square-fliper' : flippedCards.includes(index + 15) } ]"></div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div class="square"></div>
+                  <div @click="flipCard(index + 20)" :class="[ 'square', `square-${index + 20}`, { 'square-fliper' : flippedCards.includes(index + 20) } ]"></div>
                 </li>
               </ul>
             </div>
@@ -127,14 +127,32 @@ import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
 import '@/assets/css/PagesStyles/games-pages/saper.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
+import {flip} from "@popperjs/core";
 
 export default {
+  computed: {
+    flip() {
+      return flip
+    }
+  },
   components: {ChatComponent, HeaderElementPage, AsideBarElement },
   data() {
     return {
-      SaperNumbers
+      SaperNumbers,
+      clickedBtn: false,
+      flippedCards: []
     }
-  }
+  },
+  methods: {
+    flipCard(index) {
+      if (this.flippedCards.includes(index)) {
+        this.flippedCards.splice(this.flippedCards.indexOf(index), 1);
+        console.log(index, this.flippedCards)
+      } else {
+        this.flippedCards.push(index);
+      }
+    },
+  },
 }
 </script>
 
