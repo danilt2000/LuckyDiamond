@@ -14,8 +14,8 @@
         <h2><img src="@/assets/icons-profile/icon-diamond-ore.png">{{ balance }}</h2>
       </div>
       <div class="profile__btns--payments">
-        <a href="#" class="text-btn btn-bg btn-margin btn-display" @click="depositClick"><img src="@/assets/icons-profile/icon-deposit.svg"> Пополнить</a>
-        <a href="#" class="withdraw text-btn btn-bg btn-display" @click="withdrawClick"><img src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
+        <a href="#" class="text-btn btn-bg btn-margin btn-display" @click="depositClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-deposit.svg"> Пополнить</a>
+        <a href="#" class="withdraw text-btn btn-bg btn-display" @click="withdrawClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
       </div>
     </div>
     <div class="payments">
