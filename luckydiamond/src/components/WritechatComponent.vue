@@ -1,7 +1,7 @@
 <template>
   <div class="write">
     <div class="write__content">
-      <input type="text" v-model.trim="msg" placeholder="Напишите сообщение..." maxlength="22">
+      <input type="text" @keyup.enter="sendmsgDataEnter" v-model.trim="msg" placeholder="Напишите сообщение..." maxlength="22">
       <button
           :disabled="CheckerforBtn()"
           type="submit"
@@ -26,6 +26,11 @@ export default {
   methods: {
     CheckerforBtn() {
       return this.msg === ''
+    },
+    sendmsgDataEnter() {
+      if (this.msg !== '') {
+        this.SendmsgData()
+      }
     },
     SendmsgData() {
       this.$emit('send', [this.msg, this.username, this.icon])
