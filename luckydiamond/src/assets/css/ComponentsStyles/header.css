@@ -44,6 +44,10 @@
     z-index: 1;
 }
 
+.header__balance {
+    width: 120px;
+}
+
 .header__content--balance {
     display: flex;
     align-items: center;
