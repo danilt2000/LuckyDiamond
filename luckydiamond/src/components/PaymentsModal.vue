@@ -12,7 +12,7 @@
         <div class="deposit-btns">
           <ul class="display-btns btns-style-diamonds">
             <li v-for="number in PaymentsModalNumbers" :key="number">
-              <button>{{ number.diamonds }}</button>
+              <button @click="clickedBtnChoice(number, number.diamonds)" :class="{ 'btn-click': clickedBtn === number, [number]: clickedBtn === number }">{{ number.diamonds }}</button>
             </li>
           </ul>
         </div>
@@ -54,6 +54,7 @@ export default {
     return {
       amount: 1,
       card: 0,
+      clickedBtn: '',
       PaymentsModalNumbers
     }
   },
@@ -73,6 +74,10 @@ export default {
         console.log('Произошла ошибка при взаимодействие')
         return
       }
+    },
+    clickedBtnChoice(index, content) {
+      this.clickedBtn = index
+      this.amount = content
     }
   }
 }
