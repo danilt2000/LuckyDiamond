@@ -94,7 +94,7 @@ export default {
         amount: amount
       }
 
-      this.arrayHistory.push(historyPayments)
+      this.arrayHistory.unshift(historyPayments)
     },
     claimDataWithdraw(amount) {
       const historyPayments = {
@@ -104,7 +104,7 @@ export default {
         amount: -amount
       }
 
-      this.arrayHistory.push(historyPayments)
+      this.arrayHistory.unshift(historyPayments)
     }
   }
 }
