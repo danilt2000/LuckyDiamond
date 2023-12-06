@@ -17,7 +17,7 @@
             <h3>Количество кристалов</h3>
             <div class="crystals__choises crystals-input__margin crystals-btns__choices">
               <img class="crystal-icon" width="25" height="25" src="@/assets/icons-games/saper-game/icon-crystall-saper.svg">
-              <input type="number">
+              <input v-model="amountCrystals" type="number">
               <ul class="crystals-btns__display">
                 <li v-for="(item, index) in SaperNumbers" :key="index">
                   <button v-if="item.crystals !== undefined">{{ item.crystals }}</button>
@@ -29,11 +29,11 @@
             <h3>Сумма депозита</h3>
             <div class="diamonds__choises">
               <img class="diamond-icon" src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
-              <input type="number" id="diamonds-input">
+              <input v-model="amountDeposit" type="number" id="diamonds-input">
               <div class="diamonds__btns btn-style__diamonds">
                 <ul class="diamonds-btns__display">
                   <li v-for="(item, index) in SaperNumbers" :key="index">
-                    <button :id="item.diamonds === 'max' ? 'max-button' : null" v-if="item.diamonds !== undefined">{{ item.diamonds }}</button>
+                    <button @click="clickedBtnChoice(index, item.diamonds)" :class="{ 'btn-click': clickedBtn === index, [index]: clickedBtn === index }" :id="item.diamonds === 'max' ? 'max-button' : null" v-if="item.diamonds !== undefined">{{ item.diamonds }}</button>
                   </li>
                 </ul>
               </div>
@@ -127,19 +127,16 @@ import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
 import '@/assets/css/PagesStyles/games-pages/saper.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
-import {flip} from "@popperjs/core";
 
 export default {
-  computed: {
-    flip() {
-      return flip
-    }
-  },
   components: {ChatComponent, HeaderElementPage, AsideBarElement },
   data() {
     return {
       SaperNumbers,
-      clickedBtn: false,
+      clickedBtn: '',
+      amountCrystals: 5,
+      balance: 1000,
+      amountDeposit: 5,
       flippedCards: []
     }
   },
@@ -152,6 +149,15 @@ export default {
         this.flippedCards.push(index);
       }
     },
+    clickedBtnChoice(index, content) {
+      this.clickedBtn = index
+      if (content === 'max') {
+        this.amountDeposit = this.balance
+      }
+      else {
+        this.amountDeposit = content
+      }
+    }
   },
 }
 </script>
