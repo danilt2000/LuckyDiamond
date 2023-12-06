@@ -22,13 +22,13 @@
     text-decoration: none;
     font-family: Montserrat Alternates;
     font-weight: 700;
+    font-size: 18px;
     margin-right: 3em;
 }
 
 .header__nav--now {
     color: #EF4444;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 18px;
     position: relative;
 }
 
@@ -115,6 +115,7 @@
     background: #30323E;
     text-decoration: none;
     padding: 6px 2px 6px 2px;
+    width: 75px;
 }
 
 .discord__card--name a span img {
