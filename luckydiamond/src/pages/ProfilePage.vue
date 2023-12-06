@@ -71,6 +71,13 @@ export default {
     }
   },
   methods: {
+    formatNumber(number) {
+      return number < 10 ? `0${number}` : number;
+    },
+    getCurrentFormattedDate() {
+      const currentDate = new Date();
+      return `${this.formatNumber(currentDate.getDate())}.${this.formatNumber(currentDate.getMonth() + 1)}.${currentDate.getFullYear()}, ${this.formatNumber(currentDate.getHours())}:${this.formatNumber(currentDate.getMinutes())}`;
+    },
     depositClick() {
       this.openModal = true
       this.payments = true
@@ -83,7 +90,7 @@ export default {
       const historyPayments = {
         name: 'TEST USER',
         comment: 'test',
-        data: '5ч назад',
+        data: this.getCurrentFormattedDate(),
         amount: amount
       }
 
@@ -93,7 +100,7 @@ export default {
       const historyPayments = {
         name: 'TEST USER',
         comment: 'test',
-        data: '5ч назад',
+        data: this.getCurrentFormattedDate(),
         amount: -amount
       }
 
