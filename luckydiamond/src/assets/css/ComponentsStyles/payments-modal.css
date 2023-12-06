@@ -92,7 +92,8 @@ input:focus {
     font-family: Montserrat Alternates;
     font-size: 12px;
     border: none;
-    padding: 4px 22px;
+    margin-right: 6px;
+    padding: 4px 19px;
 }
 
 .deposit-promocode {
