@@ -6,5 +6,5 @@ export function
 
     const code = parts[parts.length - 1];
 
-    return code;
+    return code
 }
