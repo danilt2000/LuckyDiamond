@@ -3,7 +3,7 @@
 }
 
 .profile__content {
-    width: 35%;
+    width: 30%;
     margin-left: 3%;
 }
 
@@ -26,7 +26,8 @@
 .profile__card h2 {
     border-radius: 20px;
     background: #22252F;
-    width: 32%;
+    width: 60%;
+    height: 60px;
     display: flex;
     align-items: center;
     color: #FFF;
@@ -46,8 +47,8 @@
 }
 
 .icon-diamond h2 img {
-    width: 20px;
-    height: 20px;
+    width: 33px;
+    height: 33px;
 }
 
 .deposit-icon {
