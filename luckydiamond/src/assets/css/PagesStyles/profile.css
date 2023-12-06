@@ -45,6 +45,11 @@
     flex-direction: column;
 }
 
+.icon-diamond h2 img {
+    width: 20px;
+    height: 20px;
+}
+
 .deposit-icon {
     margin: 3px 0 0 10px;
 }

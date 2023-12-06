@@ -9,7 +9,7 @@
   <section class="profile">
     <div class="profile__content">
       <img class="profile__user--img" src="@/assets/icons-test/person-icon-profile.png">
-      <div class="profile__card">
+      <div class="profile__card icon-diamond">
         <h1>{{ username }}</h1>
         <h2><img src="@/assets/icons-profile/icon-diamond-ore.png">{{ balance }}</h2>
       </div>
