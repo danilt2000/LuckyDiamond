@@ -138,7 +138,7 @@
 
 .line__footer img {
     width: 60%;
-    margin-bottom: 23px;
+    margin-bottom: 5%;
 }
 
 .gamemode__lines {
@@ -248,7 +248,73 @@
 
 /* Media */
 
-@media screen and (max-width: 1280px) {
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+    .main {
+        width: 75%;
+    }
+    .main__content h1 {
+        font-size: 4.5em;
+    }
+    .gamemode__content--text div {
+        width: 75%;
+    }
+    .gamemode__main {
+        height: auto;
+        width: 25%;
+    }
+    .title-firstline {
+        font-size: 4.1em;
+    }
+    .line__footer {
+        flex-direction: column;
+    }
+    .line__footer img {
+        margin-top: -2em;
+    }
+    .line__content .line__btn--main .line__btn {
+        left: 0;
+        top: -.4em;
+    }
+    .line__img {
+        margin: 1% -8% 0 2%;
+    }
+    .gamemode__firstline img {
+        width: 60%;
+        height: 60%;
+    }
+    .gamemode__firstline .title-firstline {
+        font-size: 3.2em;
+    }
+    .gamemode__twolines img {
+        display: none;
+    }
+    .gamemode__twolines .title-twoline {
+        font-size: 3.238em;
+    }
+    .line__btn {
+        font-size: 28px;
+        padding: 6px 11px;
+    }
+    .gamemode__twoline--first__element .container a {
+        padding: 6px 11px;
+    }
+    .write {
+        position: static;
+        margin: 45% 87% 6% 2%;
+    }
+    .write__content input {
+        padding: 0.625em 1% 14px 0.75em;
+    }
+    .write__content input::placeholder {
+        font-size: 11.5px;
+    }
+    .write__content button {
+        margin-left: -15%;
+        padding: 0.375em 0.375em;
+    }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1399px) {
     .main__content h1 {
         font-size: 4.5em;
     }
@@ -266,7 +332,7 @@
     }
     .line__content .line__btn--main .line__btn {
         left: 0;
-        top: .5em;
+        top: -.4em;
     }
     .line__img {
         margin: 1% -15% 0 2%;
