@@ -250,7 +250,7 @@
 
 @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
     .main {
-        width: 75%;
+        width: 75% !important;
     }
     .main__content h1 {
         font-size: 4.5em;
@@ -320,6 +320,7 @@
     }
     .gamemode__main {
         height: auto;
+        width: 28.5%;
     }
     .title-firstline {
         font-size: 4.1em;
@@ -335,7 +336,7 @@
         top: -.4em;
     }
     .line__img {
-        margin: 1% -15% 0 2%;
+        margin: 1% -5% 0 2%;
     }
     .gamemode__firstline img {
         width: 60%;
