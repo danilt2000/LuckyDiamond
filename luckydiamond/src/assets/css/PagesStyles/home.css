@@ -252,6 +252,9 @@
     .header__auth--discord {
         width: 14%;
     }
+    .header__balance {
+        width: auto;
+    }
     .main {
         width: 75% !important;
     }
@@ -320,6 +323,9 @@
 @media screen and (min-device-width: 1200px) and (max-device-width: 1399px) {
     .header__auth--discord {
         width: 14%;
+    }
+    .header__balance {
+        width: auto;
     }
     .main__content h1 {
         font-size: 4.5em;
