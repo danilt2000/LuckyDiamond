@@ -249,6 +249,9 @@
 /* Media */
 
 @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+    .header__auth--discord {
+        width: 14%;
+    }
     .main {
         width: 75% !important;
     }
@@ -315,6 +318,9 @@
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1399px) {
+    .header__auth--discord {
+        width: 14%;
+    }
     .main__content h1 {
         font-size: 4.5em;
     }
