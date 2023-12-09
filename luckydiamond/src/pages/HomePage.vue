@@ -45,15 +45,16 @@
               <li
                   v-for="mode in firstlineGameMode"
                   :key="mode.id"
+                  class="display-firstline"
               >
-                <div class="line__img">
-                  <img src="@/assets/icons-gamemodes/case-icon.png">
-                </div>
                 <div :class="'linecontent-' + mode.id">
                   <div class="container">
                     <h1 class="title-firstline">{{ mode.title }}</h1>
                     <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
                   </div>
+                </div>
+                <div class="line__img">
+                  <img src="@/assets/icons-gamemodes/case-icon.png">
                 </div>
               </li>
             </ul>

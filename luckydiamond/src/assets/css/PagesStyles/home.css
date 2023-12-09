@@ -153,10 +153,13 @@
 }
 
 .line__img {
-    float: right;
+    display: flex;
     margin:  1% 6.6% 1% 4.7%;
 }
 
+.display-firstline {
+    display: flex;
+}
 
 .line__btn {
     border-radius: 21px;
@@ -282,11 +285,10 @@
         top: -.4em;
     }
     .line__img {
-        margin: 1% -8% 0 2%;
+        margin: 1% -8% 0 30%;
     }
     .gamemode__firstline img {
         width: 60%;
-        height: 60%;
     }
     .gamemode__firstline .title-firstline {
         font-size: 3.2em;
@@ -330,9 +332,15 @@
     .main__content h1 {
         font-size: 4.5em;
     }
+    .main {
+        width: 78% !important;
+    }
     .gamemode__main {
         height: auto;
         width: 28.5%;
+    }
+    .gamemode__content--text div {
+        width: 78%;
     }
     .title-firstline {
         font-size: 4.1em;
@@ -348,11 +356,10 @@
         top: -.4em;
     }
     .line__img {
-        margin: 1% -5% 0 2%;
+        margin: 1% -8% 0 15%;
     }
     .gamemode__firstline img {
         width: 60%;
-        height: 60%;
     }
     .gamemode__firstline .title-firstline {
         font-size: 3.2em;
