@@ -30,7 +30,16 @@
 }
 
 .chat__content--users {
-    height: 70%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.chat__content, .chat__content--users {
+    box-sizing: border-box;
+}
+
+.chat__content--users {
+    margin: 0;
 }
 
 .card__user {
@@ -39,7 +48,7 @@
 }
 
 .fade-enter-active, .fade-leave-active {
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.1s, transform 0.1s;
 }
 .fade-enter, .fade-leave-to {
     opacity: 0;

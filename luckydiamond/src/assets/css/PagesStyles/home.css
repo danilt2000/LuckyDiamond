@@ -308,7 +308,7 @@
     }
     .write {
         position: static;
-        margin: 45% 87% 6% 2%;
+        margin: -45% 87% 6% 2%;
     }
     .write__content input {
         padding: 0.625em 1% 14px 0.75em;
@@ -379,7 +379,7 @@
     }
     .write {
         position: static;
-        margin: 45% 87% 6% 2%;
+        margin: -45% 87% 6% 2%;
     }
     .write__content input {
         padding: 0.625em 1% 14px 0.75em;
