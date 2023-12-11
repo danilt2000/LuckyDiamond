@@ -29,7 +29,7 @@ export async function GetCurrentMoney(authToken, searchToken) {
     SearchToken: searchToken
   };
   try {
-    const response = await fetch(`${BackendApiUrl}/Payment/GetCurrentMoney`, {
+    const response = await fetch(`${BackendApiUrl}/Payment/UserMoney`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,26 +46,6 @@ export async function GetCurrentMoney(authToken, searchToken) {
   } catch (error) {
     console.log("Fetch error:", error);
   }
-  // try {
-  //   const response = await fetch(`${BackendApiUrl}/Payment/GetCurrentMoney`, {
-  //     method: 'GET',
-  //     redirect: 'follow',
-  //     headers: {
-  //       'AUTHTOKEN': authToken,
-  //       'SearchToken': searchToken
-  //     }
-  //   });
-
-  //   if (!response.ok) {
-  //     throw new Error(`HTTP error! status: ${response.status}`);
-  //   }
-
-  //   const data = await response.json();
-  //   console.log(data);
-  //   return data;
-  // } catch (error) {
-  //   console.error('There was a problem with the fetch operation:', error);
-  // }
 }
 
 
