@@ -57,7 +57,7 @@ export default {
       card: 0,
       clickedBtn: '',
       url: '',
-      offBtn: false,
+      offBtn: true,
       PaymentsModalNumbers
     }
   },
