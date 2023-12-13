@@ -45,6 +45,7 @@
 <script>
 import '@/assets/css/ComponentsStyles/payments-modal.css'
 import PaymentsModalNumbers from "@/mocks/PaymentsModalNumbers";
+import { GettingMoneyOperation } from "@/assets/js/moneyoperation/Claimmoney";
 
 export default {
   props: [
@@ -55,7 +56,25 @@ export default {
       amount: 1,
       card: 0,
       clickedBtn: '',
+      url: '',
       PaymentsModalNumbers
+    }
+  },
+  watch: {
+    amount(newAmount) {
+      console.log(newAmount)
+      setTimeout(() => {
+        try {
+          GettingMoneyOperation(newAmount)
+              .then((response) => {
+                console.log('Payments Modal Working!: ', response)
+                this.url = response.url
+              })
+        }
+        catch (e) {
+          console.error('Error in PaymentModal!', e)
+        }
+      }, 2000)
     }
   },
   methods: {
