@@ -141,7 +141,20 @@ input[type="checkbox"]:checked::before {
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin: 10% 6% 0 0;
+    margin: 5% 6% 0 0;
+}
+
+.btn-display-deposit {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-text-style p {
+    color: #949494F2;
+    font-weight: 700;
+    font-family: Montserrat Alternates;
+    font-size: 7.5px;
+    margin: 5px 0;
 }
 
 .btn-style-payments button {

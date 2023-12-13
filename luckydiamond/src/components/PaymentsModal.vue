@@ -24,8 +24,10 @@
           <input type="checkbox">
           <h3>Я согласен с пользовательским соглашением.</h3>
         </div>
-        <div class="btn-deposit btn-style-payments">
+        <div class="btn-deposit btn-text-style btn-display-deposit btn-style-payments">
+          <p>Вы подтверждаете правильность введенных данных при создании вывода.</p>
           <button type="submit" :disabled="offBtn" @click="RedirectedMethodDep">Пополнить</button>
+          <p>Перед пополнение прочитайте политику конфиденциальности и пользовательское соглашение.</p>
         </div>
       </div>
     </div>
