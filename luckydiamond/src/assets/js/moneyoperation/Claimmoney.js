@@ -30,10 +30,8 @@ export async function GettingMoneyOperation(amount) {
             console.log("Fetch error:", response.status);
         }
         console.log(response)
-
         return await response.json();
     } catch (error) {
         console.log("Fetch error:", error);
     }
-
 }
