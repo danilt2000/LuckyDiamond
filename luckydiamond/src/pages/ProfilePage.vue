@@ -57,6 +57,7 @@ import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import PaymentsModal from "@/components/PaymentsModal.vue";
+import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import '@/assets/css/PagesStyles/profile.css'
 
 export default {
@@ -69,6 +70,10 @@ export default {
       payments: true,
       arrayHistory: [],
     }
+  },
+  created() {
+    this.username = GetCookie('SpUserName')
+    console.log(this.username)
   },
   methods: {
     formatNumber(number) {
