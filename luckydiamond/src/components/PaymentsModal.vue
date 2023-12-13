@@ -63,10 +63,8 @@ export default {
   },
   watch: {
     amount(newAmount) {
-      console.log(newAmount)
+      this.offBtn = true
       if (this.amount > 0 && this.amount !== '' ) {
-        this.offBtn = true
-        console.log('OFFBTN', this.offBtn)
         setTimeout(() => {
           try {
             GettingMoneyOperation(newAmount)
@@ -74,7 +72,6 @@ export default {
                   console.log('Payments Modal Working!: ', response)
                   this.url = response.url
                   this.offBtn = false
-                  console.log('ONBTN', this.offBtn)
                 })
           }
           catch (e) {
