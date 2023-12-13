@@ -3,7 +3,7 @@ import { Post } from '../rest/RestMethods.js';
 
 export async function GettingMoneyOperation(amount) {
     try {
-        const response = await Post('https://spsystemcore20231122004605.azurewebsites.net/api/Payment', amount)
+        const response = await Post('https://spsystemcore20231122004605.azurewebsites.net/api/payment/donate', amount)
 
         console.log(response)
         return response
