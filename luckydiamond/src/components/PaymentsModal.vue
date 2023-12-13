@@ -64,22 +64,24 @@ export default {
   watch: {
     amount(newAmount) {
       console.log(newAmount)
-      this.offBtn = true
-      console.log('OFFBTN', this.offBtn)
-      setTimeout(() => {
-        try {
-          GettingMoneyOperation(newAmount)
-              .then((response) => {
-                console.log('Payments Modal Working!: ', response)
-                this.url = response.url
-                this.offBtn = false
-                console.log('ONBTN', this.offBtn)
-              })
-        }
-        catch (e) {
-          console.error('Error in PaymentModal!', e)
-        }
-      }, 2000)
+      if (!this.amount < 0 && this.amount !== '' ) {
+        this.offBtn = true
+        console.log('OFFBTN', this.offBtn)
+        setTimeout(() => {
+          try {
+            GettingMoneyOperation(newAmount)
+                .then((response) => {
+                  console.log('Payments Modal Working!: ', response)
+                  this.url = response.url
+                  this.offBtn = false
+                  console.log('ONBTN', this.offBtn)
+                })
+          }
+          catch (e) {
+            console.error('Error in PaymentModal!', e)
+          }
+        }, 2000)
+      }
     }
   },
   methods: {
