@@ -8,7 +8,7 @@
 
   <section class="profile">
     <div class="profile__content">
-      <img class="profile__user--img" src="@/assets/icons-test/person-icon-profile.png">
+      <img class="profile__user--img" :src="imageUrl">
       <div class="profile__card icon-diamond">
         <h1>{{ username }}</h1>
         <h2><img src="@/assets/icons-profile/icon-diamond-ore.png">{{ balance }}</h2>
@@ -65,6 +65,7 @@ export default {
   data() {
     return {
       username: 'Artemka',
+      imageUrl: '',
       balance: 25000,
       openModal: false,
       payments: true,
@@ -73,7 +74,7 @@ export default {
   },
   created() {
     this.username = GetCookie('SpUserName')
-    console.log(this.username)
+    this.imageUrl = `https://visage.surgeplay.com/front/256/${this.username}`
   },
   methods: {
     formatNumber(number) {
