@@ -6,7 +6,7 @@ export async function GettingMoneyOperation(amount) {
         const response = await Post('https://spsystemcore20231122004605.azurewebsites.net/api/payment/donate', { request: amount })
 
         console.log(response)
-        return response
+        return await response.json()
     }
     catch (e) {
         console.error('Error in ClaimMoney method: ', e)
