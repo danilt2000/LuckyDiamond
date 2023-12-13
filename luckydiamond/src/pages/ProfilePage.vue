@@ -8,7 +8,7 @@
 
   <section class="profile">
     <div class="profile__content">
-      <img class="profile__user--img" src="@/assets/icons-test/person-icon-profile.png">
+      <img class="profile__user--img" :src="imageUrl">
       <div class="profile__card icon-diamond">
         <h1>{{ username }}</h1>
         <h2><img src="@/assets/icons-profile/icon-diamond-ore.png">{{ balance }}</h2>
@@ -57,6 +57,7 @@ import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import PaymentsModal from "@/components/PaymentsModal.vue";
+import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import '@/assets/css/PagesStyles/profile.css'
 
 export default {
@@ -64,11 +65,16 @@ export default {
   data() {
     return {
       username: 'Artemka',
+      imageUrl: '',
       balance: 25000,
       openModal: false,
       payments: true,
       arrayHistory: [],
     }
+  },
+  created() {
+    this.username = GetCookie('SpUserName')
+    this.imageUrl = `https://visage.surgeplay.com/front/256/${this.username}`
   },
   methods: {
     formatNumber(number) {

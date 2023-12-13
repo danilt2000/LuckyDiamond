@@ -21,7 +21,7 @@
           <input type="text">
         </div>
         <div class="btn-deposit btn-style-payments">
-          <button type="submit" @click="detectorMethod('dep')">Пополнить</button>
+          <button type="submit" :disabled="offBtn" @click="RedirectedMethodDep">Пополнить</button>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
         <input v-model="card" type="number">
       </div>
       <div class="btn-withdraw btn-style-payments">
-        <button type="submit" @click="detectorMethod('with')">Вывод</button>
+        <button type="submit">Вывод</button>
       </div>
     </div>
   </div>
@@ -57,18 +57,23 @@ export default {
       card: 0,
       clickedBtn: '',
       url: '',
+      offBtn: true,
       PaymentsModalNumbers
     }
   },
   watch: {
     amount(newAmount) {
       console.log(newAmount)
+      this.offBtn = true
+      console.log('OFFBTN', this.offBtn)
       setTimeout(() => {
         try {
           GettingMoneyOperation(newAmount)
               .then((response) => {
                 console.log('Payments Modal Working!: ', response)
                 this.url = response.url
+                this.offBtn = false
+                console.log('ONBTN', this.offBtn)
               })
         }
         catch (e) {
@@ -81,19 +86,22 @@ export default {
     closeModal() {
       return this.$emit('closemodal')
     },
-    detectorMethod(method) {
-      this.closeModal()
-      if (method === 'dep') {
-        return this.$emit('deposit', this.amount)
-      }
-      else if (method === 'with') {
-        return this.$emit('withdraw', this.amount, this.card)
-      }
-      else {
-        console.log('Произошла ошибка при взаимодействие')
-        return
-      }
+    RedirectedMethodDep() {
+      window.location.href = this.url
     },
+    // detectorMethod(method) {
+    //   this.closeModal()
+    //   if (method === 'dep') {
+    //     return this.$emit('deposit', this.amount)
+    //   }
+    //   else if (method === 'with') {
+    //     return this.$emit('withdraw', this.amount, this.card)
+    //   }
+    //   else {
+    //     console.log('Произошла ошибка при взаимодействие')
+    //     return
+    //   }
+    // },
     clickedBtnChoice(index, content) {
       this.clickedBtn = index
       this.amount = content
