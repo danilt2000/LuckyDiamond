@@ -64,7 +64,7 @@ export default {
   watch: {
     amount(newAmount) {
       console.log(newAmount)
-      if (!this.amount < 0 && this.amount !== '' ) {
+      if (this.amount > 0 && this.amount !== '' ) {
         this.offBtn = true
         console.log('OFFBTN', this.offBtn)
         setTimeout(() => {
