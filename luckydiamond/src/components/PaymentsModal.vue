@@ -64,14 +64,14 @@ export default {
   watch: {
     amount(newAmount) {
       console.log(newAmount)
-      this.offBtn = !this.offBtn
+      this.offBtn = true
       setTimeout(() => {
         try {
           GettingMoneyOperation(newAmount)
               .then((response) => {
                 console.log('Payments Modal Working!: ', response)
                 this.url = response.url
-                this.offBtn = !this.offBtn
+                this.offBtn = false
               })
         }
         catch (e) {
