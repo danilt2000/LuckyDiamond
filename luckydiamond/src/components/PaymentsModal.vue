@@ -65,11 +65,11 @@ export default {
       console.log(newAmount)
       setTimeout(() => {
         try {
-          GettingMoneyOperation(newAmount)
-              .then((response) => {
-                console.log('Payments Modal Working!: ', response)
-                this.url = response.url
-              })
+          // GettingMoneyOperation(newAmount)
+          //     .then((response) => {
+          //       console.log('Payments Modal Working!: ', response)
+          //       this.url = response.url
+          //     })
         }
         catch (e) {
           console.error('Error in PaymentModal!', e)
