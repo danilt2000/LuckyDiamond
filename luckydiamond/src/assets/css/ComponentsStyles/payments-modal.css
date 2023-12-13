@@ -126,6 +126,10 @@ input:focus {
     border: none;
 }
 
+.btn-style-payments button:disabled {
+    background: #3d3a3a;
+}
+
 .btn-click {
     border-radius: 10px !important;
     background: #EF4444 !important;

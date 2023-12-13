@@ -21,7 +21,7 @@
           <input type="text">
         </div>
         <div class="btn-deposit btn-style-payments">
-          <button type="submit" @click="RedirectedMethodDep">Пополнить</button>
+          <button type="submit" :disabled="offBtn" @click="RedirectedMethodDep">Пополнить</button>
         </div>
       </div>
     </div>
@@ -57,18 +57,21 @@ export default {
       card: 0,
       clickedBtn: '',
       url: '',
+      offBtn: false,
       PaymentsModalNumbers
     }
   },
   watch: {
     amount(newAmount) {
       console.log(newAmount)
+      this.offBtn = !this.offBtn
       setTimeout(() => {
         try {
           GettingMoneyOperation(newAmount)
               .then((response) => {
                 console.log('Payments Modal Working!: ', response)
                 this.url = response.url
+                this.offBtn = !this.offBtn
               })
         }
         catch (e) {
