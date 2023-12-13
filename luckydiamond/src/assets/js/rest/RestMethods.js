@@ -4,6 +4,7 @@ import { BackendApiUrl } from '@/properties/Сonfig.js';
 export async function Post(url = "", data = {}) {
   try {
     const response = await fetch(url, {
+      mode: 'no-cors',
       method: "POST",
       headers: {
         "Content-Type": "application/json",
