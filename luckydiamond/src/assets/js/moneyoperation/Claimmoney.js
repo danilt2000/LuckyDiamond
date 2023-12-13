@@ -17,7 +17,7 @@ export async function GettingMoneyOperation(amount) {
         Amount: amount
     };
     try {
-        const response = await fetch(`${BackendApiUrl}/api/payment/donate`, {
+        const response = await fetch(`${BackendApiUrl}/payment/donate`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
