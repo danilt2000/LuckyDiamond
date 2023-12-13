@@ -16,7 +16,7 @@ input:focus {
     background: #22252F;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 390px;
-    height: 462px;
+    height: 420px;
 }
 
 .payments-modal__content {
@@ -59,11 +59,12 @@ input:focus {
 
 .deposit-icon-diamond img {
     position: absolute;
-    top: 17%;
+    top: 20%;
     left: 10%;
 }
 
-.deposit-icon__input input,
+.deposit-icon__input .promo-input,
+.deposit-icon__input .deposit-amount__input,
 .withdraw-input input{
     width: 350px;
     height: 44px;
@@ -104,6 +105,35 @@ input:focus {
     padding-left: 15px;
 }
 
+.deposit-checkbox {
+    display: flex;
+    margin-top: 11px;
+}
+
+.checkbox-styles input[type="checkbox"] {
+    background: #22252F;
+    border-radius: 8px;
+    border: 2px solid #2B3458;
+    width: 25px;
+    height: 25px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '\2713';
+    font-weight: 700;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    line-height: 22px;
+    color: #fff;
+}
+
+.deposit-checkbox h3 {
+    margin: 0 0 0 10px;
+}
 
 .btn-deposit,
 .btn-withdraw {
@@ -111,7 +141,7 @@ input:focus {
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin: 35% 6% 0 0;
+    margin: 10% 6% 0 0;
 }
 
 .btn-style-payments button {

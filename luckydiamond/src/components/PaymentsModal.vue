@@ -8,7 +8,7 @@
       <div class="deposit-input deposit-text deposit-icon-diamond deposit-icon__input">
         <h3>Сумма пополнения</h3>
         <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
-        <input v-model="amount" type="number">
+        <input class="deposit-amount__input" v-model="amount" type="number">
         <div class="deposit-btns">
           <ul class="display-btns btns-style-diamonds">
             <li v-for="number in PaymentsModalNumbers" :key="number">
@@ -18,7 +18,11 @@
         </div>
         <div class="deposit-promocode deposit-promocode__padding--input">
           <h3>Промокод</h3>
-          <input type="text">
+          <input class="promo-input" type="text">
+        </div>
+        <div class="deposit-checkbox checkbox-styles">
+          <input type="checkbox">
+          <h3>Я согласен с пользовательским соглашением.</h3>
         </div>
         <div class="btn-deposit btn-style-payments">
           <button type="submit" :disabled="offBtn" @click="RedirectedMethodDep">Пополнить</button>
