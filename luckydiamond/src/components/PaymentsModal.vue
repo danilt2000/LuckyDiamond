@@ -53,7 +53,7 @@ export default {
   ],
   data() {
     return {
-      amount: 1,
+      amount: 0,
       card: 0,
       clickedBtn: '',
       url: '',
