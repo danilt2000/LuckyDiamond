@@ -65,7 +65,7 @@ input:focus {
 
 .deposit-icon__input .promo-input,
 .deposit-icon__input .deposit-amount__input,
-.withdraw-input input{
+.withdraw-input .with-input{
     width: 350px;
     height: 44px;
     border-radius: 15px;
@@ -108,6 +108,16 @@ input:focus {
 .deposit-checkbox {
     display: flex;
     margin-top: 11px;
+}
+
+.withdraw-checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 11px;
+}
+
+.withdraw-checkbox h3 {
+    margin: 0 0 0 5px;
 }
 
 .checkbox-styles input[type="checkbox"] {
@@ -190,7 +200,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .btn-withdraw {
-    margin-top: 30%;
+    margin-top: 15%;
 }
 
 /* /Withdraw */

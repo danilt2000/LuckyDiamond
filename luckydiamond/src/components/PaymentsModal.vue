@@ -35,14 +35,20 @@
       <div class="count-withdraw deposit-icon-diamond">
         <h3>Сумма вывода</h3>
         <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
-        <input v-model="amount" type="number">
+        <input class="with-input" v-model="amount" type="number">
       </div>
       <div class="number-card deposit-promocode__padding--input">
         <h3>Введите номер карты</h3>
-        <input v-model="card" type="number">
+        <input class="with-input" v-model="card" type="number">
       </div>
-      <div class="btn-withdraw btn-style-payments">
+      <div class="withdraw-checkbox checkbox-styles">
+        <input type="checkbox">
+        <h3>Я согласен с пользовательским соглашением.</h3>
+      </div>
+      <div class="btn-withdraw btn-text-style btn-display-deposit btn-style-payments">
+        <p>Вы подтверждаете правильность введенных данных при создании вывода.</p>
         <button type="submit">Вывод</button>
+        <p>Перед выводом прочитайте политику конфиденциальности и пользовательское соглашение.</p>
       </div>
     </div>
   </div>
