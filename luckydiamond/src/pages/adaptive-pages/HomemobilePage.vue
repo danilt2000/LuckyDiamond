@@ -1,23 +1,7 @@
 <link rel="stylesheet" href="../../assets/css/PagesStyles/adaptive-pages/homemobile.css">
 <template>
   <div class="content-grid__mobile-home">
-    <header class="header-mobile">
-      <div class="header-mobile__content">
-        <div class="header-mobile__logo">
-          <img src="@/assets/icons-adaptive/home-adaptive/logo.svg" alt="LuckyDiamond Play Now">
-        </div>
-        <div class="header-mobile__balance">
-          <div class="header-mobile__balance--content">
-            <div class="header-mobile__card card-display card-text card-img">
-              <h2><img src="@/assets/icons-adaptive/home-adaptive/icon-diamond-ore.png">999</h2>
-            </div>
-            <div class="header-mobile__btn--balance btn-card btn-card__margin">
-              <a href="#"><img src="@/assets/icons-adaptive/home-adaptive/icon-deposit.png"></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+    <header-mobile-component></header-mobile-component>
     <main class="main-mobile">
       <div class="main-mobile__content">
         <div class="main-mobile__first-line">
@@ -38,25 +22,7 @@
         </div>
       </div>
     </main>
-    <footer class="footer-mobile">
-      <div class="footer-mobile__content">
-        <div class="footer-mobile__block chat-icon">
-          <a href="#">
-            <img src="@/assets/icons-adaptive/home-adaptive/icon-chat.svg">
-          </a>
-        </div>
-        <div class="footer-mobile__block home-icon">
-          <a href="#" @click="$router.push({ name: 'home' })">
-            <img src="@/assets/icons-adaptive/home-adaptive/icon-home.svg">
-          </a>
-        </div>
-        <div class="footer-mobile__block settings-icon">
-          <a href="#">
-            <img width="" src="@/assets/icons-adaptive/home-adaptive/icon-settings.png">
-          </a>
-        </div>
-      </div>
-    </footer>
+    <menu-mobile-component></menu-mobile-component>
   </div>
 </template>
 
@@ -65,7 +31,11 @@ import '@/assets/css/PagesStyles/adaptive-pages/homemobile.css'
 import '@/mocks/GameModes'
 import GameModes from "@/mocks/GameModes";
 
+import HeaderMobileComponent from "@/components/adaptive-components/HeaderMobileComponent.vue";
+import MenuMobileComponent from "@/components/adaptive-components/MenuMobileComponent.vue";
+
 export default {
+  components: { HeaderMobileComponent, MenuMobileComponent },
   data() {
     return {
       GameModes

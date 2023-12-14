@@ -1,0 +1,46 @@
+/* Footer */
+
+.footer-mobile {
+    grid-area: footer-mobile;
+    width: 100%;
+    height: 10%;
+    background: #17181C;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-mobile__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+.chat-icon a,
+.home-icon a,
+.settings-icon a {
+    background: #000;
+}
+
+.home-icon a img {
+    padding-left: 6px;
+}
+
+.settings-icon a img {
+    width: 75px;
+    height: 75px;
+    padding: 9px 0 0 6px;
+}
+
+.footer-mobile__block a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 4em;
+    background: #D9D9D91F;
+    border-radius: 20px;
+    margin: 0 .8em;
+}
+
+
+/* /Footer */
