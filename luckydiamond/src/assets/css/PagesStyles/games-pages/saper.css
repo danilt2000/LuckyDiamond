@@ -279,6 +279,26 @@ input[type="number"]::-webkit-outer-spin-button {
     transform: rotateY(180deg);
 }
 
+.square h2 {
+    transition: .2s;
+    opacity: 1;
+}
+
+.square-text {
+    color: #303751;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+    font-family: Montserrat Alternates;
+    font-size: 33px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.hidden {
+    opacity: 0 !important;
+}
+
 .display-lines {
     display: flex;
 }

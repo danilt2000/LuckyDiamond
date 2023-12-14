@@ -64,35 +64,35 @@
             <div class="game-firstline">
               <ul class="display-lines margin-lines">
                 <li class="firstline" v-for="index in 5" :key="index">
-                  <div @click="flipCard(index)" :class="[ 'square', `square-${index}`, { 'square-fliper' : flippedCards.includes(index) } ]"></div>
+                  <div @click="flipCard(index)" :class="[ 'square', `square-${index}`, { 'square-fliper' : flippedCards.includes(index) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index) }">ld</h2></div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 5)" :class="[ 'square', `square-${index + 5}`, { 'square-fliper' : flippedCards.includes(index + 5) } ]"></div>
+                  <div @click="flipCard(index + 5)" :class="[ 'square', `square-${index + 5}`, { 'square-fliper' : flippedCards.includes(index + 5) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 5) }">ld</h2></div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 10)" :class="[ 'square', `square-${index + 10}`, { 'square-fliper' : flippedCards.includes(index + 10) } ]"></div>
+                  <div @click="flipCard(index + 10)" :class="[ 'square', `square-${index + 10}`, { 'square-fliper' : flippedCards.includes(index + 10) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 10) }">ld</h2></div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 15)" :class="[ 'square', `square-${index + 15}`, { 'square-fliper' : flippedCards.includes(index + 15) } ]"></div>
+                  <div @click="flipCard(index + 15)" :class="[ 'square', `square-${index + 15}`, { 'square-fliper' : flippedCards.includes(index + 15) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 15) }">ld</h2></div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 20)" :class="[ 'square', `square-${index + 20}`, { 'square-fliper' : flippedCards.includes(index + 20) } ]"></div>
+                  <div @click="flipCard(index + 20)" :class="[ 'square', `square-${index + 20}`, { 'square-fliper' : flippedCards.includes(index + 20) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 20) }">ld</h2></div>
                 </li>
               </ul>
             </div>
