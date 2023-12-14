@@ -59,6 +59,7 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 import PaymentsModal from "@/components/PaymentsModal.vue";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import '@/assets/css/PagesStyles/profile.css'
+import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 
 export default {
   components: { HeaderComponent, AsideBarComponent, ChatComponent, PaymentsModal },
@@ -66,7 +67,7 @@ export default {
     return {
       username: 'Artemka',
       imageUrl: '',
-      balance: 25000,
+      balance: 0,
       openModal: false,
       payments: true,
       arrayHistory: [],
@@ -74,6 +75,11 @@ export default {
   },
   created() {
     this.username = GetCookie('SpUserName')
+    this.balance = GetCurrentMoney(
+        GetCookie('AUTHTOKEN'),
+        GetCookie('SearchToken')
+    )
+    console.log('Created Hook - Profile page = balance = ', this.balance)
     this.imageUrl = `https://visage.surgeplay.com/front/256/${this.username}`
   },
   methods: {
