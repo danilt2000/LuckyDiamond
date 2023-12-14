@@ -75,12 +75,16 @@ export default {
   },
   created() {
     this.username = GetCookie('SpUserName')
-    const authcode = GetCookie('AUTHTOKEN')
-    const searchtoken = GetCookie('SearchToken')
-    console.log('AUTHCODE AND SEARCH TOKEN - ', authcode, searchtoken)
 
-    this.balance = GetCurrentMoney(authcode, searchtoken)
-    console.log('Created Hook - Profile page = balance = ', this.balance)
+    GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+        .then((response) => {
+          this.balance = response.currentMoney
+          console.log('balance in profile', this.balance)
+        })
+        .catch((error) => {
+          console.error('error in profile, get money', error)
+        })
+
     this.imageUrl = `https://visage.surgeplay.com/front/256/${this.username}`
   },
   methods: {
