@@ -5,6 +5,7 @@
     width: 100%;
     height: 10%;
     background: #17181C;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
     position: fixed;
     bottom: 0;
 }
@@ -15,32 +16,21 @@
     align-items: center;
     margin-top: 2%;
 }
-.chat-icon a,
-.home-icon a,
-.settings-icon a {
-    background: #000;
+
+.icons-size img {
+    width: 13%;
 }
 
-.home-icon a img {
-    padding-left: 6px;
+.footer-mobile__icons  {
+    margin: 2% 5.35%;
 }
 
-.settings-icon a img {
-    width: 75px;
-    height: 75px;
-    padding: 9px 0 0 6px;
+.icon-end {
+    margin-left: 1.5em;
 }
 
-.footer-mobile__block a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 4em;
-    background: #D9D9D91F;
-    border-radius: 20px;
-    margin: 0 .8em;
+.icon-center {
+    margin-left: 8%;
 }
-
 
 /* /Footer */
