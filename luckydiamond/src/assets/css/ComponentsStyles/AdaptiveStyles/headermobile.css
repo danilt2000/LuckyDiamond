@@ -22,6 +22,11 @@
     width: 85%;
 }
 
+.header-mobile__end {
+    display: flex;
+    align-items: center;
+}
+
 .header-mobile__balance--content {
     display: flex;
     align-items: center;
@@ -36,7 +41,7 @@
 .card-display h2 {
     display: flex;
     align-items: flex-end;
-    padding: 8% 15px 8% 7%;
+    padding: 13% 15px 13% 6%;
 }
 
 .card-img img {
@@ -52,13 +57,32 @@
     font-size: 13px;
 }
 
+.btn-card {
+    border-radius: 13px;
+    background: #EF4444;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    padding: 4px;
+}
+
 .btn-card img {
+
     width: 90%;
     height: 40px;
 }
 
 .btn-card__margin {
-    margin-left: -8%;
+    margin-left: -1%;
+}
+
+.header-mobile__user-icon {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon img {
+    width: 70%;
+    margin-left: 15px;
 }
 
 /* /Header */
