@@ -1,5 +1,6 @@
 <template>
-  <div class="content__grid-profile">
+  <profilemobile-page v-if="mobile"></profilemobile-page>
+  <div class="content__grid-profile" v-else>
     <aside-bar-component></aside-bar-component>
 
     <chat-component id="chat-profile"></chat-component>
@@ -57,21 +58,31 @@ import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import PaymentsModal from "@/components/PaymentsModal.vue";
+import ProfilemobilePage from "@/pages/adaptive-pages/ProfilemobilePage.vue";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import '@/assets/css/PagesStyles/profile.css'
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 
 export default {
-  components: { HeaderComponent, AsideBarComponent, ChatComponent, PaymentsModal },
+  components: {ProfilemobilePage, HeaderComponent, AsideBarComponent, ChatComponent, PaymentsModal },
   data() {
     return {
       username: 'Artemka',
       imageUrl: '',
       balance: 0,
+      mobile: false,
       openModal: false,
       payments: true,
       arrayHistory: [],
     }
+  },
+  mounted() {
+    this.checkWindowSize()
+
+    this.AddWindowListener()
+  },
+  beforeUnmount() {
+    this.RemoveWindowListener()
   },
   created() {
     this.username = GetCookie('SpUserName')

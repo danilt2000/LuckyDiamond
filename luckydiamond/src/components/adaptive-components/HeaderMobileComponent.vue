@@ -11,7 +11,7 @@
               <h2><img src="@/assets/icons-adaptive/home-adaptive/icon-diamond-ore.png">999</h2>
             </div>
             <div class="header-mobile__btn--balance btn-card btn-card__margin">
-              <img src="@/assets/icons-adaptive/home-adaptive/icon-wallet.svg">
+              <a href="#" @click="$router.push({ name: 'profile' })"><img src="@/assets/icons-adaptive/home-adaptive/icon-wallet.svg"></a>
             </div>
           </div>
         </div>

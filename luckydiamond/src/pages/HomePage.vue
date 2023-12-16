@@ -1,6 +1,6 @@
 <template>
   <homemobile-page v-if="mobile"></homemobile-page>
-  <div class="content-grid" v-if="!mobile">
+  <div class="content-grid" v-else>
     <aside-bar-component></aside-bar-component>
 
     <chat-component></chat-component>
@@ -115,26 +115,25 @@ export default {
       GameModes,
       AnimationOff: false,
       mobile: false,
-      currentPage: 'Desktop'
     }
   },
   methods: {
     // claimSettings(value) {
     //   this.AnimationOff = value
     // },
-    checkWindowSize() {
-      this.mobile = window.innerWidth <= 600
-
-      this.currentPage = this.mobile ? 'Mobile' : 'Desktop'
-    }
+    // checkWindowSize() {
+    //   this.mobile = window.innerWidth <= 600
+    //
+    //   this.currentPage = this.mobile ? 'Mobile' : 'Desktop'
+    // }
   },
   mounted() {
     this.checkWindowSize()
 
-    window.addEventListener('resize', this.checkWindowSize)
+    this.AddWindowListener()
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.checkWindowSize)
+    this.RemoveWindowListener()
   },
   computed: {
     mainGameMode() {
