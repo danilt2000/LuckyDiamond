@@ -18,11 +18,12 @@
 }
 
 .icons-size img {
-    width: 13%;
+    width: 10%;
 }
 
 .footer-mobile__icons  {
-    margin: 2% 5.35%;
+    margin: 2% 0;
+    width: 100%;
 }
 
 .icon-end {
@@ -30,7 +31,7 @@
 }
 
 .icon-center {
-    margin-left: 8%;
+    margin-left: 9%;
 }
 
 /* /Footer */
