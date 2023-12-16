@@ -26,8 +26,12 @@
     width: 100%;
 }
 
+.icon-start {
+    margin-left: 8%;
+}
+
 .icon-end {
-    margin-left: 1.5em;
+    margin-left: 9%;
 }
 
 .icon-center {
