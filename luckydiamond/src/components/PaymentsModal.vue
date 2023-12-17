@@ -26,7 +26,7 @@
         </div>
         <div class="btn-deposit btn-text-style btn-display-deposit btn-style-payments">
           <p>Вы подтверждаете правильность введенных данных при создании вывода.</p>
-          <button type="submit" :disabled="offBtn" @click="RedirectedMethodDep">Пополнить</button>
+          <button type="submit" :disabled="checkOffBtn" @click="RedirectedMethodDep">Пополнить</button>
           <p>Перед пополнение прочитайте политику конфиденциальности и пользовательское соглашение.</p>
         </div>
       </div>
@@ -70,6 +70,7 @@ export default {
       clickedBtn: '',
       url: '',
       offBtn: true,
+      agreeUser: false,
       PaymentsModalNumbers
     }
   },
@@ -96,6 +97,10 @@ export default {
   methods: {
     closeModal() {
       return this.$emit('closemodal')
+    },
+    checkOffBtn() {
+      console.log(this.offBtn !== false && this.agreeUser !== false)
+      return this.offBtn === false && this.agreeUser !== false
     },
     RedirectedMethodDep() {
       window.location.href = this.url
