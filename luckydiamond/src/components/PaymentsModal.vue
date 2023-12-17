@@ -21,7 +21,7 @@
           <input class="promo-input" type="text">
         </div>
         <div class="deposit-checkbox checkbox-styles">
-          <input type="checkbox">
+          <input @click="agreeUser = !agreeUser" type="checkbox">
           <h3>Я согласен с пользовательским соглашением.</h3>
         </div>
         <div class="btn-deposit btn-text-style btn-display-deposit btn-style-payments">
@@ -94,13 +94,15 @@ export default {
       }
     }
   },
-  methods: {
-    closeModal() {
-      return this.$emit('closemodal')
-    },
+  computed: {
     checkOffBtn() {
       console.log(this.offBtn !== false && this.agreeUser !== false)
       return this.offBtn === false && this.agreeUser !== false
+    },
+  },
+  methods: {
+    closeModal() {
+      return this.$emit('closemodal')
     },
     RedirectedMethodDep() {
       window.location.href = this.url
