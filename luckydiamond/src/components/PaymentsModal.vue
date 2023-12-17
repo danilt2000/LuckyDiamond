@@ -69,7 +69,7 @@ export default {
       card: 0,
       clickedBtn: '',
       url: '',
-      offBtn: false,
+      offBtn: true,
       agreeUser: false,
       PaymentsModalNumbers
     }
@@ -96,7 +96,7 @@ export default {
   },
   computed: {
     checkOffBtn() {
-      return !(this.offBtn === false && this.agreeUser !== false);
+      return this.checkBtn()
     },
   },
   methods: {
@@ -106,6 +106,18 @@ export default {
     RedirectedMethodDep() {
       window.location.href = this.url
     },
+    checkBtn() {
+      if (this.offBtn === false) {
+        if (this.agreeUser !== false) {
+          return false
+        }
+      }
+      return true
+    },
+    clickedBtnChoice(index, content) {
+      this.clickedBtn = index
+      this.amount = content
+    }
     // detectorMethod(method) {
     //   this.closeModal()
     //   if (method === 'dep') {
@@ -119,10 +131,6 @@ export default {
     //     return
     //   }
     // },
-    clickedBtnChoice(index, content) {
-      this.clickedBtn = index
-      this.amount = content
-    }
   }
 }
 </script>
