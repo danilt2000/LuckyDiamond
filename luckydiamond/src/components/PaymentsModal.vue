@@ -21,7 +21,7 @@
           <input class="promo-input" type="text">
         </div>
         <div class="deposit-checkbox checkbox-styles">
-          <input type="checkbox">
+          <input @click="agreeUser = !agreeUser" type="checkbox">
           <h3>Я согласен с пользовательским соглашением.</h3>
         </div>
         <div class="btn-deposit btn-text-style btn-display-deposit btn-style-payments">
@@ -69,7 +69,7 @@ export default {
       card: 0,
       clickedBtn: '',
       url: '',
-      offBtn: true,
+      offBtn: false,
       agreeUser: false,
       PaymentsModalNumbers
     }
@@ -83,7 +83,7 @@ export default {
             GettingMoneyOperation(newAmount)
                 .then((response) => {
                   console.log('Payments Modal Working!: ', response)
-                  this.url = response.url
+                  // this.url = response.url
                   this.offBtn = false
                 })
           }
@@ -94,13 +94,14 @@ export default {
       }
     }
   },
+  computed: {
+    checkOffBtn() {
+      return this.offBtn === true || this.agreeUser === false
+    },
+  },
   methods: {
     closeModal() {
       return this.$emit('closemodal')
-    },
-    checkOffBtn() {
-      console.log(this.offBtn !== false && this.agreeUser !== false)
-      return this.offBtn === false && this.agreeUser !== false
     },
     RedirectedMethodDep() {
       window.location.href = this.url
