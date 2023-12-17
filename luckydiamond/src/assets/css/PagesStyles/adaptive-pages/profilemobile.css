@@ -2,6 +2,10 @@ body {
     overflow-y: scroll;
 }
 
+.header-mobile {
+    height: 70%;
+}
+
 .content-grid__mobile-profile {
     display: grid;
     grid-auto-columns: 1fr;
@@ -18,4 +22,66 @@ body {
 
 .profile-mobile {
     grid-area: profile-mobile;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-mobile__content {
+    display: flex;
+}
+
+.profile-mobile__btns-payments {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-default-mobile h2, h3 {
+    font-weight: 700;
+    color: #fff;
+}
+
+.macroinfo-profile {
+    margin: 15px 0 0 20px;
+}
+
+.macroinfo-profile img {
+    width: 197px;
+    height: 197px;
+}
+
+.img-margin img {
+    margin-top: 15px;
+}
+
+.macroinfo-profile h2 {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+    font-family: Montserrat Alternates;
+    font-size: 33px;
+    line-height: 31px;
+}
+
+.info-profile {
+    /*margin-left: 10%;*/
+    margin: 12% 0 0 10%;
+}
+
+.info-profile .text-nickname-user {
+    font-family: Montserrat;
+    font-size: 2em;
+}
+
+.info-profile .balance-border {
+    border-radius: 20px;
+    width: 100%;
+    background: #22252F;
+}
+
+.info-profile .balance-display {
+    display: flex;
+    align-items: center;
+}
+
+.info-profile .balance-text {
+    font-family: Montserrat Alternates;
+    font-size: 28px;
 }
