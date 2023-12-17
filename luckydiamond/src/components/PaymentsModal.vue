@@ -104,6 +104,7 @@ export default {
       return this.$emit('closemodal')
     },
     RedirectedMethodDep() {
+      console.log(`From /profile to - ${this.url} url`)
       window.location.href = this.url
     },
     checkBtn() {
