@@ -96,7 +96,7 @@ export default {
   },
   computed: {
     checkOffBtn() {
-      return this.offBtn === true || this.agreeUser === false
+      return !(this.offBtn === false && this.agreeUser !== false);
     },
   },
   methods: {
