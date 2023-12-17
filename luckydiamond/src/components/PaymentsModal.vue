@@ -83,7 +83,7 @@ export default {
             GettingMoneyOperation(newAmount)
                 .then((response) => {
                   console.log('Payments Modal Working!: ', response)
-                  // this.url = response.url
+                  this.url = response.url
                   this.offBtn = false
                 })
           }
