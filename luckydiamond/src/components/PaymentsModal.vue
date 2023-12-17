@@ -120,7 +120,7 @@ export default {
           try {
             GettingMoneyOperation(newAmount).then((response) => {
               console.log("Payments Modal Working!: ", response);
-              this.url = response.url;
+              this.url = response;
               this.offBtn = false;
             });
           } catch (e) {
