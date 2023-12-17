@@ -69,7 +69,7 @@ export default {
       card: 0,
       clickedBtn: '',
       url: '',
-      offBtn: true,
+      offBtn: false,
       agreeUser: false,
       PaymentsModalNumbers
     }
@@ -83,7 +83,7 @@ export default {
             GettingMoneyOperation(newAmount)
                 .then((response) => {
                   console.log('Payments Modal Working!: ', response)
-                  this.url = response.url
+                  // this.url = response.url
                   this.offBtn = false
                 })
           }
@@ -96,8 +96,7 @@ export default {
   },
   computed: {
     checkOffBtn() {
-      console.log(`offbtn = ${this.offBtn} agreeuser = ${this.agreeUser}`)
-      return this.offBtn === false && this.agreeUser !== false
+      return this.offBtn === true || this.agreeUser === false
     },
   },
   methods: {
