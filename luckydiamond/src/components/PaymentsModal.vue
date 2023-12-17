@@ -141,7 +141,8 @@ export default {
       return this.$emit("closemodal");
     },
     RedirectedMethodDep() {
-      window.location.href = this.url;
+      console.log(`From /profile to - ${this.url} url`)
+      window.location.href = this.url
     },
     RedirectedMethodTransferMoneyToSp() {},
 
