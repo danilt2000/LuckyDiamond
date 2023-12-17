@@ -96,7 +96,7 @@ export default {
   },
   computed: {
     checkOffBtn() {
-      console.log(this.offBtn !== false && this.agreeUser !== false)
+      console.log(`offbtn = ${this.offBtn} agreeuser = ${this.agreeUser}`)
       return this.offBtn === false && this.agreeUser !== false
     },
   },
