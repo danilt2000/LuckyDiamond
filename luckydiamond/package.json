@@ -14,7 +14,8 @@
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "vue-recaptcha": "^3.0.0-alpha.6",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vue3-recaptcha2": "^1.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
