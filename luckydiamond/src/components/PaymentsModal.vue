@@ -138,20 +138,9 @@ export default {
         console.log(`save amount = ${this.amountSave}`)
       }
     },
-    captchaToken(TokenClaim) {
-      if(TokenClaim !== '' && this.amountSave > 0) {
-        this.offBtn = true
-        setTimeout(() => {
-          try {
-            WithdrawMoneyOperation(this.amountSave, this.card.toString(), TokenClaim, GetCookie('SearchToken'), GetCookie('AUTHTOKEN')).then((response) => {
-              console.log(`work withdraw - ${response}`)
-              this.offBtn = false
-            })
-          }
-          catch (e) {
-            console.error(`Error in wihdrawmoney operation - ${e}`)
-          }
-        }, 4000)
+    captchaToken(newAmount) {
+      if (newAmount !== '' && this.amountSave > 0 && this.card !== '') {
+        this.offBtn = false
       }
     }
   },
@@ -172,7 +161,21 @@ export default {
       console.log(`From /profile to - ${this.url} url`)
       window.location.href = this.url
     },
-    RedirectedMethodTransferMoneyToSp() {},
+    RedirectedMethodTransferMoneyToSp() {
+      if(this.captchaToken !== '' && this.amountSave > 0) {
+        setTimeout(() => {
+          try {
+            WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken, GetCookie('SearchToken'), GetCookie('AUTHTOKEN')).then((response) => {
+              console.log(`work withdraw - ${response}`)
+              this.offBtn = false
+            })
+          }
+          catch (e) {
+            console.error(`Error in wihdrawmoney operation - ${e}`)
+          }
+        }, 4000)
+      }
+    },
 
     onVerify: function (response) {
       console.log(response);
