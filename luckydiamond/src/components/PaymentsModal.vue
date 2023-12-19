@@ -94,7 +94,6 @@
 import "@/assets/css/ComponentsStyles/payments-modal.css";
 import PaymentsModalNumbers from "@/mocks/PaymentsModalNumbers";
 import { GettingMoneyOperation, WithdrawMoneyOperation } from "@/assets/js/moneyoperation/Claimmoney";
-import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import CaptchaComponent from "@/components/CaptchaComponent.vue";
 
 export default {
