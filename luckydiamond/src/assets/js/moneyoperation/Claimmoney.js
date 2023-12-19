@@ -1,5 +1,6 @@
 // import { Post } from '../rest/RestMethods.js';
 import { BackendApiUrl } from '@/properties/Сonfig.js';
+import {GetCookie} from "@/assets/js/storage/CookieStorage";
 
 export async function GettingMoneyOperation(amount) {
     const data = {
@@ -25,13 +26,15 @@ export async function GettingMoneyOperation(amount) {
     }
 }
 
-export async function WithdrawMoneyOperation(amount, card, captchaToken, searchToken, authToken) {
+export async function WithdrawMoneyOperation(amount, card, captchaToken) {
     const data = {
         amount: amount,
         card: card,
         reCaptchaToken: captchaToken,
-        searchToken: searchToken,
-        authtoken: authToken
+        userCredentials: {
+            searchToken: GetCookie('SearchToken'),
+            authtoken: GetCookie('AUTHTOKEN')
+        }
     }
 
     try {

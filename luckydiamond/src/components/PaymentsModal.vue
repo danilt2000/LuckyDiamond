@@ -165,7 +165,7 @@ export default {
       if(this.captchaToken !== '' && this.amountSave > 0) {
         setTimeout(() => {
           try {
-            WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken, GetCookie('SearchToken'), GetCookie('AUTHTOKEN')).then((response) => {
+            WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken).then((response) => {
               console.log(`work withdraw - ${response}`)
               this.offBtn = false
             })
