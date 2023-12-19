@@ -65,7 +65,7 @@
       </div>
       <div class="number-card deposit-promocode__padding--input">
         <h3>Введите номер карты</h3>
-        <input class="with-input" v-model="card" type="number" />
+        <input class="with-input" v-model="card" type="text" />
       </div>
       <div class="withdraw-checkbox checkbox-styles">
         <input @click="agreeUser = !agreeUser; showRecaptcha = true" type="checkbox"/>
