@@ -93,7 +93,8 @@
 <script>
 import "@/assets/css/ComponentsStyles/payments-modal.css";
 import PaymentsModalNumbers from "@/mocks/PaymentsModalNumbers";
-import { GettingMoneyOperation } from "@/assets/js/moneyoperation/Claimmoney";
+import { GettingMoneyOperation, WithdrawMoneyOperation } from "@/assets/js/moneyoperation/Claimmoney";
+import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import CaptchaComponent from "@/components/CaptchaComponent.vue";
 
 export default {
@@ -101,10 +102,11 @@ export default {
   props: ["payments"],
   data() {
     return {
-      amount: 0,
-      amountWithdraw: 0,
-      card: 0,
-      captchaToken: '',
+      amount: 1,
+      amountWithdraw: 1,
+      amountSave: 1,
+      card: '',
+      captchaToken: null,
       clickedBtn: "",
       url: "",
       offBtn: true,
@@ -131,7 +133,26 @@ export default {
       }
     },
     amountWithdraw(newAmount) {
-      console.log(newAmount)
+      if (newAmount > 0) {
+        this.amountSave = newAmount
+        console.log(`save amount = ${this.amountSave}`)
+      }
+    },
+    captchaToken(TokenClaim) {
+      if(TokenClaim !== '' && this.amountSave > 0) {
+        this.offBtn = true
+        setTimeout(() => {
+          try {
+            WithdrawMoneyOperation(this.amountSave, this.card.toString(), TokenClaim, GetCookie('SearchToken'), GetCookie('AUTHTOKEN')).then((response) => {
+              console.log(`work withdraw - ${response}`)
+              this.offBtn = false
+            })
+          }
+          catch (e) {
+            console.error(`Error in wihdrawmoney operation - ${e}`)
+          }
+        }, 4000)
+      }
     }
   },
 
