@@ -68,10 +68,10 @@
         <input class="with-input" v-model="card" type="text" />
       </div>
       <div class="withdraw-checkbox checkbox-styles">
-        <input @click="agreeUser = !agreeUser; showRecaptcha = true" type="checkbox"/>
+        <input :disabled="offAgree" @click="agreeUser = !agreeUser" type="checkbox"/>
         <h3>Я согласен с пользовательским соглашением.</h3>
       </div>
-      <captcha-component @captchatokendata="claimCaptchaToken" :showcaptcha="showRecaptcha" @captchadata="closeModal"></captcha-component>
+      <captcha-component @captchatokendata="claimCaptchaToken" :showcaptcha="agreeUser" @captchadata="closeModal"></captcha-component>
       <div
         class="btn-withdraw btn-text-style btn-display-deposit btn-style-payments"
       >
@@ -109,8 +109,14 @@ export default {
       clickedBtn: "",
       url: "",
       offBtn: true,
+      offAgree: true,
+      completeValidtaion: {
+        amountsaving: true,
+        cardsaving: false,
+        agreesaving: false,
+        captchatokensaving: false
+      },
       agreeUser: false,
-      showRecaptcha: false,
       PaymentsModalNumbers,
     };
   },
@@ -132,18 +138,34 @@ export default {
       }
     },
     amountWithdraw(newAmount) {
+      this.completeValidtaion.amountsaving = false
       if (newAmount > 0) {
         this.amountSave = newAmount
-        console.log(`save amount = ${this.amountSave}`)
+        this.completeValidtaion.amountsaving = true
+        console.log(this.completeValidtaion)
       }
     },
-    captchaToken(newAmount) {
-      if (newAmount !== '' && this.amountSave > 0 && this.card !== '') {
-        this.offBtn = false
+    card(newAmount) {
+      this.completeValidtaion.cardsaving = false
+      const cardPattern = /^\d{5}$/;
+      if(cardPattern.test(newAmount)) {
+        this.offAgree = false
+        this.completeValidtaion.cardsaving = true
       }
+    },
+    agreeUser(newAgree) {
+      this.completeValidtaion.agreesaving = false
+      if (newAgree !== false) {
+        this.completeValidtaion.agreesaving = true
+      }
+    },
+    completeValidtaion: {
+      handler() {
+        this.completeValidationCheck()
+      },
+      deep: true
     }
   },
-
   computed: {
     checkOffBtn() {
       return this.checkBtn();
@@ -153,8 +175,21 @@ export default {
     closeModal() {
       return this.$emit("closemodal");
     },
+    completeValidationCheck() {
+      this.offBtn = true
+
+      if (
+          this.completeValidtaion.amountsaving &&
+          this.completeValidtaion.cardsaving &&
+          this.completeValidtaion.agreesaving &&
+          this.completeValidtaion.captchatokensaving
+      ) {
+        this.offBtn = false
+      }
+    },
     claimCaptchaToken(Token) {
       this.captchaToken = Token
+      this.completeValidtaion.captchatokensaving = true
     },
     RedirectedMethodDep() {
       console.log(`From /profile to - ${this.url} url`)
@@ -175,11 +210,6 @@ export default {
         }, 4000)
       }
     },
-
-    onVerify: function (response) {
-      console.log(response);
-    },
-
     checkBtn() {
       if (this.offBtn === false) {
         if (this.agreeUser !== false) {
@@ -192,19 +222,6 @@ export default {
       this.clickedBtn = index;
       this.amount = content;
     },
-    // detectorMethod(method) {
-    //   this.closeModal()
-    //   if (method === 'dep') {
-    //     return this.$emit('deposit', this.amount)
-    //   }
-    //   else if (method === 'with') {
-    //     return this.$emit('withdraw', this.amount, this.card)
-    //   }
-    //   else {
-    //     console.log('Произошла ошибка при взаимодействие')
-    //     return
-    //   }
-    // },
   },
 };
 </script>
