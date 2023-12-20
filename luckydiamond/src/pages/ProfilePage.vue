@@ -49,7 +49,7 @@
       </div>
     </div>
   </section>
-    <payments-modal v-if="openModal" @deposit="claimDataDeposit" @withdraw="claimDataWithdraw" @closemodal="openModal = false" :payments="payments"></payments-modal>
+    <payments-modal v-if="openModal" @notifacetionmoney="notification = true" @closemodal="openModal = false" :payments="payments"></payments-modal>
   </div>
 </template>
 
@@ -69,6 +69,7 @@ export default {
     return {
       username: 'Artemka',
       imageUrl: '',
+      notification: false,
       balance: 0,
       mobile: false,
       openModal: false,
@@ -99,13 +100,6 @@ export default {
     this.imageUrl = `https://visage.surgeplay.com/front/256/${this.username}`
   },
   methods: {
-    formatNumber(number) {
-      return number < 10 ? `0${number}` : number;
-    },
-    getCurrentFormattedDate() {
-      const currentDate = new Date();
-      return `${this.formatNumber(currentDate.getDate())}.${this.formatNumber(currentDate.getMonth() + 1)}.${currentDate.getFullYear()}, ${this.formatNumber(currentDate.getHours())}:${this.formatNumber(currentDate.getMinutes())}`;
-    },
     depositClick() {
       this.openModal = true
       this.payments = true
@@ -114,26 +108,33 @@ export default {
       this.openModal = true
       this.payments = false
     },
-    claimDataDeposit(amount) {
-      const historyPayments = {
-        name: 'TEST USER',
-        comment: 'test',
-        data: this.getCurrentFormattedDate(),
-        amount: amount
-      }
-
-      this.arrayHistory.unshift(historyPayments)
-    },
-    claimDataWithdraw(amount) {
-      const historyPayments = {
-        name: 'TEST USER',
-        comment: 'test',
-        data: this.getCurrentFormattedDate(),
-        amount: -amount
-      }
-
-      this.arrayHistory.unshift(historyPayments)
-    }
+    // formatNumber(number) {
+    //   return number < 10 ? `0${number}` : number;
+    // },
+    // getCurrentFormattedDate() {
+    //   const currentDate = new Date();
+    //   return `${this.formatNumber(currentDate.getDate())}.${this.formatNumber(currentDate.getMonth() + 1)}.${currentDate.getFullYear()}, ${this.formatNumber(currentDate.getHours())}:${this.formatNumber(currentDate.getMinutes())}`;
+    // },
+    // claimDataDeposit(amount) {
+    //   const historyPayments = {
+    //     name: 'TEST USER',
+    //     comment: 'test',
+    //     data: this.getCurrentFormattedDate(),
+    //     amount: amount
+    //   }
+    //
+    //   this.arrayHistory.unshift(historyPayments)
+    // },
+    // claimDataWithdraw(amount) {
+    //   const historyPayments = {
+    //     name: 'TEST USER',
+    //     comment: 'test',
+    //     data: this.getCurrentFormattedDate(),
+    //     amount: -amount
+    //   }
+    //
+    //   this.arrayHistory.unshift(historyPayments)
+    // }
   }
 }
 </script>

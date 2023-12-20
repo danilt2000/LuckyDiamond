@@ -195,8 +195,8 @@ export default {
       console.log(`From /profile to - ${this.url} url`)
       window.location.href = this.url
     },
-    RedirectedMethodTransferMoneyToSp() {
-      setTimeout(() => {
+    async RedirectedMethodTransferMoneyToSp() {
+      setTimeout(async () => {
         try {
           WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken).then((response) => {
             console.log(`work withdraw - ${response}`)
@@ -205,8 +205,8 @@ export default {
         catch (e) {
           console.error(`Error in wihdrawmoney operation - ${e}`)
         }
+        await this.$emit('notifacetionmoney')
       }, 4000)
-      return this.$emit('closemodal')
     },
     checkBtn() {
       if (this.offBtn === false) {
