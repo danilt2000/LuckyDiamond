@@ -196,19 +196,17 @@ export default {
       window.location.href = this.url
     },
     RedirectedMethodTransferMoneyToSp() {
-      if(this.captchaToken !== '' && this.amountSave > 0) {
-        setTimeout(() => {
-          try {
-            WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken).then((response) => {
-              console.log(`work withdraw - ${response}`)
-              this.offBtn = false
-            })
-          }
-          catch (e) {
-            console.error(`Error in wihdrawmoney operation - ${e}`)
-          }
-        }, 4000)
-      }
+      setTimeout(() => {
+        try {
+          WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken).then((response) => {
+            console.log(`work withdraw - ${response}`)
+          })
+        }
+        catch (e) {
+          console.error(`Error in wihdrawmoney operation - ${e}`)
+        }
+      }, 4000)
+      return this.$emit('closemodal')
     },
     checkBtn() {
       if (this.offBtn === false) {
