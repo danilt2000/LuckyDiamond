@@ -49,7 +49,8 @@
       </div>
     </div>
   </section>
-    <payments-modal v-if="openModal" @notifacetionmoney="notification = true" @closemodal="openModal = false" :payments="payments"></payments-modal>
+    <payments-modal v-if="openModal" @notifacetionmoney="NotificationMethod" @closemodal="openModal = false" :payments="payments"></payments-modal>
+    <notiicationwindow-component @notificationremove="NotificationMethod" :notification="notification"></notiicationwindow-component>
   </div>
 </template>
 
@@ -59,12 +60,14 @@ import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import PaymentsModal from "@/components/PaymentsModal.vue";
 import ProfilemobilePage from "@/pages/adaptive-pages/ProfilemobilePage.vue";
+import NotiicationwindowComponent from "@/components/NotiicationwindowComponent.vue";
+
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import '@/assets/css/PagesStyles/profile.css'
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 
 export default {
-  components: {ProfilemobilePage, HeaderComponent, AsideBarComponent, ChatComponent, PaymentsModal },
+  components: {ProfilemobilePage, HeaderComponent, AsideBarComponent, ChatComponent, PaymentsModal, NotiicationwindowComponent },
   data() {
     return {
       username: 'Artemka',
@@ -77,6 +80,7 @@ export default {
       arrayHistory: [],
     }
   },
+  emits: ['notificationremove'],
   mounted() {
     this.checkWindowSize()
 
@@ -108,6 +112,10 @@ export default {
       this.openModal = true
       this.payments = false
     },
+    NotificationMethod() {
+      this.notification = !this.notification
+      this.openModal = false
+    }
     // formatNumber(number) {
     //   return number < 10 ? `0${number}` : number;
     // },

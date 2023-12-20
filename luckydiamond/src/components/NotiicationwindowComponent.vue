@@ -1,11 +1,9 @@
 <template>
-  <transition name="fade">
-    <div class="notification" v-if="isAnimationOn">
-      <div class="notification__content">
-        <h3>Анимации выключены</h3>
-      </div>
+  <div class="notification" v-if="notification">
+    <div class="notification__content">
+      <h3>Успешное пополнение</h3>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>
@@ -13,18 +11,18 @@ import '@/assets/css/ComponentsStyles/notification.css'
 
 export default {
   props: {
-    isAnimationOn: Boolean
+    notification: Boolean
   },
-  emits: ['animationchange'],
+  emits: ['notificationremove'],
   methods: {
     NotificationsTimer() {
       setTimeout(() => {
-        this.$emit('animationchange', false)
+        this.$emit('notificationremove')
       }, 4000)
     }
   },
   watch: {
-    isAnimationOn(newVal, oldVal) {
+    notification(newVal, oldVal) {
       if (newVal !== oldVal) {
         this.NotificationsTimer()
       }
