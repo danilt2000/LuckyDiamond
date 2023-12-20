@@ -101,7 +101,7 @@ export default {
   props: ["payments"],
   data() {
     return {
-      amount: 1,
+      amount: 0,
       amountWithdraw: 1,
       amountSave: 1,
       card: '',
