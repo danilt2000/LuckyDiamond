@@ -35,6 +35,27 @@ body {
     flex-direction: column;
 }
 
+.profile-mobile__btns-payments a {
+    display: flex;
+    color: #17181C;
+    border-radius: 10px;
+    font-family: Montserrat Alternates;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 20px 20px;
+    margin: 0 0 5px 0
+}
+
+.profile-mobile__btns-payments .deposit-button {
+    background: #62D4B2;
+    margin-top: 10px;
+}
+
+.withdraw-button {
+    background: #EF4444;
+}
+
 .text-default-mobile h2, h3 {
     font-weight: 700;
     color: #fff;
@@ -84,4 +105,22 @@ body {
 .info-profile .balance-text {
     font-family: Montserrat Alternates;
     font-size: 28px;
+}
+
+@media screen and (max-device-width: 415px) {
+    .header-mobile {
+        height: 45%;
+    }
+    .profile-mobile__content {
+        margin-top: -10%;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .macroinfo-profile {
+        margin: 0;
+    }
+    .info-profile {
+        margin: 0;
+    }
 }

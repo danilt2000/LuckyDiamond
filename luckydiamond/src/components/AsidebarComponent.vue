@@ -2,14 +2,14 @@
   <aside class="menu">
     <div class="menu__content">
       <div class="menu__btn--home">
-        <a href="#"><img width="73" height="73" src="../assets/icons-menu/home-icon.svg"></a>
+        <a href="#" @click="$router.push({ name: 'home' })"><img width="73" height="73" src="../assets/icons-menu/home-icon.svg"></a>
       </div>
       <div class="menu__btns--gamemodes">
         <div class="menu__content--gamemodes">
           <a href="#"><img class="menu__content--slots-icon" src="../assets/icons-menu/slots-icon.svg"></a>
           <a href="#"><img  class="menu__content--cruch-icon" src="../assets/icons-menu/crush-icon.svg"></a>
           <a href="#"><img  src="../assets/icons-menu/case-icon.png"></a>
-          <a href="#"><img  class="menu__content--bomb-icon" src="../assets/icons-menu/bomb-icon.svg"></a>
+          <a href="#" @click="$router.push({ name: 'saper' })"><img  class="menu__content--bomb-icon" src="../assets/icons-menu/bomb-icon.svg"></a>
         </div>
       </div>
       <div class="menu__btn--settings">

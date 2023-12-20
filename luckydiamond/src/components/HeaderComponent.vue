@@ -122,7 +122,7 @@ export default {
             </h2>
           </div>
           <div class="header__btn--wallet">
-            <a href="">кошелёк</a>
+            <a href="#" @click="$router.push({ name: 'profile' })">кошелёк</a>
           </div>
         </div>
       </div>

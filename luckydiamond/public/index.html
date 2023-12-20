@@ -31,23 +31,5 @@
   <!-- built files will be auto injected -->
 </body>
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<script>
-
-  function get_action(form) {
-    var v = grecaptcha.getResponse();
-    console.log(v);
-    if (v.length == 0) {
-      document.getElementById('captcha').innerHTML = "You can't leave Captcha Code empty";
-
-
-      return false;
-    }
-    else {
-
-      document.getElementById('captcha').innerHTML = "Captcha completed";
-      return true;
-    }
-  }
-</script>
 
 </html>

@@ -49,7 +49,7 @@
       </div>
     </div>
   </section>
-    <payments-modal v-if="openModal" @notifacetionmoney="NotificationMethod" @closemodal="openModal = false" :payments="payments"></payments-modal>
+    <payments-modal v-if="openModal" @notifacetionmoney="NotificationEventListener" @closemodal="openModal = false" :payments="payments"></payments-modal>
     <notiicationwindow-component @notificationremove="NotificationMethod" :notification="notification"></notiicationwindow-component>
   </div>
 </template>
@@ -112,9 +112,12 @@ export default {
       this.openModal = true
       this.payments = false
     },
-    NotificationMethod() {
-      this.notification = !this.notification
+    NotificationEventListener() {
+      this.notification = true
       this.openModal = false
+    },
+    NotificationMethod() {
+      this.notification = false
     }
     // formatNumber(number) {
     //   return number < 10 ? `0${number}` : number;
