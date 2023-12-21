@@ -107,12 +107,74 @@ body {
     font-size: 28px;
 }
 
+.payments-types__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.types-text__mobile h3 {
+    color: #ABABB4;
+    font-weight: 600;
+    font-family: Montserrat;
+    font-size: 14px;
+}
+
+.types-start__margin-mobile {
+    margin-left: 42px;
+}
+
+.types-margin__mobile h3 {
+    margin-right: 80px;
+}
+
+.types-line__mobile {
+    margin: 20px 0 0 20px;
+    background: #38383E;
+    width: 93%;
+    height: 3px;
+}
+
+.user-info {
+    margin: 0 20px;
+}
+
+.user-name {
+    margin-right: 40px;
+}
+
+.user-name__text h3 {
+    font-size: 16px !important;
+}
+
+.data-info {
+    margin-right: 50px;
+}
+
+.data-info__text h3 {
+    font-size: 14px !important;
+}
+
+.transaction-info__text h3 {
+    font-size: 15px !important;
+}
+
+.payments-card__mobile {
+    display: flex;
+}
+
+.payments-card__mobile {
+    display: flex;
+}
+
+/* Media */
+
 @media screen and (max-device-width: 415px) {
     .header-mobile {
         height: 45%;
     }
     .profile-mobile__content {
-        margin-top: -10%;
+        margin-top: -25%;
         flex-direction: column;
         text-align: center;
         align-items: center;
