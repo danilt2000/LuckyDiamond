@@ -282,6 +282,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .square h2 {
     transition: .2s;
     opacity: 1;
+    user-select: none;
 }
 
 .square-text {
@@ -382,3 +383,29 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* /Saper Game */
+
+/* Media */
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+    .saper-game__content {
+        width: auto;
+    }
+    .crystals-btns__choices button, .btn-style__diamonds button {
+        padding: 4px 13px;
+    }
+    .diamond-icon {
+        top: 12px;
+        left: 35px;
+    }
+    #diamonds-input {
+        width: 60%;
+    }
+    .btns-style__steps button {
+        padding: 6px 9px;
+    }
+    .card-info img {
+        width: 100%;
+    }
+}
+
+/* /Media */
