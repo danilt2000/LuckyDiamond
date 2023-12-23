@@ -23,7 +23,7 @@ export default {
     return {
       balance: 0,
       auth: false,
-      imageUrl: "https://visage.surgeplay.com/face/55/",
+      imageUrl: "https://avatar.spworlds.ru/face/55/",
       userName: "",
     };
   },

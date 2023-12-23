@@ -101,7 +101,7 @@ export default {
           console.error('error in profile, get money', error)
         })
 
-    this.imageUrl = `https://visage.surgeplay.com/front/256/${this.username}`
+    this.imageUrl = `https://avatar.spworlds.ru/front/256/${this.username}`
   },
   methods: {
     depositClick() {
