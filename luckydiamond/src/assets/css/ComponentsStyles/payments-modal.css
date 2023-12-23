@@ -59,7 +59,7 @@ input:focus {
 
 .deposit-icon-diamond img {
     position: absolute;
-    top: 20%;
+    top: 16%;
     left: 10%;
 }
 
@@ -191,6 +191,10 @@ input[type="checkbox"]:checked::before {
 
 /* Withdraw */
 
+.withdraw-modal {
+    height: 520px;
+}
+
 .payments-modal__withdraw {
     margin-left: 26px;
 }
@@ -230,3 +234,13 @@ input[type="checkbox"]:checked::before {
 }
 
 /* /Withdraw */
+
+/* Captcha Styles */
+
+.captcha-withdraw {
+    position: relative;
+    left: 20px;
+    top: 15px;
+}
+
+/* /Captcha Styles */

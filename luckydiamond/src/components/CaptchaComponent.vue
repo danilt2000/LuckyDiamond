@@ -1,5 +1,5 @@
 <template>
-  <vue-recaptcha v-show="showcaptcha" sitekey="6LcuUDQpAAAAAPz8007pFD2FigaSh6InnUq_MEd8"
+  <vue-recaptcha class="captcha-withdraw" v-show="showcaptcha" sitekey="6LcuUDQpAAAAAPz8007pFD2FigaSh6InnUq_MEd8"
                  size="normal"
                  theme="dark"
                  hl="tr"

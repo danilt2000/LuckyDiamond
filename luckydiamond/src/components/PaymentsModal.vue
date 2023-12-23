@@ -1,5 +1,5 @@
 <template>
-  <div class="payment-modal">
+  <div class="payment-modal withdraw-modal">
     <div class="payments-modal__content close-modal__icon text-styles__margin">
       <h1>{{ payments ? "Пополнить" : "Вывод" }}</h1>
       <img
