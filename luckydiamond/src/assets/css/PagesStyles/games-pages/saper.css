@@ -408,4 +408,26 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 }
 
+@media screen and (min-device-width: 1200px) and (max-device-width: 1399px) {
+    .saper-game__content {
+        width: auto;
+    }
+    .crystals-btns__choices button, .btn-style__diamonds button {
+        padding: 4px 13px;
+    }
+    .diamond-icon {
+        top: 12px;
+        left: 35px;
+    }
+    #diamonds-input {
+        width: 60%;
+    }
+    .btns-style__steps button {
+        padding: 6px 9px;
+    }
+    .card-info img {
+        width: 100%;
+    }
+}
+
 /* /Media */
