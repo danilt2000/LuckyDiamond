@@ -67,8 +67,11 @@
         <h3>Введите номер карты</h3>
         <input class="with-input" v-model="card" type="text" />
       </div>
+      <div v-if="offAgree" class="error-checkbox">
+        <h2 v-show="errorAgree">Введите сначало карту</h2>
+      </div>
       <div class="withdraw-checkbox checkbox-styles">
-        <input :disabled="offAgree" @click="agreeUser = !agreeUser" type="checkbox"/>
+        <input :disabled="offAgree" @mouseover="errorAgree = true" @mouseleave="errorAgree = false" @click="agreeUser = !agreeUser" type="checkbox"/>
         <h3>Я согласен с пользовательским соглашением.</h3>
       </div>
       <captcha-component @captchatokendata="claimCaptchaToken" :showcaptcha="agreeUser" @captchadata="closeModal"></captcha-component>
@@ -105,6 +108,7 @@ export default {
       amountWithdraw: 1,
       amountSave: 1,
       card: '',
+      errorAgree: false,
       captchaToken: null,
       clickedBtn: "",
       url: "",

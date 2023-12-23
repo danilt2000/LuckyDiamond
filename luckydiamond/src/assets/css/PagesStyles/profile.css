@@ -180,3 +180,31 @@
 .withdraw-color h3 {
     color: #EA3D38;
 }
+
+/* Media */
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+    .profile__card h2 {
+        width: 72%;
+    }
+    .btn-margin {
+        padding-right: 56%;
+    }
+    .withdraw {
+        padding-right: 56%;
+    }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1399px) {
+    .profile__card h2 {
+        width: 80%;
+    }
+    .btn-margin {
+        padding-right: 66%;
+    }
+    .withdraw {
+        padding-right: 66%;
+    }
+}
+
+/* /Media */
