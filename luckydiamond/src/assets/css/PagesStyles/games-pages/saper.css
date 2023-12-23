@@ -390,6 +390,22 @@ input[type="number"]::-webkit-outer-spin-button {
     .saper-game__content {
         width: auto;
     }
+    .saper-start {
+        width: 30%;
+        height: 80%;
+    }
+    .steps-btns__display {
+        justify-content: center;
+    }
+    .margin-lines .firstline {
+        margin-top: 2%;
+    }
+    .info-emeralds {
+        margin-top: 6.5%;
+    }
+    .info-crystals {
+        margin-top: 6.5%;
+    }
     .crystals-btns__choices button, .btn-style__diamonds button {
         padding: 4px 13px;
     }
@@ -405,15 +421,58 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .card-info img {
         width: 100%;
+    }
+    .circles-1 {
+        top: 110px;
+    }
+    .circles-2 {
+        top: 220px;
+    }
+    .circles-3 {
+        top: 330px;
+    }
+    .circles-4 {
+        top: 440px;
     }
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1399px) {
+    .bg-two {
+        left: 300px;
+    }
     .saper-game__content {
         width: auto;
     }
+    .saper-start {
+        width: 30%;
+        height: 75%;
+    }
+    .steps-btns__display {
+        justify-content: center;
+    }
+    .margin-lines .firstline {
+        margin-top: 2%;
+    }
+    .square {
+        width: 75px;
+    }
+    .info-emeralds {
+        margin-top: 6.5%;
+    }
+    .info-crystals {
+        margin-top: 6.5%;
+    }
+    .text-style__subtitle h2 {
+        font-size: 11px;
+    }
+    .text-style__comment p {
+        font-size: 11px;
+    }
     .crystals-btns__choices button, .btn-style__diamonds button {
-        padding: 4px 13px;
+        padding: 4px 7px;
+    }
+    .diamonds-btns__display {
+        margin-left: 3%;
     }
     .diamond-icon {
         top: 12px;
@@ -423,10 +482,13 @@ input[type="number"]::-webkit-outer-spin-button {
         width: 60%;
     }
     .btns-style__steps button {
-        padding: 6px 9px;
+        padding: 6px 4px;
     }
     .card-info img {
         width: 100%;
+    }
+    .circles__content {
+        display: none;
     }
 }
 
