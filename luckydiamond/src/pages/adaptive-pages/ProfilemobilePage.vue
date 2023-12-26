@@ -1,5 +1,5 @@
 <template>
-  <div class="content-grid__mobile-profile">
+  <div class="content-mobile__profile">
     <header-mobile-component></header-mobile-component>
 
     <main class="profile-mobile">
@@ -18,37 +18,6 @@
         </div>
       </div>
     </main>
-
-    <section class="payments-mobile">
-      <div class="payments-mobile__content_">
-        <div class="payments-types__mobile types-margin__mobile types-text__mobile">
-          <h3 class="types-start__margin-mobile">Вид транзакции</h3>
-          <h3>Дата</h3>
-          <h3>Сумма</h3>
-        </div>
-        <div class="types-line__mobile"></div>
-        <div class="payments-history__mobile">
-          <div class="payments-card__mobile">
-            <div class="user-info">
-              <img src="@/assets/icons-test/person-icon-profile-userinfo.png">
-              <div class="user-name user-name__text">
-                <h3>Artemka</h3>
-                <h3>test</h3>
-              </div>
-            </div>
-            <div class="payments-data">
-              <div class="data-info data-info__text">
-                <h3>5ч назад</h3>
-              </div>
-              <div class="transaction-info transaction-info__text">
-                <h3>99 АР</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <menu-mobile-component></menu-mobile-component>
 
   </div>

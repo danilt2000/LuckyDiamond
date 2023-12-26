@@ -6,28 +6,10 @@ body {
     height: 70%;
 }
 
-.content-grid__mobile-profile {
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    grid-template-areas:
-    "header-mobile header-mobile header-mobile header-mobile"
-    "profile-mobile profile-mobile profile-mobile profile-mobile"
-    "profile-mobile profile-mobile profile-mobile profile-mobile"
-    "footer-mobile footer-mobile footer-mobile footer-mobile";
-    height: 100%;
-    width: 100%;
-}
-
 .profile-mobile {
     grid-area: profile-mobile;
     width: 100%;
     height: 100%;
-}
-
-.profile-mobile__content {
-    display: flex;
 }
 
 .profile-mobile__btns-payments {
@@ -36,7 +18,6 @@ body {
 }
 
 .profile-mobile__btns-payments a {
-    display: flex;
     color: #17181C;
     border-radius: 10px;
     font-family: Montserrat Alternates;
@@ -44,12 +25,12 @@ body {
     font-weight: 700;
     text-decoration: none;
     padding: 20px 20px;
-    margin: 0 0 5px 0
+    margin: 0 0 2% 0
 }
 
 .profile-mobile__btns-payments .deposit-button {
     background: #62D4B2;
-    margin-top: 10px;
+    margin-top: 4%;
 }
 
 .withdraw-button {
@@ -62,12 +43,13 @@ body {
 }
 
 .macroinfo-profile {
-    margin: 15px 0 0 20px;
+    margin: 5% 10% 0 10%;
+    text-align: center;
 }
 
 .macroinfo-profile img {
-    width: 197px;
-    height: 197px;
+    width: 45%;
+    height: 100%;
 }
 
 .img-margin img {
@@ -78,12 +60,11 @@ body {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
     font-family: Montserrat Alternates;
     font-size: 33px;
-    line-height: 31px;
 }
 
 .info-profile {
-    /*margin-left: 10%;*/
-    margin: 12% 0 0 10%;
+    margin: 6% 10% 0 10%;
+    text-align: center;
 }
 
 .info-profile .text-nickname-user {
@@ -99,90 +80,11 @@ body {
 
 .info-profile .balance-display {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .info-profile .balance-text {
     font-family: Montserrat Alternates;
     font-size: 28px;
-}
-
-.payments-types__mobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.types-text__mobile h3 {
-    color: #ABABB4;
-    font-weight: 600;
-    font-family: Montserrat;
-    font-size: 14px;
-}
-
-.types-start__margin-mobile {
-    margin-left: 42px;
-}
-
-.types-margin__mobile h3 {
-    margin-right: 80px;
-}
-
-.types-line__mobile {
-    margin: 20px 0 0 20px;
-    background: #38383E;
-    width: 93%;
-    height: 3px;
-}
-
-.user-info {
-    margin: 0 20px;
-}
-
-.user-name {
-    margin-right: 40px;
-}
-
-.user-name__text h3 {
-    font-size: 16px !important;
-}
-
-.data-info {
-    margin-right: 50px;
-}
-
-.data-info__text h3 {
-    font-size: 14px !important;
-}
-
-.transaction-info__text h3 {
-    font-size: 15px !important;
-}
-
-.payments-card__mobile {
-    display: flex;
-}
-
-.payments-card__mobile {
-    display: flex;
-}
-
-/* Media */
-
-@media screen and (max-device-width: 415px) {
-    .header-mobile {
-        height: 45%;
-    }
-    .profile-mobile__content {
-        margin-top: -25%;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-    .macroinfo-profile {
-        margin: 0;
-    }
-    .info-profile {
-        margin: 0;
-    }
 }
