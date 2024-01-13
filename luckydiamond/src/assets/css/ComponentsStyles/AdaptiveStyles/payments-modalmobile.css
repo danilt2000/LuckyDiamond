@@ -1,0 +1,50 @@
+.root-mobile {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    background: #22252F;
+    width: 80%;
+    height: 405px;
+    max-width: 400px;
+}
+
+.payments-modal-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-style-mobile h1 {
+    font-size: 22px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-weight: 700;
+}
+
+.padding-elements__mobile h1,
+.padding-elements__mobile img {
+    padding: 3% 3%;
+}
+
+.icon-close__mobile {
+    margin-top: 2%;
+}
+
+.payments-modal-mobile__content h2 {
+    color: #44C6EF54;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    line-height: 31px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.payments-modal-mobile__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.payments-modal__btns-mobile ul {
+    display: flex;
+}
