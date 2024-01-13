@@ -8,7 +8,7 @@
           @click="closeModal()"
       >
     </div>
-    <div class="payments-modal-mobile__content">
+    <div class="payments-modal-mobile__content margin-mobile___payments">
       <h2>Сумма {{ payments.paymentsView ? 'пополнения' : 'вывода' }}</h2>
       <div class="payments-modal__input input-style__mobile img-style">
         <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
@@ -25,10 +25,11 @@
         <input type="text" placeholder="Введите промокод">
       </div>
       <div class="payments-modal__agree checkbox-styles">
-        <input type="checkbox" v-model="agreeUser">
+        <input v-if="!payments.paymentsView" type="checkbox" v-model="agreeUser">
+        <input v-else type="checkbox">
         <h3>Я согласен с пользовательским соглашением.</h3>
       </div>
-      <captcha-component :showcaptcha="agreeUser"></captcha-component>
+      <captcha-component class="captcha-mobile" :showcaptcha="agreeUser"></captcha-component>
       <div class="payments-modal__submit">
         <p>Вы подтверждаете правильность введенных данных при создании вывода.</p>
         <button @click="closeModal()">{{ payments.paymentsView ? 'Пополнить' : 'Вывод' }}</button>
