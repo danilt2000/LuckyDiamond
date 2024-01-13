@@ -10,18 +10,19 @@
     </div>
     <div class="payments-modal-mobile__content">
       <h2>Сумма {{ payments.paymentsView ? 'пополнения' : 'вывода' }}</h2>
-      <div class="payments-modal__input">
-        <input type="text">
+      <div class="payments-modal__input input-style__mobile img-style">
+        <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
+        <input type="number" v-model="number" class="input-mobile__number">
         <div class="payments-modal__btns-mobile">
-          <ul>
+          <ul class="button-style__mobile">
             <li v-for="number in PaymentsModalNumbers" :key="number">
               <button>{{ number.diamonds }}</button>
             </li>
           </ul>
         </div>
       </div>
-      <div class="payments-modal__promocode" v-if="payments.paymentsView === true">
-        <input type="text">
+      <div class="payments-modal__promocode input-style__mobile" v-if="payments.paymentsView === true">
+        <input type="text" placeholder="Введите промокод">
       </div>
       <div class="payments-modal__agree checkbox-styles">
         <input type="checkbox" v-model="agreeUser">
@@ -48,7 +49,8 @@ export default {
   data() {
     return {
       PaymentsModalNumbers,
-      agreeUser: false
+      agreeUser: false,
+      number: 0
     }
   },
   methods: {

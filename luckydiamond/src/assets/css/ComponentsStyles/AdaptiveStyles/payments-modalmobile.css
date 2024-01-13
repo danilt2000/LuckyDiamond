@@ -1,3 +1,13 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
 .root-mobile {
     position: absolute;
     top: 15%;
@@ -47,4 +57,69 @@
 
 .payments-modal__btns-mobile ul {
     display: flex;
+}
+
+.input-style__mobile input {
+    border-radius: 15px;
+    border: 2px solid #2B3458;
+    background: #22252F;
+    width: 100%;
+}
+
+.input-mobile__number {
+    padding-left: 15px;
+    font-family: Montserrat Alternates;
+    font-weight: 700;
+}
+
+.img-style img {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+}
+
+.button-style__mobile li button {
+    padding: 6px 12px;
+    background: #252C47;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    border: none;
+    margin: 5px 0 5px 5px;
+}
+
+.payments-modal__agree {
+    display: flex;
+}
+
+.payments-modal__agree h3 {
+    color: #44C6EF54;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    line-height: 31px;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.payments-modal__submit {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.payments-modal__submit p {
+    color: #949494F2;
+    font-family: Montserrat Alternates;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.payments-modal__submit button {
+    border-radius: 10px;
+    background: #EF4444;
+    border: none;
+    padding: 20px 20px;
 }
