@@ -25,7 +25,7 @@ export function ConnectToChat() {
 
             webSocket = new WebSocket(BackendWebSocketUrl);
 
-            console.log('Connection closed');
+            console.log('Connection closed and reconnected');
         };
 
         webSocket.onerror = function (event) {
