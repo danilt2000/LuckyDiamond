@@ -34,6 +34,7 @@
 <script>
 import '@/assets/css/ComponentsStyles/chat.css'
 import WritechatComponent from "@/components/WritechatComponent.vue";
+import { SendMessageToChat } from "@/assets/js/chat/ChatLogic.js";
 
 export default {
   components: { WritechatComponent },
@@ -53,6 +54,8 @@ export default {
       }
 
       this.array.push(MsgUser)
+      
+      SendMessageToChat(msg[0]);
 
       if(this.array.length > 7) {
         this.array.shift()
