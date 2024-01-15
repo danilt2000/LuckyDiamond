@@ -22,6 +22,9 @@ export function ConnectToChat() {
         };
 
         webSocket.onclose = function () {
+
+            webSocket = new WebSocket(BackendWebSocketUrl);
+
             console.log('Connection closed');
         };
 
