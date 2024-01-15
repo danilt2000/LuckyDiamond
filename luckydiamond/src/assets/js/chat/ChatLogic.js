@@ -1,9 +1,8 @@
 import { BackendWebSocketUrl } from '@/properties/Сonfig.js';
+import { eventBus } from "@/main";
 import {
     GetCookie
 } from "@/assets/js/storage/CookieStorage.js";
-import WritechatComponent from "@/components/WritechatComponent.vue";
-
 
 let webSocket;
 
@@ -18,7 +17,7 @@ export function ConnectToChat() {
 
         webSocket.onmessage = function (event) {
 
-            WritechatComponent.ClaimDatamsg(event.data);
+            eventBus.emit('dataChat', event.data)
             console.log('Message from Server:', event.data);
         };
 

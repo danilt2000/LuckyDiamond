@@ -33,11 +33,14 @@
 
 <script>
 import '@/assets/css/ComponentsStyles/chat.css'
+
 import WritechatComponent from "@/components/WritechatComponent.vue";
 import { SendMessageToChat } from "@/assets/js/chat/ChatLogic.js";
+import {eventBus} from "@/main";
 
 export default {
   components: { WritechatComponent },
+  inject: [ 'eventBus' ],
   data() {
     return {
       array: [],
@@ -54,13 +57,26 @@ export default {
       }
 
       this.array.push(MsgUser)
-      
+
       SendMessageToChat(msg[0]);
 
       if(this.array.length > 7) {
         this.array.shift()
       }
     }
+  },
+  mounted() {
+    eventBus.on('dataChat', (dataFromServer) => {
+      const MsgUser = {
+        id: this.id + 1,
+        msg: dataFromServer,
+        username: dataFromServer,
+        icon: dataFromServer
+      }
+
+      this.array.push(MsgUser)
+      console.log(dataFromServer)
+    })
   }
 }
 </script>
