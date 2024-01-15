@@ -12,12 +12,12 @@ export function ConnectToChat() {
 
         webSocket.onopen = function () {
             console.log('Connection established');
-            // webSocket.send('Hello, Server!');
         };
 
         webSocket.onmessage = function (event) {
 
             eventBus.emit('dataChat', event.data)
+
             console.log('Message from Server:', event.data);
         };
 
