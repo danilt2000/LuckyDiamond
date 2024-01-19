@@ -2,7 +2,7 @@
   <div class="content-mobile__profile">
     <header-mobile-component></header-mobile-component>
 
-    <main class="profile-mobile">
+    <main class="profile-mobile" :class="{ 'header-off' : payments.paymentsWindow }">
       <div class="profile-mobile__content">
         <div class="macroinfo-profile text-default-mobile img-margin">
           <h2>Профиль</h2>

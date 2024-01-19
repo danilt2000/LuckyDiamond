@@ -107,6 +107,7 @@ input:focus {
     font-weight: 700;
     font-size: 9px;
     margin-left: 5px;
+    line-height: unset;
 }
 
 .payments-modal__submit {
@@ -127,10 +128,14 @@ input:focus {
 }
 
 .payments-modal__submit button {
+    margin-top: 10px;
     border-radius: 10px;
     background: #EF4444;
     border: none;
     padding: 20px 20px;
+    font-family: Montserrat Alternates;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 .payments-modal__promocode {
@@ -158,4 +163,38 @@ input:focus {
 .captcha-mobile {
     top: 25px;
     left: -10px;
+}
+
+/* Media */
+
+@media screen and (max-width: 600px) and (min-width: 420px) {
+    .root-mobile {
+        left: 12%;
+    }
+    .input-style__mobile input {
+        width: 300px !important;
+    }
+    .button-style__mobile li button {
+        padding: 8px 14px;
+    }
+    .payments-modal__agree h3 {
+        font-size: 10.5px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .input-style__mobile input {
+        width: 225px;
+    }
+    .button-style__mobile li button {
+        padding: 6px 8px;
+    }
+    .checkbox-styles input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+    }
+    input[type="checkbox"]:checked::before {
+        font-size: 10px;
+        line-height: unset;
+    }
 }
