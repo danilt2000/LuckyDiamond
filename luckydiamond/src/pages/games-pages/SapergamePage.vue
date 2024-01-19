@@ -44,7 +44,7 @@
             <button class="btn-claim">Забрать 15 АР</button>
           </div>
           <div class="saper-start__steps btns-style__steps">
-            <swiper :spaceBetween="25"  :pagination="{ clickable: true }" :modules="modules">
+            <swiper v-if="PercentageGameSteps.length" :spaceBetween="25"  :pagination="{ clickable: true }" :modules="modules">
               <template v-for="(item, index) in PercentageGameSteps" :key="index">
                 <swiper-slide>
                   <button class="steps-btns__display">{{ item }}</button>
@@ -152,7 +152,7 @@ export default {
       SaperNumbers,
       clickedBtn: '',
       clickedBtnCrystal : '',
-      amountCrystals: 5,
+      amountCrystals: 0,
       amountSaveCrystals: 0,
       balance: 1000,
       amountDeposit: 5,
@@ -162,7 +162,7 @@ export default {
     }
   },
   watch: {
-    PercentageGameSteps(CrystalsCount) {
+    amountCrystals(CrystalsCount) {
       if (CrystalsCount >= 1) {
         this.amountSaveCrystals = CrystalsCount
         setTimeout(async () => {
