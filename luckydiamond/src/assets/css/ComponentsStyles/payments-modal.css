@@ -205,8 +205,30 @@ input[type="checkbox"]:checked::before {
 
 .error-checkbox h2 {
     font-size: 13px;
-    font-weight: 400;
-    color: #c52f2f;
+    font-weight: 700;
+    color: #BA3636;
+    font-family: "Montserrat Alternates";
+}
+
+.error-promocode {
+    position: absolute;
+    left: 49%;
+    top: 35%;
+}
+
+.error-promocode .error-text__promocode {
+    font-size: 11px;
+    font-weight: 700;
+    color: #BA3636;
+    font-family: "Montserrat Alternates";
+    margin-left: 55px;
+}
+
+.error-promocode .correct-text__promocode {
+    font-size: 11px;
+    font-weight: 700;
+    color: #3BA44C;
+    font-family: "Montserrat Alternates";
 }
 
 .checkbox-styles input:disabled:hover {
