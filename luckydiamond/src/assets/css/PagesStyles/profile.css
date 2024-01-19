@@ -9,6 +9,9 @@
 
 .profile__content .profile__user--img {
     margin: 17.6% 8.4% 1% 0;
+    background: #969C8D;
+    padding-top: 10px;
+    border-radius: 20px;
 }
 
 .profile__card {
