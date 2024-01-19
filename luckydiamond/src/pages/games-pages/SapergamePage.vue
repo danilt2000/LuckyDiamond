@@ -44,11 +44,22 @@
             <button class="btn-claim">Забрать 15 АР</button>
           </div>
           <div class="saper-start__steps btns-style__steps">
-            <ul class="steps-btns__display">
-              <li v-for="(item, index) in SaperNumbers" :key="index">
-                <button v-if="item.steps !== undefined">{{ item.steps }}</button>
-              </li>
-            </ul>
+            <swiper :slidesPerView="6" :spaceBetween="-100"  :pagination="{ clickable: true }" :modules="modules">
+              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
+              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
+              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
+              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
+              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
+              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
+              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
+              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
+              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
+            </swiper>
+<!--            <ul class="steps-btns__display">-->
+<!--              <li v-for="(item, index) in SaperNumbers" :key="index">-->
+<!--                <button v-if="item.steps !== undefined">{{ item.steps }}</button>-->
+<!--              </li>-->
+<!--            </ul>-->
           </div>
         </div>
       </div>
@@ -125,11 +136,17 @@
 import ChatComponent from "@/components/ChatComponent.vue";
 import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+
 import '@/assets/css/PagesStyles/games-pages/saper.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
 
 export default {
-  components: {ChatComponent, HeaderElementPage, AsideBarElement },
+  components: {ChatComponent, HeaderElementPage, AsideBarElement, Swiper, SwiperSlide },
   data() {
     return {
       SaperNumbers,
@@ -137,7 +154,8 @@ export default {
       amountCrystals: 5,
       balance: 1000,
       amountDeposit: 5,
-      flippedCards: []
+      flippedCards: [],
+      modules: [ Pagination ]
     }
   },
   methods: {
