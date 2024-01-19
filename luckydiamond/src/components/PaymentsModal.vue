@@ -29,9 +29,13 @@
             </li>
           </ul>
         </div>
+        <div v-if="showPromocodeStatus" class="error-promocode">
+          <h2 v-if="errorPromocode" class="error-text__promocode">Промокод не найден</h2>
+          <h2 v-else class="correct-text__promocode">Промокод успешно применён</h2>
+        </div>
         <div class="deposit-promocode deposit-promocode__padding--input">
           <h3>Промокод</h3>
-          <input class="promo-input" type="text" />
+          <input @focusout="checkValidationPromocode" v-model="promocode" class="promo-input" type="text" />
         </div>
         <div class="deposit-checkbox checkbox-styles">
           <input @click="agreeUser = !agreeUser" type="checkbox" />
@@ -108,6 +112,10 @@ export default {
       amountWithdraw: 1,
       amountSave: 1,
       card: '',
+      promocode: '',
+      promocodeBase: ['ANTI-GRIF'],
+      errorPromocode: false,
+      showPromocodeStatus: false,
       errorAgree: false,
       captchaToken: null,
       clickedBtn: "",
@@ -178,6 +186,10 @@ export default {
   methods: {
     closeModal() {
       return this.$emit("closemodal");
+    },
+    checkValidationPromocode() {
+      this.errorPromocode = !this.promocodeBase.includes(this.promocode);
+      this.showPromocodeStatus = true
     },
     completeValidationCheck() {
       this.offBtn = true
