@@ -44,16 +44,12 @@
             <button class="btn-claim">Забрать 15 АР</button>
           </div>
           <div class="saper-start__steps btns-style__steps">
-            <swiper :slidesPerView="6" :spaceBetween="-100"  :pagination="{ clickable: true }" :modules="modules">
-              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
-              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
-              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
-              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
-              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
-              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
-              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
-              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
-              <swiper-slide>1</swiper-slide> <swiper-slide>1</swiper-slide>
+            <swiper :spaceBetween="25"  :pagination="{ clickable: true }" :modules="modules">
+              <template v-for="(item, index) in PercentageGameSteps" :key="index">
+                <swiper-slide>
+                  <button class="steps-btns__display">{{ item }}</button>
+                </swiper-slide>
+              </template>
             </swiper>
 <!--            <ul class="steps-btns__display">-->
 <!--              <li v-for="(item, index) in SaperNumbers" :key="index">-->
@@ -169,11 +165,11 @@ export default {
     PercentageGameSteps(CrystalsCount) {
       if (CrystalsCount >= 1) {
         this.amountSaveCrystals = CrystalsCount
-        setTimeout(() => {
+        setTimeout(async () => {
           try {
-            GetPercentageSteps(this.amountSaveCrystals)
+            await GetPercentageSteps(this.amountSaveCrystals)
               .then((response) => {
-                this.PercentageGameSteps.push(response)
+                this.PercentageGameSteps = response
                 console.log(response)
               })
           }
