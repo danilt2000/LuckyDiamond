@@ -1,7 +1,7 @@
 <template>
   <div class="notification" v-if="notification">
     <div class="notification__content">
-      <h3>Успешное пополнение</h3>
+      <h3>Успешное вывод!</h3>
     </div>
   </div>
 </template>
