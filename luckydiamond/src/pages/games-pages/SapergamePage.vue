@@ -20,7 +20,7 @@
               <input v-model="amountCrystals" type="number">
               <ul class="crystals-btns__display">
                 <li v-for="(item, index) in SaperNumbers" :key="index">
-                  <button v-if="item.crystals !== undefined">{{ item.crystals }}</button>
+                  <button @click="clickedBtnCrystals(index, item.crystals)" :class="{ 'btn-click': clickedBtnCrystal === index, [index]: clickedBtnCrystal === index }" :id="item.crystals === 'max' ? 'max-button' : null" v-if="item.crystals !== undefined">{{ item.crystals }}</button>
                 </li>
               </ul>
             </div>
@@ -151,10 +151,12 @@ export default {
     return {
       SaperNumbers,
       clickedBtn: '',
+      clickedBtnCrystal : '',
       amountCrystals: 5,
       balance: 1000,
       amountDeposit: 5,
       flippedCards: [],
+      
       modules: [ Pagination ]
     }
   },
@@ -175,7 +177,11 @@ export default {
       else {
         this.amountDeposit = content
       }
-    }
+    },
+    clickedBtnCrystals(index, content) {
+      this.clickedBtnCrystal = index
+      this.amountCrystals = content
+    },
   },
 }
 </script>
