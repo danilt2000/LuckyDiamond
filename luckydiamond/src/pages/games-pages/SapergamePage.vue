@@ -44,7 +44,7 @@
             <button class="btn-claim">Забрать 15 АР</button>
           </div>
           <div class="saper-start__steps btns-style__steps">
-            <swiper v-if="PercentageGameSteps.length" :spaceBetween="0"  :pagination="{ clickable: true }" :modules="modules">
+            <swiper v-if="PercentageGameSteps.length" :spaceBetween="0" :centeredSlides="true" :pagination="{ clickable: true }" :modules="modules">
               <template v-for="(item, index) in PercentageGameSteps" :key="index">
                 <swiper-slide>
                   <button class="steps-btns__display">{{ item }}</button>
