@@ -141,7 +141,10 @@ import { GetPercentageSteps } from "@/assets/js/games/saper/SaperAPI";
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import SwiperCore from 'swiper/core';
+import { Pagination } from "swiper/modules";
+
+SwiperCore.use([Pagination]);
 
 import '@/assets/css/PagesStyles/games-pages/saper.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
