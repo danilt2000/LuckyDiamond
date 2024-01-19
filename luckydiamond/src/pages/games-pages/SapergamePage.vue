@@ -136,6 +136,7 @@
 import ChatComponent from "@/components/ChatComponent.vue";
 import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
+import { GetPercentageSteps } from "@/assets/js/games/saper/SaperAPI";
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
@@ -153,11 +154,31 @@ export default {
       clickedBtn: '',
       clickedBtnCrystal : '',
       amountCrystals: 5,
+      amountSaveCrystals: 0,
       balance: 1000,
       amountDeposit: 5,
       flippedCards: [],
-      
+      PercentageGameSteps: [],
       modules: [ Pagination ]
+    }
+  },
+  watch: {
+    PercentageGameSteps(CrystalsCount) {
+      if (CrystalsCount >= 1) {
+        this.amountSaveCrystals = CrystalsCount
+        setTimeout(() => {
+          try {
+            GetPercentageSteps(this.amountSaveCrystals)
+              .then((response) => {
+                this.PercentageGameSteps.push(response)
+                console.log(response)
+              })
+          }
+          catch (e) {
+            console.error('Error in Percantage', e)
+          }
+        }, 1500)
+      }
     }
   },
   methods: {
