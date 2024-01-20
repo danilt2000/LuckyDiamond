@@ -47,7 +47,8 @@
             <swiper v-if="PercentageGameSteps.length" :key="PercentageGameSteps[0]" :spaceBetween="0" :slides-per-view="4" :centeredSlides="false" :pagination="{ clickable: true }" :modules="modules">
               <template v-for="(item, index) in PercentageGameSteps" :key="index">
                 <swiper-slide>
-                  <button class="steps-btns__display">{{ item.toFixed(3) }}</button>
+                  <button class="steps-btns__display">{{ item.toFixed(2) }}</button>
+                  <h2>{{ index }} {{  checkLastNumber(index)  }}</h2>
                 </swiper-slide>
               </template>
             </swiper>
@@ -188,6 +189,28 @@ export default {
       } else {
         this.flippedCards.push(index);
       }
+    },
+    stepsEndOfWord(index) {
+      let lastNumber = index
+      if (index >= 10) {
+        lastNumber = index.slice(1)
+        console.log(lastNumber)
+      }
+      return this.checkLastNumber(lastNumber)
+    },
+    checkLastNumber(number) {
+      let word = ''
+      if (number === 1) {
+        word = 'шаг'
+      }
+      else if (number.includes([2, 3, 4])) {
+        word = 'шага'
+      }
+      else {
+        word = 'шагов'
+      }
+      console.log(word)
+      return word
     },
     clickedBtnChoice(index, content) {
       this.clickedBtn = index
