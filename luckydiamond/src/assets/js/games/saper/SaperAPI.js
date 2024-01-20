@@ -36,7 +36,6 @@ export async function GetUserData(SearchToken, AUTHTOKEN) {
     try {
         const response = await fetch(`${BackendApiUrl}/GameMines/GetCurrentData`, {
             method: 'POST',
-            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json'
             },
