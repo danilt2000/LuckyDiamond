@@ -288,7 +288,7 @@ export default {
         setTimeout( async () => {
           await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
               .then((response) => {
-                this.amountDeposit = response
+                this.amountDeposit = response.currentMoney
               })
         }, 1000)
       }
