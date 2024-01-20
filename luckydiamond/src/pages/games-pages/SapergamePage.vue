@@ -159,7 +159,7 @@ export default {
       clickedBtnCrystal : '',
       amountCrystals: 0,
       amountSaveCrystals: 0,
-      balance: 1000,
+      balance: 0,
       ErrorClick: '',
       amountDeposit: 0,
       amountSaveDeposit: 0,
@@ -285,7 +285,7 @@ export default {
     clickedBtnChoice(index, content) {
       this.clickedBtn = index
       if (content === 'max') {
-        this.amountDeposit = this.balance
+        this.amountDeposit = GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
       }
       else {
         this.amountDeposit = content
