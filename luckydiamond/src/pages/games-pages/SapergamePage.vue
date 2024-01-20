@@ -170,8 +170,8 @@ export default {
         try {
             await GetPercentageSteps(this.amountSaveCrystals)
               .then((response) => {
-                this.PercentageGameSteps = response
-                console.log(response)
+                const arrayWithOutInfinity = response.filter(item => item !== 'Infinity' )
+                this.PercentageGameSteps = arrayWithOutInfinity
               })
         }
         catch (e) {
