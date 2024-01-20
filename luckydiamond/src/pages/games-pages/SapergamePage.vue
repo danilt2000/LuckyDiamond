@@ -205,7 +205,7 @@ export default {
       if (number === '1') {
         word = 'шаг'
       }
-      else if (number.includes(['2', '3', '4'])) {
+      else if (['2', '3', '4'].includes(number)) {
         word = 'шага'
       }
       else {
