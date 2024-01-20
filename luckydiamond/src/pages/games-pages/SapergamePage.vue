@@ -47,7 +47,7 @@
             <button class="btn-claim">Забрать 15 АР</button>
           </div>
           <div class="saper-start__steps btns-style__steps">
-            <swiper v-if="PercentageGameSteps.length" :key="PercentageGameSteps[0]" :spaceBetween="30" :slides-per-view="4" :centeredSlides="false" :navigation="true" :modules="modules">
+            <!-- <swiper v-if="PercentageGameSteps.length" :key="PercentageGameSteps[0]" :spaceBetween="30" :slides-per-view="4" :centeredSlides="false" :navigation="true" :modules="modules">
               <template v-for="(item, index) in PercentageGameSteps" :key="index">
                 <swiper-slide>
                   <div class="steps-btns__display">
@@ -55,7 +55,7 @@
                   </div>
                 </swiper-slide>
               </template>
-            </swiper>
+            </swiper> -->
           </div>
         </div>
       </div>
@@ -126,9 +126,9 @@
       </div>
     </section>
   </div>
-  <div class="start-game" v-if="ValidationPlay.startGame === true">
+  <!-- <div class="start-game" v-if="ValidationPlay.startGame === true">
     <h2>Игра началась!</h2>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -213,13 +213,14 @@ export default {
       }
     },
   },
-  async created() {
+  
+  created() {
     const AUTHTOKEN = GetCookie('AUTHTOKEN')
     const SEARCHTOKEN = GetCookie('SearchToken')
 
     if (AUTHTOKEN !== null && SEARCHTOKEN !== null) {
       try {
-        await GetUserData(AUTHTOKEN, SEARCHTOKEN)
+         GetUserData(AUTHTOKEN, SEARCHTOKEN)
             .then(response => {
               console.log(response)
             })
