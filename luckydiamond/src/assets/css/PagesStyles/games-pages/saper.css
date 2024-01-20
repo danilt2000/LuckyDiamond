@@ -400,6 +400,13 @@ input[type="number"]::-webkit-outer-spin-button {
         width: 30%;
         height: 80%;
     }
+    .btns-style__steps button {
+        width: 60px;
+        height: 50px;
+    }
+    .swiper-slide {
+        margin-right: 29px !important;
+    }
     .steps-btns__display {
         justify-content: center;
     }
@@ -456,6 +463,13 @@ input[type="number"]::-webkit-outer-spin-button {
     .steps-btns__display {
         justify-content: center;
     }
+    .btns-style__steps button {
+        width: 60px;
+        height: 50px;
+    }
+    .swiper-slide {
+        margin-right: 30px !important;
+    }
     .margin-lines .firstline {
         margin-top: 2%;
     }
@@ -506,6 +520,7 @@ input[type="number"]::-webkit-outer-spin-button {
     user-select: none;
     width: 100%;
     height: 100%;
+    margin-top: 18px;
 }
 
 .swiper-slide {
@@ -522,8 +537,9 @@ input[type="number"]::-webkit-outer-spin-button {
     object-fit: cover;
 }
 
-.swiper-pagination {
-    position: unset !important;
+.swiper-button-prev:after, .swiper-button-next:after {
+    font-size: 30px;
+    color: rgb(210 31 31 / 62%);
 }
 
 /* /Swiper */

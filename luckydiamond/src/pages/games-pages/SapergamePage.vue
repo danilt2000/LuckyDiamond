@@ -44,7 +44,7 @@
             <button class="btn-claim">Забрать 15 АР</button>
           </div>
           <div class="saper-start__steps btns-style__steps">
-            <swiper v-if="PercentageGameSteps.length" :key="PercentageGameSteps[0]" :spaceBetween="30" :slides-per-view="4" :centeredSlides="false" :pagination="{ clickable: true }" :modules="modules">
+            <swiper v-if="PercentageGameSteps.length" :key="PercentageGameSteps[0]" :spaceBetween="30" :slides-per-view="4" :centeredSlides="false" :navigation="true" :modules="modules">
               <template v-for="(item, index) in PercentageGameSteps" :key="index">
                 <swiper-slide>
                   <div class="steps-btns__display">
@@ -138,11 +138,11 @@ import { GetPercentageSteps } from "@/assets/js/games/saper/SaperAPI";
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css/navigation";
 import SwiperCore from 'swiper/core';
-import { Pagination } from "swiper/modules";
+import {Navigation } from "swiper/modules";
 
-SwiperCore.use([Pagination]);
+SwiperCore.use([Navigation]);
 
 import '@/assets/css/PagesStyles/games-pages/saper.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
@@ -160,7 +160,7 @@ export default {
       amountDeposit: 5,
       flippedCards: [],
       PercentageGameSteps: [],
-      modules: [ Pagination ]
+      modules: [ Navigation ]
     }
   },
   watch: {
