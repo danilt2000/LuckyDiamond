@@ -165,6 +165,7 @@ export default {
   },
   watch: {
     async amountCrystals(CrystalsCount) {
+      this.PercentageGameSteps = []
       if (CrystalsCount >= 1 && CrystalsCount <= 24) {
         this.amountSaveCrystals = CrystalsCount
         try {
