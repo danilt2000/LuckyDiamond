@@ -27,10 +27,10 @@ export async function GetPercentageSteps(CrystalsCount) {
     }
 }
 
-export async function GetUserData(SearchToken, AuthToken) {
+export async function GetUserData(SearchToken, AUTHTOKEN) {
     const data = {
         SearchToken: SearchToken,
-        Authtoken: AuthToken
+        AUTHTOKEN: AUTHTOKEN
     }
 
     try {
