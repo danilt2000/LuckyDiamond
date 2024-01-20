@@ -193,7 +193,7 @@ export default {
       }
     },
     stepsEndOfWord(index) {
-      let lastNumber = index
+      let lastNumber = String(index)
       if (index >= 10) {
         lastNumber = index.slice(1)
         console.log(lastNumber)
@@ -202,10 +202,10 @@ export default {
     },
     checkLastNumber(number) {
       let word = ''
-      if (number === 1) {
+      if (number === '1') {
         word = 'шаг'
       }
-      else if (number.includes([2, 3, 4])) {
+      else if (number.includes(['2', '3', '4'])) {
         word = 'шага'
       }
       else {
