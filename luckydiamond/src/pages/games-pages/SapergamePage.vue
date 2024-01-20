@@ -47,8 +47,10 @@
             <swiper v-if="PercentageGameSteps.length" :key="PercentageGameSteps[0]" :spaceBetween="0" :slides-per-view="4" :centeredSlides="false" :pagination="{ clickable: true }" :modules="modules">
               <template v-for="(item, index) in PercentageGameSteps" :key="index">
                 <swiper-slide>
-                  <button class="steps-btns__display">{{ item.toFixed(2) }}</button>
-                  <h2>{{ index }} {{  stepsEndOfWord(index)  }}</h2>
+                  <div class="steps-btns__display">
+                    <button>{{ item.toFixed(2) }}</button>
+                    <h2>{{ index }} {{  stepsEndOfWord(index)  }}</h2>
+                  </div>
                 </swiper-slide>
               </template>
             </swiper>
