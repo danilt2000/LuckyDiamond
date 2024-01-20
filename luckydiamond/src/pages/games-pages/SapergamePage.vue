@@ -164,21 +164,19 @@ export default {
     }
   },
   watch: {
-    amountCrystals(CrystalsCount) {
+    async amountCrystals(CrystalsCount) {
       if (CrystalsCount >= 1) {
         this.amountSaveCrystals = CrystalsCount
-        setTimeout(async () => {
-          try {
+        try {
             await GetPercentageSteps(this.amountSaveCrystals)
               .then((response) => {
                 this.PercentageGameSteps = response
                 console.log(response)
               })
-          }
-          catch (e) {
+        }
+        catch (e) {
             console.error('Error in Percantage', e)
-          }
-        }, 1500)
+        }
       }
     }
   },
