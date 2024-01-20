@@ -148,6 +148,7 @@ SwiperCore.use([Navigation]);
 
 import '@/assets/css/PagesStyles/games-pages/saper.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
+import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 
 export default {
   components: {ChatComponent, HeaderElementPage, AsideBarElement, Swiper, SwiperSlide },
@@ -173,10 +174,23 @@ export default {
     }
   },
   watch: {
-    amountDeposit(DiamondCount) {
+    async amountDeposit(DiamondCount) {
       if (DiamondCount >= 1) {
-        this.amountSaveDeposit = DiamondCount
-        this.ValidationPlay.DiamondValidate = true
+        try {
+          let balance = 0
+          await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+              .then((response) => {
+                this.balance = response
+                console.log(balance)
+              })
+          if (balance >= DiamondCount) {
+            this.amountSaveDeposit = DiamondCount
+            this.ValidationPlay.DiamondValidate = true
+          }
+        }
+        catch (e) {
+          console.error('Error amountdep', e)
+        }
       }
     },
     async amountCrystals(CrystalsCount) {
@@ -190,7 +204,6 @@ export default {
                 response.forEach((item) => {
                   if (item !== 'Infinity' && item !== '-Infinity') {
                     this.PercentageGameSteps.push(Number(item))
-                    console.log(this.PercentageGameSteps)
                   }
                 })
               })
