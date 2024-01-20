@@ -285,7 +285,12 @@ export default {
     clickedBtnChoice(index, content) {
       this.clickedBtn = index
       if (content === 'max') {
-        this.amountDeposit = GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+        setTimeout( async () => {
+          await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+              .then((response) => {
+                this.amountDeposit = response
+              })
+        }, 1000)
       }
       else {
         this.amountDeposit = content
