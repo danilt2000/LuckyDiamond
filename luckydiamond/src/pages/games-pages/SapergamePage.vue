@@ -48,7 +48,7 @@
               <template v-for="(item, index) in PercentageGameSteps" :key="index">
                 <swiper-slide>
                   <div class="steps-btns__display">
-                    <button>{{ item.toFixed(2) }} <span>{{ index + 1 }} {{ stepsEndOfWord(index) }}</span></button>
+                    <button>x{{ item.toFixed(2) }} <span>{{ index + 1 }} {{ stepsEndOfWord(index + 1) }}</span></button>
                   </div>
                 </swiper-slide>
               </template>
@@ -192,9 +192,10 @@ export default {
       }
     },
     stepsEndOfWord(index) {
-      let lastNumber = String(index)
-      if (index >= 10) {
-        lastNumber = index.slice(1)
+      const indexString = String(index)
+      let lastNumber = indexString
+      if (indexString >= 10) {
+        lastNumber = indexString.slice(1)
         console.log(lastNumber)
       }
       return this.checkLastNumber(lastNumber)

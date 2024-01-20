@@ -237,6 +237,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .steps-btns__display span {
     display: flex;
+    color: #adadad;
 }
 
 .btns-style__steps button {
