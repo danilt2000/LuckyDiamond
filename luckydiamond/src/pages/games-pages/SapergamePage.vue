@@ -126,6 +126,9 @@
       </div>
     </section>
   </div>
+  <div class="start-game" v-if="ValidationPlay.startGame === true">
+    <h2>Игра началась!</h2>
+  </div>
 </template>
 
 <script>
@@ -163,7 +166,8 @@ export default {
       PercentageGameSteps: [],
       ValidationPlay: {
         CrystalValidate: false,
-        DiamondValidate: false
+        DiamondValidate: false,
+        startGame: false,
       },
       modules: [ Navigation ]
     }
@@ -219,7 +223,10 @@ export default {
         this.errorPlayButton()
       }
       else {
-        console.log('yes')
+        this.ValidationPlay.startGame = true
+        setTimeout(() => {
+          this.ValidationPlay.startGame = false
+        }, 1500)
       }
     },
     validationCheck() {
