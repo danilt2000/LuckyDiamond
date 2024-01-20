@@ -502,9 +502,9 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 100%;
 }
 
-.swiper-wrapper {
-    margin-left: -140px;
-}
+/*.swiper-wrapper {*/
+/*    margin-left: -140px;*/
+/*}*/
 
 .swiper-slide {
     /*width: 175px !important;*/
