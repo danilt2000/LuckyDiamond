@@ -48,7 +48,7 @@
               <template v-for="(item, index) in PercentageGameSteps" :key="index">
                 <swiper-slide>
                   <div class="steps-btns__display">
-                    <button>{{ item.toFixed(2) }} <span>{{ index }} {{ stepsEndOfWord(index) }}</span></button>
+                    <button>{{ item.toFixed(2) }} <span>{{ index + 1 }} {{ stepsEndOfWord(index) }}</span></button>
                   </div>
                 </swiper-slide>
               </template>
