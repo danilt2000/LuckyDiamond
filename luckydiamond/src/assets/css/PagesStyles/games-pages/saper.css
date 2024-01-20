@@ -502,12 +502,17 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 100%;
 }
 
+.swiper-wrapper {
+    margin-left: -140px;
+}
+
 .swiper-slide {
     /*width: 175px !important;*/
     text-align: center;
     font-size: 18px;
     display: flex;
     align-items: center;
+    flex-shrink: unset;
 }
 
 .swiper-slide img {
