@@ -40,7 +40,10 @@
             </div>
           </div>
           <div class="saper-start__btns">
-            <button class="btn-start">Начать игру</button>
+            <div class="error-block" v-if="ErrorClick === true">
+              <h2>Ошибка при заполнении</h2>
+            </div>
+            <button class="btn-start" :class="{ 'animate-start-btn' : ErrorClick }" @click="clickPlayButton">Начать игру</button>
             <button class="btn-claim">Забрать 15 АР</button>
           </div>
           <div class="saper-start__steps btns-style__steps">
@@ -53,11 +56,6 @@
                 </swiper-slide>
               </template>
             </swiper>
-<!--            <ul class="steps-btns__display">-->
-<!--              <li v-for="(item, index) in SaperNumbers" :key="index">-->
-<!--                <button v-if="item.steps !== undefined">{{ item.steps }}</button>-->
-<!--              </li>-->
-<!--            </ul>-->
           </div>
         </div>
       </div>
@@ -158,17 +156,30 @@ export default {
       amountCrystals: 0,
       amountSaveCrystals: 0,
       balance: 1000,
-      amountDeposit: 5,
+      ErrorClick: '',
+      amountDeposit: 0,
+      amountSaveDeposit: 0,
       flippedCards: [],
       PercentageGameSteps: [],
+      ValidationPlay: {
+        CrystalValidate: false,
+        DiamondValidate: false
+      },
       modules: [ Navigation ]
     }
   },
   watch: {
+    amountDeposit(DiamondCount) {
+      if (DiamondCount >= 1) {
+        this.amountSaveDeposit = DiamondCount
+        this.ValidationPlay.DiamondValidate = true
+      }
+    },
     async amountCrystals(CrystalsCount) {
       this.PercentageGameSteps = []
       if (CrystalsCount >= 1 && CrystalsCount <= 24) {
         this.amountSaveCrystals = CrystalsCount
+        this.ValidationPlay.CrystalValidate = true
         try {
             await GetPercentageSteps(this.amountSaveCrystals)
               .then((response) => {
@@ -184,7 +195,7 @@ export default {
             console.error('Error in Percantage', e)
         }
       }
-    }
+    },
   },
   async created() {
     const AUTHTOKEN = GetCookie('AUTHTOKEN')
@@ -203,6 +214,25 @@ export default {
     }
   },
   methods: {
+    clickPlayButton() {
+      if(!this.validationCheck()) {
+        this.errorPlayButton()
+      }
+      else {
+        console.log('yes')
+      }
+    },
+    validationCheck() {
+      if (this.ValidationPlay.CrystalValidate === true && this.ValidationPlay.DiamondValidate === true) {
+        return true
+      }
+    },
+    errorPlayButton() {
+      this.ErrorClick = true
+      setTimeout(() => {
+        this.ErrorClick = false
+      }, 2000)
+    },
     flipCard(index) {
       if (this.flippedCards.includes(index)) {
         this.flippedCards.splice(this.flippedCards.indexOf(index), 1);
