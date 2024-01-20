@@ -134,7 +134,8 @@
 import ChatComponent from "@/components/ChatComponent.vue";
 import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
-import { GetPercentageSteps } from "@/assets/js/games/saper/SaperAPI";
+import { GetPercentageSteps, GetUserData } from "@/assets/js/games/saper/SaperAPI";
+import { GetCookie } from "@/assets/js/storage/CookieStorage";
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
@@ -182,6 +183,22 @@ export default {
         catch (e) {
             console.error('Error in Percantage', e)
         }
+      }
+    }
+  },
+  async created() {
+    const AUTHTOKEN = GetCookie('AUTHTOKEN')
+    const SEARCHTOKEN = GetCookie('SearchToken')
+
+    if (AUTHTOKEN !== null && SEARCHTOKEN !== null) {
+      try {
+        await GetUserData(AUTHTOKEN, SEARCHTOKEN)
+            .then(response => {
+              console.log(response)
+            })
+      }
+      catch (e) {
+        console.error('Error in GetData', e)
       }
     }
   },

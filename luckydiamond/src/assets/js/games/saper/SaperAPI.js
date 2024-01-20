@@ -26,3 +26,31 @@ export async function GetPercentageSteps(CrystalsCount) {
         console.log('Fetch Error!')
     }
 }
+
+export async function GetUserData(SearchToken, AuthToken) {
+    const data = {
+        SearchToken: SearchToken,
+        Authtoken: AuthToken
+    }
+
+    try {
+        const response = await fetch(`${BackendApiUrl}/GameMines/GetCurrentData`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+            redirect: 'follow'
+        })
+
+        if (!response.ok) {
+            console.log('Fetch error:', response.status)
+        }
+
+        console.log(response)
+        return await response.json()
+    }
+    catch (error) {
+        console.log('Fetch error')
+    }
+}
