@@ -177,13 +177,12 @@ export default {
     async amountDeposit(DiamondCount) {
       if (DiamondCount >= 1) {
         try {
-          let balance = 0
           await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
               .then((response) => {
-                this.balance = response
-                console.log(balance)
+                this.balance = response.currentMoney
+                console.log(this.balance)
               })
-          if (balance >= DiamondCount) {
+          if (this.balance >= DiamondCount) {
             this.amountSaveDeposit = DiamondCount
             this.ValidationPlay.DiamondValidate = true
           }
