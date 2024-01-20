@@ -233,6 +233,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .steps-btns__display span {
     display: flex;
+    justify-content: center;
+    font-size: 10px;
     color: #adadad;
 }
 
@@ -249,7 +251,8 @@ input[type="number"]::-webkit-outer-spin-button {
     font-weight: 700;
     font-family: Montserrat Alternates;
     font-size: 12px;
-    padding: 6px 16px;
+    width: 100px;
+    height: 40px;
 }
 
 /* Saper Game */
