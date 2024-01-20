@@ -135,7 +135,8 @@
 import ChatComponent from "@/components/ChatComponent.vue";
 import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
-import { GetPercentageSteps, GetUserData } from "@/assets/js/games/saper/SaperAPI";
+import {GetUserData } from "@/assets/js/games/saper/SaperAPI";
+// import { GetPercentageSteps, GetUserData } from "@/assets/js/games/saper/SaperAPI";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -198,14 +199,14 @@ export default {
         this.amountSaveCrystals = CrystalsCount
         this.ValidationPlay.CrystalValidate = true
         try {
-            await GetPercentageSteps(this.amountSaveCrystals)
-              .then((response) => {
-                response.forEach((item) => {
-                  if (item !== 'Infinity' && item !== '-Infinity') {
-                    this.PercentageGameSteps.push(Number(item))
-                  }
-                })
-              })
+          const AUTHTOKEN = GetCookie('AUTHTOKEN')
+    const SEARCHTOKEN = GetCookie('SearchToken')
+
+
+    GetUserData(AUTHTOKEN, SEARCHTOKEN)
+            .then(response => {
+              console.log(response)
+            })
         }
         catch (e) {
             console.error('Error in Percantage', e)
@@ -213,22 +214,22 @@ export default {
       }
     },
   },
-   created() {
-    const AUTHTOKEN = GetCookie('AUTHTOKEN')
-    const SEARCHTOKEN = GetCookie('SearchToken')
+  //  created() {
+  //   const AUTHTOKEN = GetCookie('AUTHTOKEN')
+  //   const SEARCHTOKEN = GetCookie('SearchToken')
 
-    if (AUTHTOKEN !== null && SEARCHTOKEN !== null) {
-      try {
-         GetUserData(AUTHTOKEN, SEARCHTOKEN)
-            .then(response => {
-              console.log(response)
-            })
-      }
-      catch (e) {
-        console.error('Error in GetData', e)
-      }
-    }
-  },
+  //   if (AUTHTOKEN !== null && SEARCHTOKEN !== null) {
+  //     try {
+  //        GetUserData(AUTHTOKEN, SEARCHTOKEN)
+  //           .then(response => {
+  //             console.log(response)
+  //           })
+  //     }
+  //     catch (e) {
+  //       console.error('Error in GetData', e)
+  //     }
+  //   }
+  // },
   methods: {
     clickPlayButton() {
       if(!this.validationCheck()) {
