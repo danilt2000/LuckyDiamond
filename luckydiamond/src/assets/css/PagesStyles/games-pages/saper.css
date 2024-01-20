@@ -231,13 +231,13 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-top: 1%;
 }
 
-.steps-btns__display {
-    display: flex;
-}
-
 .steps-btns__display span {
     display: flex;
     color: #adadad;
+}
+
+.steps-btns__display {
+    display: flex;
 }
 
 .btns-style__steps button {
