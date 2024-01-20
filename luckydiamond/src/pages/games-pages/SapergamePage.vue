@@ -194,7 +194,6 @@ export default {
       let lastNumber = indexString
       if (indexString >= 10) {
         lastNumber = indexString.slice(1)
-        console.log(lastNumber)
       }
       return this.checkLastNumber(lastNumber)
     },
@@ -209,7 +208,6 @@ export default {
       else {
         word = 'шагов'
       }
-      console.log(word)
       return word
     },
     clickedBtnChoice(index, content) {

@@ -250,7 +250,6 @@ input[type="number"]::-webkit-outer-spin-button {
     font-family: Montserrat Alternates;
     font-size: 12px;
     padding: 6px 16px;
-    margin-right: 8px;
 }
 
 /* Saper Game */
@@ -511,7 +510,6 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 18px;
     display: flex;
     align-items: center;
-    flex-shrink: unset;
 }
 
 .swiper-slide img {
