@@ -149,7 +149,6 @@ SwiperCore.use([Navigation]);
 
 import '@/assets/css/PagesStyles/games-pages/saper.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
-import {error} from "@babel/eslint-parser/lib/convert";
 
 export default {
   components: {ChatComponent, HeaderElementPage, AsideBarElement, Swiper, SwiperSlide },
