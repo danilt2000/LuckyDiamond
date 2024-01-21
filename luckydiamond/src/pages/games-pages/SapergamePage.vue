@@ -222,6 +222,7 @@ export default {
        if (this.gamesCircle < maxCircles) {
          console.log(value)
          this.offEventPointers = false
+         let AnswerServer
 
          let LimitClicked = this.amountSaveCrystals
          let DepositDiamonds = this.amountSaveDeposit
@@ -250,7 +251,6 @@ export default {
            X: findX,
            Y: findY
          }
-         let AnswerServer
 
          try {
            await ClickCirclePlay(UserObject, ClickedSquare)
@@ -267,6 +267,12 @@ export default {
          console.log(LimitClicked, DepositDiamonds, X_Cordinates)
          this.gamesCircle = this.gamesCircle + 1
          this.offEventPointers = true
+         if (AnswerServer === 'You dead') {
+           this.gameStart = false
+           this.offEventPointers = false
+           this.flippedCards = []
+           this.gamesCircle = 0
+         }
        }
        else {
          this.gameStart = false
