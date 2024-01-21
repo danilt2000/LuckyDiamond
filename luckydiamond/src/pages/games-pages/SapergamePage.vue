@@ -244,6 +244,7 @@ export default {
          this.offEventPointers = false
          this.flippedCards = []
          this.gamesCircle = 0
+         // В будущем - вылазит уведомление, где написано игра закончена, "Продолжить" - клик и обновление страницы
        }
       },
       deep: true
