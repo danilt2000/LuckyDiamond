@@ -35,7 +35,7 @@ export async function GetUserData(SearchToken, AUTHTOKEN) {
       };
 
     try {
-        const response = await fetch(`${BackendApiUrl}/Payment/GetGameCrashCurrentData`, {
+        const response = await fetch(`${BackendApiUrl}/Payment/UserMoney`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

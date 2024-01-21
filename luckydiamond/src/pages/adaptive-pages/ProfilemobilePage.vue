@@ -29,7 +29,7 @@ import MenuMobileComponent from "@/components/adaptive-components/MenuMobileComp
 import PaymentsMobile from "@/components/adaptive-components/PaymentsMobile.vue";
 import {GetUserData } from "@/assets/js/games/saper/SaperAPI";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
-
+// import { GetCurrentMoney } from "@/assets/js/rest/RestMethods.js";
 
 import '@/assets/css/PagesStyles/adaptive-pages/profilemobile.css'
 
