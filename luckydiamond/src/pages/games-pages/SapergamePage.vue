@@ -232,11 +232,13 @@ export default {
          }
 
          console.log(LimitClicked, DepositDiamonds, X_Cordinates)
+         this.gamesCircle = this.gamesCircle + 1
        }
        else {
          this.gameStart = false
          this.offEventPointers = false
          this.flippedCards = []
+         this.gamesCircle = 0
        }
       },
       deep: true
