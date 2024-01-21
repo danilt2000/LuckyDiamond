@@ -331,6 +331,14 @@ input[type="number"]::-webkit-outer-spin-button {
     pointer-events: none;
 }
 
+.game-start {
+    pointer-events: unset !important;
+}
+
+.game-start__menu-off {
+    pointer-events: none;
+}
+
 .hidden {
     opacity: 0 !important;
 }

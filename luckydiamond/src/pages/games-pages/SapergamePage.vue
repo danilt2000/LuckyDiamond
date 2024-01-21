@@ -9,7 +9,7 @@
     <section class="saper">
       <div class="bg"></div>
       <div class="bg-two"></div>
-      <div class="saper-start">
+      <div class="saper-start" :class="{ 'game-start__menu-off' : gameStart }">
         <div class="saper-start__content title-saper padding-elements">
           <h2>Сапёр</h2>
           <p>Находи изумруды на поле и избегай кристалы</p>
@@ -61,7 +61,7 @@
       </div>
       <div class="saper-game">
         <div class="saper-game__content">
-          <div class="game">
+          <div class="game" :class="{ 'game-start' : gameStart }">
             <div class="circles__content">
               <img src="@/assets/icons-games/saper-game/circles.png" class="circles circles-1">
               <img src="@/assets/icons-games/saper-game/circles.png" class="circles circles-2">
@@ -161,6 +161,7 @@ export default {
       amountSaveCrystals: 0,
       balance: 0,
       ErrorClick: '',
+      gameStart: false,
       amountDeposit: 0,
       amountSaveDeposit: 0,
       flippedCards: [],
@@ -235,16 +236,20 @@ export default {
         this.errorPlayButton()
       }
       else {
-        this.ValidationPlay.startGame = true
-        setTimeout(() => {
-          this.ValidationPlay.startGame = false
-        }, 1500)
+        this.playNotification()
+        this.gameStart = true
       }
     },
     validationCheck() {
       if (this.ValidationPlay.CrystalValidate === true && this.ValidationPlay.DiamondValidate === true) {
         return true
       }
+    },
+    playNotification() {
+      this.ValidationPlay.startGame = true
+      setTimeout(() => {
+        this.ValidationPlay.startGame = false
+      }, 1500)
     },
     errorPlayButton() {
       this.ErrorClick = true
