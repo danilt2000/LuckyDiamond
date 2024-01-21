@@ -54,3 +54,39 @@ export async function GetUserData(AUTHTOKEN, SearchToken) {
         console.log('Fetch error')
     }
 }
+
+export async function ClickCirclePlay(InfoUser, ClickedCell) {
+    const data = {
+        PuttedMoney: InfoUser.PuttedMoney,
+        MinesCount: InfoUser.MinesCount,
+        UserCredentials: {
+            SearchToken: InfoUser.SearchToken,
+            AUTHTOKEN: InfoUser.AUTHTOKEN
+        },
+        ClickedCell: {
+            X: ClickedCell.X,
+            y: ClickedCell.Y
+        }
+    }
+
+    try {
+        const response = await fetch(`${BackendApiUrl}/GameMines/Play`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+            redirect: 'follow'
+        })
+
+        if (!response.ok) {
+            console.log('Fetch error:', response.status)
+        }
+
+        console.log(response.json())
+        return await response.json()
+    }
+    catch (error) {
+        console.error('Fetch error')
+    }
+}

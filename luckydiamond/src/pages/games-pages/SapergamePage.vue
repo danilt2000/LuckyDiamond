@@ -135,7 +135,8 @@
 import ChatComponent from "@/components/ChatComponent.vue";
 import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
-import { GetPercentageSteps, GetUserData } from "@/assets/js/games/saper/SaperAPI";
+import { GetPercentageSteps, GetUserData, ClickCirclePlay } from "@/assets/js/games/saper/SaperAPI";
+import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -148,7 +149,6 @@ SwiperCore.use([Navigation]);
 
 import '@/assets/css/PagesStyles/games-pages/saper.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
-import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 
 export default {
   components: {ChatComponent, HeaderElementPage, AsideBarElement, Swiper, SwiperSlide },
