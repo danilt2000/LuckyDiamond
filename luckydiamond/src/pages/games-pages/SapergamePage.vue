@@ -217,7 +217,8 @@ export default {
     flippedCards: {
       handler(value) {
         console.log(value)
-      }
+      },
+      deep: true
     }
   },
    created() {
