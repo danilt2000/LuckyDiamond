@@ -214,8 +214,10 @@ export default {
         }
       }
     },
-    flippedCards: function (value) {
-      console.log(value)
+    flippedCards: {
+      handler(value) {
+        console.log(value)
+      }
     }
   },
    created() {
