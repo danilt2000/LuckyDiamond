@@ -219,12 +219,17 @@ export default {
      async handler(value) {
        if (this.gamesCircle <= this.amountSaveCrystals) {
          console.log(value)
-         this.offEventPointers = false
+         // this.offEventPointers = false
 
          let LimitClicked = this.amountSaveCrystals
          let DepositDiamonds = this.amountSaveDeposit
 
          const X_Cordinates = value[this.gamesCircle]
+
+         if (X_Cordinates >= 5) {
+           const findX = Math.floor((X_Cordinates / 5) * 5)
+           console.log(findX)
+         }
 
          console.log(LimitClicked, DepositDiamonds, X_Cordinates)
        }
