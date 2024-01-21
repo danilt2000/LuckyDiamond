@@ -221,7 +221,7 @@ export default {
 
        if (this.gamesCircle < maxCircles) {
          console.log(value)
-         // this.offEventPointers = false
+         this.offEventPointers = false
 
          let LimitClicked = this.amountSaveCrystals
          let DepositDiamonds = this.amountSaveDeposit
@@ -266,6 +266,7 @@ export default {
          console.log('---------ANSWER SERVER-----------', AnswerServer)
          console.log(LimitClicked, DepositDiamonds, X_Cordinates)
          this.gamesCircle = this.gamesCircle + 1
+         this.offEventPointers = true
        }
        else {
          this.gameStart = false
