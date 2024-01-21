@@ -160,6 +160,7 @@ export default {
       amountCrystals: 0,
       amountSaveCrystals: 0,
       balance: 0,
+      gamesCircle: 0,
       ErrorClick: '',
       gameStart: false,
       offEventPointers: false,
@@ -215,8 +216,19 @@ export default {
       }
     },
     flippedCards: {
-      handler(value) {
-        console.log(value)
+     async handler(value) {
+       if (this.gamesCircle <= this.amountSaveCrystals) {
+         console.log(value)
+         this.offEventPointers = false
+
+         let LimitClicked = this.amountSaveCrystals
+         let DepositDiamonds = this.amountSaveDeposit
+       }
+       else {
+         this.gameStart = false
+         this.offEventPointers = false
+         this.flippedCards = []
+       }
       },
       deep: true
     }
