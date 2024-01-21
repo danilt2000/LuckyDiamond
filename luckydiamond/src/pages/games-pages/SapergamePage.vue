@@ -165,7 +165,7 @@ export default {
       offEventPointers: false,
       amountDeposit: 0,
       amountSaveDeposit: 0,
-      flippedCards: '',
+      flippedCards: [],
       PercentageGameSteps: [],
       ValidationPlay: {
         CrystalValidate: false,
