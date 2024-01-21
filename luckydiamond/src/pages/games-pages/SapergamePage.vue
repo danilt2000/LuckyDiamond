@@ -230,8 +230,8 @@ export default {
          let findIndex, findX, findY
 
          if (X_Cordinates > 5) {
-           findIndex = Math.ceil(X_Cordinates / 5) * 5
-           findY = Math.ceil(findIndex / 5)
+           findIndex = Math.ceil(X_Cordinates / 5) * 5 - 1
+           findY = Math.ceil(findIndex / 5) - 1
            findX = X_Cordinates % 5
            console.log(findX, findY)
          }
