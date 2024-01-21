@@ -232,11 +232,11 @@ export default {
          if (X_Cordinates > 5) {
            findIndex = Math.ceil(X_Cordinates / 5) * 5
            findY = Math.ceil(findIndex / 5) - 1
-           findX = Math.ceil(X_Cordinates / 5 - 1)
+           findX = X_Cordinates - findIndex + 4
            console.log(findX, findY)
          }
          else if (X_Cordinates <= 5) {
-           findX = X_Cordinates
+           findX = X_Cordinates - 1
            findY = 1
          }
 
