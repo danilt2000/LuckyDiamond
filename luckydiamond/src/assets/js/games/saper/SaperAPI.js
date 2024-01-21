@@ -28,10 +28,11 @@ export async function GetPercentageSteps(CrystalsCount) {
 }
 
 export async function GetUserData(SearchToken, AUTHTOKEN) {
+
     const data = {
-        SearchToken: SearchToken,
-        AUTHTOKEN: AUTHTOKEN
-    }
+        AUTHTOKEN: AUTHTOKEN,
+        SearchToken: SearchToken
+      };
 
     try {
         const response = await fetch(`${BackendApiUrl}/Payment/UserMoney`, {

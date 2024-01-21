@@ -174,6 +174,30 @@ export default {
       modules: [ Navigation ]
     }
   },
+
+  created() {
+    // const AUTHTOKEN = GetCookie('AUTHTOKEN')
+    // const SEARCHTOKEN = GetCookie('SearchToken')
+
+
+    GetUserData(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+            .then(response => {
+              console.log(response)
+            })
+            .catch((error) => {
+                console.error(error);
+              });
+
+            // GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+            //   .then((response) => {
+            //     this.balance = response.currentMoney;
+            //     console.log(response);
+            //   })
+            //   .catch((error) => {
+            //     console.error(error);
+            //   });
+
+  },
   watch: {
     async amountDeposit(DiamondCount) {
       if (DiamondCount >= 1) {
