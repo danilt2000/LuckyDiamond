@@ -135,7 +135,7 @@
 import ChatComponent from "@/components/ChatComponent.vue";
 import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
-import { GetPercentageSteps, GetUserData } from "@/assets/js/games/saper/SaperAPI";
+import { GetPercentageSteps, GetUserData, ClickCirclePlay } from "@/assets/js/games/saper/SaperAPI";
 import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 
@@ -240,6 +240,25 @@ export default {
            findY = 1
          }
 
+         const UserObject = {
+           PuttedMoney: DepositDiamonds,
+           MinesCount: this.amountSaveCrystals,
+           SearchToken: GetCookie('SearchToken'),
+           AUTHTOKEN: GetCookie('AUTHTOKEN')
+         }
+         const ClickedSquare = {
+           X: findX,
+           Y: findY
+         }
+         let AnswerServer
+
+         await ClickCirclePlay(UserObject, ClickedSquare)
+             .then((response) => {
+               AnswerServer = response
+               console.log(response)
+             })
+
+         console.log('---------ANSWER SERVER-----------', AnswerServer)
          console.log(LimitClicked, DepositDiamonds, X_Cordinates)
          this.gamesCircle = this.gamesCircle + 1
        }
