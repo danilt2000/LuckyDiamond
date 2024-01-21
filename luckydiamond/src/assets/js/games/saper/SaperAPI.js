@@ -37,7 +37,8 @@ export async function GetUserData(SearchToken, AUTHTOKEN) {
         const response = await fetch(`${BackendApiUrl}/GameMines/GetCurrentData`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*",
             },
             body: JSON.stringify(data),
             redirect: 'follow'
