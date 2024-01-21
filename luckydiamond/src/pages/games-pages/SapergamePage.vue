@@ -223,6 +223,7 @@ export default {
 
          let LimitClicked = this.amountSaveCrystals
          let DepositDiamonds = this.amountSaveDeposit
+         console.log(LimitClicked, DepositDiamonds)
        }
        else {
          this.gameStart = false
