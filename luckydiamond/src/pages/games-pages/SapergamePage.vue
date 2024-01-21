@@ -214,6 +214,9 @@ export default {
         }
       }
     },
+    flippedCards: function (value) {
+      console.log(value)
+    }
   },
    created() {
     const AUTHTOKEN = GetCookie('AUTHTOKEN')
@@ -264,7 +267,7 @@ export default {
         this.flippedCards.splice(this.flippedCards.indexOf(index), 1);
         console.log(index, this.flippedCards)
       } else {
-        this.flippedCards = index;
+        this.flippedCards.push(index);
       }
     },
     stepsEndOfWord(index) {
