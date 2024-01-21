@@ -213,13 +213,13 @@ export default {
       }
     },
   },
-  async created() {
+   created() {
     const AUTHTOKEN = GetCookie('AUTHTOKEN')
     const SEARCHTOKEN = GetCookie('SearchToken')
 
     if (AUTHTOKEN !== null && SEARCHTOKEN !== null) {
       try {
-        await GetUserData(AUTHTOKEN, SEARCHTOKEN)
+         GetUserData(AUTHTOKEN, SEARCHTOKEN)
             .then(response => {
               console.log(response)
             })
