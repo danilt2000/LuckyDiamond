@@ -223,7 +223,10 @@ export default {
 
          let LimitClicked = this.amountSaveCrystals
          let DepositDiamonds = this.amountSaveDeposit
-         console.log(LimitClicked, DepositDiamonds)
+
+         const X_Cordinates = value[this.gamesCircle]
+
+         console.log(LimitClicked, DepositDiamonds, X_Cordinates)
        }
        else {
          this.gameStart = false
