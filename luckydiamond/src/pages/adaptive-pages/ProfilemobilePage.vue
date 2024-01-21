@@ -27,9 +27,9 @@
 import HeaderMobileComponent from "@/components/adaptive-components/HeaderMobileComponent.vue";
 import MenuMobileComponent from "@/components/adaptive-components/MenuMobileComponent.vue";
 import PaymentsMobile from "@/components/adaptive-components/PaymentsMobile.vue";
-import {GetUserData } from "@/assets/js/games/saper/SaperAPI";
+// import {GetUserData } from "@/assets/js/games/saper/SaperAPI";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
-// import { GetCurrentMoney } from "@/assets/js/rest/RestMethods.js";
+import { GetCurrentMoney } from "@/assets/js/rest/RestMethods.js";
 
 import '@/assets/css/PagesStyles/adaptive-pages/profilemobile.css'
 
@@ -48,22 +48,22 @@ export default {
     // const SEARCHTOKEN = GetCookie('SearchToken')
 
 
-    GetUserData(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
-            .then(response => {
-              console.log(response)
-            })
-            .catch((error) => {
+    // GetUserData(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+    //         .then(response => {
+    //           console.log(response)
+    //         })
+    //         .catch((error) => {
+    //             console.error(error);
+    //           });
+
+            GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+              .then((response) => {
+                // this.balance = response.currentMoney;
+                console.log(response);
+              })
+              .catch((error) => {
                 console.error(error);
               });
-
-            // GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
-            //   .then((response) => {
-            //     this.balance = response.currentMoney;
-            //     console.log(response);
-            //   })
-            //   .catch((error) => {
-            //     console.error(error);
-            //   });
 
   },
 
