@@ -227,7 +227,7 @@ export default {
          const X_Cordinates = value[this.gamesCircle]
 
          if (X_Cordinates >= 5) {
-           const findX = Math.floor((X_Cordinates / 5) * 5)
+           const findX = Math.ceil((X_Cordinates / 5) * 5)
            console.log(findX)
          }
 
