@@ -135,7 +135,7 @@
 import ChatComponent from "@/components/ChatComponent.vue";
 import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
-import { GetPercentageSteps, GetUserData, ClickCirclePlay } from "@/assets/js/games/saper/SaperAPI";
+import { GetPercentageSteps, GetUserData } from "@/assets/js/games/saper/SaperAPI";
 import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 
