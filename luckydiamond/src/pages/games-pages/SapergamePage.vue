@@ -228,7 +228,8 @@ export default {
 
          if (X_Cordinates >= 5) {
            const findX = Math.ceil(X_Cordinates / 5) * 5
-           console.log(findX)
+           const findY = Math.ceil(findX / 5)
+           console.log(findX, findY)
          }
 
          console.log(LimitClicked, DepositDiamonds, X_Cordinates)
