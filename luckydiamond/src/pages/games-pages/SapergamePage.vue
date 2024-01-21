@@ -237,7 +237,7 @@ export default {
          }
          else if (X_Cordinates <= 5) {
            findX = X_Cordinates - 1
-           findY = 1
+           findY = 0
          }
 
          const UserObject = {
