@@ -264,7 +264,7 @@ export default {
         this.flippedCards.splice(this.flippedCards.indexOf(index), 1);
         console.log(index, this.flippedCards)
       } else {
-        this.flippedCards.push(index);
+        this.flippedCards = index;
       }
     },
     stepsEndOfWord(index) {
