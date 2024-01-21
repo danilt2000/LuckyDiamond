@@ -217,7 +217,7 @@ export default {
     },
     flippedCards: {
      async handler(value) {
-       if (this.gamesCircle <= this.amountSaveCrystals) {
+       if (this.gamesCircle < this.amountSaveCrystals) {
          console.log(value)
          // this.offEventPointers = false
 
