@@ -83,7 +83,6 @@ export async function ClickCirclePlay(InfoUser, ClickedCell) {
             console.log('Fetch error:', response.status)
         }
 
-        console.log(response.json())
         return await response.json()
     }
     catch (error) {
