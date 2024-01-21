@@ -61,7 +61,7 @@
       </div>
       <div class="saper-game">
         <div class="saper-game__content">
-          <div class="game" :class="{ 'game-start' : gameStart }">
+          <div class="game" :class="{ 'game-start' : offEventPointers }">
             <div class="circles__content">
               <img src="@/assets/icons-games/saper-game/circles.png" class="circles circles-1">
               <img src="@/assets/icons-games/saper-game/circles.png" class="circles circles-2">
@@ -162,9 +162,10 @@ export default {
       balance: 0,
       ErrorClick: '',
       gameStart: false,
+      offEventPointers: false,
       amountDeposit: 0,
       amountSaveDeposit: 0,
-      flippedCards: [],
+      flippedCards: '',
       PercentageGameSteps: [],
       ValidationPlay: {
         CrystalValidate: false,
@@ -238,6 +239,7 @@ export default {
       else {
         this.playNotification()
         this.gameStart = true
+        this.offEventPointers = true
       }
     },
     validationCheck() {
