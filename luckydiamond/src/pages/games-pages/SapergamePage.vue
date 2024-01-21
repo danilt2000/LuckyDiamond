@@ -149,6 +149,7 @@ SwiperCore.use([Navigation]);
 
 import '@/assets/css/PagesStyles/games-pages/saper.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
+import {error} from "@babel/eslint-parser/lib/convert";
 
 export default {
   components: {ChatComponent, HeaderElementPage, AsideBarElement, Swiper, SwiperSlide },
@@ -252,11 +253,16 @@ export default {
          }
          let AnswerServer
 
-         await ClickCirclePlay(UserObject, ClickedSquare)
-             .then(response => {
-               AnswerServer = response
-               console.log(response)
-             })
+         try {
+           await ClickCirclePlay(UserObject, ClickedSquare)
+               .then(response => {
+                 AnswerServer = response
+                 console.log(response)
+               })
+         }
+         catch (e) {
+           console.error(e)
+         }
 
          console.log('---------ANSWER SERVER-----------', AnswerServer)
          console.log(LimitClicked, DepositDiamonds, X_Cordinates)
