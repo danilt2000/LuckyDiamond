@@ -229,11 +229,15 @@ export default {
          const X_Cordinates = value[this.gamesCircle]
          let findIndex, findX, findY
 
-         if (X_Cordinates >= 5) {
+         if (X_Cordinates > 5) {
            findIndex = Math.ceil(X_Cordinates / 5) * 5
            findY = Math.ceil(findIndex / 5)
            findX = X_Cordinates % 5
            console.log(findX, findY)
+         }
+         else if (X_Cordinates <= 5) {
+           findX = X_Cordinates
+           findY = 1
          }
 
          console.log(LimitClicked, DepositDiamonds, X_Cordinates)
