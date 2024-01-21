@@ -253,7 +253,7 @@ export default {
          let AnswerServer
 
          await ClickCirclePlay(UserObject, ClickedSquare)
-             .then((response) => {
+             .then(response => {
                AnswerServer = response
                console.log(response)
              })
