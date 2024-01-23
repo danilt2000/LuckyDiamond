@@ -296,6 +296,16 @@ export default {
          GetUserData(AUTHTOKEN, SEARCHTOKEN)
             .then(response => {
               console.log(response)
+              if (response) {
+                this.gameStart = true
+                this.offEventPointers = true
+
+                this.ValidationPlay.startGame = true
+
+                setTimeout(() => {
+                  this.ValidationPlay.startGame = false
+                }, 2000)
+              }
             })
       }
       catch (e) {
