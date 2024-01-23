@@ -272,7 +272,7 @@ export default {
            this.offEventPointers = false
            this.flippedCards = []
            this.gamesCircle = 0
-           console.log(this.gameStart)
+           console.log(this.gameStart, this.offEventPointers)
          }
        }
 
