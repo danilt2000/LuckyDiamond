@@ -219,7 +219,7 @@ export default {
      async handler(value) {
        const maxCircles = 25 - this.amountSaveCrystals
 
-       if (this.gamesCircle < maxCircles) {
+       if (this.gamesCircle < maxCircles && this.gameStart !== false) {
          console.log(value)
          this.offEventPointers = false
          let AnswerServer
