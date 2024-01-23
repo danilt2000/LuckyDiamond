@@ -6,7 +6,7 @@
 
     <chat-component id="chat"></chat-component>
 
-    <section class="saper">
+    <section class="saper" :class="{ 'game-end' : ValidationPlay.endGame }">
       <div class="bg"></div>
       <div class="bg-two"></div>
       <div class="saper-start" :class="{ 'game-start__menu-off' : gameStart }">
@@ -129,6 +129,10 @@
   <div class="start-game" v-if="ValidationPlay.startGame === true">
     <h2>Игра началась!</h2>
   </div>
+  <div class="start-game" v-if="ValidationPlay.endGame === true">
+    <h2>Вы подорвались! Игра закончена</h2>
+    <a href="#" @click="updatePage()">Продолжить</a>
+  </div>
 </template>
 
 <script>
@@ -172,6 +176,7 @@ export default {
         CrystalValidate: false,
         DiamondValidate: false,
         startGame: false,
+        endGame: false,
       },
       modules: [ Navigation ]
     }
@@ -268,11 +273,7 @@ export default {
          this.gamesCircle = this.gamesCircle + 1
          this.offEventPointers = true
          if (AnswerServer === 'You dead') {
-           this.gameStart = false
-           this.offEventPointers = false
-           this.flippedCards = []
-           this.gamesCircle = 0
-           console.log(this.gameStart, this.offEventPointers)
+           this.ValidationPlay.endGame = true
          }
        }
 
@@ -323,6 +324,9 @@ export default {
         this.gameStart = true
         this.offEventPointers = true
       }
+    },
+    updatePage() {
+      window.location.reload()
     },
     validationCheck() {
       if (this.ValidationPlay.CrystalValidate === true && this.ValidationPlay.DiamondValidate === true) {
