@@ -89,3 +89,30 @@ export async function ClickCirclePlay(InfoUser, ClickedCell) {
         console.error('Fetch error')
     }
 }
+
+export async function GetWinningAmount(UserInfo) {
+    const data = {
+        SearchToken: UserInfo.SearchToken,
+        AuthToken: UserInfo.AuthToken
+    }
+
+    try {
+        const response = await fetch(`${BackendApiUrl}/GameMines/TransferMoneyFromGameToWallet`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+            redirect: 'follow'
+        })
+
+        if (!response.ok) {
+            console.log('Fetch error:', response.status)
+        }
+
+        return await response.json()
+    }
+    catch (error) {
+        console.log('Fetch error', error)
+    }
+}

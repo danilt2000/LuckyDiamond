@@ -44,8 +44,8 @@
               <h2>Ошибка при заполнении</h2>
             </div>
             <button class="btn-start" :class="{ 'animate-start-btn' : ErrorClick }" @click="clickPlayButton">Начать игру</button>
-            <button class="btn-claim" v-if="winningAmount === 0">Забрать {{ winningAmount }} АР</button>
-            <button class="btn-claim" v-else>Забрать {{ winningAmount.toFixed(2) }} АР</button>
+            <button class="btn-claim" @click="claimWinningAmount()" v-if="winningAmount === 0">Забрать {{ winningAmount }} АР</button>
+            <button class="btn-claim" @click="claimWinningAmount()" v-else>Забрать {{ winningAmount.toFixed(2) }} АР</button>
           </div>
           <div class="saper-start__steps btns-style__steps">
             <swiper v-if="PercentageGameSteps.length" :key="PercentageGameSteps[0]" :spaceBetween="30" :slides-per-view="4" :centeredSlides="false" :navigation="true" :modules="modules">
@@ -140,7 +140,7 @@
 import ChatComponent from "@/components/ChatComponent.vue";
 import AsideBarElement from "@/components/AsidebarComponent.vue";
 import HeaderElementPage from "@/components/HeaderComponent.vue";
-import { GetPercentageSteps, GetUserData, ClickCirclePlay } from "@/assets/js/games/saper/SaperAPI";
+import { GetPercentageSteps, GetUserData, ClickCirclePlay, GetWinningAmount } from "@/assets/js/games/saper/SaperAPI";
 import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 
@@ -326,10 +326,25 @@ export default {
         this.playNotification()
         this.gameStart = true
         this.offEventPointers = true
+        this.amountCrystals = this.amountSaveCrystals
+        this.amountDeposit = this.amountSaveDeposit
       }
     },
     updatePage() {
       window.location.reload()
+    },
+    async claimWinningAmount() {
+      if (this.winningAmount >= 1) {
+        try {
+          await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
+          setTimeout(() => {
+            window.location.reload()
+          }, 1000)
+        }
+        catch (e) {
+          console.error(e)
+        }
+      }
     },
     validationCheck() {
       if (this.ValidationPlay.CrystalValidate === true && this.ValidationPlay.DiamondValidate === true) {
