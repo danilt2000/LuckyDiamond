@@ -44,7 +44,8 @@
               <h2>Ошибка при заполнении</h2>
             </div>
             <button class="btn-start" :class="{ 'animate-start-btn' : ErrorClick }" @click="clickPlayButton">Начать игру</button>
-            <button class="btn-claim">Забрать 15 АР</button>
+            <button class="btn-claim" v-if="winningAmount === 0">Забрать {{ winningAmount }} АР</button>
+            <button class="btn-claim" v-else>Забрать {{ winningAmount.toFixed(2) }} АР</button>
           </div>
           <div class="saper-start__steps btns-style__steps">
             <swiper v-if="PercentageGameSteps.length" :key="PercentageGameSteps[0]" :spaceBetween="30" :slides-per-view="4" :centeredSlides="false" :navigation="true" :modules="modules">
@@ -164,6 +165,7 @@ export default {
       amountCrystals: 0,
       amountSaveCrystals: 0,
       balance: 0,
+      winningAmount: 0,
       gamesCircle: 0,
       ErrorClick: '',
       gameStart: false,
@@ -261,6 +263,7 @@ export default {
            await ClickCirclePlay(UserObject, ClickedSquare)
                .then(response => {
                  AnswerServer = response
+                 this.winningAmount = response.Item1.WinningMoney
                  console.log(response)
                })
          }
