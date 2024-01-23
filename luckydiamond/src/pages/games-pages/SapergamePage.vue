@@ -274,6 +274,7 @@ export default {
            this.gamesCircle = 0
          }
        }
+
        else {
          this.gameStart = false
          this.offEventPointers = false
