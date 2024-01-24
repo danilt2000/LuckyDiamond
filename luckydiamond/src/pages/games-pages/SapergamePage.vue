@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="saper-start__btns">
-            <div class="error-block" v-if="ErrorClick === true">
+            <div class="error-block" v-if="ErrorClick">
               <h2>Ошибка при заполнении</h2>
             </div>
             <button class="btn-start" :class="{ 'animate-start-btn' : ErrorClick }" @click="clickPlayButton">Начать игру</button>
@@ -150,6 +150,9 @@ import "swiper/css/navigation";
 import SwiperCore from 'swiper/core';
 import {Navigation } from "swiper/modules";
 
+import { useVuelidate } from '@vuelidate/core'
+import { maxValue, minValue, required, numeric } from "@vuelidate/validators";
+
 SwiperCore.use([Navigation]);
 
 import '@/assets/css/PagesStyles/games-pages/saper.css'
@@ -171,44 +174,48 @@ export default {
       gameStart: false,
       offEventPointers: false,
       amountDeposit: 0,
-      amountSaveDeposit: 0,
       flippedCards: [],
       PercentageGameSteps: [],
       ValidationPlay: {
-        CrystalValidate: false,
-        DiamondValidate: false,
         startGame: false,
         endGame: false,
       },
       modules: [ Navigation ]
     }
   },
+  setup () {
+    return{ v$: useVuelidate() }
+  },
+  validations() {
+    return {
+      amountCrystals: { required, numeric, minValue: minValue(1), maxValue: maxValue(24) },
+      amountDeposit: { required, numeric, minValue: minValue(1), maxValue: maxValue(this.balance) }
+    }
+  },
   watch: {
-    async amountDeposit(DiamondCount) {
-      if (DiamondCount >= 1) {
-        try {
-          await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
-              .then((response) => {
-                this.balance = response.currentMoney
-                console.log(this.balance)
-              })
-          if (this.balance >= DiamondCount) {
-            this.amountSaveDeposit = DiamondCount
-            this.ValidationPlay.DiamondValidate = true
-          }
-        }
-        catch (e) {
-          console.error('Error amountdep', e)
-        }
-      }
-    },
+    // async amountDeposit(DiamondCount) {
+    //   if (DiamondCount >= 1) {
+    //     try {
+    //       await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+    //           .then((response) => {
+    //             this.balance = response.currentMoney
+    //             console.log(this.balance)
+    //           })
+    //       if (this.balance >= DiamondCount) {
+    //         this.amountSaveDeposit = DiamondCount
+    //         this.ValidationPlay.DiamondValidate = true
+    //       }
+    //     }
+    //     catch (e) {
+    //       console.error('Error amountdep', e)
+    //     }
+    //   }
+    // },
     async amountCrystals(CrystalsCount) {
       this.PercentageGameSteps = []
       if (CrystalsCount >= 1 && CrystalsCount <= 24) {
-        this.amountSaveCrystals = CrystalsCount
-        this.ValidationPlay.CrystalValidate = true
         try {
-            await GetPercentageSteps(this.amountSaveCrystals)
+            await GetPercentageSteps(this.amountCrystals)
               .then((response) => {
                 response.forEach((item) => {
                   if (item !== 'Infinity' && item !== '-Infinity') {
@@ -224,15 +231,15 @@ export default {
     },
     flippedCards: {
      async handler(value) {
-       const maxCircles = 25 - this.amountSaveCrystals
+       const maxCircles = 25 - this.amountCrystals
 
        if (this.gamesCircle < maxCircles && this.gameStart !== false) {
          console.log(value)
          this.offEventPointers = false
          let AnswerServer
 
-         let LimitClicked = this.amountSaveCrystals
-         let DepositDiamonds = this.amountSaveDeposit
+         let LimitClicked = this.amountCrystals
+         let DepositDiamonds = this.amountDeposit
 
          const X_Cordinates = value[this.gamesCircle]
          let findIndex, findX, findY
@@ -250,7 +257,7 @@ export default {
 
          const UserObject = {
            PuttedMoney: DepositDiamonds,
-           MinesCount: this.amountSaveCrystals,
+           MinesCount: this.amountCrystals,
            SearchToken: GetCookie('SearchToken'),
            AUTHTOKEN: GetCookie('AUTHTOKEN')
          }
@@ -311,6 +318,7 @@ export default {
                 }, 2000)
               }
             })
+        this.getBalanceUser()
       }
       catch (e) {
         console.error('Error in GetData', e)
@@ -319,15 +327,32 @@ export default {
   },
   methods: {
     clickPlayButton() {
-      if(!this.validationCheck()) {
+      // if(!this.validationCheck()) {
+      //   this.errorPlayButton()
+      // }
+      this.v$.$touch()
+
+      if (this.v$.amountDeposit.$error) {
+        this.errorPlayButton()
+      }
+      else if (this.v$.amountCrystals.$error) {
         this.errorPlayButton()
       }
       else {
         this.playNotification()
         this.gameStart = true
         this.offEventPointers = true
-        this.amountCrystals = this.amountSaveCrystals
-        this.amountDeposit = this.amountSaveDeposit
+      }
+    },
+    getBalanceUser() {
+      try {
+        GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+            .then(response => {
+              this.balance = response.currentMoney
+            })
+      }
+      catch (e) {
+        console.error(e)
       }
     },
     updatePage() {
