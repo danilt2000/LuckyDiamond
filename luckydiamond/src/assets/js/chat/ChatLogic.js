@@ -39,7 +39,7 @@ export function ConnectToChat() {
 export function SendMessageToChat(message) {
     try {
 
-        if (!GetCookie("SpUserName") || GetCookie("AUTHTOKEN") || GetCookie("SearchToken")) {
+        if (!GetCookie("SpUserName") && !GetCookie("AUTHTOKEN") && !GetCookie("SearchToken")) {
             return;
         }
 
