@@ -40,7 +40,6 @@ export function SendMessageToChat(message) {
     try {
         const data = {
             SpUserName: GetCookie("SpUserName"),
-            SearchToken: GetCookie("SearchToken"),
             Message: message
         };
 
