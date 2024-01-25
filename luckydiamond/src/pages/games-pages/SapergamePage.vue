@@ -132,7 +132,9 @@
   </div>
   <div class="start-game" v-if="ValidationPlay.endGame === true">
     <h2>Вы подорвались! Игра закончена</h2>
-<!--    <a href="#" @click="updatePage()">Продолжить</a>-->
+  </div>
+  <div class="start-game" v-if="ValidationPlay.winGame === true">
+    <h2>Игра успешно закончена! Приз забран.</h2>
   </div>
 </template>
 
@@ -180,6 +182,7 @@ export default {
       ValidationPlay: {
         startGame: false,
         endGame: false,
+        winGame: false,
       },
       modules: [ Navigation ]
     }
@@ -216,8 +219,9 @@ export default {
      async handler(value) {
        if (value.length < 1 || this.ValidationPlay.endGame === true) return
        const maxCircles = 25 - this.amountCrystals
+       console.log(maxCircles)
 
-       if (this.gamesCircle < maxCircles && this.gameStart !== false) {
+       if (this.gameStart !== false) {
          this.offEventPointers = false
          let AnswerServer
 
@@ -266,11 +270,12 @@ export default {
          if (AnswerServer === 'You dead') {
            this.offEventPointers = false
            this.gameStart = false
+           this.gamesCircle = 0
            this.winningAmount = 0
            this.flippedCards = []
            const SoundCorrect = new Howl({
              src: ['/sounds/incorrect-sound.mp3'],
-             volume: 1.0
+             volume: 0.5
            })
 
            SoundCorrect.play()
@@ -283,17 +288,24 @@ export default {
          }
          const SoundUncorrect = new Howl({
            src: ['/sounds/correct-click.mp3'],
-           volume: 1.0
+           volume: 0.5
          })
 
          SoundUncorrect.play()
        }
-       else {
-         this.gameStart = false
+       if (this.gamesCircle === maxCircles) {
          this.offEventPointers = false
-         this.flippedCards = []
+         this.gameStart = false
          this.gamesCircle = 0
-         // В будущем - вылазит уведомление, где написано игра закончена, "Продолжить" - клик и обновление страницы
+         this.flippedCards = []
+
+         this.claimWinningAmount()
+
+         this.ValidationPlay.winGame = true
+
+         setTimeout(() => {
+           this.ValidationPlay.winGame = false
+         }, 1500)
        }
       },
       deep: true
@@ -365,6 +377,7 @@ export default {
           this.offEventPointers = false
           this.gameStart = false
           this.flippedCards = []
+          this.gamesCircle = 0
           await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
           this.winningAmount = 0
         }
