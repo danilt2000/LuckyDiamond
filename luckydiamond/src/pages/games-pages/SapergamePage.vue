@@ -365,9 +365,6 @@ export default {
   },
   methods: {
     clickPlayButton() {
-      // if(!this.validationCheck()) {
-      //   this.errorPlayButton()
-      // }
       this.v$.$touch()
 
       if (this.v$.amountDeposit.$error) {
@@ -393,9 +390,6 @@ export default {
         console.error(e)
       }
     },
-    // updatePage() {
-    //   window.location.reload()
-    // },
     async claimWinningAmount() {
       if (this.winningAmount >= 1) {
         try {
@@ -412,11 +406,6 @@ export default {
         }
       }
     },
-    // validationCheck() {
-    //   if (this.ValidationPlay.CrystalValidate === true && this.ValidationPlay.DiamondValidate === true) {
-    //     return true
-    //   }
-    // },
     playNotification() {
       this.ValidationPlay.startGame = true
       setTimeout(() => {
@@ -431,8 +420,6 @@ export default {
     },
     flipCard(index) {
       if (this.flippedCards.includes(index)) {
-        // this.flippedCards.splice(this.flippedCards.indexOf(index), 1);
-        // console.log(index, this.flippedCards)
         return eventBus.emit('Updatebalance')
       } else {
         this.flippedCards.push(index);
