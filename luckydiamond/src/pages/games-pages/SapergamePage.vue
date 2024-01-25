@@ -350,7 +350,10 @@ export default {
         try {
           await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
           setTimeout(() => {
-            window.location.reload()
+            this.winningAmount = 0
+            this.flippedCards = []
+            this.offEventPointers = false
+            this.gameStart = false
           }, 1000)
         }
         catch (e) {
