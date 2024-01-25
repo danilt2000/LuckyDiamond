@@ -31,7 +31,7 @@
 
 .chat__content--users {
     height: 650px;
-    width: 250px;
+    width: auto;
     overflow-y: auto;
     overflow-x: auto;
 }
