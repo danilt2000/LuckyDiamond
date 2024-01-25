@@ -23,11 +23,11 @@
     font-weight: 700;
 }
 
-.content p {
+/* .content p {
     width: 80%;
     word-wrap: break-word;
     margin: 0 auto;
-}
+} */
 
 .chat__content--users {
     height: 650px;
