@@ -151,7 +151,7 @@ import SwiperCore from 'swiper/core';
 import {Navigation } from "swiper/modules";
 
 import { useVuelidate } from '@vuelidate/core'
-import { maxValue, minValue, required, numeric } from "@vuelidate/validators";
+import { maxValue, minValue, required, numeric, integer } from "@vuelidate/validators";
 
 SwiperCore.use([Navigation]);
 
@@ -187,8 +187,8 @@ export default {
   },
   validations() {
     return {
-      amountCrystals: { required, numeric, minValue: minValue(1), maxValue: maxValue(24) },
-      amountDeposit: { required, numeric, minValue: minValue(1), maxValue: maxValue(this.balance) }
+      amountCrystals: { required, numeric, minValue: minValue(1), maxValue: maxValue(24), integer },
+      amountDeposit: { required, numeric, minValue: minValue(1), maxValue: maxValue(this.balance), integer }
     }
   },
   watch: {
@@ -406,15 +406,13 @@ export default {
       }
       return word
     },
-    clickedBtnChoice(index, content) {
+    async clickedBtnChoice(index, content) {
       this.clickedBtn = index
       if (content === 'max') {
-        setTimeout( async () => {
-          await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
-              .then((response) => {
-                this.amountDeposit = response.currentMoney
-              })
-        }, 1000)
+        await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+            .then((response) => {
+              this.amountDeposit = parseInt(response.currentMoney)
+            })
       }
       else {
         this.amountDeposit = content
