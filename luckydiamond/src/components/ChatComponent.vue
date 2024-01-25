@@ -52,9 +52,9 @@ export default {
 
       SendMessageToChat(msg[0]);
 
-      if(this.array.length > 7) {
-        this.array.shift()
-      }
+      // if(this.array.length > 7) {
+      //   this.array.shift()
+      // }
     }
   },
   mounted() {
