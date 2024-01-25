@@ -132,7 +132,7 @@
   </div>
   <div class="start-game" v-if="ValidationPlay.endGame === true">
     <h2>Вы подорвались! Игра закончена</h2>
-    <a href="#" @click="updatePage()">Продолжить</a>
+<!--    <a href="#" @click="updatePage()">Продолжить</a>-->
   </div>
 </template>
 
@@ -212,6 +212,7 @@ export default {
     },
     flippedCards: {
      async handler(value) {
+       if (value.length < 1 || this.ValidationPlay.endGame === true) return
        const maxCircles = 25 - this.amountCrystals
 
        if (this.gamesCircle < maxCircles && this.gameStart !== false) {
@@ -252,7 +253,7 @@ export default {
                .then(response => {
                  AnswerServer = response
                  this.winningAmount = response.Item1.WinningMoney
-                 console.log(response)
+                 console.log(response.Item1.WinningMoney)
                })
          }
          catch (e) {
@@ -264,7 +265,10 @@ export default {
          this.gamesCircle = this.gamesCircle + 1
          this.offEventPointers = true
          if (AnswerServer === 'You dead') {
-           this.ValidationPlay.endGame = true
+           this.offEventPointers = false
+           this.gameStart = false
+           this.winningAmount = 0
+           this.flippedCards = []
          }
        }
 
@@ -336,9 +340,9 @@ export default {
         console.error(e)
       }
     },
-    updatePage() {
-      window.location.reload()
-    },
+    // updatePage() {
+    //   window.location.reload()
+    // },
     async claimWinningAmount() {
       if (this.winningAmount >= 1) {
         try {
@@ -371,8 +375,9 @@ export default {
     },
     flipCard(index) {
       if (this.flippedCards.includes(index)) {
-        this.flippedCards.splice(this.flippedCards.indexOf(index), 1);
-        console.log(index, this.flippedCards)
+        // this.flippedCards.splice(this.flippedCards.indexOf(index), 1);
+        // console.log(index, this.flippedCards)
+        return
       } else {
         this.flippedCards.push(index);
       }
