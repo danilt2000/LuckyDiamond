@@ -531,6 +531,9 @@ input[type="number"]::-webkit-outer-spin-button {
     .square {
         width: 75px;
     }
+    .img-style-click {
+        left: -15px;
+    }
     .info-emeralds {
         margin-top: 6.5%;
     }
