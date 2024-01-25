@@ -216,7 +216,6 @@ export default {
        const maxCircles = 25 - this.amountCrystals
 
        if (this.gamesCircle < maxCircles && this.gameStart !== false) {
-         console.log(value)
          this.offEventPointers = false
          let AnswerServer
 
@@ -230,7 +229,6 @@ export default {
            findIndex = Math.ceil(X_Cordinates / 5) * 5
            findY = Math.ceil(findIndex / 5) - 1
            findX = X_Cordinates - findIndex + 4
-           console.log(findX, findY)
          }
          else if (X_Cordinates <= 5) {
            findX = X_Cordinates - 1
@@ -253,7 +251,6 @@ export default {
                .then(response => {
                  AnswerServer = response
                  this.winningAmount = response.Item1.WinningMoney
-                 console.log(response.Item1.WinningMoney)
                })
          }
          catch (e) {
@@ -269,6 +266,11 @@ export default {
            this.gameStart = false
            this.winningAmount = 0
            this.flippedCards = []
+
+           this.ValidationPlay.endGame = true
+           setTimeout(() => {
+             this.ValidationPlay.endGame = false
+           }, 1200)
          }
        }
 
@@ -356,11 +358,11 @@ export default {
         }
       }
     },
-    validationCheck() {
-      if (this.ValidationPlay.CrystalValidate === true && this.ValidationPlay.DiamondValidate === true) {
-        return true
-      }
-    },
+    // validationCheck() {
+    //   if (this.ValidationPlay.CrystalValidate === true && this.ValidationPlay.DiamondValidate === true) {
+    //     return true
+    //   }
+    // },
     playNotification() {
       this.ValidationPlay.startGame = true
       setTimeout(() => {
