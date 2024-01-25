@@ -144,6 +144,8 @@ import { GetPercentageSteps, GetUserData, ClickCirclePlay, GetWinningAmount } fr
 import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 
+import { Howl } from 'howler';
+
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import "swiper/css/navigation";
@@ -266,14 +268,26 @@ export default {
            this.gameStart = false
            this.winningAmount = 0
            this.flippedCards = []
+           const SoundCorrect = new Howl({
+             src: ['/sounds/incorrect-sound.mp3'],
+             volume: 1.0
+           })
+
+           SoundCorrect.play()
 
            this.ValidationPlay.endGame = true
            setTimeout(() => {
              this.ValidationPlay.endGame = false
            }, 1200)
+           return
          }
-       }
+         const SoundUncorrect = new Howl({
+           src: ['/sounds/correct-click.mp3'],
+           volume: 1.0
+         })
 
+         SoundUncorrect.play()
+       }
        else {
          this.gameStart = false
          this.offEventPointers = false
