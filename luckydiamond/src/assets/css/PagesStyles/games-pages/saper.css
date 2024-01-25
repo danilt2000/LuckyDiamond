@@ -337,6 +337,17 @@ input[type="number"]::-webkit-outer-spin-button {
     filter: blur(5px);
 }
 
+.img-style-click {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    top: -70px;
+}
+
+.crystal-img {
+    left: -5px;
+}
+
 .game-start {
     pointer-events: unset !important;
 }

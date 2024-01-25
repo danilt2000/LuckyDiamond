@@ -72,35 +72,55 @@
             <div class="game-firstline">
               <ul class="display-lines margin-lines">
                 <li class="firstline" v-for="index in 5" :key="index">
-                  <div @click="flipCard(index)" :class="[ 'square', `square-${index}`, { 'square-fliper' : flippedCards.includes(index) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index) }">ld</h2></div>
+                  <div @click="flipCard(index)" :class="[ 'square', `square-${index}`, { 'square-fliper' : flippedCards.includes(index) } ]">
+                    <h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index) }">ld</h2>
+                    <img class="img-style-click" v-if="CorrectsClick.includes(index)" src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" alt>
+                    <img class="img-style-click crystal-img" v-if="unCorrectClick.includes(index)" src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" alt>
+                  </div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 5)" :class="[ 'square', `square-${index + 5}`, { 'square-fliper' : flippedCards.includes(index + 5) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 5) }">ld</h2></div>
+                  <div @click="flipCard(index + 5)" :class="[ 'square', `square-${index + 5}`, { 'square-fliper' : flippedCards.includes(index + 5) } ]">
+                    <h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 5) }">ld</h2>
+                    <img class="img-style-click" v-if="CorrectsClick.includes(index + 5)" src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" alt>
+                    <img class="img-style-click crystal-img" v-if="unCorrectClick.includes(index + 5)" src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" alt>
+                  </div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 10)" :class="[ 'square', `square-${index + 10}`, { 'square-fliper' : flippedCards.includes(index + 10) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 10) }">ld</h2></div>
+                  <div @click="flipCard(index + 10)" :class="[ 'square', `square-${index + 10}`, { 'square-fliper' : flippedCards.includes(index + 10) } ]">
+                    <h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 10) }">ld</h2>
+                    <img class="img-style-click" v-if="CorrectsClick.includes(index + 10)" src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" alt>
+                    <img class="img-style-click crystal-img" v-if="unCorrectClick.includes(index + 10)" src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" alt>
+                  </div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 15)" :class="[ 'square', `square-${index + 15}`, { 'square-fliper' : flippedCards.includes(index + 15) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 15) }">ld</h2></div>
+                  <div @click="flipCard(index + 15)" :class="[ 'square', `square-${index + 15}`, { 'square-fliper' : flippedCards.includes(index + 15) } ]">
+                    <h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 15) }">ld</h2>
+                    <img class="img-style-click" v-if="CorrectsClick.includes(index + 15)" src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" alt>
+                    <img class="img-style-click crystal-img" v-if="unCorrectClick.includes(index + 15)" src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" alt>
+                  </div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 20)" :class="[ 'square', `square-${index + 20}`, { 'square-fliper' : flippedCards.includes(index + 20) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 20) }">ld</h2></div>
+                  <div @click="flipCard(index + 20)" :class="[ 'square', `square-${index + 20}`, { 'square-fliper' : flippedCards.includes(index + 20) } ]">
+                    <h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 20) }">ld</h2>
+                    <img class="img-style-click" v-if="CorrectsClick.includes(index + 20)" src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" alt>
+                    <img class="img-style-click crystal-img" v-if="unCorrectClick.includes(index + 20)" src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" alt>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -179,6 +199,8 @@ export default {
       amountDeposit: 0,
       flippedCards: [],
       PercentageGameSteps: [],
+      CorrectsClick: [],
+      unCorrectClick: [],
       ValidationPlay: {
         startGame: false,
         endGame: false,
@@ -268,6 +290,7 @@ export default {
          this.gamesCircle = this.gamesCircle + 1
          this.offEventPointers = true
          if (AnswerServer === 'You dead') {
+           this.unCorrectClick.push(X_Cordinates)
            this.offEventPointers = false
            this.gameStart = false
            this.gamesCircle = 0
@@ -290,6 +313,7 @@ export default {
            src: ['/sounds/correct-click.mp3'],
            volume: 0.5
          })
+         this.CorrectsClick.push(X_Cordinates)
 
          SoundUncorrect.play()
        }
