@@ -166,7 +166,6 @@ export default {
       clickedBtn: '',
       clickedBtnCrystal : '',
       amountCrystals: 0,
-      amountSaveCrystals: 0,
       balance: 0,
       winningAmount: 0,
       gamesCircle: 0,
@@ -193,24 +192,6 @@ export default {
     }
   },
   watch: {
-    // async amountDeposit(DiamondCount) {
-    //   if (DiamondCount >= 1) {
-    //     try {
-    //       await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
-    //           .then((response) => {
-    //             this.balance = response.currentMoney
-    //             console.log(this.balance)
-    //           })
-    //       if (this.balance >= DiamondCount) {
-    //         this.amountSaveDeposit = DiamondCount
-    //         this.ValidationPlay.DiamondValidate = true
-    //       }
-    //     }
-    //     catch (e) {
-    //       console.error('Error amountdep', e)
-    //     }
-    //   }
-    // },
     async amountCrystals(CrystalsCount) {
       this.PercentageGameSteps = []
       if (CrystalsCount >= 1 && CrystalsCount <= 24) {
