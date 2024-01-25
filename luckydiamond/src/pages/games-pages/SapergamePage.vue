@@ -167,6 +167,7 @@ import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 
 import { Howl } from 'howler';
+import {eventBus} from "@/main";
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
@@ -307,7 +308,7 @@ export default {
            setTimeout(() => {
              this.ValidationPlay.endGame = false
            }, 1200)
-           return
+           return this.$emit('Updatebalance')
          }
          const SoundUncorrect = new Howl({
            src: ['/sounds/correct-click.mp3'],
@@ -404,6 +405,7 @@ export default {
           this.gamesCircle = 0
           await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
           this.winningAmount = 0
+          return eventBus.emit('Updatebalance')
         }
         catch (e) {
           console.error(e)
@@ -431,7 +433,7 @@ export default {
       if (this.flippedCards.includes(index)) {
         // this.flippedCards.splice(this.flippedCards.indexOf(index), 1);
         // console.log(index, this.flippedCards)
-        return
+        return eventBus.emit('Updatebalance')
       } else {
         this.flippedCards.push(index);
       }
