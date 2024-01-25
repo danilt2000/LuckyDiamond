@@ -44,7 +44,7 @@
               <h2>Ошибка при заполнении</h2>
             </div>
             <button class="btn-start" :class="{ 'animate-start-btn' : ErrorClick }" @click="clickPlayButton">Начать игру</button>
-            <button class="btn-claim" @click="claimWinningAmount()" v-if="winningAmount === 0">Забрать {{ winningAmount }} АР</button>
+            <button class="btn-claim" v-if="winningAmount === 0">Забрать {{ winningAmount }} АР</button>
             <button class="btn-claim" @click="claimWinningAmount()" v-else>Забрать {{ winningAmount.toFixed(2) }} АР</button>
           </div>
           <div class="saper-start__steps btns-style__steps">
@@ -348,13 +348,11 @@ export default {
     async claimWinningAmount() {
       if (this.winningAmount >= 1) {
         try {
+          this.offEventPointers = false
+          this.gameStart = false
+          this.flippedCards = []
           await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
-          setTimeout(() => {
-            this.winningAmount = 0
-            this.flippedCards = []
-            this.offEventPointers = false
-            this.gameStart = false
-          }, 1000)
+          this.winningAmount = 0
         }
         catch (e) {
           console.error(e)
