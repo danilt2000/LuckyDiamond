@@ -29,6 +29,11 @@
     margin: 0 auto;
 } */
 
+.content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
 .chat__content--users {
     height: 650px;
     width: auto;
