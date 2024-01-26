@@ -296,7 +296,6 @@ export default {
            this.gameStart = false
            this.gamesCircle = 0
            this.winningAmount = 0
-           this.flippedCards = []
            const SoundCorrect = new Howl({
              src: ['/sounds/incorrect-sound.mp3'],
              volume: 0.5
@@ -374,9 +373,18 @@ export default {
         this.errorPlayButton()
       }
       else {
+        this.flippedCards = []
+        this.unCorrectClick = []
+        this.CorrectsClick = []
         this.playNotification()
         this.gameStart = true
         this.offEventPointers = true
+        const soundStartGame = new Howl({
+          src: ['/sounds/start-game.mp3'],
+          volume: 5.0
+        })
+
+        soundStartGame.play()
       }
     },
     getBalanceUser() {
