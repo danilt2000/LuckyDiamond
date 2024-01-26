@@ -1,7 +1,7 @@
 <template>
   <div class="write">
     <div class="write__content">
-      <input type="text" @keyup.enter="sendmsgDataEnter" v-model.trim="msg" placeholder="Напишите сообщение..." maxlength="22">
+      <input type="text" @keyup.enter="sendmsgDataEnter" v-model.trim="msg" placeholder="Напишите сообщение..." maxlength="100">
       <button
           :disabled="CheckerforBtn()"
           type="submit"

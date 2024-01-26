@@ -49,33 +49,32 @@ export default {
   },
   methods: {
     ClaimDatamsg(msg) {
-      const MsgUser = {
-        id: this.id + 1,
-        msg: msg[0],
-        username: msg[1],
-        icon: msg[2]
-      }
-
-      this.array.push(MsgUser)
 
       SendMessageToChat(msg[0]);
 
-      if(this.array.length > 7) {
-        this.array.shift()
-      }
+      // if(this.array.length > 7) {
+      //   this.array.shift()
+      // }
     }
   },
   mounted() {
     eventBus.on('dataChat', (dataFromServer) => {
+      try {
+      // Attempt to parse the JSON string
+      const dataObject = JSON.parse(dataFromServer);
+      let imageUrl = "https://avatar.spworlds.ru/face/55/" + dataObject.SpUserName;
+
       const MsgUser = {
         id: this.id + 1,
-        msg: dataFromServer,
-        username: dataFromServer,
-        icon: dataFromServer
-      }
+        msg: dataObject.Message,
+        username: dataObject.SpUserName,
+        icon: imageUrl
+      };
 
-      this.array.push(MsgUser)
-      console.log(dataFromServer)
+      this.array.push(MsgUser);
+    } catch (error) {
+      console.error('Error parsing JSON data:', error);
+    }
     })
   }
 }

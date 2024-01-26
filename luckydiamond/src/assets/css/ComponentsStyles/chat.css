@@ -23,15 +23,20 @@
     font-weight: 700;
 }
 
-.content p {
+/* .content p {
     width: 80%;
     word-wrap: break-word;
     margin: 0 auto;
-}
+} */
+
+.content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 
 .chat__content--users {
     height: 650px;
-    width: 250px;
+    width: auto;
     overflow-y: auto;
     overflow-x: auto;
 }
