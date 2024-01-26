@@ -1,7 +1,6 @@
 
 <script>
 import "@/assets/css/ComponentsStyles/header.css";
-// import { GetAuthCodeFromCurrentPath } from '@/assets/js/authentication/LoggingMiddleware.js';
 import { LogIn } from "@/assets/js/authentication/AuthService.js";
 import { GetCurrentMoney } from "@/assets/js/rest/RestMethods.js";
 import {
