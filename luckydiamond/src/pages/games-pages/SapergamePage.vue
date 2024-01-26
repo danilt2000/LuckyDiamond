@@ -415,6 +415,8 @@ export default {
           this.offEventPointers = false
           this.gameStart = false
           this.flippedCards = []
+          this.unCorrectClick = []
+          this.CorrectsClick = []
           this.gamesCircle = 0
           await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
           this.winningAmount = 0
