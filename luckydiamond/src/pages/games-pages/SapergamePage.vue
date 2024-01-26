@@ -242,7 +242,7 @@ export default {
      async handler(value) {
        if (value.length < 1 || this.ValidationPlay.endGame === true) return
        const maxCircles = 25 - this.amountCrystals
-       console.log(maxCircles)
+       console.log(`MAXCIRLES - ${maxCircles} VALUE: ${value} GAMECIRCLE - ${this.gamesCircle}`)
 
        if (this.gameStart !== false) {
          this.offEventPointers = false
@@ -307,7 +307,7 @@ export default {
            setTimeout(() => {
              this.ValidationPlay.endGame = false
            }, 1200)
-           return this.$emit('Updatebalance')
+           return eventBus.emit('Updatebalance')
          }
          const SoundUncorrect = new Howl({
            src: ['/sounds/correct-click.mp3'],
@@ -350,6 +350,17 @@ export default {
 
                 this.ValidationPlay.startGame = true
 
+                this.amountCrystals = response.MinesCount
+                this.amountDeposit = response.PuttedMoney
+                this.winningAmount = response.WinningMoney
+
+                const soundStartGame = new Howl({
+                  src: ['/sounds/start-game.mp3'],
+                  volume: 5.0
+                })
+
+                soundStartGame.play()
+                console.log(this.flippedCards.length)
                 setTimeout(() => {
                   this.ValidationPlay.startGame = false
                 }, 2000)
