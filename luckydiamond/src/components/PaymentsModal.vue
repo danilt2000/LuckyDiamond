@@ -67,21 +67,30 @@
       </div>
     </div>
     <div v-else class="payments-modal__withdraw deposit-text withdraw-input">
+      <div class="error-deposit" v-if="errorDeposit">
+        <h2>Ошибка с суммой депозита</h2>
+      </div>
       <div class="count-withdraw deposit-icon-diamond">
         <h3>Сумма вывода</h3>
         <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png" />
-        <input class="with-input" v-model="amount" type="number" />
+        <input :class="{ 'animate-start-btn' : errorDeposit }" class="with-input" v-model="amountWithdraw" type="number" />
+      </div>
+      <div class="error-card" v-if="errorCard">
+        <h2>Ошибка с вводом карты</h2>
       </div>
       <div class="number-card deposit-promocode__padding--input">
         <h3>Введите номер карты</h3>
-        <input class="with-input" v-model="card" type="text" />
+        <input :class="{ 'animate-start-btn' : errorCard }" class="with-input" v-model="card" type="text" />
       </div>
-      <div v-if="offAgree" class="error-checkbox">
-        <h2 v-show="errorAgree">Введите сначало карту</h2>
+      <div class="error-checkbox" v-if="errorAgree">
+        <h2>Подтвердите согласие!</h2>
       </div>
       <div class="withdraw-checkbox checkbox-styles">
-        <input :disabled="offAgree" @mouseover="errorAgree = true" @mouseleave="errorAgree = false" @click="agreeUser = !agreeUser" type="checkbox"/>
+        <input @click="agreeUser = !agreeUser" type="checkbox"/>
         <h3>Я согласен с пользовательским соглашением.</h3>
+      </div>
+      <div class="error-captcha" v-if="errorCaptcha && agreeUser === true">
+        <h2>Пройдите проверку!</h2>
       </div>
       <captcha-component @captchatokendata="claimCaptchaToken" :showcaptcha="agreeUser" @captchadata="closeModal"></captcha-component>
       <div
@@ -90,7 +99,7 @@
         <p>
           Вы подтверждаете правильность введенных данных при создании вывода.
         </p>
-        <button type="submit" :disabled="checkOffBtn" @click="RedirectedMethodTransferMoneyToSp">
+        <button type="submit" @click="RedirectedMethodTransferMoneyToSp">
           Вывод
         </button>
         <p>
@@ -109,7 +118,7 @@ import { GettingMoneyOperation, WithdrawMoneyOperation } from "@/assets/js/money
 import CaptchaComponent from "@/components/CaptchaComponent.vue";
 
 import { useVuelidate } from '@vuelidate/core'
-import { maxValue, minValue, required, numeric, integer } from "@vuelidate/validators";
+import {maxValue, minValue, required, numeric, integer, minLength, maxLength} from "@vuelidate/validators";
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 import {GetCookie} from "@/assets/js/storage/CookieStorage";
 
@@ -119,7 +128,7 @@ export default {
   data() {
     return {
       amount: 0,
-      amountWithdraw: 1,
+      amountWithdraw: 0,
       balance: 0,
       amountSave: 1,
       card: '',
@@ -129,6 +138,8 @@ export default {
       showPromocodeStatus: false,
       errorAgree: false,
       errorDeposit: false,
+      errorCard: false,
+      errorCaptcha: false,
       captchaToken: null,
       clickedBtn: "",
       url: "",
@@ -157,7 +168,7 @@ export default {
     return {
       amount: { required, numeric, minValue: minValue(1), integer },
       amountWithdraw: { required, numeric, minValue: minValue(1), maxValue: maxValue(this.balance), integer },
-      card: { required, numeric, minValue: (6), maxValue: (6), integer }
+      card: { required, numeric, minLength: minLength(5), maxLength: maxLength(5), integer }
     }
   },
   watch: {
@@ -266,26 +277,68 @@ export default {
       }
     },
     async RedirectedMethodTransferMoneyToSp() {
-      setTimeout(async () => {
-        try {
-          WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken).then((response) => {
-            console.log(`work withdraw - ${response}`)
-          })
-        }
-        catch (e) {
-          console.error(`Error in wihdrawmoney operation - ${e}`)
-        }
-        await this.$emit('notifacetionmoney')
-      }, 4000)
-    },
-    checkBtn() {
-      if (this.offBtn === false) {
-        if (this.agreeUser !== false) {
-          return false;
-        }
+      // setTimeout(async () => {
+      //   try {
+      //     WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken).then((response) => {
+      //       console.log(`work withdraw - ${response}`)
+      //     })
+      //   }
+      //   catch (e) {
+      //     console.error(`Error in wihdrawmoney operation - ${e}`)
+      //   }
+      //   await this.$emit('notifacetionmoney')
+      // }, 4000)
+      this.v$.$touch()
+
+      if (this.v$.amountWithdraw.$error) {
+        this.errorDeposit = true
+
+        setTimeout(() => {
+          this.errorDeposit = false
+        }, 1500)
       }
-      return true;
+      if (this.v$.card.$error) {
+        this.errorCard = true
+
+        setTimeout(() => {
+          this.errorCard = false
+        }, 1500)
+      }
+      if (this.agreeUser !== true) {
+        this.errorAgree = true
+
+        setTimeout(() => {
+          this.errorAgree = false
+        }, 1500)
+      }
+      if (this.captchaToken === null) {
+        this.errorCaptcha = true
+
+        setTimeout(() => {
+          this.errorCaptcha = false
+        }, 1500)
+      }
+      if (!this.v$.amountWithdraw.$error && !this.v$.card.$error && this.agreeUser === true && this.captchaToken !== null) {
+        WithdrawMoneyOperation(this.amountWithdraw, this.card.toString(), this.captchaToken)
+            .then(async response => {
+              try {
+                console.log('work', response)
+              }
+              catch (e) {
+                console.error(e)
+              }
+              await this.$emit('notifacetionmoney')
+            })
+      }
     },
+    // checkBtn() {
+    //   if (this.offBtn === false) {
+    //     if (this.agreeUser !== false) {
+    //       return false;
+    //     }
+    //   }
+    //   return true;
+    // },
     clickedBtnChoice(index, content) {
       this.clickedBtn = index;
       this.amount = content;
