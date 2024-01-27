@@ -18,6 +18,7 @@ export default {
     logout() {
       this.auth = false;
       this.balance = 0;
+      this.authtoken = ''
       DeleteAllCookie();
     },
     updateBalanceMethod() {
@@ -32,6 +33,7 @@ export default {
     return {
       balance: 0,
       auth: false,
+      authtoken: '',
       imageUrl: "https://avatar.spworlds.ru/face/55/",
       userName: "",
     };
@@ -57,6 +59,7 @@ export default {
             this.imageUrl = this.imageUrl + `${response.spUserName}.png`;
             this.userName = response.spUserName;
             this.auth = true;
+            this.authtoken = response.authtoken
             GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
               .then((response) => {
                 this.balance = response.currentMoney;
@@ -81,6 +84,7 @@ export default {
               this.imageUrl = this.imageUrl + `${currentUserName}.png`;
               this.userName = GetCookie("SpUserName");
               this.auth = true;
+              this.authtoken = GetCookie('AUTHTOKEN')
             } else {
               this.auth = false;
               this.balance = 0;
@@ -102,6 +106,7 @@ export default {
           this.imageUrl = this.imageUrl + `${currentUserName}.png`;
           this.userName = GetCookie("SpUserName");
           this.auth = true;
+          this.authtoken = GetCookie('AUTHTOKEN')
         } else {
           this.auth = false;
           this.balance = 0;
@@ -122,12 +127,12 @@ export default {
       <div class="header__nav">
         <nav>
           <a href="#" @click="$router.push({ name: 'home' })" :class="{ 'header__nav--now' : $route.name === 'home' }">Главная</a>
-          <a href="#" @click="$router.push({ name: 'profile' })" :class="{ 'header__nav--now' : $route.name === 'profile' }">Профиль</a>
+          <a v-if="authtoken !== ''" href="#" @click="$router.push({ name: 'profile' })" :class="{ 'header__nav--now' : $route.name === 'profile' }">Профиль</a>
           <a href="#">Помощь</a>
         </nav>
       </div>
       <div class="header__balance">
-        <div class="header__content--balance">
+        <div class="header__content--balance" v-if="authtoken">
           <div class="header__card--balance">
             <h2>
               <img src="../assets/icons-header/diamond-ore-icon.png" />{{
