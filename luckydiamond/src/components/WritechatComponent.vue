@@ -1,13 +1,21 @@
 <template>
   <div class="write">
     <div class="write__content">
-      <input
+      <!-- <input
         type="text"
         @keyup.enter="sendmsgDataEnter"
         v-model.trim="msg"
         placeholder="Напишите сообщение..."
         maxlength="200"
-      />
+      /> -->
+
+      <textarea
+        @keyup.enter="sendmsgDataEnter"
+        v-model.trim="msg"
+        placeholder="Напишите сообщение..."
+        maxlength="200"
+        rows="3"
+      ></textarea>
       <button :disabled="CheckerforBtn()" type="submit" @click="SendmsgData">
         <img src="@/assets/icons-chat/sendmsg-icon.png" />
       </button>
@@ -41,8 +49,8 @@ export default {
     
     InsertSpaceEvery24Chars(word) {
       let result = "";
-      for (let i = 0; i < word.length; i += 24) {
-        result += word.substring(i, i + 24) + " ";
+      for (let i = 0; i < word.length; i += 22) {
+        result += word.substring(i, i + 22) + " ";
       }
       return result.trim();
     },

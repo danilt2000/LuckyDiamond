@@ -1,3 +1,21 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #EF4444;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
 .chat {
     margin: 1% 3.2% 0 0;
 }
@@ -34,16 +52,17 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     overflow: hidden;
-  }
+}
 
 .chat__content--users {
-    height: 650px;
+    height: 590px;
     width: auto;
     overflow-y: auto;
     overflow-x: auto;
 }
 
-.chat__content, .chat__content--users {
+.chat__content,
+.chat__content--users {
     box-sizing: border-box;
 }
 
@@ -56,10 +75,13 @@
     display: flex;
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
     transition: opacity 0.1s, transform 0.1s;
 }
-.fade-enter, .fade-leave-to {
+
+.fade-enter,
+.fade-leave-to {
     opacity: 0;
     transform: translateY(20px);
 }
@@ -90,7 +112,8 @@
     bottom: 0;
     margin: 24% 87% 6% 6%;
     user-select: none;
-    width: 50%;
+    /* width: 50%; */
+    width: 90%;
 }
 
 .write__content {
@@ -106,6 +129,39 @@
     border: none;
 }
 
+/* .write__content textarea {
+    padding: 14px 25% 14px 12px;
+    border-radius: 13px;
+    background: #22252F;
+    color: #A9A99D;
+    border: none;
+} */
+/* .write__content textarea {
+    padding: 14px 12px;
+    border-radius: 13px;
+    background: #22252F;
+    color: #A9A99D;
+    border: none;
+    width: 600px;
+    box-sizing: border-box;
+    resize: vertical;
+} */
+
+.write__content textarea {
+    padding: 14px 12px;
+    border-radius: 13px;
+    background: #22252F;
+    color: #A9A99D;
+    border: none;
+    width: 600px; /* или другое значение, которое вы хотите использовать */
+    box-sizing: border-box;
+    resize: none; /* Убирает ручку изменения размера */
+}
+
+.write__content textarea:focus {
+    outline: none;
+}
+
 .write__content input::placeholder {
     color: #A9A99D;
     font-weight: 800;
@@ -115,7 +171,8 @@
 
 .write__content button {
     padding: 8px 9px;
-    margin-left: -20%;
+    /* margin-left: -20%; */
+    margin-right: -5%;
     border-radius: 6px;
     background: #3D3F48;
     border: none;
