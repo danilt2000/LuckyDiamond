@@ -388,10 +388,10 @@ export default {
       if (this.v$.amountDeposit.$error) {
         this.errorPlayButton()
       }
-      else if (this.v$.amountCrystals.$error) {
+      if (this.v$.amountCrystals.$error) {
         this.errorPlayButton()
       }
-      else {
+      if (!this.v$.amountCrystals.$error && !this.v$.amountDeposit.$error) {
         this.flippedCards = []
         this.unCorrectClick = []
         this.CorrectsClick = []
