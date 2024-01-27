@@ -153,9 +153,9 @@
     background: #22252F;
     color: #A9A99D;
     border: none;
-    width: 600px; /* или другое значение, которое вы хотите использовать */
+    width: 600px;
     box-sizing: border-box;
-    resize: none; /* Убирает ручку изменения размера */
+    resize: none;
 }
 
 .write__content textarea:focus {

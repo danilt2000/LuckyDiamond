@@ -43,12 +43,18 @@ export function SendMessageToChat(message) {
             return;
         }
 
-        const data = {
-            SpUserName: GetCookie("SpUserName"),
-            Message: message
+        const userCredentials = {
+            SearchToken: GetCookie("SearchToken"),
+            AUTHTOKEN: GetCookie("AUTHTOKEN")
         };
 
-        webSocket.send(JSON.stringify(data));
+        const messageObject = {
+            UserCredentials: userCredentials,
+            Message: message,
+            MessageType: "Chat"
+        };
+
+        webSocket.send(JSON.stringify(messageObject));
 
     } catch (error) {
         console.error('Error in ConnectToChat:', error);
