@@ -117,6 +117,8 @@ import PaymentsModalNumbers from "@/mocks/PaymentsModalNumbers";
 import { GettingMoneyOperation, WithdrawMoneyOperation } from "@/assets/js/moneyoperation/Claimmoney";
 import CaptchaComponent from "@/components/CaptchaComponent.vue";
 
+import {eventBus} from "@/main";
+
 import { useVuelidate } from '@vuelidate/core'
 import {maxValue, minValue, required, numeric, integer, minLength, maxLength} from "@vuelidate/validators";
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
@@ -328,6 +330,7 @@ export default {
                 console.error(e)
               }
               await this.$emit('notifacetionmoney')
+              eventBus.emit('Updatebalance')
             })
       }
     },
