@@ -3,7 +3,7 @@
   <div class="content__grid-profile" v-else>
     <aside-bar-component></aside-bar-component>
 
-    <chat-component id="chat-profile"></chat-component>
+    <chat-component></chat-component>
 
     <header-component></header-component>
 

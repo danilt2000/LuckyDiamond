@@ -4,7 +4,7 @@
 
     <header-element-page></header-element-page>
 
-    <chat-component id="chat"></chat-component>
+    <chat-component></chat-component>
 
     <section class="saper" :class="{ 'game-end' : ValidationPlay.endGame }">
       <div class="bg"></div>
