@@ -72,35 +72,55 @@
             <div class="game-firstline">
               <ul class="display-lines margin-lines">
                 <li class="firstline" v-for="index in 5" :key="index">
-                  <div @click="flipCard(index)" :class="[ 'square', `square-${index}`, { 'square-fliper' : flippedCards.includes(index) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index) }">ld</h2></div>
+                  <div @click="flipCard(index)" :class="[ 'square', `square-${index}`, { 'square-fliper' : flippedCards.includes(index) } ]">
+                    <h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index) }">ld</h2>
+                    <img class="img-style-click" v-if="CorrectsClick.includes(index)" src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" alt>
+                    <img class="img-style-click crystal-img" v-if="unCorrectClick.includes(index)" src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" alt>
+                  </div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 5)" :class="[ 'square', `square-${index + 5}`, { 'square-fliper' : flippedCards.includes(index + 5) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 5) }">ld</h2></div>
+                  <div @click="flipCard(index + 5)" :class="[ 'square', `square-${index + 5}`, { 'square-fliper' : flippedCards.includes(index + 5) } ]">
+                    <h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 5) }">ld</h2>
+                    <img class="img-style-click" v-if="CorrectsClick.includes(index + 5)" src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" alt>
+                    <img class="img-style-click crystal-img" v-if="unCorrectClick.includes(index + 5)" src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" alt>
+                  </div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 10)" :class="[ 'square', `square-${index + 10}`, { 'square-fliper' : flippedCards.includes(index + 10) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 10) }">ld</h2></div>
+                  <div @click="flipCard(index + 10)" :class="[ 'square', `square-${index + 10}`, { 'square-fliper' : flippedCards.includes(index + 10) } ]">
+                    <h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 10) }">ld</h2>
+                    <img class="img-style-click" v-if="CorrectsClick.includes(index + 10)" src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" alt>
+                    <img class="img-style-click crystal-img" v-if="unCorrectClick.includes(index + 10)" src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" alt>
+                  </div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 15)" :class="[ 'square', `square-${index + 15}`, { 'square-fliper' : flippedCards.includes(index + 15) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 15) }">ld</h2></div>
+                  <div @click="flipCard(index + 15)" :class="[ 'square', `square-${index + 15}`, { 'square-fliper' : flippedCards.includes(index + 15) } ]">
+                    <h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 15) }">ld</h2>
+                    <img class="img-style-click" v-if="CorrectsClick.includes(index + 15)" src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" alt>
+                    <img class="img-style-click crystal-img" v-if="unCorrectClick.includes(index + 15)" src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" alt>
+                  </div>
                 </li>
               </ul>
             </div>
             <div class="game-default-line">
               <ul class="display-lines margin-lines">
                 <li v-for="index in 5" :key="index">
-                  <div @click="flipCard(index + 20)" :class="[ 'square', `square-${index + 20}`, { 'square-fliper' : flippedCards.includes(index + 20) } ]"><h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 20) }">ld</h2></div>
+                  <div @click="flipCard(index + 20)" :class="[ 'square', `square-${index + 20}`, { 'square-fliper' : flippedCards.includes(index + 20) } ]">
+                    <h2 class="square-text" :class="{ 'hidden' : flippedCards.includes(index + 20) }">ld</h2>
+                    <img class="img-style-click" v-if="CorrectsClick.includes(index + 20)" src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" alt>
+                    <img class="img-style-click crystal-img" v-if="unCorrectClick.includes(index + 20)" src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" alt>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -147,6 +167,7 @@ import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 
 import { Howl } from 'howler';
+import {eventBus} from "@/main";
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
@@ -179,6 +200,8 @@ export default {
       amountDeposit: 0,
       flippedCards: [],
       PercentageGameSteps: [],
+      CorrectsClick: [],
+      unCorrectClick: [],
       ValidationPlay: {
         startGame: false,
         endGame: false,
@@ -219,7 +242,7 @@ export default {
      async handler(value) {
        if (value.length < 1 || this.ValidationPlay.endGame === true) return
        const maxCircles = 25 - this.amountCrystals
-       console.log(maxCircles)
+       console.log(`MAXCIRLES - ${maxCircles} VALUE: ${value} GAMECIRCLE - ${this.gamesCircle}`)
 
        if (this.gameStart !== false) {
          this.offEventPointers = false
@@ -268,11 +291,11 @@ export default {
          this.gamesCircle = this.gamesCircle + 1
          this.offEventPointers = true
          if (AnswerServer === 'You dead') {
+           this.unCorrectClick.push(X_Cordinates)
            this.offEventPointers = false
            this.gameStart = false
            this.gamesCircle = 0
            this.winningAmount = 0
-           this.flippedCards = []
            const SoundCorrect = new Howl({
              src: ['/sounds/incorrect-sound.mp3'],
              volume: 0.5
@@ -284,12 +307,13 @@ export default {
            setTimeout(() => {
              this.ValidationPlay.endGame = false
            }, 1200)
-           return
+           return eventBus.emit('Updatebalance')
          }
          const SoundUncorrect = new Howl({
            src: ['/sounds/correct-click.mp3'],
            volume: 0.5
          })
+         this.CorrectsClick.push(X_Cordinates)
 
          SoundUncorrect.play()
        }
@@ -326,6 +350,17 @@ export default {
 
                 this.ValidationPlay.startGame = true
 
+                this.amountCrystals = response.MinesCount
+                this.amountDeposit = response.PuttedMoney
+                this.winningAmount = response.WinningMoney
+
+                const soundStartGame = new Howl({
+                  src: ['/sounds/start-game.mp3'],
+                  volume: 5.0
+                })
+
+                soundStartGame.play()
+                console.log(this.flippedCards.length)
                 setTimeout(() => {
                   this.ValidationPlay.startGame = false
                 }, 2000)
@@ -340,9 +375,6 @@ export default {
   },
   methods: {
     clickPlayButton() {
-      // if(!this.validationCheck()) {
-      //   this.errorPlayButton()
-      // }
       this.v$.$touch()
 
       if (this.v$.amountDeposit.$error) {
@@ -352,9 +384,18 @@ export default {
         this.errorPlayButton()
       }
       else {
+        this.flippedCards = []
+        this.unCorrectClick = []
+        this.CorrectsClick = []
         this.playNotification()
         this.gameStart = true
         this.offEventPointers = true
+        const soundStartGame = new Howl({
+          src: ['/sounds/start-game.mp3'],
+          volume: 5.0
+        })
+
+        soundStartGame.play()
       }
     },
     getBalanceUser() {
@@ -368,29 +409,24 @@ export default {
         console.error(e)
       }
     },
-    // updatePage() {
-    //   window.location.reload()
-    // },
     async claimWinningAmount() {
       if (this.winningAmount >= 1) {
         try {
           this.offEventPointers = false
           this.gameStart = false
           this.flippedCards = []
+          this.unCorrectClick = []
+          this.CorrectsClick = []
           this.gamesCircle = 0
           await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
           this.winningAmount = 0
+          return eventBus.emit('Updatebalance')
         }
         catch (e) {
           console.error(e)
         }
       }
     },
-    // validationCheck() {
-    //   if (this.ValidationPlay.CrystalValidate === true && this.ValidationPlay.DiamondValidate === true) {
-    //     return true
-    //   }
-    // },
     playNotification() {
       this.ValidationPlay.startGame = true
       setTimeout(() => {
@@ -405,9 +441,7 @@ export default {
     },
     flipCard(index) {
       if (this.flippedCards.includes(index)) {
-        // this.flippedCards.splice(this.flippedCards.indexOf(index), 1);
-        // console.log(index, this.flippedCards)
-        return
+        return eventBus.emit('Updatebalance')
       } else {
         this.flippedCards.push(index);
       }

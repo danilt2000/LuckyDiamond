@@ -3,6 +3,9 @@
 import "@/assets/css/ComponentsStyles/header.css";
 import { LogIn } from "@/assets/js/authentication/AuthService.js";
 import { GetCurrentMoney } from "@/assets/js/rest/RestMethods.js";
+
+import {eventBus} from "@/main";
+
 import {
   SetCookie,
   GetCookie,
@@ -17,6 +20,12 @@ export default {
       this.balance = 0;
       DeleteAllCookie();
     },
+    updateBalanceMethod() {
+      GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+          .then(response => {
+            this.balance = response.currentMoney
+          })
+    }
   },
   data() {
     return {
@@ -25,6 +34,11 @@ export default {
       imageUrl: "https://avatar.spworlds.ru/face/55/",
       userName: "",
     };
+  },
+  mounted() {
+    eventBus.on('Updatebalance', () => {
+      this.updateBalanceMethod()
+    })
   },
   created() {
     try {
