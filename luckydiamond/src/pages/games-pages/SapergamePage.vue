@@ -373,6 +373,14 @@ export default {
       }
     }
   },
+  mounted() {
+    eventBus.on('Updatebalance-saper', () => {
+      GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+          .then(response => {
+            this.balance = response
+          })
+    })
+  },
   methods: {
     clickPlayButton() {
       this.v$.$touch()
@@ -472,7 +480,12 @@ export default {
       if (content === 'max') {
         await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
             .then((response) => {
-              this.amountDeposit = parseInt(response.currentMoney)
+              console.log(response.currentMoney, this.balance)
+              const responseBalance = response.currentMoney
+
+              if (responseBalance === this.balance) {
+                this.amountDeposit = parseInt(responseBalance)
+              }
             })
       }
       else {

@@ -25,6 +25,7 @@ export default {
           .then(response => {
             this.balance = response.currentMoney
           })
+      eventBus.emit('Updatebalance-saper')
     }
   },
   data() {
