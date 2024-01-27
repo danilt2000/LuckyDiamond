@@ -43,8 +43,6 @@ export async function GetCurrentMoney(authToken, searchToken) {
       
       DeleteAllCookie()
       
-      location.reload();
-      
       console.log("Fetch error:", response.status);
     }
 
