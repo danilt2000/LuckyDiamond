@@ -46,6 +46,12 @@ export default {
     };
   },
   methods: {
+    ScrollToBottom() {
+      this.$nextTick(() => {
+        const chatContent = this.$el.querySelector(".chat__content--users");
+        chatContent.scrollTop = chatContent.scrollHeight;
+      });
+    },
     ClaimDatamsg(msg) {
       SendMessageToChat(msg[0]);
 
@@ -70,6 +76,8 @@ export default {
         };
 
         this.array.push(MsgUser);
+
+        // this.ScrollToBottom();
       } catch (error) {
         console.error("Error parsing JSON data:", error);
       }
@@ -78,8 +86,7 @@ export default {
   created() {
     GetChatHistory().then((response) => {
       response.forEach((element) => {
-        let imageUrl =
-          "https://avatar.spworlds.ru/face/55/" + element.userName;
+        let imageUrl = "https://avatar.spworlds.ru/face/55/" + element.userName;
 
         const MsgUser = {
           id: this.id + 1,
@@ -90,6 +97,7 @@ export default {
 
         this.array.push(MsgUser);
       });
+      this.ScrollToBottom();
     });
   },
 };
