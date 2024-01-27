@@ -14,7 +14,6 @@ export async function Post(url = "", data = {}) {
     });
 
     if (!response.ok) {
-      DeleteAllCookie()
       console.log("Fetch error:", response.status);
     }
 
@@ -41,6 +40,9 @@ export async function GetCurrentMoney(authToken, searchToken) {
     });
 
     if (!response.ok) {
+      
+      DeleteAllCookie()
+      
       console.log("Fetch error:", response.status);
     }
 
