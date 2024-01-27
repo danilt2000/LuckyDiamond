@@ -49,6 +49,26 @@ export async function GetCurrentMoney(authToken, searchToken) {
   }
 }
 
+export async function GetChatHistory() {
 
+  try {
+    const response = await fetch(`${BackendApiUrl}/ChatHistory/GetChatHistory`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: "",
+      redirect: "follow"
+    });
+
+    if (!response.ok) {
+      console.log("Fetch error:", response.status);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.log("Fetch error:", error);
+  }
+}
 
 
