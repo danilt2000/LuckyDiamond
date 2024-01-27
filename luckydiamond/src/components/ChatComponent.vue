@@ -87,11 +87,9 @@ export default {
           username: element.userName,
           icon: imageUrl,
         };
-        
+
         this.array.push(MsgUser);
       });
-
-      this.balance = response.currentMoney;
     });
   },
 };
