@@ -321,7 +321,6 @@ export default {
          this.offEventPointers = false
          this.gameStart = false
          this.gamesCircle = 0
-         this.flippedCards = []
 
          this.claimWinningAmount()
 
