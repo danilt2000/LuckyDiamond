@@ -306,20 +306,6 @@
     .gamemode__twoline--first__element .container a {
         padding: 6px 11px;
     }
-    .write {
-        position: static;
-        margin: -45% 87% 6% 2%;
-    }
-    .write__content input {
-        padding: 0.625em 1% 14px 0.75em;
-    }
-    .write__content input::placeholder {
-        font-size: 11.5px;
-    }
-    .write__content button {
-        margin-left: -15%;
-        padding: 0.375em 0.375em;
-    }
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1399px) {
@@ -376,20 +362,6 @@
     }
     .gamemode__twoline--first__element .container a {
         padding: 6px 11px;
-    }
-    .write {
-        position: static;
-        margin: -45% 87% 6% 2%;
-    }
-    .write__content input {
-        padding: 0.625em 1% 14px 0.75em;
-    }
-    .write__content input::placeholder {
-        font-size: 11.5px;
-    }
-    .write__content button {
-        margin-left: -15%;
-        padding: 0.375em 0.375em;
     }
 }
 
