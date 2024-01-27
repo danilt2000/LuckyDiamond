@@ -77,7 +77,7 @@ export default {
 
         this.array.push(MsgUser);
 
-        // this.ScrollToBottom();
+        this.ScrollToBottom();
       } catch (error) {
         console.error("Error parsing JSON data:", error);
       }
