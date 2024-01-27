@@ -421,12 +421,15 @@ export default {
         try {
           this.offEventPointers = false
           this.gameStart = false
-          this.flippedCards = []
-          this.unCorrectClick = []
-          this.CorrectsClick = []
           this.gamesCircle = 0
           await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
           this.winningAmount = 0
+
+          this.ValidationPlay.winGame = true
+          setTimeout(() => {
+            this.ValidationPlay.winGame = false
+          }, 1500)
+
           return eventBus.emit('Updatebalance')
         }
         catch (e) {
