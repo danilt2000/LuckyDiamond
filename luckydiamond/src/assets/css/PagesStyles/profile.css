@@ -180,6 +180,52 @@
     color: #EA3D38;
 }
 
+.error-deposit {
+    position: absolute;
+    left: 190px;
+    top: 52px;
+}
+
+.error-deposit h2 {
+    color: #BA3636;
+    font-family: "Montserrat Alternates";
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.error-card {
+    position: absolute;
+    top: 130px;
+    left: 210px;
+}
+
+.error-card h2 {
+    color: #BA3636;
+    font-family: "Montserrat Alternates";
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.error-checkbox h2 {
+    color: #BA3636;
+    font-family: "Montserrat Alternates";
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.error-captcha {
+    top: 235px;
+    left: 45px;
+    position: absolute;
+}
+
+.error-captcha h2 {
+    color: #BA3636;
+    font-family: "Montserrat Alternates";
+    font-weight: 700;
+    font-size: 13px;
+}
+
 /* Media */
 
 @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {

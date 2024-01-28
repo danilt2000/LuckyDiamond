@@ -43,6 +43,7 @@ export default {
     return {
       array: [],
       id: 0,
+      lastMsgTime: null,
     };
   },
   methods: {
@@ -53,8 +54,13 @@ export default {
       });
     },
     ClaimDatamsg(msg) {
-      SendMessageToChat(msg[0]);
-
+      const now = Date.now();
+      if (!this.lastMsgTime || now - this.lastMsgTime >= 2000) {
+        SendMessageToChat(msg[0]);
+        this.lastMsgTime = now;
+      } else {
+        alert("Вы не можете отправлять сообщения чаще, чем раз в 2 секунды.");
+      }
       // if(this.array.length > 7) {
       //   this.array.shift()
       // }

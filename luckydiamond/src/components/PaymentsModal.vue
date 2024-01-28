@@ -8,12 +8,15 @@
       />
     </div>
     <div v-if="payments" class="payments-modal__deposit">
+      <div class="error-deposit" v-if="errorDeposit">
+        <h2>Ошибка с суммой депозита</h2>
+      </div>
       <div
         class="deposit-input deposit-text deposit-icon-diamond deposit-icon__input"
       >
         <h3>Сумма пополнения</h3>
         <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png" />
-        <input class="deposit-amount__input" v-model="amount" type="number" />
+        <input :class="{ 'animate-start-btn' : errorDeposit }" class="deposit-amount__input" v-model="amount" type="number" />
         <div class="deposit-btns">
           <ul class="display-btns btns-style-diamonds">
             <li v-for="number in PaymentsModalNumbers" :key="number">
@@ -37,8 +40,11 @@
           <h3>Промокод</h3>
           <input @focusout="checkValidationPromocode" v-model="promocode" class="promo-input" type="text" />
         </div>
+          <div class="error-checkbox" v-if="errorAgree">
+          <h2>Подтвердите согласие!</h2>
+        </div>
         <div class="deposit-checkbox checkbox-styles">
-          <input @click="agreeUser = !agreeUser" type="checkbox" />
+          <input @click="agreeUser = !agreeUser" type="checkbox" :class="{ 'animate-start-btn' : errorAgree }" />
           <h3>Я согласен с пользовательским соглашением.</h3>
         </div>
         <div
@@ -49,7 +55,6 @@
           </p>
           <button
             type="submit"
-            :disabled="checkOffBtn"
             @click="RedirectedMethodDep"
           >
             Пополнить
@@ -62,21 +67,30 @@
       </div>
     </div>
     <div v-else class="payments-modal__withdraw deposit-text withdraw-input">
+      <div class="error-deposit" v-if="errorDeposit">
+        <h2>Ошибка с суммой депозита</h2>
+      </div>
       <div class="count-withdraw deposit-icon-diamond">
         <h3>Сумма вывода</h3>
         <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png" />
-        <input class="with-input" v-model="amountWithdraw" type="number" />
+        <input :class="{ 'animate-start-btn' : errorDeposit }" class="with-input" v-model="amountWithdraw" type="number" />
+      </div>
+      <div class="error-card" v-if="errorCard">
+        <h2>Ошибка с вводом карты</h2>
       </div>
       <div class="number-card deposit-promocode__padding--input">
         <h3>Введите номер карты</h3>
-        <input class="with-input" v-model="card" type="text" />
+        <input :class="{ 'animate-start-btn' : errorCard }" class="with-input" v-model="card" type="text" />
       </div>
-      <div v-if="offAgree" class="error-checkbox">
-        <h2 v-show="errorAgree">Введите сначало карту</h2>
+      <div class="error-checkbox" v-if="errorAgree">
+        <h2>Подтвердите согласие!</h2>
       </div>
       <div class="withdraw-checkbox checkbox-styles">
-        <input :disabled="offAgree" @mouseover="errorAgree = true" @mouseleave="errorAgree = false" @click="agreeUser = !agreeUser" type="checkbox"/>
+        <input @click="agreeUser = !agreeUser" type="checkbox"/>
         <h3>Я согласен с пользовательским соглашением.</h3>
+      </div>
+      <div class="error-captcha" v-if="errorCaptcha && agreeUser === true">
+        <h2>Пройдите проверку!</h2>
       </div>
       <captcha-component @captchatokendata="claimCaptchaToken" :showcaptcha="agreeUser" @captchadata="closeModal"></captcha-component>
       <div
@@ -85,7 +99,7 @@
         <p>
           Вы подтверждаете правильность введенных данных при создании вывода.
         </p>
-        <button type="submit" :disabled="checkOffBtn" @click="RedirectedMethodTransferMoneyToSp">
+        <button type="submit" @click="RedirectedMethodTransferMoneyToSp">
           Вывод
         </button>
         <p>
@@ -103,13 +117,21 @@ import PaymentsModalNumbers from "@/mocks/PaymentsModalNumbers";
 import { GettingMoneyOperation, WithdrawMoneyOperation } from "@/assets/js/moneyoperation/Claimmoney";
 import CaptchaComponent from "@/components/CaptchaComponent.vue";
 
+import {eventBus} from "@/main";
+
+import { useVuelidate } from '@vuelidate/core'
+import {maxValue, minValue, required, numeric, integer, minLength, maxLength} from "@vuelidate/validators";
+import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
+import {GetCookie} from "@/assets/js/storage/CookieStorage";
+
 export default {
   components: { CaptchaComponent },
   props: ["payments"],
   data() {
     return {
       amount: 0,
-      amountWithdraw: 1,
+      amountWithdraw: 0,
+      balance: 0,
       amountSave: 1,
       card: '',
       promocode: '',
@@ -117,6 +139,9 @@ export default {
       errorPromocode: false,
       showPromocodeStatus: false,
       errorAgree: false,
+      errorDeposit: false,
+      errorCard: false,
+      errorCaptcha: false,
       captchaToken: null,
       clickedBtn: "",
       url: "",
@@ -132,45 +157,61 @@ export default {
       PaymentsModalNumbers,
     };
   },
+  created() {
+    GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+        .then(response => {
+          this.balance = response.currentMoney
+        })
+  },
+  setup() {
+    return { v$: useVuelidate() }
+  },
+  validations() {
+    return {
+      amount: { required, numeric, minValue: minValue(1), integer },
+      amountWithdraw: { required, numeric, minValue: minValue(1), maxValue: maxValue(this.balance), integer },
+      card: { required, numeric, minLength: minLength(5), maxLength: maxLength(5), integer }
+    }
+  },
   watch: {
-    amount(newAmount) {
-      this.offBtn = true;
-      if (this.amount > 0 && this.amount !== "") {
-        setTimeout(() => {
-          try {
-            GettingMoneyOperation(newAmount).then((response) => {
-              console.log("Payments Modal Working!: ", response);
-              this.url = response;
-              this.offBtn = false;
-            });
-          } catch (e) {
-            console.error("Error in PaymentModal!", e);
-          }
-        }, 2000);
-      }
-    },
-    amountWithdraw(newAmount) {
-      this.completeValidtaion.amountsaving = false
-      if (newAmount > 0) {
-        this.amountSave = newAmount
-        this.completeValidtaion.amountsaving = true
-        console.log(this.completeValidtaion)
-      }
-    },
-    card(newAmount) {
-      this.completeValidtaion.cardsaving = false
-      const cardPattern = /^\d{5}$/;
-      if(cardPattern.test(newAmount)) {
-        this.offAgree = false
-        this.completeValidtaion.cardsaving = true
-      }
-    },
-    agreeUser(newAgree) {
-      this.completeValidtaion.agreesaving = false
-      if (newAgree !== false) {
-        this.completeValidtaion.agreesaving = true
-      }
-    },
+    // amount(newAmount) {
+    //   this.offBtn = true;
+    //   if (this.amount > 0 && this.amount !== "") {
+    //     setTimeout(() => {
+    //       try {
+    //         GettingMoneyOperation(newAmount).then((response) => {
+    //           console.log("Payments Modal Working!: ", response);
+    //           this.url = response;
+    //           this.offBtn = false;
+    //         });
+    //       } catch (e) {
+    //         console.error("Error in PaymentModal!", e);
+    //       }
+    //     }, 2000);
+    //   }
+    // },
+    // amountWithdraw(newAmount) {
+    //   this.completeValidtaion.amountsaving = false
+    //   if (newAmount > 0) {
+    //     this.amountSave = newAmount
+    //     this.completeValidtaion.amountsaving = true
+    //     console.log(this.completeValidtaion)
+    //   }
+    // },
+    // card(newAmount) {
+    //   this.completeValidtaion.cardsaving = false
+    //   const cardPattern = /^\d{5}$/;
+    //   if(cardPattern.test(newAmount)) {
+    //     this.offAgree = false
+    //     this.completeValidtaion.cardsaving = true
+    //   }
+    // },
+    // agreeUser(newAgree) {
+    //   this.completeValidtaion.agreesaving = false
+    //   if (newAgree !== false) {
+    //     this.completeValidtaion.agreesaving = true
+    //   }
+    // },
     completeValidtaion: {
       handler() {
         this.completeValidationCheck()
@@ -207,31 +248,100 @@ export default {
       this.captchaToken = Token
       this.completeValidtaion.captchatokensaving = true
     },
-    RedirectedMethodDep() {
-      console.log(`From /profile to - ${this.url} url`)
-      window.location.href = this.url
-    },
-    async RedirectedMethodTransferMoneyToSp() {
-      setTimeout(async () => {
+    async RedirectedMethodDep() {
+      this.v$.$touch()
+
+      if (this.v$.amount.$error) {
+        this.errorDeposit = true
+
+        setTimeout(() => {
+          this.errorDeposit = false
+        }, 1500)
+      }
+      if (this.agreeUser !== true) {
+        this.errorAgree = true
+        setTimeout(() => {
+          this.errorAgree = false
+        }, 1500)
+      }
+      if (!this.v$.amount.$error && this.agreeUser === true) {
         try {
-          WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken).then((response) => {
-            console.log(`work withdraw - ${response}`)
-          })
-        }
-        catch (e) {
-          console.error(`Error in wihdrawmoney operation - ${e}`)
-        }
-        await this.$emit('notifacetionmoney')
-      }, 4000)
-    },
-    checkBtn() {
-      if (this.offBtn === false) {
-        if (this.agreeUser !== false) {
-          return false;
+          GettingMoneyOperation(this.amount).then((response) => {
+            console.log("Payments Modal Working!: ", response);
+            this.url = response;
+            this.offBtn = false;
+
+            window.location.href = this.url
+          });
+        } catch (e) {
+          console.error("Error in PaymentModal!", e);
         }
       }
-      return true;
     },
+    async RedirectedMethodTransferMoneyToSp() {
+      // setTimeout(async () => {
+      //   try {
+      //     WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken).then((response) => {
+      //       console.log(`work withdraw - ${response}`)
+      //     })
+      //   }
+      //   catch (e) {
+      //     console.error(`Error in wihdrawmoney operation - ${e}`)
+      //   }
+      //   await this.$emit('notifacetionmoney')
+      // }, 4000)
+      this.v$.$touch()
+
+      if (this.v$.amountWithdraw.$error) {
+        this.errorDeposit = true
+
+        setTimeout(() => {
+          this.errorDeposit = false
+        }, 1500)
+      }
+      if (this.v$.card.$error) {
+        this.errorCard = true
+
+        setTimeout(() => {
+          this.errorCard = false
+        }, 1500)
+      }
+      if (this.agreeUser !== true) {
+        this.errorAgree = true
+
+        setTimeout(() => {
+          this.errorAgree = false
+        }, 1500)
+      }
+      if (this.captchaToken === null) {
+        this.errorCaptcha = true
+
+        setTimeout(() => {
+          this.errorCaptcha = false
+        }, 1500)
+      }
+      if (!this.v$.amountWithdraw.$error && !this.v$.card.$error && this.agreeUser === true && this.captchaToken !== null) {
+        WithdrawMoneyOperation(this.amountWithdraw, this.card.toString(), this.captchaToken)
+            .then(async response => {
+              try {
+                console.log('work', response)
+              }
+              catch (e) {
+                console.error(e)
+              }
+              await this.$emit('notifacetionmoney')
+              eventBus.emit('Updatebalance')
+            })
+      }
+    },
+    // checkBtn() {
+    //   if (this.offBtn === false) {
+    //     if (this.agreeUser !== false) {
+    //       return false;
+    //     }
+    //   }
+    //   return true;
+    // },
     clickedBtnChoice(index, content) {
       this.clickedBtn = index;
       this.amount = content;

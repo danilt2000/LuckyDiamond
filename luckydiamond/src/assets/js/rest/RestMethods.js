@@ -1,5 +1,5 @@
 import { BackendApiUrl } from '@/properties/Сonfig.js';
-
+import { DeleteAllCookie } from "@/assets/js/storage/CookieStorage";
 
 export async function Post(url = "", data = {}) {
   try {
@@ -40,6 +40,9 @@ export async function GetCurrentMoney(authToken, searchToken) {
     });
 
     if (!response.ok) {
+      
+      DeleteAllCookie()
+      
       console.log("Fetch error:", response.status);
     }
 

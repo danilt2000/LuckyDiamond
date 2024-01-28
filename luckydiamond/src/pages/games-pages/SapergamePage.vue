@@ -329,7 +329,6 @@ export default {
          this.offEventPointers = false
          this.gameStart = false
          this.gamesCircle = 0
-         this.flippedCards = []
 
          this.claimWinningAmount()
 
@@ -381,6 +380,14 @@ export default {
       }
     }
   },
+  mounted() {
+    eventBus.on('Updatebalance-saper', () => {
+      GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+          .then(response => {
+            this.balance = response.currentMoney
+          })
+    })
+  },
   methods: {
     clickPlayButton() {
       this.v$.$touch()
@@ -388,10 +395,10 @@ export default {
       if (this.v$.amountDeposit.$error) {
         this.errorPlayButton()
       }
-      else if (this.v$.amountCrystals.$error) {
+      if (this.v$.amountCrystals.$error) {
         this.errorPlayButton()
       }
-      else {
+      if (!this.v$.amountCrystals.$error && !this.v$.amountDeposit.$error) {
         this.flippedCards = []
         this.unCorrectClick = []
         this.CorrectsClick = []
@@ -423,12 +430,15 @@ export default {
         try {
           this.offEventPointers = false
           this.gameStart = false
-          this.flippedCards = []
-          this.unCorrectClick = []
-          this.CorrectsClick = []
           this.gamesCircle = 0
           await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
           this.winningAmount = 0
+
+          this.ValidationPlay.winGame = true
+          setTimeout(() => {
+            this.ValidationPlay.winGame = false
+          }, 1500)
+
           return eventBus.emit('Updatebalance')
         }
         catch (e) {
@@ -481,7 +491,12 @@ export default {
       if (content === 'max') {
         await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
             .then((response) => {
-              this.amountDeposit = parseInt(response.currentMoney)
+              console.log(response.currentMoney, this.balance)
+              const responseBalance = response.currentMoney
+
+              if (responseBalance === this.balance) {
+                this.amountDeposit = parseInt(responseBalance)
+              }
             })
       }
       else {

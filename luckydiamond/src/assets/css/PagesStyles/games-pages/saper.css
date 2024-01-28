@@ -140,7 +140,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .crystal-icon,
-.diamond-icon  {
+.diamond-icon {
     position: relative;
     left: 25px;
     top: 2px;
@@ -274,8 +274,9 @@ input[type="number"]::-webkit-outer-spin-button {
     position: absolute;
     top: 15%;
     left: 45%;
-    background: #000;
+    background: #262C48;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .saper-game {
@@ -348,7 +349,8 @@ input[type="number"]::-webkit-outer-spin-button {
     pointer-events: unset !important;
 }
 
-.game-start__menu-off .crystals, .game-start__menu-off .diamonds,
+.game-start__menu-off .crystals,
+.game-start__menu-off .diamonds,
 .game-start__menu-off .saper-start__btns .btn-start {
     pointer-events: none;
 }
@@ -480,39 +482,51 @@ input[type="number"]::-webkit-outer-spin-button {
     .saper-game__content {
         width: auto;
     }
+
     .saper-start {
         width: 30%;
         height: 500px;
     }
+
     .btns-style__steps button {
         width: 60px;
         height: 50px;
     }
+
     .swiper-slide {
         margin-right: 29px !important;
     }
+
     .steps-btns__display {
         justify-content: center;
     }
+
     .margin-lines .firstline {
         margin-top: 2%;
     }
+
     .info-emeralds {
         margin-top: 6.5%;
     }
+
     .info-crystals {
         margin-top: 6.5%;
     }
-    .crystals-btns__choices button, .btn-style__diamonds button {
+
+    .crystals-btns__choices button,
+    .btn-style__diamonds button {
         padding: 4px 13px;
     }
+
     .diamond-icon {
         top: 12px;
         left: 35px;
     }
+
     #diamonds-input {
         width: 60%;
     }
+
     .btns-style__steps button {
         padding: 6px 9px;
     }
@@ -525,15 +539,19 @@ input[type="number"]::-webkit-outer-spin-button {
     .card-info img {
         width: 100%;
     }
+
     .circles-1 {
         top: 110px;
     }
+
     .circles-2 {
         top: 220px;
     }
+
     .circles-3 {
         top: 330px;
     }
+
     .circles-4 {
         top: 440px;
     }
@@ -543,57 +561,75 @@ input[type="number"]::-webkit-outer-spin-button {
     .bg-two {
         left: 300px;
     }
+
     .saper-game__content {
         width: auto;
     }
+
     .saper-start {
         width: 30%;
         height: 510px;
     }
+
     .steps-btns__display {
         justify-content: center;
     }
+
     .btns-style__steps button {
         width: 60px;
         height: 50px;
     }
+
     .swiper-slide {
         margin-right: 30px !important;
     }
+
     .margin-lines .firstline {
         margin-top: 2%;
     }
+
     .square {
         width: 75px;
     }
+
     .img-style-click {
         left: -15px;
     }
+
     .info-emeralds {
         margin-top: 6.5%;
     }
+
     .info-crystals {
         margin-top: 6.5%;
     }
+
     .text-style__subtitle h2 {
         font-size: 11px;
     }
+
     .text-style__comment p {
         font-size: 11px;
     }
-    .crystals-btns__choices button, .btn-style__diamonds button {
+
+    .crystals-btns__choices button,
+    .btn-style__diamonds button {
         padding: 4px 7px;
     }
+
     .diamonds-btns__display {
         margin-left: 3%;
     }
+
     .diamond-icon {
         top: 12px;
         left: 35px;
     }
+
     #diamonds-input {
         width: 60%;
     }
+
     .btns-style__steps button {
         padding: 6px 4px;
     }
@@ -606,6 +642,7 @@ input[type="number"]::-webkit-outer-spin-button {
     .card-info img {
         width: 100%;
     }
+
     .circles__content {
         display: none;
     }
@@ -636,7 +673,8 @@ input[type="number"]::-webkit-outer-spin-button {
     object-fit: cover;
 }
 
-.swiper-button-prev:after, .swiper-button-next:after {
+.swiper-button-prev:after,
+.swiper-button-next:after {
     font-size: 30px;
     color: rgb(210 31 31 / 62%);
 }
