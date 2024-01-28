@@ -339,6 +339,7 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 110px;
     height: 110px;
     top: -70px;
+    user-select: none;
 }
 
 .crystal-img {
