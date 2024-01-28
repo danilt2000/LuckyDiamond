@@ -377,6 +377,37 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 13.5% 0 0 10.5%;
 }
 
+.info-crystals__count {
+    position: relative;
+}
+
+.card-style-count {
+    width: 40%;
+    text-align: center;
+    font-family: "Montserrat Alternates";
+    font-size: 18px;
+    font-width: 700;
+    padding: 1% 1%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.emeralds-bg {
+    background: #6BC884;
+    /*top: -54px;*/
+    /*left: 20px;*/
+    top: -22%;
+    left: 12%;
+}
+
+.crystals-bg {
+    background: #EF4444;
+    /*top: -52px;*/
+    /*left: 20px;*/
+    top: -20%;
+    left: 12%;
+}
+
 .card-info {
     border-radius: 15px;
     border: 1px solid #2B4D6C;
@@ -483,6 +514,12 @@ input[type="number"]::-webkit-outer-spin-button {
     .btns-style__steps button {
         padding: 6px 9px;
     }
+    .emeralds-bg {
+        top: -23%;
+    }
+    .crystals-bg {
+        top: -21%;
+    }
     .card-info img {
         width: 100%;
     }
@@ -557,6 +594,12 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .btns-style__steps button {
         padding: 6px 4px;
+    }
+    .emeralds-bg {
+        top: -24%;
+    }
+    .crystals-bg {
+        top: -22%;
     }
     .card-info img {
         width: 100%;

@@ -132,6 +132,9 @@
                   <h2>Изумруды</h2>
                   <p>Открывай ячейки с изумрудами</p>
                   <img src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" width="170" height="170">
+                  <div class="info-crystals__count card-style-count emeralds-bg">
+                    <h3>22</h3>
+                  </div>
                 </div>
               </div>
               <div class="info-crystals">
@@ -139,6 +142,9 @@
                   <h2>кристаллы</h2>
                   <p>Остерегайся кристаллов, чтобы не проиграть</p>
                   <img src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" width="170" height="170">
+                  <div class="info-crystals__count card-style-count crystals-bg">
+                    <h3>3</h3>
+                  </div>
                 </div>
               </div>
             </div>
