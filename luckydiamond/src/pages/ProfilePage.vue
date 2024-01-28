@@ -24,8 +24,6 @@
         <div class="payments__types">
           <div class="types types-margin types-text">
             <h3>Игрок и вид транзакции</h3>
-            <h3>Test</h3>
-            <h3>Test</h3>
             <h3>Дата</h3>
             <h3>Сумма</h3>
           </div>
