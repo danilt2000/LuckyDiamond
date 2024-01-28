@@ -50,7 +50,6 @@ export default {
       if (authCode) {
         LogIn(authCode)
           .then((response) => {
-            console.log("Auth Data:", response);
             SetCookie("UserId", response.userId);
             SetCookie("SpUserName", response.spUserName);
             SetCookie("AUTHTOKEN", response.authtoken);
@@ -63,7 +62,6 @@ export default {
             GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
               .then((response) => {
                 this.balance = response.currentMoney;
-                console.log(response);
               })
               .catch((error) => {
                 console.error(error);
