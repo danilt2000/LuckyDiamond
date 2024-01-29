@@ -13,3 +13,6 @@
 
 [Вдохновление](https://cs.fail/en/)
 
+## Наша Команда
+
+![team](https://github.com/danilt2000/LuckyDiamond/assets/96600211/0c1b43b7-fe67-4fca-85ef-16f314847b70)
