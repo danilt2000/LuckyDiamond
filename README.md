@@ -1,30 +1,13 @@
+# Проект "Lucky Diamond Casino"
 
+Сайт Онлайн-Казино на игровую валюту Майнкрафт сервера СПМ.
 
+## Важные ссылки
 
+[Документация SPWorlds](https://github.com/sp-worlds/api-docs)
 
+[DiscordAPI](https://discord.com/developers/docs/topics/oauth2#oauth2)
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-  
-</head>
-<body>
+[Отображение головы](https://visage.surgeplay.com/index.html)
 
-  
-<h1>Важные ссылки</h1> 
-<h2>Отображение головы</h2>
-https://visage.surgeplay.com/index.html
-
-   ![image](https://visage.surgeplay.com/head/512/Hepatir.png)
-<h2>Sp api</h2>
-https://github.com/sp-worlds/api-docs
-<h2>Discord api </h2>
-     https://discord.com/developers/docs/topics/oauth2#oauth2
-
-
-<h2>Откуда берём вдохновление </h2>
-     https://cs.fail/en/
-</body>
-</html>
- 
+[Вдохновление](https://cs.fail/en/)
