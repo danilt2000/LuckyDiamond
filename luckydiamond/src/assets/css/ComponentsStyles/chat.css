@@ -56,7 +56,8 @@
 }
 
 .chat__content--users {
-    height: 590px;
+    /* height: 590px; */
+    height: 70vh;
     width: auto;
     overflow-y: auto;
     overflow-x: auto;
