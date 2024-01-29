@@ -1,3 +1,4 @@
+![Lucky Diamond](https://github.com/danilt2000/LuckyDiamond/assets/96600211/26167263-51c4-4ae6-96e9-c941943c913f)
 # Проект "Lucky Diamond Casino"
 
 Сайт Онлайн-Казино на игровую валюту Майнкрафт сервера СПМ.
