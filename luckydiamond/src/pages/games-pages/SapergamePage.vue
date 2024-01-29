@@ -235,19 +235,44 @@ export default {
         let index
         switch (DepositCount) {
           case 1:
-            index = 0
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 0
+            }
             break
           case 5:
-            index = 1
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 1
+            }
             break
           case 10:
-            index = 2
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 2
+            }
             break
           case 50:
-            index = 3
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 3
+            }
             break
           case 100:
-            index = 4
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 4
+            }
             break
           case parseInt(this.balance):
             index = 5
