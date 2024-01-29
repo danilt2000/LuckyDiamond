@@ -17,19 +17,17 @@
       </div>
     </div>
   </aside>
-  <SettingsPage></SettingsPage>
+  <settings-page v-if="SettingsPage"></settings-page>
 </template>
 
 
 <script>
 // import NotiicationwindowComponent from "@/components/NotiicationwindowComponent.vue";
 import '@/assets/css/ComponentsStyles/asidebar.css'
-import {
-  SettingsPage
-} from "@/pages/SettingsPage.vue"
+import settingsPage from "@/pages/SettingsPage.vue";
 export default {
   name: 'AsideBar-Element',
-  components: { SettingsPage },
+  components: { settingsPage },
   data() {
     return {
       SettingsPage: false
