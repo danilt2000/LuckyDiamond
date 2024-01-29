@@ -13,26 +13,20 @@
         </div>
       </div>
       <div class="menu__btn--settings">
-        <a @click="SettingsPage=!SettingsPage" href="#"><img width="73" height="73" src="../assets/icons-menu/settings-icon.svg"></a>
+        <a @click="$router.push({ name: 'settings' })" href="#"><img width="73" height="73" src="../assets/icons-menu/settings-icon.svg"></a>
       </div>
     </div>
   </aside>
-  <settings-page v-if="SettingsPage"></settings-page>
+  
 </template>
 
 
 <script>
 // import NotiicationwindowComponent from "@/components/NotiicationwindowComponent.vue";
 import '@/assets/css/ComponentsStyles/asidebar.css'
-import settingsPage from "@/pages/SettingsPage.vue";
 export default {
   name: 'AsideBar-Element',
-  components: { settingsPage },
-  data() {
-    return {
-      SettingsPage: false
-    }
-  },
+ 
   // emits: ['animationchange'],
   methods: {
     ChangeAnimation() {
