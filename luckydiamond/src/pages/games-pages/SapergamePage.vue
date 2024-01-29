@@ -227,8 +227,60 @@ export default {
     }
   },
   watch: {
+    amountDeposit(DepositCount) {
+      if (![1, 5, 10, 50, 100, parseInt(this.balance)].includes(DepositCount)) {
+        this.clickedBtn = null
+      }
+      else {
+        let index
+        switch (DepositCount) {
+          case 1:
+            index = 0
+            break
+          case 5:
+            index = 1
+            break
+          case 10:
+            index = 2
+            break
+          case 50:
+            index = 3
+            break
+          case 100:
+            index = 4
+            break
+          case parseInt(this.balance):
+            index = 5
+            break
+        }
+
+        this.clickedBtnChoice(index, DepositCount)
+      }
+    },
     async amountCrystals(CrystalsCount) {
       this.PercentageGameSteps = []
+      if (![1, 5, 10, 24].includes(CrystalsCount)) {
+        this.clickedBtnCrystal = null
+      }
+      else {
+        let index
+        switch (CrystalsCount) {
+          case 1:
+            index = 0
+            break
+          case 5:
+            index = 1
+            break
+          case 10:
+            index = 2
+            break
+          case 24:
+            index = 3
+            break
+        }
+        this.clickedBtnCrystals(index, CrystalsCount)
+      }
+
       if (CrystalsCount >= 1 && CrystalsCount <= 24) {
         try {
             await GetPercentageSteps(this.amountCrystals)
