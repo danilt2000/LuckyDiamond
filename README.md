@@ -8,6 +8,6 @@
 
 [DiscordAPI](https://discord.com/developers/docs/topics/oauth2#oauth2)
 
-[Отображение головы](https://visage.surgeplay.com/index.html)
+[Отображение Скинов](https://visage.surgeplay.com/index.html)
 
 [Вдохновление](https://cs.fail/en/)
