@@ -2,7 +2,7 @@
   <aside class="menu">
     <div class="menu__content">
       <div class="menu__btn--home">
-        <a href="#" @click="$router.push({ name: 'home' })"><img width="73" height="73" src="../assets/icons-menu/home-icon.svg"></a>
+        <a href="" @click="$router.push({ name: 'home' })"><img width="73" height="73" src="../assets/icons-menu/home-icon.svg"></a>
       </div>
       <div class="menu__btns--gamemodes">
         <div class="menu__content--gamemodes">
@@ -13,23 +13,26 @@
         </div>
       </div>
       <div class="menu__btn--settings">
-        <a @click="ChangeAnimation" href="#"><img width="73" height="73" src="../assets/icons-menu/settings-icon.svg"></a>
+        <a @click="SettingsPage=!SettingsPage" href="#"><img width="73" height="73" src="../assets/icons-menu/settings-icon.svg"></a>
       </div>
     </div>
   </aside>
+  <SettingsPage></SettingsPage>
 </template>
 
 
 <script>
 // import NotiicationwindowComponent from "@/components/NotiicationwindowComponent.vue";
 import '@/assets/css/ComponentsStyles/asidebar.css'
-
+import {
+  SettingsPage
+} from "@/pages/SettingsPage.vue"
 export default {
   name: 'AsideBar-Element',
-  // components: { NotiicationwindowComponent },
+  components: { SettingsPage },
   data() {
     return {
-      AnimationOff: false
+      SettingsPage: false
     }
   },
   // emits: ['animationchange'],
