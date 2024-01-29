@@ -46,13 +46,16 @@ export default {
       this.$emit("send", [formattedWord, this.username, this.icon]);
       this.msg = "";
     },
-    
-    InsertSpaceEvery24Chars(word) {
+
+    InsertSpaceEvery24Chars(text) {
       let result = "";
-      for (let i = 0; i < word.length; i += 22) {
-        result += word.substring(i, i + 22) + " ";
+      for (let i = 0; i < text.length; i++) {
+        if (i > 0 && i % 24 === 0) {
+          result += " ";
+        }
+        result += text[i];
       }
-      return result.trim();
+      return result;
     },
   },
 };
