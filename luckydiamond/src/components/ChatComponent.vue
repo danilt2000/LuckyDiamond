@@ -81,10 +81,12 @@ export default {
           icon: imageUrl,
         };
 
-        if (MsgUser.username === '🛠️ System') {
+        if (MsgUser.username === 'System') {
           MsgUser.icon = 'https://avatar.spworlds.ru/face/55/CONSOLE'
         }
 
+
+        // 🛠️ - icon
         this.array.push(MsgUser);
 
         this.ScrollToBottom();
@@ -106,7 +108,7 @@ export default {
             icon: imageUrl,
           };
 
-          if (MsgUser.username === '🛠️ System') {
+          if (MsgUser.username === 'System') {
             MsgUser.icon = 'https://avatar.spworlds.ru/face/55/CONSOLE'
           }
 
