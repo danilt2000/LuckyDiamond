@@ -10,6 +10,6 @@ export default createRouter({
         { path: '/', component: HomePage, name: 'home' },
         { path: '/profile', component: ProfilePage, name: 'profile' },
         { path: '/game/saper', component: SapergamePage, name: 'saper' },
-        { path: '/setting', component: SettingsPage, name: 'settings' },
+        { path: '/settings', component: SettingsPage, name: 'settings' },
     ]
 })
