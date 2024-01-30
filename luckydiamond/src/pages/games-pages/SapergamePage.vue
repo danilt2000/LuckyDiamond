@@ -408,6 +408,7 @@ export default {
          this.offEventPointers = false
          this.gameStart = false
          this.gamesCircle = 0
+         this.gameTurn = 0
 
          this.claimWinningAmount()
 
@@ -512,6 +513,7 @@ export default {
           this.offEventPointers = false
           this.gameStart = false
           this.gamesCircle = 0
+          this.gameTurn = 0
           await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
           this.winningAmount = 0
 
