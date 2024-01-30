@@ -91,19 +91,21 @@ export default {
   },
   created() {
     GetChatHistory().then((response) => {
-      response.forEach((element) => {
-        let imageUrl = "https://avatar.spworlds.ru/face/55/" + element.userName;
+      if (response && response.length) {
+        response.forEach((element) => {
+          let imageUrl = "https://avatar.spworlds.ru/face/55/" + element.userName;
 
-        const MsgUser = {
-          id: this.id + 1,
-          msg: element.message,
-          username: element.userName,
-          icon: imageUrl,
-        };
+          const MsgUser = {
+            id: this.id + 1,
+            msg: element.message,
+            username: element.userName,
+            icon: imageUrl,
+          };
 
-        this.array.push(MsgUser);
-      });
-      this.ScrollToBottom();
+          this.array.push(MsgUser);
+        });
+        this.ScrollToBottom();
+      }
     });
   },
 };

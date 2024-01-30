@@ -201,6 +201,7 @@ export default {
       balance: 0,
       winningAmount: 0,
       gamesCircle: 0,
+      gameTurn: 0,
       ErrorClick: '',
       gameStart: false,
       offEventPointers: false,
@@ -227,8 +228,85 @@ export default {
     }
   },
   watch: {
+    amountDeposit(DepositCount) {
+      if (![1, 5, 10, 50, 100, parseInt(this.balance)].includes(DepositCount)) {
+        this.clickedBtn = null
+      }
+      else {
+        let index
+        switch (DepositCount) {
+          case 1:
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 0
+            }
+            break
+          case 5:
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 1
+            }
+            break
+          case 10:
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 2
+            }
+            break
+          case 50:
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 3
+            }
+            break
+          case 100:
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 4
+            }
+            break
+          case parseInt(this.balance):
+            index = 5
+            break
+        }
+
+        this.clickedBtnChoice(index, DepositCount)
+      }
+    },
     async amountCrystals(CrystalsCount) {
       this.PercentageGameSteps = []
+      if (![1, 5, 10, 24].includes(CrystalsCount)) {
+        this.clickedBtnCrystal = null
+      }
+      else {
+        let index
+        switch (CrystalsCount) {
+          case 1:
+            index = 0
+            break
+          case 5:
+            index = 1
+            break
+          case 10:
+            index = 2
+            break
+          case 24:
+            index = 3
+            break
+        }
+        this.clickedBtnCrystals(index, CrystalsCount)
+      }
+
       if (CrystalsCount >= 1 && CrystalsCount <= 24) {
         try {
             await GetPercentageSteps(this.amountCrystals)
@@ -248,7 +326,7 @@ export default {
     flippedCards: {
      async handler(value) {
        if (value.length < 1 || this.ValidationPlay.endGame === true) return
-       const maxCircles = 25 - this.amountCrystals
+       const maxCircles = 25 - this.amountCrystals - this.gameTurn
        console.log(`MAXCIRLES - ${maxCircles} VALUE: ${value} GAMECIRCLE - ${this.gamesCircle}`)
 
        if (this.gameStart !== false) {
@@ -303,6 +381,7 @@ export default {
            this.gameStart = false
            this.gamesCircle = 0
            this.winningAmount = 0
+           this.gameTurn = 0
            const SoundCorrect = new Howl({
              src: ['/sounds/incorrect-sound.mp3'],
              volume: 0.5
@@ -329,6 +408,7 @@ export default {
          this.offEventPointers = false
          this.gameStart = false
          this.gamesCircle = 0
+         this.gameTurn = 0
 
          this.claimWinningAmount()
 
@@ -360,6 +440,8 @@ export default {
                 this.amountCrystals = response.MinesCount
                 this.amountDeposit = response.PuttedMoney
                 this.winningAmount = response.WinningMoney
+                this.emeraldsAmount = 25 - this.amountCrystals - response.CurrentUserTurn
+                this.gameTurn = response.CurrentUserTurn
 
                 const soundStartGame = new Howl({
                   src: ['/sounds/start-game.mp3'],
@@ -431,6 +513,7 @@ export default {
           this.offEventPointers = false
           this.gameStart = false
           this.gamesCircle = 0
+          this.gameTurn = 0
           await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
           this.winningAmount = 0
 
