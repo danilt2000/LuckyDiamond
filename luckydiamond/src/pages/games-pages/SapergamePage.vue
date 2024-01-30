@@ -381,6 +381,7 @@ export default {
            this.gameStart = false
            this.gamesCircle = 0
            this.winningAmount = 0
+           this.gameTurn = 0
            const SoundCorrect = new Howl({
              src: ['/sounds/incorrect-sound.mp3'],
              volume: 0.5
