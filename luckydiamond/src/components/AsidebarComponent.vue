@@ -2,7 +2,7 @@
   <aside class="menu">
     <div class="menu__content">
       <div class="menu__btn--home">
-        <a href="" @click="$router.push({ name: 'home' })"><img width="73" height="73" src="../assets/icons-menu/home-icon.svg"></a>
+        <a href="#" @click="$router.push({ name: 'home' })"><img width="73" height="73" src="../assets/icons-menu/home-icon.svg"></a>
       </div>
       <div class="menu__btns--gamemodes">
         <div class="menu__content--gamemodes">

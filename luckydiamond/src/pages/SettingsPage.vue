@@ -7,11 +7,7 @@
   
       <header-component></header-component>
   
-    <section class="profile">
-      <div class="profile__content">
-        
-      </div>
-    </section>
+    <section class="profile"></section>
       <payments-modal v-if="openModal" @notifacetionmoney="NotificationEventListener" @closemodal="openModal = false" :payments="payments"></payments-modal>
       <notiicationwindow-component @notificationremove="NotificationMethod" :notification="notification"></notiicationwindow-component>
     </div>
