@@ -201,6 +201,7 @@ export default {
       balance: 0,
       winningAmount: 0,
       gamesCircle: 0,
+      gameTurn: 0,
       ErrorClick: '',
       gameStart: false,
       offEventPointers: false,
@@ -325,7 +326,7 @@ export default {
     flippedCards: {
      async handler(value) {
        if (value.length < 1 || this.ValidationPlay.endGame === true) return
-       const maxCircles = 25 - this.amountCrystals
+       const maxCircles = 25 - this.amountCrystals - this.gameTurn
        console.log(`MAXCIRLES - ${maxCircles} VALUE: ${value} GAMECIRCLE - ${this.gamesCircle}`)
 
        if (this.gameStart !== false) {
@@ -437,6 +438,8 @@ export default {
                 this.amountCrystals = response.MinesCount
                 this.amountDeposit = response.PuttedMoney
                 this.winningAmount = response.WinningMoney
+                this.emeraldsAmount = 25 - this.amountCrystals - response.CurrentUserTurn
+                this.gameTurn = response.CurrentUserTurn
 
                 const soundStartGame = new Howl({
                   src: ['/sounds/start-game.mp3'],
