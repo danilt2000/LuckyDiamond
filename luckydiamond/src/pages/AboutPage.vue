@@ -2,7 +2,7 @@
     <div class="content__grid-profile" >
         <aside-bar-component></aside-bar-component>
     
-        <chat-component></chat-component>
+        
     
         <header-component></header-component>
 
@@ -12,7 +12,6 @@
 <script>
 import DevelopComponent from "@/components/DevelopComponent.vue";
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
-import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 
 export default {
@@ -27,7 +26,6 @@ export default {
         }
     }, 
     components: {
-    ChatComponent,
     HeaderComponent,
     AsideBarComponent,
     DevelopComponent    
