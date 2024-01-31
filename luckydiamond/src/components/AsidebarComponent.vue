@@ -13,25 +13,20 @@
         </div>
       </div>
       <div class="menu__btn--settings">
-        <a @click="ChangeAnimation" href="#"><img width="73" height="73" src="../assets/icons-menu/settings-icon.svg"></a>
+        <a @click="$router.push({ name: 'settings' })" href="#"><img width="73" height="73" src="../assets/icons-menu/settings-icon.svg"></a>
       </div>
     </div>
   </aside>
+  
 </template>
 
 
 <script>
 // import NotiicationwindowComponent from "@/components/NotiicationwindowComponent.vue";
 import '@/assets/css/ComponentsStyles/asidebar.css'
-
 export default {
   name: 'AsideBar-Element',
-  // components: { NotiicationwindowComponent },
-  data() {
-    return {
-      AnimationOff: false
-    }
-  },
+ 
   // emits: ['animationchange'],
   methods: {
     ChangeAnimation() {
