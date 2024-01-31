@@ -5,12 +5,12 @@
         <chat-component></chat-component>
     
         <header-component></header-component>
-    
+
+        <develop-component></develop-component>
       </div>
-    <develop-component></develop-component>
 </template>
 <script>
-import { DevelopComponent } from '@/components/DevelopComponent'
+import DevelopComponent from "@/components/DevelopComponent.vue";
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";

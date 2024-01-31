@@ -7,7 +7,9 @@
 </template>
 
 <script>
-import '@/assets/css/DevelopComponent.css'
+import '@/assets/css/ComponentsStyles/DevelopComponent.css'
 
-export default {}
+export default {
+
+}
 </script>
