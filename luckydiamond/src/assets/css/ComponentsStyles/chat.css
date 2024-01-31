@@ -184,3 +184,11 @@
 .write__content button:disabled {
     cursor: not-allowed;
 }
+
+.system-message {
+    background-color: rgb(1, 56, 74);
+}
+
+.mention-message {
+    background-color: rgb(169, 113, 0);
+}
