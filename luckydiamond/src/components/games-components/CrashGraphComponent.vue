@@ -40,8 +40,8 @@ export default {
         },
         animation: {
           duration: 200,
-          easing: "linear",
-          delay: (context) => context.dataIndex * 2,
+          easing: "easeInOutQuad",
+          delay: 50,
           onProgress: (animation) => {
             const chart = animation.chart;
             const ctx = chart.ctx;
@@ -93,7 +93,7 @@ export default {
 
   methods: {
     updateData() {
-      const interval = 255;
+      const interval = 495;
       let counter = 0;
 
       const updateInterval = setInterval(() => {
@@ -129,6 +129,7 @@ export default {
 .chart-container canvas {
   width: 600px !important;
   height: 400px !important;
+  transition: .3s ease;
 }
 
 
