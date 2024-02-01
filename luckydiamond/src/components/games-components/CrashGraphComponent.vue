@@ -37,21 +37,6 @@ export default {
           title: {
             text: "Line",
           },
-          // elements: {
-          //   point: {
-          //     radius: 0,
-          //   },
-          // },
-          // tooltip: {
-          //   enabled: false,
-          // },
-          // interactions: {
-          //   mode: "nearest",
-          //   intersect: false,
-          // },
-          // hover: {
-          //   mode: null,
-          // },
         },
         animation: {
           duration: 200,
