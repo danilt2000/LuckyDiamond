@@ -21,7 +21,7 @@
         <img src="@/assets/icons-developcard/busha888.png" alt="">
         </div>
     </div>
-    <div class="card2">
+    <div class="card__2">
       <div class="text_2">
         <div class="aboutinfo_2">
 
