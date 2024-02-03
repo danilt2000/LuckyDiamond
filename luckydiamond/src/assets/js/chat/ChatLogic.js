@@ -16,7 +16,11 @@ export function ConnectToChat() {
 
         webSocket.onmessage = function (event) {
 
-            eventBus.emit('dataChat', event.data)
+            const dataObject = JSON.parse(event.data);
+
+            if (dataObject && dataObject.hasOwnProperty('SpUserName') && dataObject.hasOwnProperty('Message')) {
+                eventBus.emit('dataChat', dataObject);
+            }
 
             console.log('Message from Server:', event.data);
         };
