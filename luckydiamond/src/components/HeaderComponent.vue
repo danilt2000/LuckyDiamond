@@ -160,7 +160,7 @@ export default {
           <!-- <div class="header__card--auth">  -->
           <div class="auth__card--content">
             <a
-              href="#"
+              href="https://media.discordapp.net/attachments/1175674631684898866/1203382105934139422/Untitled.png?ex=65d0e3eb&is=65be6eeb&hm=226770699b0ac57c74b1516868e9d7ddb6eb1cb952366ea07e62ccf4ee551a1d&=&format=webp&quality=lossless"
               @click="auth = true"
               ><span
                 ><img
