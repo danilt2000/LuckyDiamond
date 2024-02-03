@@ -1,60 +1,75 @@
 <template>
-  <div class="developer-card__content">
-    <div class="developer-card__width">
-      <div class="developer-card__text">
-        <div class="developer-card__about-text">
-          <p>фронтэндер</p>
-          <h1>busha888</h1>
+  <ul>
+    <li v-for="developer in (DevelopersOptions)" :key="developer.id">
+      <div class="developer-card__content" v-if="developer.id <= 4">
+        <div class="developer-card__width" :style="{ background: developer.background }">
+          <div class="developer-card__text">
+            <div class="developer-card__about-text">
+              <p>{{ developer.userRole }}</p>
+              <h1>{{ developer.username }}</h1>
+            </div>
+            <div v-for="(techText, index) in developer.technologyText" :key="index" class="developer-card__technology">
+              <img :src="require(`@/assets/icons-developcard/${developer.technologyIcons[index]}.png`)" :alt="techText">
+              <p>{{ techText }}</p>
+            </div>
+            <div class="developer-card__socials">
+              <div v-for="(socialIcon, index) in developer.socialIcons" :key="index" class="social__content">
+                <img :src="require(`@/assets/icons-developcard/${developer.socialIcons[index]}.png`)">
+              </div>
+            </div>
+          </div>
+          <div class="developer-card__skin">
+            <img :src="`https://avatar.spworlds.ru/front/256/${developer.username}`" :alt="developer.username">
+          </div>
         </div>
-        <div class="developer-card__technology">
-          <img src="@/assets/icons-developcard/html.png" alt="html">
-          <p>HTML 5,CSS</p>
-        </div>
-        <div class="developer-card__socials">
-          <a href="https://tpverstak.ru/flex-cheatsheet/"><img src="@/assets/icons-developcard/odniclasniki.png" alt=""></a>
-          <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href=""><img src="@/assets/icons-developcard/like.png" alt=""></a>
-          <a href=""><img src="@/assets/icons-developcard/github.png" alt=""></a>
-        </div>
-      </div>
-      <div class="developer-card__skin">
-        <img src="@/assets/icons-developcard/busha888.png" alt="">
-        </div>
-    </div>
-    <div class="developer-card__height">
-      <div class="developer-card-height__text">
-        <div class="developer-card-height__about-text">
-          <p>Бэкендер</p>
-          <h1>Hepatir</h1>
-        </div>
-        <div class="developer-card-height__technology techonology-styles">
-          <img src="../assets/icons-developcard/csharp-logo.png" alt="html">
-          <p>ASP, .NET, MongoDB</p>
-        </div>
-        <div class="developer-card-height__technology-two-column techonology-styles">
-          <img src="../assets/icons-developcard/sql-logo.png" alt="html">
-          <p>SQL</p>
-        </div>
-        </div>
-        <div class="developer-card-height__skin">
-          <div class="developer-card-height__skin-content">
-            <div class="developer-card-height__social-icons">
-            <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href=""><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href=""><img src="@/assets/icons-developcard/github.png" alt=""></a>
+        <div class="developer-card__height">
+          <div class="developer-card-height__text">
+            <div class="developer-card-height__about-text">
+              <p>Бэкендер</p>
+              <h1>Hepatir</h1>
+            </div>
+            <div class="developer-card-height__technology techonology-styles">
+              <img src="../assets/icons-developcard/csharp-logo.png" alt="html">
+              <p>ASP, .NET, MongoDB</p>
+            </div>
+            <div class="developer-card-height__technology-two-column techonology-styles">
+              <img src="../assets/icons-developcard/sql-logo.png" alt="html">
+              <p>SQL</p>
+            </div>
+          </div>
+          <div class="developer-card-height__skin">
+            <div class="developer-card-height__skin-content">
+              <div class="developer-card-height__social-icons">
+                <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+                <a href=""><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+                <a href=""><img src="@/assets/icons-developcard/github.png" alt=""></a>
+              </div>
             </div>
           </div>
         </div>
-      
-    </div>
-  </div>
+      </div>
+    </li>
+  </ul>
 
 </template>
 
 <script>
+import DevelopersOptions from "@/mocks/DevelopersOptions";
 import '@/assets/css/ComponentsStyles/developer.css'
 
 export default {
-
+  data() {
+    return {
+      DevelopersOptions
+    }
+  },
+  methods: {
+    testMethod(developer, username) {
+      console.log(developer, username)
+    }
+  },
+  created() {
+    console.log(DevelopersOptions)
+  }
 }
 </script>

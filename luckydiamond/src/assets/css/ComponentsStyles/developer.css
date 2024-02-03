@@ -13,7 +13,7 @@
     height: 269px;
     border-radius: 22px;
     border: 3px solid #595959 ;
-    background-color: #742271;
+    /*background-color: #742271;*/
 }
 
 .developer-card__about-text {
@@ -30,17 +30,18 @@
     font-family: 'Montserrat';
     color: #fff;
     font-size: 32px;
+    margin-bottom: 20px;
 }
 
 .developer-card__technology {
     display: flex;
-    margin: 30px 0 0 15px;
+    margin: 5px 0 0 15px;
     font-family: 'Montserrat';
 }
 
 .developer-card__technology img {
-    width: 15px;
-    height: 17px;
+    width: 21px;
+    height: 21px;
     margin-right: 3px;
 }
 
@@ -60,7 +61,12 @@
 .developer-card__skin {
     display: flex;
     align-items: flex-end;
-    margin-left: 30px;
+    margin-left: 15px;
+}
+
+.developer-card__skin img {
+    width: 212px;
+    height: 212px;
 }
 
 /*the and card 1*/
