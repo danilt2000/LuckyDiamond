@@ -41,13 +41,8 @@ export default [
         userRole: "Дизайнер",
         background: "#393A3A",
         technologyText: ["Designer"],
-        technologyIcons: {
-            figma: "@/assets/icons-developcard/figma.png"
-        },
-        socialIcons: {
-            telegram: "@/assets/icons-developcard/telegram.png",
-            discord: "@/assets/icons-developcard/discord.png"
-        }
+        technologyIcons: ["figma"],
+        socialIcons: ["telegram", "discord"]
     },
     {
         id: 6,
@@ -55,15 +50,8 @@ export default [
         userRole: "Фронтэндер",
         background: "#742271",
         technologyText: ["html 5, css"],
-        technologyIcons: {
-            html: "@/assets/icons-developcard/html.png"
-        },
-        socialIcons: {
-            odniclasniki: "@/assets/icons-developcard/odniclasniki.png",
-            telegram: "@/assets/icons-developcard/telegram.png",
-            like: "@/assets/icons-developcard/like.png",
-            github: "@/assets/icons-developcard/github.png",
-        }
+        technologyIcons: ["html"],
+        socialIcons: ["odniclasniki", "telegram", "like", "github"],
     },
     {
         id: 7,
@@ -71,13 +59,8 @@ export default [
         userRole: "Дизайнер",
         background: "#E2B374",
         technologyText: ["Designer"],
-        technologyIcons: {
-            figma: "@/assets/icons-developcard/figma.png"
-        },
-        socialIcons: {
-            telegram: "@/assets/icons-developcard/telegram.png",
-            discord: "@/assets/icons-developcard/discord.png"
-        }
+        technologyIcons: ["figma"],
+        socialIcons: ["telegram", "discord"]
     }
 ]
     

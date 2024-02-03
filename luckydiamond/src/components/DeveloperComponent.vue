@@ -1,7 +1,7 @@
 <template>
   <ul>
-    <li v-for="developer in (DevelopersOptions)" :key="developer.id">
-      <div class="developer-card__content" v-if="developer.id <= 4">
+    <li v-for="developer in DevelopersOptions" :key="developer.id">
+      <div class="developer-card__content" v-if="developer.id > 4">
         <div class="developer-card__width" :style="{ background: developer.background }">
           <div class="developer-card__text">
             <div class="developer-card__about-text">
@@ -22,35 +22,31 @@
             <img :src="`https://avatar.spworlds.ru/front/256/${developer.username}`" :alt="developer.username">
           </div>
         </div>
-        <div class="developer-card__height">
+      </div>
+      <div class="developer-card__content" v-else>
+        <div class="developer-card__height" :style="{ background: developer.background }">
           <div class="developer-card-height__text">
             <div class="developer-card-height__about-text">
-              <p>Бэкендер</p>
-              <h1>Hepatir</h1>
+              <p>{{ developer.userRole }}</p>
+              <h1>{{ developer.username }}</h1>
             </div>
-            <div class="developer-card-height__technology techonology-styles">
-              <img src="../assets/icons-developcard/csharp-logo.png" alt="html">
-              <p>ASP, .NET, MongoDB</p>
+            <div v-for="(techText, index) in developer.technologyText" :key="index" class="developer-card__technology">
+              <img :src="require(`@/assets/icons-developcard/${developer.technologyIcons[index]}.png`)" :alt="techText">
+              <p>{{ techText }}</p>
             </div>
-            <div class="developer-card-height__technology-two-column techonology-styles">
-              <img src="../assets/icons-developcard/sql-logo.png" alt="html">
-              <p>SQL</p>
+            <div class="developer-card__socials">
+              <div v-for="(socialIcon, index) in developer.socialIcons" :key="index" class="social__content">
+                <img :src="require(`@/assets/icons-developcard/${developer.socialIcons[index]}.png`)">
+              </div>
             </div>
           </div>
           <div class="developer-card-height__skin">
-            <div class="developer-card-height__skin-content">
-              <div class="developer-card-height__social-icons">
-                <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-                <a href=""><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-                <a href=""><img src="@/assets/icons-developcard/github.png" alt=""></a>
-              </div>
-            </div>
+            <img :src="`https://avatar.spworlds.ru/front/256/${developer.username}`" :alt="developer.username">
           </div>
         </div>
       </div>
     </li>
   </ul>
-
 </template>
 
 <script>
