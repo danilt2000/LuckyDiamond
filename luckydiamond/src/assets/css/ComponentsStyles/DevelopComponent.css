@@ -1,8 +1,178 @@
+.info {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+/*beginning card 1*/
 .card {
     width: 422px;
     height: 269px;
     flex-shrink: 0;
     border-radius: 22px;
+    border: 3px solid #595959 ;
+    border-color: #595959;
     background-color: #742271;
+    display: flex;
+    flex-direction: row;
 
 }
+
+.text {
+    width: 211px;
+    height: 269px;
+
+ 
+}
+.aboutinfo {
+    margin-top: 30px;
+    margin-left: 15px;
+    
+    
+}
+.aboutinfo p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 97px;
+    height: 16px;
+}
+.aboutinfo h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    
+}
+.whatjob {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    
+    margin-left: 15px;
+    font-family: 'Montserrat';
+   
+    margin-top: 30px;
+}
+.whatjob img {
+    width: 15px;
+    height: 17px;
+}
+.icons {
+    width: 162px;
+    height: 36px; 
+    justify-content: space-around;
+    display: flex;
+    
+    margin-top: 95px;
+    margin-left: 27px;
+    margin-bottom: 11px;
+    
+}
+.icons img {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    
+    
+}
+.skin {
+    margin-right: 13px;
+    margin-top: 51px;
+    margin-bottom: 3px;
+    
+    
+}
+.skin img {
+    width: 212px;
+    height: 212px;
+}
+/*the and card 1*/
+
+/*beginning card 2*/
+
+.card-2 {
+    width: 250px;
+    height: 443px;
+    background-color: #413C3B;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    border-radius: 22px;
+   
+    
+    
+}
+.text_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    flex-flow: column-reverse;
+    
+}
+
+.aboutinfo_2 {
+    margin-top: 30px;
+    margin-left: 19px;
+    
+}
+.aboutinfo_2 p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 79px;
+    height: 19px;
+}
+.aboutinfo_2 h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    width: 177px;
+    height: 37px;
+    
+}
+.whatjob_2 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 24px;
+    font-family: 'Montserrat';
+    margin-top: 30px;
+}
+.whatjob_2 img {
+    width: 17px;
+    height: 20px;
+}
+.whatjob2_2 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 22px;
+    
+    font-family: 'Montserrat';
+    margin-top: 10px;
+}
+.whatjob2_2 img {
+    width: 21px;
+    height: 21px;
+}
+.skin_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skin_2_skin {
+    width: 212px;
+    height: 212px;
+    background-image: url(@/assets/icons-developcard/Hepatir.png);
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-end;
+   
+}
+
+
+
+
+
+
