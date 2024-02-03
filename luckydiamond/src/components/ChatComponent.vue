@@ -71,6 +71,7 @@ export default {
     eventBus.on("dataChat", (dataFromServer) => {
       try {
         const dataObject = JSON.parse(dataFromServer);
+        
         let imageUrl =
           "https://avatar.spworlds.ru/face/55/" + dataObject.SpUserName;
 
