@@ -16,7 +16,7 @@ import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 
-import '@/assets/css/PagesStyles/SettingsPage.css'
+import '@/assets/css/PagesStyles/settings.css'
 export default {
   components: {
   ChatComponent,

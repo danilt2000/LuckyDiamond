@@ -1,0 +1,137 @@
+.developer-card__content {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+
+}
+
+/* beginning card 1 */
+
+.developer-card__width {
+    display: flex;
+    width: 422px;
+    height: 269px;
+    border-radius: 22px;
+    border: 3px solid #595959 ;
+    background-color: #742271;
+}
+
+.developer-card__about-text {
+    margin: 30px 0 0 15px;
+}
+
+.developer-card__about-text p {
+    font-family: 'Montserrat';
+    color: #fff;
+    font-size: 14px;
+}
+
+.developer-card__about-text h1 {
+    font-family: 'Montserrat';
+    color: #fff;
+    font-size: 32px;
+}
+
+.developer-card__technology {
+    display: flex;
+    margin: 30px 0 0 15px;
+    font-family: 'Montserrat';
+}
+
+.developer-card__technology img {
+    width: 15px;
+    height: 17px;
+    margin-right: 3px;
+}
+
+.developer-card__socials {
+    justify-content: space-around;
+    display: flex;
+    margin: 95px 0 11px 27px;
+    
+}
+
+.developer-card__socials img {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+}
+
+.developer-card__skin {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 30px;
+}
+
+/*the and card 1*/
+
+/*beginning card 2*/
+
+.developer-card__height {
+    width: 250px;
+    height: 443px;
+    background-color: #413C3B;
+    border: 3px solid #595959 ;
+    border-radius: 22px;
+}
+
+.developer-card-height__about-text {
+    margin: 30px 0 0 19px;
+    
+}
+.developer-card-height__about-text p {
+    font-family: 'Montserrat';
+    color: #fff;
+    font-size: 14px;
+}
+
+.developer-card-height__about-text h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+}
+
+.developer-card-height__technology {
+    display: flex;
+    font-family: 'Montserrat';
+    margin: 30px 0 0 24px;
+}
+
+.developer-card-height__technology-two-column {
+    display: flex;
+    font-family: 'Montserrat';
+    margin: 10px 0 0 22px;
+}
+
+.techonology-styles img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.developer-card-height__skin {
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.developer-card-height__skin-content {
+    width: 212px;
+    height: 212px;
+    background-image: url(@/assets/icons-developcard/Hepatir.png);
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 54px;
+}
+
+.developer-card-height__social-icons {
+   justify-content: space-around;
+    display: flex;
+}
+
+
+
+
+
+
