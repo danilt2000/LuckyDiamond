@@ -18,7 +18,7 @@ export function ConnectToChat() {
 
             const dataObject = JSON.parse(event.data);
 
-            if (dataObject && dataObject.hasOwnProperty('SpUserName') && dataObject.hasOwnProperty('Message')) {
+            if (dataObject && Object.prototype.hasOwnProperty.call(dataObject, 'SpUserName') && Object.prototype.hasOwnProperty.call(dataObject, 'Message')) {
                 eventBus.emit('dataChat', dataObject);
             }
 
