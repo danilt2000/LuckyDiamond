@@ -2,9 +2,9 @@ export default [
      {
         Rafael1209: {
             username: "Rafael1209",
-            userRole: 'Бэкендер',
+            userRole: "Бэкендер",
             background: "#636363",
-            technologyText: ['ASP,.NET,MongoDB', 'Designer'],
+            technologyText: ["ASP,.NET,MongoDB", "Designer"],
             technologyIcons: {
                 csharp: "@/assets/icons-developcard/csharp-logo.png",
                 figma: "@/assets/icons-developcard/figma.png"
@@ -17,9 +17,9 @@ export default [
         },
         Hepatir:{
             username: "Hepatir",
-            userRole: 'Бэкендер',
+            userRole: "Бэкендер",
             background: "#413C3B",
-            technologyText: ['ASP,.NET,MongoDB', 'SQL'],
+            technologyText: ["ASP,.NET,MongoDB", "SQL"],
             technologyIcons: {
                 csharp: "@/assets/icons-developcard/csharp-logo.png",
                 sql: "@/assets/icons-developcard/sql-logo.png"
@@ -32,11 +32,11 @@ export default [
         },
         Ckutls_: {
             username: "Ckutls_",
-            userRole: 'Фронтэндер',
+            userRole: "Фронтэндер",
             background: "#B88484",
-            technologyText: ['html 5, css', 'JavaScript', 'Vue 3'],
+            technologyText: ["html 5, css", "JavaScript", "Vue 3"],
             technologyIcons: {
-                html: '@/assets/icons-developcard/html.png',
+                html: "@/assets/icons-developcard/html.png",
                 js: "@/assets/icons-developcard/js.png",
                 vue: "@/assets/icons-developcard/vue.png"
             },
@@ -48,9 +48,9 @@ export default [
         },
         FUpir: {
             username: "FUpir",
-            userRole: 'Дизайнер',
+            userRole: "Дизайнер",
             background: "#C58E74",
-            technologyText: ['Designer'],
+            technologyText: ["Designer"],
             technologyIcons: {
                 figma: "@/assets/icons-developcard/figma.png"
             },
@@ -61,9 +61,9 @@ export default [
         },
         megatntmega: {
             username: "megatntmega",
-            userRole: 'Дизайнер',
+            userRole: "Дизайнер",
             background: "#393A3A",
-            technologyText: ['Designer'],
+            technologyText: ["Designer"],
             technologyIcons: {
                 figma: "@/assets/icons-developcard/figma.png"
             },
@@ -74,9 +74,9 @@ export default [
         },
         busha888: {
             username: "busha888",
-            userRole: 'Фронтэндер',
+            userRole: "Фронтэндер",
             background: "#742271",
-            technologyText: ['html 5, css'],
+            technologyText: ["html 5, css"],
             technologyIcons: {
                 html: "@/assets/icons-developcard/html.png"
             },
@@ -89,9 +89,9 @@ export default [
         },
         CLARFFY: {
             username: "CLARFFY",
-            userRole: 'Дизайнер',
+            userRole: "Дизайнер",
             background: "#E2B374",
-            technologyText: ['Designer'],
+            technologyText: ["Designer"],
             technologyIcons: {
                 figma: "@/assets/icons-developcard/figma.png"
             },
