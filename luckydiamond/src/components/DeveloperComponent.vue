@@ -28,11 +28,11 @@
           <h1>Hepatir</h1>
         </div>
         <div class="developer-card-height__technology techonology-styles">
-          <img src="@/assets/icons-developcard/Logo_C_sharp.png" alt="html">
+          <img src="../assets/icons-developcard/csharp-logo.png" alt="html">
           <p>ASP, .NET, MongoDB</p>
         </div>
         <div class="developer-card-height__technology-two-column techonology-styles">
-          <img src="@/assets/icons-developcard/pngegg.png" alt="html">
+          <img src="../assets/icons-developcard/sql-logo.png" alt="html">
           <p>SQL</p>
         </div>
         </div>
