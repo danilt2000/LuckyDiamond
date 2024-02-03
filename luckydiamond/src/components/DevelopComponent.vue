@@ -38,9 +38,12 @@
         </div>
         <div class="skin_2">
           <div class="skin_2_skin">
+            
+            <div class="skinicons1">
             <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
             <a href=""><img src="@/assets/icons-developcard/discord.png" alt=""></a>
             <a href=""><img src="@/assets/icons-developcard/github.png" alt=""></a>
+            </div>
           </div>
         </div>
       

@@ -96,16 +96,12 @@
     border: 3px solid #595959 ;
     border-color: #595959;
     border-radius: 22px;
-   
-    
-    
 }
 .text_2 {
     width: 244px;
     height: 221.5px;
     display: inline-block;
     flex-flow: column-reverse;
-    
 }
 
 .aboutinfo_2 {
@@ -168,7 +164,10 @@
     justify-content: space-around;
     display: flex;
     align-items: flex-end;
-   
+}
+.skinicons1 {
+   justify-content: space-around;
+    display: flex;
 }
 
 
