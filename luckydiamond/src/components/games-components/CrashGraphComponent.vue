@@ -1,8 +1,9 @@
 <template>
+  <div v-if="crashdata.Status === 'WaitingForPlayers'"><h2>Игра не началась</h2></div>
   <LineChart
       :chart-data="data"
       :options="options"
-      css-classes="chart-container"
+      v-else
   />
 </template>
 
@@ -27,9 +28,16 @@ Chart.register(
 
 export default {
   components: { LineChart },
+  props: {
+    crashdata: Object
+  },
+  mounted() {
+    this.data = this.chartData;
+    this.updateData();
+  },
   data() {
     return {
-      dataValues: [1, 2, 3],
+      dataValues: [],
       labels: [""],
       data: null,
       options: {
@@ -38,37 +46,12 @@ export default {
             text: "Line",
           },
         },
-        animation: {
-          duration: 200,
-          easing: "easeInOutQuad",
-          delay: 50,
-          onProgress: (animation) => {
-            const chart = animation.chart;
-            const ctx = chart.ctx;
-            const meta = chart.getDatasetMeta(0);
-            const points = meta.data;
-            const totalSteps = meta.total;
-
-            ctx.save();
-            ctx.beginPath();
-
-            points.forEach((point, index) => {
-              const prevPoint = meta.data[index - 1];
-              const progress = animation.progress;
-
-              if (index === 0 || progress * totalSteps > index) {
-                const x = prevPoint ? prevPoint.x + (point.x - prevPoint.x) * progress : point.x;
-                const y = prevPoint ? prevPoint.y + (point.y - prevPoint.y) * progress : point.y;
-
-                ctx.lineTo(x, y);
-              }
-            });
-
-            ctx.lineWidth = 3;
-            ctx.stroke();
-            ctx.restore();
+        scales: {
+          y: {
+            beginAtZero: true, // Устанавливаем начало оси Y с нуля
           },
         },
+        animation: false, // Отключаем анимацию
       },
     };
   },
@@ -91,29 +74,35 @@ export default {
     },
   },
 
-  methods: {
-    updateData() {
-      const interval = 495;
-      let counter = 0;
-
-      const updateInterval = setInterval(() => {
-        const nextDataValue = this.dataValues[this.dataValues.length - 1] + 1;
-        this.dataValues.push(nextDataValue);
-
-        this.labels.push("");
-        this.data = this.chartData;
-
-        if (counter >= 6000 / interval) {
-          clearInterval(updateInterval);
-        }
-        counter++;
-      }, interval);
-    },
+  watch: {
+    crashdata: {
+      handler: 'updateData',
+      immediate: true
+    }
   },
 
-  mounted() {
-    this.data = this.chartData;
-    this.updateData();
+  methods: {
+    updateData() {
+      let nextDataValue
+      if (this.crashdata.Status === 'WaitingForPlayers') {
+        this.data = this.chartData;
+        this.labels = [""];
+        this.dataValues = [0];
+      }
+      else if (this.crashdata.Status === 'InGame') {
+        nextDataValue = this.crashdata.CurrentX
+
+        this.data = this.chartData;
+        this.labels.push("");
+        this.dataValues.push(nextDataValue);
+      }
+      else if (this.crashdata.Status === 'GameEnd') {
+        this.dataValues = []
+      }
+      else {
+        console.log('Error game')
+      }
+    },
   },
 };
 </script>

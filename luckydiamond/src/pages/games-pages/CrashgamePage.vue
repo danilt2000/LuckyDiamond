@@ -45,7 +45,7 @@
             </div>
           </div>
           <div class="crash-game__graph">
-            <crash-graph-component></crash-graph-component>
+            <crash-graph-component :crashdata="crashObject"></crash-graph-component>
           </div>
         </div>
       </section>
@@ -81,9 +81,10 @@ export default {
   data() {
     return {
       SaperNumbers,
+      clickedBtn: null,
       amountDeposit: 0,
       autoRatio: 0,
-      timerGame: ''
+      crashObject: ''
     }
   },
   setup() {
@@ -94,8 +95,8 @@ export default {
       try {
         const dataCrashParse = JSON.parse(dataCrash)
 
-        this.timerGame = dataCrashParse.WaitingTime
-        console.log(this.timerGame)
+        this.crashObject = dataCrashParse
+        console.log(dataCrashParse)
       }
       catch (e) {
        console.error(e)
