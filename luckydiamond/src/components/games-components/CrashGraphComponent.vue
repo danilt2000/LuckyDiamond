@@ -1,10 +1,11 @@
 <template>
-  <div v-if="crashdata.Status === 'WaitingForPlayers'"><h2>Игра не началась</h2></div>
+  <div v-if="crashdata.Status === 'WaitingForPlayers'"><h2>{{ crashdata.WaitingTime ? crashdata.WaitingTime.toFixed(1) : '' }}</h2></div>
   <LineChart
       :chart-data="data"
       :options="options"
       v-else
   />
+  <h2>{{ crashdata.CurrentX ? crashdata.CurrentX.toFixed(2) : '' }}</h2>
 </template>
 
 <script>
@@ -37,7 +38,7 @@ export default {
   },
   data() {
     return {
-      dataValues: [],
+      dataValues: [0,],
       labels: [""],
       data: null,
       options: {
@@ -87,7 +88,7 @@ export default {
       if (this.crashdata.Status === 'WaitingForPlayers') {
         this.data = this.chartData;
         this.labels = [""];
-        this.dataValues = [0];
+        this.dataValues = [0, 0];
       }
       else if (this.crashdata.Status === 'InGame') {
         nextDataValue = this.crashdata.CurrentX
