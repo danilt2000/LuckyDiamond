@@ -119,18 +119,4 @@ export default {
 </script>
 
 <style>
-
-.chart-container {
-  width: 600px;
-  top: 250px;
-  left: 30%;
-}
-
-.chart-container canvas {
-  width: 600px !important;
-  height: 400px !important;
-  transition: .3s ease;
-}
-
-
 </style>
