@@ -38,8 +38,8 @@ export default {
   },
   data() {
     return {
-      dataValues: [0,],
-      labels: [""],
+      dataValues: [],
+      labels: [" "],
       data: null,
       options: {
         plugins: {
@@ -48,9 +48,6 @@ export default {
           },
         },
         scales: {
-          y: {
-            beginAtZero: true, // Устанавливаем начало оси Y с нуля
-          },
         },
         animation: false, // Отключаем анимацию
       },
@@ -88,7 +85,7 @@ export default {
       if (this.crashdata.Status === 'WaitingForPlayers') {
         this.data = this.chartData;
         this.labels = [""];
-        this.dataValues = [0, 0];
+        this.dataValues = [1, 1];
       }
       else if (this.crashdata.Status === 'InGame') {
         nextDataValue = this.crashdata.CurrentX
