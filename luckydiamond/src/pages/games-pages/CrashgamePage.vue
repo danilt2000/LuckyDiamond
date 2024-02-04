@@ -116,6 +116,7 @@ export default {
 
       if (this.crashObject.Status === 'GameEnd' && this.startGame === true && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
         this.startGame = false
+        this.updateUserMoney()
       }
       if (
           this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName')) &&
@@ -205,6 +206,15 @@ export default {
     }
   },
   methods: {
+    async updateUserMoney() {
+      if (GetCookie('AUTHTOKEN') && GetCookie('SearchToken')) {
+        await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+            .then((response) => {
+              this.balance = response.currentMoney
+              return eventBus.emit('Updatebalance')
+            })
+      }
+    },
     async clickPlayBtn() {
       this.v$.$touch()
 
@@ -221,6 +231,7 @@ export default {
 
         await JoinCrashGame(userData, this.amountDeposit)
             .then((response) => {
+              console.log(this.balance)
               console.log(response)
               if (response === `You can't join to started or ended game` || response === 'Player alredy in the game.') {
 
@@ -257,8 +268,13 @@ export default {
             .then((response) => {
               console.log(response)
               this.startGame = false
-              return eventBus.emit('Updatebalance')
+              this.updateUserMoney()
             })
+        // await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+        //     .then((response) => {
+        //       this.balance = response.currentMoney
+        //       return eventBus.emit('Updatebalance')
+        //     })
       }
     },
     async clickedBtnChoice(index, content) {
