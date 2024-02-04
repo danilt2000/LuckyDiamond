@@ -14,3 +14,129 @@
     box-shadow: 0 4px #00000040;
     border-radius: 20px;
 }
+
+.crash-game {
+    background: #22252F;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px 0px #00000040;
+    width: 95%;
+    height: 475px;
+    margin: 0 auto;
+}
+
+.crash-game__content {
+    display: flex;
+}
+
+/* Crash-Window */
+
+.crash-game__start-window {
+    margin-left: 30px;
+}
+
+.crash-game__start-window .crash__game-name {
+    margin: 62px 0 2px 0;
+    font-family: 'Montserrat Alternates';
+    font-weight: 700;
+    font-size: 26px;
+    color: #fff;
+    box-shadow: 1px 1px 1px 0px #00000001;
+}
+
+.crash-game__start-window p {
+    font-family: 'Montserrat Alternates';
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFFFFF85;
+}
+
+.crash-game-window__inputs {
+    margin-top: 29px;
+}
+
+.crash-label {
+    font-family: 'Montserrat Alternates';
+    font-weight: 700;
+    font-size: 13px;
+    color: #44C6EF54;
+    margin: 0 0 4px 4px;
+}
+
+.input-style-crash {
+    width: 347px;
+    height: 40px;
+    border: 2px solid #2B3458;
+    border-radius: 20px;
+    background: #22252F;
+}
+
+.diamond-input-crash {
+    margin-left: -25px;
+}
+
+.input-style-crash__text {
+    font-family: 'Montserrat Alternates';
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+    padding-left: 35px;
+}
+
+.crash-input-deposit .diamonds-btns__display {
+    margin: 8px 0 19px -22px;
+}
+
+.crash-input-deposit #max-button {
+    padding: 4px 10px;
+}
+
+.crash-input-deposit .diamond-icon {
+    left: 12px;
+}
+
+.crash-game-window__btn-start {
+    display: flex;
+    justify-content: center;
+    margin-top: 23px;
+}
+
+.crash-game-window__btn-start button {
+    background: #EF4444;
+    border: unset;
+    border-radius: 10px;
+    width: 300px;
+    height: 60px;
+    font-family: 'Montserrat Alternates';
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.crash-window__line {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    top: -415px;
+    left: 10%;
+    z-index: 1;
+}
+
+.line-crash {
+    width: 2px;
+    height: 474px;
+    background: #30364F;
+}
+
+/* /Crash-Window */
+
+/* Crash-Graph */
+
+/* /Crash-Graph */
+
+/* Crash-Players */
+
+.crash-game__players {
+    z-index: 2;
+    background: #000;
+}
+
+/* /Crash-Players */
