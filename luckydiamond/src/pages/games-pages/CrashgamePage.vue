@@ -108,12 +108,13 @@ export default {
         const dataCrashParse = JSON.parse(dataCrash)
 
         this.crashObject = dataCrashParse
-        console.log(this.crashObject)
+        // console.log(this.crashObject)
       }
       catch (e) {
        console.error(e)
       }
-      if (this.crashObject.Status === 'GameEnd' && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
+
+      if (this.crashObject.Status === 'GameEnd' && this.startGame === true && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
         this.startGame = false
       }
       if (
@@ -123,6 +124,13 @@ export default {
           this.crashObject.Players.some(player => player.UserGameState !==  'Win')
       ) {
         this.startGame = true;
+
+        let User = this.crashObject.Players.find(player => player.UserName === GetCookie('SpUserName'))
+        console.log(User)
+        if (User) {
+          this.amountDeposit = User.Bid
+          User = null
+        }
       }
     })
   },
