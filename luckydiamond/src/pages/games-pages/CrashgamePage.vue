@@ -40,6 +40,7 @@
             </div>
             <div class="crash-game-window__btn-start">
               <button @click="clickPlayBtn" :class="{ 'animate-start-btn': ErrorClick }">Начать игру</button>
+              <button>Забрать</button>
             </div>
             <div class="crash-window__line">
               <div class="line-crash">

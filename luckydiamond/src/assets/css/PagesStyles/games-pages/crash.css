@@ -97,11 +97,13 @@
 
 .crash-game-window__btn-start {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 23px;
 }
 
 .crash-game-window__btn-start button {
+    margin-bottom: 5px;
     background: #EF4444;
     border: unset;
     border-radius: 10px;
