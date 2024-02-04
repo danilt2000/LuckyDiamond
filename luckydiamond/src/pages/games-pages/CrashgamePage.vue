@@ -38,6 +38,9 @@
             <div class="error-block" v-if="ErrorClick">
               <h2>Ошибка при заполнении</h2>
             </div>
+            <div class="error-block" v-if="ErrorJoin">
+              <h2>Игра уже начата или только закончилась</h2>
+            </div>
             <div class="crash-game-window__btn-start">
               <button @click="clickPlayBtn" :class="{ 'animate-start-btn': ErrorClick }">Начать игру</button>
               <button>Забрать</button>
@@ -79,6 +82,7 @@ import SaperNumbers from "@/mocks/SaperNumbers";
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 import {GetCookie} from "@/assets/js/storage/CookieStorage";
 import {eventBus} from "@/main";
+import {JoinCrashGame} from "@/assets/js/games/crash/CrashAPI";
 
 export default {
   components: { HeaderComponent, AsideBarComponent, ChatComponent, CrashGraphComponent },
@@ -87,10 +91,12 @@ export default {
       SaperNumbers,
       clickedBtn: null,
       ErrorClick: false,
+      ErrorJoin: false,
       balance: 0,
       amountDeposit: 0,
       autoRatio: '',
-      crashObject: ''
+      crashObject: '',
+      startGame: false
     }
   },
   setup() {
@@ -102,7 +108,6 @@ export default {
         const dataCrashParse = JSON.parse(dataCrash)
 
         this.crashObject = dataCrashParse
-        console.log(dataCrashParse)
       }
       catch (e) {
        console.error(e)
@@ -181,17 +186,34 @@ export default {
     }
   },
   methods: {
-    clickPlayBtn() {
+    async clickPlayBtn() {
       this.v$.$touch()
 
       if (this.v$.amountDeposit.$error) {
         this.errorPlayButton()
       }
-      if (this.v$.autoRatio.$error) {
-        this.errorPlayButton()
-      }
-      if (!this.v$.amountDeposit.$error && this.v$.autoRatio.$error) {
-      //
+      // if (this.v$.autoRatio.$error) {
+      //   this.errorPlayButton()
+      // }
+      //  && this.v$.autoRatio.$error
+      if (!this.v$.amountDeposit.$error) {
+        const userData = {
+          searchToken: GetCookie('SearchToken'),
+          authtoken: GetCookie('AUTHTOKEN')
+        }
+
+        await JoinCrashGame(userData, this.amountDeposit)
+            .then((response) => {
+              console.log(response)
+              if (response === `You can't join to started or ended game`) {
+                this.ErrorJoin = true
+
+                setTimeout(() => {
+                  this.ErrorJoin = false
+                }, 2000)
+              }
+              this.startGame = true
+            })
       }
     },
     errorPlayButton() {
