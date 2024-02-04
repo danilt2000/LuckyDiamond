@@ -103,14 +103,13 @@
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
-import ChatComponent from "@/components/ChatComponent.vue";
 import HomemobilePage from "@/pages/adaptive-pages/HomemobilePage.vue";
 import GameModes from "@/mocks/GameModes";
 import '@/assets/css/PagesStyles/home.css'
 
 export default {
   name: 'HomePage',
-  components: { AsideBarComponent, HeaderComponent, ChatComponent, HomemobilePage },
+  components: { AsideBarComponent, HeaderComponent,  HomemobilePage },
   data() {
     return {
       GameModes,

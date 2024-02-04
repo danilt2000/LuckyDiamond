@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="developer-card__content" v-else>
+      <div class="developer-card__content_down" v-else>
         <div class="developer-card__height" :style="{ background: developer.background }">
           <div class="developer-card-height__text">
             <div class="developer-card-height__about-text">
@@ -34,14 +34,13 @@
               <img :src="require(`@/assets/icons-developcard/${developer.technologyIcons[index]}.png`)" :alt="techText">
               <p>{{ techText }}</p>
             </div>
+          </div>
+          <div class="developer-card-height__skin">
             <div class="developer-card__socials">
               <div v-for="(socialIcon, index) in developer.socialIcons" :key="index" class="social__content">
                 <img :src="require(`@/assets/icons-developcard/${developer.socialIcons[index]}.png`)">
               </div>
             </div>
-          </div>
-          <div class="developer-card-height__skin">
-            <img :src="`https://avatar.spworlds.ru/front/256/${developer.username}`" :alt="developer.username">
           </div>
         </div>
       </div>
