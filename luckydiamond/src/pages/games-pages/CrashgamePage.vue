@@ -74,6 +74,7 @@ import '@/assets/css/PagesStyles/games-pages/crash.css'
 import SaperNumbers from "@/mocks/SaperNumbers";
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 import {GetCookie} from "@/assets/js/storage/CookieStorage";
+import {eventBus} from "@/main";
 
 export default {
   components: { HeaderComponent, AsideBarComponent, ChatComponent, CrashGraphComponent },
@@ -81,11 +82,25 @@ export default {
     return {
       SaperNumbers,
       amountDeposit: 0,
-      autoRatio: 0
+      autoRatio: 0,
+      timerGame: ''
     }
   },
   setup() {
     return { v$: useVuelidate() }
+  },
+  mounted() {
+    eventBus.on('crash', (dataCrash) => {
+      try {
+        const dataCrashParse = JSON.parse(dataCrash)
+
+        this.timerGame = dataCrashParse.WaitingTime
+        console.log(this.timerGame)
+      }
+      catch (e) {
+       console.error(e)
+      }
+    })
   },
   validations() {
     return {
