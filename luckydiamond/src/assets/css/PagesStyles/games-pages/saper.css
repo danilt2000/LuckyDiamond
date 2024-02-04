@@ -1,17 +1,3 @@
-button {
-    cursor: pointer;
-}
-
-button:focus {
-    outline: none;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
 .saper {
     display: flex;
     padding-top: 10%;
