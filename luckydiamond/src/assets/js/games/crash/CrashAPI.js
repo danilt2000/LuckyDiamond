@@ -40,7 +40,7 @@ export async function ExitAndTakeMoneyFromCrashGame(userData) {
     }
 
     try {
-        const response = await fetch(`${BackendApiUrl}/GameCrash/ExitAndTakeMoneyFromCrash`, {
+        const response = await fetch(`${BackendApiUrl}/GameCrash/ExitAndTakeMoneyFromCrashGame`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

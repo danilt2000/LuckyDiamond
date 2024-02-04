@@ -48,8 +48,18 @@ export default {
           },
         },
         scales: {
+          x: {
+            grid: {
+              display: false
+            }
+          },
+          y: {
+            grid: {
+              display: false
+            }
+          }
         },
-        animation: false, // Отключаем анимацию
+        animation: false,
       },
     };
   },

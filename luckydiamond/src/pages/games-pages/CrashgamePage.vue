@@ -28,22 +28,13 @@
                   </div>
                 </div>
               </div>
-              <div class="crash-ratio">
-                <h3 class="crash-label">Автовывод</h3>
-                <div class="crash-input-ratio">
-                  <input class="input-style-crash input-style-crash__text" type="number" v-model="autoRatio" placeholder="Введите коэффициент">
-                </div>
-              </div>
             </div>
             <div class="error-block" v-if="ErrorClick">
-              <h2>Ошибка при заполнении</h2>
-            </div>
-            <div class="error-block" v-if="ErrorJoin">
-              <h2>Игра уже начата или только закончилась</h2>
+              <h2>{{ textError }}</h2>
             </div>
             <div class="crash-game-window__btn-start">
-              <button @click="clickPlayBtn" :class="{ 'animate-start-btn': ErrorClick }">Начать игру</button>
-              <button>Забрать</button>
+              <button v-if="startGame && crashObject.Status !== 'WaitingForPlayers'" @click="clickClaimDep">Забрать</button>
+              <button v-else @click="clickPlayBtn" :class="{ 'animate-start-btn': ErrorClick }">Начать игру</button>
             </div>
             <div class="crash-window__line">
               <div class="line-crash">
@@ -57,9 +48,18 @@
         </div>
       </section>
 
-      <section class="crash-game__players">
+      <section class="crash-game__players" v-if="crashObject && crashObject.Players">
         <div class="crash-game-players__content">
-
+          <ul v-if="crashObject.Players.length">
+            <li v-for="(player, index) in crashObject.Players" :key="index">
+              <h2>{{ player.UserName }}</h2>
+              <h2>{{ player.Bid }}</h2>
+              <div class="win" v-if="player.UserGameState === 'Win'">
+                <h2>{{ player.WinningMoney }}</h2>
+                <h2>{{ player.WinningX }}</h2>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </div>
@@ -82,7 +82,7 @@ import SaperNumbers from "@/mocks/SaperNumbers";
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 import {GetCookie} from "@/assets/js/storage/CookieStorage";
 import {eventBus} from "@/main";
-import {JoinCrashGame} from "@/assets/js/games/crash/CrashAPI";
+import {ExitAndTakeMoneyFromCrashGame, JoinCrashGame} from "@/assets/js/games/crash/CrashAPI";
 
 export default {
   components: { HeaderComponent, AsideBarComponent, ChatComponent, CrashGraphComponent },
@@ -94,9 +94,9 @@ export default {
       ErrorJoin: false,
       balance: 0,
       amountDeposit: 0,
-      autoRatio: '',
       crashObject: '',
-      startGame: false
+      textError: '',
+      startGame: false,
     }
   },
   setup() {
@@ -108,16 +108,19 @@ export default {
         const dataCrashParse = JSON.parse(dataCrash)
 
         this.crashObject = dataCrashParse
+        console.log(this.crashObject)
       }
       catch (e) {
        console.error(e)
+      }
+      if (this.crashObject.Status === 'GameEnd' && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
+        this.startGame = false
       }
     })
   },
   validations() {
     return {
       amountDeposit: { required, numeric, minValue: minValue(1), maxValue: maxValue(this.balance), integer },
-      autoRatio: { numeric, minValue: minValue(1.01) }
     }
   },
   watch: {
@@ -190,12 +193,10 @@ export default {
       this.v$.$touch()
 
       if (this.v$.amountDeposit.$error) {
+        this.textError = 'Ошибка введении данных'
         this.errorPlayButton()
       }
-      // if (this.v$.autoRatio.$error) {
-      //   this.errorPlayButton()
-      // }
-      //  && this.v$.autoRatio.$error
+
       if (!this.v$.amountDeposit.$error) {
         const userData = {
           searchToken: GetCookie('SearchToken'),
@@ -205,12 +206,18 @@ export default {
         await JoinCrashGame(userData, this.amountDeposit)
             .then((response) => {
               console.log(response)
-              if (response === `You can't join to started or ended game`) {
-                this.ErrorJoin = true
+              if (response === `You can't join to started or ended game` || response === 'Player alredy in the game.') {
 
-                setTimeout(() => {
-                  this.ErrorJoin = false
-                }, 2000)
+                if (response === `You can't join to started or ended game`) {
+                  this.textError = 'Игра уже началась или только закончилась!'
+                  this.errorPlayButton()
+                }
+                else if (response === 'Player alredy in the game.') {
+                  this.textError = 'Вы уже в игре!'
+                  this.errorPlayButton()
+                }
+
+                return
               }
               this.startGame = true
             })
@@ -220,7 +227,23 @@ export default {
       this.ErrorClick = true
       setTimeout(() => {
         this.ErrorClick = false
+        this.textError = ''
       }, 2000)
+    },
+    async clickClaimDep() {
+      if (this.startGame === true) {
+        const userData = {
+          searchToken: GetCookie('SearchToken'),
+          authtoken: GetCookie('AUTHTOKEN')
+        }
+
+        await ExitAndTakeMoneyFromCrashGame(userData)
+            .then((response) => {
+              console.log(response)
+              this.startGame = false
+              return eventBus.emit('Updatebalance')
+            })
+      }
     },
     async clickedBtnChoice(index, content) {
       this.clickedBtn = index

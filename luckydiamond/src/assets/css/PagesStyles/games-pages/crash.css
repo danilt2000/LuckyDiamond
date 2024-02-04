@@ -124,26 +124,29 @@
     height: 474px;
     background: #30364F;
     position: relative;
-    top: -415px;
+    top: -342px;
     left: 10%;
     z-index: 1;
 }
 
 .crash-content .error-block {
-    top: 500px;
+    top: 420px;
 }
 
 /* /Crash-Window */
 
 /* Crash-Graph */
 
-.chart-container {
+.crash-game__graph {
     width: 800px;
-    top: 10%;
-    left: 10%;
+    top: 200px;
+    left: 600px;
+    position: fixed;
 }
 
+
 .chart-container canvas {
+    background-color: transparent !important;
     width: 800px !important;
     height: 400px !important;
     transition: .3s ease;
