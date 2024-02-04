@@ -5,7 +5,7 @@
       :options="options"
       v-else
   />
-  <h2>{{ crashdata.CurrentX ? crashdata.CurrentX.toFixed(2) : '' }}</h2>
+  <h2 :class="{ 'lost-ratio' : crashdata.Status === 'GameEnd' }">{{ crashdata.CurrentX ? crashdata.CurrentX.toFixed(2) : '' }}</h2>
 </template>
 
 <script>
@@ -72,7 +72,7 @@ export default {
           {
             label: "Foo",
             data: this.dataValues,
-            borderColor: "#4E5EF2",
+            borderColor: '#4E5EF2',
             pointStyle: "circle",
             pointRadius: 0,
             pointHoverRadius: 2,

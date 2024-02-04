@@ -152,6 +152,11 @@
     transition: .3s ease;
 }
 
+.lost-ratio {
+    color: #EF4444;
+    font-weight: 700;
+}
+
 /* /Crash-Graph */
 
 /* Crash-Players */
