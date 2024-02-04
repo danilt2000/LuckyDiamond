@@ -1,0 +1,16 @@
+.crash-content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "crashgame crashgame crashgame crashgame crashgame crashgame"
+    "crashgame crashgame crashgame crashgame crashgame crashgame"
+    "crashgame crashgame crashgame crashgame crashgame crashgame"
+    "crashplayers crashplayers crashplayers crashplayers crashplayers crashplayers"
+    "crashplayers crashplayers crashplayers crashplayers crashplayers crashplayers";
+    background: #17181C;
+    box-shadow: 0 4px #00000040;
+    border-radius: 20px;
+}

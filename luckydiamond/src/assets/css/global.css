@@ -82,12 +82,12 @@ body, html {
     grid-auto-flow: row;
     grid-template-areas:
     "menu header header header header header header"
-    "menu crashgame crashgame crashgame crashgame crashgame chat"
-    "menu crashgame crashgame crashgame crashgame crashgame chat"
-    "menu crashgame crashgame crashgame crashgame crashgame chat"
-    "menu crashgame crashgame crashgame crashgame crashgame chat"
-    "menu crashplayers crashplayers crashplayers crashplayers crashplayers chat"
-    "menu crashplayers crashplayers crashplayers crashplayers crashplayers chat";
+    "menu crash crash crash crash crash chat"
+    "menu crash crash crash crash crash chat"
+    "menu crash crash crash crash crash chat"
+    "menu crash crash crash crash crash chat"
+    "menu crash crash crash crash crash chat"
+    "menu crash crash crash crash crash chat";
 }
 
 /* /Content Grid */
@@ -177,13 +177,15 @@ body, html {
 
 /* Crash */
 
+.crash-content {
+    grid-area: crash;
+}
+
 .crash-game {
     grid-area: crashgame;
-    background: #8f07ff;
 }
 
 .crash-game__players {
-    background: #1900ff;
     grid-area: crashplayers;
 }
 
