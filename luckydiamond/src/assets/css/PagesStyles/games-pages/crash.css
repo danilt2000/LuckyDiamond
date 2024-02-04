@@ -183,3 +183,48 @@
 }
 
 /* /Notification */
+
+/* Media */
+
+@media screen and (max-width: 1740px) and (min-width: 1400px) {
+    .crash-content .error-block {
+        top: 410px;
+    }
+    .crash-game__graph {
+        width: 500px;
+        height: 500px;
+        top: 190px;
+        left: 570px;
+    }
+    .crash-input-deposit .btn-style__diamonds button {
+        padding: 4px 18px !important;
+    }
+    .chart-container {
+        width: 500px !important;
+        height: 500px !important;
+    }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1200px) {
+    .header__nav nav a {
+        font-size: 16px;
+    }
+    .crash-content .error-block {
+        top: 400px;
+    }
+    .crash-game__graph {
+        width: 400px;
+        height: 400px;
+        top: 180px;
+        left: 550px;
+    }
+    .chart-container {
+        width: 400px !important;
+        height: 400px !important;
+    }
+    .crash-input-deposit .btn-style__diamonds button {
+        padding: 4px 18px !important;
+    }
+}
+
+/* /Media */
