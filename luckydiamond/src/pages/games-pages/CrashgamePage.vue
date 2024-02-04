@@ -35,8 +35,11 @@
                 </div>
               </div>
             </div>
+            <div class="error-block" v-if="ErrorClick">
+              <h2>Ошибка при заполнении</h2>
+            </div>
             <div class="crash-game-window__btn-start">
-              <button>Начать игру</button>
+              <button @click="clickPlayBtn" :class="{ 'animate-start-btn': ErrorClick }">Начать игру</button>
             </div>
             <div class="crash-window__line">
               <div class="line-crash">
@@ -82,8 +85,10 @@ export default {
     return {
       SaperNumbers,
       clickedBtn: null,
+      ErrorClick: false,
+      balance: 0,
       amountDeposit: 0,
-      autoRatio: 0,
+      autoRatio: '',
       crashObject: ''
     }
   },
@@ -105,7 +110,7 @@ export default {
   },
   validations() {
     return {
-      amountDeposit: { required, numeric, minValue: minValue(1), maxValue: maxValue(100), integer },
+      amountDeposit: { required, numeric, minValue: minValue(1), maxValue: maxValue(this.balance), integer },
       autoRatio: { numeric, minValue: minValue(1.01) }
     }
   },
@@ -166,7 +171,34 @@ export default {
       }
     },
   },
+  async created() {
+    if (GetCookie('AUTHTOKEN') && GetCookie('SearchToken')) {
+      await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+          .then((response) => {
+            this.balance = response.currentMoney
+          })
+    }
+  },
   methods: {
+    clickPlayBtn() {
+      this.v$.$touch()
+
+      if (this.v$.amountDeposit.$error) {
+        this.errorPlayButton()
+      }
+      if (this.v$.autoRatio.$error) {
+        this.errorPlayButton()
+      }
+      if (!this.v$.amountDeposit.$error && this.v$.autoRatio.$error) {
+      //
+      }
+    },
+    errorPlayButton() {
+      this.ErrorClick = true
+      setTimeout(() => {
+        this.ErrorClick = false
+      }, 2000)
+    },
     async clickedBtnChoice(index, content) {
       this.clickedBtn = index
       if (content === 'max') {

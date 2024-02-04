@@ -127,6 +127,10 @@
     z-index: 1;
 }
 
+.crash-content .error-block {
+    top: 500px;
+}
+
 /* /Crash-Window */
 
 /* Crash-Graph */
