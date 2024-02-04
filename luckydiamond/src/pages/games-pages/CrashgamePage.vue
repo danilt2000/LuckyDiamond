@@ -116,6 +116,14 @@ export default {
       if (this.crashObject.Status === 'GameEnd' && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
         this.startGame = false
       }
+      if (
+          this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName')) &&
+          this.startGame === false &&
+          this.crashObject.Status !== 'GameEnd' &&
+          this.crashObject.Players.some(player => player.UserGameState !==  'Win')
+      ) {
+        this.startGame = true;
+      }
     })
   },
   validations() {
