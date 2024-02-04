@@ -73,6 +73,22 @@ body, html {
     grid-gap: 10px;
 }
 
+.grid-crash {
+    display: grid;
+    grid-template-columns: .35fr repeat(5, 1fr) 1fr;
+    grid-template-rows: auto 0fr repeat(4, 1fr);
+    grid-auto-columns: 1fr;
+    gap: 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "menu header header header header header header"
+    "menu crashgame crashgame crashgame crashgame crashgame chat"
+    "menu crashgame crashgame crashgame crashgame crashgame chat"
+    "menu crashgame crashgame crashgame crashgame crashgame chat"
+    "menu crashgame crashgame crashgame crashgame crashgame chat"
+    "menu crashplayers crashplayers crashplayers crashplayers crashplayers chat"
+    "menu crashplayers crashplayers crashplayers crashplayers crashplayers chat";
+}
 
 /* /Content Grid */
 
@@ -158,6 +174,20 @@ body, html {
 }
 
 /* /Saper */
+
+/* Crash */
+
+.crash-game {
+    grid-area: crashgame;
+    background: #8f07ff;
+}
+
+.crash-game__players {
+    background: #1900ff;
+    grid-area: crashplayers;
+}
+
+/* /Crash */
 
 /* Media */
 
