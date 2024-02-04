@@ -63,7 +63,9 @@
         </div>
       </section>
     </div>
-
+    <div class="notification-crash" v-if="notificationShow">
+      <h2>{{ notificationText }}</h2>
+    </div>
   </div>
 </template>
 
@@ -92,10 +94,12 @@ export default {
       clickedBtn: null,
       ErrorClick: false,
       ErrorJoin: false,
+      notificationShow: false,
       balance: 0,
       amountDeposit: 0,
       crashObject: '',
       textError: '',
+      notificationText: '',
       startGame: false,
     }
   },
@@ -246,6 +250,15 @@ export default {
 
                 return
               }
+              else if (response === 'Success') {
+                this.notificationText = 'Успешное добавление в очередь'
+                this.notificationShow = true
+
+                setTimeout(() => {
+                  this.notificationText = ''
+                  this.notificationShow = false
+                }, 1000)
+              }
               this.startGame = true
             })
       }
@@ -268,13 +281,19 @@ export default {
             .then((response) => {
               console.log(response)
               this.startGame = false
+
+              if (response.startsWith('Win')) {
+                this.notificationText = 'Деньги успешно зачислены. Игра покинута.'
+                this.notificationShow = true
+
+                setTimeout(() => {
+                  this.notificationText = ''
+                  this.notificationShow = false
+                }, 1500)
+              }
+
               this.updateUserMoney()
             })
-        // await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
-        //     .then((response) => {
-        //       this.balance = response.currentMoney
-        //       return eventBus.emit('Updatebalance')
-        //     })
       }
     },
     async clickedBtnChoice(index, content) {

@@ -164,3 +164,17 @@
 }
 
 /* /Crash-Players */
+
+/* Notification */
+
+.notification-crash {
+    text-align: center;
+    top: 20%;
+    left: 50%;
+    position: absolute;
+    background: #000;
+    width: 200px;
+    height: 40px;
+}
+
+/* /Notification */
