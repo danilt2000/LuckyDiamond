@@ -51,24 +51,24 @@
       <section class="crash-game__players" v-if="crashObject && crashObject.Players">
         <div class="crash-game-players__content">
           <ul class="user-list" v-if="crashObject.Players.length">
-            <li class="user-crash" v-for="(player, index) in crashObject.Players" :key="index">
-              <img class="user-crash__icon" :src="`https://avatar.spworlds.ru/face/55/${player.UserName}`">
-              <div class="user-crash__content">
-                <h3 class="user-name-crash">{{ player.UserName }}</h3>
-                <div class="user-crah__status">
-                  <div class="status-balance">
-                    <h2 class="user-bid-crash">{{ player.Bid }}</h2>
-                    <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
-                  </div>
-                  <div class="status-game-user">
-                    <h3 v-if="crashObject.Status === 'WaitingForPlayers' && player.WinningX <= 0 || crashObject.Status === 'InGame' && player.WinningX <= 0" class="status-game-user__style">В&nbsp;игре</h3>
-                    <h3 v-if="crashObject.Status === 'GameEnd' && player.WinningX <= 0" class="status-game-user__style lose-game-crash">Проиграл</h3>
-                    <div class="win-status-crash" v-if="player.WinningX >= 1">
-                      <h3 class="win-text-crash">{{ player.WinningX.toFixed(2) }}</h3>
-                      <h2 class="user-win-money">{{ player.WinningMoney.toFixed(2) }}</h2>
-                      <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
-                    </div>
-                  </div>
+            <li class="user-crash" v-for="(player, index) in crashObject.Players.sort((a, b) => b.Bid - a.Bid)" :key="index">
+              <div class="user-crash-name">
+                <img class="user-crash__icon" :src="`https://avatar.spworlds.ru/face/55/${player.UserName}`">
+                <h2>{{ player.UserName }}</h2>
+              </div>
+              <div class="user-crash-status">
+                <div class="user-crash-bid">
+                  <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
+                  <h2>{{ player.Bid }}</h2>
+                </div>
+                <div class="user-crash-game__status">
+                  <h2 class="ingame-crash" v-if="crashObject.Status === 'WaitingForPlayers' && player.WinningX <= 0 || crashObject.Status === 'InGame' && player.WinningX <= 0">В&nbsp;игре</h2>
+                  <h2 class="lostgame-crash" v-if="crashObject.Status === 'GameEnd' && player.WinningX <= 0">Проиграл</h2>
+                  <h2 class="wingame-crash" v-if="player.WinningX >= 1">{{ player.WinningX.toFixed(2) }}x</h2>
+                </div>
+                <div class="user-crash-game__winmoney" v-if="player.WinningX >= 1">
+                  <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
+                  <h2>{{ player.WinningMoney.toFixed(2) }}</h2>
                 </div>
               </div>
             </li>
