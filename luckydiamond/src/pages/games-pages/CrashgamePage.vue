@@ -70,6 +70,10 @@
                   <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
                   <h2>{{ player.WinningMoney.toFixed(2) }}</h2>
                 </div>
+                <div class="user-crash-game__winmoney lose-game" v-if="player.WinningX <= 0 && crashObject.Status === 'GameEnd'">
+                  <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
+                  <h2>-{{ player.Bid }}.00</h2>
+                </div>
               </div>
             </li>
           </ul>

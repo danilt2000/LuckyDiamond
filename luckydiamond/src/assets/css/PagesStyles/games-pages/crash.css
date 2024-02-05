@@ -180,7 +180,7 @@
 }
 
 .user-crash {
-    background: #000000;
+    background: #1d1f24;
     width: 800px;
     margin: 10px auto 0 auto;
     display: grid;
@@ -282,6 +282,10 @@
     font-family: 'Montserrat';
     font-size: 16px;
     font-weight: 700;
+}
+
+.lose-game h2 {
+    color: #EF4444 !important;
 }
 
 .user-crash-game__winmoney img {
