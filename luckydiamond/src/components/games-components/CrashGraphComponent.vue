@@ -1,11 +1,11 @@
 <template>
-  <div class="time" v-if="crashdata.Status === 'WaitingForPlayers'"><h2>{{ crashdata.WaitingTime ? crashdata.WaitingTime.toFixed(1) : '' }}</h2></div>
+  <div class="time" v-if="crashdata.Status === 'WaitingForPlayers'"><h2>{{ crashdata.WaitingTime ? crashdata.WaitingTime.toFixed(1) : '' }} сек.</h2></div>
   <LineChart
       :chart-data="data"
       :options="options"
       v-else
   />
-  <h2 class="ratio" :class="{ 'lost-ratio' : crashdata.Status === 'GameEnd' }">{{ crashdata.CurrentX ? crashdata.CurrentX.toFixed(2) : '' }}</h2>
+  <h2 class="ratio" :class="{ 'lost-ratio' : crashdata.Status === 'GameEnd' }">{{ crashdata.CurrentX ? crashdata.CurrentX.toFixed(2) : '' }}x</h2>
 </template>
 
 <script>
