@@ -292,6 +292,23 @@
     margin-top: 7px;
 }
 
+.ratio {
+    position: relative;
+    left: 50%;
+    top: -390px;
+    font-size: 34px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+}
+
+.time {
+    position: relative;
+    left: 50%;
+    font-size: 34px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+}
+
 /* /Crash-Players */
 
 /* Notification */
