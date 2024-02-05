@@ -67,7 +67,7 @@
     width: 347px;
     height: 40px;
     border: 2px solid #2B3458;
-    border-radius: 20px;
+    border-radius: 15px;
     background: #22252F;
 }
 
@@ -163,9 +163,128 @@
 
 .crash-game__players {
     z-index: 2;
-    background: #000;
+    background: #22252F;
+    height: 91%;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.crash-game-players__content {
+    background: #1D1F24;
+    border-radius: 15px;
+    width: 98%;
+    height: 270px;
+    margin: 20px auto 0 auto;
     overflow-y: auto;
-    height: 300px;
+}
+
+.user-list {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: 90%;
+    flex-direction: row;
+}
+
+.user-crash {
+    margin-top: 20px;
+    margin-left: 5%;
+    display: flex;
+    width: 300px;
+}
+
+.user-crash__icon {
+    width: 40px;
+    height: 40px;
+}
+
+.user-crash__content {
+    display: flex;
+    align-items: center;
+}
+
+.user-crash__content .user-name-crash {
+    color: #61647F;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.user-crah__status {
+    display: flex;
+    align-items: center;
+}
+
+.status-balance {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+.status-balance .user-bid-crash {
+    margin: 0 5px 0 30px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 700;
+    color: #848484;
+}
+
+.status-balance img {
+    margin-top: 7px;
+}
+
+.status-game-user {
+    margin-left: 5%;
+}
+
+.status-game-user__style {
+    margin-right: 15px;
+    color: #61647F;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 15px;
+    padding: 2px 4px;
+    background: #22252F;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 5px;
+}
+
+.lose-game-crash {
+    color: #fff !important;
+    background: #EF4847 !important;
+}
+
+.win-status-crash {
+    display: flex;
+    align-items: center;
+}
+
+.win-status-crash .win-text-crash {
+    color: #28BD49;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    text-align: center;
+    background: #1D1F24;
+    border: 1px solid #28BD49;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: 2px 4px;
+}
+
+.user-win-money {
+    margin: 0 5px 0 15px;
+    color: #28BD49;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
+.win-status-crash img {
+    margin-top: 7px;
 }
 
 /* /Crash-Players */
