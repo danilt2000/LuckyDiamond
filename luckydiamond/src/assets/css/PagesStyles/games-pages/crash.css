@@ -372,4 +372,65 @@
     }
 }
 
+@media screen and (max-height: 950px) and (min-height: 915px) {
+    .grid-crash .chat {
+        height: 92.5%;
+    }
+    .crash-game__players {
+        height: 85%;
+    }
+    .crash-game-players__content {
+        height: 85%;
+    }
+}
+
+@media screen and (max-height: 915px) and (min-height: 850px) {
+    .grid-crash .chat {
+        height: 100%;
+    }
+    .chat__content--users {
+        height: 58vh;
+    }
+    .crash-game {
+        height: 40vh;
+    }
+    .crash-game__players {
+        height: 90%;
+    }
+    .crash-game-players__content {
+        height: 87%;
+    }
+    .crash-game__graph {
+        height: 100px !important;
+        top: 200px;
+    }
+    #line-chart {
+        height: 300px !important;
+    }
+    .ratio {
+        top: -320px;
+    }
+    .time {
+        left: 40%;
+    }
+    .line-crash {
+        height: 366px;
+    }
+}
+
+/*.crash-game__graph {*/
+/*    width: 800px;*/
+/*    top: 200px;*/
+/*    left: 600px;*/
+/*    position: fixed;*/
+/*}*/
+
+
+/*.chart-container canvas {*/
+/*    background-color: transparent !important;*/
+/*    width: 800px !important;*/
+/*    height: 400px !important;*/
+/*    transition: .3s ease;*/
+/*}*/
+
 /* /Media */
