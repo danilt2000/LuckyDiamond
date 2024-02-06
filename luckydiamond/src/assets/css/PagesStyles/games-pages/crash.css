@@ -377,10 +377,10 @@
         height: 92.5%;
     }
     .crash-game__players {
-        height: 85%;
+        height: 270px;
     }
     .crash-game-players__content {
-        height: 85%;
+        height: 230px;
     }
     .ratio {
         top: -380px;
@@ -401,10 +401,10 @@
         height: 40vh;
     }
     .crash-game__players {
-        height: 90%;
+        height: 290px;
     }
     .crash-game-players__content {
-        height: 87%;
+        height: 250px;
     }
     .crash-game__graph {
         height: 100px !important;
