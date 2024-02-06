@@ -382,6 +382,12 @@
     .crash-game-players__content {
         height: 85%;
     }
+    .ratio {
+        top: -380px;
+    }
+    .time {
+        left: 45%;
+    }
 }
 
 @media screen and (max-height: 915px) and (min-height: 850px) {
