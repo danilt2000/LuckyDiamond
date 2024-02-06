@@ -425,6 +425,7 @@ export default {
    created() {
     const AUTHTOKEN = GetCookie('AUTHTOKEN')
     const SEARCHTOKEN = GetCookie('SearchToken')
+     this.amountCrystals = 5
 
     if (AUTHTOKEN !== null && SEARCHTOKEN !== null) {
       try {
