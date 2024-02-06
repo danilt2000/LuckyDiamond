@@ -15,6 +15,10 @@
     border-radius: 20px;
 }
 
+.grid-crash .chat {
+    height: 96.8%;
+}
+
 .crash-game {
     background: #22252F;
     border-radius: 20px;
