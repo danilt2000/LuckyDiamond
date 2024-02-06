@@ -39,6 +39,7 @@ export default {
   data() {
     return {
       dataValues: [],
+      numberGraph: 1,
       labels: [" "],
       data: null,
       options: {
@@ -95,10 +96,21 @@ export default {
       if (this.crashdata.Status === 'WaitingForPlayers') {
         this.data = this.chartData;
         this.labels = [""];
-        this.dataValues = [1, 1];
+        this.dataValues = [this.numberGraph, this.numberGraph];
       }
       else if (this.crashdata.Status === 'InGame') {
-        nextDataValue = this.crashdata.CurrentX
+        if (this.dataValues.length === 0) {
+          this.dataValues = [this.crashdata.CurrentX, this.crashdata.CurrentX]
+          nextDataValue = this.crashdata.CurrentX
+          this.numberGraph = this.crashdata.CurrentX
+
+          this.data = this.chartData
+          this.labels.push("")
+          this.dataValues.push(nextDataValue)
+        }
+
+        this.numberGraph = this.numberGraph + .01
+        nextDataValue = this.numberGraph
 
         this.data = this.chartData;
         this.labels.push("");
@@ -106,6 +118,7 @@ export default {
       }
       else if (this.crashdata.Status === 'GameEnd') {
         this.dataValues = []
+        this.numberGraph = 1
       }
       else {
         console.log('Error game')
