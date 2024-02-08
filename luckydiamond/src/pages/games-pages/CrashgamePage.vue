@@ -33,8 +33,9 @@
               <h2>{{ textError }}</h2>
             </div>
             <div class="crash-game-window__btn-start">
-              <button v-if="startGame && crashObject.Status !== 'WaitingForPlayers'" @click="clickClaimDep">Забрать</button>
-              <button v-else @click="clickPlayBtn" :class="{ 'animate-start-btn': ErrorClick }">Начать игру</button>
+              <button v-if="startGame && crashObject.Status !== 'WaitingForPlayers'" @click="clickClaimDep" class="claim-btn-crash__prize">Забрать {{ prizeUser.toFixed(2) }} АР</button>
+              <button v-if="startGame && crashObject.Status === 'WaitingForPlayers'" class="waiting-btn-crash">Ожидание игроков...</button>
+              <button v-if="!startGame" @click="clickPlayBtn" :class="{ 'animate-start-btn': ErrorClick }">Начать игру</button>
             </div>
             <div class="crash-window__line">
               <div class="line-crash">
@@ -113,6 +114,7 @@ export default {
       crashObject: '',
       textError: '',
       startGame: false,
+      prizeUser: 0,
     }
   },
   setup() {
@@ -130,8 +132,13 @@ export default {
        console.error(e)
       }
 
+      if (this.crashObject.CurrentX !== null && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
+        this.getUserPrizer()
+      }
+
       if (this.crashObject.Status === 'GameEnd' && this.startGame === true && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
         this.startGame = false
+        this.prizeUser = 0
         this.updateUserMoney()
       }
       if (
@@ -229,6 +236,17 @@ export default {
               this.balance = response.currentMoney
               return eventBus.emit('Updatebalance')
             })
+      }
+    },
+    async getUserPrizer() {
+      const currentUser = this.crashObject.Players.find(player => player.UserName === GetCookie('SpUserName'));
+
+      if (currentUser) {
+        setTimeout(async () => {
+          this.prizeUser =  currentUser.Bid * this.crashObject.CurrentX
+        }, 100)
+      } else {
+        return 0
       }
     },
     async clickPlayBtn() {

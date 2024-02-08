@@ -113,9 +113,17 @@
     border-radius: 10px;
     width: 300px;
     height: 60px;
-    font-family: 'Montserrat Alternates';
+    font-family: 'Inter';
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.claim-btn-crash__prize {
+    background: #4E5EF2 !important;
+}
+
+.waiting-btn-crash {
+    background: #3D3F48 !important;
 }
 
 .crash-window__line {
