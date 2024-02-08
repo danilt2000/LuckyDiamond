@@ -33,7 +33,7 @@
               <h2>{{ textError }}</h2>
             </div>
             <div class="crash-game-window__btn-start">
-              <button v-if="startGame && crashObject.Status !== 'WaitingForPlayers'" @click="clickClaimDep" class="claim-btn-crash__prize">Забрать {{ getUserPrize.toFixed(2) }} АР</button>
+              <button v-if="startGame && crashObject.Status !== 'WaitingForPlayers'" @click="clickClaimDep" class="claim-btn-crash__prize">Забрать</button>
               <button v-if="startGame && crashObject.Status === 'WaitingForPlayers'" class="waiting-btn-crash">Ожидание игроков...</button>
               <button v-if="!startGame" :disabled="offBtn" @click="clickPlayBtn" :class="{ 'animate-start-btn': ErrorClick }">Начать игру</button>
             </div>
@@ -59,11 +59,12 @@
                   <h2>{{ player.UserName }}</h2>
                 </div>
                 <div class="user-bid-crash">
-                  <h2>{{ player.Bid }}</h2>
+                  <h2 v-if="player.WinningMoney >= 1" class="wingame__win-bid-crash">{{ player.WinningMoney.toFixed(2) }}</h2>
+                  <h2 v-else>{{ player.Bid }}</h2>
                   <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
                 </div>
                 <div class="user-game-status-crash">
-                  <h2 class="ingame-crash" v-if="crashObject.Status === 'WaitingForPlayers' && player.WinningX <= 0 || crashObject.Status === 'InGame' && player.WinningX <= 0">В&nbsp;игре</h2>
+                  <h2 class="ingame-crash" v-if="crashObject.Status === 'WaitingForPlayers' && player.WinningX <= 1 || crashObject.Status === 'InGame' && player.WinningX <= 0">В&nbsp;игре</h2>
                   <h2 class="lostgame-crash" v-if="crashObject.Status === 'GameEnd' && player.WinningX <= 0">Проиграл</h2>
                   <h2 class="wingame-crash" v-if="player.WinningX >= 1">{{ player.WinningX.toFixed(2) }}x</h2>
                 </div>
@@ -107,18 +108,6 @@ export default {
       textError: '',
       startGame: false,
       offBtn: false
-    }
-  },
-  computed: {
-    getUserPrize() {
-      const currentUser = this.crashObject.Players.find(player => player.UserName === GetCookie('SpUserName'));
-
-      if (currentUser && currentUser.UserGameState !== 'Win') {
-        return currentUser.Bid * this.crashObject.CurrentX
-      }
-      else {
-        return 0
-      }
     }
   },
   setup() {
