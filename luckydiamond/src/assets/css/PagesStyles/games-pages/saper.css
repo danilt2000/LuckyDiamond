@@ -239,7 +239,7 @@
 
 .error-block {
     position: absolute;
-    top: 440px;
+    top: 445px;
 }
 
 .error-block h2 {
@@ -469,7 +469,9 @@
     .saper-game__content {
         width: auto;
     }
-
+    .error-block {
+        top: 425px;
+    }
     .saper-start {
         width: 30%;
         height: 500px;
@@ -548,7 +550,9 @@
     .bg-two {
         left: 300px;
     }
-
+    .error-block {
+        top: 410px;
+    }
     .saper-game__content {
         width: auto;
     }
