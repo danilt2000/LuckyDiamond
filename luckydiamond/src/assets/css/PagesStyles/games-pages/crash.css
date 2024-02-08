@@ -140,8 +140,8 @@
     z-index: 1;
 }
 
-.crash-content .error-block {
-    top: 420px;
+.crash-game__content .error-block {
+    top: 425px;
 }
 
 /* /Crash-Window */
@@ -283,8 +283,8 @@
 /* Media */
 
 @media screen and (max-width: 1740px) and (min-width: 1400px) {
-    .crash-content .error-block {
-        top: 410px;
+    .crash-game__content .error-block{
+        top: 407px !important;
     }
     .crash-game__graph {
         width: 500px;
@@ -305,8 +305,8 @@
     .header__nav nav a {
         font-size: 16px;
     }
-    .crash-content .error-block {
-        top: 400px;
+    .crash-game__content .error-block{
+        top: 405px !important;
     }
     .crash-game__graph {
         width: 400px;
