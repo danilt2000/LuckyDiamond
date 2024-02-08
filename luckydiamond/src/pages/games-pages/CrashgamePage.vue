@@ -53,27 +53,19 @@
         <div class="crash-game-players__content">
           <ul class="user-list" v-if="crashObject.Players.length">
             <li class="user-crash" v-for="(player, index) in crashObject.Players.sort((a, b) => b.Bid - a.Bid)" :key="index">
-              <div class="user-crash-name">
-                <img class="user-crash__icon" :src="`https://avatar.spworlds.ru/face/55/${player.UserName}`">
-                <h2>{{ player.UserName }}</h2>
-              </div>
-              <div class="user-crash-status">
-                <div class="user-crash-bid">
-                  <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
-                  <h2>{{ player.Bid }}</h2>
+              <div class="user-crash-content" :class="{ 'user-crash-content__lose' : crashObject.Status === 'GameEnd' && player.WinningX <= 0, 'user-crash-content__win' : player.WinningX >= 1 }">
+                <div class="user-name-crash">
+                  <img class="user-crash__icon" :src="`https://avatar.spworlds.ru/face/55/${player.UserName}`">
+                  <h2>{{ player.UserName }}</h2>
                 </div>
-                <div class="user-crash-game__status">
+                <div class="user-bid-crash">
+                  <h2>{{ player.Bid }}</h2>
+                  <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
+                </div>
+                <div class="user-game-status-crash">
                   <h2 class="ingame-crash" v-if="crashObject.Status === 'WaitingForPlayers' && player.WinningX <= 0 || crashObject.Status === 'InGame' && player.WinningX <= 0">В&nbsp;игре</h2>
                   <h2 class="lostgame-crash" v-if="crashObject.Status === 'GameEnd' && player.WinningX <= 0">Проиграл</h2>
                   <h2 class="wingame-crash" v-if="player.WinningX >= 1">{{ player.WinningX.toFixed(2) }}x</h2>
-                </div>
-                <div class="user-crash-game__winmoney" v-if="player.WinningX >= 1">
-                  <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
-                  <h2>{{ player.WinningMoney.toFixed(2) }}</h2>
-                </div>
-                <div class="user-crash-game__winmoney lose-game" v-if="player.WinningX <= 0 && crashObject.Status === 'GameEnd'">
-                  <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
-                  <h2>-{{ player.Bid }}.00</h2>
                 </div>
               </div>
             </li>
