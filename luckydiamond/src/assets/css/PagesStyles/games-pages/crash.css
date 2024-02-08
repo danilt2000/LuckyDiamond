@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 10px;
+    gap: 0.625rem; /* 10px в рем */
     grid-auto-flow: row;
     grid-template-areas:
     "crashgame crashgame crashgame crashgame crashgame crashgame"
@@ -11,9 +11,8 @@
     "crashplayers crashplayers crashplayers crashplayers crashplayers crashplayers"
     "crashplayers crashplayers crashplayers crashplayers crashplayers crashplayers";
     background: #17181C;
-    box-shadow: 0 4px #00000040;
-    border-radius: 20px;
-}
+    box-shadow: 0 0.25rem #00000040;
+    border-radius: 1.25rem;
 
 .grid-crash .chat {
     height: 96.8%;
@@ -21,11 +20,11 @@
 
 .crash-game {
     background: #22252F;
-    border-radius: 20px;
-    box-shadow: 4px 4px 4px 0px #00000040;
+    border-radius: 1.25rem;
+    box-shadow: 0.25rem 0.25rem 0.25rem 0px #00000040;
     width: 95%;
-    height: 475px;
-    margin: 41px auto 0 auto;
+    height: 29.6875rem;
+    margin: 2.5625rem auto 0 auto;
 }
 
 .crash-game__content {
@@ -211,7 +210,7 @@
     display: flex;
     align-items: center;
     margin: 10px;
-    grid: username;
+    grid: 'username';
 }
 
 .user-name-crash h2 {
@@ -374,7 +373,7 @@
     .line-crash {
         height: 366px;
     }
-}
+}}
 
 /*.crash-game__graph {*/
 /*    width: 800px;*/

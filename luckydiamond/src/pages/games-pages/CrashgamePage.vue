@@ -113,7 +113,7 @@ export default {
     getUserPrize() {
       const currentUser = this.crashObject.Players.find(player => player.UserName === GetCookie('SpUserName'));
 
-      if (currentUser) {
+      if (currentUser && currentUser.UserGameState !== 'Win') {
         return currentUser.Bid * this.crashObject.CurrentX
       }
       else {
