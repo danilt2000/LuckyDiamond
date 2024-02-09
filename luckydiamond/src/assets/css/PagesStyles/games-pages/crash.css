@@ -420,7 +420,7 @@
 
 @media screen and (min-height: 950px) {
   .chat {
-    height: 97% !important;
+    height: 88vh !important;
   }
 }
 
