@@ -198,3 +198,9 @@
     height: 95%;
   }
 }
+
+@media screen and (min-height: 950px) {
+  .chat {
+    height: 97%;
+  }
+}
