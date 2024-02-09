@@ -33,7 +33,7 @@
               <h2>{{ textError }}</h2>
             </div>
             <div class="crash-game-window__btn-start">
-              <button v-if="startGame && crashObject.Status !== 'WaitingForPlayers'" @click="clickClaimDep" class="claim-btn-crash__prize">Забрать</button>
+              <button v-if="startGame && crashObject.Status !== 'WaitingForPlayers'" @click="clickClaimDep" class="claim-btn-crash__prize">Забрать {{ getUserPrize.toFixed(2) }} АР</button>
               <button v-if="startGame && crashObject.Status === 'WaitingForPlayers'" class="waiting-btn-crash">Ожидание игроков...</button>
               <button v-if="!startGame" :disabled="offBtn" @click="clickPlayBtn" :class="{ 'animate-start-btn': ErrorClick }">Начать игру</button>
             </div>
@@ -113,6 +113,16 @@ export default {
   setup() {
     return { v$: useVuelidate() }
   },
+  computed: {
+    getUserPrize() {
+      let User = this.crashObject.Players.find(player => player.UserName === GetCookie('SpUserName'))
+
+      if (User) {
+        return User.Bid * this.crashObject.CurrentX
+      }
+      return 0
+    }
+  },
   mounted() {
     eventBus.on('crash', (dataCrash) => {
       try {
@@ -127,18 +137,20 @@ export default {
 
       if (this.crashObject.Status === 'GameEnd' && this.startGame === true && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
         this.startGame = false
+        console.log('GAME OVER')
         this.updateUserMoney()
       }
       if (
-          this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName')) &&
+          this.crashObject.Players.some(player =>
+              player.UserName === GetCookie('SpUserName') && player.UserGameState !== 'Win'
+          ) &&
           this.startGame === false &&
-          this.crashObject.Status !== 'GameEnd' &&
-          this.crashObject.Players.some(player => player.UserGameState !==  'Win')
+          this.crashObject.Status !== 'GameEnd'
       ) {
-        this.startGame = true;
+        this.startGame = true
 
         let User = this.crashObject.Players.find(player => player.UserName === GetCookie('SpUserName'))
-        console.log(User)
+        console.log('ОБНОВЛЕНИЕ СТРАНИЦЫ')
         if (User) {
           this.amountDeposit = User.Bid
           User = null
