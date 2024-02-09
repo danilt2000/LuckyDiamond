@@ -195,12 +195,12 @@
 
 @media screen and (min-width: 918px) {
   .chat {
-    height: 95%;
+    height: 95% !important;
   }
 }
 
 @media screen and (min-height: 950px) {
   .chat {
-    height: 97%;
+    height: 97% !important;
   }
 }
