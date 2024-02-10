@@ -19,11 +19,11 @@
         <input :class="{ 'animate-start-btn' : errorDeposit }" class="deposit-amount__input" v-model="amount" type="number" />
         <div class="deposit-btns">
           <ul class="display-btns btns-style-diamonds">
-            <li v-for="number in PaymentsModalNumbers" :key="number">
+            <li v-for="(number, index) in PaymentsModalNumbers" :key="index">
               <button
-                @click="clickedBtnChoice(number, number.diamonds)"
+                @click="clickedBtnChoice(index, number.diamonds)"
                 :class="{
-                  'btn-click': clickedBtn === number,
+                  'btn-click': clickedBtn === index,
                   [number]: clickedBtn === number,
                 }"
               >
@@ -132,7 +132,6 @@ export default {
       amount: 0,
       amountWithdraw: 0,
       balance: 0,
-      amountSave: 1,
       card: '',
       promocode: '',
       promocodeBase: ['ANTI-GRIF'],
@@ -145,8 +144,6 @@ export default {
       captchaToken: null,
       clickedBtn: "",
       url: "",
-      offBtn: true,
-      offAgree: true,
       completeValidtaion: {
         amountsaving: true,
         cardsaving: false,
@@ -174,55 +171,42 @@ export default {
     }
   },
   watch: {
-    // amount(newAmount) {
-    //   this.offBtn = true;
-    //   if (this.amount > 0 && this.amount !== "") {
-    //     setTimeout(() => {
-    //       try {
-    //         GettingMoneyOperation(newAmount).then((response) => {
-    //           console.log("Payments Modal Working!: ", response);
-    //           this.url = response;
-    //           this.offBtn = false;
-    //         });
-    //       } catch (e) {
-    //         console.error("Error in PaymentModal!", e);
-    //       }
-    //     }, 2000);
-    //   }
-    // },
-    // amountWithdraw(newAmount) {
-    //   this.completeValidtaion.amountsaving = false
-    //   if (newAmount > 0) {
-    //     this.amountSave = newAmount
-    //     this.completeValidtaion.amountsaving = true
-    //     console.log(this.completeValidtaion)
-    //   }
-    // },
-    // card(newAmount) {
-    //   this.completeValidtaion.cardsaving = false
-    //   const cardPattern = /^\d{5}$/;
-    //   if(cardPattern.test(newAmount)) {
-    //     this.offAgree = false
-    //     this.completeValidtaion.cardsaving = true
-    //   }
-    // },
-    // agreeUser(newAgree) {
-    //   this.completeValidtaion.agreesaving = false
-    //   if (newAgree !== false) {
-    //     this.completeValidtaion.agreesaving = true
-    //   }
-    // },
+    amount(DepositCount) {
+      console.log(DepositCount)
+      if (![1, 5, 10, 50, 100, 1000].includes(DepositCount)) {
+        this.clickedBtn = null
+      }
+      else {
+        let index
+        switch (DepositCount) {
+          case 1:
+            index = 0
+            break
+          case 5:
+            index = 1
+            break
+          case 10:
+            index = 2
+            break
+          case 50:
+            index = 3
+            break
+          case 100:
+            index = 4
+            break
+          case 1000:
+            index = 5
+            break
+        }
+        this.clickedBtnChoice(index, DepositCount)
+      }
+    },
     completeValidtaion: {
       handler() {
         this.completeValidationCheck()
       },
       deep: true
     }
-  },
-  computed: {
-    checkOffBtn() {
-      return this.checkBtn();
-    },
   },
   methods: {
     closeModal() {
@@ -279,17 +263,6 @@ export default {
       }
     },
     async RedirectedMethodTransferMoneyToSp() {
-      // setTimeout(async () => {
-      //   try {
-      //     WithdrawMoneyOperation(this.amountSave, this.card.toString(), this.captchaToken).then((response) => {
-      //       console.log(`work withdraw - ${response}`)
-      //     })
-      //   }
-      //   catch (e) {
-      //     console.error(`Error in wihdrawmoney operation - ${e}`)
-      //   }
-      //   await this.$emit('notifacetionmoney')
-      // }, 4000)
       this.v$.$touch()
 
       if (this.v$.amountWithdraw.$error) {
@@ -334,17 +307,10 @@ export default {
             })
       }
     },
-    // checkBtn() {
-    //   if (this.offBtn === false) {
-    //     if (this.agreeUser !== false) {
-    //       return false;
-    //     }
-    //   }
-    //   return true;
-    // },
     clickedBtnChoice(index, content) {
       this.clickedBtn = index;
       this.amount = content;
+      console.log(index)
     },
   },
 };
