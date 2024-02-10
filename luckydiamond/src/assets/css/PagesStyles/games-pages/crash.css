@@ -384,7 +384,7 @@
     }
 }
 
-@media screen and (max-height: 915px) and (min-height: 850px) {
+@media screen and (max-height: 915px) and (min-height: 890px) {
     .grid-crash .chat {
         height: 100%;
     }
