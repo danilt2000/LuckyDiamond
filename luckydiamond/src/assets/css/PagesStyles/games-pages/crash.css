@@ -418,6 +418,12 @@
     }
 }}
 
+@media screen and (min-height: 950px) {
+  .chat {
+    height: 88vh !important;
+  }
+}
+
 /*.crash-game__graph {*/
 /*    width: 800px;*/
 /*    top: 200px;*/

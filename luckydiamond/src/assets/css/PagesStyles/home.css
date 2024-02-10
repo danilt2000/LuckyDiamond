@@ -377,4 +377,10 @@
     }
 }
 
+@media screen and (min-height: 910px) {
+  .chat {
+    height: 87vh !important;
+  }
+}
+
 /* /Media */
