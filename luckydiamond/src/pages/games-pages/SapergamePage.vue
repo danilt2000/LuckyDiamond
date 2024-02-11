@@ -284,47 +284,41 @@ export default {
       }
     },
     async amountCrystals(CrystalsCount) {
-      setTimeout(async () => {
-        this.PercentageGameSteps = []
-        if (![1, 5, 10, 24].includes(CrystalsCount)) {
-          this.clickedBtnCrystal = null
-        }
-        else {
-          let index
-          switch (CrystalsCount) {
-            case 1:
-              index = 0
-              break
-            case 5:
-              index = 1
-              break
-            case 10:
-              index = 2
-              break
-            case 24:
-              index = 3
-              break
-          }
-          this.clickedBtnCrystals(index, CrystalsCount)
-        }
+      this.PercentageGameSteps = [];
 
-        if (CrystalsCount >= 1 && CrystalsCount <= 24) {
-          try {
-            await GetPercentageSteps(this.amountCrystals)
-                .then((response) => {
-                  response.forEach((item) => {
-                    if (item !== 'Infinity' && item !== '-Infinity') {
-                      this.PercentageGameSteps.push(Number(item))
-                    }
-                  })
-                })
-          }
-          catch (e) {
-            console.error('Error in Percantage', e)
-          }
+      if (CrystalsCount >= 1 && CrystalsCount <= 24) {
+        try {
+          const response = await GetPercentageSteps(CrystalsCount);
+          response.forEach((item) => {
+            if (item !== 'Infinity' && item !== '-Infinity') {
+              this.PercentageGameSteps.push(Number(item));
+            }
+          });
+        } catch (e) {
+          console.error('Error in Percentage', e);
         }
-      }, 200)
+      }
+
+      let index;
+      switch (CrystalsCount) {
+        case 1:
+          index = 0;
+          break;
+        case 5:
+          index = 1;
+          break;
+        case 10:
+          index = 2;
+          break;
+        case 24:
+          index = 3;
+          break;
+        default:
+          return
+      }
+      this.clickedBtnCrystals(index, CrystalsCount);
     },
+
     flippedCards: {
      async handler(value) {
        if (value.length < 1 || this.ValidationPlay.endGame === true) return
