@@ -421,7 +421,6 @@ export default {
    created() {
     const AUTHTOKEN = GetCookie('AUTHTOKEN')
     const SEARCHTOKEN = GetCookie('SearchToken')
-     this.amountCrystals = 5
 
     if (AUTHTOKEN !== null && SEARCHTOKEN !== null) {
       try {
@@ -451,12 +450,18 @@ export default {
                   this.ValidationPlay.startGame = false
                 }, 2000)
               }
+              else {
+                this.amountCrystals = 5
+              }
             })
         this.getBalanceUser()
       }
       catch (e) {
         console.error('Error in GetData', e)
       }
+    }
+    else {
+      this.amountCrystals = 5
     }
   },
   mounted() {
