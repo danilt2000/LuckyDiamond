@@ -284,44 +284,46 @@ export default {
       }
     },
     async amountCrystals(CrystalsCount) {
-      this.PercentageGameSteps = []
-      if (![1, 5, 10, 24].includes(CrystalsCount)) {
-        this.clickedBtnCrystal = null
-      }
-      else {
-        let index
-        switch (CrystalsCount) {
-          case 1:
-            index = 0
-            break
-          case 5:
-            index = 1
-            break
-          case 10:
-            index = 2
-            break
-          case 24:
-            index = 3
-            break
+      setTimeout(async () => {
+        this.PercentageGameSteps = []
+        if (![1, 5, 10, 24].includes(CrystalsCount)) {
+          this.clickedBtnCrystal = null
         }
-        this.clickedBtnCrystals(index, CrystalsCount)
-      }
+        else {
+          let index
+          switch (CrystalsCount) {
+            case 1:
+              index = 0
+              break
+            case 5:
+              index = 1
+              break
+            case 10:
+              index = 2
+              break
+            case 24:
+              index = 3
+              break
+          }
+          this.clickedBtnCrystals(index, CrystalsCount)
+        }
 
-      if (CrystalsCount >= 1 && CrystalsCount <= 24) {
-        try {
+        if (CrystalsCount >= 1 && CrystalsCount <= 24) {
+          try {
             await GetPercentageSteps(this.amountCrystals)
-              .then((response) => {
-                response.forEach((item) => {
-                  if (item !== 'Infinity' && item !== '-Infinity') {
-                    this.PercentageGameSteps.push(Number(item))
-                  }
+                .then((response) => {
+                  response.forEach((item) => {
+                    if (item !== 'Infinity' && item !== '-Infinity') {
+                      this.PercentageGameSteps.push(Number(item))
+                    }
+                  })
                 })
-              })
-        }
-        catch (e) {
+          }
+          catch (e) {
             console.error('Error in Percantage', e)
+          }
         }
-      }
+      }, 200)
     },
     flippedCards: {
      async handler(value) {
