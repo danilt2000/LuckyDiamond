@@ -11,7 +11,8 @@ ul {
     list-style: none;
 }
 
-body, html {
+body,
+html {
     background: #121212;
     height: 100%;
     margin: 0;
@@ -47,12 +48,12 @@ button {
     grid-auto-columns: 1fr;
     grid-auto-flow: row;
     grid-template-areas:
-    "menu header header header header header header"
-    "menu main main main main main chat"
-    "menu main main main main main chat"
-    "menu gamemode gamemode gamemode gamemode gamemode chat"
-    "menu gamemode gamemode gamemode gamemode gamemode chat"
-    "menu gamemode gamemode gamemode gamemode gamemode chat";
+        "menu header header header header header header"
+        "menu main main main main main chat"
+        "menu main main main main main chat"
+        "menu gamemode gamemode gamemode gamemode gamemode chat"
+        "menu gamemode gamemode gamemode gamemode gamemode chat"
+        "menu gamemode gamemode gamemode gamemode gamemode chat";
     height: 100%;
     grid-gap: 0.625rem;
 }
@@ -64,13 +65,14 @@ button {
     grid-auto-columns: 1fr;
     grid-auto-flow: row;
     grid-template-areas:
-    "menu header header header header header header"
-    "menu profile profile profile profile profile chat"
-    "menu profile profile profile profile profile chat"
-    "menu profile profile profile profile profile chat"
-    "menu profile profile profile profile profile chat"
-    "menu profile profile profile profile profile chat"
-    "menu profile profile profile profile profile chat";
+        "menu header header header header header header"
+        "menu profile profile profile profile profile chat"
+        "menu profile profile profile profile profile chat"
+        "menu profile profile profile profile profile chat"
+        "menu profile profile profile profile profile chat"
+        "menu profile profile profile profile profile chat"
+        "menu profile profile profile profile profile chat"
+        "menu profile profile profile profile profile chat";
     grid-gap: 0.625rem;
     height: 100%;
 }
@@ -81,13 +83,29 @@ button {
     grid-template-columns: 0.35fr repeat(5, 1fr) 1fr;
     grid-template-rows: auto 0fr repeat(4, 1fr);
     grid-template-areas:
-    "menu header header header header header header"
-    "menu saper saper saper saper saper chat"
-    "menu saper saper saper saper saper chat"
-    "menu saper saper saper saper saper chat"
-    "menu saper saper saper saper saper chat"
-    "menu saper saper saper saper saper chat"
-    "menu saper saper saper saper saper chat";
+        "menu header header header header header header"
+        "menu saper saper saper saper saper chat"
+        "menu saper saper saper saper saper chat"
+        "menu saper saper saper saper saper chat"
+        "menu saper saper saper saper saper chat"
+        "menu saper saper saper saper saper chat"
+        "menu saper saper saper saper saper chat";
+    grid-gap: 0.625rem;
+}
+
+.content-grid--jackpot {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 0.35fr repeat(5, 1fr) 1fr;
+    grid-template-rows: auto 0fr repeat(4, 1fr);
+    grid-template-areas:
+        "menu header header header header header header"
+        "menu jackpot jackpot jackpot jackpot jackpot chat"
+        "menu jackpot jackpot jackpot jackpot jackpot chat"
+        "menu jackpot jackpot jackpot jackpot jackpot chat"
+        "menu jackpot jackpot jackpot jackpot jackpot chat"
+        "menu jackpot jackpot jackpot jackpot jackpot chat"
+        "menu jackpot jackpot jackpot jackpot jackpot chat";
     grid-gap: 0.625rem;
 }
 
@@ -99,13 +117,13 @@ button {
     gap: 0.625rem;
     grid-auto-flow: row;
     grid-template-areas:
-    "menu header header header header header header"
-    "menu crash crash crash crash crash chat"
-    "menu crash crash crash crash crash chat"
-    "menu crash crash crash crash crash chat"
-    "menu crash crash crash crash crash chat"
-    "menu crash crash crash crash crash chat"
-    "menu crash crash crash crash crash chat";
+        "menu header header header header header header"
+        "menu crash crash crash crash crash chat"
+        "menu crash crash crash crash crash chat"
+        "menu crash crash crash crash crash chat"
+        "menu crash crash crash crash crash chat"
+        "menu crash crash crash crash crash chat"
+        "menu crash crash crash crash crash chat";
 }
 
 /* /Content Grid */
@@ -175,6 +193,16 @@ button {
 .profile {
     display: flex;
     grid-area: profile;
+    height: 95%;
+    border-radius: 3.125rem;
+    background: #17181C;
+    box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
+    margin: 0.625rem 2.438rem 1.125rem 1.125rem;
+}
+
+.jackpot {
+    display: flex;
+    grid-area: jackpot;
     height: 95%;
     border-radius: 3.125rem;
     background: #17181C;
