@@ -11,7 +11,7 @@
       <ul>
         <transition-group name="fade">
           <li v-for="msg in array" :key="msg">
-            <div class="card__user">
+            <div class="card__user" :class="{ 'mention-message': isCurrentUser(msg), 'system-message' : msg.username === '🛠️ System' }">
               <div class="user__icon">
                 <img :src="msg.icon" />
               </div>
@@ -31,6 +31,7 @@
 <script>
 import "@/assets/css/ComponentsStyles/chat.css";
 import { GetChatHistory } from "@/assets/js/rest/RestMethods.js";
+import { GetCookie } from "@/assets/js/storage/CookieStorage";
 
 import WritechatComponent from "@/components/WritechatComponent.vue";
 import { SendMessageToChat } from "@/assets/js/chat/ChatLogic.js";
@@ -53,6 +54,9 @@ export default {
         chatContent.scrollTop = chatContent.scrollHeight;
       });
     },
+    isCurrentUser(msg) {
+      return msg.msg.includes(GetCookie('SpUserName'))
+    },
     ClaimDatamsg(msg) {
       const now = Date.now();
       if (!this.lastMsgTime || now - this.lastMsgTime >= 2000) {
@@ -61,16 +65,13 @@ export default {
       } else {
         alert("Вы не можете отправлять сообщения чаще, чем раз в 2 секунды.");
       }
-      // if(this.array.length > 7) {
-      //   this.array.shift()
-      // }
     },
   },
   mounted() {
     eventBus.on("dataChat", (dataFromServer) => {
       try {
-        // Attempt to parse the JSON string
         const dataObject = JSON.parse(dataFromServer);
+        
         let imageUrl =
           "https://avatar.spworlds.ru/face/55/" + dataObject.SpUserName;
 
@@ -80,6 +81,10 @@ export default {
           username: dataObject.SpUserName,
           icon: imageUrl,
         };
+
+        if (MsgUser.username === '🛠️ System') {
+          MsgUser.icon = 'https://avatar.spworlds.ru/face/55/CONSOLE'
+        }
 
         this.array.push(MsgUser);
 
@@ -101,6 +106,10 @@ export default {
             username: element.userName,
             icon: imageUrl,
           };
+
+          if (MsgUser.username === '🛠️ System') {
+            MsgUser.icon = 'https://avatar.spworlds.ru/face/55/CONSOLE'
+          }
 
           this.array.push(MsgUser);
         });

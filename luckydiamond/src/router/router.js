@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../pages/HomePage.vue";
 import ProfilePage from "@/pages/ProfilePage.vue";
 import SapergamePage from "@/pages/games-pages/SapergamePage.vue";
-import SettingsPage from "@/pages/SettingsPage.vue"
+import SettingsPage from "@/pages/SettingsPage.vue";
 import AboutPage from "@/pages/AboutPage.vue"
 export default createRouter({
     history: createWebHistory(),

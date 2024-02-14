@@ -10,7 +10,7 @@
       </div>
 </template>
 <script>
-import DevelopComponent from "@/components/DevelopComponent.vue";
+import DevelopComponent from "@/components/DeveloperComponent.vue";
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 
