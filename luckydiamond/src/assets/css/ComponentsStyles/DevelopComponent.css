@@ -2,9 +2,401 @@
     flex-direction: column;
     align-items: center;
     display: flex;
+    justify-content: center;
+    width: 1332px;
+    height: 732px;
+    margin-top: 10px;
 }
-/*beginning card 1*/
-.card {
+.bottom_card {
+    width: 1332px;
+    height: 269px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 300px;
+}
+.top_card {
+    width: 1204px;
+    height: 443px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 287px;
+}
+
+
+/*beginning Hepatir_card-2 2*/
+
+.Hepatir_card {
+    width: 250px;
+    height: 443px;
+    background-color: #413C3B;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    border-radius: 22px;
+}
+.text_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    flex-flow: column-reverse;
+    
+}
+
+.aboutinfo_2 {
+    margin-top: 30px;
+    margin-left: 19px;
+    
+}
+.aboutinfo_2 p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 79px;
+    height: 19px;
+    margin-left: 4px;
+}
+.aboutinfo_2 h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    width: 177px;
+    height: 37px;
+    line-height: 30px;
+}
+.whatjob_2 p {
+    margin-left: 3px;
+}
+.whatjob2_2 p {
+    margin-left: 3px;
+}
+.whatjob_2 {
+    display: flex;
+    width: 2006px;
+    height: 16px;
+    margin-left: 22px;
+    font-family: 'Montserrat';
+    margin-top: 30px;
+}
+.whatjob_2 img {
+    width: 21px;
+    height: 21px;
+}
+.whatjob2_2 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 22px;
+    
+    font-family: 'Montserrat';
+    margin-top: 10px;
+}
+.whatjob2_2 img {
+    width: 21px;
+    height: 21px;
+}
+.skin_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skin_2_skin {
+    width: 212px;
+    height: 212px;
+    background-image: url(@/assets/icons-developcard/Hepatir.png);
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-end;
+}
+.skinicons1 {
+   justify-content: space-around;
+    display: flex;
+}
+ 
+/*the and Hepatir_card 1*/
+
+
+/*beginning Rafael1209_card 2*/
+.Rafael1209_card {
+    width: 250px;
+    height: 443px;
+    background-color: #636363;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    border-radius: 22px;
+}
+.Rafael1209_text_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    flex-flow: column-reverse;
+    
+}
+
+.Rafael1209_aboutinfo_2 {
+    margin-top: 30px;
+    margin-left: 19px;
+    
+}
+.Rafael1209_aboutinfo_2 p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 79px;
+    height: 19px;
+    margin-left: 4px;
+}
+.Rafael1209_aboutinfo_2 h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    width: 177px;
+    height: 37px;
+    line-height: 30px;
+}
+.Rafael1209_whatjob_2 {
+    display: flex;
+    width: 206px;
+    height: 16px;
+    margin-left: 22px;
+    font-family: 'Montserrat';
+    margin-top: 30px;
+}
+.Rafael1209_whatjob_2 img {
+    width: 21px;
+    height: 21px;
+}
+.Rafael1209_whatjob_2 p {
+    margin-left: 3px;
+}
+.Rafael1209_whatjob2_2 p {
+    margin-left: 3px;
+}
+.Rafael1209_whatjob2_2 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    
+    font-family: 'Montserrat';
+    margin-top: 10px;
+}
+.Rafael1209_whatjob2_2 img {
+    width: 25px;
+    height: 24px;
+}
+.Rafael1209_skin_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Rafael1209_skin_2_skin {
+    width: 212px;
+    height: 212px;
+    background-image: url(@/assets/icons-developcard/rafael1209.png);
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-end;
+}
+.Rafael1209_skinicons1 {
+   justify-content: space-around;
+    display: flex;
+}
+/*the and Rafael1209_card 1*/
+
+
+/*beginning Ckutls_card 2*/
+.Ckutls__card {
+    width: 250px;
+    height: 443px;
+    background-color: #B88484;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    border-radius: 22px;
+}
+.Ckutls__text_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    flex-flow: column-reverse;
+   
+}
+
+.Ckutls__aboutinfo_2 {
+    margin-top: 30px;
+    margin-left: 19px;
+    
+}
+.Ckutls__aboutinfo_2 p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 79px;
+    height: 19px;
+    margin-left: 4px;
+}
+.Ckutls__aboutinfo_2 h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    width: 177px;
+    height: 37px;
+    line-height: 30px;
+}
+.Ckutls__whatjob_1 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 30px;
+}
+.Ckutls__whatjob_1 img {
+    width: 15px;
+    height: 17px;
+}
+.Ckutls__whatjob_1 p {
+    margin-left: 3px;
+}
+.Ckutls__whatjob_2 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 10px;
+}
+.Ckutls__whatjob_2 img {
+    width: 15px;
+    height: 17px;
+}
+.Ckutls__whatjob_2 p {
+    margin-left: 3px;
+}
+.Ckutls__whatjob_3 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 9px;
+}
+.Ckutls__whatjob_3 img {
+    width: 17px;
+    height: 15px;
+}
+.Ckutls__whatjob_3 p {
+    margin-left: 3px;
+}
+.Ckutls__skin_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+.Ckutls__skin_2_skin {
+    width: 212px;
+    height: 212px;
+    background-image: url(@/assets/icons-developcard/Ckutls_.png);
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-end;
+}
+.Ckutls__skinicons1 {
+   justify-content: space-around;
+    display: flex;
+}
+/*the and Ckutls_card 1*/
+
+/*beginning FUpir_card 2*/
+.FUpir_card {
+    width: 250px;
+    height: 443px;
+    background-color: #C58E74;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    border-radius: 22px;
+}
+.FUpir_text_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    flex-flow: column-reverse;
+    
+}
+
+.FUpir_aboutinfo_2 {
+    margin-top: 30px;
+    margin-left: 19px;
+    
+}
+.FUpir_aboutinfo_2 p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 79px;
+    height: 19px;
+    margin-left: 4px;
+}
+.FUpir_aboutinfo_2 h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    width: 177px;
+    height: 37px;
+    line-height: 30px;
+}
+.FUpir_whatjob_1 {
+    display: flex;
+    width: 206px;
+    height: 24px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 24px;
+    
+}
+.FUpir_whatjob_1 img {
+    width: 25px;
+    height: 24px;
+}
+.FUpir_whatjob_1 p {
+    margin-left: 3px;
+    margin-top: 4px;
+}
+
+.FUpir_skin_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.FUpir_skin_2_skin {
+    width: 212px;
+    height: 212px;
+    background-image: url(@/assets/icons-developcard/FUpir.png);
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 3px;
+}
+.FUpir_skinicons1 {
+   justify-content: space-around;
+    display: flex;
+}
+/*the and FUpir_card 1*/
+
+/*beginning busha888_card 1*/
+.busha888_card {
     width: 422px;
     height: 269px;
     flex-shrink: 0;
@@ -52,6 +444,9 @@
    
     margin-top: 30px;
 }
+.whatjob p {
+    margin-left: 3px;
+}
 .whatjob img {
     width: 15px;
     height: 17px;
@@ -85,90 +480,180 @@
     width: 212px;
     height: 212px;
 }
-/*the and card 1*/
+/*the and busha888_card 1*/
 
-/*beginning card 2*/
-
-.card-2 {
-    width: 250px;
-    height: 443px;
-    background-color: #413C3B;
+/*beginning megatntmega_card 1*/
+.megatntmega_card {
+    width: 422px;
+    height: 269px;
+    flex-direction: row;
+    border-radius: 22px;
     border: 3px solid #595959 ;
     border-color: #595959;
-    border-radius: 22px;
-}
-.text_2 {
-    width: 244px;
-    height: 221.5px;
-    display: inline-block;
-    flex-flow: column-reverse;
+    background-color: #393A3A;
+    display: flex;
+  
+
 }
 
-.aboutinfo_2 {
+.megatntmega_text {
+    width: 211px;
+    height: 269px;
+
+ 
+}
+.megatntmega_aboutinfo {
     margin-top: 30px;
-    margin-left: 19px;
+    margin-left: 15px;
+    
     
 }
-.aboutinfo_2 p {
+.megatntmega_aboutinfo p {
     font-family: 'Montserrat';
     color: white;
     font-size: 14px;
-    width: 79px;
-    height: 19px;
+    width: 97px;
+    height: 16px;
 }
-.aboutinfo_2 h1 {
+.megatntmega_aboutinfo h1 {
     font-family: 'Montserrat';
     color: white;
     font-size: 32px;
-    width: 177px;
-    height: 37px;
     
 }
-.whatjob_2 {
+.megatntmega_whatjob {
     display: flex;
     width: 183px;
     height: 16px;
-    margin-left: 24px;
+    
+    margin-left: 15px;
     font-family: 'Montserrat';
+   
     margin-top: 30px;
 }
-.whatjob_2 img {
-    width: 17px;
-    height: 20px;
+.megatntmega_whatjob p {
+    margin-left: 3px;
+    margin-top: 3px;
 }
-.whatjob2_2 {
+.megatntmega_whatjob img {
+    width: 25px;
+    height: 24px;
+}
+.megatntmega_icons {
+    width: 79px;
+    height: 36px; 
+    justify-content: space-around;
+    display: flex;
+    margin-top: 95px;
+    margin-left: 72px;
+    margin-bottom: 11px;
+}
+.megatntmega_icons img {
+    width: 36px;
+    height: 36px;
+}
+.megatntmega_skin {
+    margin-right: 13px;
+    margin-top: 51px;
+    margin-bottom: 3px;
+    background: ;
+    display: flex;
+    width: 212px;
+    height: 212px;
+}
+.megatntmega_skin img {
+    width: 212px;
+    height: 212px;
+}
+/*the and megatntmega_card 1*/
+
+/*beginning CLARFFY_card 1*/
+.CLARFFY_card {
+    width: 422px;
+    height: 269px;
+    flex-direction: row;
+    border-radius: 22px;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    background-color: #E2B374;
+    display: flex;
+  
+
+}
+
+.CLARFFY_text {
+    width: 211px;
+    height: 269px;
+
+ 
+}
+.CLARFFY_aboutinfo {
+    margin-top: 30px;
+    margin-left: 15px;
+    
+    
+}
+.CLARFFY_aboutinfo p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 97px;
+    height: 16px;
+}
+.CLARFFY_aboutinfo h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    
+}
+.CLARFFY_whatjob {
     display: flex;
     width: 183px;
     height: 16px;
-    margin-left: 22px;
     
+    margin-left: 15px;
     font-family: 'Montserrat';
-    margin-top: 10px;
+   
+    margin-top: 30px;
 }
-.whatjob2_2 img {
-    width: 21px;
-    height: 21px;
+.CLARFFY_whatjob p {
+    margin-left: 3px;
+    margin-top: 3px;
 }
-.skin_2 {
-    width: 244px;
-    height: 221.5px;
-    display: inline-block;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.CLARFFY_whatjob img {
+    width: 25px;
+    height: 24px;
 }
-.skin_2_skin {
-    width: 212px;
-    height: 212px;
-    background-image: url(@/assets/icons-developcard/Hepatir.png);
+.CLARFFY_icons {
+    width: 79px;
+    height: 36px; 
     justify-content: space-around;
     display: flex;
-    align-items: flex-end;
+    margin-top: 95px;
+    margin-left: 72px;
+    margin-bottom: 11px;
 }
-.skinicons1 {
-   justify-content: space-around;
+.CLARFFY_icons img {
+    width: 36px;
+    height: 36px;
+}
+.CLARFFY_skin {
+    margin-right: 13px;
+    margin-top: 51px;
+    margin-bottom: 3px;
+    background: ;
     display: flex;
+    width: 212px;
+    height: 212px;
 }
+.CLARFFY_skin img {
+    width: 212px;
+    height: 212px;
+}
+/*the and CLARFFY_card 1*/
+ 
+
+
 
 
 
