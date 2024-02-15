@@ -1,3 +1,4 @@
+
 .info {
     flex-direction: column;
     align-items: center;
@@ -6,6 +7,8 @@
     width: 1332px;
     height: 732px;
     margin-top: 10px;
+    margin-left: 60px;
+    
 }
 .bottom_card {
     width: 1332px;
@@ -36,7 +39,7 @@
 }
 .text_2 {
     width: 244px;
-    height: 221.5px;
+    height: 220px;
     display: inline-block;
     flex-flow: column-reverse;
     
@@ -71,7 +74,7 @@
 }
 .whatjob_2 {
     display: flex;
-    width: 2006px;
+    width: 206px;
     height: 16px;
     margin-left: 22px;
     font-family: 'Montserrat';
@@ -129,7 +132,7 @@
 }
 .Rafael1209_text_2 {
     width: 244px;
-    height: 221.5px;
+    height: 220px;
     display: inline-block;
     flex-flow: column-reverse;
     
@@ -221,7 +224,7 @@
 }
 .Ckutls__text_2 {
     width: 244px;
-    height: 221.5px;
+    height: 219.7px;
     display: inline-block;
     flex-flow: column-reverse;
    
@@ -295,7 +298,7 @@
 }
 .Ckutls__skin_2 {
     width: 244px;
-    height: 221.5px;
+    height: 221px;
     display: inline-block;
     display: flex;
     align-items: center;
@@ -486,7 +489,6 @@
 .megatntmega_card {
     width: 422px;
     height: 269px;
-    flex-direction: row;
     border-radius: 22px;
     border: 3px solid #595959 ;
     border-color: #595959;
@@ -512,7 +514,7 @@
     font-family: 'Montserrat';
     color: white;
     font-size: 14px;
-    width: 97px;
+    
     height: 16px;
 }
 .megatntmega_aboutinfo h1 {
@@ -553,13 +555,12 @@
     height: 36px;
 }
 .megatntmega_skin {
-    margin-right: 13px;
     margin-top: 51px;
     margin-bottom: 3px;
-    background: ;
     display: flex;
     width: 212px;
     height: 212px;
+    background-image: url(@/assets/icons-developcard/megatntmega.png);
 }
 .megatntmega_skin img {
     width: 212px;
@@ -641,7 +642,6 @@
     margin-right: 13px;
     margin-top: 51px;
     margin-bottom: 3px;
-    background: ;
     display: flex;
     width: 212px;
     height: 212px;
@@ -652,7 +652,66 @@
 }
 /*the and CLARFFY_card 1*/
  
+@media (max-width: 2048px) { 
 
+    .info {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 1332px;
+        height: 732px;
+        margin-top: 80px;
+        margin-left: 142px;
+        
+    }
+}
+
+@media (max-width: 1700px) {
+    .info {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 0;
+    justify-content: center;
+    flex-direction: column;
+    }
+    
+    .bottom_card {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 0;
+    justify-content: none;
+    flex-direction: column;
+    margin-left: 645px;
+    }
+    
+    .top_card {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    justify-content: none;
+    flex-direction: column;
+    margin-left: 820px;
+    }
+    .Hepatir_card {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .Ckutls__card {
+        
+        margin-bottom: 20px;
+    }
+    .Hepatir_card {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .busha888_card {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    }
 
 
 

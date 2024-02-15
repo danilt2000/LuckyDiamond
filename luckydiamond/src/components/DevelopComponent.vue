@@ -124,7 +124,7 @@
         </div>
       </div>
       <div class="megatntmega_skin">
-        <img src="@/assets/icons-developcard/megatntmega.png" alt="">
+        
         </div>
     </div>
     <div class="busha888_card">
@@ -173,7 +173,7 @@
 </template>
 
 <script>
-import '@/assets/css/ComponentsStyles/DevelopComponent.css'
+import '@/assets/css/ComponentsStyles/developer.css'
 
 export default {
 
