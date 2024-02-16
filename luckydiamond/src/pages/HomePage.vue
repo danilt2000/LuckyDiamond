@@ -86,7 +86,8 @@
                     <h3 class="title-twoline">{{ mode.title }}</h3>
                   </div>
                   <div class="container">
-                    <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a>
+                    <!-- <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a> -->
+                    <a href="#" @click="$router.push({ name: 'crash' })" class="line__btn">play <span class="line__btn--elm">></span></a>
                     <img src="@/assets/icons-gamemodes/crush-icon.svg">
                   </div>
                 </li>
@@ -102,14 +103,13 @@
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
-import ChatComponent from "@/components/ChatComponent.vue";
 import HomemobilePage from "@/pages/adaptive-pages/HomemobilePage.vue";
 import GameModes from "@/mocks/GameModes";
 import '@/assets/css/PagesStyles/home.css'
 
 export default {
   name: 'HomePage',
-  components: { AsideBarComponent, HeaderComponent, ChatComponent, HomemobilePage },
+  components: { AsideBarComponent, HeaderComponent,  HomemobilePage },
   data() {
     return {
       GameModes,

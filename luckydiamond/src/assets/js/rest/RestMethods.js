@@ -55,7 +55,7 @@ export async function GetCurrentMoney(authToken, searchToken) {
 export async function GetChatHistory() {
 
   try {
-    const response = await fetch(`${BackendApiUrl}/ChatHistory/GetChatHistory`, {
+    const response = await fetch(`${BackendApiUrl}/Chat/GetChatHistory`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

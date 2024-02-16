@@ -160,7 +160,7 @@ export default {
           <!-- <div class="header__card--auth">  -->
           <div class="auth__card--content">
             <a
-              href="https://discord.com/api/oauth2/authorize?client_id=1148644854797176932&redirect_uri=https%3A%2F%2Flucky-diamond.vercel.app&response_type=code&scope=identify"
+              href="https://media.discordapp.net/attachments/1175674631684898866/1203382105934139422/Untitled.png?ex=65d0e3eb&is=65be6eeb&hm=226770699b0ac57c74b1516868e9d7ddb6eb1cb952366ea07e62ccf4ee551a1d&=&format=webp&quality=lossless"
               @click="auth = true"
               ><span
                 ><img
@@ -169,6 +169,7 @@ export default {
                   src="../assets/icons-header/discord-icon.svg" /></span
               >Вход</a
             >
+<!--            https://discord.com/api/oauth2/authorize?client_id=1148644854797176932&redirect_uri=https%3A%2F%2Flucky-diamond.vercel.app&response_type=code&scope=identify-->
           </div>
         </div>
       </div>
