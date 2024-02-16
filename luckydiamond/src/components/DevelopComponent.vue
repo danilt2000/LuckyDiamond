@@ -20,9 +20,9 @@
           <div class="Rafael1209_skin_2_skin">
             
             <div class="Rafael1209_skinicons1">
-            <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href=""><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href=""><img src="@/assets/icons-developcard/github.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
             </div>
           </div>
         </div>
@@ -45,9 +45,9 @@
         <div class="skin_2">
           <div class="skin_2_skin">
             <div class="skinicons1">
-            <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href=""><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href=""><img src="@/assets/icons-developcard/github.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
             </div>
           </div>
         </div>
@@ -75,9 +75,9 @@
           <div class="Ckutls__skin_2_skin">
             
             <div class="Ckutls__skinicons1">
-            <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href=""><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href=""><img src="@/assets/icons-developcard/github.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
             </div>
           </div>
         </div>
@@ -98,8 +98,8 @@
           <div class="FUpir_skin_2_skin">
             
             <div class="FUpir_skinicons1">
-            <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href=""><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+            <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
            
             </div>
           </div>
@@ -119,8 +119,8 @@
           <p>Designer</p>
         </div>
         <div class="megatntmega_icons">
-          <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href=""><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+          <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+          <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
         </div>
       </div>
       <div class="megatntmega_skin">
@@ -138,10 +138,10 @@
           <p>HTML 5,CSS</p>
         </div>
         <div class="icons">
-          <a href="https://tpverstak.ru/flex-cheatsheet/"><img src="@/assets/icons-developcard/odniclasniki.png" alt=""></a>
-          <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href=""><img src="@/assets/icons-developcard/like.png" alt=""></a>
-          <a href=""><img src="@/assets/icons-developcard/github.png" alt=""></a>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" ><img src="@/assets/icons-developcard/odniclasniki.png" alt=""></a>
+          <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+          <a href="" target="_blank" ><img src="@/assets/icons-developcard/like.png" alt=""></a>
+          <a href="" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
         </div>
       </div>
       <div class="skin">
@@ -159,8 +159,8 @@
           <p>Designer</p>
         </div>
         <div class="CLARFFY_icons">
-          <a href=""><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href=""><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+          <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+          <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
         </div>
       </div>
       <div class="CLARFFY_skin">

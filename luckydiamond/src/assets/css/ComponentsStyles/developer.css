@@ -7,8 +7,7 @@
     width: 1332px;
     height: 732px;
     margin-top: 10px;
-    margin-left: 60px;
-    
+    margin-left: 65px;
 }
 .bottom_card {
     width: 1332px;
@@ -16,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    margin-left: 300px;
+    margin-left: 295px;
 }
 .top_card {
     width: 1204px;
@@ -24,6 +23,7 @@
     display: flex;
     justify-content: space-between;
     margin-left: 287px;
+    
 }
 
 
@@ -409,7 +409,7 @@
     background-color: #742271;
     display: flex;
     flex-direction: row;
-
+    
 }
 
 .text {
@@ -652,7 +652,7 @@
 }
 /*the and CLARFFY_card 1*/
  
-@media (max-width: 2048px) { 
+@media only screen and (min-width: 2048px) { 
 
     .info {
         flex-direction: column;
