@@ -210,6 +210,10 @@ button {
     margin: 0.625rem 2.438rem 1.125rem 1.125rem;
 }
 
+.about {
+    grid-area: about;
+}
+
 /* /Profile */
 
 /* Saper */
@@ -234,6 +238,24 @@ button {
 .crash-game__players {
     grid-area: crashplayers;
 }
+
+
+.content-grid--about {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 0.35fr repeat(5, 1fr) 1fr;
+    grid-template-rows: auto 0fr repeat(4, 1fr);
+    grid-template-areas:
+        "menu header header header header header header"
+        "menu about about about about about chat"
+        "menu about about about about about chat"
+        "menu about about about about about chat"
+        "menu about about about about about chat"
+        "menu about about about about about chat"
+        "menu about about about about about chat";
+    grid-gap: 0.625rem;
+}
+
 
 /* /Crash */
 
