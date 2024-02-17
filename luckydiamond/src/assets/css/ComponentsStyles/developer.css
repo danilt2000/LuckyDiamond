@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 .info {
     flex-direction: column;
@@ -31,98 +30,10 @@
 /*beginning Hepatir_card-2 2*/
 
 .Hepatir_card {
-=======
-.developer-card__content_down {
-    width: 1204px;
-    height: 443px;
-    background-color: aquamarine;
-    margin-left: 287px;
-    margin-right: 298px;
-    margin-bottom: 77px;
-}
-.developer-card__content {
-   
-    display: flex;
-    
-    background-color: black;
-
-}
-
-/* beginning card 1 */
-
-.developer-card__width {
-    display: flex;
-    width: 422px;
-    height: 269px;
-    border-radius: 22px;
-    border: 3px solid #595959 ;
-    /*background-color: #742271;*/
-}
-
-.developer-card__about-text {
-    margin: 30px 0 0 15px;
-}
-
-.developer-card__about-text p {
-    font-family: 'Montserrat';
-    color: #fff;
-    font-size: 14px;
-}
-
-.developer-card__about-text h1 {
-    font-family: 'Montserrat';
-    color: #fff;
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.developer-card__technology {
-    display: flex;
-    margin: 5px 0 0 15px;
-    font-family: 'Montserrat';
-}
-
-.developer-card__technology img {
-    width: 21px;
-    height: 21px;
-    margin-right: 3px;
-}
-
-.developer-card__socials {
-    justify-content: space-around;
-    display: flex;
-    margin: 35% 0 11px 27px;
-    
-}
-
-.developer-card__socials img {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-}
-
-.developer-card__skin {
-    display: flex;
-    align-items: flex-end;
-    margin-left: 15px;
-}
-
-.developer-card__skin img {
-    width: 212px;
-    height: 212px;
-}
-
-/*the and card 1*/
-
-/*beginning card 2*/
-
-.developer-card__height {
->>>>>>> 49a494977b172fe4ea3d91155eb39f66ffe70420
     width: 250px;
     height: 443px;
     background-color: #413C3B;
     border: 3px solid #595959 ;
-<<<<<<< HEAD
     border-color: #595959;
     border-radius: 22px;
 }
@@ -742,6 +653,7 @@
 /*the and CLARFFY_card 1*/
  
 @media only screen and (min-width: 2048px) { 
+
     .info {
         flex-direction: column;
         align-items: center;
@@ -800,65 +712,6 @@
         margin-bottom: 20px;
     }
     }
-=======
-    border-radius: 22px;
-}
-
-.developer-card-height__about-text {
-    margin: 30px 0 0 19px;
-    
-}
-.developer-card-height__about-text p {
-    font-family: 'Montserrat';
-    color: #fff;
-    font-size: 14px;
-}
-
-.developer-card-height__about-text h1 {
-    font-family: 'Montserrat';
-    color: white;
-    font-size: 32px;
-}
-
-.developer-card-height__technology {
-    display: flex;
-    font-family: 'Montserrat';
-    margin: 30px 0 0 24px;
-}
-
-.developer-card-height__technology-two-column {
-    display: flex;
-    font-family: 'Montserrat';
-    margin: 10px 0 0 22px;
-}
-
-.techonology-styles img {
-    height: 20px;
-    margin-right: 5px;
-}
-
-.developer-card-height__skin {
-    margin-top: 6px;
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-}
-
-.developer-card-height__skin {
-    width: 212px;
-    height: 212px;
-   
-    justify-content: space-around;
-    display: flex;
-    align-items: flex-end;
-    margin-top: 54px;
-}
-
-.developer-card-height__social-icons {
-   justify-content: space-around;
-    display: flex;
-}
->>>>>>> 49a494977b172fe4ea3d91155eb39f66ffe70420
 
 
 
