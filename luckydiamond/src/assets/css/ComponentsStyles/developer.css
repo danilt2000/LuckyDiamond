@@ -108,7 +108,7 @@
 .skin_2_skin {
     width: 212px;
     height: 212px;
-    background-image: url(@/assets/icons-developcard/Hepatir.png);
+    background-image: url(https://visage.surgeplay.com/front/212/Hepatir.png);
     justify-content: space-around;
     display: flex;
     align-items: flex-end;
@@ -201,7 +201,7 @@
 .Rafael1209_skin_2_skin {
     width: 212px;
     height: 212px;
-    background-image: url(@/assets/icons-developcard/rafael1209.png);
+    background-image: url(https://visage.surgeplay.com/front/212/rafael1209.png);
     justify-content: space-around;
     display: flex;
     align-items: flex-end;
@@ -308,7 +308,7 @@
 .Ckutls__skin_2_skin {
     width: 212px;
     height: 212px;
-    background-image: url(@/assets/icons-developcard/Ckutls_.png);
+    background-image: url(https://visage.surgeplay.com/front/212/Ckutls_.png);
     justify-content: space-around;
     display: flex;
     align-items: flex-end;
@@ -386,7 +386,7 @@
 .FUpir_skin_2_skin {
     width: 212px;
     height: 212px;
-    background-image: url(@/assets/icons-developcard/FUpir.png);
+    background-image: url(https://visage.surgeplay.com/front/212/FUpir.png);
     justify-content: space-around;
     display: flex;
     align-items: flex-end;
@@ -560,7 +560,7 @@
     display: flex;
     width: 212px;
     height: 212px;
-    background-image: url(@/assets/icons-developcard/megatntmega.png);
+    background-image: url(https://visage.surgeplay.com/front/212/megatntmega.png);
 }
 .megatntmega_skin img {
     width: 212px;

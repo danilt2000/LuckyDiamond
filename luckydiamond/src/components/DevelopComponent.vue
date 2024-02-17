@@ -145,7 +145,7 @@
         </div>
       </div>
       <div class="skin">
-        <img src="@/assets/icons-developcard/busha888.png" alt="">
+        <img src="https://visage.surgeplay.com/front/212/busha888.png" alt="">
         </div>
     </div>
     <div class="CLARFFY_card">
@@ -164,7 +164,7 @@
         </div>
       </div>
       <div class="CLARFFY_skin">
-        <img src="@/assets/icons-developcard/CLARFFY.png" alt="">
+        <img src="https://visage.surgeplay.com/front/212/CLARFFY.png" alt="">
         </div>
     </div>
   </div>
