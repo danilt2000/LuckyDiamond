@@ -1,140 +1,724 @@
-.developer-card__content {
+
+.info {
     flex-direction: column;
     align-items: center;
     display: flex;
-
+    justify-content: center;
+    width: 1332px;
+    height: 732px;
+    margin-top: 10px;
+    margin-left: 65px;
 }
-
-/* beginning card 1 */
-
-.developer-card__width {
-    display: flex;
-    width: 422px;
+.bottom_card {
+    width: 1332px;
     height: 269px;
-    border-radius: 22px;
-    border: 3px solid #595959 ;
-    /*background-color: #742271;*/
-}
-
-.developer-card__about-text {
-    margin: 30px 0 0 15px;
-}
-
-.developer-card__about-text p {
-    font-family: 'Montserrat';
-    color: #fff;
-    font-size: 14px;
-}
-
-.developer-card__about-text h1 {
-    font-family: 'Montserrat';
-    color: #fff;
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.developer-card__technology {
     display: flex;
-    margin: 5px 0 0 15px;
-    font-family: 'Montserrat';
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 295px;
 }
-
-.developer-card__technology img {
-    width: 21px;
-    height: 21px;
-    margin-right: 3px;
-}
-
-.developer-card__socials {
-    justify-content: space-around;
+.top_card {
+    width: 1204px;
+    height: 443px;
     display: flex;
-    margin: 35% 0 11px 27px;
+    justify-content: space-between;
+    margin-left: 287px;
     
 }
 
-.developer-card__socials img {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-}
 
-.developer-card__skin {
-    display: flex;
-    align-items: flex-end;
-    margin-left: 15px;
-}
+/*beginning Hepatir_card-2 2*/
 
-.developer-card__skin img {
-    width: 212px;
-    height: 212px;
-}
-
-/*the and card 1*/
-
-/*beginning card 2*/
-
-.developer-card__height {
+.Hepatir_card {
     width: 250px;
     height: 443px;
     background-color: #413C3B;
     border: 3px solid #595959 ;
+    border-color: #595959;
     border-radius: 22px;
 }
-
-.developer-card-height__about-text {
-    margin: 30px 0 0 19px;
+.text_2 {
+    width: 244px;
+    height: 220px;
+    display: inline-block;
+    flex-flow: column-reverse;
     
 }
-.developer-card-height__about-text p {
-    font-family: 'Montserrat';
-    color: #fff;
-    font-size: 14px;
-}
 
-.developer-card-height__about-text h1 {
+.aboutinfo_2 {
+    margin-top: 30px;
+    margin-left: 19px;
+    
+}
+.aboutinfo_2 p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 79px;
+    height: 19px;
+    margin-left: 4px;
+}
+.aboutinfo_2 h1 {
     font-family: 'Montserrat';
     color: white;
     font-size: 32px;
+    width: 177px;
+    height: 37px;
+    line-height: 30px;
 }
-
-.developer-card-height__technology {
+.whatjob_2 p {
+    margin-left: 3px;
+}
+.whatjob2_2 p {
+    margin-left: 3px;
+}
+.whatjob_2 {
     display: flex;
+    width: 206px;
+    height: 16px;
+    margin-left: 22px;
     font-family: 'Montserrat';
-    margin: 30px 0 0 24px;
+    margin-top: 30px;
 }
-
-.developer-card-height__technology-two-column {
+.whatjob_2 img {
+    width: 21px;
+    height: 21px;
+}
+.whatjob2_2 {
     display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 22px;
+    
     font-family: 'Montserrat';
-    margin: 10px 0 0 22px;
+    margin-top: 10px;
 }
-
-.techonology-styles img {
-    height: 20px;
-    margin-right: 5px;
+.whatjob2_2 img {
+    width: 21px;
+    height: 21px;
 }
-
-.developer-card-height__skin {
-    margin-top: 6px;
+.skin_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.developer-card-height__skin-content {
+.skin_2_skin {
     width: 212px;
     height: 212px;
-    background-image: url(@/assets/icons-developcard/Hepatir.png);
+    background-image: url(https://visage.surgeplay.com/front/212/Hepatir.png);
     justify-content: space-around;
     display: flex;
     align-items: flex-end;
-    margin-top: 54px;
 }
-
-.developer-card-height__social-icons {
+.skinicons1 {
    justify-content: space-around;
     display: flex;
 }
+ 
+/*the and Hepatir_card 1*/
+
+
+/*beginning Rafael1209_card 2*/
+.Rafael1209_card {
+    width: 250px;
+    height: 443px;
+    background-color: #636363;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    border-radius: 22px;
+}
+.Rafael1209_text_2 {
+    width: 244px;
+    height: 220px;
+    display: inline-block;
+    flex-flow: column-reverse;
+    
+}
+
+.Rafael1209_aboutinfo_2 {
+    margin-top: 30px;
+    margin-left: 19px;
+    
+}
+.Rafael1209_aboutinfo_2 p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 79px;
+    height: 19px;
+    margin-left: 4px;
+}
+.Rafael1209_aboutinfo_2 h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    width: 177px;
+    height: 37px;
+    line-height: 30px;
+}
+.Rafael1209_whatjob_2 {
+    display: flex;
+    width: 206px;
+    height: 16px;
+    margin-left: 22px;
+    font-family: 'Montserrat';
+    margin-top: 30px;
+}
+.Rafael1209_whatjob_2 img {
+    width: 21px;
+    height: 21px;
+}
+.Rafael1209_whatjob_2 p {
+    margin-left: 3px;
+}
+.Rafael1209_whatjob2_2 p {
+    margin-left: 3px;
+}
+.Rafael1209_whatjob2_2 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    
+    font-family: 'Montserrat';
+    margin-top: 10px;
+}
+.Rafael1209_whatjob2_2 img {
+    width: 25px;
+    height: 24px;
+}
+.Rafael1209_skin_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Rafael1209_skin_2_skin {
+    width: 212px;
+    height: 212px;
+    background-image: url(https://visage.surgeplay.com/front/212/rafael1209.png);
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-end;
+}
+.Rafael1209_skinicons1 {
+   justify-content: space-around;
+    display: flex;
+}
+/*the and Rafael1209_card 1*/
+
+
+/*beginning Ckutls_card 2*/
+.Ckutls__card {
+    width: 250px;
+    height: 443px;
+    background-color: #B88484;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    border-radius: 22px;
+}
+.Ckutls__text_2 {
+    width: 244px;
+    height: 219.7px;
+    display: inline-block;
+    flex-flow: column-reverse;
+   
+}
+
+.Ckutls__aboutinfo_2 {
+    margin-top: 30px;
+    margin-left: 19px;
+    
+}
+.Ckutls__aboutinfo_2 p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 79px;
+    height: 19px;
+    margin-left: 4px;
+}
+.Ckutls__aboutinfo_2 h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    width: 177px;
+    height: 37px;
+    line-height: 30px;
+}
+.Ckutls__whatjob_1 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 30px;
+}
+.Ckutls__whatjob_1 img {
+    width: 15px;
+    height: 17px;
+}
+.Ckutls__whatjob_1 p {
+    margin-left: 3px;
+}
+.Ckutls__whatjob_2 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 10px;
+}
+.Ckutls__whatjob_2 img {
+    width: 15px;
+    height: 17px;
+}
+.Ckutls__whatjob_2 p {
+    margin-left: 3px;
+}
+.Ckutls__whatjob_3 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 9px;
+}
+.Ckutls__whatjob_3 img {
+    width: 17px;
+    height: 15px;
+}
+.Ckutls__whatjob_3 p {
+    margin-left: 3px;
+}
+.Ckutls__skin_2 {
+    width: 244px;
+    height: 221px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+.Ckutls__skin_2_skin {
+    width: 212px;
+    height: 212px;
+    background-image: url(https://visage.surgeplay.com/front/212/Ckutls_.png);
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-end;
+}
+.Ckutls__skinicons1 {
+   justify-content: space-around;
+    display: flex;
+}
+/*the and Ckutls_card 1*/
+
+/*beginning FUpir_card 2*/
+.FUpir_card {
+    width: 250px;
+    height: 443px;
+    background-color: #C58E74;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    border-radius: 22px;
+}
+.FUpir_text_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    flex-flow: column-reverse;
+    
+}
+
+.FUpir_aboutinfo_2 {
+    margin-top: 30px;
+    margin-left: 19px;
+    
+}
+.FUpir_aboutinfo_2 p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 79px;
+    height: 19px;
+    margin-left: 4px;
+}
+.FUpir_aboutinfo_2 h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    width: 177px;
+    height: 37px;
+    line-height: 30px;
+}
+.FUpir_whatjob_1 {
+    display: flex;
+    width: 206px;
+    height: 24px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 24px;
+    
+}
+.FUpir_whatjob_1 img {
+    width: 25px;
+    height: 24px;
+}
+.FUpir_whatjob_1 p {
+    margin-left: 3px;
+    margin-top: 4px;
+}
+
+.FUpir_skin_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.FUpir_skin_2_skin {
+    width: 212px;
+    height: 212px;
+    background-image: url(https://visage.surgeplay.com/front/212/FUpir.png);
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 3px;
+}
+.FUpir_skinicons1 {
+   justify-content: space-around;
+    display: flex;
+}
+/*the and FUpir_card 1*/
+
+/*beginning busha888_card 1*/
+.busha888_card {
+    width: 422px;
+    height: 269px;
+    flex-shrink: 0;
+    border-radius: 22px;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    background-color: #742271;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.text {
+    width: 211px;
+    height: 269px;
+
+ 
+}
+.aboutinfo {
+    margin-top: 30px;
+    margin-left: 15px;
+    
+    
+}
+.aboutinfo p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 97px;
+    height: 16px;
+}
+.aboutinfo h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    
+}
+.whatjob {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    
+    margin-left: 15px;
+    font-family: 'Montserrat';
+   
+    margin-top: 30px;
+}
+.whatjob p {
+    margin-left: 3px;
+}
+.whatjob img {
+    width: 15px;
+    height: 17px;
+}
+.icons {
+    width: 162px;
+    height: 36px; 
+    justify-content: space-around;
+    display: flex;
+    
+    margin-top: 95px;
+    margin-left: 27px;
+    margin-bottom: 11px;
+    
+}
+.icons img {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    
+    
+}
+.skin {
+    margin-right: 13px;
+    margin-top: 51px;
+    margin-bottom: 3px;
+    
+    
+}
+.skin img {
+    width: 212px;
+    height: 212px;
+}
+/*the and busha888_card 1*/
+
+/*beginning megatntmega_card 1*/
+.megatntmega_card {
+    width: 422px;
+    height: 269px;
+    border-radius: 22px;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    background-color: #393A3A;
+    display: flex;
+  
+
+}
+
+.megatntmega_text {
+    width: 211px;
+    height: 269px;
+
+ 
+}
+.megatntmega_aboutinfo {
+    margin-top: 30px;
+    margin-left: 15px;
+    
+    
+}
+.megatntmega_aboutinfo p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    
+    height: 16px;
+}
+.megatntmega_aboutinfo h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    
+}
+.megatntmega_whatjob {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    
+    margin-left: 15px;
+    font-family: 'Montserrat';
+   
+    margin-top: 30px;
+}
+.megatntmega_whatjob p {
+    margin-left: 3px;
+    margin-top: 3px;
+}
+.megatntmega_whatjob img {
+    width: 25px;
+    height: 24px;
+}
+.megatntmega_icons {
+    width: 79px;
+    height: 36px; 
+    justify-content: space-around;
+    display: flex;
+    margin-top: 95px;
+    margin-left: 72px;
+    margin-bottom: 11px;
+}
+.megatntmega_icons img {
+    width: 36px;
+    height: 36px;
+}
+.megatntmega_skin {
+    margin-top: 51px;
+    margin-bottom: 3px;
+    display: flex;
+    width: 212px;
+    height: 212px;
+    background-image: url(https://visage.surgeplay.com/front/212/megatntmega.png);
+}
+.megatntmega_skin img {
+    width: 212px;
+    height: 212px;
+}
+/*the and megatntmega_card 1*/
+
+/*beginning CLARFFY_card 1*/
+.CLARFFY_card {
+    width: 422px;
+    height: 269px;
+    flex-direction: row;
+    border-radius: 22px;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    background-color: #E2B374;
+    display: flex;
+  
+
+}
+
+.CLARFFY_text {
+    width: 211px;
+    height: 269px;
+
+ 
+}
+.CLARFFY_aboutinfo {
+    margin-top: 30px;
+    margin-left: 15px;
+    
+    
+}
+.CLARFFY_aboutinfo p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 97px;
+    height: 16px;
+}
+.CLARFFY_aboutinfo h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    
+}
+.CLARFFY_whatjob {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    
+    margin-left: 15px;
+    font-family: 'Montserrat';
+   
+    margin-top: 30px;
+}
+.CLARFFY_whatjob p {
+    margin-left: 3px;
+    margin-top: 3px;
+}
+.CLARFFY_whatjob img {
+    width: 25px;
+    height: 24px;
+}
+.CLARFFY_icons {
+    width: 79px;
+    height: 36px; 
+    justify-content: space-around;
+    display: flex;
+    margin-top: 95px;
+    margin-left: 72px;
+    margin-bottom: 11px;
+}
+.CLARFFY_icons img {
+    width: 36px;
+    height: 36px;
+}
+.CLARFFY_skin {
+    margin-right: 13px;
+    margin-top: 51px;
+    margin-bottom: 3px;
+    display: flex;
+    width: 212px;
+    height: 212px;
+}
+.CLARFFY_skin img {
+    width: 212px;
+    height: 212px;
+}
+/*the and CLARFFY_card 1*/
+ 
+@media only screen and (min-width: 2048px) { 
+
+    .info {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 1332px;
+        height: 732px;
+        margin-top: 80px;
+        margin-left: 142px;
+        
+    }
+}
+
+@media (max-width: 1700px) {
+    .info {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 1332px;
+        height: 732px;
+        margin-top: 10px;
+        margin-left: 1px;
+    }
+    .bottom_card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 865px;
+        margin-right: 470px;
+        }
+        
+        .megatntmega_card {
+        margin: 0 auto;
+        }
+        
+        .busha888_card {
+        margin: 0 auto;
+        }
+        
+        .CLARFFY_card {
+        margin: 0 auto;
+        margin-top: 15px;
+        }
+        
+    .top_card {
+        width: 1200px;
+        height: 443px;
+        display: flex;
+        justify-content: center;
+        margin-right: 450px;
+        
+    }
+    .Hepatir_card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .FUpir_card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    }
+
 
 
 
