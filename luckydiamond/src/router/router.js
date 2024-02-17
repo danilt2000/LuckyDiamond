@@ -6,7 +6,6 @@ import SapergamePage from "@/pages/games-pages/SapergamePage.vue";
 import SettingsPage from "@/pages/SettingsPage.vue";
 import CrashGamePage from "@/pages/games-pages/CrashgamePage.vue";
 import JackpotPage from "@/pages/games-pages/JackpotPage.vue";
-import SettingsPage from "@/pages/SettingsPage.vue"
 import AboutPage from "@/pages/AboutPage.vue"
 
 export default createRouter({
