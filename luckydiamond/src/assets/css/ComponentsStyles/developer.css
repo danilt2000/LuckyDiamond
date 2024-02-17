@@ -669,48 +669,54 @@
 
 @media (max-width: 1700px) {
     .info {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    margin-left: 0;
-    justify-content: center;
-    flex-direction: column;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 1332px;
+        height: 732px;
+        margin-top: 10px;
+        margin-left: 1px;
     }
-    
     .bottom_card {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    margin-left: 0;
-    justify-content: none;
-    flex-direction: column;
-    margin-left: 645px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 865px;
+        margin-right: 470px;
+        }
+        
+        .megatntmega_card {
+        margin: 0 auto;
+        }
+        
+        .busha888_card {
+        margin: 0 auto;
+        }
+        
+        .CLARFFY_card {
+        margin: 0 auto;
+        margin-top: 15px;
+        }
+        
+    .top_card {
+        width: 1200px;
+        height: 443px;
+        display: flex;
+        justify-content: center;
+        margin-right: 450px;
+        
+    }
+    .Hepatir_card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .FUpir_card {
+        margin-left: 10px;
+        margin-right: 10px;
     }
     
-    .top_card {
-    width: 100%;
-    height: auto;
-    margin-left: 0;
-    justify-content: none;
-    flex-direction: column;
-    margin-left: 820px;
-    }
-    .Hepatir_card {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    .Ckutls__card {
-        
-        margin-bottom: 20px;
-    }
-    .Hepatir_card {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    .busha888_card {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
     }
 
 
