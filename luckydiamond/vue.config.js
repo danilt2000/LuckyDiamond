@@ -15,7 +15,7 @@ const path = require('path');
 module.exports = {
   // Установка базового URL-адреса для проекта
   publicPath: '/',
-
+  productionSourceMap: false,
   // Настройка Webpack
   configureWebpack: {
     resolve: {
