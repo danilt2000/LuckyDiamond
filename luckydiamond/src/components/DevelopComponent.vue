@@ -38,7 +38,7 @@
           <p>ASP, .NET, MongoDB</p>
         </div>
         <div class="whatjob2_2">
-          <img src="@/assets/icons-developcard/pngegg.png" alt="html">
+          <img src="@/assets/icons-developcard/sql-logo.png" alt="html">
           <p>SQL</p>
         </div>
         </div>
