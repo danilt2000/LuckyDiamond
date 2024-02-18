@@ -6,7 +6,7 @@ export default [
     },
     {
         id: 2,
-        title: 'кейсы',
+        title: 'джекпот',
         players: 0
     },
     {
