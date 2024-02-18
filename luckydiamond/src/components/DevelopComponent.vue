@@ -20,9 +20,9 @@
           <div class="Rafael1209_skin_2_skin">
             
             <div class="Rafael1209_skinicons1">
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
+            <a href="https://t.me/RafaelloChas" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+            <a href="https://discordapp.com/users/773259384095768657" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+            <a href="https://github.com/rafael1209" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
             </div>
           </div>
         </div>
@@ -45,9 +45,9 @@
         <div class="skin_2">
           <div class="skin_2_skin">
             <div class="skinicons1">
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
+            <a href="https://t.me/Hepatacor" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+            <a href="https://discordapp.com/users/293977705815343105" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+            <a href="https://github.com/rafael1209" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
             </div>
           </div>
         </div>
@@ -75,9 +75,9 @@
           <div class="Ckutls__skin_2_skin">
             
             <div class="Ckutls__skinicons1">
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
+            <a href="https://t.me/Ckutls" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+            <a href="https://discordapp.com/users/531420425255911424" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+            <a href="https://github.com/CkutlsGit" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
             </div>
           </div>
         </div>
@@ -98,8 +98,8 @@
           <div class="FUpir_skin_2_skin">
             
             <div class="FUpir_skinicons1">
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+            <a href="https://t.me/Ykropmaha" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+            <a href="https://discordapp.com/users/1126752682183503942" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
            
             </div>
           </div>
@@ -119,8 +119,8 @@
           <p>Designer</p>
         </div>
         <div class="megatntmega_icons">
-          <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+          <a href="https://t.me/random_ak" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+          <a href="https://discordapp.com/users/531420425255911424" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
         </div>
       </div>
       <div class="megatntmega_skin">
@@ -139,13 +139,13 @@
         </div>
         <div class="icons">
           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" ><img src="@/assets/icons-developcard/odniclasniki.png" alt=""></a>
-          <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href="" target="_blank" ><img src="@/assets/icons-developcard/like.png" alt=""></a>
-          <a href="" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
+          <a href="https://t.me/Slayyyyyyyyyyyyyyyyy" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+          <a href="https://www.youtube.com/@busha1/featured" target="_blank" ><img src="@/assets/icons-developcard/like.png" alt=""></a>
+          <a href="https://github.com/Madara0330E" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
         </div>
       </div>
       <div class="skin">
-        <img src="https://visage.surgeplay.com/front/212/busha888.png" alt="">
+        <img src="https://avatar.spworlds.ru/front/212/busha888.png" alt="">
         </div>
     </div>
     <div class="CLARFFY_card">
@@ -159,12 +159,12 @@
           <p>Designer</p>
         </div>
         <div class="CLARFFY_icons">
-          <a href="" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href="" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+          <a href="https://t.me/poko084" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+          <a href="https://discordapp.com/users/784873585852284938" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
         </div>
       </div>
       <div class="CLARFFY_skin">
-        <img src="https://visage.surgeplay.com/front/212/CLARFFY.png" alt="">
+        <img src="https://avatar.spworlds.ru/front/212//CLARFFY.png" alt="">
         </div>
     </div>
   </div>
