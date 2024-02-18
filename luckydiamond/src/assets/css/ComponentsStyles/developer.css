@@ -677,6 +677,7 @@
         height: 732px;
         margin-top: 10px;
         margin-left: 1px;
+        /* overflow-y: auto; */
     }
     .bottom_card {
         display: flex;
