@@ -47,7 +47,7 @@
             <div class="skinicons1">
             <a href="https://t.me/Hepatacor" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
             <a href="https://discordapp.com/users/293977705815343105" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href="https://github.com/rafael1209" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
+            <a href="https://github.com/danilt2000/" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
             </div>
           </div>
         </div>
