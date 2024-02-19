@@ -257,6 +257,29 @@ button {
 }
 
 
+.bg-gradient-left {
+    background: #293561;
+    filter: blur(120px);
+    position: absolute;
+    top: 250px;
+    transform: rotate(180deg);
+    left: 200px;
+    width: 40%;
+    height: 55%;
+    z-index: 0;
+}
+
+.bg-two-gradient-right {
+    background: #293561;
+    filter: blur(120px);
+    position: absolute;
+    top: 220px;
+    transform: rotate(330deg);
+    left: 600px;
+    width: 60%;
+    height: 35%;
+    z-index: 0;
+}
 /* /Crash */
 
 /* Media */

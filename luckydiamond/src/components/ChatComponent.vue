@@ -11,7 +11,13 @@
       <ul>
         <transition-group name="fade">
           <li v-for="msg in array" :key="msg">
-            <div class="card__user" :class="{ 'mention-message': isCurrentUser(msg), 'system-message' : msg.username === '🛠️ System' }">
+            <div
+              class="card__user"
+              :class="{
+                'mention-message': isCurrentUser(msg),
+                'system-message': msg.username === '🛠️ System',
+              }"
+            >
               <div class="user__icon">
                 <img :src="msg.icon" />
               </div>
@@ -55,7 +61,7 @@ export default {
       });
     },
     isCurrentUser(msg) {
-      return msg.msg.includes(GetCookie('SpUserName'))
+      return msg.msg.includes(GetCookie("SpUserName"));
     },
     ClaimDatamsg(msg) {
       const now = Date.now();
@@ -71,7 +77,7 @@ export default {
     eventBus.on("dataChat", (dataFromServer) => {
       try {
         const dataObject = JSON.parse(dataFromServer);
-        
+
         let imageUrl =
           "https://avatar.spworlds.ru/face/55/" + dataObject.SpUserName;
 
@@ -82,8 +88,8 @@ export default {
           icon: imageUrl,
         };
 
-        if (MsgUser.username === '🛠️ System') {
-          MsgUser.icon = 'https://avatar.spworlds.ru/face/55/CONSOLE'
+        if (MsgUser.username === "🛠️ System") {
+          MsgUser.icon = "https://avatar.spworlds.ru/face/55/CONSOLE";
         }
 
         this.array.push(MsgUser);
@@ -98,7 +104,8 @@ export default {
     GetChatHistory().then((response) => {
       if (response && response.length) {
         response.forEach((element) => {
-          let imageUrl = "https://avatar.spworlds.ru/face/55/" + element.userName;
+          let imageUrl =
+            "https://avatar.spworlds.ru/face/55/" + element.userName;
 
           const MsgUser = {
             id: this.id + 1,
@@ -107,8 +114,8 @@ export default {
             icon: imageUrl,
           };
 
-          if (MsgUser.username === '🛠️ System') {
-            MsgUser.icon = 'https://avatar.spworlds.ru/face/55/CONSOLE'
+          if (MsgUser.username === "🛠️ System") {
+            MsgUser.icon = "https://avatar.spworlds.ru/face/55/CONSOLE";
           }
 
           this.array.push(MsgUser);

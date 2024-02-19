@@ -1,0 +1,43 @@
+.jackpot-start {
+    z-index: 1;
+    /* margin-left: 5%; */
+    border-radius: 20px;
+    background: #22252F;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 42vh;
+    /* height: 480px; */
+    height: 32vh;
+    /* margin-top: 2.6%; */
+}
+
+.jackpot-start__content p {
+    color: #FFFFFF84;
+    font-weight: 700;
+    line-height: 31px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 13px;
+}
+
+.padding-elements-jackpot {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.jackpot-start__btns {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.jackpot-start__btns button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 19px;
+    font-style: normal;
+    font-family: Inter;
+    font-size: 16px;
+}
