@@ -38,8 +38,11 @@
         </div>
         <div class="deposit-promocode deposit-promocode__padding--input">
           <h3>Промокод</h3>
+          <div class="promokods">
           <input @focusout="checkValidationPromocode" v-model="promocode" class="promo-input" type="text" />
+        <button class="vvod_promocoda">Ввод</button>
         </div>
+      </div>
           <div class="error-checkbox" v-if="errorAgree">
           <h2>Подтвердите согласие!</h2>
         </div>

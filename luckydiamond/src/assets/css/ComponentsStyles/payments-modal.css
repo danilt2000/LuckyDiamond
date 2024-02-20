@@ -67,7 +67,44 @@
     font-size: 12px;
     padding-left: 40px;
 }
-
+.promo-input {
+    width: 284px;
+    height: 44px;
+    border-radius: 15px;
+    border: 2px solid #2B3458;
+    background: #22252F;
+    color: rgba(148, 148, 148, 0.95);
+    font-weight: 700;
+    font-family: Montserrat Alternates;
+    font-size: 12px;
+    padding-left: 40px;
+    flex: 3.5;
+    font-weight: 700px;
+}
+.vvod_promocoda {
+    flex: 1;
+    width: 52px;
+    height: 44px;
+    background-color: #EF4444;
+    margin-left: 10px;
+    margin-right: 16px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    font-family: Montserrat Alternates;
+    font-weight: 600;
+    font-size: 19px;
+    
+    
+    color: #fff;
+    
+    border: none;
+}
+.promokods {
+    display: flex;
+    flex-wrap: nowrap;
+}
 .display-btns {
     display: flex;
     margin-top: 10px;
@@ -85,6 +122,7 @@
     border: none;
     margin-right: 6px;
     padding: 4px 19px;
+    
 }
 
 .deposit-promocode {
@@ -160,7 +198,7 @@ input[type="checkbox"]:checked::before {
 .btn-style-payments button {
     border-radius: 10px;
     background: #EF4444;
-    ont-family: Montserrat Alternates;
+    Font-family: Montserrat Alternates;
     font-size: 16px;
     color: #fff;
     font-weight: 700;
