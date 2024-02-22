@@ -27,6 +27,7 @@ export default {
       },
     };
   },
+  name: "HelpPage",
   components: {
     HeaderComponent,
     AsideBarComponent,

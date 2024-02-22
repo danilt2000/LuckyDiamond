@@ -159,7 +159,7 @@
           <p>Designer</p>
         </div>
         <div class="CLARFFY_icons">
-          <a href="https://t.me/poko084" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+          <a href="https://t.me/LDpoko" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
           <a href="https://discordapp.com/users/784873585852284938" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
         </div>
       </div>

@@ -74,4 +74,31 @@ export async function GetChatHistory() {
   }
 }
 
+export async function ApplyPromoCode(authToken, searchToken, promoCode) {
+  const data = {
+    userCredentials: {
+      searchToken: searchToken,
+      authtoken: authToken
+    },
+    promoCode: promoCode
+  };
 
+  try {
+    const response = await fetch(`${BackendApiUrl}/PromoCode/ApplyPromo`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+      redirect: "follow"
+    });
+
+    if (!response.ok) {
+      console.log("Fetch error:", response.status);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.log("Fetch error:", error);
+  }
+}

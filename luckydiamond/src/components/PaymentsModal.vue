@@ -33,14 +33,17 @@
           </ul>
         </div>
         <div v-if="showPromocodeStatus" class="error-promocode">
-          <h2 v-if="errorPromocode" class="error-text__promocode">Промокод не найден</h2>
+          <h2 v-if="errorPromocode" class="error-text__promocode">{{ promoResponse }}</h2>
           <h2 v-else class="correct-text__promocode">Промокод успешно применён</h2>
         </div>
         <div class="deposit-promocode deposit-promocode__padding--input">
           <h3>Промокод</h3>
-          <input @focusout="checkValidationPromocode" v-model="promocode" class="promo-input" type="text" />
+          <div class="promokods">
+            <input @focusout="checkValidationPromocode" v-model="promocode" class="promo-input" type="text" />
+            <button class="vvod_promocoda" @click="handleApplyPromoCode">Ввод</button>
+          </div>
         </div>
-          <div class="error-checkbox" v-if="errorAgree">
+        <div class="error-checkbox" v-if="errorAgree">
           <h2>Подтвердите согласие!</h2>
         </div>
         <div class="deposit-checkbox checkbox-styles">
@@ -117,12 +120,14 @@ import PaymentsModalNumbers from "@/mocks/PaymentsModalNumbers";
 import { GettingMoneyOperation, WithdrawMoneyOperation } from "@/assets/js/moneyoperation/Claimmoney";
 import CaptchaComponent from "@/components/CaptchaComponent.vue";
 
+
 import {eventBus} from "@/main";
 
 import { useVuelidate } from '@vuelidate/core'
 import {maxValue, minValue, required, numeric, integer, minLength, maxLength} from "@vuelidate/validators";
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 import {GetCookie} from "@/assets/js/storage/CookieStorage";
+import { ApplyPromoCode } from "@/assets/js/rest/RestMethods.js"; // Замените на правильный путь к файлу с функцией ApplyPromoCode
 
 export default {
   components: { CaptchaComponent },
@@ -212,10 +217,10 @@ export default {
     closeModal() {
       return this.$emit("closemodal");
     },
-    checkValidationPromocode() {
-      this.errorPromocode = !this.promocodeBase.includes(this.promocode);
-      this.showPromocodeStatus = true
-    },
+    // checkValidationPromocode() {
+    //   this.errorPromocode = !this.promocodeBase.includes(this.promocode);
+    //   this.showPromocodeStatus = true
+    // },
     completeValidationCheck() {
       this.offBtn = true
 
@@ -232,6 +237,46 @@ export default {
       this.captchaToken = Token
       this.completeValidtaion.captchatokensaving = true
     },
+    async handleApplyPromoCode() {
+  const authToken = GetCookie("AUTHTOKEN");
+  const searchToken = GetCookie("SearchToken");
+
+  try {
+    const response = await ApplyPromoCode(authToken, searchToken, this.promocode);
+
+    console.log(response);
+
+    if (response === 'Promo dont exist.')
+    {
+      this.showPromocodeStatus = true;
+      this.errorPromocode = true;
+      this.promoResponse = 'Промокод не найден';
+    } 
+    else if(response === 'promotional code has expired')
+    {
+      this.showPromocodeStatus = true;
+      this.errorPromocode = true;
+      this.promoResponse = 'Не действителен';
+    }
+    else if(response === 'User is alredy use the promo')
+    {
+      this.showPromocodeStatus = true;
+      this.errorPromocode = true;
+      this.promoResponse = 'Уже использован';
+    }
+    else
+    {
+      this.showPromocodeStatus = true;
+      this.errorPromocode = false;
+      this.promoResponse = response;
+    }
+
+  } 
+  catch (error)
+  {
+    console.error("Ошибка при применении промокода:", error);
+  }
+},
     async RedirectedMethodDep() {
       this.v$.$touch()
 

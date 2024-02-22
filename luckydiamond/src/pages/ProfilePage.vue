@@ -118,34 +118,34 @@ export default {
     },
     NotificationMethod() {
       this.notification = false
+    },
+    formatNumber(number) {
+      return number < 10 ? `0${number}` : number;
+    },
+    getCurrentFormattedDate() {
+      const currentDate = new Date();
+      return `${this.formatNumber(currentDate.getDate())}.${this.formatNumber(currentDate.getMonth() + 1)}.${currentDate.getFullYear()}, ${this.formatNumber(currentDate.getHours())}:${this.formatNumber(currentDate.getMinutes())}`;
+    },
+    claimDataDeposit(amount) {
+      const historyPayments = {
+        name: 'TEST USER',
+        comment: 'test',
+        data: this.getCurrentFormattedDate(),
+        amount: amount
+      }
+    
+      this.arrayHistory.unshift(historyPayments)
+    },
+    claimDataWithdraw(amount) {
+      const historyPayments = {
+        name: 'TEST USER',
+        comment: 'test',
+        data: this.getCurrentFormattedDate(),
+        amount: -amount
+      }
+    
+      this.arrayHistory.unshift(historyPayments)
     }
-    // formatNumber(number) {
-    //   return number < 10 ? `0${number}` : number;
-    // },
-    // getCurrentFormattedDate() {
-    //   const currentDate = new Date();
-    //   return `${this.formatNumber(currentDate.getDate())}.${this.formatNumber(currentDate.getMonth() + 1)}.${currentDate.getFullYear()}, ${this.formatNumber(currentDate.getHours())}:${this.formatNumber(currentDate.getMinutes())}`;
-    // },
-    // claimDataDeposit(amount) {
-    //   const historyPayments = {
-    //     name: 'TEST USER',
-    //     comment: 'test',
-    //     data: this.getCurrentFormattedDate(),
-    //     amount: amount
-    //   }
-    //
-    //   this.arrayHistory.unshift(historyPayments)
-    // },
-    // claimDataWithdraw(amount) {
-    //   const historyPayments = {
-    //     name: 'TEST USER',
-    //     comment: 'test',
-    //     data: this.getCurrentFormattedDate(),
-    //     amount: -amount
-    //   }
-    //
-    //   this.arrayHistory.unshift(historyPayments)
-    // }
   }
 }
 </script>

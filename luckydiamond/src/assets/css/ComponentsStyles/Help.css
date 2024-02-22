@@ -1,0 +1,73 @@
+*{
+    font-family: Montserrat Alternates;
+    text-decoration: none;
+}
+.Heading_p1 {
+    font-size: 18px ;
+    font-family: Montserrat Alternates;
+    
+}
+.heding2_text {
+    width: 949px;
+    height: 132px;
+}
+.Heading_p1 a {
+    color: #5865F2 ;
+    font-family: Montserrat Alternates;
+}
+.questions {
+    font-size: 18px ;
+    font-family: Montserrat Alternates;
+}
+.questions1  {
+    font-size: 18px ;
+    font-family: Montserrat Alternates; 
+    background-color:#3f3f3f;
+    width: 426px;
+    height: 30px;
+    border-radius: 8px ;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+.questions1 b {
+    margin-top: 4.3px;
+}
+.questions1 img {
+   margin-left: 30px;
+   width: 16px;
+   margin-top: 6px;
+}
+.text_questions {
+    width: 840px;
+    height: 132px;
+    font-size: 18px ;
+    font-family: Montserrat Alternates;
+}
+.text_questions p {
+    font-size: 18px ;
+    font-family: Montserrat Alternates;
+}
+.questions2 {
+    font-size: 18px ;
+    font-family: Montserrat Alternates; 
+    width: 544px;
+    height: 27px;
+    
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+}
+.questions2 img {
+margin-left: 10px;
+width: 16px;
+margin-top: 3.5px;
+
+}
+.Social1where {
+    flex-direction: row;
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
