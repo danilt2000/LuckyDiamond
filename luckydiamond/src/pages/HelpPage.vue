@@ -5,6 +5,8 @@
     <develop-component></develop-component>
     <header-component></header-component>
 
+    <chat-component></chat-component>
+
     <section class="help">
       <div class="box_help">
         <div class="Heading_p1">
@@ -78,7 +80,7 @@
 // import HelpComponent from "@/components/HelpComponent.vue";
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
-// import ChatComponent from "@/components/ChatComponent.vue";
+import ChatComponent from "@/components/ChatComponent.vue";
 import '@/assets/css/ComponentsStyles/Help.css'
 
 export default {
@@ -101,7 +103,7 @@ export default {
     HeaderComponent,
     AsideBarComponent,
     // HelpComponent,
-    // ChatComponent,
+    ChatComponent,
   },
   
 };
