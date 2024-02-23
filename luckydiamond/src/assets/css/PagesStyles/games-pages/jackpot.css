@@ -2,12 +2,46 @@
     z-index: 1;
     /* margin-left: 5%; */
     border-radius: 20px;
-    background: #22252F;
+    background: #1D223E;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 42vh;
     /* height: 480px; */
     height: 32vh;
+    border: 1px solid #262C55;
     /* margin-top: 2.6%; */
+    margin: 2.6%;
+}
+
+.jackpot-loading-bar {
+    z-index: 1;
+    /* margin-left: 5%; */
+    border-radius: 20px;
+    background: #1D223E;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+
+    /* height: 480px; */
+    height: 100%;
+    border: 1px solid #262C55;
+    /* margin-top: 2.6%; */
+    /* margin: 2.6%; */
+}
+
+.jackpot-game {
+    z-index: 1;
+    /* margin-left: 5%; */
+    border-radius: 20px;
+    /* background: #1D223E; */
+    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+    width: 69%;
+    /* height: 480px; */
+    height: 94%;
+    /* border: 1px solid #262C55; */
+    margin-top: 2.6%;
+}
+
+.jackpot-main-elements {
+    z-index: 1;
 }
 
 .jackpot-start__content p {
@@ -29,6 +63,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .jackpot-start__btns button {
     width: 100%;
     padding: 12px;
@@ -40,4 +75,64 @@
     font-style: normal;
     font-family: Inter;
     font-size: 16px;
+}
+
+.bank-container {
+    display: flex;
+    align-items: center;
+    /* background-color: #000066; */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif; /* Choose your font */
+}
+
+.shield img {
+    width: 35px; /* Adjust based on your shield size */
+    height: auto;
+    margin-left: 10px;
+}
+
+.bank-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.bank-value {
+    font-size: 24px; /* Large text size */
+    font-weight: bold; /* Make the number bold */
+}
+
+.bank-name {
+    font-size: 14px; /* Smaller text size for 'БАНК' */
+}
+
+.progress-bar {
+    width: 95%;
+    background-color: #D9D9D9; /* Navy blue background */
+    border-radius: 10px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-left: 2vh;
+    margin-bottom: 3%;
+}
+
+.progress {
+    height: 40px;
+    background-color: #E13F3F; /* Red for the progress */
+    border-radius: 10px ; /* Rounded corners on the left side */
+    line-height: 40px; /* Same as height to vertically center text */
+    color: white;
+    text-align: start; 
+    text-indent: 20px;
+    padding-right: 10px; /* Add some padding to the right of the text */
+    transition: width 0.25s ease-in-out;
+}
+
+
+@media (max-width: 1415px) {
+    .padding-elements-jackpot {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

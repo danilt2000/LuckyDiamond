@@ -203,11 +203,11 @@ button {
 .jackpot {
     display: flex;
     grid-area: jackpot;
-    height: 95%;
+    /* height: 95%;
     border-radius: 3.125rem;
     background: #17181C;
     box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
-    margin: 0.625rem 2.438rem 1.125rem 1.125rem;
+    margin: 0.625rem 2.438rem 1.125rem 1.125rem; */
 }
 
 .about {
