@@ -115,19 +115,37 @@
                       />
                     </div>
                   </div>
-                  <!-- <progress class="progress is-primary" value="39" max="100">
-                    15%
-                  </progress> -->
+
                   <div class="progress-bar">
                     <div class="progress" style="width: 70%">15.00 СЕК</div>
                   </div>
-                
-                  
-
                 </div>
+                
               </div>
               <div class="col-md-2">
                 <div class="jackpot-loading-bar"></div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="jackpot-carousel">
+                  <div class="carousel-arrow">▲</div>
+                  <Carousel
+                    ref="carousel"
+                    :itemsToShow="15"
+                    :wrapAround="true"
+                    :transition="400"
+                    class="no-pointer-events"
+                  >
+                    <Slide v-for="slide in 10" :key="slide">
+                      <div class="carousel__item">
+                        <img
+                          src="https://avatar.spworlds.ru/face/55/Hepatir.png"
+                          alt="Голова"
+                        />
+                      </div>
+                    </Slide>
+                  </Carousel>
+                </div>
               </div>
             </div>
           </div>
@@ -156,6 +174,11 @@ import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import "@/assets/css/PagesStyles/games-pages/jackpot.css";
 import "@/assets/css/global.css";
 import JackpotNumbers from "@/mocks/JackpotNumbers";
+
+import { Carousel, Slide } from "vue3-carousel";
+
+import "vue3-carousel/dist/carousel.css";
+
 // import ProgressBar from "vue-bulma-progress-bar";
 
 // import '@/assets/css/PagesStyles/games-pages/jackpot.css'
@@ -164,6 +187,9 @@ export default {
     HeaderComponent,
     AsideBarComponent,
     ChatComponent,
+    Carousel,
+    Slide,
+    // Pagination
     // ProgressBar,
   },
   data() {
@@ -176,7 +202,7 @@ export default {
       value: 0,
       max: 100,
       amountDeposit: 0,
-    
+
       //   crashObject: '',
       //   textError: '',
       //   startGame: false,
@@ -184,7 +210,14 @@ export default {
     };
   },
   methods: {
-   
+    startAutoScroll() {
+      this.interval = setInterval(() => {
+        this.$refs.carousel.next();
+      }, 1);
+    },
+  },
+  mounted() {
+    this.startAutoScroll();
   },
   watch: {
     amountDeposit(DepositCount) {
@@ -249,3 +282,45 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.carousel__slide {
+  padding: 5px;
+}
+
+.carousel__viewport {
+  perspective: 2000px;
+}
+
+.carousel__track {
+  transform-style: preserve-3d;
+}
+
+.carousel__slide--sliding {
+  transition: 0.5s;
+}
+
+.carousel__slide {
+  opacity: 0.9;
+  transform: rotateY(-20deg) scale(0.9);
+}
+
+.carousel__slide--active ~ .carousel__slide {
+  transform: rotateY(20deg) scale(0.9);
+}
+
+.carousel__slide--prev {
+  opacity: 1;
+  transform: rotateY(-10deg) scale(0.95);
+}
+
+.carousel__slide--next {
+  opacity: 1;
+  transform: rotateY(10deg) scale(0.95);
+}
+
+.carousel__slide--active {
+  opacity: 1;
+  transform: rotateY(0) scale(1.1);
+}
+</style>
