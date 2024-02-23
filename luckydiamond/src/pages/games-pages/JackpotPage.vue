@@ -117,10 +117,16 @@
                   </div>
 
                   <div class="progress-bar">
-                    <div class="progress" style="width: 70%">15.00 СЕК</div>
+                    <div
+                      class="progress"
+                      :style="{ width: progressBarWidth + '%' }"
+                    >
+                      <span class="progress-text">{{
+                        remainingSeconds >= 0 ? remainingSeconds + " СЕК" : ""
+                      }}</span>
+                    </div>
                   </div>
                 </div>
-                
               </div>
               <div class="col-md-2">
                 <div class="jackpot-loading-bar"></div>
@@ -130,21 +136,23 @@
                 <div class="jackpot-carousel">
                   <div class="carousel-arrow">▲</div>
                   <Carousel
+                    @slide-start="handleSlideStart"
                     ref="carousel"
-                    :itemsToShow="15"
+                    :itemsToShow="10"
+                    :autoplay="autoplay"
+                    :transition="150"
                     :wrapAround="true"
-                    :transition="400"
                     class="no-pointer-events"
                   >
-                    <Slide v-for="slide in 10" :key="slide">
+                    <Slide v-for="(slide, index) in slides" :key="index">
                       <div class="carousel__item">
-                        <img
-                          src="https://avatar.spworlds.ru/face/55/Hepatir.png"
-                          alt="Голова"
-                        />
+                        <img :src="slide.img" alt="Голова" />
                       </div>
                     </Slide>
                   </Carousel>
+                  <!-- <button @click="stopCarousel">
+                    Остановить автопрокрутку
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -175,9 +183,13 @@ import "@/assets/css/PagesStyles/games-pages/jackpot.css";
 import "@/assets/css/global.css";
 import JackpotNumbers from "@/mocks/JackpotNumbers";
 
+import { ConnectToJackpotSocket } from "@/assets/js/jackpot/JackpotLogic.js";
+
 import { Carousel, Slide } from "vue3-carousel";
 
 import "vue3-carousel/dist/carousel.css";
+
+import { eventBus } from "@/main";
 
 // import ProgressBar from "vue-bulma-progress-bar";
 
@@ -192,32 +204,203 @@ export default {
     // Pagination
     // ProgressBar,
   },
+  inject: ["eventBus"],
   data() {
     return {
       JackpotNumbers,
-      //   clickedBtn: null,
-      //   ErrorClick: false,
-      //   ErrorJoin: false,
-      //   balance: 0,
+      autoplay: 0,
+      slides: [
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+          nickname: "Hepatir",
+        },
+      ],
+      currentSlide: 0,
       value: 0,
       max: 100,
       amountDeposit: 0,
-
-      //   crashObject: '',
-      //   textError: '',
-      //   startGame: false,
-      //   offBtn: false
+      isCarouselStopped: false,
+      targetNickname: "",
+      isStopButtonPressed: false,
+      isGameTimerStarted: false,
+      remainingSeconds: 0,
+      progressBarWidth: 0,
+      // idCurrentGame: "",
+      lastUserWinner: "",
+      // lastIdGame: "",
     };
   },
+
   methods: {
+    checkGameEnd(endGameUtc) {
+      const endTime = new Date(endGameUtc).getTime();
+      const currentTime = new Date().getTime();
+      const timeLeft = endTime - currentTime;
+
+      if (timeLeft > 0) {
+        // Устанавливаем таймер, который сработает, когда игра должна закончиться
+        setTimeout(() => {
+          eventBus.emit("gameEnded"); // Транслируем событие окончания игры
+          console.log("Game has ended");
+        }, timeLeft);
+      } else {
+        // Игра уже закончилась
+        // eventBus.emit("gameEnded"); // Транслируем событие окончания игры
+        console.log("Game has already ended");
+      }
+    },
     startAutoScroll() {
       this.interval = setInterval(() => {
         this.$refs.carousel.next();
       }, 1);
     },
+    startGameTimer(startGameUtc) {
+      if (!this.isGameTimerStarted) {
+        this.isGameTimerStarted = true;
+        const startTime = new Date(startGameUtc).getTime();
+        const updateTimer = () => {
+          const currentTime = new Date().getTime();
+          const diff = startTime - currentTime;
+          this.remainingSeconds = Math.max(0, Math.floor(diff / 1000));
+          if (diff <= 0) {
+            this.remainingSeconds = 0;
+            this.progressBarWidth = 100; // Полный прогресс
+            clearInterval(this.timerInterval); // Остановить таймер
+            this.autoplay = 20;
+
+            // Действия после окончания таймера, если необходимо
+          } else {
+            this.remainingSeconds = Math.floor(diff / 1000); // Обновляем оставшееся время в секундах
+            const totalDuration = 30; // Допустим, обратный отсчет идет с 60 секунд
+            this.progressBarWidth =
+              ((totalDuration - this.remainingSeconds) / totalDuration) * 100;
+          }
+
+          // Обновление текста и ширины прогресс-бара
+          const progressBarElement = document.querySelector(".progress");
+          if (progressBarElement) {
+            const progressText =
+              progressBarElement.querySelector(".progress-text");
+            if (progressText) {
+              progressText.style.opacity = "0";
+              setTimeout(() => {
+                progressBarElement.style.width = `${this.progressBarWidth}%`;
+                progressText.textContent = `${this.remainingSeconds} СЕК`;
+                progressText.style.opacity = "1";
+              }, 500); // Задержка должна соответствовать продолжительности анимации
+            }
+          }
+        };
+
+        // Запускаем таймер
+        this.timerInterval = setInterval(updateTimer, 1000);
+        updateTimer(); // Вызываем сразу для инициализации
+      }
+    },
+    handleSlideStart(data) {
+      try {
+        const { slidingToIndex } = data;
+        this.currentSlideIndex = slidingToIndex;
+        if (this.isStopButtonPressed) {
+          if (
+            this.slides[this.currentSlideIndex].nickname ===
+              this.targetNickname &&
+            !this.isCarouselStopped
+          ) {
+            this.stopAutoplay();
+          }
+        }
+      } catch (error) {
+        console.error("Error in handleSlideStart:", error);
+        // Здесь вы можете обработать ошибку, например, остановить карусель
+      }
+    },
+    stopCarousel() {
+      this.isStopButtonPressed = true;
+      this.autoplay = 200;
+    },
+    stopAutoplay() {
+      this.autoplay = 0;
+      this.isCarouselStopped = true;
+      if (this.interval) {
+        clearInterval(this.interval);
+      }
+    },
+    changeLastFiveImages() {
+      const newImage = "https://avatar.spworlds.ru/face/55/Hepatir.png";
+      console.log(this.slides);
+      this.slides[9].img = newImage;
+    },
+    stopOnTarget(targetNickname) {
+      if (this.slides[this.currentSlide].nickname === targetNickname) {
+        this.autoplay = 0; // Остановить автопрокрутку
+        return true; // Возвращаем true, если нашли нужный слайд
+      }
+      return false; // Возвращаем false, если нужный слайд не найден
+    },
   },
   mounted() {
-    this.startAutoScroll();
+    ConnectToJackpotSocket();
+    eventBus.on("jackpotGameTik", (data) => {
+      try {
+        if (data) {
+          const dataObject = JSON.parse(data);
+          console.log(dataObject);
+
+          this.lastUserWinner=dataObject.LastGame.WinnerUserName;
+
+          if (dataObject.CurrentGame.GameState == "StartGameTimer") {
+            this.startGameTimer(dataObject.CurrentGame.StartGameUtc);
+          }
+
+          if (
+            dataObject.CurrentGame.GameState != "WaitingForPlayers" &&
+            dataObject.CurrentGame.GameState == "Running"
+          ) {
+            this.checkGameEnd(dataObject.CurrentGame.EndGameUtc);
+            // this.idCurrentGame = dataObject.CurrentGame.Id;
+          }
+          // Дальнейшая обработка dataObject...
+        } else {
+          // Если данные не определены или пусты, выводим соответствующее сообщение в консоль
+          console.log("Received undefined or null data");
+        }
+        // console.log(dataFromServer);
+      } catch (error) {
+        console.log(error);
+      }
+    });
+    eventBus.on("gameEnded", () => {
+      setTimeout(() => {
+        this.targetNickname = this.lastUserWinner;
+        this.stopCarousel();
+    }, 2000);
+    });
+    // this.startAutoScroll();
   },
   watch: {
     amountDeposit(DepositCount) {

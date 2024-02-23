@@ -55,7 +55,7 @@
     <div class="Ckutls__card">
       <div class="Ckutls__text_2">
         <div class="Ckutls__aboutinfo_2">
-          <p>Бэкендер</p>
+          <p>Фронтэндер</p>
           <h1>Ckutls_</h1>
         </div>
         <div class="Ckutls__whatjob_1">
@@ -130,7 +130,7 @@
     <div class="busha888_card">
       <div class="text">
         <div class="aboutinfo">
-          <p>фронтэндер</p>
+          <p>Фронтэндер</p>
           <h1>busha888</h1>
         </div>
         <div class="whatjob">
