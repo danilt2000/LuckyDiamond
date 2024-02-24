@@ -158,11 +158,12 @@ button {
     grid-area: chat;
     background: #16171B;
     filter: drop-shadow(0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
-    border-radius: 0;
+    border-radius: 15px;
     /* border-radius: 1.25rem; */
     height: 100%;
     position: relative;
     z-index: 3;
+   
 }
 
 /* /Chat */
@@ -212,7 +213,9 @@ button {
 
 .about {
     grid-area: about;
+    
 }
+
 
 /* /Profile */
 
@@ -275,12 +278,15 @@ button {
 .help {
     grid-area: help;
     display: flex;
-    height: 95%;
+    height:99%;
     border-radius: 3.125rem;
     background: #17181C;
     box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
     margin: 0.625rem 2.438rem 1.125rem 1.125rem;
     /*height: 96.2%;*/
+    width: 1000px;
+    margin: 0 auto;
+    
 }
 
 
