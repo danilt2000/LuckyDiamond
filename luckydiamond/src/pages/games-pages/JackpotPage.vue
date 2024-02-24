@@ -204,50 +204,50 @@ export default {
   data() {
     return {
       JackpotNumbers,
-      autoplay: 20,
-      slides: [
-        {
-          img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
-          nickname: "Hepatir",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
-          nickname: "Hepatir",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
-          nickname: "Hepagfdtir",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
-          nickname: "Hepgdfatir",
-        },
-      ],
-      // slides: [],
+      autoplay: 0,
+      // slides: [
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+      //     nickname: "Hepatir",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+      //     nickname: "Hepatir",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+      //     nickname: "Hepagfdtir",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+      //     nickname: "Hepgdfatir",
+      //   },
+      // ],
+      slides: [],
       currentSlide: 0,
       value: 0,
       max: 100,
@@ -257,7 +257,8 @@ export default {
       isGameTimerStarted: false,
       remainingSeconds: 0,
       progressBarWidth: 0,
-      // idCurrentGame: "",
+      idCurrentGame: "",
+      lastUserWinerGameId: " ",
       lastUserWinner: "",
       // lastIdGame: "",
     };
@@ -269,11 +270,11 @@ export default {
       players.forEach((player) => {
         const numberOfCards = player.WinningPercentage / 10; // Предполагаем, что 10% это 1 карточка
         for (let i = 0; i < numberOfCards; i++) {
-          if (i==0) {
+          if (i == 0) {
             this.slides.push({
-            img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
-            nickname: player.UserName,
-          })
+              img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
+              nickname: player.UserName,
+            });
           }
           this.slides.push({
             img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
@@ -316,11 +317,10 @@ export default {
           if (diff <= 0) {
             this.remainingSeconds = 0;
             this.progressBarWidth = 100; // Полный прогресс
-
             // Действия после окончания таймера, если необходимо
           } else {
             this.remainingSeconds = Math.floor(diff / 1000); // Обновляем оставшееся время в секундах
-            const totalDuration = 30; // Допустим, обратный отсчет идет с 60 секунд
+            const totalDuration = 10; // Допустим, обратный отсчет идет с 60 секунд
             this.progressBarWidth =
               ((totalDuration - this.remainingSeconds) / totalDuration) * 100;
           }
@@ -347,25 +347,30 @@ export default {
       }
     },
     handleSlideStart(data) {
-    //   try {
-    //     let { slidingToIndex,currentSlideIndex } = data;
-    //     // Проверяем, существует ли слайд и имеет ли он свойство nickname
-    //     if (this.slides[slidingToIndex] && this.slides[slidingToIndex].nickname) {
-    //         if (this.isStopButtonPressed) {
-    //             if (this.slides[currentSlideIndex].nickname == "Hepatir") {
-     
-    //               // this.$refs.carousel.slideTo(this.currentSlideIndex);
+      try {
+        let { slidingToIndex, currentSlideIndex } = data;
+        // Проверяем, существует ли слайд и имеет ли он свойство nickname
+        if (
+          this.slides[slidingToIndex] &&
+          this.slides[slidingToIndex].nickname
+        ) {
+          if (
+            this.isStopButtonPressed &&
+            this.idCurrentGame == this.lastUserWinerGameId
+          ) {
+            if (
+              this.slides[currentSlideIndex].nickname == this.targetNickname
+            ) {
+              // this.$refs.carousel.slideTo(this.currentSlideIndex);
 
-
-
-    //             // if (this.slides[this.currentSlideIndex].nickname == this.targetNickname) {
-    //                 this.stopAutoplay();
-    //             }
-    //         }
-    //     } 
-    // } catch (error) {
-    //     console.error("Error in handleSlideStart:", error);
-    // }
+              // if (this.slides[this.currentSlideIndex].nickname == this.targetNickname) {
+              this.stopAutoplay();
+            }
+          }
+        }
+      } catch (error) {
+        console.error("Error in handleSlideStart:", error);
+      }
       // try {
       //   const { slidingToIndex } = data;
       //   this.currentSlideIndex = slidingToIndex;
@@ -380,21 +385,19 @@ export default {
       //   console.error("Error in handleSlideStart:", error);
       //   // Здесь вы можете обработать ошибку, например, остановить карусель
       // }
-      try {
-        const { slidingToIndex } = data;
-        this.currentSlideIndex = slidingToIndex;
-        if (this.isStopButtonPressed) {
-          if (
-            this.slides[this.currentSlideIndex].nickname ==
-              "Hepatir"
-          ) {
-            this.stopAutoplay();
-          }
-        }
-      } catch (error) {
-        console.error("Error in handleSlideStart:", error);
-        // Здесь вы можете обработать ошибку, например, остановить карусель
-      }
+
+      // try {
+      //   const { slidingToIndex } = data;
+      //   this.currentSlideIndex = slidingToIndex;
+      //   if (this.isStopButtonPressed) {
+      //     if (this.slides[this.currentSlideIndex].nickname == "Hepatir") {
+      //       this.stopAutoplay();
+      //     }
+      //   }
+      // } catch (error) {
+      //   console.error("Error in handleSlideStart:", error);
+      //   // Здесь вы можете обработать ошибку, например, остановить карусель
+      // }
     },
     stopCarousel() {
       this.isStopButtonPressed = true;
@@ -405,7 +408,9 @@ export default {
       this.autoplay = 0;
       this.isGameTimerStarted = false;
       this.isStopButtonPressed = false;
-      
+      this.lastUserWinerGameId = " ";
+      this.idCurrentGame = "";
+      this.lastUserWinner = "";
     },
     changeLastFiveImages() {
       const newImage = "https://avatar.spworlds.ru/face/55/Hepatir.png";
@@ -432,21 +437,25 @@ export default {
             console.log("Waiting for players");
             console.log("Put there earlies cards");
             this.lastUserWinner = dataObject.LastGame.WinnerUserName;
-
+            this.lastUserWinerGameId = dataObject.LastGame.Id;
+            if (this.lastUserWinerGameId == this.idCurrentGame) {
+              this.targetNickname = this.lastUserWinner;
+              this.stopCarousel();
+            }
             // this.mapPlayersToSlides(dataObject.LastGame.PlayerList);
           }
           if (dataObject.CurrentGame.GameState == "StartGameTimer") {
             if (!this.isGameTimerStarted) {
               console.log("Set players");
               this.mapPlayersToSlides(dataObject.CurrentGame.PlayerList);
+              this.idCurrentGame = dataObject.CurrentGame.Id;
             }
             this.startGameTimer(dataObject.CurrentGame.StartGameUtc);
           }
 
-          if (
-            dataObject.CurrentGame.GameState == "Running"
-          ) {
-            this.checkGameEnd(dataObject.CurrentGame.EndGameUtc);
+          if (dataObject.CurrentGame.GameState == "Running") {
+            this.autoplay = 20;
+            // this.checkGameEnd(dataObject.CurrentGame.EndGameUtc);
             // this.idCurrentGame = dataObject.CurrentGame.Id;
           }
           // Дальнейшая обработка dataObject...
@@ -462,64 +471,15 @@ export default {
     eventBus.on("gameEnded", () => {
       setTimeout(() => {
         if (!this.isStopButtonPressed) {
+          // if (this.idCurrentGame == this.lastUserWinerGameId) {
           this.targetNickname = this.lastUserWinner;
           this.stopCarousel();
+          // }
         }
-      }, 2000);
+      }, 1000);
     });
-    // this.startAutoScroll();
   },
-  watch: {
-    amountDeposit(DepositCount) {
-      if (![1, 5, 10, 50, 100, parseInt(this.balance)].includes(DepositCount)) {
-        this.clickedBtn = null;
-      } else {
-        let index;
-        switch (DepositCount) {
-          case 1:
-            if (parseInt(this.balance) === DepositCount) {
-              index = 5;
-            } else {
-              index = 0;
-            }
-            break;
-          case 5:
-            if (parseInt(this.balance) === DepositCount) {
-              index = 5;
-            } else {
-              index = 1;
-            }
-            break;
-          case 10:
-            if (parseInt(this.balance) === DepositCount) {
-              index = 5;
-            } else {
-              index = 2;
-            }
-            break;
-          case 50:
-            if (parseInt(this.balance) === DepositCount) {
-              index = 5;
-            } else {
-              index = 3;
-            }
-            break;
-          case 100:
-            if (parseInt(this.balance) === DepositCount) {
-              index = 5;
-            } else {
-              index = 4;
-            }
-            break;
-          case parseInt(this.balance):
-            index = 5;
-            break;
-        }
-
-        this.clickedBtnChoice(index, DepositCount);
-      }
-    },
-  },
+  watch: {},
   async created() {
     if (GetCookie("AUTHTOKEN") && GetCookie("SearchToken")) {
       await GetCurrentMoney(
