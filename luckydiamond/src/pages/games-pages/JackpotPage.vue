@@ -150,9 +150,9 @@
                       </div>
                     </Slide>
                   </Carousel>
-                  <!-- <button @click="stopCarousel">
+                  <button @click="stopCarousel">
                     Остановить автопрокрутку
-                  </button> -->
+                  </button>
                 </div>
               </div>
             </div>
@@ -190,7 +190,6 @@ import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
 import { eventBus } from "@/main";
-
 export default {
   components: {
     HeaderComponent,
@@ -205,38 +204,50 @@ export default {
   data() {
     return {
       JackpotNumbers,
-      autoplay: 0,
-      // slides: [
-      //   {
-      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //     nickname: "Ckutls_",
-      //   },
-      //   {
-      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //     nickname: "Ckutls_",
-      //   },
-      //   {
-      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //     nickname: "Ckutls_",
-      //   },
-      //   {
-      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //     nickname: "Ckutls_",
-      //   },
-      //   {
-      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //     nickname: "Ckutls_",
-      //   },
-      //   {
-      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //     nickname: "Ckutls_",
-      //   },
-      //   {
-      //     img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
-      //     nickname: "Hepatir",
-      //   },
-      // ],
-      slides: [],
+      autoplay: 20,
+      slides: [
+        {
+          img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+          nickname: "Hepatir",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+          nickname: "Hepatir",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+          nickname: "Hepagfdtir",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+          nickname: "Ckutls_",
+        },
+        {
+          img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+          nickname: "Hepgdfatir",
+        },
+      ],
+      // slides: [],
       currentSlide: 0,
       value: 0,
       max: 100,
@@ -258,6 +269,12 @@ export default {
       players.forEach((player) => {
         const numberOfCards = player.WinningPercentage / 10; // Предполагаем, что 10% это 1 карточка
         for (let i = 0; i < numberOfCards; i++) {
+          if (i==0) {
+            this.slides.push({
+            img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
+            nickname: player.UserName,
+          })
+          }
           this.slides.push({
             img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
             nickname: player.UserName,
@@ -299,8 +316,6 @@ export default {
           if (diff <= 0) {
             this.remainingSeconds = 0;
             this.progressBarWidth = 100; // Полный прогресс
-            clearInterval(this.timerInterval); // Остановить таймер
-            this.autoplay = 20;
 
             // Действия после окончания таймера, если необходимо
           } else {
@@ -332,21 +347,25 @@ export default {
       }
     },
     handleSlideStart(data) {
-      try {
-        const { slidingToIndex } = data;
-        // Проверяем, существует ли слайд и имеет ли он свойство nickname
-        if (this.slides[slidingToIndex] && this.slides[slidingToIndex].nickname) {
-            this.currentSlideIndex = slidingToIndex;
-            if (this.isStopButtonPressed) {
-                if (this.slides[this.currentSlideIndex].nickname == "Hepatir") {
-                // if (this.slides[this.currentSlideIndex].nickname == this.targetNickname) {
-                    this.stopAutoplay();
-                }
-            }
-        } 
-    } catch (error) {
-        console.error("Error in handleSlideStart:", error);
-    }
+    //   try {
+    //     let { slidingToIndex,currentSlideIndex } = data;
+    //     // Проверяем, существует ли слайд и имеет ли он свойство nickname
+    //     if (this.slides[slidingToIndex] && this.slides[slidingToIndex].nickname) {
+    //         if (this.isStopButtonPressed) {
+    //             if (this.slides[currentSlideIndex].nickname == "Hepatir") {
+     
+    //               // this.$refs.carousel.slideTo(this.currentSlideIndex);
+
+
+
+    //             // if (this.slides[this.currentSlideIndex].nickname == this.targetNickname) {
+    //                 this.stopAutoplay();
+    //             }
+    //         }
+    //     } 
+    // } catch (error) {
+    //     console.error("Error in handleSlideStart:", error);
+    // }
       // try {
       //   const { slidingToIndex } = data;
       //   this.currentSlideIndex = slidingToIndex;
@@ -361,34 +380,32 @@ export default {
       //   console.error("Error in handleSlideStart:", error);
       //   // Здесь вы можете обработать ошибку, например, остановить карусель
       // }
-      // try {
-      //   const { slidingToIndex } = data;
-      //   this.currentSlideIndex = slidingToIndex;
-      //   if (this.isStopButtonPressed) {
-      //     if (
-      //       this.slides[this.currentSlideIndex].nickname ==
-      //         "Hepatir"
-      //     ) {
-      //       this.stopAutoplay();
-      //     }
-      //   }
-      // } catch (error) {
-      //   console.error("Error in handleSlideStart:", error);
-      //   // Здесь вы можете обработать ошибку, например, остановить карусель
-      // }
+      try {
+        const { slidingToIndex } = data;
+        this.currentSlideIndex = slidingToIndex;
+        if (this.isStopButtonPressed) {
+          if (
+            this.slides[this.currentSlideIndex].nickname ==
+              "Hepatir"
+          ) {
+            this.stopAutoplay();
+          }
+        }
+      } catch (error) {
+        console.error("Error in handleSlideStart:", error);
+        // Здесь вы можете обработать ошибку, например, остановить карусель
+      }
     },
     stopCarousel() {
       this.isStopButtonPressed = true;
       this.autoplay = 200;
     },
     stopAutoplay() {
-      this.autoplay = 0;
       this.targetNickname = "";
+      this.autoplay = 0;
       this.isGameTimerStarted = false;
       this.isStopButtonPressed = false;
-      if (this.interval) {
-        clearInterval(this.interval);
-      }
+      
     },
     changeLastFiveImages() {
       const newImage = "https://avatar.spworlds.ru/face/55/Hepatir.png";
