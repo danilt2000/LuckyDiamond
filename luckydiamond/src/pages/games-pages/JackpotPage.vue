@@ -191,9 +191,6 @@ import "vue3-carousel/dist/carousel.css";
 
 import { eventBus } from "@/main";
 
-// import ProgressBar from "vue-bulma-progress-bar";
-
-// import '@/assets/css/PagesStyles/games-pages/jackpot.css'
 export default {
   components: {
     HeaderComponent,
@@ -209,41 +206,41 @@ export default {
     return {
       JackpotNumbers,
       autoplay: 0,
-      slides: [
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-          nickname: "Ckutls_",
-        },
-        {
-          img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
-          nickname: "Hepatir",
-        },
-      ],
+      // slides: [
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
+      //     nickname: "Ckutls_",
+      //   },
+      //   {
+      //     img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+      //     nickname: "Hepatir",
+      //   },
+      // ],
+      slides: [],
       currentSlide: 0,
       value: 0,
       max: 100,
       amountDeposit: 0,
-      isCarouselStopped: false,
       targetNickname: "",
       isStopButtonPressed: false,
       isGameTimerStarted: false,
@@ -256,6 +253,18 @@ export default {
   },
 
   methods: {
+    mapPlayersToSlides(players) {
+      this.slides = [];
+      players.forEach((player) => {
+        const numberOfCards = player.WinningPercentage / 10; // Предполагаем, что 10% это 1 карточка
+        for (let i = 0; i < numberOfCards; i++) {
+          this.slides.push({
+            img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
+            nickname: player.UserName,
+          });
+        }
+      });
+    },
     checkGameEnd(endGameUtc) {
       const endTime = new Date(endGameUtc).getTime();
       const currentTime = new Date().getTime();
@@ -281,6 +290,7 @@ export default {
     startGameTimer(startGameUtc) {
       if (!this.isGameTimerStarted) {
         this.isGameTimerStarted = true;
+
         const startTime = new Date(startGameUtc).getTime();
         const updateTimer = () => {
           const currentTime = new Date().getTime();
@@ -324,20 +334,48 @@ export default {
     handleSlideStart(data) {
       try {
         const { slidingToIndex } = data;
-        this.currentSlideIndex = slidingToIndex;
-        if (this.isStopButtonPressed) {
-          if (
-            this.slides[this.currentSlideIndex].nickname ===
-              this.targetNickname &&
-            !this.isCarouselStopped
-          ) {
-            this.stopAutoplay();
-          }
-        }
-      } catch (error) {
+        // Проверяем, существует ли слайд и имеет ли он свойство nickname
+        if (this.slides[slidingToIndex] && this.slides[slidingToIndex].nickname) {
+            this.currentSlideIndex = slidingToIndex;
+            if (this.isStopButtonPressed) {
+                if (this.slides[this.currentSlideIndex].nickname == "Hepatir") {
+                // if (this.slides[this.currentSlideIndex].nickname == this.targetNickname) {
+                    this.stopAutoplay();
+                }
+            }
+        } 
+    } catch (error) {
         console.error("Error in handleSlideStart:", error);
-        // Здесь вы можете обработать ошибку, например, остановить карусель
-      }
+    }
+      // try {
+      //   const { slidingToIndex } = data;
+      //   this.currentSlideIndex = slidingToIndex;
+      //   if (this.isStopButtonPressed) {
+      //     if (
+      //       this.slides[this.currentSlideIndex].nickname == this.targetNickname
+      //     ) {
+      //       this.stopAutoplay();
+      //     }
+      //   }
+      // } catch (error) {
+      //   console.error("Error in handleSlideStart:", error);
+      //   // Здесь вы можете обработать ошибку, например, остановить карусель
+      // }
+      // try {
+      //   const { slidingToIndex } = data;
+      //   this.currentSlideIndex = slidingToIndex;
+      //   if (this.isStopButtonPressed) {
+      //     if (
+      //       this.slides[this.currentSlideIndex].nickname ==
+      //         "Hepatir"
+      //     ) {
+      //       this.stopAutoplay();
+      //     }
+      //   }
+      // } catch (error) {
+      //   console.error("Error in handleSlideStart:", error);
+      //   // Здесь вы можете обработать ошибку, например, остановить карусель
+      // }
     },
     stopCarousel() {
       this.isStopButtonPressed = true;
@@ -345,7 +383,9 @@ export default {
     },
     stopAutoplay() {
       this.autoplay = 0;
-      this.isCarouselStopped = true;
+      this.targetNickname = "";
+      this.isGameTimerStarted = false;
+      this.isStopButtonPressed = false;
       if (this.interval) {
         clearInterval(this.interval);
       }
@@ -371,14 +411,22 @@ export default {
           const dataObject = JSON.parse(data);
           console.log(dataObject);
 
-          this.lastUserWinner=dataObject.LastGame.WinnerUserName;
+          if (dataObject.CurrentGame.GameState == "WaitingForPlayers") {
+            console.log("Waiting for players");
+            console.log("Put there earlies cards");
+            this.lastUserWinner = dataObject.LastGame.WinnerUserName;
 
+            // this.mapPlayersToSlides(dataObject.LastGame.PlayerList);
+          }
           if (dataObject.CurrentGame.GameState == "StartGameTimer") {
+            if (!this.isGameTimerStarted) {
+              console.log("Set players");
+              this.mapPlayersToSlides(dataObject.CurrentGame.PlayerList);
+            }
             this.startGameTimer(dataObject.CurrentGame.StartGameUtc);
           }
 
           if (
-            dataObject.CurrentGame.GameState != "WaitingForPlayers" &&
             dataObject.CurrentGame.GameState == "Running"
           ) {
             this.checkGameEnd(dataObject.CurrentGame.EndGameUtc);
@@ -396,9 +444,11 @@ export default {
     });
     eventBus.on("gameEnded", () => {
       setTimeout(() => {
-        this.targetNickname = this.lastUserWinner;
-        this.stopCarousel();
-    }, 2000);
+        if (!this.isStopButtonPressed) {
+          this.targetNickname = this.lastUserWinner;
+          this.stopCarousel();
+        }
+      }, 2000);
     });
     // this.startAutoScroll();
   },
