@@ -278,7 +278,7 @@ button {
 .help {
     grid-area: help;
     display: flex;
-    height:806px;
+    height:99%;
     border-radius: 3.125rem;
     background: #17181C;
     box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
