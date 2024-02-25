@@ -193,35 +193,31 @@
                 </div>
               </div>
 
+              
+
               <div class="col-md-12">
                 <div class="jackpot-useringame-list">
-                  <div class="jackpot-carousel-user">
+                  <div class="jackpot-carousel-user" v-for="(user, index) in users" :key="index">
                     <div class="jackpot-banner">
                       <div class="jackpot-content">
-                        <img
-                          src="https://avatar.spworlds.ru/face/55/Hepatir.png"
-                          alt="Player Avatar"
-                          class="jackpot-avatar"
-                        />
+                        <img :src="user.avatarUrl" alt="Player Avatar" class="jackpot-avatar" />
                         <div class="jackpot-info">
-                          <span class="jackpot-name">FUpir</span>
-                          <span class="jackpot-gems">500<span class="jackpot-gems-icon"
-                            ><img class="jackpot-gems-icon-extension"
-                              src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png"
-                          /></span></span>
+                          <span class="jackpot-name">{{ user.name }}</span>
+                          <span class="jackpot-gems">{{ user.gems }}<span class="jackpot-gems-icon">
+                            <img class="jackpot-gems-icon-extension" src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png" /></span>
+                          </span>
                         </div>
                       </div>
                       <div class="jackpot-chance">
-                        ШАНС <span class="jackpot-percentage">15.55%</span>
+                        ШАНС <span class="jackpot-percentage">{{ user.chance }}%</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-
-
               
+
+
             </div>
           </div>
         </div>
@@ -272,6 +268,27 @@ export default {
     return {
       JackpotNumbers,
       autoplay: 0,
+      users: [
+      // {
+      //   name: "FUpir",
+      //   gems: 500,
+      //   avatarUrl: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+      //   chance: 16.55
+      // },
+      // {
+      //   name: "FUpir",
+      //   gems: 500,
+      //   avatarUrl: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+      //   chance: 16.55
+      // },
+      // {
+      //   name: "FUpir",
+      //   gems: 500,
+      //   avatarUrl: "https://avatar.spworlds.ru/face/55/Hepatir.png",
+      //   chance: 16.55
+      // },
+    ],
+      // Добавьте других пользователей по аналогии
       // slides: [
       //   {
       //     img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
