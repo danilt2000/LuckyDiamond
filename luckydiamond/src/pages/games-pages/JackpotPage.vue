@@ -105,7 +105,7 @@
                 <div class="jackpot-loading-bar">
                   <div class="bank-container">
                     <div class="bank-info">
-                      <div class="bank-value">3500</div>
+                      <div class="bank-value">{{ bankValue }}</div>
                       <div class="bank-name">БАНК</div>
                     </div>
                     <div class="shield">
