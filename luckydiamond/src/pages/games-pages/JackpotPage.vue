@@ -491,7 +491,7 @@ export default {
       });
 
       players.forEach((player) => {
-        const numberOfCards = player.WinningPercentage; // Предполагаем, что 10% это 1 карточка
+        const numberOfCards = player.WinningPercentage/5; // Предполагаем, что 10% это 1 карточка
         // const numberOfCards = player.WinningPercentage / 10; // Предполагаем, что 10% это 1 карточка
         for (let i = 0; i < numberOfCards; i++) {
           if (i == 0) {
