@@ -396,6 +396,7 @@ export default {
       lastUserWinerGameId: " ",
       lastUserWinner: "",
       firstStartOfPage: false,
+      winStake: 0,
       // lastIdGame: "",
     };
   },
@@ -491,7 +492,7 @@ export default {
       });
 
       players.forEach((player) => {
-        const numberOfCards = player.WinningPercentage/7; // Предполагаем, что 10% это 1 карточка
+        const numberOfCards = player.WinningPercentage / 7; // Предполагаем, что 10% это 1 карточка
         // const numberOfCards = player.WinningPercentage / 10; // Предполагаем, что 10% это 1 карточка
         for (let i = 0; i < numberOfCards; i++) {
           if (i == 0) {
@@ -665,6 +666,8 @@ export default {
       try {
         if (data) {
           const dataObject = JSON.parse(data);
+          this.winStake = dataObject.CurrentGame.winStake;
+
           console.log(dataObject);
 
           if (dataObject.CurrentGame.GameState == "WaitingForPlayers") {
@@ -699,6 +702,7 @@ export default {
           if (dataObject.CurrentGame.GameState == "Running") {
             this.autoplay = 20;
           }
+
           this.updatePlayerInfo(
             dataObject.LastGame.WinnerUserName,
             dataObject.LastGame.WinStake,
