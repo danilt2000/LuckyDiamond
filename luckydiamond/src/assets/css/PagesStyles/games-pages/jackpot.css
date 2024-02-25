@@ -58,6 +58,25 @@
     /* Размер стрелки */
     /* Добавьте любые дополнительные стили, такие как цвет фона, границы и т.д. */
 }
+.jackpot-useringame-list{
+    margin-top: 3.5%;
+}
+.jackpot-carousel-user {
+    z-index: 1;
+    position: relative;
+    /* margin-left: 5%; */
+    border-radius: 10px;
+    background: #1F2543;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin-top: 1%;
+
+    /* height: 480px; */
+    /* height: 100%; */
+    border: 1px solid #262C55;
+    height: 95%;
+}
+
 
 .jackpot-game {
     z-index: 1;
@@ -267,8 +286,13 @@
 
 
 .jackpot-gems-icon {
+   
     margin-left: 5px;
     height: 1vh;
+}
+
+.jackpot-gems-icon-extension{
+    margin-bottom: -10px !important;
 }
 
 .jackpot-player-chance {
@@ -289,6 +313,58 @@
 }
 .jackpot-chance-value {
     color: #EF4444; /* Или любой другой оттенок красного, который вам нужен */
+  }
+  
+  .jackpot-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e2749; /* Dark blue background */
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-family: Montserrat;
+    font-weight: bold;
+
+  }
+  
+  .jackpot-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .jackpot-avatar {
+    width: 48px; /* Adjust based on your preference */
+    height: 48px;
+    margin-right: 10px;
+  }
+  
+  .jackpot-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .jackpot-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #515D83;
+  }
+  
+  .jackpot-gems {
+    font-size: 14px;
+    color: #FFFFFF84;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-weight: bold;
+  }
+  
+  .jackpot-chance {
+    font-size: 16px;
+    background-color: transparent; /* Adjust if you want a different background */
+  }
+  
+  .jackpot-percentage {
+    color: #EF4444; /* Adjust if you want a different color */
   }
   
 

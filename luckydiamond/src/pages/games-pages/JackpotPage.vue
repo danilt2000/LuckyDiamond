@@ -155,21 +155,23 @@
                           </div>
                           <div class="jackpot-player-data">
                             <div class="jackpot-player-gems">
-                              500 <span class="jackpot-gems-icon"><img
-                                
-                                src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png"
+                              500
+                              <span class="jackpot-gems-icon"
+                                ><img
+                                  src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png"
                               /></span>
                             </div>
                             <div class="jackpot-player-name">FUpir</div>
                           </div>
                         </div>
-                        <div class="jackpot-player-chance">ШАНС <span class="jackpot-chance-value">15.55%</span></div>
+                        <div class="jackpot-player-chance">
+                          ШАНС <span class="jackpot-chance-value">15.55%</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
               <div class="col-md-12">
                 <div class="jackpot-carousel">
                   <div class="carousel-arrow">▲</div>
@@ -190,6 +192,36 @@
                   </Carousel>
                 </div>
               </div>
+
+              <div class="col-md-12">
+                <div class="jackpot-useringame-list">
+                  <div class="jackpot-carousel-user">
+                    <div class="jackpot-banner">
+                      <div class="jackpot-content">
+                        <img
+                          src="https://avatar.spworlds.ru/face/55/Hepatir.png"
+                          alt="Player Avatar"
+                          class="jackpot-avatar"
+                        />
+                        <div class="jackpot-info">
+                          <span class="jackpot-name">FUpir</span>
+                          <span class="jackpot-gems">500<span class="jackpot-gems-icon"
+                            ><img class="jackpot-gems-icon-extension"
+                              src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png"
+                          /></span></span>
+                        </div>
+                      </div>
+                      <div class="jackpot-chance">
+                        ШАНС <span class="jackpot-percentage">15.55%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              
             </div>
           </div>
         </div>
