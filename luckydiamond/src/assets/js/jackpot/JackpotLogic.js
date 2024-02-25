@@ -1,4 +1,5 @@
 import { BackendWebSocketJackpotUrl } from '@/properties/Сonfig.js';
+import { BackendApiUrl } from '@/properties/Сonfig.js';
 import { eventBus } from "@/main";
 
 // import {
@@ -51,5 +52,36 @@ export function ConnectToJackpotSocket() {
         };
     } catch (error) {
         console.error('Error in ConnectToChat:', error);
+    }
+}
+
+export async function JoinJackpotGame(userData, amount) {
+    const data = {
+        userCredentials: {
+            searchToken: userData.searchToken,
+            authtoken: userData.authtoken
+        },
+        bid: amount
+    }
+
+    try {
+        const response = await fetch(`${BackendApiUrl}/GameJackpot/JoinJackpotGame`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+            redirect: 'follow'
+        })
+
+        if (!response.ok) {
+            console.log('Fetch error:', response.status)
+        }
+
+        console.log(response)
+        return await response.json()
+    }
+    catch (error) {
+        console.log('Fetch error')
     }
 }

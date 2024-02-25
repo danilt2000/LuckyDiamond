@@ -200,6 +200,8 @@
 
 .bank-name {
     font-size: 14px;
+    font-family: Montserrat;
+    font-weight: bold;
     /* Smaller text size for 'БАНК' */
 }
 
