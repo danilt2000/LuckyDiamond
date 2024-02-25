@@ -702,6 +702,13 @@ export default {
 
           if (dataObject.CurrentGame.GameState == "Running") {
             this.autoplay = 20;
+            if (this.idCurrentGame=="") {
+              this.idCurrentGame = dataObject.CurrentGame.Id;
+              this.mapPlayersToSlides(
+              dataObject.CurrentGame.PlayerList,
+              dataObject.CurrentGame.PlayerList
+            );
+            }
           }
 
           this.updatePlayerInfo(
