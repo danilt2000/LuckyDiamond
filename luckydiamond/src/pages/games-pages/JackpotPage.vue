@@ -666,7 +666,7 @@ export default {
       try {
         if (data) {
           const dataObject = JSON.parse(data);
-          this.winStake = dataObject.CurrentGame.winStake;
+          this.winStake = dataObject.CurrentGame.WinStake;
 
           console.log(dataObject);
 
