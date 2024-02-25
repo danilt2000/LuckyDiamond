@@ -105,9 +105,9 @@
                 <div class="jackpot-loading-bar">
                   <div class="bank-container">
                     <!-- <div class="bank-info"> -->
-                      <div class="bank-name">БАНК:</div> 
-                      <h1></h1>
-                      <div class="bank-value" v-text="winStake"></div>
+                    <div class="bank-name">БАНК:</div>
+                    <h1></h1>
+                    <div class="bank-value" v-text="winStake"></div>
                     <!-- </div> -->
                     <div class="shield">
                       <img
@@ -502,6 +502,7 @@ export default {
                 img: `https://avatar.spworlds.ru/face/55/${this.player.name}.png`, // Предполагаем структуру URL из имени пользователя
                 nickname: this.player.name,
               });
+              this.firstStartOfPage = false;
             } else {
               this.slides.push({
                 img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
@@ -700,22 +701,23 @@ export default {
             this.startGameTimer(dataObject.CurrentGame.StartGameUtc);
           }
 
-          if (dataObject.CurrentGame.GameState == "Running") {
-            this.autoplay = 20;
-            if (this.idCurrentGame=="") {
-              this.idCurrentGame = dataObject.CurrentGame.Id;
-              this.mapPlayersToSlides(
-              dataObject.CurrentGame.PlayerList,
-              dataObject.CurrentGame.PlayerList
-            );
-            }
-          }
-
           this.updatePlayerInfo(
             dataObject.LastGame.WinnerUserName,
             dataObject.LastGame.WinStake,
             dataObject.LastGame.WinnerPercentage
           );
+
+          if (dataObject.CurrentGame.GameState == "Running") {
+            this.autoplay = 20;
+            if (this.idCurrentGame == "") {
+              this.firstStartOfPage = true;
+              this.idCurrentGame = dataObject.CurrentGame.Id;
+              this.mapPlayersToSlides(
+                dataObject.CurrentGame.PlayerList,
+                dataObject.CurrentGame.PlayerList
+              );
+            }
+          }
         } else {
           // Если данные не определены или пусты, выводим соответствующее сообщение в консоль
           console.log("Received undefined or null data");
