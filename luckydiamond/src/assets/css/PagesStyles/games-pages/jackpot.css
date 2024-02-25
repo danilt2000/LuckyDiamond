@@ -145,6 +145,7 @@
     /* Adjust based on your shield size */
     height: auto;
     margin-left: 10px;
+    margin-bottom: -10px;
 }
 
 .bank-info {
@@ -195,6 +196,8 @@
     font-size: 24px;
     /* Large text size */
     font-weight: bold;
+    margin-left: 1%;
+
     /* Make the number bold */
 }
 

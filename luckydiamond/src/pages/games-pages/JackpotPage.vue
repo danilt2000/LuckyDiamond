@@ -104,10 +104,11 @@
               <div class="col-md-10">
                 <div class="jackpot-loading-bar">
                   <div class="bank-container">
-                    <div class="bank-info">
-                      <div class="bank-value">{{ bankValue }}</div>
-                      <div class="bank-name">БАНК</div>
-                    </div>
+                    <!-- <div class="bank-info"> -->
+                      <div class="bank-name">БАНК:</div> 
+                      <h1></h1>
+                      <div class="bank-value" v-text="winStake"></div>
+                    <!-- </div> -->
                     <div class="shield">
                       <img
                         src="@/assets/icons-header/diamond-ore-icon.png"
