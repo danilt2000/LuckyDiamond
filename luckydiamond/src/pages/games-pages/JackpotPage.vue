@@ -122,14 +122,24 @@
                       :style="{ width: progressBarWidth + '%' }"
                     >
                       <span class="progress-text">{{
-                        remainingSeconds >= 0 ? remainingSeconds + " СЕК" : ""
+                        remainingSeconds >= 0 ? remainingSeconds + " " : ""
                       }}</span>
+                      <!-- remainingSeconds >= 0 ? remainingSeconds + " СЕК" : "" -->
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-2">
-                <div class="jackpot-loading-bar"></div>
+                <div class="jackpot-last-game-bar">
+                  <div class="bootstrap-wrapper">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-2">gfd</div>
+                        <div class="col-md-8">gfd</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="col-md-12">
@@ -150,9 +160,6 @@
                       </div>
                     </Slide>
                   </Carousel>
-                  <button @click="stopCarousel">
-                    Остановить автопрокрутку
-                  </button>
                 </div>
               </div>
             </div>
@@ -295,9 +302,21 @@ export default {
           console.log("Game has ended");
         }, timeLeft);
       } else {
-        // Игра уже закончилась
-        // eventBus.emit("gameEnded"); // Транслируем событие окончания игры
         console.log("Game has already ended");
+      }
+    },
+    resetLoadingBar() {
+      const progressBarElement = document.querySelector(".progress");
+      if (progressBarElement) {
+        const progressText = progressBarElement.querySelector(".progress-text");
+        setTimeout(() => {
+          progressBarElement.style.width = `1%`; // Устанавливаем ширину в 1%
+          if (progressText) {
+            progressText.textContent = `0`; // Устанавливаем текст
+            // Если вы хотите изменить прозрачность текста, раскомментируйте следующую строку
+            // progressText.style.opacity = "1"; // Устанавливаем прозрачность текста
+          }
+        }, 1500);
       }
     },
     startAutoScroll() {
@@ -311,6 +330,9 @@ export default {
 
         const startTime = new Date(startGameUtc).getTime();
         const updateTimer = () => {
+          if (this.timerInterval == null) {
+            return;
+          }
           const currentTime = new Date().getTime();
           const diff = startTime - currentTime;
           this.remainingSeconds = Math.max(0, Math.floor(diff / 1000));
@@ -320,12 +342,11 @@ export default {
             // Действия после окончания таймера, если необходимо
           } else {
             this.remainingSeconds = Math.floor(diff / 1000); // Обновляем оставшееся время в секундах
-            const totalDuration = 10; // Допустим, обратный отсчет идет с 60 секунд
+            const totalDuration = 10; // Допустим, обратный отсчет идет с 10 секунд1
             this.progressBarWidth =
               ((totalDuration - this.remainingSeconds) / totalDuration) * 100;
           }
 
-          // Обновление текста и ширины прогресс-бара
           const progressBarElement = document.querySelector(".progress");
           if (progressBarElement) {
             const progressText =
@@ -334,7 +355,11 @@ export default {
               progressText.style.opacity = "0";
               setTimeout(() => {
                 progressBarElement.style.width = `${this.progressBarWidth}%`;
-                progressText.textContent = `${this.remainingSeconds} СЕК`;
+                if (this.remainingSeconds > 8) {
+                  progressText.textContent = `${this.remainingSeconds}`;
+                } else {
+                  progressText.textContent = `${this.remainingSeconds} СЕК`;
+                }
                 progressText.style.opacity = "1";
               }, 500); // Задержка должна соответствовать продолжительности анимации
             }
@@ -349,7 +374,7 @@ export default {
     handleSlideStart(data) {
       try {
         let { slidingToIndex, currentSlideIndex } = data;
-        // Проверяем, существует ли слайд и имеет ли он свойство nickname
+
         if (
           this.slides[slidingToIndex] &&
           this.slides[slidingToIndex].nickname
@@ -364,6 +389,7 @@ export default {
               // this.$refs.carousel.slideTo(this.currentSlideIndex);
 
               // if (this.slides[this.currentSlideIndex].nickname == this.targetNickname) {
+
               this.stopAutoplay();
             }
           }
@@ -371,37 +397,15 @@ export default {
       } catch (error) {
         console.error("Error in handleSlideStart:", error);
       }
-      // try {
-      //   const { slidingToIndex } = data;
-      //   this.currentSlideIndex = slidingToIndex;
-      //   if (this.isStopButtonPressed) {
-      //     if (
-      //       this.slides[this.currentSlideIndex].nickname == this.targetNickname
-      //     ) {
-      //       this.stopAutoplay();
-      //     }
-      //   }
-      // } catch (error) {
-      //   console.error("Error in handleSlideStart:", error);
-      //   // Здесь вы можете обработать ошибку, например, остановить карусель
-      // }
-
-      // try {
-      //   const { slidingToIndex } = data;
-      //   this.currentSlideIndex = slidingToIndex;
-      //   if (this.isStopButtonPressed) {
-      //     if (this.slides[this.currentSlideIndex].nickname == "Hepatir") {
-      //       this.stopAutoplay();
-      //     }
-      //   }
-      // } catch (error) {
-      //   console.error("Error in handleSlideStart:", error);
-      //   // Здесь вы можете обработать ошибку, например, остановить карусель
-      // }
     },
     stopCarousel() {
       this.isStopButtonPressed = true;
       this.autoplay = 200;
+      setTimeout(() => {
+        if (this.isStopButtonPressed) {
+          this.autoplay = 500;
+        }
+      }, 1000);
     },
     stopAutoplay() {
       this.targetNickname = "";
@@ -411,6 +415,11 @@ export default {
       this.lastUserWinerGameId = " ";
       this.idCurrentGame = "";
       this.lastUserWinner = "";
+      this.resetLoadingBar();
+
+      clearInterval(this.timerInterval);
+
+      this.timerInterval = null;
     },
     changeLastFiveImages() {
       const newImage = "https://avatar.spworlds.ru/face/55/Hepatir.png";
@@ -442,7 +451,9 @@ export default {
               this.targetNickname = this.lastUserWinner;
               this.stopCarousel();
             }
-            // this.mapPlayersToSlides(dataObject.LastGame.PlayerList);
+            if (this.idCurrentGame == "") {
+              this.mapPlayersToSlides(dataObject.CurrentGame.PlayerList);
+            }
           }
           if (dataObject.CurrentGame.GameState == "StartGameTimer") {
             if (!this.isGameTimerStarted) {
@@ -455,10 +466,7 @@ export default {
 
           if (dataObject.CurrentGame.GameState == "Running") {
             this.autoplay = 20;
-            // this.checkGameEnd(dataObject.CurrentGame.EndGameUtc);
-            // this.idCurrentGame = dataObject.CurrentGame.Id;
           }
-          // Дальнейшая обработка dataObject...
         } else {
           // Если данные не определены или пусты, выводим соответствующее сообщение в консоль
           console.log("Received undefined or null data");
