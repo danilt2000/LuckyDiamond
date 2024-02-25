@@ -52,7 +52,7 @@
     /* Центрирование стрелки по горизонтали */
     transform: translateX(-50%);
     /* Дополнительное центрирование, чтобы точка указывала точно на центр */
-    color: #ffffff;
+    color: #728DF8;
     /* Цвет стрелки */
     font-size: 24px;
     /* Размер стрелки */
@@ -133,6 +133,27 @@
     text-align: left;
 }
 
+.jackpot-last-game-bar-container {
+    /* margin-bottom: 3%; */
+    padding-top: 10px;
+}
+
+.jackpot-last-game-bar-container img {
+    /* margin-bottom: 3%; */
+    width: 3vh;
+    height: 3vh;
+}
+
+.jackpot-last-game-bar-container-text {
+    padding: 0px 0 5px 0;
+    color: #FFF;
+    font-weight: 200;
+    line-height: 15px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+    font-family: Montserrat Alternates;
+    font-size: 8px;
+}
+
 .jackpot-last-game-bar {
     z-index: 1;
     /* margin-left: 5%; */
@@ -196,6 +217,80 @@
 .no-pointer-events {
     pointer-events: none;
 }
+
+.jackpot-player-info {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.jackpot-player-avatar img {
+    width: 48px;
+    /* Adjust size as needed */
+    height: 48px;
+    margin-right: 10px;
+    margin-left: 1vh;
+}
+
+.jackpot-player-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.jackpot-player-name {
+    font-size: 16px;
+    /* Adjust font size as needed */
+    font-weight: bold;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #515D83;
+}
+
+.jackpot-player-gems {
+    font-size: 15px;
+    /* Adjust font size as needed */
+    display: flex;
+    align-items: start;
+    color: #FFFFFF84;
+    /* font-weight: 700; */
+    /* line-height: 31px; */
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-weight: bold;
+    /* font-size: 13px; */
+}
+
+
+.jackpot-gems-icon {
+    margin-left: 5px;
+    height: 1vh;
+}
+
+.jackpot-player-chance {
+    background-color: #27345C;
+    /* Adjust background color as needed */
+    border-radius: 5px;
+    font-size: 14px;
+    /* Adjust font size as needed */
+    padding-left: 5px !important;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 5px;
+    margin-left: 10%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-weight: bold;
+}
+.jackpot-chance-value {
+    color: #EF4444; /* Или любой другой оттенок красного, который вам нужен */
+  }
+  
 
 @media (max-width: 1415px) {
     .padding-elements-jackpot {

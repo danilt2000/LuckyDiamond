@@ -131,11 +131,39 @@
               </div>
               <div class="col-md-2">
                 <div class="jackpot-last-game-bar">
-                  <div class="bootstrap-wrapper">
+                  <div
+                    class="bootstrap-wrapper jackpot-last-game-bar-container"
+                  >
                     <div class="container">
                       <div class="row">
-                        <div class="col-md-2">gfd</div>
-                        <div class="col-md-8">gfd</div>
+                        <div class="col-md-2">
+                          <img
+                            src="@/assets/icons-gamemodes/last-game-icon.svg"
+                          />
+                        </div>
+                        <div
+                          class="col-md-8 jackpot-last-game-bar-container-text"
+                        >
+                          <h2>Последняя игра</h2>
+                        </div>
+                        <div class="jackpot-player-info">
+                          <div class="jackpot-player-avatar">
+                            <img
+                              src="https://avatar.spworlds.ru/face/55/Hepatir.png"
+                              alt="Player Avatar"
+                            />
+                          </div>
+                          <div class="jackpot-player-data">
+                            <div class="jackpot-player-gems">
+                              500 <span class="jackpot-gems-icon"><img
+                                
+                                src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png"
+                              /></span>
+                            </div>
+                            <div class="jackpot-player-name">FUpir</div>
+                          </div>
+                        </div>
+                        <div class="jackpot-player-chance">ШАНС <span class="jackpot-chance-value">15.55%</span></div>
                       </div>
                     </div>
                   </div>
