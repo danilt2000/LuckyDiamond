@@ -438,37 +438,37 @@ export default {
         this.offBtn = false;
         this.errorPlayButton();
       }
-        const userData = {
-          searchToken: GetCookie("SearchToken"),
-          authtoken: GetCookie("AUTHTOKEN"),
-        };
+      const userData = {
+        searchToken: GetCookie("SearchToken"),
+        authtoken: GetCookie("AUTHTOKEN"),
+      };
 
-        await JoinJackpotGame(userData, this.amountDeposit).then((response) => {
-          console.log(this.balance);
-          console.log(response);
-          if (
-            response === `You can't join to started or ended game` ||
-            response === "Player alredy in the game."
-          ) {
-            this.offBtn = false;
+      await JoinJackpotGame(userData, this.amountDeposit).then((response) => {
+        console.log(this.balance);
+        console.log(response);
+        if (
+          response === `You can't join to started or ended game` ||
+          response === "Player alredy in the game."
+        ) {
+          this.offBtn = false;
 
-            if (response === `You can't join to started or ended game`) {
-              this.textError = "Игра уже началась или только закончилась!";
-              this.errorPlayButton();
-            } else if (response === "Player alredy in the game.") {
-              this.textError = "Вы уже в игре!";
-              this.errorPlayButton();
-            }
-
-            return;
+          if (response === `You can't join to started or ended game`) {
+            this.textError = "Игра уже началась или только закончилась!";
+            this.errorPlayButton();
+          } else if (response === "Player alredy in the game.") {
+            this.textError = "Вы уже в игре!";
+            this.errorPlayButton();
           }
 
-          if (response.ok) {
-            this.offBtn = false;
-            this.startGame = true;
-          }
-        });
-        this.offBtn = false;
+          return;
+        }
+
+        if (response.ok) {
+          this.offBtn = false;
+          this.startGame = true;
+        }
+      });
+      this.offBtn = false;
     },
     updatePlayerInfo(newName, newGems, newChance) {
       this.player.name = newName;
@@ -491,7 +491,7 @@ export default {
       });
 
       players.forEach((player) => {
-        const numberOfCards = player.WinningPercentage / 10; // Предполагаем, что 10% это 1 карточка
+        const numberOfCards = player.WinningPercentage; // Предполагаем, что 10% это 1 карточка
         // const numberOfCards = player.WinningPercentage / 10; // Предполагаем, что 10% это 1 карточка
         for (let i = 0; i < numberOfCards; i++) {
           if (i == 0) {
@@ -687,12 +687,12 @@ export default {
           if (dataObject.CurrentGame.GameState == "StartGameTimer") {
             if (!this.isGameTimerStarted) {
               console.log("Set players");
-              this.mapPlayersToSlides(
-                dataObject.CurrentGame.PlayerList,
-                dataObject.CurrentGame.PlayerList
-              );
               this.idCurrentGame = dataObject.CurrentGame.Id;
             }
+            this.mapPlayersToSlides(
+              dataObject.CurrentGame.PlayerList,
+              dataObject.CurrentGame.PlayerList
+            );
             this.startGameTimer(dataObject.CurrentGame.StartGameUtc);
           }
 
