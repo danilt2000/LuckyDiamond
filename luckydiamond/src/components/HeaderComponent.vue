@@ -4,7 +4,7 @@ import "@/assets/css/ComponentsStyles/header.css";
 import { LogIn } from "@/assets/js/authentication/AuthService.js";
 import { GetCurrentMoney } from "@/assets/js/rest/RestMethods.js";
 
-import {eventBus} from "@/main";
+import { eventBus } from "@/main";
 
 import {
   SetCookie,
@@ -18,30 +18,31 @@ export default {
     logout() {
       this.auth = false;
       this.balance = 0;
-      this.authtoken = ''
+      this.authtoken = "";
       DeleteAllCookie();
     },
     updateBalanceMethod() {
-      GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
-          .then(response => {
-            this.balance = response.currentMoney
-          })
-      eventBus.emit('Updatebalance-saper')
-    }
+      GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken")).then(
+        (response) => {
+          this.balance = response.currentMoney;
+        }
+      );
+      eventBus.emit("Updatebalance-saper");
+    },
   },
   data() {
     return {
       balance: 0,
       auth: false,
-      authtoken: '',
+      authtoken: "",
       imageUrl: "https://avatar.spworlds.ru/face/55/",
       userName: "",
     };
   },
   mounted() {
-    eventBus.on('Updatebalance', () => {
-      this.updateBalanceMethod()
-    })
+    eventBus.on("Updatebalance", () => {
+      this.updateBalanceMethod();
+    });
   },
   created() {
     try {
@@ -58,7 +59,7 @@ export default {
             this.imageUrl = this.imageUrl + `${response.spUserName}.png`;
             this.userName = response.spUserName;
             this.auth = true;
-            this.authtoken = response.authtoken
+            this.authtoken = response.authtoken;
             GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
               .then((response) => {
                 this.balance = response.currentMoney;
@@ -82,7 +83,7 @@ export default {
               this.imageUrl = this.imageUrl + `${currentUserName}.png`;
               this.userName = GetCookie("SpUserName");
               this.auth = true;
-              this.authtoken = GetCookie('AUTHTOKEN')
+              this.authtoken = GetCookie("AUTHTOKEN");
             } else {
               this.auth = false;
               this.balance = 0;
@@ -104,7 +105,7 @@ export default {
           this.imageUrl = this.imageUrl + `${currentUserName}.png`;
           this.userName = GetCookie("SpUserName");
           this.auth = true;
-          this.authtoken = GetCookie('AUTHTOKEN')
+          this.authtoken = GetCookie("AUTHTOKEN");
         } else {
           this.auth = false;
           this.balance = 0;
@@ -120,14 +121,39 @@ export default {
   <header class="header">
     <div class="header__content">
       <div class="header__logo">
-        <img @click="$router.push({ name: 'home' })" src="../assets/logo.svg" alt="" />
+        <img
+          @click="$router.push({ name: 'home' })"
+          src="../assets/logo.svg"
+          alt=""
+        />
       </div>
       <div class="header__nav">
         <nav>
-          <a href="#" @click="$router.push({ name: 'home' })" :class="{ 'header__nav--now' : $route.name === 'home' }">Главная</a>
-          <a v-if="authtoken !== ''" href="#" @click="$router.push({ name: 'profile' })" :class="{ 'header__nav--now' : $route.name === 'profile' }">Профиль</a>
-          <a href="#" @click="$router.push({ name: 'help' })" :class="{ 'header__nav--now' : $route.name === 'help' }">Помощь</a>
-          <a href="#" @click="$router.push({ name: 'about' })" :class="{ 'header__nav--now' : $route.name === 'about' }">О нас</a>
+          <a
+            href="#"
+            @click="$router.push({ name: 'home' })"
+            :class="{ 'header__nav--now': $route.name === 'home' }"
+            >Главная</a
+          >
+          <a
+            v-if="authtoken !== ''"
+            href="#"
+            @click="$router.push({ name: 'profile' })"
+            :class="{ 'header__nav--now': $route.name === 'profile' }"
+            >Профиль</a
+          >
+          <a
+            href="#"
+            @click="$router.push({ name: 'help' })"
+            :class="{ 'header__nav--now': $route.name === 'help' }"
+            >Помощь</a
+          >
+          <a
+            href="#"
+            @click="$router.push({ name: 'about' })"
+            :class="{ 'header__nav--now': $route.name === 'about' }"
+            >О нас</a
+          >
         </nav>
       </div>
       <div class="header__balance">
@@ -160,7 +186,7 @@ export default {
           <!-- <div class="header__card--auth">  -->
           <div class="auth__card--content">
             <a
-              href="https://media.discordapp.net/attachments/1175674631684898866/1203382105934139422/Untitled.png?ex=65d0e3eb&is=65be6eeb&hm=226770699b0ac57c74b1516868e9d7ddb6eb1cb952366ea07e62ccf4ee551a1d&=&format=webp&quality=lossless"
+              href="https://discord.com/oauth2/authorize?client_id=1148644854797176932&response_type=code&redirect_uri=https%3A%2F%2Fwww.lucky-diamonds.ru&scope=identify"
               @click="auth = true"
               ><span
                 ><img
@@ -169,7 +195,9 @@ export default {
                   src="../assets/icons-header/discord-icon.svg" /></span
               >Вход</a
             >
-<!--            https://discord.com/api/oauth2/authorize?client_id=1148644854797176932&redirect_uri=https%3A%2F%2Flucky-diamond.vercel.app&response_type=code&scope=identify-->
+            <!-- href="https://media.discordapp.net/attachments/1175674631684898866/1203382105934139422/Untitled.png?ex=65d0e3eb&is=65be6eeb&hm=226770699b0ac57c74b1516868e9d7ddb6eb1cb952366ea07e62ccf4ee551a1d&=&format=webp&quality=lossless" -->
+            <!--            https://discord.com/api/oauth2/authorize?client_id=1148644854797176932&redirect_uri=https%3A%2F%2Flucky-diamond.vercel.app&response_type=code&scope=identify-->
+            <!--            https://discord.com/oauth2/authorize?client_id=1148644854797176932&response_type=code&redirect_uri=https%3A%2F%2Fwww.lucky-diamonds.ru&scope=identify-->
           </div>
         </div>
       </div>
