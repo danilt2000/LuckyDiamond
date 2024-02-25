@@ -569,7 +569,7 @@ export default {
             // Действия после окончания таймера, если необходимо
           } else {
             this.remainingSeconds = Math.floor(diff / 1000); // Обновляем оставшееся время в секундах
-            const totalDuration = 10; // Допустим, обратный отсчет идет с 10 секунд1
+            const totalDuration = 30; // Допустим, обратный отсчет идет с 10 секунд1
             this.progressBarWidth =
               ((totalDuration - this.remainingSeconds) / totalDuration) * 100;
           }
