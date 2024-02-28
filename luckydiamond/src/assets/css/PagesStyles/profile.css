@@ -130,7 +130,7 @@
     margin-top: 2.1%;
     background: #38383E;
     height: 3px;
-    width: 100vh;
+    width: 86%;
 }
 
 .payments__card {
@@ -171,7 +171,7 @@
 }
 
 .data-info {
-    margin-left: 17vh; /* Push to the right */
+    margin-left: 1vh; /* Push to the right */
     margin-right: auto; /* Push to the left */
 }
 
@@ -184,6 +184,7 @@
 
 .transaction-info {
     margin-right: 6em; /* Add margin for spacing */
+<<<<<<< HEAD
     display: flex;
     justify-content: center;
     align-content: center;
@@ -194,6 +195,8 @@
     justify-content: center;
     align-content: center;
     width: 20vh;
+=======
+>>>>>>> dc8d843d7b4afcc3cf97d0d9bcd6cd519aafc44b
 }
 .transaction-info__text h3 {
     font-weight: 500;
