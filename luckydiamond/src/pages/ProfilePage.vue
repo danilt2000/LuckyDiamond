@@ -2,11 +2,8 @@
   <profilemobile-page v-if="mobile"></profilemobile-page>
   <div class="content__grid-profile" v-else>
     <aside-bar-component></aside-bar-component>
-
     <chat-component></chat-component>
-
     <header-component></header-component>
-
   <section class="profile">
     <div class="profile__content">
       <img class="profile__user--img" :src="imageUrl">
@@ -17,7 +14,8 @@
       <div class="profile__btns--payments">
         <a href="#" class="text-btn btn-bg btn-margin btn-display" @click="depositClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-deposit.svg"> Пополнить</a>
         <a href="#" class="withdraw text-btn btn-bg btn-display" @click="withdrawClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
-        <a href="#" class="withdraw text-btn btn-bg btn-display" @click="claimDataDeposit(1)"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
+        <a href="#" class="withdraw text-btn btn-bg btn-display" @click="claimDataDeposit(1000)"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
+        
       </div>
     </div>
     <div class="payments">
@@ -59,7 +57,6 @@
     <notiicationwindow-component @notificationremove="NotificationMethod" :notification="notification"></notiicationwindow-component>
   </div>
 </template>
-
 <script>
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
@@ -67,11 +64,9 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 import PaymentsModal from "@/components/PaymentsModal.vue";
 import ProfilemobilePage from "@/pages/adaptive-pages/ProfilemobilePage.vue";
 import NotiicationwindowComponent from "@/components/NotiicationwindowComponent.vue";
-
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import '@/assets/css/PagesStyles/profile.css'
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
-
 export default {
   components: {ProfilemobilePage, HeaderComponent, AsideBarComponent, ChatComponent, PaymentsModal, NotiicationwindowComponent },
   data() {
@@ -89,7 +84,6 @@ export default {
   emits: ['notificationremove'],
   mounted() {
     this.checkWindowSize()
-
     this.AddWindowListener()
   },
   beforeUnmount() {
@@ -97,7 +91,6 @@ export default {
   },
   created() {
     this.username = GetCookie('SpUserName')
-
     GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
         .then((response) => {
           this.balance = response.currentMoney
@@ -106,7 +99,6 @@ export default {
         .catch((error) => {
           console.error('error in profile, get money', error)
         })
-
     this.imageUrl = `https://avatar.spworlds.ru/front/256/${this.username}`
   },
   methods: {

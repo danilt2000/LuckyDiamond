@@ -2,26 +2,22 @@
     width: 30%;
     margin-left: 3%;
 }
-
 .profile__content .profile__user--img {
     margin: 17.6% 8.4% 1% 0;
     background: #969C8D;
     padding-top: 10px;
     border-radius: 20px;
 }
-
 .profile__card {
     display: flex;
     flex-direction: column;
 }
-
 .profile__card h1 {
     color: #FFF;
     font-weight: 700;
     font-family: Montserrat;
     font-size: 40px;
 }
-
 .profile__card h2 {
     border-radius: 20px;
     background: #22252F;
@@ -35,47 +31,38 @@
     font-size: 28px;
     padding-left: 11px;
 }
-
 .profile__card h2 img {
     margin-right: 4.4%;
 }
-
 .profile__btns--payments {
     margin-top: 7.9%;
     display: flex;
     flex-direction: column;
 }
-
 .icon-diamond h2 img {
     width: 33px;
     height: 33px;
 }
-
 .deposit-icon {
     margin: 3px 0 0 10px;
 }
-
 .withdraw-icon {
     margin-left: 33px;
 }
-
 .btn-bg {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.12);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 36%;
 }
-
 .btn-margin {
     padding: 3.8% 46% 3% 14%;
     margin-bottom: 11px;
     background: #62D4B2;
 }
-
 .btn-display {
     display: flex;
 }
-
 .text-btn {
     text-decoration: none;
     color: #000;
@@ -85,15 +72,14 @@
     font-size: 18px;
     margin-left: 4px;
 }
-
 .icon-margin-deposit-withdraw {
     margin-right: 4px;
 }
-
 .withdraw {
     padding: 3.8% 46% 3% 14%;
     background: #EF4444;
 }
+
 .playerandvid {
     margin-right: 10vh;
 }
@@ -110,29 +96,27 @@
 
 .types {
     display: flex;
-  
+    
+
 }
 
 .types-margin h3 {
     margin-right: 7.813em;
     
 }
-
 .types-text h3 {
     color: #ABABB4;
     font-weight: 600;
     font-family: Montserrat;
     font-size: 14px;
 }
-
 .types-line {
     flex-grow: 1; /* Add this line */
     margin-top: 2.1%;
     background: #38383E;
     height: 3px;
-    width: 86%;
+    width: 100vh;
 }
-
 .payments__card {
     margin-top: 4.9%;
     display: flex;
@@ -145,7 +129,6 @@
     align-items: center; /* Center vertically */
     margin-right: 1em; /* Add margin for spacing */
 }
-
 .user-name {
     display: flex;
     flex-direction: column;
@@ -153,28 +136,22 @@
     align-items: center; /* Center horizontally */
     margin-top: -0.5em; /* Adjust this value as needed */
 }
-
-
-
 .user-name__text h3 {
     color: #FFF;
     font-weight: 700;
     font-family: Montserrat;
     font-size: 20px;
 }
-
 .user-name__text p {
     color: #A9A9A9;
     font-weight: 400;
     font-family: Montserrat;
     font-size: 20px;
 }
-
 .data-info {
-    margin-left: 1vh; /* Push to the right */
+    margin-left: 17vh; /* Push to the right */
     margin-right: auto; /* Push to the left */
 }
-
 .data-info__text h3 {
     color: #A9A9A9;
     font-weight: 400;
@@ -183,8 +160,8 @@
 }
 
 .transaction-info {
+    margin-right: 10em; /* Add margin for spacing */
     margin-right: 6em; /* Add margin for spacing */
-<<<<<<< HEAD
     display: flex;
     justify-content: center;
     align-content: center;
@@ -195,71 +172,59 @@
     justify-content: center;
     align-content: center;
     width: 20vh;
-=======
->>>>>>> dc8d843d7b4afcc3cf97d0d9bcd6cd519aafc44b
 }
+
 .transaction-info__text h3 {
     font-weight: 500;
     font-family: Montserrat;
     font-size: 22px;
 }
-
 .deposit-color h3 {
     color: #32C966;
 }
-
 .withdraw-color h3 {
     color: #EA3D38;
 }
-
 .error-deposit {
     position: absolute;
     left: 190px;
     top: 52px;
 }
-
 .error-deposit h2 {
     color: #BA3636;
     font-family: "Montserrat Alternates";
     font-weight: 700;
     font-size: 11px;
 }
-
 .error-card {
     position: absolute;
     top: 130px;
     left: 210px;
 }
-
 .error-card h2 {
     color: #BA3636;
     font-family: "Montserrat Alternates";
     font-weight: 700;
     font-size: 11px;
 }
-
 .error-checkbox h2 {
     color: #BA3636;
     font-family: "Montserrat Alternates";
     font-weight: 700;
     font-size: 11px;
 }
-
 .error-captcha {
     top: 235px;
     left: 45px;
     position: absolute;
 }
-
 .error-captcha h2 {
     color: #BA3636;
     font-family: "Montserrat Alternates";
     font-weight: 700;
     font-size: 13px;
 }
-
 /* Media */
-
 @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
     .profile__card h2 {
         width: 72%;
@@ -271,7 +236,6 @@
         padding-right: 56%;
     }
 }
-
 @media screen and (min-device-width: 1200px) and (max-device-width: 1399px) {
     .profile__card h2 {
         width: 80%;
@@ -283,5 +247,4 @@
         padding-right: 66%;
     }
 }
-
 /* /Media */
