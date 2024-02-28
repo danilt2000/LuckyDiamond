@@ -102,11 +102,12 @@
 
 .types {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .types-margin h3 {
     margin-right: 7.813em;
+    
 }
 
 .types-text h3 {
@@ -121,6 +122,7 @@
     margin-top: 2.1%;
     background: #38383E;
     height: 3px;
+    width: 100vh;
 }
 
 .payments__card {
@@ -160,7 +162,7 @@
 }
 
 .data-info {
-    margin-left: auto; /* Push to the right */
+    margin-left: 17vh; /* Push to the right */
     margin-right: auto; /* Push to the left */
 }
 
@@ -172,7 +174,7 @@
 }
 
 .transaction-info {
-    margin-right: 1em; /* Add margin for spacing */
+    margin-right: 10em; /* Add margin for spacing */
 }
 
 .transaction-info__text h3 {
