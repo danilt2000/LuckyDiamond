@@ -14,7 +14,6 @@
       <div class="profile__btns--payments">
         <a href="#" class="text-btn btn-bg btn-margin btn-display" @click="depositClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-deposit.svg"> Пополнить</a>
         <a href="#" class="withdraw text-btn btn-bg btn-display" @click="withdrawClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
-        <a href="#" class="withdraw text-btn btn-bg btn-display" @click="claimDataDeposit(1000)"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
         
       </div>
     </div>
@@ -59,6 +58,7 @@
 </template>
 <script>
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
+import axios from 'axios';
 import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import PaymentsModal from "@/components/PaymentsModal.vue";
@@ -81,6 +81,7 @@ export default {
       arrayHistory: [],
     }
   },
+  
   emits: ['notificationremove'],
   mounted() {
     this.checkWindowSize()
@@ -90,6 +91,24 @@ export default {
     this.RemoveWindowListener()
   },
   created() {
+    axios.post('https://spsystemcore20231122004605.azurewebsites.net/api/Payment/GetPaymentHistory', {
+      searchToken: GetCookie('SearchToken'),
+      authtoken: GetCookie('AUTHTOKEN')
+    })
+    .then(response => {
+      // Обработка полученных данных
+      const paymentHistory = response.data.paymentHistory;
+      paymentHistory.forEach(payment => {
+        if (payment.amount > 0) {
+          this.claimDataDeposit(payment.amount); // Добавление депозита в историю
+        } else {
+          this.claimDataWithdraw(-payment.amount); // Добавление вывода в историю
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching payment history:', error);
+    });
     this.username = GetCookie('SpUserName')
     GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
         .then((response) => {
