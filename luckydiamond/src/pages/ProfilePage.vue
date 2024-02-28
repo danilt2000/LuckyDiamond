@@ -17,6 +17,7 @@
       <div class="profile__btns--payments">
         <a href="#" class="text-btn btn-bg btn-margin btn-display" @click="depositClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-deposit.svg"> Пополнить</a>
         <a href="#" class="withdraw text-btn btn-bg btn-display" @click="withdrawClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
+        <a href="#" class="withdraw text-btn btn-bg btn-display" @click="claimDataDeposit(10)"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
       </div>
     </div>
     <div class="payments">
@@ -35,7 +36,6 @@
               <img src="@/assets/icons-test/person-icon-profile-userinfo.png">
               <div class="user-name user-name__text">
                 <h3>{{ payment.name }}</h3>
-                <p>{{ payment.comment }}</p>
               </div>
             </div>
             <div class="data-info data-info__text">
@@ -128,8 +128,7 @@ export default {
     },
     claimDataDeposit(amount) {
       const historyPayments = {
-        name: 'TEST USER',
-        comment: 'test',
+        name: 'Пополнение',
         data: this.getCurrentFormattedDate(),
         amount: amount
       }
@@ -138,8 +137,7 @@ export default {
     },
     claimDataWithdraw(amount) {
       const historyPayments = {
-        name: 'TEST USER',
-        comment: 'test',
+        name: 'Вывод',
         data: this.getCurrentFormattedDate(),
         amount: -amount
       }

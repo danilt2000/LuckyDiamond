@@ -102,6 +102,7 @@
 
 .types {
     display: flex;
+    justify-content: space-between;
 }
 
 .types-margin h3 {
@@ -116,26 +117,33 @@
 }
 
 .types-line {
+    flex-grow: 1; /* Add this line */
     margin-top: 2.1%;
     background: #38383E;
-    width: 86%;
     height: 3px;
 }
 
 .payments__card {
     margin-top: 4.9%;
     display: flex;
+    align-items: center; /* Center vertically */
 }
 
 .user-info {
     display: flex;
+    align-items: center; /* Center vertically */
+    margin-right: 1em; /* Add margin for spacing */
 }
 
 .user-name {
     display: flex;
     flex-direction: column;
     margin-left: 0.625em;
+    align-items: center; /* Center horizontally */
+    margin-top: -0.5em; /* Adjust this value as needed */
 }
+
+
 
 .user-name__text h3 {
     color: #FFF;
@@ -152,7 +160,8 @@
 }
 
 .data-info {
-    margin-left: 10%;
+    margin-left: auto; /* Push to the right */
+    margin-right: auto; /* Push to the left */
 }
 
 .data-info__text h3 {
@@ -163,7 +172,7 @@
 }
 
 .transaction-info {
-    margin-left: 7%;
+    margin-right: 1em; /* Add margin for spacing */
 }
 
 .transaction-info__text h3 {
