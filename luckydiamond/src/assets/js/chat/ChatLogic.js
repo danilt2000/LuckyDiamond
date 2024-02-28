@@ -8,6 +8,12 @@ let webSocket;
 
 export function ConnectToChat() {
     try {
+
+        if (webSocket && webSocket.readyState === WebSocket.OPEN) {
+            console.log('WebSocket connection already established.');
+            return;
+        }
+
         webSocket = new WebSocket(BackendWebSocketUrl);
 
         webSocket.onopen = function () {

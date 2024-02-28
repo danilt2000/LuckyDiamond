@@ -1,11 +1,13 @@
 <template>
-  <div class="time" v-if="crashdata.Status === 'WaitingForPlayers'"><h2>{{ crashdata.WaitingTime ? crashdata.WaitingTime.toFixed(1) : '' }} сек.</h2></div>
-  <LineChart
-      :chart-data="data"
-      :options="options"
-      v-else
-  />
-  <h2 class="ratio" :class="{ 'lost-ratio' : crashdata.Status === 'GameEnd' }">{{ crashdata.CurrentX ? crashdata.CurrentX.toFixed(2) : '' }}x</h2>
+  <div class="time" v-if="crashdata.Status === 'WaitingForPlayers'">
+    <h2>
+      {{ crashdata.WaitingTime ? crashdata.WaitingTime.toFixed(1) : "" }} сек.
+    </h2>
+  </div>
+  <LineChart :chart-data="data" :options="options" v-else />
+  <h2 class="ratio" :class="{ 'lost-ratio': crashdata.Status === 'GameEnd' }">
+    {{ crashdata.CurrentX ? crashdata.CurrentX.toFixed(2) : "" }}x
+  </h2>
 </template>
 
 <script>
@@ -20,17 +22,17 @@ import {
 } from "chart.js";
 
 Chart.register(
-    LineController,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement
+  LineController,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement
 );
 
 export default {
   components: { LineChart },
   props: {
-    crashdata: Object
+    crashdata: Object,
   },
   mounted() {
     this.data = this.chartData;
@@ -51,14 +53,14 @@ export default {
         scales: {
           x: {
             grid: {
-              display: false
-            }
+              display: false,
+            },
           },
           y: {
             grid: {
-              display: false
-            }
-          }
+              display: false,
+            },
+          },
         },
         animation: false,
       },
@@ -73,7 +75,7 @@ export default {
           {
             label: "Foo",
             data: this.dataValues,
-            borderColor: '#4E5EF2',
+            borderColor: "#4E5EF2",
             pointStyle: "circle",
             pointRadius: 0,
             pointHoverRadius: 2,
@@ -85,43 +87,40 @@ export default {
 
   watch: {
     crashdata: {
-      handler: 'updateData',
-      immediate: true
-    }
+      handler: "updateData",
+      immediate: true,
+    },
   },
 
   methods: {
     updateData() {
-      let nextDataValue
-      if (this.crashdata.Status === 'WaitingForPlayers') {
+      let nextDataValue;
+      if (this.crashdata.Status === "WaitingForPlayers") {
         this.data = this.chartData;
         this.labels = [""];
         this.dataValues = [this.numberGraph, this.numberGraph];
-      }
-      else if (this.crashdata.Status === 'InGame') {
+      } else if (this.crashdata.Status === "InGame") {
         if (this.dataValues.length === 0) {
-          this.dataValues = [this.crashdata.CurrentX, this.crashdata.CurrentX]
-          nextDataValue = this.crashdata.CurrentX
-          this.numberGraph = this.crashdata.CurrentX
+          this.dataValues = [this.crashdata.CurrentX, this.crashdata.CurrentX];
+          nextDataValue = this.crashdata.CurrentX;
+          this.numberGraph = this.crashdata.CurrentX;
 
-          this.data = this.chartData
-          this.labels.push("")
-          this.dataValues.push(nextDataValue)
+          this.data = this.chartData;
+          this.labels.push("");
+          this.dataValues.push(nextDataValue);
         }
 
-        this.numberGraph = this.numberGraph + .01
-        nextDataValue = this.numberGraph
+        this.numberGraph = this.numberGraph + 0.01;
+        nextDataValue = this.numberGraph;
 
         this.data = this.chartData;
         this.labels.push("");
         this.dataValues.push(nextDataValue);
-      }
-      else if (this.crashdata.Status === 'GameEnd') {
-        this.dataValues = []
-        this.numberGraph = 1
-      }
-      else {
-        console.log('Error game')
+      } else if (this.crashdata.Status === "GameEnd") {
+        this.dataValues = [];
+        this.numberGraph = 1;
+      } else {
+        console.log("Error game");
       }
     },
   },

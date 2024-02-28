@@ -22,6 +22,7 @@
     "vue-chart-3": "^3.1.8",
     "vue-recaptcha": "^3.0.0-alpha.6",
     "vue-router": "^4.2.5",
+    "vue3-carousel": "^0.3.1",
     "vue3-recaptcha2": "^1.8.0"
   },
   "devDependencies": {

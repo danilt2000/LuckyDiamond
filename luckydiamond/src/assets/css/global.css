@@ -204,11 +204,11 @@ button {
 .jackpot {
     display: flex;
     grid-area: jackpot;
-    height: 95%;
+    /* height: 95%;
     border-radius: 3.125rem;
     background: #17181C;
     box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
-    margin: 0.625rem 2.438rem 1.125rem 1.125rem;
+    margin: 0.625rem 2.438rem 1.125rem 1.125rem; */
 }
 
 .about {
@@ -290,6 +290,29 @@ button {
 }
 
 
+.bg-gradient-left {
+    background: #293561;
+    filter: blur(120px);
+    position: absolute;
+    top: 250px;
+    transform: rotate(180deg);
+    left: 200px;
+    width: 40%;
+    height: 55%;
+    z-index: 0;
+}
+
+.bg-two-gradient-right {
+    background: #293561;
+    filter: blur(120px);
+    position: absolute;
+    top: 220px;
+    transform: rotate(330deg);
+    left: 600px;
+    width: 60%;
+    height: 35%;
+    z-index: 0;
+}
 /* /Crash */
 
 /* Media */

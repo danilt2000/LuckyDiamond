@@ -24,7 +24,7 @@
 - Нажать сочетание клавиш ctrl + shift + i
 - Перейти в Application(Приложение)
 - Кликнуть на файлы Куки
-- Нажать на нашу ссылку и скопировать AUTHTOKEN, SearchToken, SpUserName, UserId
+- Нажать на нашу ссылку и скопировать AUTHTOKEN, SearchToken, SpUserName
 - Вставить значения и названия на Локальный хост
 - Обновить страницу
 
@@ -41,4 +41,4 @@
 
 ## Наша Команда
 
-![team](https://github.com/danilt2000/LuckyDiamond/assets/96600211/0c1b43b7-fe67-4fca-85ef-16f314847b70)
+![team](https://cdn.discordapp.com/attachments/1175674631684898866/1208428357952348170/Group_92.png?ex=65e33f9c&is=65d0ca9c&hm=9279223a5486b16e30267bced4fd1f7cc63ff59292cb5e29d741914b5902e5e0&)

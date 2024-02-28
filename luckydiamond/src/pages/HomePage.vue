@@ -60,18 +60,18 @@
               >
                 <div :class="'linecontent-' + mode.id">
                   <div class="container">
-                    <h1 class="title-firstline">{{ mode.title }}</h1>
+                    <h1 class="title-jackpot">{{ mode.title }}</h1>
                     <!-- <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a> -->
                     <a
                       href="#"
                       @click="$router.push({ name: 'jackpot' })"
-                      class="line__btn"
+                      class="line__btn__jackpot"
                       >play <span class="line__btn--elm">></span></a
                     >
                   </div>
                 </div>
-                <div class="line__img">
-                  <img src="@/assets/icons-gamemodes/case-icon.png" />
+                <div class="line__img__jackpot">
+                  <img src="@/assets/icons-gamemodes/jackpot_icon.svg" />
                 </div>
               </li>
             </ul>

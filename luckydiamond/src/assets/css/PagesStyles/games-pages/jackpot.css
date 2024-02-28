@@ -1,0 +1,386 @@
+.jackpot-start {
+    z-index: 1;
+    /* margin-left: 5%; */
+    border-radius: 20px;
+    background: #1D223E;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 42vh;
+    /* height: 480px; */
+    height: 32vh;
+    border: 1px solid #262C55;
+    /* margin-top: 2.6%; */
+    margin: 2.6%;
+}
+
+.jackpot-loading-bar {
+    z-index: 1;
+    /* margin-left: 5%; */
+    border-radius: 20px;
+    background: #1D223E;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+
+    /* height: 480px; */
+    /* height: 100%; */
+    border: 1px solid #262C55;
+    height: 100%;
+    /* margin-top: 2.6%; */
+    /* margin: 2.6%; */
+}
+
+.jackpot-carousel {
+    z-index: 1;
+    position: relative;
+    /* margin-left: 5%; */
+    border-radius: 10px;
+    background: #1D223E;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin-top: 1%;
+
+    /* height: 480px; */
+    /* height: 100%; */
+    border: 1px solid #262C55;
+    height: 95%;
+}
+
+.carousel-arrow {
+    position: absolute;
+    bottom: -20px;
+    /* Регулируйте положение стрелки относительно нижнего края карусели */
+    left: 50%;
+    /* Центрирование стрелки по горизонтали */
+    transform: translateX(-50%);
+    /* Дополнительное центрирование, чтобы точка указывала точно на центр */
+    color: #728DF8;
+    /* Цвет стрелки */
+    font-size: 24px;
+    /* Размер стрелки */
+    /* Добавьте любые дополнительные стили, такие как цвет фона, границы и т.д. */
+}
+.jackpot-useringame-list{
+    margin-top: 3.5%;
+    overflow-y: auto;
+    height: 62vh
+}
+.jackpot-carousel-user {
+    z-index: 1;
+    position: relative;
+    /* margin-left: 5%; */
+    border-radius: 10px;
+    background: #1F2543;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin-bottom: 1%;
+
+    /* height: 480px; */
+    /* height: 100%; */
+    border: 1px solid #262C55;
+}
+
+
+.jackpot-game {
+    z-index: 1;
+    /* margin-left: 5%; */
+    border-radius: 20px;
+    /* background: #1D223E; */
+    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+    width: 69%;
+    /* height: 480px; */
+    height: 94%;
+    /* border: 1px solid #262C55; */
+    margin-top: 2.6%;
+}
+
+.jackpot-main-elements {
+    z-index: 1;
+}
+
+.jackpot-start__content p {
+    color: #FFFFFF84;
+    font-weight: 700;
+    line-height: 31px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 13px;
+}
+
+.padding-elements-jackpot {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.jackpot-start__btns {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.jackpot-start__btns button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 19px;
+    font-style: normal;
+    font-family: Inter;
+    font-size: 16px;
+}
+
+.bank-container {
+    display: flex;
+    align-items: center;
+    /* background-color: #000066; */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    /* Choose your font */
+}
+
+.shield img {
+    width: 35px;
+    /* Adjust based on your shield size */
+    height: auto;
+    margin-left: 10px;
+    margin-bottom: -10px;
+}
+
+.bank-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.jackpot-last-game-bar-container {
+    /* margin-bottom: 3%; */
+    padding-top: 10px;
+}
+
+.jackpot-last-game-bar-container img {
+    /* margin-bottom: 3%; */
+    width: 3vh;
+    height: 3vh;
+}
+
+.jackpot-last-game-bar-container-text {
+    padding: 0px 0 5px 0;
+    color: #FFF;
+    font-weight: 200;
+    line-height: 15px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.00);
+    font-family: Montserrat Alternates;
+    font-size: 8px;
+}
+
+.jackpot-last-game-bar {
+    z-index: 1;
+    /* margin-left: 5%; */
+    border-radius: 20px;
+    background: #1D223E;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+
+    /* height: 480px; */
+    /* height: 100%; */
+    border: 1px solid #262C55;
+    height: 100%;
+    /* margin-top: 2.6%; */
+    /* margin: 2.6%; */
+
+}
+
+.bank-value {
+    font-size: 24px;
+    /* Large text size */
+    font-weight: bold;
+    margin-left: 1%;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #FFFFFF84;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* Make the number bold */
+}
+
+.bank-name {
+    font-size: 24px;
+
+    font-family: Montserrat;
+    font-weight: bold;
+    /* Smaller text size for 'БАНК' */
+}
+
+.progress-text {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.progress-bar {
+    width: 95%;
+    background-color: #D9D9D9;
+    /* Navy blue background */
+    border-radius: 10px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-left: 2vh;
+    margin-bottom: 3%;
+}
+
+.progress {
+    height: 40px;
+    background-color: #E13F3F;
+    /* Red for the progress */
+    border-radius: 10px;
+    /* Rounded corners on the left side */
+    line-height: 40px;
+    /* Same as height to vertically center text */
+    color: white;
+    text-align: start;
+    text-indent: 20px;
+    padding-right: 10px;
+    /* Add some padding to the right of the text */
+    transition: width 0.25s ease-in-out;
+}
+
+.no-pointer-events {
+    pointer-events: none;
+}
+
+.jackpot-player-info {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.jackpot-player-avatar img {
+    width: 48px;
+    /* Adjust size as needed */
+    height: 48px;
+    margin-right: 10px;
+    margin-left: 1vh;
+}
+
+.jackpot-player-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.jackpot-player-name {
+    font-size: 16px;
+    /* Adjust font size as needed */
+    font-weight: bold;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #515D83;
+}
+
+.jackpot-player-gems {
+    font-size: 15px;
+    /* Adjust font size as needed */
+    display: flex;
+    align-items: start;
+    color: #FFFFFF84;
+    /* font-weight: 700; */
+    /* line-height: 31px; */
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-weight: bold;
+    /* font-size: 13px; */
+}
+
+
+.jackpot-gems-icon {
+   
+    margin-left: 5px;
+    height: 1vh;
+}
+
+.jackpot-gems-icon-extension{
+    margin-bottom: -10px !important;
+}
+
+.jackpot-player-chance {
+    background-color: #27345C;
+    /* Adjust background color as needed */
+    border-radius: 5px;
+    font-size: 14px;
+    /* Adjust font size as needed */
+    padding-left: 5px !important;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 5px;
+    margin-left: 10%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-weight: bold;
+}
+.jackpot-chance-value {
+    color: #EF4444; /* Или любой другой оттенок красного, который вам нужен */
+  }
+  
+  .jackpot-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e2749; /* Dark blue background */
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-family: Montserrat;
+    font-weight: bold;
+
+  }
+  
+  .jackpot-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .jackpot-avatar {
+    width: 48px; /* Adjust based on your preference */
+    height: 48px;
+    margin-right: 10px;
+  }
+  
+  .jackpot-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .jackpot-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #515D83;
+  }
+  
+  .jackpot-gems {
+    font-size: 14px;
+    color: #FFFFFF84;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-weight: bold;
+  }
+  
+  .jackpot-chance {
+    font-size: 16px;
+    background-color: transparent; /* Adjust if you want a different background */
+  }
+  
+  .jackpot-percentage {
+    color: #EF4444; /* Adjust if you want a different color */
+  }
+  
+
+@media (max-width: 1415px) {
+    .padding-elements-jackpot {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

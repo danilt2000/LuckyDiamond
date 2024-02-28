@@ -117,7 +117,17 @@
     color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Montserrat Alternates;
-    font-size: 91px;
+    font-size:91px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.title-jackpot {
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size:80px;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
@@ -127,7 +137,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 4.7%;
+    padding-top: 5.5%;
 }
 
 .line__content .line__btn--main .line__btn {
@@ -157,6 +167,11 @@
     margin:  1% 6.6% 1% 4.7%;
 }
 
+.line__img__jackpot {
+    display: flex;
+    margin:  1% 6.6% 1% 4.7%;
+}
+
 .display-firstline {
     display: flex;
 }
@@ -176,6 +191,23 @@
     position: relative;
     bottom: 5%;
     left: 2%;
+}
+
+.line__btn__jackpot {
+    border-radius: 21px;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 11px 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 4%;
+    left: 6%;
 }
 
 .line__btn--elm {
@@ -377,10 +409,21 @@
     }
 }
 
-@media screen and (min-height: 910px) {
+@media screen and (min-height: 820px) {
   .chat {
     height: 87vh !important;
   }
 }
+  @media screen and (max-width: 1850px) {
+    .line__img__jackpot {
+      display: none !important;
+    }
+  }
 
+/* 
+@media screen and (min-height: 800) {
+    .chat {
+        height: 85vh !important;
+    }
+} */
 /* /Media */
