@@ -94,7 +94,15 @@
     padding: 3.8% 46% 3% 14%;
     background: #EF4444;
 }
-
+.playerandvid {
+    margin-right: 10vh;
+}
+.data1 {
+    margin-right: 20vh;
+}
+.summa {
+    margin-right: 10vh;
+}
 
 .payments {
     margin: 2% 0 0 -4.25%;
@@ -102,7 +110,7 @@
 
 .types {
     display: flex;
-    justify-content: space-around;
+  
 }
 
 .types-margin h3 {
@@ -129,6 +137,7 @@
     margin-top: 4.9%;
     display: flex;
     align-items: center; /* Center vertically */
+    justify-content: space-between;
 }
 
 .user-info {
@@ -174,9 +183,18 @@
 }
 
 .transaction-info {
-    margin-right: 10em; /* Add margin for spacing */
+    margin-right: 6em; /* Add margin for spacing */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 25vh;
 }
-
+.transaction-info__text {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 20vh;
+}
 .transaction-info__text h3 {
     font-weight: 500;
     font-family: Montserrat;

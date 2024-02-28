@@ -17,16 +17,22 @@
       <div class="profile__btns--payments">
         <a href="#" class="text-btn btn-bg btn-margin btn-display" @click="depositClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-deposit.svg"> Пополнить</a>
         <a href="#" class="withdraw text-btn btn-bg btn-display" @click="withdrawClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
-        <a href="#" class="withdraw text-btn btn-bg btn-display" @click="claimDataDeposit(10)"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
+        <a href="#" class="withdraw text-btn btn-bg btn-display" @click="claimDataDeposit(1)"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
       </div>
     </div>
     <div class="payments">
       <div class="payments__content">
         <div class="payments__types">
           <div class="types types-margin types-text">
+            <div class="playerandvid">
             <h3>Игрок и вид транзакции</h3>
+          </div>
+            <div class="data1">
             <h3>Дата</h3>
+          </div>
+            <div class="summa1">
             <h3>Сумма</h3>
+          </div>
           </div>
           <div class="types-line"></div>
         </div>
