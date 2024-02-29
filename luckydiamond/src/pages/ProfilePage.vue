@@ -21,7 +21,7 @@
         <div class="payments__types">
           <div class="types types-margin types-text">
             <div class="playerandvid">
-            <h3>Игрок и вид транзакции</h3>
+            <h3>Вид транзакции</h3>
           </div>
             <div class="data1">
             <h3>Дата</h3>
@@ -103,9 +103,9 @@ export default {
       const paymentHistory = response.data.paymentHistory;
       paymentHistory.forEach(payment => {
         if (payment.amount > 0) {
-          this.claimDataDeposit(payment.amount); // Добавление депозита в историю
+          this.claimDataDeposit(payment.amount,payment.utcDate); // Добавление депозита в историю
         } else {
-          this.claimDataWithdraw(-payment.amount); // Добавление вывода в историю
+          this.claimDataWithdraw(-payment.amount,payment.utcDate); // Добавление вывода в историю
         }
       });
     })
@@ -146,24 +146,55 @@ export default {
       const currentDate = new Date();
       return `${this.formatNumber(currentDate.getDate())}.${this.formatNumber(currentDate.getMonth() + 1)}.${currentDate.getFullYear()}, ${this.formatNumber(currentDate.getHours())}:${this.formatNumber(currentDate.getMinutes())}`;
     },
-    claimDataDeposit(amount) {
-      const historyPayments = {
-        name1: 'Пополнение',
-        data: this.getCurrentFormattedDate(),
-        amount: amount
-      }
-    
-      this.arrayHistory.unshift(historyPayments)
-    },
-    claimDataWithdraw(amount) {
-      const historyPayments = {
-        name: 'Вывод',
-        data: this.getCurrentFormattedDate(),
-        amount: -amount
-      }
-    
-      this.arrayHistory.unshift(historyPayments)
+    claimDataDeposit(amount, utcDate) {
+  const historyPayments = {
+    name1: 'Пополнение',
+    data: this.formatTime(utcDate),
+    amount: amount
+  }
+
+  this.arrayHistory.unshift(historyPayments);
+},
+
+claimDataWithdraw(amount, utcDate) {
+  const historyPayments = {
+    name: 'Вывод',
+    data: this.formatTime(utcDate),
+    amount: -amount
+  }
+
+  this.arrayHistory.unshift(historyPayments);
+},
+
+formatTime(utcDate) {
+  const dateUTC = new Date(utcDate);
+  const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const currentTime = new Date();
+  const diffTime = currentTime - dateUTC;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
+  const diffMinuts = Math.floor(diffTime/(1000*60));
+
+  if (diffDays < 7)
+  {
+    if (diffDays > 0)
+    {
+      return `${diffDays} ${diffDays === 1 ? 'день' : 'дня'} назад`;
     }
+    else if(diffHours >0)
+    {
+      return `${diffHours} ${diffHours === 1 ? 'час' : 'часа'} назад`;
+    }
+    else{
+      return `${diffMinuts} ${diffMinuts === 1 ? 'минута' : 'минут'} назад`;
+    }
+  }
+  else
+  {
+    return dateUTC.toLocaleString('ru-RU', { timeZone: userTimeZone });
+  }
+}
+
   }
 }
 </script>
