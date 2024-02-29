@@ -128,6 +128,7 @@
     display: flex;
     align-items: center; /* Center vertically */
     margin-right: 1em; /* Add margin for spacing */
+    width: 15vh;
 }
 .user-name {
     display: flex;
@@ -142,6 +143,20 @@
     font-family: Montserrat;
     font-size: 20px;
 }
+
+.user-name1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.625em;
+    align-items: center; /* Center horizontally */
+    margin-top: -0.5em; /* Adjust this value as needed */
+}
+.user-name1__text h3 {
+    color: #FFF;
+    font-weight: 700;
+    font-family: Montserrat;
+    font-size: 20px;
+}
 .user-name__text p {
     color: #A9A9A9;
     font-weight: 400;
@@ -149,7 +164,7 @@
     font-size: 20px;
 }
 .data-info {
-    margin-left: 17vh; /* Push to the right */
+    margin-left: 20vh; /* Push to the right */
     margin-right: auto; /* Push to the left */
 }
 .data-info__text h3 {
@@ -157,6 +172,7 @@
     font-weight: 400;
     font-family: Montserrat;
     font-size: 17px;
+   
 }
 
 .transaction-info {
@@ -165,13 +181,14 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 25vh;
+    width: 1vh;
+    margin-right: 13.5vh;
 }
 .transaction-info__text {
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 20vh;
+    width: 13vh;
 }
 
 .transaction-info__text h3 {
@@ -184,6 +201,10 @@
 }
 .withdraw-color h3 {
     color: #EA3D38;
+    margin-right: 1vh;
+}
+.withdraw-color1 {
+    margin-left: 1.35em;
 }
 .error-deposit {
     position: absolute;
@@ -235,6 +256,65 @@
     .withdraw {
         padding-right: 56%;
     }
+    .withdraw-color h3 {
+        color: #EA3D38;
+        margin-right: 1vh;
+    }
+    .transaction-info {
+        margin-right: 10em; /* Add margin for spacing */
+        margin-right: 6em; /* Add margin for spacing */
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 1vh;
+        margin-right: 8.5vh;
+    }
+    .transaction-info__text {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 13vh;
+    }
+    .user-name {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.625em;
+        align-items: center; /* Center horizontally */
+        margin-top: -0.5em; /* Adjust this value as needed */
+    }
+    .user-name__text h3 {
+        color: #FFF;
+        font-weight: 700;
+        font-family: Montserrat;
+        font-size: 20px;
+    }
+    .user-name1 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.625em;
+        align-items: center; /* Center horizontally */
+        margin-top: -0.5em; /* Adjust this value as needed */
+    }
+    .user-name1__text h3 {
+        color: #FFF;
+        font-weight: 700;
+        font-family: Montserrat;
+        font-size: 20px;
+    }
+    .data-info {
+        margin-left: 22.5vh; /* Push to the right */
+        margin-right: auto; /* Push to the left */
+    }
+    .data-info__text h3 {
+        color: #A9A9A9;
+        font-weight: 400;
+        font-family: Montserrat;
+        font-size: 17px;
+       
+    }
+    .withdraw-color1 {
+        margin-left: 1.35em;
+    }
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1399px) {
     .profile__card h2 {
@@ -245,6 +325,68 @@
     }
     .withdraw {
         padding-right: 66%;
+    }
+    
+}
+@media screen and (min-device-width: 1921px) {
+    .withdraw-color h3 {
+        color: #EA3D38;
+        margin-right: 1vh;
+    }
+    .transaction-info {
+        margin-right: 10em; /* Add margin for spacing */
+        margin-right: 6em; /* Add margin for spacing */
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 1vh;
+        margin-right: 20vh;
+    }
+    .transaction-info__text {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 13vh;
+    }
+    .user-name {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.625em;
+        align-items: center; /* Center horizontally */
+        margin-top: -0.5em; /* Adjust this value as needed */
+    }
+    .user-name__text h3 {
+        color: #FFF;
+        font-weight: 700;
+        font-family: Montserrat;
+        font-size: 20px;
+    }
+    .user-name1 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.625em;
+        align-items: center; /* Center horizontally */
+        margin-top: -0.5em; /* Adjust this value as needed */
+    }
+    .user-name1__text h3 {
+        color: #FFF;
+        font-weight: 700;
+        font-family: Montserrat;
+        font-size: 20px;
+    }
+    .data-info {
+        margin-left: 17vh; /* Push to the right */
+        margin-right: auto; /* Push to the left */
+    }
+    .data-info__text h3 {
+        color: #A9A9A9;
+        font-weight: 400;
+        font-family: Montserrat;
+        font-size: 17px;
+       
+    }
+    .withdraw-color1 {
+        margin-left: 1.35em;
     }
 }
 /* /Media */

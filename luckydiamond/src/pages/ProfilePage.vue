@@ -14,7 +14,6 @@
       <div class="profile__btns--payments">
         <a href="#" class="text-btn btn-bg btn-margin btn-display" @click="depositClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-deposit.svg"> Пополнить</a>
         <a href="#" class="withdraw text-btn btn-bg btn-display" @click="withdrawClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
-        
       </div>
     </div>
     <div class="payments">
@@ -37,8 +36,11 @@
           <div class="payments__card" v-for="payment in arrayHistory" :key="payment.id">
             <div class="user-info">
               <img src="@/assets/icons-test/person-icon-profile-userinfo.png">
-              <div class="user-name user-name__text">
+              <div class="user-name user-name__text" :class="{ 'withdraw-color1': payment.name }">
                 <h3>{{ payment.name }}</h3>
+              </div>
+              <div class="user-name1 user-name1__text">
+                <h3>{{ payment.name1 }}</h3>
               </div>
             </div>
             <div class="data-info data-info__text">
@@ -47,6 +49,7 @@
             <div class="transaction-info transaction-info__text" :class="{ 'withdraw-color': payment.amount < 0, 'deposit-color': payment.amount > 0 }">
               <h3>{{ payment.amount }} АР</h3>
             </div>
+            
           </div>
         </div>
       </div>
@@ -145,7 +148,7 @@ export default {
     },
     claimDataDeposit(amount) {
       const historyPayments = {
-        name: 'Пополнение',
+        name1: 'Пополнение',
         data: this.getCurrentFormattedDate(),
         amount: amount
       }
