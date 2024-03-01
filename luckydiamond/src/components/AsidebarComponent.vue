@@ -9,6 +9,7 @@
           <a href="#"><img class="menu__content--slots-icon" src="../assets/icons-menu/slots-icon.svg"></a>
           <a href="#" @click="$router.push({ name: 'crash' })"><img  class="menu__content--cruch-icon" src="../assets/icons-menu/crush-icon.svg"></a>
           <a href="#"><img  src="../assets/icons-menu/case-icon.png"></a>
+           <!-- <a href="#" @click="$router.push({ name: 'saper' })"><img  class="menu__content--bomb-icon" src="../assets/icons-menu/bomb-icon.svg"></a> -->
           <a href="#" @click="$router.push({ name: 'saper' })"><img  class="menu__content--bomb-icon" src="../assets/icons-menu/bomb-icon.svg"></a>
         </div>
       </div>
