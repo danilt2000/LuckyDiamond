@@ -95,6 +95,12 @@
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+.bg-early{
+    border-radius: 40px;
+    background: #969B9E;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
 .gamemode__main {
     width: 32%;
     height: 100%;

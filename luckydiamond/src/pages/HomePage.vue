@@ -77,7 +77,7 @@
             </ul>
           </div>
           <div class="gamemode__twolines">
-            <div class="gamemode__twoline--first__element bg-card">
+            <div class="gamemode__twoline--first__element bg-early">
               <ul>
                 <li v-for="mode in twolinefirstelementGameMode" :key="mode">
                   <div :class="'linecontent-' + mode.id">
