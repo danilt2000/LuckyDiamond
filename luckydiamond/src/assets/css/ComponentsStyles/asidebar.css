@@ -11,6 +11,11 @@
     flex-direction: column;
 }
 
+.menu__content--jackpot-icon{
+    width: 16vh;
+    height: -4vh;
+}
+
 .menu__btn--home {
     margin-top: 12%;
 }
