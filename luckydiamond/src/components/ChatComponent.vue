@@ -31,6 +31,9 @@
       </ul>
     </div>
     <writechat-component @send="ClaimDatamsg"></writechat-component>
+    <div class="chat__mute-button">
+      <button @click="muteChat">Mute</button>
+    </div>
   </aside>
 </template>
 
@@ -71,6 +74,10 @@ export default {
       } else {
         alert("Вы не можете отправлять сообщения чаще, чем раз в 2 секунды.");
       }
+    },
+    muteChat() {
+      // Mute the chat by disabling the event listener for incoming messages.
+      this.eventBus.$off("dataChat");
     },
   },
   mounted() {
@@ -128,4 +135,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

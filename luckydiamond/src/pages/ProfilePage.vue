@@ -13,6 +13,7 @@
       </div>
       <div class="profile__btns--payments">
         <a href="#" class="text-btn btn-bg btn-margin btn-display" @click="depositClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-deposit.svg"> Пополнить</a>
+        <a href="#" class="withdraw text-btn btn-bg btn-display" @click="claimDataDeposit(1000)"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
         <a href="#" class="withdraw text-btn btn-bg btn-display" @click="withdrawClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
       </div>
     </div>
@@ -32,6 +33,7 @@
           </div>
           <div class="types-line"></div>
         </div>
+        <div class="hisorypaymond">
         <div class="payments__history">
           <div class="payments__card" v-for="payment in arrayHistory" :key="payment.id">
             <div class="user-info">
@@ -49,9 +51,10 @@
             <div class="transaction-info transaction-info__text" :class="{ 'withdraw-color': payment.amount < 0, 'deposit-color': payment.amount > 0 }">
               <h3>{{ payment.amount }} АР</h3>
             </div>
-            
           </div>
-        </div>
+          </div>
+        
+      </div>
       </div>
     </div>
   </section>
@@ -110,7 +113,7 @@ export default {
       });
     })
     .catch(error => {
-      console.error('Error fetching payment history:', error);
+      console.error('Error fetching hisorypaymond:', error);
     });
     this.username = GetCookie('SpUserName')
     GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))

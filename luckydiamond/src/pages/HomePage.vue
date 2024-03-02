@@ -81,7 +81,7 @@
               <ul>
                 <li v-for="mode in twolinefirstelementGameMode" :key="mode">
                   <div :class="'linecontent-' + mode.id">
-                    <h3 class="title-twoline">{{ mode.title }}</h3>
+                    <h3 class="title-twoline">скоро</h3>
                   </div>
                   <div class="container">
                     <a href="#" class="line__btn"

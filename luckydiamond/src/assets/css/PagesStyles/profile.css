@@ -8,9 +8,17 @@
     padding-top: 10px;
     border-radius: 20px;
 }
+
 .profile__card {
     display: flex;
     flex-direction: column;
+}.hisorypaymond {
+     /* height: 590px; */
+     height: 70vh;
+     width: auto;
+     overflow-y: auto;
+     overflow-x: auto;
+     overflow-y: auto;
 }
 .profile__card h1 {
     color: #FFF;
