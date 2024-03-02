@@ -2,7 +2,6 @@
     width: 30%;
     margin-left: 3%;
 }
-
 .profile__content .profile__user--img {
     margin: 17.6% 8.4% 1% 0;
     background: #969C8D;
@@ -13,15 +12,20 @@
 .profile__card {
     display: flex;
     flex-direction: column;
+}.hisorypaymond {
+     /* height: 590px; */
+     height: 70vh;
+     width: auto;
+     overflow-y: auto;
+     overflow-x: auto;
+     overflow-y: auto;
 }
-
 .profile__card h1 {
     color: #FFF;
     font-weight: 700;
     font-family: Montserrat;
     font-size: 40px;
 }
-
 .profile__card h2 {
     border-radius: 20px;
     background: #22252F;
@@ -35,47 +39,38 @@
     font-size: 28px;
     padding-left: 11px;
 }
-
 .profile__card h2 img {
     margin-right: 4.4%;
 }
-
 .profile__btns--payments {
     margin-top: 7.9%;
     display: flex;
     flex-direction: column;
 }
-
 .icon-diamond h2 img {
     width: 33px;
     height: 33px;
 }
-
 .deposit-icon {
     margin: 3px 0 0 10px;
 }
-
 .withdraw-icon {
     margin-left: 33px;
 }
-
 .btn-bg {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.12);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 36%;
 }
-
 .btn-margin {
     padding: 3.8% 46% 3% 14%;
     margin-bottom: 11px;
     background: #62D4B2;
 }
-
 .btn-display {
     display: flex;
 }
-
 .text-btn {
     text-decoration: none;
     color: #000;
@@ -85,16 +80,23 @@
     font-size: 18px;
     margin-left: 4px;
 }
-
 .icon-margin-deposit-withdraw {
     margin-right: 4px;
 }
-
 .withdraw {
     padding: 3.8% 46% 3% 14%;
     background: #EF4444;
 }
 
+.playerandvid {
+    margin-right: 10vh;
+}
+.data1 {
+    margin-right: 20vh;
+}
+.summa {
+    margin-right: 10vh;
+}
 
 .payments {
     margin: 2% 0 0 -4.25%;
@@ -102,41 +104,47 @@
 
 .types {
     display: flex;
+    
+
 }
 
 .types-margin h3 {
     margin-right: 7.813em;
+    
 }
-
 .types-text h3 {
     color: #ABABB4;
     font-weight: 600;
     font-family: Montserrat;
     font-size: 14px;
 }
-
 .types-line {
+    flex-grow: 1; /* Add this line */
     margin-top: 2.1%;
     background: #38383E;
-    width: 86%;
     height: 3px;
+    width: 100vh;
 }
-
 .payments__card {
     margin-top: 4.9%;
     display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between;
 }
 
 .user-info {
     display: flex;
+    align-items: center; /* Center vertically */
+    margin-right: 1em; /* Add margin for spacing */
+    width: 15vh;
 }
-
 .user-name {
     display: flex;
     flex-direction: column;
     margin-left: 0.625em;
+    align-items: center; /* Center horizontally */
+    margin-top: -0.5em; /* Adjust this value as needed */
 }
-
 .user-name__text h3 {
     color: #FFF;
     font-weight: 700;
@@ -144,26 +152,51 @@
     font-size: 20px;
 }
 
+.user-name1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.625em;
+    align-items: center; /* Center horizontally */
+    margin-top: -0.5em; /* Adjust this value as needed */
+}
+.user-name1__text h3 {
+    color: #FFF;
+    font-weight: 700;
+    font-family: Montserrat;
+    font-size: 20px;
+}
 .user-name__text p {
     color: #A9A9A9;
     font-weight: 400;
     font-family: Montserrat;
     font-size: 20px;
 }
-
 .data-info {
-    margin-left: 10%;
+    margin-left: 20vh; /* Push to the right */
+    margin-right: auto; /* Push to the left */
 }
-
 .data-info__text h3 {
     color: #A9A9A9;
     font-weight: 400;
     font-family: Montserrat;
     font-size: 17px;
+   
 }
 
 .transaction-info {
-    margin-left: 7%;
+    margin-right: 10em; /* Add margin for spacing */
+    margin-right: 6em; /* Add margin for spacing */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 1vh;
+    margin-right: 13.5vh;
+}
+.transaction-info__text {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 13vh;
 }
 
 .transaction-info__text h3 {
@@ -171,63 +204,56 @@
     font-family: Montserrat;
     font-size: 22px;
 }
-
 .deposit-color h3 {
     color: #32C966;
 }
-
 .withdraw-color h3 {
     color: #EA3D38;
+    margin-right: 1vh;
 }
-
+.withdraw-color1 {
+    margin-left: 1.35em;
+}
 .error-deposit {
     position: absolute;
     left: 190px;
     top: 52px;
 }
-
 .error-deposit h2 {
     color: #BA3636;
     font-family: "Montserrat Alternates";
     font-weight: 700;
     font-size: 11px;
 }
-
 .error-card {
     position: absolute;
     top: 130px;
     left: 210px;
 }
-
 .error-card h2 {
     color: #BA3636;
     font-family: "Montserrat Alternates";
     font-weight: 700;
     font-size: 11px;
 }
-
 .error-checkbox h2 {
     color: #BA3636;
     font-family: "Montserrat Alternates";
     font-weight: 700;
     font-size: 11px;
 }
-
 .error-captcha {
     top: 235px;
     left: 45px;
     position: absolute;
 }
-
 .error-captcha h2 {
     color: #BA3636;
     font-family: "Montserrat Alternates";
     font-weight: 700;
     font-size: 13px;
 }
-
 /* Media */
-
 @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
     .profile__card h2 {
         width: 72%;
@@ -238,8 +264,66 @@
     .withdraw {
         padding-right: 56%;
     }
+    .withdraw-color h3 {
+        color: #EA3D38;
+        margin-right: 1vh;
+    }
+    .transaction-info {
+        margin-right: 10em; /* Add margin for spacing */
+        margin-right: 6em; /* Add margin for spacing */
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 1vh;
+        margin-right: 8.5vh;
+    }
+    .transaction-info__text {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 13vh;
+    }
+    .user-name {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.625em;
+        align-items: center; /* Center horizontally */
+        margin-top: -0.5em; /* Adjust this value as needed */
+    }
+    .user-name__text h3 {
+        color: #FFF;
+        font-weight: 700;
+        font-family: Montserrat;
+        font-size: 20px;
+    }
+    .user-name1 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.625em;
+        align-items: center; /* Center horizontally */
+        margin-top: -0.5em; /* Adjust this value as needed */
+    }
+    .user-name1__text h3 {
+        color: #FFF;
+        font-weight: 700;
+        font-family: Montserrat;
+        font-size: 20px;
+    }
+    .data-info {
+        margin-left: 22.5vh; /* Push to the right */
+        margin-right: auto; /* Push to the left */
+    }
+    .data-info__text h3 {
+        color: #A9A9A9;
+        font-weight: 400;
+        font-family: Montserrat;
+        font-size: 17px;
+       
+    }
+    .withdraw-color1 {
+        margin-left: 1.35em;
+    }
 }
-
 @media screen and (min-device-width: 1200px) and (max-device-width: 1399px) {
     .profile__card h2 {
         width: 80%;
@@ -250,6 +334,67 @@
     .withdraw {
         padding-right: 66%;
     }
+    
 }
-
+@media screen and (min-device-width: 1921px) {
+    .withdraw-color h3 {
+        color: #EA3D38;
+        margin-right: 1vh;
+    }
+    .transaction-info {
+        margin-right: 10em; /* Add margin for spacing */
+        margin-right: 6em; /* Add margin for spacing */
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 1vh;
+        margin-right: 20vh;
+    }
+    .transaction-info__text {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 13vh;
+    }
+    .user-name {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.625em;
+        align-items: center; /* Center horizontally */
+        margin-top: -0.5em; /* Adjust this value as needed */
+    }
+    .user-name__text h3 {
+        color: #FFF;
+        font-weight: 700;
+        font-family: Montserrat;
+        font-size: 20px;
+    }
+    .user-name1 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.625em;
+        align-items: center; /* Center horizontally */
+        margin-top: -0.5em; /* Adjust this value as needed */
+    }
+    .user-name1__text h3 {
+        color: #FFF;
+        font-weight: 700;
+        font-family: Montserrat;
+        font-size: 20px;
+    }
+    .data-info {
+        margin-left: 17vh; /* Push to the right */
+        margin-right: auto; /* Push to the left */
+    }
+    .data-info__text h3 {
+        color: #A9A9A9;
+        font-weight: 400;
+        font-family: Montserrat;
+        font-size: 17px;
+       
+    }
+    .withdraw-color1 {
+        margin-left: 1.35em;
+    }
+}
 /* /Media */

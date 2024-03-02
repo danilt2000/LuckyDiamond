@@ -41,7 +41,11 @@
     font-size: 18px;
     font-weight: 700;
 }
-
+.chat__mute-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
 /* .content p {
     width: 80%;
     word-wrap: break-word;
