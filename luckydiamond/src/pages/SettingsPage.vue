@@ -8,11 +8,11 @@
 
   <section class="settings">
     
-     <div id="volume-control">
+     <!-- <div id="volume-control">
     <button id="volume-up" @click="volumeUp">+</button>
     <button id="volume-down" @click="volumeDown">-</button>
   </div>
-    
+     -->
     
 
   </section>

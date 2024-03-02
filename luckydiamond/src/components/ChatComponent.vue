@@ -31,9 +31,9 @@
       </ul>
     </div>
     <writechat-component @send="ClaimDatamsg"></writechat-component>
-    <div class="chat__mute-button">
+    <!-- <div class="chat__mute-button">
       <button @click="muteChat">Mute</button>
-    </div>
+    </div> -->
   </aside>
 </template>
 
