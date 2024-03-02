@@ -58,8 +58,8 @@
                     <b>Наши соц-сети:</b>
                   </div>
                   <div class="Social1icons">
-                    <a href="https://t.me/Ykropmaha" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-                    <a href="https://discordapp.com/users/1126752682183503942" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+                    <a href="https://t.me/lucky_diamond_spm" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+                    <a href="https://discord.gg/4HhZFY2PEv" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
                   </div>
                 </div>
 
