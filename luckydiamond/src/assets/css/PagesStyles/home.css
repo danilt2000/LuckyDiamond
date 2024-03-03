@@ -218,7 +218,19 @@
 
 .line__btn--elm {
     color: #000;
-    font-size: 38px;
+    font-size: 38px ;
+}
+
+.line__btn--elm--saper {
+    color: #000;
+    font-size: 4vh !important;
+}
+
+@media (max-width: 1565px) {
+    .line__btn--elm--saper {
+        font-size: 2vh !important;
+        display: none;
+    }
 }
 
 .linecontent-2 {
@@ -289,6 +301,12 @@
 
 /* Media */
 
+@media (max-width: 1586px) {
+    #diamonds-input-saper {
+        width: 30vh !important;
+    }
+}
+
 @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
     .header__auth--discord {
         width: 14%;
@@ -320,7 +338,9 @@
     }
     .line__content .line__btn--main .line__btn {
         left: 0;
-        top: -.4em;
+        top: 2vh;
+        /* top: -.4em; */
+        /* top:     top: 2vh;; */
     }
     .line__img {
         margin: 1% -8% 0 30%;

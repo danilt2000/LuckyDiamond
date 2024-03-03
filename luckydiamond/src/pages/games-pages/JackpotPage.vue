@@ -310,8 +310,8 @@ export default {
       autoplay: 0,
       player: {
         name: "",
-        gems: 1000,
-        avatarUrl: "https://avatar.spworlds.ru/face/55/test",
+        gems: 100,
+        avatarUrl: "https://avatar.spworlds.ru/face/55/Hepatir",
         chance: "100%",
         // name: "FUpir",
         // gems: 500,
@@ -497,18 +497,18 @@ export default {
         // const numberOfCards = player.WinningPercentage / 10; // Предполагаем, что 10% это 1 карточка
         for (let i = 0; i < numberOfCards; i++) {
           if (i == 0) {
-            if (this.firstStartOfPage) {
-              this.slides.push({
-                img: `https://avatar.spworlds.ru/face/55/${this.player.name}.png`, // Предполагаем структуру URL из имени пользователя
-                nickname: this.player.name,
-              });
-              this.firstStartOfPage = false;
-            } else {
-              this.slides.push({
-                img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
-                nickname: player.UserName,
-              });
-            }
+            // if (this.firstStartOfPage) {
+            //   this.slides.push({
+            //     img: `https://avatar.spworlds.ru/face/55/${this.player.name}.png`, // Предполагаем структуру URL из имени пользователя
+            //     nickname: this.player.name,
+            //   });
+            //   this.firstStartOfPage = false;
+            // } else {
+            this.slides.push({
+              img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
+              nickname: player.UserName,
+            });
+            // }
           }
           this.slides.push({
             img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
@@ -585,7 +585,9 @@ export default {
                 if (this.remainingSeconds > 8) {
                   progressText.textContent = `${this.remainingSeconds}`;
                 } else {
-                  progressText.textContent = `${this.remainingSeconds} СЕК`;
+                  if (this.remainingSeconds != 0) {
+                    progressText.textContent = `${this.remainingSeconds} СЕК`;
+                  }
                 }
                 progressText.style.opacity = "1";
               }, 500); // Задержка должна соответствовать продолжительности анимации
@@ -675,6 +677,10 @@ export default {
           if (dataObject.CurrentGame.GameState == "WaitingForPlayers") {
             console.log("Waiting for players");
             console.log("Put there earlies cards");
+
+            // if (dataObject.CurrentGame.GameState != "Running") {
+
+            // }
             this.lastUserWinner = dataObject.LastGame.WinnerUserName;
             this.lastUserWinerGameId = dataObject.LastGame.Id;
             if (this.lastUserWinerGameId == this.idCurrentGame) {
@@ -701,12 +707,6 @@ export default {
             this.startGameTimer(dataObject.CurrentGame.StartGameUtc);
           }
 
-          this.updatePlayerInfo(
-            dataObject.LastGame.WinnerUserName,
-            dataObject.LastGame.WinStake,
-            dataObject.LastGame.WinnerPercentage
-          );
-
           if (dataObject.CurrentGame.GameState == "Running") {
             this.autoplay = 20;
             if (this.idCurrentGame == "") {
@@ -717,6 +717,13 @@ export default {
                 dataObject.CurrentGame.PlayerList
               );
             }
+          }
+          if (this.idCurrentGame == "") {
+            this.updatePlayerInfo(
+              dataObject.LastGame.WinnerUserName,
+              dataObject.LastGame.WinStake,
+              dataObject.LastGame.WinnerPercentage
+            );
           }
         } else {
           // Если данные не определены или пусты, выводим соответствующее сообщение в консоль

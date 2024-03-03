@@ -29,7 +29,7 @@
             <h3>Сумма депозита</h3>
             <div class="diamonds__choises">
               <img class="diamond-icon" src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
-              <input v-model="amountDeposit" type="number" id="diamonds-input">
+              <input v-model="amountDeposit" type="number" id="diamonds-input-saper">
               <div class="diamonds__btns btn-style__diamonds">
                 <ul class="diamonds-btns__display">
                   <li v-for="(item, index) in SaperNumbers" :key="index">

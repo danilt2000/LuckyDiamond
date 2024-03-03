@@ -86,7 +86,13 @@ margin-top: 3.5px;
     display: flex;
     justify-content: space-around;
     align-content: center;
-    margin-top: 40px;
+    margin-top: 3vh;
+}
+
+@media (max-height: 879px) {
+    .Social1where {
+        margin-top: 0; 
+    }
 }
 .questions_box {
     margin-bottom: 24px;

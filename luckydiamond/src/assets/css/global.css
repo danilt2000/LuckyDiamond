@@ -159,8 +159,8 @@ button {
     background: #16171B;
     filter: drop-shadow(0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
     border-radius: 15px;
-    /* border-radius: 1.25rem; */
-    height: 100%;
+    /* height: 100%; */
+    height: 86vh;
     position: relative;
     z-index: 3;
    
@@ -278,7 +278,8 @@ button {
 .help {
     grid-area: help;
     display: flex;
-    height:99%;
+    /* height:99%; */
+    height:86vh;
     border-radius: 3.125rem;
     background: #17181C;
     box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);

@@ -42,7 +42,7 @@
                       href="#"
                       @click="$router.push({ name: 'saper' })"
                       class="line__btn"
-                      >play <span class="line__btn--elm">></span></a
+                      >play <span class="line__btn--elm--saper">></span></a
                     >
                   </div>
                 </div>

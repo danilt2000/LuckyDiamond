@@ -136,9 +136,22 @@
     display: flex;
 }
 
+#diamonds-input-saper {
+    width: 37vh;
+    height: 4vh;
+}
+
+@media (max-width: 1630px) {
+    #diamonds-input-saper {
+        width: 30vh !important;
+    }
+}
+
 #diamonds-input {
-    width: 347px;
-    height: 38px;
+    /* width: 347px;
+    height: 38px; */
+    width: 37vh;
+    height: 4vh;
 }
 
 .diamonds h3 {
@@ -469,9 +482,11 @@
     .saper-game__content {
         width: auto;
     }
+
     .error-block {
         top: 425px;
     }
+
     .saper-start {
         width: 30%;
         height: 500px;
@@ -519,12 +534,15 @@
     .btns-style__steps button {
         padding: 6px 9px;
     }
+
     .emeralds-bg {
         top: -23%;
     }
+
     .crystals-bg {
         top: -21%;
     }
+
     .card-info img {
         width: 100%;
     }
@@ -550,9 +568,11 @@
     .bg-two {
         left: 300px;
     }
+
     .error-block {
         top: 410px;
     }
+
     .saper-game__content {
         width: auto;
     }
@@ -624,12 +644,15 @@
     .btns-style__steps button {
         padding: 6px 4px;
     }
+
     .emeralds-bg {
         top: -24%;
     }
+
     .crystals-bg {
         top: -22%;
     }
+
     .card-info img {
         width: 100%;
     }
