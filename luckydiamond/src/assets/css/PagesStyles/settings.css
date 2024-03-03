@@ -1,31 +1,78 @@
 .settings {
-    display: flex;
+    /* display: flex; */
     grid-area: profile;
-    height: 95%;
+    /* height: 86vh; */
+    /* width: 86vh; */
+
     border-radius: 50px;
     background: #17181C;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin: 10px 39px 18px 13px;
 }
+
 #volume-control {
-    display: flex;
-    align-items: center;
+  margin: 5vh;
+    /* display: flex; */
+    /* align-items: center; */
+    /* top: 0; 
+    left: 0; */
+    
+    /* z-index: 1000; */
   }
-  
-  #volume-up, #volume-down {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    cursor: pointer;
+  .volume-section{
+  margin: 5vh;
   }
-  
-  #volume-indicator {
-    width: 100px;
-    height: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #ccc;
+  .volume-text{
+
+    text-decoration: none;
+    font-family: Montserrat Alternates;
+    font-weight: 700;
+    font-size: 25px;
   }
-  
+  .volume-text--grey{
+
+    text-decoration: none;
+    font-family: Montserrat Alternates;
+    font-weight: 700;
+    font-size: 25px;
+    color: #3D3F48;
+  }
+
+/* Стилизация трека ползунка */
+#volumeControl {
+  -webkit-appearance: none; /* Убирает стандартный стиль для Webkit браузеров */
+  width: 40vh;
+
+  height: 8px; /* Можно изменить для изменения высоты трека */
+  background: #EF4444; /* Цвет фона трека */
+  outline: none; /* Убирает контур при выборе */
+  opacity: 1; /* Можно изменить для изменения прозрачности трека */
+  -webkit-transition: .2s; /* Плавное изменение для Webkit браузеров */
+  transition: opacity .2s;
+  border-radius: 10px;
+}
+
+/* Стилизация тумблера ползунка */
+#volumeControl::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Убирает стандартный стиль для Webkit браузеров */
+  appearance: none;
+  width: 15px; /* Ширина тумблера */
+  height: 15px; /* Высота тумблера */
+  background: #fff; /* Цвет фона тумблера */
+  cursor: pointer; /* Курсор в виде указателя */
+  border-radius: 60%; /* Круглый тумблер */
+}
+
+#volumeControl::-moz-range-thumb {
+  width: 25px; /* Ширина тумблера */
+  height: 25px; /* Высота тумблера */
+  background: #fff; /* Цвет фона тумблера */
+  cursor: pointer; /* Курсор в виде указателя */
+  border-radius: 50%; /* Круглый тумблер */
+  border: 2px solid red; /* Граница тумблера */
+}
+
+#volumeControl::-moz-range-track {
+  background: red; /* Цвет фона трека для Firefox */
+  height: 8px; /* Высота трека для Firefox */
+}
