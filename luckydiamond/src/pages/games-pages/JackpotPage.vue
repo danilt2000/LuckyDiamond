@@ -410,7 +410,6 @@ export default {
           GetCookie("AUTHTOKEN"),
           GetCookie("SearchToken")
         ).then((response) => {
-          console.log(response.currentMoney, this.balance);
           const responseBalance = response.currentMoney;
 
           if (responseBalance === this.balance) {
@@ -446,8 +445,6 @@ export default {
       };
 
       await JoinJackpotGame(userData, this.amountDeposit).then((response) => {
-        console.log(this.balance);
-        console.log(response);
         if (
           response === `You can't join to started or ended game` ||
           response === "Player alredy in the game."
@@ -526,7 +523,6 @@ export default {
         // Устанавливаем таймер, который сработает, когда игра должна закончиться
         setTimeout(() => {
           eventBus.emit("gameEnded"); // Транслируем событие окончания игры
-          console.log("Game has ended");
         }, timeLeft);
       } else {
         console.log("Game has already ended");
@@ -652,7 +648,6 @@ export default {
     },
     changeLastFiveImages() {
       const newImage = "https://avatar.spworlds.ru/face/55/Hepatir.png";
-      console.log(this.slides);
       this.slides[9].img = newImage;
     },
     stopOnTarget(targetNickname) {
@@ -672,11 +667,8 @@ export default {
           const dataObject = JSON.parse(data);
           this.winStake = dataObject.CurrentGame.WinStake;
 
-          console.log(dataObject);
 
           if (dataObject.CurrentGame.GameState == "WaitingForPlayers") {
-            console.log("Waiting for players");
-            console.log("Put there earlies cards");
 
             // if (dataObject.CurrentGame.GameState != "Running") {
 
@@ -697,7 +689,6 @@ export default {
           }
           if (dataObject.CurrentGame.GameState == "StartGameTimer") {
             if (!this.isGameTimerStarted) {
-              console.log("Set players");
               this.idCurrentGame = dataObject.CurrentGame.Id;
             }
             this.mapPlayersToSlides(
@@ -727,7 +718,6 @@ export default {
           }
         } else {
           // Если данные не определены или пусты, выводим соответствующее сообщение в консоль
-          console.log("Received undefined or null data");
         }
         // console.log(dataFromServer);
       } catch (error) {

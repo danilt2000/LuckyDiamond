@@ -94,7 +94,6 @@ export default {
         GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
           .then((response) => {
             this.balance = response.currentMoney;
-            console.log(response);
           })
           .catch((error) => {
             // Обработка ошибки

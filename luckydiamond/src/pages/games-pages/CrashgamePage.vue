@@ -137,7 +137,6 @@ export default {
 
       if (this.crashObject.Status === 'GameEnd' && this.startGame === true && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
         this.startGame = false
-        console.log('GAME OVER')
         this.updateUserMoney()
       }
       if (
@@ -150,7 +149,6 @@ export default {
         this.startGame = true
 
         let User = this.crashObject.Players.find(player => player.UserName === GetCookie('SpUserName'))
-        console.log('ОБНОВЛЕНИЕ СТРАНИЦЫ')
         if (User) {
           this.amountDeposit = User.Bid
           User = null
@@ -256,8 +254,6 @@ export default {
 
         await JoinCrashGame(userData, this.amountDeposit)
             .then((response) => {
-              console.log(this.balance)
-              console.log(response)
               if (response === `You can't join to started or ended game` || response === 'Player alredy in the game.') {
                 this.offBtn = false
 
@@ -309,7 +305,6 @@ export default {
       if (content === 'max') {
         await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
             .then((response) => {
-              console.log(response.currentMoney, this.balance)
               const responseBalance = response.currentMoney
 
               if (responseBalance === this.balance) {

@@ -325,7 +325,6 @@ export default {
      async handler(value) {
        if (value.length < 1 || this.ValidationPlay.endGame === true) return
        const maxCircles = 25 - this.amountCrystals - this.gameTurn
-       console.log(`MAXCIRLES - ${maxCircles} VALUE: ${value} GAMECIRCLE - ${this.gamesCircle}`)
 
        if (this.gameStart !== false) {
          this.offEventPointers = false
@@ -369,7 +368,6 @@ export default {
            console.error(e)
          }
 
-         console.log('---------ANSWER SERVER-----------', AnswerServer)
          console.log(LimitClicked, DepositDiamonds, X_Cordinates)
          this.gamesCircle = this.gamesCircle + 1
          this.offEventPointers = true
@@ -430,7 +428,6 @@ export default {
       try {
          GetUserData(AUTHTOKEN, SEARCHTOKEN)
             .then(response => {
-              console.log(response)
               if (response) {
                 this.gameStart = true
                 this.offEventPointers = true
@@ -449,7 +446,6 @@ export default {
                 })
 
                 soundStartGame.play()
-                console.log(this.flippedCards.length)
                 setTimeout(() => {
                   this.ValidationPlay.startGame = false
                 }, 2000)
@@ -581,7 +577,6 @@ export default {
       if (content === 'max') {
         await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
             .then((response) => {
-              console.log(response.currentMoney, this.balance)
               const responseBalance = response.currentMoney
 
               if (responseBalance === this.balance) {
