@@ -226,7 +226,7 @@
     font-size: 4vh !important;
 }
 
-@media (max-width: 1565px) {
+@media (max-width: 1590px) {
     .line__btn--elm--saper {
         font-size: 2vh !important;
         display: none;
