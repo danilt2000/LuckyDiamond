@@ -171,6 +171,8 @@ import HeaderElementPage from "@/components/HeaderComponent.vue";
 import { GetPercentageSteps, GetUserData, ClickCirclePlay, GetWinningAmount } from "@/assets/js/games/saper/SaperAPI";
 import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
+import {GetFromLocalStorage} from "@/assets/js/storage/LocalStorage";
+
 
 import { Howl } from 'howler';
 import {eventBus} from "@/main";
@@ -380,7 +382,8 @@ export default {
            this.gameTurn = 0
            const SoundCorrect = new Howl({
              src: ['/sounds/incorrect-sound.mp3'],
-             volume: 0.5
+             volume: GetFromLocalStorage("volume")/100
+            //  volume: 0.5
            })
 
            SoundCorrect.play()
@@ -393,7 +396,8 @@ export default {
          }
          const SoundUncorrect = new Howl({
            src: ['/sounds/correct-click.mp3'],
-           volume: 0.5
+          //  volume: 0.5
+           volume: GetFromLocalStorage("volume")/100
          })
          this.CorrectsClick.push(X_Cordinates)
 
@@ -441,7 +445,7 @@ export default {
 
                 const soundStartGame = new Howl({
                   src: ['/sounds/start-game.mp3'],
-                  volume: 5.0
+                  volume: GetFromLocalStorage("volume")/25
                 })
 
                 soundStartGame.play()
@@ -491,7 +495,8 @@ export default {
         this.offEventPointers = true
         const soundStartGame = new Howl({
           src: ['/sounds/start-game.mp3'],
-          volume: 5.0
+          volume: GetFromLocalStorage("volume")/100
+          // volume: 5.0
         })
 
         soundStartGame.play()
