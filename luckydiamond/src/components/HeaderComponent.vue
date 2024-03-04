@@ -185,7 +185,7 @@ export default {
           <!-- <div class="header__card--auth">  -->
           <div class="auth__card--content">
             <a
-              href="https://media.discordapp.net/attachments/1175674631684898866/1214143880073842698/Undwadtitled.png?ex=65f80a9a&is=65e5959a&hm=9cb0ffffa2bfc6ee9302f8d96be7f8c3049dc04df478dd05cdd94f697c662e1d&=&format=webp&quality=lossless"
+              href="https://discord.com/oauth2/authorize?client_id=1148644854797176932&response_type=code&redirect_uri=https%3A%2F%2Fwww.lucky-diamonds.ru&scope=identify"
               @click="auth = true"
               ><span
                 ><img
@@ -194,11 +194,8 @@ export default {
                   src="../assets/icons-header/discord-icon.svg" /></span
               >Вход</a
             >
-            <!-- https://media.discordapp.net/attachments/1208431882044448769/1211732312291541102/LUCKYDIAMOND.png?ex=65ef44a8&is=65dccfa8&hm=51e02afa10561b256c834abb0c6b525418c35ca9b878e48df66b75eee8d64e01&=&format=webp&quality=lossless -->
-            
-            <!-- href="https://media.discordapp.net/attachments/1175674631684898866/1203382105934139422/Untitled.png?ex=65d0e3eb&is=65be6eeb&hm=226770699b0ac57c74b1516868e9d7ddb6eb1cb952366ea07e62ccf4ee551a1d&=&format=webp&quality=lossless" -->
-            <!--            https://discord.com/api/oauth2/authorize?client_id=1148644854797176932&redirect_uri=https%3A%2F%2Flucky-diamond.vercel.app&response_type=code&scope=identify-->
-            <!--            https://discord.com/oauth2/authorize?client_id=1148644854797176932&response_type=code&redirect_uri=https%3A%2F%2Fwww.lucky-diamonds.ru&scope=identify-->
+            <!-- https://media.discordapp.net/attachments/1175674631684898866/1214143880073842698/Undwadtitled.png?ex=65f80a9a&is=65e5959a&hm=9cb0ffffa2bfc6ee9302f8d96be7f8c3049dc04df478dd05cdd94f697c662e1d&=&format=webp&quality=lossless -->
+            <!-- https://discord.com/oauth2/authorize?client_id=1148644854797176932&response_type=code&redirect_uri=https%3A%2F%2Fwww.lucky-diamonds.ru&scope=identify-->
           </div>
         </div>
       </div>
