@@ -204,6 +204,7 @@
 
 .cumming_soon_btn:hover {
     background-color: #525252;
+    opacity: 0.75;
 }
 
 .line__btn {
