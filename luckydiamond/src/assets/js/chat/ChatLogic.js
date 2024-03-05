@@ -28,11 +28,14 @@ export function ConnectToChat() {
                 eventBus.emit('dataChat', event.data);
                 console.log('CHAT')
             }
-            else {
+
+            if (data.MessageType == "CrashGameState") {
                 eventBus.emit('crash', event.data)
             }
 
-            // console.log('Message from Server:', event.data);
+            if (Array.isArray(data.CurrentGame.PlayerList)) {
+                eventBus.emit('jackpotGameTik', event.data)
+            }
         };
 
         webSocket.onclose = function () {
