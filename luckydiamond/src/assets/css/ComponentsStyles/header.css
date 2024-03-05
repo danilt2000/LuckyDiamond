@@ -24,6 +24,11 @@
     font-weight: 700;
     font-size: 18px;
     margin-right: 3em;
+    transition: 250ms;
+}
+
+.header__nav nav a:hover {
+    color: #EF4444;
 }
 
 .header__nav--now {
@@ -84,6 +89,7 @@
     padding: 20px 23px 20px 23px;
     text-decoration: none;
     margin-left: -15%;
+    transition: 200ms;
 }
 
 .header__auth--discord {
