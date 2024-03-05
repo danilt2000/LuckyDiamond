@@ -32,6 +32,7 @@ import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 
 import '@/assets/css/PagesStyles/adaptive-pages/profilemobile.css'
+import {eventBus} from "@/main";
 
 export default {
   components: { HeaderMobileComponent, MenuMobileComponent, PaymentsMobile },
@@ -57,6 +58,11 @@ export default {
       this.imageUrl = `https://avatar.spworlds.ru/front/256/${this.username}`
     }
   },
+  mounted() {
+    eventBus.on("Updatebalance", () => {
+      this.updateBalanceMethod();
+    });
+  },
   methods: {
     paymetsCall(view) {
       this.payments.paymentsWindow = true
@@ -64,7 +70,15 @@ export default {
     },
     paymentsClose() {
       this.payments.paymentsWindow = false
-    }
+    },
+    updateBalanceMethod() {
+      GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken")).then(
+          (response) => {
+            this.balance = response.currentMoney;
+          }
+      );
+      eventBus.emit("Updatebalance-saper");
+    },
   }
 }
 </script>
