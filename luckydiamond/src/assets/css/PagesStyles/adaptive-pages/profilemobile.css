@@ -44,8 +44,11 @@ body {
 }
 
 .macroinfo-profile img {
-    width: 45%;
+    width: 55%;
     height: 100%;
+    background: #969c8d;
+    border-radius: 20px;
+    padding: 2%;
 }
 
 .img-margin img {
