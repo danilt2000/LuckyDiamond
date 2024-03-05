@@ -2,10 +2,6 @@ body {
     overflow-y: scroll;
 }
 
-.header-mobile {
-    height: 70%;
-}
-
 .profile-mobile {
     grid-area: profile-mobile;
     width: 100%;
