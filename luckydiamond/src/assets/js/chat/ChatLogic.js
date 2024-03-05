@@ -26,15 +26,18 @@ export function ConnectToChat() {
 
                 if (dataObject && Object.prototype.hasOwnProperty.call(dataObject, 'SpUserName') && Object.prototype.hasOwnProperty.call(dataObject, 'Message')) {
                     eventBus.emit('dataChat', event.data);
-                    console.log('CHAT')
+                    return;
                 }
 
                 if (dataObject.MessageType == "CrashGameState") {
-                    eventBus.emit('crash', event.data)
+                    eventBus.emit('crash', event.data);
+                    return;
+
                 }
 
                 if (Array.isArray(dataObject.CurrentGame.PlayerList)) {
-                    eventBus.emit('jackpotGameTik', event.data)
+                    eventBus.emit('jackpotGameTik', event.data);
+                    return;
                 }
 
             } catch (error) {
