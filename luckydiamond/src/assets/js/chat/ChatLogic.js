@@ -41,7 +41,7 @@ export function ConnectToChat() {
                 }
 
             } catch (error) {
-
+                console.error('WebSocket Error:', error);
             }
         };
 
