@@ -42,7 +42,7 @@
                       href="#"
                       @click="$router.push({ name: 'saper' })"
                       class="line__btn"
-                      >play <span class="line__btn--elm--saper">></span></a
+                      >play <span class="line__btn--elm--saper"></span></a
                     >
                   </div>
                 </div>
@@ -66,7 +66,7 @@
                       href="#"
                       @click="$router.push({ name: 'jackpot' })"
                       class="line__btn__jackpot"
-                      >play <span class="line__btn--elm">></span></a
+                      >   play <span class="line__btn--elm"></span></a
                     >
                   </div>
                 </div>
@@ -84,8 +84,8 @@
                     <h3 class="title-twoline">скоро</h3>
                   </div>
                   <div class="container">
-                    <a href="#" class="line__btn"
-                      >play <span class="line__btn--elm">></span></a
+                    <a href="#" class="cumming_soon_btn"
+                      >play <span class="line__btn--elm"></span></a
                     >
                     <img src="@/assets/icons-gamemodes/slots-icon.png" style="margin-bottom: 4%;" />
                   </div>
@@ -104,7 +104,7 @@
                       href="#"
                       @click="$router.push({ name: 'crash' })"
                       class="line__btn"
-                      >play <span class="line__btn--elm">></span></a
+                      >play <span class="line__btn--elm"></span></a
                     >
                     <img src="@/assets/icons-gamemodes/crush-icon.svg" />
                   </div>

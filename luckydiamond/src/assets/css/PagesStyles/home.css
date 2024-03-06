@@ -137,6 +137,7 @@
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
+    padding: 0px 0px 0px 28px;
 }
 
 .line__footer {
@@ -175,11 +176,34 @@
 
 .line__img__jackpot {
     display: flex;
-    margin:  1% 6.6% 1% 4.7%;
+    margin:  1% 6.6% 1% 0%;
 }
 
 .display-firstline {
     display: flex;
+}
+
+.cumming_soon_btn {
+    border-radius: 21px;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 11px 0px 11px 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 5%;
+    left: 2%;
+    transition: 250ms;
+    cursor: default;
+}
+
+.cumming_soon_btn:hover {
+    background-color: #525252;
 }
 
 .line__btn {
@@ -191,13 +215,30 @@
     font-family: Montserrat Alternates;
     font-size: 36px;
     font-weight: 700;
-    padding: 11px 11px;
+    padding: 11px 0px 11px 11px;
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
     bottom: 5%;
     left: 2%;
+    transition: 250ms;
 }
+
+.line__btn span:after {
+    content: '\00bb';
+    opacity: 0;
+    transition: 250ms;
+  }
+
+.line__btn:hover span:after {
+    opacity: 1;
+    right: 0;
+    padding-right: 0px;
+  }
+
+.line__btn:hover {
+    padding:11px 11px 11px 22px ;
+  }
 
 .line__btn__jackpot {
     border-radius: 21px;
@@ -208,13 +249,30 @@
     font-family: Montserrat Alternates;
     font-size: 36px;
     font-weight: 700;
-    padding: 11px 11px;
+    padding: 11px 0px 11px 11px;
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
     bottom: 4%;
     left: 6%;
+    transition: 250ms;
 }
+
+.line__btn__jackpot span:after {
+    content: '\00bb';
+    opacity: 0;
+    transition: 250ms;
+  }
+
+.line__btn__jackpot:hover span:after {
+    opacity: 1;
+    right: 0;
+    padding-right: 0px;
+  }
+
+.line__btn__jackpot:hover {
+    padding:11px 11px 11px 22px ;
+  }
 
 .line__btn--elm {
     color: #000;
