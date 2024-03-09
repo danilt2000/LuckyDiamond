@@ -498,3 +498,92 @@
         height: 354px;
     }
 }
+
+@media only screen and (max-width:1300px) {
+    .title-jackpot {
+        font-size:40px;
+        padding: 0px 0px 0px 28px;
+    }
+
+    .title-twoline {
+        font-size: 40px;
+    }
+
+    .line__img__jackpot {
+        height: 125px;
+        width: 125px;
+    }
+
+    .line__footer img {
+        width: 40%;
+        margin-bottom: 5%;
+    }
+
+    .line__content {
+        width: 100%;
+        height: 100%;
+    }
+
+    .line__btn {
+        border-radius: 10px;
+        font-size: 20px;
+        padding: 11px 11px 11px 11px;
+    }
+
+    .main__content h1 {
+        font-size: 40px;
+    }
+
+    .title-firstline {
+        font-size:60px;
+    }
+
+    .cumming_soon_btn {
+        font-size: 20px;
+        border-radius: 10px;
+        height: 50px;
+    }
+
+    .cumming_soon--img {
+        height: 40px;
+        width: 80px;
+    }
+
+    .gamemode__twoline--first__element .container a {
+        margin-right: 10%;
+        padding: 2px 11px 11px 11px;
+        margin-bottom: 3%;
+    }
+
+    .line__btn__jackpot {
+        border-radius: 10px;
+        font-size: 20px;
+    }
+
+    .line__btn--crash {
+        border-radius: 10px;
+        font-size: 20px;
+        padding: 0px 0px 0px 16px;
+    }
+
+    .crash--img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .line__content {
+        height: 265px;
+    }
+
+    .gamemode__twoline--first__element {
+        width: 100%;
+        margin: 0 3.6% 0 5.5%;
+        min-height: 60px;
+    }
+
+    .gamemode__twoline--two__element {
+        margin-top: 0;
+        width: 100%;
+        min-height: 60px;
+    }
+}
