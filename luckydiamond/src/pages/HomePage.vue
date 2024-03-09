@@ -37,7 +37,7 @@
                 <h3 class="title-firstline">{{ mode.title }}</h3>
                 <div class="line__footer">
                   <img src="../assets/icons-gamemodes/bomb-icon.svg" />
-                  <div class="line__btn--main">
+                  <div>
                     <a
                       href="#"
                       @click="$router.push({ name: 'saper' })"
@@ -87,7 +87,7 @@
                     <a href="#" class="cumming_soon_btn"
                       >play <span class="line__btn--elm"></span></a
                     >
-                    <img src="@/assets/icons-gamemodes/slots-icon.png" style="margin-bottom: 4%;" />
+                    <img src="@/assets/icons-gamemodes/slots-icon.png" class="cumming_soon--img" />
                   </div>
                 </li>
               </ul>
@@ -103,10 +103,10 @@
                     <a
                       href="#"
                       @click="$router.push({ name: 'crash' })"
-                      class="line__btn"
+                      class="line__btn--crash"
                       >play <span class="line__btn--elm"></span></a
                     >
-                    <img src="@/assets/icons-gamemodes/crush-icon.svg" />
+                    <img class="crash--img" src="@/assets/icons-gamemodes/crush-icon.svg" />
                   </div>
                 </li>
               </ul>
