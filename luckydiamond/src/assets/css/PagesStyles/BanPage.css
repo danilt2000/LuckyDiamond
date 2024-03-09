@@ -1,4 +1,4 @@
-.banbanbimbim {
+.banpage--body {
     background-color: rgb(17, 14, 32);
     background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
     padding: 0px;
@@ -11,11 +11,11 @@
     text-transform: uppercase;
     text-align: center;
 }
-.ggg {
+.banpage--video {
     border-radius: 10px;
 }
 
-.first {
+.banpage--block {
     width: 50%;
     height: 100%;
     display: block;
