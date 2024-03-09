@@ -13,14 +13,16 @@
 }
 
 .menu__content--jackpot-icon{
-    width: 10vh;
-    height: -4vh;
+    margin-left: -5px;
     transition: 250ms;
+    width: 125%;
+    height: 125%;
 }
 
 .menu__content--jackpot-icon:hover {
-    width: 11vh;
-    height: -4vh;
+    margin-left: -15px;
+    width: 175%;
+    height: 175%;
 }
 
 .menu__content--chest-icon {
@@ -44,6 +46,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    width: 100%;
 }
 .fotosloti {
     display: flex;
