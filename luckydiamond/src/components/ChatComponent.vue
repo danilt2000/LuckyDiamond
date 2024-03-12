@@ -68,7 +68,7 @@ export default {
     },
     ClaimDatamsg(msg) {
       const now = Date.now();
-      if (!this.lastMsgTime || now - this.lastMsgTime >= 100) {
+      if (!this.lastMsgTime || now - this.lastMsgTime >= 1000) {
         SendMessageToChat(msg[0]);
         this.lastMsgTime = now;
       } else {
@@ -135,5 +135,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
