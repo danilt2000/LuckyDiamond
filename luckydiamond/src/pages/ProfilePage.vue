@@ -14,6 +14,7 @@
       <div class="profile__btns--payments">
         <a href="#" class="text-btn btn-bg btn-margin btn-display" @click="depositClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-deposit.svg"> Пополнить</a>
         <a href="#" class="withdraw text-btn btn-bg btn-display" @click="withdrawClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
+        <a href="#" class="referal text-btn btn-bg btn-display" @click="referalClick"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-referal.png"> Рефералы</a>
       </div>
     </div>
     <div class="payments">
@@ -57,6 +58,7 @@
       </div>
     </div>
   </section>
+    <referal-modal v-if="openRef" @notifacetionmoney="NotificationEventListener" @closemodal="openRef = false"></referal-modal>
     <payments-modal v-if="openModal" @notifacetionmoney="NotificationEventListener" @closemodal="openModal = false" :payments="payments"></payments-modal>
     <notiicationwindow-component @notificationremove="NotificationMethod" :notification="notification"></notiicationwindow-component>
   </div>
@@ -67,13 +69,14 @@ import axios from 'axios';
 import ChatComponent from "@/components/ChatComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import PaymentsModal from "@/components/PaymentsModal.vue";
+import ReferalModal from "@/components/ReferalModal.vue";
 import ProfilemobilePage from "@/pages/adaptive-pages/ProfilemobilePage.vue";
 import NotiicationwindowComponent from "@/components/NotiicationwindowComponent.vue";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import '@/assets/css/PagesStyles/profile.css'
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 export default {
-  components: {ProfilemobilePage, HeaderComponent, AsideBarComponent, ChatComponent, PaymentsModal, NotiicationwindowComponent },
+  components: {ProfilemobilePage, HeaderComponent, AsideBarComponent, ChatComponent, PaymentsModal, ReferalModal, NotiicationwindowComponent },
   data() {
     return {
       username: 'Artemka',
@@ -82,6 +85,7 @@ export default {
       balance: 0,
       mobile: false,
       openModal: false,
+      openRef: false,
       payments: true,
       arrayHistory: [],
     }
@@ -133,6 +137,9 @@ export default {
     withdrawClick() {
       this.openModal = true
       this.payments = false
+    },
+    referalClick() {
+      this.openRef = true
     },
     NotificationEventListener() {
       this.notification = true

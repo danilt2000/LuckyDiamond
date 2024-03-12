@@ -88,6 +88,17 @@
     background: #EF4444;
 }
 
+.referal {
+    padding: 3.8% 46% 3% 14%;
+    margin-top: 12px;
+    background: #2D6AE0;
+}
+
+.referal img {
+    height: 20px;
+    width: 22px;
+}
+
 .playerandvid {
     margin-right: 10vh;
 }
