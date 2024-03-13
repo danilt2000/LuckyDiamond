@@ -8,7 +8,7 @@
       </div>
       <div v-else class="payments-modal__withdraw deposit-text withdraw-input">
         <div class="btn-withdraw btn-text-style btn-display-deposit btn-style-payments">
-          <h1>В РАЗРАБОТКЕ</h1>
+          <h1>В РАЗРАБОТКЕ!</h1>
         </div>
       </div>
     </div>
