@@ -12,6 +12,7 @@
     <button id="volume-down" @click="volumeDown">-</button>
   </div>
      -->
+     <div class="classssboxxxx">
       <div class="volume-section">
         <h1 class="volume-text">Звук</h1>
         <input
@@ -26,6 +27,20 @@
         <h1 class="volume-text--grey">Данная страница находится в разработке, и будет полностью переделанна</h1>
 
       </div>
+      
+      
+       <div class="buttonbox">
+        <input type="checkbox"
+               id="switch"
+               class="checkbox" />
+                
+        <label for="switch"
+               class="toggle">
+            
+        </label>
+        <p>скрыть чат</p>
+      </div>
+    </div>
     </section>
   </div>
 </template>
@@ -66,4 +81,5 @@ export default {
     }
   },
 };
+
 </script>

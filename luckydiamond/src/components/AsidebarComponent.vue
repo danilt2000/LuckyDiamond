@@ -9,7 +9,7 @@
           <!-- <div class="fotosloti"><a href="#"><img  src="../assets/icons-menu/slots-icon.svg" ></a></div> -->
           <a href="#" @click="$router.push({ name: 'jackpot' })"><img  class="menu__content--jackpot-icon" src="../assets/icons-menu/jackpot-icon.svg"></a>
           <a href="#" @click="$router.push({ name: 'crash' })"><img  class="menu__content--cruch-icon" src="../assets/icons-menu/crush-icon.svg"></a>
-          <a href="#" @click="$router.push({ name: 'double' })"><img  class="menu__content--chest-icon" src="../assets/icons-menu/case-icon.png"></a>
+          <a href="#"><img class="menu__content--chest-icon" src="../assets/icons-menu/case-icon.png"></a>
           
            <!-- <a href="#" @click="$router.push({ name: 'saper' })"><img  class="menu__content--bomb-icon" src="../assets/icons-menu/bomb-icon.svg"></a> -->
           <a href="#" @click="$router.push({ name: 'saper' })"><img  class="menu__content--bomb-icon" src="../assets/icons-menu/bomb-icon.svg"></a>
