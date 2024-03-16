@@ -108,7 +108,21 @@ button {
         "menu jackpot jackpot jackpot jackpot jackpot chat";
     grid-gap: 0.625rem;
 }
-
+.content-grid--double {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 0.35fr repeat(5, 1fr) 1fr;
+    grid-template-rows: auto 0fr repeat(4, 1fr);
+    grid-template-areas:
+        "menu header header header header header header"
+        "menu double double double double double chat"
+        "menu double double double double double chat"
+        "menu double double double double double chat"
+        "menu double double double double double chat"
+        "menu double double double double double chat"
+        "menu double double double double double chat";
+    grid-gap: 0.625rem;
+}
 .grid-crash {
     display: grid;
     grid-template-columns: 0.35fr repeat(5, 1fr) 1fr;
