@@ -4,36 +4,43 @@
     <chat-component></chat-component>
     <header-component></header-component>
     <div class="bg-gradient-left"></div>
-
     <!-- <double-component></double-component> -->
     <section class="double">
-      <h1>gdfgf</h1>
+      <h1>double</h1>
+      <div class="jackpot-game">
+        <div class="bootstrap-wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="jackpot-carousel">
+                  <Carousel
+                    ref="carousel"
+                    :wrapAround="true"
+                    :autoplay="500"
+                    class="no-pointer-events"
+                    :transition="150"
+                    :itemsToShow="10"
+                  >
+                    <!-- <Slide v-for="slide in 10" :key="slide">
+                    <div class="carousel__item">{{ slide }}</div>
+                  </Slide> -->
 
-      <!-- v-bind="settings" :breakpoints="breakpoints" -->
-      <Carousel
-      ref="carousel"
-      :wrapAround="true"
-      
-      :itemsToShow="10"
-
-      >
-        <!-- <Slide v-for="slide in 10" :key="slide">
-          <div class="carousel__item">{{ slide }}</div>
-        </Slide> -->
-
-        <Slide v-for="(slide, index) in slides" :key="index">
-          <div >
-            <img
-              :src="slide.img"
-              onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';"
-            />
+                    <Slide v-for="(slide, index) in slides" :key="index">
+                      <div>
+                        <img
+                          :src="slide.img"
+                          onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';"
+                        />
+                      </div>
+                    </Slide>
+                  </Carousel>
+                </div>
+              </div>
+            </div>
           </div>
-        </Slide>
-
-        <!-- <template #addons>
-          <Navigation />
-        </template> -->
-      </Carousel>
+        </div>
+      </div>
+      <!-- v-bind="settings" :breakpoints="breakpoints" -->
 
       <!-- <Carousel
                     ref="carousel"
@@ -70,17 +77,30 @@ export default {
     // slides: [],
     slides: [
       {
-        img: "@/assets/icons-games/double-game/RectangleRedDouble.svg",
-        nickname: "Hepatir",
+        img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
+        nickname: "RedDouble",
       },
       {
-        img: "@/assets/icons-games/double-game/RectangleGreenDouble.svg",
-        nickname: "Hepatir",
+        img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
+        nickname: "GreenDouble",
       },
       {
-        img: "@/assets/icons-games/double-game/RectangleBlackDouble.svg",
-        nickname: "Ckutls_",
-      }
+        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+        nickname: "BlackDouble",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+        nickname: "BlackDouble",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+        nickname: "BlackDouble",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+        nickname: "BlackDouble",
+      },
+
       // ,
       // {
       //   img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
@@ -111,24 +131,6 @@ export default {
       //   nickname: "Hepgdfatir",
       // },
     ],
-    settings: {
-      itemsToShow: 1,
-      snapAlign: "center",
-    },
-    // breakpoints are mobile first
-    // any settings not specified will fallback to the carousel settings
-    breakpoints: {
-      // 700px and up
-      700: {
-        itemsToShow: 3.5,
-        snapAlign: "center",
-      },
-      // 1024 and up
-      1024: {
-        itemsToShow: 5,
-        snapAlign: "start",
-      },
-    },
   }),
   name: "HelpPage",
   components: {
@@ -143,7 +145,7 @@ export default {
 
 <style scoped>
 .carousel__slide {
-  padding: 5px;
+  padding: 1px;
 }
 
 .carousel__viewport {
