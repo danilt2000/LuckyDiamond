@@ -22,13 +22,15 @@
                 <img :src="msg.icon" />
               </div>
               <div class="content">
-                <h1>{{ msg.username }}</h1>
+                <h1>{{ msg.username.replace(/[a-zA-Z0-9]/g, '*') }}</h1>
                 <p>{{ msg.msg }}</p>
               </div>
             </div>
           </li>
         </transition-group>
       </ul>
+    
+    
     </div>
     <writechat-component @send="ClaimDatamsg"></writechat-component>
     <!-- <div class="chat__mute-button">
