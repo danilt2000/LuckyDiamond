@@ -23,10 +23,15 @@ export function ConnectToChat() {
 
             try {
                 const dataObject = JSON.parse(event.data);
-                console.log(dataObject)
 
                 if (dataObject && Object.prototype.hasOwnProperty.call(dataObject, 'SpUserName') && Object.prototype.hasOwnProperty.call(dataObject, 'Message')) {
                     eventBus.emit('dataChat', event.data);
+                    return;
+                }
+
+                if (dataObject.MessageType == 'DoubleGameState') {
+                    eventBus.emit('doubleGame', event.data)
+                    console.log('data')
                     return;
                 }
 
@@ -38,12 +43,6 @@ export function ConnectToChat() {
 
                 if (Array.isArray(dataObject.CurrentGame.PlayerList)) {
                     eventBus.emit('jackpotGameTik', event.data);
-                    return;
-                }
-
-                if (dataObject.MessageType == 'DoubleGameState') {
-                    eventBus.emit('doubleGame', event.data)
-                    console.log('data')
                     return;
                 }
 

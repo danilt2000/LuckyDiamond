@@ -65,44 +65,58 @@ export default {
     const slides = reactive([
       {
         img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        target: "BlackDouble",
+        target: "Black",
       },
       {
         img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        target: "BlackDouble",
+        target: "Red",
       },
       {
         img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
-        target: "GreenDouble",
+        target: "Green",
       },
       {
         img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
-        target: "RedDouble",
+        target: "Red",
       },
       {
         img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        target: "BlackDouble",
+        target: "Black",
       },
       {
         img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        target: "BlackDouble",
+        target: "Red",
       },
     ])
-    let autoPlay = ref(500)
+    let autoPlay = ref(0)
+    let targetColor = ref('')
 
     onMounted(() => {
       eventBus.on('doubleGame', (dataDouble) => {
-        console.log(dataDouble)
+        console.log('data mounted')
+        const dataDoubleParse = JSON.parse(dataDouble)
+        console.log(dataDoubleParse)
+
+        if (dataDoubleParse.Status === 'InGame') {
+          autoPlay.value = 500
+          targetColor.value = dataDoubleParse.WInColor
+          console.log('213')
+        }
+        // else if (dataDoubleParse.Status === 'GameEnd') {
+        //   targetColor.value = dataDoubleParse.WInColor
+        // }
       })
-      console.log('mount')
     })
 
     function handleStepCarousel(data) {
       try {
-        let { currentSlideIndex } = data
+        if (targetColor.value !== '') {
+          let { currentSlideIndex } = data
+          console.log(slides[currentSlideIndex].target == targetColor.value)
 
-        if (slides[currentSlideIndex + 1].target == 'RedDouble') {
-          stopAutoPlay()
+          if (slides[currentSlideIndex + 1].target == targetColor.value) {
+            stopAutoPlay()
+          }
         }
       }
       catch (error) {
@@ -114,7 +128,7 @@ export default {
       autoPlay.value = 0
     }
 
-    return { slides, autoPlay, handleStepCarousel, stopAutoPlay }
+    return { slides, autoPlay, handleStepCarousel, stopAutoPlay, targetColor }
   },
 }
 </script>
