@@ -4,7 +4,6 @@
     <chat-component></chat-component>
     <header-component></header-component>
     <div class="bg-gradient-left"></div>
-    <!-- <double-component></double-component> -->
     <section class="double">
       <h1>double</h1>
       <div class="jackpot-game">
@@ -16,15 +15,12 @@
                   <Carousel
                     ref="carousel"
                     :wrapAround="true"
-                    :autoplay="500"
+                    :autoplay="autoplay"
                     class="no-pointer-events"
                     :transition="150"
                     :itemsToShow="10"
+                    @slide-start="handleStepCarousel"
                   >
-                    <!-- <Slide v-for="slide in 10" :key="slide">
-                    <div class="carousel__item">{{ slide }}</div>
-                  </Slide> -->
-
                     <Slide v-for="(slide, index) in slides" :key="index">
                       <div>
                         <img
@@ -40,25 +36,6 @@
           </div>
         </div>
       </div>
-      <!-- v-bind="settings" :breakpoints="breakpoints" -->
-
-      <!-- <Carousel
-                    ref="carousel"
-                    :itemsToShow="10"
-                    :autoplay="10"
-                    :transition="150"
-                    :wrapAround="true"
-                    class="no-pointer-events"
-                  >
-                    <Slide v-for="(slide, index) in slides" :key="index">
-                      <div class="carousel__item">
-                        <img
-                          :src="slide.img"
-                          onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';"
-                        />
-                      </div>
-                    </Slide>
-                  </Carousel> -->
     </section>
   </div>
 </template>
@@ -73,63 +50,32 @@ import "@/assets/css/global.css";
 
 export default {
   data: () => ({
-    // carousel settings
-    // slides: [],
+    autoplay: 500,
     slides: [
       {
-        img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
-        nickname: "RedDouble",
+        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+        target: "BlackDouble",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+        target: "BlackDouble",
       },
       {
         img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
-        nickname: "GreenDouble",
+        target: "GreenDouble",
+      }, 
+      {
+        img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
+        target: "RedDouble",
       },
       {
         img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        nickname: "BlackDouble",
+        target: "BlackDouble",
       },
       {
         img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        nickname: "BlackDouble",
+        target: "BlackDouble",
       },
-      {
-        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        nickname: "BlackDouble",
-      },
-      {
-        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        nickname: "BlackDouble",
-      },
-
-      // ,
-      // {
-      //   img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //   nickname: "Ckutls_",
-      // },
-      // {
-      //   img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //   nickname: "Ckutls_",
-      // },
-      // {
-      //   img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
-      //   nickname: "Hepagfdtir",
-      // },
-      // {
-      //   img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //   nickname: "Ckutls_",
-      // },
-      // {
-      //   img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //   nickname: "Ckutls_",
-      // },
-      // {
-      //   img: "https://avatar.spworlds.ru/face/55/Ckutls_.png",
-      //   nickname: "Ckutls_",
-      // },
-      // {
-      //   img: "https://avatar.spworlds.ru/face/55/Hepatir.png",
-      //   nickname: "Hepgdfatir",
-      // },
     ],
   }),
   name: "HelpPage",
@@ -139,6 +85,27 @@ export default {
     ChatComponent,
     Carousel,
     Slide,
+  },
+
+  methods: {
+    handleStepCarousel(data) {
+      try {
+        let { currentSlideIndex } = data;
+
+        if (this.slides[currentSlideIndex+1].target == "RedDouble") {
+          // this.$refs.carousel.slideTo(this.currentSlideIndex);
+
+          // if (this.slides[this.currentSlideIndex].nickname == this.targetNickname) {
+
+          this.stopAutoplay();
+        }
+      } catch (error) {
+        console.error("Error in handleSlideStart:", error);
+      }
+    },
+    stopAutoplay() {
+      this.autoplay = 0;
+    },
   },
 };
 </script>
