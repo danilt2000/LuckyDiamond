@@ -40,7 +40,7 @@
   </div>
 </template>
 <script>
-import {reactive, ref} from 'vue'
+import { reactive, ref, onMounted } from 'vue'
 
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
@@ -51,6 +51,7 @@ import "vue3-carousel/dist/carousel.css";
 
 import "@/assets/css/PagesStyles/games-pages/jackpot.css";
 import "@/assets/css/global.css";
+import {eventBus} from "@/main";
 
 export default {
   components: {
@@ -88,6 +89,13 @@ export default {
       },
     ])
     let autoPlay = ref(500)
+
+    onMounted(() => {
+      eventBus.on('doubleGame', (dataDouble) => {
+        console.log(dataDouble)
+      })
+      console.log('mount')
+    })
 
     function handleStepCarousel(data) {
       try {
