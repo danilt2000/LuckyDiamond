@@ -40,18 +40,18 @@
   </div>
 </template>
 <script>
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, ref, onMounted } from "vue";
 
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 
-import {Carousel, Slide} from "vue3-carousel";
+import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
 import "@/assets/css/PagesStyles/games-pages/jackpot.css";
 import "@/assets/css/global.css";
-import {eventBus} from "@/main";
+import { eventBus } from "@/main";
 
 export default {
   components: {
@@ -87,50 +87,49 @@ export default {
         img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
         target: "Red",
       },
-    ])
-    let autoPlay = ref(0)
-    let targetColor = ref('')
+    ]);
+    let autoPlay = ref(0);
+    let targetColor = ref("");
 
     onMounted(() => {
-      eventBus.on('doubleGame', (dataDouble) => {
-        console.log('data mounted')
-        const dataDoubleParse = JSON.parse(dataDouble)
-        console.log(dataDoubleParse)
+      eventBus.on("doubleGame", (dataDouble) => {
+        console.log("data mounted");
+        const dataDoubleParse = JSON.parse(dataDouble);
+        console.log(dataDoubleParse);
 
-        if (dataDoubleParse.Status === 'InGame') {
-          autoPlay.value = 500
-          targetColor.value = dataDoubleParse.WInColor
-          console.log('213')
+        if (dataDoubleParse.Status === "InGame") {
+          autoPlay.value = 500;
+          targetColor.value = dataDoubleParse.WInColor;
+          console.log("213");
         }
         // else if (dataDoubleParse.Status === 'GameEnd') {
         //   targetColor.value = dataDoubleParse.WInColor
         // }
-      })
-    })
+      });
+    });
 
     function handleStepCarousel(data) {
       try {
-        if (targetColor.value !== '') {
-          let { currentSlideIndex } = data
-          console.log(slides[currentSlideIndex].target == targetColor.value)
+        if (targetColor.value !== "") {
+          let { currentSlideIndex } = data;
+          console.log(slides[currentSlideIndex].target == targetColor.value);
 
           if (slides[currentSlideIndex + 1].target == targetColor.value) {
-            stopAutoPlay()
+            stopAutoPlay();
           }
         }
-      }
-      catch (error) {
-        console.error(error)
+      } catch (error) {
+        void(error);
       }
     }
 
     function stopAutoPlay() {
-      autoPlay.value = 0
+      autoPlay.value = 0;
     }
 
-    return { slides, autoPlay, handleStepCarousel, stopAutoPlay, targetColor }
+    return { slides, autoPlay, handleStepCarousel, stopAutoPlay, targetColor };
   },
-}
+};
 </script>
 
 <style scoped>
