@@ -62,49 +62,49 @@ export default {
     Slide,
   },
   setup() {
-    const slides = reactive([
-      {
-        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        target: "Black",
-      },
-      {
-        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        target: "Red",
-      },
-      {
-        img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
-        target: "Green",
-      },
-      {
-        img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
-        target: "Red",
-      },
-      {
-        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        target: "Black",
-      },
-      {
-        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-        target: "Red",
-      },
-    ])
+    const slides = reactive([])
     let autoPlay = ref(0)
     let targetColor = ref('')
+    let endGame = ref(false)
 
     onMounted(() => {
+      for (let i = 1; i < 29; i++) {
+        if (i === 15) {
+          slides.push({
+            img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
+            target: "Green",
+          })
+        }
+        else {
+          if (i % 2 === 0) {
+            slides.push(
+                {
+                  img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
+                  target: "Red",
+                }
+            )
+          }
+          else {
+            slides.push({
+              img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+              target: "Black",
+            })
+          }
+        }
+      }
+
       eventBus.on('doubleGame', (dataDouble) => {
-        console.log('data mounted')
         const dataDoubleParse = JSON.parse(dataDouble)
         console.log(dataDoubleParse)
 
         if (dataDoubleParse.Status === 'InGame') {
           autoPlay.value = 500
           targetColor.value = dataDoubleParse.WInColor
-          console.log('213')
         }
-        // else if (dataDoubleParse.Status === 'GameEnd') {
-        //   targetColor.value = dataDoubleParse.WInColor
-        // }
+        else if (dataDoubleParse.Status === 'GameEnd') {
+          endGame.value = true
+          autoPlay.value = 200
+        }
       })
     })
 
@@ -112,9 +112,8 @@ export default {
       try {
         if (targetColor.value !== '') {
           let { currentSlideIndex } = data
-          console.log(slides[currentSlideIndex].target == targetColor.value)
 
-          if (slides[currentSlideIndex + 1].target == targetColor.value) {
+          if (slides[currentSlideIndex + 1].target == targetColor.value && endGame.value) {
             stopAutoPlay()
           }
         }
