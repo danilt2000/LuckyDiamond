@@ -15,7 +15,7 @@
                   <Carousel
                     ref="carousel"
                     :wrapAround="true"
-                    :autoplay="autoplay"
+                    :autoplay="autoPlay"
                     class="no-pointer-events"
                     :transition="150"
                     :itemsToShow="10"
@@ -39,19 +39,29 @@
     </section>
   </div>
 </template>
-  <script>
+<script>
+import {reactive, ref} from 'vue'
+
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
-import { Carousel, Slide } from "vue3-carousel";
+
+import {Carousel, Slide} from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
+
 import "@/assets/css/PagesStyles/games-pages/jackpot.css";
 import "@/assets/css/global.css";
 
 export default {
-  data: () => ({
-    autoplay: 500,
-    slides: [
+  components: {
+    HeaderComponent,
+    AsideBarComponent,
+    ChatComponent,
+    Carousel,
+    Slide,
+  },
+  setup() {
+    const slides = reactive([
       {
         img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
         target: "BlackDouble",
@@ -63,7 +73,7 @@ export default {
       {
         img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
         target: "GreenDouble",
-      }, 
+      },
       {
         img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
         target: "RedDouble",
@@ -76,38 +86,29 @@ export default {
         img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
         target: "BlackDouble",
       },
-    ],
-  }),
-  name: "HelpPage",
-  components: {
-    HeaderComponent,
-    AsideBarComponent,
-    ChatComponent,
-    Carousel,
-    Slide,
-  },
+    ])
+    let autoPlay = ref(500)
 
-  methods: {
-    handleStepCarousel(data) {
+    function handleStepCarousel(data) {
       try {
-        let { currentSlideIndex } = data;
+        let { currentSlideIndex } = data
 
-        if (this.slides[currentSlideIndex+1].target == "RedDouble") {
-          // this.$refs.carousel.slideTo(this.currentSlideIndex);
-
-          // if (this.slides[this.currentSlideIndex].nickname == this.targetNickname) {
-
-          this.stopAutoplay();
+        if (slides[currentSlideIndex + 1].target == 'RedDouble') {
+          stopAutoPlay()
         }
-      } catch (error) {
-        console.error("Error in handleSlideStart:", error);
       }
-    },
-    stopAutoplay() {
-      this.autoplay = 0;
-    },
+      catch (error) {
+        console.error(error)
+      }
+    }
+
+    function stopAutoPlay() {
+      autoPlay.value = 0
+    }
+
+    return { slides, autoPlay, handleStepCarousel, stopAutoPlay }
   },
-};
+}
 </script>
 
 <style scoped>
