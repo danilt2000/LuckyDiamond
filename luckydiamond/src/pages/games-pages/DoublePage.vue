@@ -5,8 +5,6 @@
     <header-component></header-component>
     <div class="bg-gradient-left"></div>
     <section class="double">
-      <h1>double</h1>
-      <h2 v-if="timeToGame !== null">time to game - {{ timeToGame.toFixed(0) }}</h2>
       <div class="jackpot-game">
         <div class="bootstrap-wrapper">
           <div class="container">
@@ -31,6 +29,12 @@
                       </div>
                     </Slide>
                   </Carousel>
+                </div>
+                <div class="col-md-12">
+                  <h1>double</h1>
+                  <h2 v-if="timeToGame !== null">
+                    time to game - {{ timeToGame.toFixed(0) }}
+                  </h2>
                 </div>
               </div>
             </div>
@@ -63,71 +67,69 @@ export default {
     Slide,
   },
   setup() {
-    const slides = reactive([])
-    let doubleData = reactive({})
+    const slides = reactive([]);
+    let doubleData = reactive({});
 
-    let autoPlay = ref(0)
-    let targetColor = ref('')
-    let timeToGame = ref(0)
-    let endGame = ref(false)
+    let autoPlay = ref(0);
+    let targetColor = ref("");
+    let timeToGame = ref(0);
+    let endGame = ref(false);
 
     onMounted(() => {
       if (slides.length == 0) {
         for (let i = 1; i < 29; i++) {
-          if (i === 15) {
+          if (i === 15 || i === 28) {
             slides.push({
               img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
               target: "Green",
-            })
-          }
-          else {
+            });
+          } else {
             if (i % 2 === 0) {
-              slides.push(
-                  {
-                    img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
-                    target: "Red",
-                  }
-              )
-            }
-            else {
+              slides.push({
+                img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
+                target: "Red",
+              });
+            } else {
               slides.push({
                 img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
                 target: "Black",
-              })
+              });
             }
           }
         }
       }
 
-      eventBus.on('doubleGame', (dataDouble) => {
-        const dataDoubleParse = JSON.parse(dataDouble)
-        doubleData = Object.assign(doubleData, dataDoubleParse)
-        console.log(dataDoubleParse)
+      eventBus.on("doubleGame", (dataDouble) => {
+        const dataDoubleParse = JSON.parse(dataDouble);
+        doubleData = Object.assign(doubleData, dataDoubleParse);
+        console.log(dataDoubleParse);
 
-        timeToGame.value = doubleData.WaitingTime
+        timeToGame.value = doubleData.WaitingTime;
 
-        if (dataDoubleParse.Status === 'InGame') {
-          autoPlay.value = 500
-          targetColor.value = dataDoubleParse.WInColor
+        if (dataDoubleParse.Status === "InGame") {
+          autoPlay.value = 500;
+          targetColor.value = dataDoubleParse.WInColor;
+        } else if (dataDoubleParse.Status === "GameEnd") {
+          endGame.value = true;
+          autoPlay.value = 350;
         }
-        else if (dataDoubleParse.Status === 'GameEnd') {
-          endGame.value = true
-          autoPlay.value = 350
-        }
-      })
-    })
+      });
+    });
 
     function handleStepCarousel(data) {
       try {
-        if (targetColor.value !== '') {
-          let { currentSlideIndex } = data
+        if (targetColor.value !== "") {
+          let { currentSlideIndex } = data;
 
-          if (slides[currentSlideIndex + 1].target == targetColor.value && endGame.value) {
-            stopAutoPlay()
+          if (
+            slides[currentSlideIndex + 1].target == targetColor.value &&
+            endGame.value
+          ) {
+            stopAutoPlay();
           }
         }
       } catch (error) {
-        void(error);
+        void error;
       }
     }
 
@@ -135,9 +137,17 @@ export default {
       autoPlay.value = 0;
     }
 
-    return { slides, autoPlay, doubleData, targetColor, timeToGame, handleStepCarousel, stopAutoPlay };
+    return {
+      slides,
+      autoPlay,
+      doubleData,
+      targetColor,
+      timeToGame,
+      handleStepCarousel,
+      stopAutoPlay,
+    };
   },
-}
+};
 </script>
 
 <style scoped>
