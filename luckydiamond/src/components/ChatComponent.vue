@@ -22,7 +22,7 @@
                 <img :src="msg.icon" />
               </div>
               <div class="content">
-                <h1>{{ msg.username.replace(/[a-zA-Z0-9]/g, '*') }}</h1>
+                <h1>{{ msg.username }}</h1>
                 <p>{{ msg.msg }}</p>
               </div>
             </div>
