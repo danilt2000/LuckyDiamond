@@ -12,23 +12,22 @@
     <button id="volume-down" @click="volumeDown">-</button>
   </div>
      -->
-     <div class="classssboxxxx">
-      <div class="volume-section">
-        <h1 class="volume-text">Звук</h1>
-        <input
-          id="volumeControl"
-          type="range"
-          min="0"
-          max="10"
-          v-model="volume"
-          @input="handleVolumeChange"
-          ref="volumeControl"
-        />
+      <div class="classssboxxxx">
+        <div class="volume-section">
+          <h1 class="volume-text">Звук</h1>
+          <input
+            id="volumeControl"
+            type="range"
+            min="0"
+            max="10"
+            v-model="volume"
+            @input="handleVolumeChange"
+            ref="volumeControl"
+          />
+        </div>
 
-      </div>
-      
-      
-       <div class="buttonbox">
+        <!-- 3/23/2024 DT I turned off the chat off button because it wasn't working and wasn't displaying correctly on the frontend  -->
+        <!-- <div class="buttonbox">
         <input type="checkbox"
                id="switch"
                class="checkbox" />
@@ -38,8 +37,8 @@
             
         </label>
         <p>скрыть чат</p>
+      </div> -->
       </div>
-    </div>
     </section>
   </div>
 </template>
@@ -80,5 +79,4 @@ export default {
     }
   },
 };
-
 </script>
