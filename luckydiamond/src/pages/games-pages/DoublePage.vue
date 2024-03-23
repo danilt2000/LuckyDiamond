@@ -40,18 +40,18 @@
   </div>
 </template>
 <script>
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, ref, onMounted } from "vue";
 
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 
-import {Carousel, Slide} from "vue3-carousel";
+import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
 import "@/assets/css/PagesStyles/games-pages/jackpot.css";
 import "@/assets/css/global.css";
-import {eventBus} from "@/main";
+import { eventBus } from "@/main";
 
 export default {
   components: {
@@ -117,17 +117,16 @@ export default {
             stopAutoPlay()
           }
         }
-      }
-      catch (error) {
-        console.error(error)
+      } catch (error) {
+        void(error);
       }
     }
 
     function stopAutoPlay() {
-      autoPlay.value = 0
+      autoPlay.value = 0;
     }
 
-    return { slides, autoPlay, handleStepCarousel, stopAutoPlay, targetColor }
+    return { slides, autoPlay, handleStepCarousel, stopAutoPlay, targetColor };
   },
 }
 </script>
