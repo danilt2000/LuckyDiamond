@@ -96,10 +96,9 @@
                 <div class="double--history-carousel">
                   <Carousel
                     ref="carouselHistory"
-                    :wrapAround="true"
                     class="no-pointer-events"
                     :transition="150"
-                    :itemsToShow="28"
+                    :itemsToShow="24"
                   >
                     <Slide v-for="(slide, index) in slidesHistory" :key="index">
                       <div>
@@ -199,7 +198,6 @@ export default {
         img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
         target: "Red",
       },
-      
     ]);
 
     // const slides = reactive([]);
@@ -262,11 +260,11 @@ export default {
         if (endGame.value == true) {
           let { currentSlideIndex } = data;
           if (
-            slides[currentSlideIndex+1].target == targetColor.value &&
-            // slides[currentSlideIndex + 1].target == targetColor.value &&
+            slides[currentSlideIndex + 1].target == targetColor.value &&
             endGame.value == true
           ) {
             stopAutoPlay();
+            loadGameHistory();
           }
         }
       } catch (error) {
@@ -278,29 +276,35 @@ export default {
       try {
         await GetNewestDoubleGames()
           .then((response) => {
-            for (let i = 1; i < 29; i++) {
-              if (i === 15 || i === 28) {
+            return response.json();
+          })
+          .then((data) => {
+            slidesHistory.value = [];
+            slidesHistory.length = 0;
+            for (let i = 0; i < 25; i++) {
+              // doubleData = Object.assign(doubleData, dataDoubleParse);
+
+              // timeToGame.value = doubleData.WaitingTime;
+              if (data[i].winColor == "Red") {
+                slidesHistory.push({
+                  img: require("@/assets/icons-games/double-game/HistoryRectangleRedDouble.png"),
+                  target: "Red",
+                });
+              }
+              if (data[i].winColor == "Black") {
+                slidesHistory.push({
+                  img: require("@/assets/icons-games/double-game/HistoryRectangleBlackDouble.png"),
+                  target: "Black",
+                });
+              }
+              if (data[i].winColor == "Green") {
                 slidesHistory.push({
                   img: require("@/assets/icons-games/double-game/HistoryRectangleGreenDouble.png"),
                   target: "Green",
                 });
-              } else {
-                if (i % 2 === 0) {
-                  slidesHistory.push({
-                    img: require("@/assets/icons-games/double-game/HistoryRectangleRedDouble.png"),
-                    target: "Red",
-                  });
-                } else {
-                  slidesHistory.push({
-                    img: require("@/assets/icons-games/double-game/HistoryRectangleBlackDouble.png"),
-                    target: "Black",
-                  });
-                }
               }
             }
-            return response.json();
-          })
-          .then((data) => {
+
             console.log(data);
           })
           .catch((error) => {
@@ -371,4 +375,17 @@ export default {
   opacity: 1;
   transform: rotateY(0) scale(1.1);
 }
+.double--history-carousel {
+  opacity: 1 !important;
+  transform: rotateY(0) scale(1) !important;
+}
+.double--history-carousel .carousel__slide--active ~ .carousel__slide,
+.double--history-carousel .carousel__slide--prev,
+.double--history-carousel .carousel__slide--next,
+.double--history-carousel .carousel__slide--active {
+  opacity: 1; 
+  transform: rotateY(0) scale(1);
+}
+
+
 </style>
