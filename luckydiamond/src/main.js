@@ -7,7 +7,7 @@ const SiteOff = {
                    <p>We are currently performing maintenance. We will be back shortly!</p>
                </div>`
 };
-const siteIsOff = true; 
+const siteIsOff = false; 
 
 import router from "@/router/router";
 import mitt from 'mitt'
@@ -19,7 +19,7 @@ import '@/assets/css/global.css'
 
 export const eventBus = mitt()
 
-// const app = createApp(App)
+//const app = createApp(App)
 const app = createApp(siteIsOff ? SiteOff : App);
 
 if (!siteIsOff) {
