@@ -74,7 +74,7 @@
                     :autoplay="autoPlay"
                     class="no-pointer-events"
                     :transition="150"
-                    :itemsToShow="3"
+                    :itemsToShow="10"
                     @slide-start="handleStepCarousel"
                   >
                     <Slide v-for="(slide, index) in slides" :key="index">
@@ -97,11 +97,9 @@
                   <Carousel
                     ref="carouselHistory"
                     :wrapAround="true"
-                    :autoplay="autoPlay"
                     class="no-pointer-events"
                     :transition="150"
                     :itemsToShow="28"
-                    @slide-start="handleStepCarousel"
                   >
                     <Slide v-for="(slide, index) in slidesHistory" :key="index">
                       <div>
@@ -173,6 +171,35 @@ export default {
         img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
         target: "Black",
       },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
+        target: "Red",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+        target: "Black",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
+        target: "Green",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+        target: "Black",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
+        target: "Red",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+        target: "Black",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
+        target: "Red",
+      },
+      
     ]);
 
     // const slides = reactive([]);
@@ -235,7 +262,7 @@ export default {
         if (endGame.value == true) {
           let { currentSlideIndex } = data;
           if (
-            slides[currentSlideIndex + 1].target == targetColor.value &&
+            slides[currentSlideIndex+1].target == targetColor.value &&
             // slides[currentSlideIndex + 1].target == targetColor.value &&
             endGame.value == true
           ) {
