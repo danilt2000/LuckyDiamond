@@ -264,7 +264,9 @@ export default {
             endGame.value == true
           ) {
             stopAutoPlay();
-            loadGameHistory();
+            setTimeout(() => {
+              loadGameHistory();
+            }, 2000);
           }
         }
       } catch (error) {
@@ -383,9 +385,7 @@ export default {
 .double--history-carousel .carousel__slide--prev,
 .double--history-carousel .carousel__slide--next,
 .double--history-carousel .carousel__slide--active {
-  opacity: 1; 
+  opacity: 1;
   transform: rotateY(0) scale(1);
 }
-
-
 </style>
