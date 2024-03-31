@@ -1,0 +1,33 @@
+.double-start {
+    z-index: 1;
+    border-radius: 20px;
+    background: #1D223E;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 42vh;
+    height: 32vh;
+    border: 1px solid #262C55;
+    margin: 2.6%;
+}
+
+.double-game-main-box{
+    border-radius: 10px;
+    border: 1px solid #262C55;
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+    padding-left: 0vh !important;
+    padding-right: 0vh !important;
+    background: #1A1F37;
+
+}
+
+.double-carousel {
+    z-index: 1;
+    position: relative;
+    border-radius: 10px;
+    background: #2E2D37;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin-top: 1px;
+    border: 1px solid #262C55;
+    height: 95%;
+}

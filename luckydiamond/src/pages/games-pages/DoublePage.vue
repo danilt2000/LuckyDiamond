@@ -5,12 +5,67 @@
     <header-component></header-component>
     <div class="bg-gradient-left"></div>
     <section class="double">
+      <div class="double-start">
+        <div
+          class="jackpot-start__content title-saper padding-elements-jackpot"
+        >
+          <h2>Рулетка</h2>
+          <p>Крути, ставь, побеждай!</p>
+          <div class="saper-start__choises diamonds diamonds-input__margin">
+            <h3>Сумма депозита</h3>
+
+            <div class="diamonds__choises">
+              <img
+                class="diamond-icon"
+                src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png"
+              />
+              <input
+                v-model="amountDeposit"
+                type="number"
+                id="diamonds-input"
+              />
+              <div class="diamonds__btns btn-style__diamonds">
+                <ul class="diamonds-btns__display">
+                  <li v-for="(item, index) in JackpotNumbers" :key="index">
+                    <button
+                      @click="clickedBtnChoice(index, item.diamonds)"
+                      :class="{
+                        'btn-click': clickedBtn === index,
+                        [index]: clickedBtn === index,
+                      }"
+                      :id="item.diamonds === 'max' ? 'max-button' : null"
+                      v-if="item.diamonds !== undefined"
+                    >
+                      {{ item.diamonds }}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="jackpot-start__btns">
+            <div class="error-block" v-if="ErrorClick">
+              <h2>Ошибка при заполнении</h2>
+            </div>
+            <button
+              class="btn-start"
+              :class="{ 'animate-start-btn': ErrorClick }"
+              @click="clickPlayBtn"
+            >
+              Начать игру
+            </button>
+            <!-- <button class="btn-claim" v-if="winningAmount === 0">Забрать {{ winningAmount }} АР</button>
+                  <button class="btn-claim" @click="claimWinningAmount()" v-else>Забрать {{ winningAmount.toFixed(2) }} АР</button> -->
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
       <div class="jackpot-game">
         <div class="bootstrap-wrapper">
           <div class="container">
             <div class="row">
-              <div class="col-md-12">
-                <div class="jackpot-carousel">
+              <div class="col-md-12 double-game-main-box">
+                <div class="double-carousel">
                   <Carousel
                     ref="carousel"
                     :wrapAround="true"
@@ -30,13 +85,14 @@
                     </Slide>
                   </Carousel>
                 </div>
-                <div class="col-md-12">
-                  <h1>double</h1>
-                  <h2 v-if="timeToGame !== null">
-                    time to game - {{ timeToGame.toFixed(0) }}
-                  </h2>
-                </div>
               </div>
+              <div class="col-md-12">
+                <h1>double</h1>
+                <h2 v-if="timeToGame !== null">
+                  time to game - {{ timeToGame.toFixed(0) }}
+                </h2>
+              </div>
+              <!-- </div> -->
             </div>
           </div>
         </div>
@@ -50,11 +106,13 @@ import { reactive, ref, onMounted } from "vue";
 import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
+import JackpotNumbers from "@/mocks/JackpotNumbers";
 
 import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
 import "@/assets/css/PagesStyles/games-pages/jackpot.css";
+import "@/assets/css/PagesStyles/games-pages/double.css";
 import "@/assets/css/global.css";
 import { eventBus } from "@/main";
 
@@ -65,6 +123,11 @@ export default {
     ChatComponent,
     Carousel,
     Slide,
+  },
+  data() {
+    return {
+      JackpotNumbers,
+    };
   },
   setup() {
     const slides = reactive([]);
