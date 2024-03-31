@@ -60,22 +60,50 @@
         </div>
       </div>
       <!-- </div> -->
-      <div class="jackpot-game">
+      <div class="double-game">
         <div class="bootstrap-wrapper">
           <div class="container">
             <div class="row">
               <div class="col-md-12 double-game-main-box">
                 <div class="double-carousel">
+                  <div class="double-carousel-arrow">▲</div>
+                  <div class="double-carousel-arrow-upper">▲</div>
                   <Carousel
                     ref="carousel"
                     :wrapAround="true"
                     :autoplay="autoPlay"
                     class="no-pointer-events"
                     :transition="150"
-                    :itemsToShow="10"
+                    :itemsToShow="3"
                     @slide-start="handleStepCarousel"
                   >
                     <Slide v-for="(slide, index) in slides" :key="index">
+                      <div>
+                        <img
+                          :src="slide.img"
+                          onerror="this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';"
+                        />
+                      </div>
+                    </Slide>
+                  </Carousel>
+                </div>
+              </div>
+              <div class="col-md-12 double-game-history-main-box">
+                <div class="container-double-history-text">
+                  <span class="double-history-text">история</span>
+                </div>
+
+                <div class="double--history-carousel">
+                  <Carousel
+                    ref="carouselHistory"
+                    :wrapAround="true"
+                    :autoplay="autoPlay"
+                    class="no-pointer-events"
+                    :transition="150"
+                    :itemsToShow="28"
+                    @slide-start="handleStepCarousel"
+                  >
+                    <Slide v-for="(slide, index) in slidesHistory" :key="index">
                       <div>
                         <img
                           :src="slide.img"
@@ -107,6 +135,7 @@ import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 import JackpotNumbers from "@/mocks/JackpotNumbers";
+import { GetNewestDoubleGames } from "@/assets/js/games/double/DoubleApi";
 
 import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
@@ -129,8 +158,26 @@ export default {
       JackpotNumbers,
     };
   },
+  async created() {},
   setup() {
-    const slides = reactive([]);
+    const slides = reactive([
+      {
+        img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
+        target: "Green",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
+        target: "Red",
+      },
+      {
+        img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+        target: "Black",
+      },
+    ]);
+
+    // const slides = reactive([]);
+    const slidesHistory = reactive([]);
+
     let doubleData = reactive({});
 
     let autoPlay = ref(0);
@@ -139,54 +186,58 @@ export default {
     let endGame = ref(false);
 
     onMounted(() => {
-      if (slides.length == 0) {
-        for (let i = 1; i < 29; i++) {
-          if (i === 15 || i === 28) {
-            slides.push({
-              img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
-              target: "Green",
-            });
-          } else {
-            if (i % 2 === 0) {
-              slides.push({
-                img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
-                target: "Red",
-              });
-            } else {
-              slides.push({
-                img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-                target: "Black",
-              });
-            }
-          }
-        }
-      }
+      loadGameHistory();
+
+      // if (slides.length == 0) {
+      //   for (let i = 1; i < 29; i++) {
+      //     if (i == 15 || i == 28) {
+      //       slides.push({
+      //         img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
+      //         target: "Green",
+      //       });
+      //     } else {
+      //       if (i % 2 == 0) {
+      //         slides.push({
+      //           img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
+      //           target: "Red",
+      //         });
+      //       } else {
+      //         slides.push({
+      //           img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
+      //           target: "Black",
+      //         });
+      //       }
+      //     }
+      //   }
+      // }
 
       eventBus.on("doubleGame", (dataDouble) => {
         const dataDoubleParse = JSON.parse(dataDouble);
-        doubleData = Object.assign(doubleData, dataDoubleParse);
-        console.log(dataDoubleParse);
+        // doubleData = Object.assign(doubleData, dataDoubleParse);
 
-        timeToGame.value = doubleData.WaitingTime;
-
-        if (dataDoubleParse.Status === "InGame") {
-          autoPlay.value = 500;
-          targetColor.value = dataDoubleParse.WInColor;
-        } else if (dataDoubleParse.Status === "GameEnd") {
-          endGame.value = true;
-          autoPlay.value = 350;
+        // timeToGame.value = doubleData.WaitingTime;
+        if (endGame.value != true) {
+          if (dataDoubleParse.Status == "InGame") {
+            autoPlay.value = 20;
+            targetColor.value = dataDoubleParse.WInColor;
+          }
+          if (dataDoubleParse.Status == "GameEnd") {
+            targetColor.value = dataDoubleParse.WInColor;
+            endGame.value = true;
+            autoPlay.value = 150;
+          }
         }
       });
     });
 
     function handleStepCarousel(data) {
       try {
-        if (targetColor.value !== "") {
+        if (endGame.value == true) {
           let { currentSlideIndex } = data;
-
           if (
             slides[currentSlideIndex + 1].target == targetColor.value &&
-            endGame.value
+            // slides[currentSlideIndex + 1].target == targetColor.value &&
+            endGame.value == true
           ) {
             stopAutoPlay();
           }
@@ -196,12 +247,52 @@ export default {
       }
     }
 
+    async function loadGameHistory() {
+      try {
+        await GetNewestDoubleGames()
+          .then((response) => {
+            for (let i = 1; i < 29; i++) {
+              if (i === 15 || i === 28) {
+                slidesHistory.push({
+                  img: require("@/assets/icons-games/double-game/HistoryRectangleGreenDouble.png"),
+                  target: "Green",
+                });
+              } else {
+                if (i % 2 === 0) {
+                  slidesHistory.push({
+                    img: require("@/assets/icons-games/double-game/HistoryRectangleRedDouble.png"),
+                    target: "Red",
+                  });
+                } else {
+                  slidesHistory.push({
+                    img: require("@/assets/icons-games/double-game/HistoryRectangleBlackDouble.png"),
+                    target: "Black",
+                  });
+                }
+              }
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            void error;
+          });
+      } catch (error) {
+        void error;
+      }
+    }
+
     function stopAutoPlay() {
       autoPlay.value = 0;
+      endGame.value = false;
+      targetColor.value = "";
     }
 
     return {
       slides,
+      slidesHistory,
       autoPlay,
       doubleData,
       targetColor,

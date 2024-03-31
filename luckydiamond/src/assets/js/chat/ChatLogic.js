@@ -31,7 +31,7 @@ export function ConnectToChat() {
 
                 if (dataObject.MessageType == 'DoubleGameState') {
                     eventBus.emit('doubleGame', event.data)
-                    console.log('data')
+                    console.log(event.data)
                     return;
                 }
 
