@@ -111,12 +111,31 @@
                   </Carousel>
                 </div>
               </div>
-              <div class="col-md-12">
-                <h1>double</h1>
-                <h2 v-if="timeToGame !== null">
-                  time to game - {{ timeToGame.toFixed(0) }}
-                </h2>
+              <div class="col-md-4" style="padding-left: 0px">
+                <div class="double-members-ingame-red">
+                  <h1>Red X2</h1>
+                  <h1>fds</h1>
+                  <h1>fds</h1>
+                  <h1>fds</h1>
+                </div>
               </div>
+              <div class="col-md-4">
+                <div class="double-members-ingame-green">
+                  <h1>Red X2</h1>
+                  <h1>fds</h1>
+                  <h1>fds</h1>
+                  <h1>fds</h1>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="double-members-ingame-black">
+                  <h1>Red X2</h1>
+                  <h1>fds</h1>
+                  <h1>fds</h1>
+                  <h1>fds</h1>
+                </div>
+              </div>
+
               <!-- </div> -->
             </div>
           </div>
