@@ -121,8 +121,8 @@
           <p>Чота</p>
         </div>
         </div>
-        <div class="skin_23">
-          <div class="skin_23_skin">
+        <div class="skin_2">
+          <div class="skin_2_skin">
             <div class="skinicons1">
             <a href="https://t.me/Swino4ka_pon" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
             <a href="https://discordapp.com/users/472393576010088449" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
