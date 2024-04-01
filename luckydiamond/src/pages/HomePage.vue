@@ -10,7 +10,7 @@
     <main class="main">
       <div class="main__content">
         <h3>онлайн-казино</h3>
-        <h1>lucky diamond</h1>
+        <h1>Lucky lucky brawl stars diamond</h1>
         <h4>
           minecraft casino -
           <span
