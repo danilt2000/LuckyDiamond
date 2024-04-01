@@ -109,12 +109,12 @@
     <div class="Hepatir_card">
       <div class="text_2">
         <div class="aboutinfo_2">
-          <p>ДИРЕКТОР</p>
+          <p>NOTWORKER</p>
           <h1>Swino4ka</h1>
         </div>
         <div class="whatjob_2">
           <img src="@/assets/icons-developcard/Logo_C_sharp.png" alt="html">
-          <p>ВСЕ ЯЗЫКИ</p>
+          <p>MAIN KAKAHA</p>
         </div>
         <div class="whatjob2_2">
           <img src="@/assets/icons-developcard/sql-logo.png" alt="html">
