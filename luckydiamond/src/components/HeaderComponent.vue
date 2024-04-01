@@ -122,9 +122,9 @@ export default {
       <div class="header__logo">
         <img
           @click="$router.push({ name: 'home' })"
-          src=""
+          src="../assets/logo.svg"
           alt=""
-        /> 
+        />
       </div>
       <div class="header__nav">
         <nav>

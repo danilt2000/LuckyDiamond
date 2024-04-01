@@ -18,8 +18,6 @@
             <p><b>Отдельно хочется выразить благодарность Tsybry и всем кто помогал нам в этом не легком пути</b></p>
             <p><b></b></p>
                 </div>
-                <h2>Мнения Экспертов:</h2>
-                <img src="https://i.imgur.com/J3IWN3b.png" alt=""> <img src="https://i.imgur.com/MTOekZs.png" alt=""> <img src="" alt="">
             </div>
               <!-- <div class="questions">
                 <div class="questions_box">

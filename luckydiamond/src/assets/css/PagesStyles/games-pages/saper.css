@@ -2,13 +2,13 @@
     display: flex;
     padding-top: 10%;
     border-radius: 20px;
-    background: #000000;
+    background: #17181C;
     backdrop-filter: blur(100px);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .bg {
-    background: #6d541e;
+    background: #293561;
     filter: blur(120px);
     position: absolute;
     top: 250px;
@@ -20,7 +20,7 @@
 }
 
 .bg-two {
-    background: #ffee00;
+    background: #293561;
     filter: blur(120px);
     position: absolute;
     top: 220px;
@@ -35,7 +35,7 @@
     z-index: 1;
     margin-left: 5%;
     border-radius: 20px;
-    background: #000000;
+    background: #22252F;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 27%;
     height: 480px;
@@ -67,7 +67,7 @@
 
 .crystals h3,
 .diamonds h3 {
-    color: #00000054;
+    color: #44C6EF54;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Montserrat Alternates;
     font-size: 12px;
@@ -106,7 +106,7 @@
 
 .btn-click {
     border-radius: 10px !important;
-    background: #fab31e !important;
+    background: #EF4444 !important;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -214,13 +214,13 @@
 
 .btn-start {
     border-radius: 10px;
-    background: #fab31e;
+    background: #EF4444;
 }
 
 .btn-claim {
     border-radius: 10px;
     background: #252C47;
-}   
+}
 
 .saper-start__steps {
     margin-top: 1%;
@@ -285,7 +285,7 @@
 .saper-game__content {
     display: flex;
     border-radius: 20px;
-    background: #000000;
+    background: #22252F;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 85%;
     height: 580px;
