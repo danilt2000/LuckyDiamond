@@ -18,15 +18,17 @@
 }
 
 .double-members-ingame-red {
+    background: linear-gradient(to bottom, #FF416C, #FF4B2B);
     z-index: 1;
     border: 2px solid #3B4260;
     border-radius: 15px;
-    background: #1C2133;
+    /* background: #1C2133; */
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-top: 1vh;
     margin-top: 1vh;
     width: 100%;
     height: 94%;
+    padding: 2vh;
 }
 
 .double-members-ingame-green {
@@ -40,6 +42,53 @@
     width: 100%;
     height: 94%;
 }
+
+.double-members-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    /* Assuming the text is white */
+}
+
+.double-red-box {
+    display: flex;
+    align-items: baseline;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #B64848;
+}
+
+.double-number-color {
+    color: #56629A;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Montserrat;
+}
+
+.double-red-box span {
+    font-size: larger;
+    /* Or any specific size */
+    margin-left: 5px;
+    /* Spacing between RED and X2 */
+}
+
+.double-user-icon {
+    display: flex;
+    align-items: center;
+}
+
+.double-user-icon .double-user-icon-span {
+    background-image: url('../../../icons-games/double-game/MembersInGame.png');
+    width: 20px;
+    /* Replace with actual size of your icon */
+    height: 20px;
+    /* Replace with actual size of your icon */
+    margin-right: 5px;
+    /* Spacing between icon and number 6 */
+}
+
 
 .double-members-ingame-black {
     z-index: 1;

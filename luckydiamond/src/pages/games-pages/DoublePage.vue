@@ -113,13 +113,20 @@
               </div>
               <div class="col-md-4" style="padding-left: 0px">
                 <div class="double-members-ingame-red">
-                  <h1>Red X2</h1>
+                  <div class="double-members-flex-container">
+                    <div class="double-red-box">
+                      RED X2
+                    </div>
+                    <div class="double-user-icon">
+                      <span class="double-user-icon-span"></span> <span class="double-number-color">6</span>
+                    </div>
+                  </div>
                   <h1>fds</h1>
                   <h1>fds</h1>
                   <h1>fds</h1>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4" style="padding-left: 0px">
                 <div class="double-members-ingame-green">
                   <h1>Red X2</h1>
                   <h1>fds</h1>
@@ -127,7 +134,7 @@
                   <h1>fds</h1>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4" style="padding-left: 0px; padding-right: 0px">
                 <div class="double-members-ingame-black">
                   <h1>Red X2</h1>
                   <h1>fds</h1>
@@ -135,8 +142,6 @@
                   <h1>fds</h1>
                 </div>
               </div>
-
-              <!-- </div> -->
             </div>
           </div>
         </div>
