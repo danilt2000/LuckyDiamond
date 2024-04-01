@@ -9,8 +9,7 @@
 
     <main class="main">
       <div class="main__content">
-        <h3>Казино временно не работает</h3>
-        <!-- <h3>онлайн-казино</h3> -->
+        <h3>онлайн-казино</h3>
         <h1>lucky diamond</h1>
         <h4>
           minecraft casino -
