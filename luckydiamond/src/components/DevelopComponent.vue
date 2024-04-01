@@ -106,27 +106,34 @@
         </div>
       
     </div>
-  </div>
-  <div class="bottom_card">
-    <div class="megatntmega_card">
-      <div class="megatntmega_text">
-        <div class="megatntmega_aboutinfo">
-          <p>Дизайнер</p>
-          <h1>megatntmega</h1>
+    <div class="Hepatir_card">
+      <div class="text_2">
+        <div class="aboutinfo_2">
+          <p>ДИРЕКТОР</p>
+          <h1>Swino4ka</h1>
         </div>
-        <div class="megatntmega_whatjob">
-          <img src="@/assets/icons-developcard/Figma.png" alt="html">
-          <p>Designer</p>
+        <div class="whatjob_2">
+          <img src="@/assets/icons-developcard/Logo_C_sharp.png" alt="html">
+          <p>ВСЕ ЯЗЫКИ</p>
         </div>
-        <div class="megatntmega_icons">
-          <a href="https://t.me/random_ak" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href="https://discordapp.com/users/531420425255911424" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+        <div class="whatjob2_2">
+          <img src="@/assets/icons-developcard/sql-logo.png" alt="html">
+          <p>Чота</p>
         </div>
-      </div>
-      <div class="megatntmega_skin">
-        
+        </div>
+        <div class="skin_2">
+          <div class="skin_2_skin">
+            <div class="skinicons1">
+            <a href="https://t.me/Swino4ka_pon" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+            <a href="https://discordapp.com/users/472393576010088449" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+            <a href="https://github.com/swino4ka/" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
+            </div>
+          </div>
         </div>
     </div>
+  </div>
+  <div class="bottom_card">
+    
     <div class="busha888_card">
       <div class="text">
         <div class="aboutinfo">

@@ -10,7 +10,7 @@
     "crashgame crashgame crashgame crashgame crashgame crashgame"
     "crashplayers crashplayers crashplayers crashplayers crashplayers crashplayers"
     "crashplayers crashplayers crashplayers crashplayers crashplayers crashplayers";
-    background: #17181C;
+    background: #000000;
     box-shadow: 0 0.25rem #00000040;
     border-radius: 1.25rem;
 
@@ -19,7 +19,7 @@
 }
 
 .crash-game {
-    background: #22252F;
+    background: #000000;
     border-radius: 1.25rem;
     box-shadow: 0.25rem 0.25rem 0.25rem 0px #00000040;
     width: 95%;
@@ -71,7 +71,7 @@
     height: 40px;
     border: 2px solid #2B3458;
     border-radius: 15px;
-    background: #22252F;
+    background: #000000;
 }
 
 .diamond-input-crash {
@@ -107,7 +107,7 @@
 
 .crash-game-window__btn-start button {
     margin-bottom: 5px;
-    background: #EF4444;
+    background: #fab31e;
     border: unset;
     border-radius: 10px;
     width: 300px;
@@ -118,11 +118,11 @@
 }
 
 .claim-btn-crash__prize {
-    background: #4E5EF2 !important;
+    background: #ff0000 !important;
 }
 
 .waiting-btn-crash {
-    background: #3D3F48 !important;
+    background: #64df00 !important;
 }
 
 .crash-window__line {
@@ -133,7 +133,7 @@
 .line-crash {
     width: 2px;
     height: 474px;
-    background: #30364F;
+    background: #fab31e;
     position: relative;
     top: -342px;
     left: 10%;
@@ -164,7 +164,7 @@
 }
 
 .lost-ratio {
-    color: #EF4444;
+    color: #00ff15;
     font-weight: 700;
 }
 
@@ -199,11 +199,11 @@
 }
 
 .user-crash-content__lose {
-    background: linear-gradient(90deg, #22252F -0.54%, #322733 83.25%, #B53938 103.54%) !important;
+    background: linear-gradient(90deg, #000000 -0.54%, #322733 83.25%, #5bb538 103.54%) !important;
 }
 
 .user-crash-content__win {
-    background: linear-gradient(90deg, #22252F -0.54%, #22252F 84.17%, rgba(42, 110, 57, 0.87) 103.54%);
+    background: linear-gradient(90deg, #000000 -0.54%, #000000 84.17%, rgba(42, 110, 57, 0.87) 103.54%);
 }
 
 .user-name-crash {
@@ -262,7 +262,7 @@
     font-family: 'Montserrat';
     font-weight: 700;
     font-size: 12px;
-    background: #22252F;
+    background: #000000;
     box-shadow: 0px 4px 4px 0px #00000040;
     border-radius: 5px;
     width: 70px;
@@ -284,7 +284,7 @@
     box-shadow: 0px 4px 4px 0px #00000040;
     font-family: 'Montserrat';
     font-weight: 700;
-    color: #28BD49;
+    color: #22cc00;
     border: 1px solid #28BD49;
     border-radius: 5px;
     padding: 6px;
