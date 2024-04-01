@@ -7,7 +7,7 @@ const SiteOff = {
                    <p>We are currently performing maintenance. We will be back shortly!</p>
                </div>`
 };
-const siteIsOff = true; 
+const siteIsOff = false; 
 
 import router from "@/router/router";
 import mitt from 'mitt'
