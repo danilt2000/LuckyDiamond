@@ -79,15 +79,19 @@
           <div class="gamemode__twolines">
             <div class="gamemode__twoline--first__element bg-early">
               <ul>
-                <li v-for="mode in twolinefirstelementGameMode" :key="mode">
+                <li v-for="mode in twolinetwoelementGameMode" :key="mode.id">
                   <div :class="'linecontent-' + mode.id">
-                    <h3 class="title-twoline">скоро</h3>
+                    <h3 class="title-twoline">рулетка</h3>
                   </div>
                   <div class="container">
-                    <a href="#" class="cumming_soon_btn"
+                    <!-- <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a> -->
+                    <a
+                      href="#"
+                      @click="$router.push({ name: 'double' })"
+                      class="line__btn--crash"
                       >play <span class="line__btn--elm"></span></a
                     >
-                    <img src="@/assets/icons-gamemodes/slots-icon.png" class="cumming_soon--img" />
+                    <img class="crash--img" src="@/assets/icons-gamemodes/slots-icon.png" />
                   </div>
                 </li>
               </ul>
