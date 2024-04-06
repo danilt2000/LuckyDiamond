@@ -7,11 +7,11 @@ const SiteOff = {
                    <p>We are currently performing maintenance. We will be back shortly!</p>
                </div>`
 };
-const siteIsOff = false; 
+const siteIsOff = true; 
 
 import router from "@/router/router";
 import mitt from 'mitt'
-import { Mixins } from "@/mixins/mixin";
+import { Mixins } from "@/mixins/mixin";    
 import {
     ConnectToChat
 } from "@/assets/js/chat/ChatLogic.js";
