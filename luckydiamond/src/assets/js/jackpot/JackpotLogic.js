@@ -85,3 +85,25 @@ export async function JoinJackpotGame(userData, amount) {
         console.log('Fetch error')
     }
 }
+
+export async function getJackpotHistoryGame () {
+    try {
+        const response = await fetch(`${BackendApiUrl}/GameJackpot/GetNewestJackpotGames`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            redirect: "follow"
+        })
+
+        if (!response.ok) {
+            console.log('Fetch error:', response.status)
+        }
+
+        console.log(response)
+        return await response.json()
+    }
+    catch (error) {
+        console.log('Fetch error')
+    }
+}

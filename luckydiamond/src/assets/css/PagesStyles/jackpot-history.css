@@ -1,6 +1,5 @@
 .jackpot-history__content {
     display: flex;
-    flex-wrap: wrap;
     max-width: 80%;
     max-height: 800px;
     overflow-y: auto;
@@ -8,6 +7,9 @@
 }
 
 .jackpot-history__element {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin: 15px;
 }
 
