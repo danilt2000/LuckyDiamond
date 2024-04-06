@@ -121,13 +121,29 @@
                     </div>
                   </div>
                   <h1>fds</h1>
-                  <div>
-                    <div v-for="user in users" :key="user.id" class="double-user-icon">
+                  <!-- <div> -->
+                    <!-- <div v-for="user in users" :key="user.id" class="double-user-icon">
                       <img :src="user.image" alt="User Icon" class="double-user-icon-img" />
                       <span class="double-user-name">{{ user.name }}</span>
                       <span class="double-number-color">{{ user.amount }}</span>
+                    </div> -->
+                    <div v-for="user in users" :key="user.id" class="double-user-icon">
+                      
+                      <img :src="user.image" alt="User Icon" class="double-user-icon-img" />
+                      
+                      <span class="double-user-name">{{ user.name }}</span>
+                      
+                      <span class="double-number-color">{{ user.amount }}</span>
                     </div>
-                  </div>
+                    <div class="double-ui-component">
+                      <img src="path_to_your_avatar.png" alt="Avatar" width="40" height="40">
+                      <div class="double-username">FUpir</div>
+                      <div class="double-score">
+                        500
+                        <img src="path_to_your_coin.png" alt="Coin">
+                      </div>
+                    </div>
+                  <!-- </div> -->
                 </div>
               </div>
               <div class="col-md-4" style="padding-left: 0px">
@@ -195,12 +211,13 @@ export default {
   },
   data() {
     return {
-      JackpotNumbers,
-      users: []
+      JackpotNumbers
     };
   },
   async created() {},
   setup() {
+    const users = ref([]);
+
     const slides = reactive([
       {
         img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
@@ -257,7 +274,7 @@ export default {
     onMounted(() => {
       loadGameHistory();
       
-      this.users = this.fetchUsers();
+      users.value = fetchUsers();
       // if (slides.length == 0) {
       //   for (let i = 1; i < 29; i++) {
       //     if (i == 15 || i == 28) {
@@ -368,6 +385,13 @@ export default {
       targetColor.value = "";
     }
 
+    function fetchUsers() {
+      return [
+        { id: 1, name: 'Alice', amount: 100, image: 'path/to/alice.png' },
+        { id: 2, name: 'Bob', amount: 200, image: 'path/to/bob.png' },
+      ];
+    }
+
     return {
       slides,
       slidesHistory,
@@ -377,6 +401,7 @@ export default {
       timeToGame,
       handleStepCarousel,
       stopAutoPlay,
+      users,
     };
   },
 };
