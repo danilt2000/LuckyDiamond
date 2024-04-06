@@ -12,7 +12,7 @@
         class="deposit-input deposit-text referal-icon-diamond deposit-icon__input"
       >
       <br>
-      <h3>Ваш реферальный код</h3>
+      <h3 v-if="data in ReferralData">{{ referralCode }}</h3>
       <input
           :class="{ 'animate-start-btn': errorDeposit }" readonly
           class="deposit-amount__input"
@@ -85,7 +85,13 @@
   
   <script>
   import "@/assets/css/ComponentsStyles/payments-modal.css";
+  import {GetReferralData} from "@/assets/js/Profile/Referrals";
   export default {
+    data () {
+      return{ 
+        ReferralData: GetReferralData
+      }
+    },
     props: ["payments"],
     methods: {
       closeModal() {
