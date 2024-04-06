@@ -17,6 +17,44 @@
     height: 94%;
 }
 
+.double-ui-component {
+    display: flex;
+    align-items: center;
+    background-color: #3b5998;
+    border-radius: 20px;
+    padding: 10px 20px;
+    max-width: 300px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.double-ui-component img {
+    border-radius: 50%;
+    margin-right: 10px;
+    /* Отступ справа от изображения */
+}
+
+.double-ui-component .double-username {
+    flex-grow: 1;
+    /* Занимает доступное пространство */
+    text-align: left;
+    /* Выравнивание текста по левому краю */
+}
+
+.double-ui-component .double-score {
+    display: flex;
+    align-items: center;
+}
+
+.double-ui-component .double-score img {
+    width: 20px;
+    /* Ширина изображения монетки */
+    height: 20px;
+    /* Высота изображения монетки */
+    margin-left: 5px;
+    /* Отступ слева от монетки */
+}
+
 .double-members-ingame-red {
     background: linear-gradient(to bottom right,
             #A9373C,
@@ -27,7 +65,8 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-top: 1vh;
     width: 100%;
-    height: 94%;
+    height: 50vh;
+    /* height: 94%; */
     padding: 2vh;
 }
 
@@ -41,7 +80,8 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-top: 1vh;
     width: 100%;
-    height: 94%;
+    height: 50vh;
+    /* height: 94%; */
     padding: 2vh;
 }
 
@@ -56,7 +96,8 @@
     margin-top: 1vh;
     margin-top: 1vh;
     width: 100%;
-    height: 94%;
+    /* height: 94%; */
+    height: 50vh;
     padding: 2vh;
 }
 

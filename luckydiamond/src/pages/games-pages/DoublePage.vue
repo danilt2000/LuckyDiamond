@@ -114,33 +114,29 @@
               <div class="col-md-4" style="padding-left: 0px">
                 <div class="double-members-ingame-red">
                   <div class="double-members-flex-container">
-                    <div class="double-red-box">
-                      RED X2
-                    </div>
+                    <div class="double-red-box">RED X2</div>
                     <div class="double-user-icon">
-                      <span class="double-user-icon-span"></span> <span class="double-number-color">0</span>
+                      <span class="double-user-icon-span"></span>
+                      <span class="double-number-color">0</span>
                     </div>
                   </div>
                   <h1>fds</h1>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
+                  <div>
+                    <div v-for="user in users" :key="user.id" class="double-user-icon">
+                      <img :src="user.image" alt="User Icon" class="double-user-icon-img" />
+                      <span class="double-user-name">{{ user.name }}</span>
+                      <span class="double-number-color">{{ user.amount }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="col-md-4" style="padding-left: 0px">
                 <div class="double-members-ingame-green">
                   <div class="double-members-flex-container">
-                    <div class="double-green-box">
-                      GREEN X20
-                    </div>
+                    <div class="double-green-box">GREEN X20</div>
                     <div class="double-user-icon">
-                      <span class="double-user-icon-span"></span> <span class="double-number-color">0</span>
+                      <span class="double-user-icon-span"></span>
+                      <span class="double-number-color">0</span>
                     </div>
                   </div>
                   <h1>fds</h1>
@@ -148,14 +144,16 @@
                   <h1>fds</h1>
                 </div>
               </div>
-              <div class="col-md-4" style="padding-left: 0px; padding-right: 0px">
+              <div
+                class="col-md-4"
+                style="padding-left: 0px; padding-right: 0px"
+              >
                 <div class="double-members-ingame-black">
                   <div class="double-members-flex-container">
-                    <div class="double-white-box">
-                      BLACK X2
-                    </div>
+                    <div class="double-white-box">BLACK X2</div>
                     <div class="double-user-icon">
-                      <span class="double-user-icon-span"></span> <span class="double-number-color">0</span>
+                      <span class="double-user-icon-span"></span>
+                      <span class="double-number-color">0</span>
                     </div>
                   </div>
                   <h1>fds</h1>
@@ -198,6 +196,7 @@ export default {
   data() {
     return {
       JackpotNumbers,
+      users: []
     };
   },
   async created() {},
@@ -257,7 +256,8 @@ export default {
 
     onMounted(() => {
       loadGameHistory();
-
+      
+      this.users = this.fetchUsers();
       // if (slides.length == 0) {
       //   for (let i = 1; i < 29; i++) {
       //     if (i == 15 || i == 28) {
