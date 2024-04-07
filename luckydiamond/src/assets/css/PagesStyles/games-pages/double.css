@@ -28,14 +28,16 @@
     transform: scale(0.95);
     /* Уменьшение при нажатии */
 }
+
 .bet-button.active {
-    opacity: 0.7; /* Пример изменения стиля активной кнопки */
-  }
+    opacity: 0.7;
+    /* Пример изменения стиля активной кнопки */
+}
 
 /* Можно добавить тени для кнопок, чтобы они выглядели объемнее */
 .bet-button {
     margin: 1.2% 0 0 5.8%;
-    margin-bottom:1vh;
+    margin-bottom: 1vh;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -285,6 +287,22 @@
     transform: translateX(-50%);
     color: #728DF8;
     font-size: 24px;
+}
+
+.double-carousel-arrow-animate {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .double-carousel-arrow-upper {

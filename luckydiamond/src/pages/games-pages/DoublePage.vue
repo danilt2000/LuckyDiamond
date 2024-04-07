@@ -87,8 +87,8 @@
             <div class="row">
               <div class="col-md-12 double-game-main-box">
                 <div class="double-carousel">
-                  <div class="double-carousel-arrow">▲</div>
-                  <div class="double-carousel-arrow-upper">▲</div>
+                  <div class="double-carousel-arrow" id="arrow">▲</div>
+                  <div class="double-carousel-arrow-upper" id="arrow-upper">▲</div>
                   <Carousel
                     ref="carousel"
                     :wrapAround="true"
@@ -429,7 +429,8 @@ export default {
 
       eventBus.on("doubleGame", (dataDouble) => {
         const dataDoubleParse = JSON.parse(dataDouble);
-
+        addClassById('arrow', 'double-carousel-arrow-animate');
+        addClassById('arrow-upper', 'double-carousel-arrow-animate');
         if (dataDoubleParse.Players.length > 0) {
           processUsersInGame(dataDoubleParse.Players);
         }
@@ -437,11 +438,16 @@ export default {
           if (dataDoubleParse.Status == "InGame") {
             autoPlay.value = 20;
             targetColor.value = dataDoubleParse.WInColor;
+            removeClassById('arrow', 'double-carousel-arrow-animate');
+            removeClassById('arrow-upper', 'double-carousel-arrow-animate');
           }
           if (dataDoubleParse.Status == "GameEnd") {
             targetColor.value = dataDoubleParse.WInColor;
             endGame.value = true;
             autoPlay.value = 150;
+            removeClassById('arrow', 'double-carousel-arrow-animate');
+            removeClassById('arrow-upper', 'double-carousel-arrow-animate');
+
 
             addWinEffectTouUsers(
               dataDoubleParse.Players,
@@ -451,6 +457,19 @@ export default {
         }
       });
     });
+    function addClassById(id, className) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.classList.add(className);
+      }
+    }
+
+    function removeClassById(id, className) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.classList.remove(className);
+      }
+    }
 
     function addWinEffectTouUsers(usersArray, winColor) {
       usersArray.forEach((user) => {
