@@ -19,7 +19,7 @@ t<template>
                   <div class="element-info__user-info">
                     <h2 class="username">{{ game.winnerUserName }}</h2>
                     <h2 class="user-deposit">
-                      {{ game.winStake }}
+                      {{ game.winStake.toFixed(2) }}
                       <span class="img-width"><img src="@/assets/icons-profile/icon-diamond-ore.png"></span>
                     </h2>
                   </div>
