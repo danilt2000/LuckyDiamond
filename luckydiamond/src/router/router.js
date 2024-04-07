@@ -6,6 +6,7 @@ import SapergamePage from "@/pages/games-pages/SapergamePage.vue";
 import SettingsPage from "@/pages/SettingsPage.vue";
 import CrashGamePage from "@/pages/games-pages/CrashgamePage.vue";
 import JackpotPage from "@/pages/games-pages/JackpotPage.vue";
+import DoublePage from "@/pages/games-pages/DoublePage.vue";
 import AboutPage from "@/pages/AboutPage.vue";
 import HelpPage from "@/pages/HelpPage.vue" ;
 
@@ -17,6 +18,7 @@ export default createRouter({
         { path: '/game/saper', component: SapergamePage, name: 'saper' },
         { path: '/game/crash', component: CrashGamePage, name: 'crash' },
         { path: '/game/jackpot', component: JackpotPage, name: 'jackpot' },
+        { path: '/game/double', component: DoublePage, name: 'double' },
         { path: '/settings', component: SettingsPage, name: 'settings' },
         { path: '/about', component: AboutPage, name: 'about' },
         { path: '/help', component: HelpPage, name: 'help' },

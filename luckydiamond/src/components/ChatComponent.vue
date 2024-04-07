@@ -29,6 +29,8 @@
           </li>
         </transition-group>
       </ul>
+    
+    
     </div>
     <writechat-component @send="ClaimDatamsg"></writechat-component>
     <!-- <div class="chat__mute-button">

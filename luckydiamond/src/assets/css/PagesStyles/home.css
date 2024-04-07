@@ -97,7 +97,7 @@
 
 .bg-early{
     border-radius: 40px;
-    background: #969B9E;
+    background: #EF4444;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -357,7 +357,7 @@
 .gamemode__twoline--first__element {
     width: 100%;
     margin: 2% 3.6% 0 5.5%;
-    min-height: 180px;
+    min-height: 209px;
 }
 
 .linecontent-3 {
@@ -370,23 +370,13 @@
     color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Montserrat Alternates;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 700;
     text-transform: uppercase;
     padding: 4.5% 2.2%;
 }
 
-.gamemode__twoline--first__element .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.gamemode__twoline--first__element .container a {
-    margin-right: 10%;
-    padding: 12px 10px;
-    margin-bottom: 3%;
-}
 
 .gamemode__twoline--two__element {
     margin-top: 2%;
@@ -405,6 +395,21 @@
 
 .cumming_soon--img {
     margin-bottom: 4%;
+}
+.gamemode__twoline--two__element {
+    margin-top: 2%;
+    width: 100%;
+    min-height: 180px;
+}
+
+.gamemode__twoline--first__element .container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.gamemode__twoline--first__element .container a {
+    margin-right: 10%;
 }
 
 /* /GameMode */
@@ -430,7 +435,7 @@
     }
 
     .title-twoline {
-        font-size: 60px;
+        font-size: 40px;
     }
 
     .line__img__jackpot {
@@ -472,11 +477,7 @@
         width: 80px;
     }
 
-    .gamemode__twoline--first__element .container a {
-        margin-right: 10%;
-        padding: 2px 11px 11px 11px;
-        margin-bottom: 3%;
-    }
+    
 
     .line__btn__jackpot {
         border-radius: 16px;
@@ -506,7 +507,7 @@
     }
 
     .title-twoline {
-        font-size: 40px;
+        font-size: 20px;
     }
 
     .line__img__jackpot {
@@ -549,11 +550,7 @@
         width: 80px;
     }
 
-    .gamemode__twoline--first__element .container a {
-        margin-right: 10%;
-        padding: 2px 11px 11px 11px;
-        margin-bottom: 3%;
-    }
+    
 
     .line__btn__jackpot {
         border-radius: 10px;
@@ -575,13 +572,14 @@
         height: 265px;
     }
 
-    .gamemode__twoline--first__element {
-        width: 100%;
-        margin: 0 3.6% 0 5.5%;
-        min-height: 60px;
-    }
+    
 
     .gamemode__twoline--two__element {
+        margin-top: 0;
+        width: 100%;
+        min-height: 60px;
+    }
+    .gamemode__twoline--first__element {
         margin-top: 0;
         width: 100%;
         min-height: 60px;
