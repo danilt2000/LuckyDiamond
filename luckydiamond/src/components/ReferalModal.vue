@@ -25,11 +25,19 @@
       <h3>Доступно к выводу</h3>
       <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png" />
       <input
-      :class="{ 'animate-start-btn': errorDeposit }" readonly
-  class="deposit-amount__input"
-  v-if="referralData.avalibleAmount"
-  :value="referralData.avalibleAmount"
-      />
+      :class="{ 'animate-start-btn': errorDeposit }"
+      readonly
+      class="deposit-amount__input"
+      v-if="referralData.avalibleAmount !== 0"
+      :value="referralData.avalibleAmount" 
+    />
+    <input
+      :class="{ 'animate-start-btn': errorDeposit }"
+      readonly
+      class="deposit-amount__input"
+      v-else 
+      :value="'0'"
+    />
       <div class="deposit-btns">
         <ul class="display-btns btns-style-diamonds">
           <li v-for="(number, index) in PaymentsModalNumbers" :key="index">
@@ -49,11 +57,19 @@
         <h3>Всего привели рефералов</h3>
         <div class="promokods">
           <input
-          :class="{ 'animate-start-btn': errorDeposit }" readonly
-  class="deposit-amount__input"
-  v-if="referralData.activationsAmount"
-  :value="referralData.activationsAmount"
-      />
+      :class="{ 'animate-start-btn': errorDeposit }"
+      readonly
+      class="deposit-amount__input"
+      v-if="referralData.activationsAmount !== 0" 
+      :value="referralData.activationsAmount" 
+    />
+    <input
+      :class="{ 'animate-start-btn': errorDeposit }"
+      readonly
+      class="deposit-amount__input"
+      v-else 
+      :value="'0'"
+    />
         </div>
       </div>
       <div class="error-checkbox" v-if="errorAgree">
@@ -73,7 +89,7 @@
         <p>
           Вы подтверждаете правильность введенных данных при создании вывода.
         </p>
-        <button type="submit" @click="RedirectedMethodDep">Вывести</button>
+        <button type="submit" @click="handleWithdraw">Вывести</button>
         <p>
           Перед пополнение прочитайте политику конфиденциальности и
           пользовательское соглашение.
@@ -87,6 +103,7 @@
 <script>
 import "@/assets/css/ComponentsStyles/payments-modal.css";
 import { GetReferralData } from "@/assets/js/Profile/Referrals";
+import { WithdrawReferralMoney } from "@/assets/js/Profile/Referrals";
 
 export default {
   data() {
@@ -104,7 +121,34 @@ export default {
     // При создании компонента загружаем данные о реферале
     this.referralData = await GetReferralData();
   },
+  computed: {
+    avalibleAmountValue() {
+      if (this.referralData.avalibleAmount !== 0) {
+        return this.referralData.avalibleAmount;
+      } else {
+        return '0';
+      }
+    },
+    activationsAmountValue() {
+      if (this.referralData.activationsAmount !== 0) {
+        return this.referralData.activationsAmount;
+      } else {
+        return '0';
+      }
+    }
+  },
   methods: {
+    async handleWithdraw() {
+      try {
+        // Call the WithdrawReferralMoney function
+        await WithdrawReferralMoney();
+        // Handle success, e.g., show a success message or perform other actions
+        console.log("Withdrawal successful!");
+      } catch (error) {
+        // Handle errors, e.g., show an error message or perform other actions
+        console.error("Error withdrawing referral money:", error);
+      }
+    },
     closeModal() {
       return this.$emit("closemodal");
     },

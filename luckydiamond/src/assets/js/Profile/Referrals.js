@@ -4,8 +4,7 @@ export async function GetReferralData () {
     
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Cookie", "ARRAffinity=a6e48b9e9d2653435be7b61998d8624b44115214104213d6c8b8c526cc56dc70; ARRAffinitySameSite=a6e48b9e9d2653435be7b61998d8624b44115214104213d6c8b8c526cc56dc70");
-  
+    
     const userData = {
       searchToken: GetCookie("SearchToken"),
       authtoken: GetCookie("AUTHTOKEN"),
@@ -30,4 +29,33 @@ export async function GetReferralData () {
       return await response.json();
 
 
+}
+
+export async function WithdrawReferralMoney () {
+  const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+const userData = {
+  searchToken: GetCookie("SearchToken"),
+  authtoken: GetCookie("AUTHTOKEN"),
+};
+
+const raw = JSON.stringify({
+  "userCredentials": {
+    "searchToken": userData.searchToken,
+    "authtoken": userData.authtoken
+  }
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("https://spsystemcore20231122004605.azurewebsites.net/api/PromoCode/TakeMoneyReferral", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
 }
