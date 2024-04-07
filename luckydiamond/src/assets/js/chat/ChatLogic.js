@@ -31,14 +31,12 @@ export function ConnectToChat() {
 
                 if (dataObject.MessageType == 'DoubleGameState') {
                     eventBus.emit('doubleGame', event.data)
-                    console.log(event.data)
                     return;
                 }
 
                 if (dataObject.MessageType == "CrashGameState") {
                     eventBus.emit('crash', event.data);
                     return;
-
                 }
 
                 if (Array.isArray(dataObject.CurrentGame.PlayerList)) {
@@ -47,7 +45,7 @@ export function ConnectToChat() {
                 }
 
             } catch (error) {
-                void(error);
+                void (error);
             }
         };
 

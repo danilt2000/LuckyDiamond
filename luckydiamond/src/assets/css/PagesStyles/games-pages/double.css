@@ -1,10 +1,56 @@
+.bet-button {
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    outline: none;
+}
+
+/* Цвета для кнопок */
+.bet-button.red {
+    background-color: #863443;
+}
+
+.bet-button.green {
+    background-color: #2D4940;
+}
+
+.bet-button.black {
+    background-color: #202333;
+}
+
+/* Стили для нажатой кнопки */
+.bet-button:active {
+    transform: scale(0.95);
+    /* Уменьшение при нажатии */
+}
+.bet-button.active {
+    opacity: 0.7; /* Пример изменения стиля активной кнопки */
+  }
+
+/* Можно добавить тени для кнопок, чтобы они выглядели объемнее */
+.bet-button {
+    margin: 1.2% 0 0 5.8%;
+    margin-bottom:1vh;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Стиль для тени при нажатии (опционально) */
+.bet-button:active {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 .double-start {
     z-index: 1;
     border-radius: 20px;
     background: #1D223E;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 42vh;
-    height: 32vh;
+    height: 37vh;
     border: 1px solid #262C55;
     margin: 2.6%;
     margin-top: 0px;
@@ -20,25 +66,34 @@
 .double-ui-component {
     display: flex;
     align-items: center;
-    background-color: #3b5998;
-    border-radius: 20px;
-    padding: 10px 20px;
+    background-color: #25325A;
+    border-radius: 15px;
+    /* padding: 10px 20px; */
+    padding-right: 2vh;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+    padding-left: 2vh;
+    margin-bottom: 1vh;
     max-width: 300px;
     color: white;
     font-family: Arial, sans-serif;
+    /* background: linear-gradient(to right, #1C213390 50%, #2F5139); */
 }
 
-.double-ui-component img {
-    border-radius: 50%;
-    margin-right: 10px;
-    /* Отступ справа от изображения */
+.double-ui-component-gradient {
+    background: linear-gradient(to right, #1C213390 50%, #2F5139);
 }
+
+/* .double-ui-component img {} */
 
 .double-ui-component .double-username {
     flex-grow: 1;
-    /* Занимает доступное пространство */
     text-align: left;
-    /* Выравнивание текста по левому краю */
+    margin-left: 1vh;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #515D83;
 }
 
 .double-ui-component .double-score {
@@ -46,16 +101,25 @@
     align-items: center;
 }
 
+.double-score {
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #748985;
+}
+
+.double-img-user {
+    margin-top: 6px;
+}
+
 .double-ui-component .double-score img {
-    width: 20px;
-    /* Ширина изображения монетки */
-    height: 20px;
-    /* Высота изображения монетки */
-    margin-left: 5px;
-    /* Отступ слева от монетки */
+    width: 3vh;
+    height: 3vh;
+    margin-left: 10px;
 }
 
 .double-members-ingame-red {
+    overflow-y: auto;
     background: linear-gradient(to bottom right,
             #A9373C,
             #1C2133 20%);
@@ -65,12 +129,13 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-top: 1vh;
     width: 100%;
-    height: 50vh;
+    height: 49vh;
     /* height: 94%; */
     padding: 2vh;
 }
 
 .double-members-ingame-green {
+    overflow-y: auto;
     background: linear-gradient(to bottom right,
             #345D3B,
             #1C2133 20%);
@@ -80,12 +145,13 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-top: 1vh;
     width: 100%;
-    height: 50vh;
+    height: 49vh;
     /* height: 94%; */
     padding: 2vh;
 }
 
 .double-members-ingame-black {
+    overflow-y: auto;
     background: linear-gradient(to bottom right,
             #1B1A1A,
             #1C2133 26%);
@@ -97,7 +163,7 @@
     margin-top: 1vh;
     width: 100%;
     /* height: 94%; */
-    height: 50vh;
+    height: 49vh;
     padding: 2vh;
 }
 

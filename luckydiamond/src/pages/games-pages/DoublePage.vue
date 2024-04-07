@@ -12,7 +12,16 @@
           <h2>Рулетка</h2>
           <p>Крути, ставь, побеждай!</p>
           <div class="saper-start__choises diamonds diamonds-input__margin">
-            <h3>Сумма депозита</h3>
+            <h3>Цвет победной ячейки</h3>
+            <button class="bet-button red" :class="{ active: activeButton === 'red' }" @click="handleClick('red')">
+              x2
+            </button>
+            <button class="bet-button green" :class="{ active: activeButton === 'green' }" @click="handleClick('green')">
+              x20
+            </button>
+            <button class="bet-button black" :class="{ active: activeButton === 'black' }" @click="handleClick('black')">
+              x2
+            </button>
 
             <div class="diamonds__choises">
               <img
@@ -117,32 +126,31 @@
                     <div class="double-red-box">RED X2</div>
                     <div class="double-user-icon">
                       <span class="double-user-icon-span"></span>
-                      <span class="double-number-color">0</span>
+                      <span class="double-number-color">{{
+                        numberUserCountRed
+                      }}</span>
                     </div>
                   </div>
-                  <h1>fds</h1>
-                  <!-- <div> -->
-                    <!-- <div v-for="user in users" :key="user.id" class="double-user-icon">
-                      <img :src="user.image" alt="User Icon" class="double-user-icon-img" />
-                      <span class="double-user-name">{{ user.name }}</span>
-                      <span class="double-number-color">{{ user.amount }}</span>
-                    </div> -->
-                    <div v-for="user in users" :key="user.id" class="double-user-icon">
-                      
-                      <img :src="user.image" alt="User Icon" class="double-user-icon-img" />
-                      
-                      <span class="double-user-name">{{ user.name }}</span>
-                      
-                      <span class="double-number-color">{{ user.amount }}</span>
+
+                  <div
+                    v-for="user in usersRed"
+                    :key="user.name"
+                    class="double-ui-component"
+                    :id="`user-${user.name}`"
+                  >
+                    <img :src="user.image" alt="User" width="40" height="40" />
+
+                    <div class="double-username">{{ user.name }}</div>
+
+                    <div class="double-score">
+                      {{ user.amount }}
+
+                      <img
+                        class="double-img-user"
+                        src="@/assets/icons-header/diamond-ore-icon.png"
+                      />
                     </div>
-                    <div class="double-ui-component">
-                      <img src="path_to_your_avatar.png" alt="Avatar" width="40" height="40">
-                      <div class="double-username">FUpir</div>
-                      <div class="double-score">
-                        500
-                        <img src="path_to_your_coin.png" alt="Coin">
-                      </div>
-                    </div>
+                  </div>
                   <!-- </div> -->
                 </div>
               </div>
@@ -152,12 +160,30 @@
                     <div class="double-green-box">GREEN X20</div>
                     <div class="double-user-icon">
                       <span class="double-user-icon-span"></span>
-                      <span class="double-number-color">0</span>
+                      <span class="double-number-color">{{
+                        numberUserCountGreen
+                      }}</span>
                     </div>
                   </div>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
+                  <div
+                    v-for="user in usersGreen"
+                    :key="user.name"
+                    class="double-ui-component"
+                    :id="`user-${user.name}`"
+                  >
+                    <img :src="user.image" alt="User" width="40" height="40" />
+
+                    <div class="double-username">{{ user.name }}</div>
+
+                    <div class="double-score">
+                      {{ user.amount }}
+
+                      <img
+                        class="double-img-user"
+                        src="@/assets/icons-header/diamond-ore-icon.png"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -169,12 +195,30 @@
                     <div class="double-white-box">BLACK X2</div>
                     <div class="double-user-icon">
                       <span class="double-user-icon-span"></span>
-                      <span class="double-number-color">0</span>
+                      <span class="double-number-color">{{
+                        numberUserCountBlack
+                      }}</span>
                     </div>
                   </div>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
-                  <h1>fds</h1>
+                  <div
+                    v-for="user in usersBlack"
+                    :key="user.name"
+                    class="double-ui-component"
+                    :id="`user-${user.name}`"
+                  >
+                    <img :src="user.image" alt="User" width="40" height="40" />
+
+                    <div class="double-username">{{ user.name }}</div>
+
+                    <div class="double-score">
+                      {{ user.amount }}
+
+                      <img
+                        class="double-img-user"
+                        src="@/assets/icons-header/diamond-ore-icon.png"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -191,8 +235,9 @@ import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 import JackpotNumbers from "@/mocks/JackpotNumbers";
-import { GetNewestDoubleGames } from "@/assets/js/games/double/DoubleApi";
-
+import { GetNewestDoubleGames,JoinGame } from "@/assets/js/games/double/DoubleApi";
+import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
+import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
@@ -200,6 +245,14 @@ import "@/assets/css/PagesStyles/games-pages/jackpot.css";
 import "@/assets/css/PagesStyles/games-pages/double.css";
 import "@/assets/css/global.css";
 import { eventBus } from "@/main";
+import { useVuelidate } from "@vuelidate/core";
+import {
+  maxValue,
+  minValue,
+  required,
+  numeric,
+  integer,
+} from "@vuelidate/validators";
 
 export default {
   components: {
@@ -211,12 +264,101 @@ export default {
   },
   data() {
     return {
-      JackpotNumbers
+      JackpotNumbers,
+      clickedColor: "",
+      amountDeposit: 0,
+      activeButton: null
+    };
+  },
+  methods: {
+    async clickedBtnChoice(index, content) {
+      this.clickedBtn = index;
+      if (content === "max") {
+        await GetCurrentMoney(
+          GetCookie("AUTHTOKEN"),
+          GetCookie("SearchToken")
+        ).then((response) => {
+          const responseBalance = response.currentMoney;
+
+          if (responseBalance === this.balance) {
+            this.amountDeposit = parseInt(responseBalance);
+          }
+        });
+      } else {
+        this.amountDeposit = content;
+      }
+    },
+    async handleClick(color) {
+      this.clickedColor = color;
+      this.activeButton = color;
+    }
+,
+    async clickPlayBtn() {
+      this.v$.$touch();
+      this.offBtn = true;
+
+      if (
+        this.balance < this.amountDeposit ||
+        !Number.isInteger(Number(this.amountDeposit))
+      ) {
+        this.textError = "Некорректное значение. Введите целое число.";
+        this.offBtn = false;
+        this.errorPlayButton();
+      }
+
+      await JoinGame(this.amountDeposit,this.clickedColor).then((response) => {
+        if (
+          response === `You can't join to started or ended game` ||
+          response === "Player alredy in the game."
+        ) {
+          this.offBtn = false;
+
+          if (response === `You can't join to started or ended game`) {
+            this.textError = "Игра уже началась или только закончилась!";
+            this.errorPlayButton();
+          } else if (response === "Player alredy in the game.") {
+            this.textError = "Вы уже в игре!";
+            this.errorPlayButton();
+          }
+
+          return;
+        }
+
+        // if (response.ok) {
+        //   this.offBtn = false;
+        //   this.startGame = true;
+        // }
+      });
+      this.offBtn = false;
+    }
+  },
+  validations() {
+    return {
+      amountDeposit: {
+        required,
+        numeric,
+        minValue: minValue(1),
+        maxValue: maxValue(this.balance),
+        integer,
+      },
     };
   },
   async created() {},
+
   setup() {
-    const users = ref([]);
+    const v$ = useVuelidate();
+
+    const usersRed = ref([]);
+
+    const usersGreen = ref([]);
+
+    const usersBlack = ref([]);
+
+    const numberUserCountRed = ref(0);
+
+    const numberUserCountGreen = ref(0);
+
+    const numberUserCountBlack = ref(0);
 
     const slides = reactive([
       {
@@ -261,7 +403,6 @@ export default {
       },
     ]);
 
-    // const slides = reactive([]);
     const slidesHistory = reactive([]);
 
     let doubleData = reactive({});
@@ -273,36 +414,15 @@ export default {
 
     onMounted(() => {
       loadGameHistory();
-      
-      users.value = fetchUsers();
-      // if (slides.length == 0) {
-      //   for (let i = 1; i < 29; i++) {
-      //     if (i == 15 || i == 28) {
-      //       slides.push({
-      //         img: require("@/assets/icons-games/double-game/RectangleGreenDouble.png"),
-      //         target: "Green",
-      //       });
-      //     } else {
-      //       if (i % 2 == 0) {
-      //         slides.push({
-      //           img: require("@/assets/icons-games/double-game/RectangleRedDouble.png"),
-      //           target: "Red",
-      //         });
-      //       } else {
-      //         slides.push({
-      //           img: require("@/assets/icons-games/double-game/RectangleBlackDouble.png"),
-      //           target: "Black",
-      //         });
-      //       }
-      //     }
-      //   }
-      // }
+
+      // usersRed.value = fetchUsersRed();
 
       eventBus.on("doubleGame", (dataDouble) => {
         const dataDoubleParse = JSON.parse(dataDouble);
-        // doubleData = Object.assign(doubleData, dataDoubleParse);
 
-        // timeToGame.value = doubleData.WaitingTime;
+        if (dataDoubleParse.Players.length > 0) {
+          processUsersInGame(dataDoubleParse.Players);
+        }
         if (endGame.value != true) {
           if (dataDoubleParse.Status == "InGame") {
             autoPlay.value = 20;
@@ -312,10 +432,50 @@ export default {
             targetColor.value = dataDoubleParse.WInColor;
             endGame.value = true;
             autoPlay.value = 150;
+
+            addWinEffectTouUsers(
+              dataDoubleParse.Players,
+              dataDoubleParse.WInColor
+            );
           }
         }
       });
     });
+
+    function addWinEffectTouUsers(usersArray, winColor) {
+      usersArray.forEach((user) => {
+        if (user.BetColor == winColor) {
+          setTimeout(() => {
+            addGradientClassToUser(user);
+          }, 2000);
+        }
+      });
+    }
+    
+    function addGradientClassToUser(user) {
+      const element = document.getElementById("user-" + user.UserName);
+
+      if (element) {
+        element.classList.add("double-ui-component-gradient");
+      }
+    }
+
+    function addUserIfNotExist(usersArray, newUser, BetColor) {
+      const userExists = usersArray.some((user) => user.name === newUser.name);
+
+      if (!userExists) {
+        if (BetColor == "Red") {
+          numberUserCountRed.value += 1;
+        }
+        if (BetColor == "Green") {
+          numberUserCountGreen.value += 1;
+        }
+        if (BetColor == "Black") {
+          numberUserCountBlack.value += 1;
+        }
+        usersArray.push(newUser);
+      }
+    }
 
     function handleStepCarousel(data) {
       try {
@@ -326,7 +486,20 @@ export default {
             endGame.value == true
           ) {
             stopAutoPlay();
+
             setTimeout(() => {
+              setTimeout(() => {
+                if (
+                  usersRed.value.length > 0 ||
+                  usersBlack.value.length > 0 ||
+                  usersGreen.value.length > 0
+                ) {
+                  usersRed.value = [];
+                  usersGreen.value = [];
+                  usersBlack.value = [];
+                }
+              }, 4000);
+
               loadGameHistory();
             }, 2000);
           }
@@ -334,6 +507,44 @@ export default {
       } catch (error) {
         void error;
       }
+    }
+
+    function processUsersInGame(users) {
+      users.forEach((user) => {
+        if (user.BetColor == "Red") {
+          const newUser = {
+            name: user.UserName,
+            image:
+              "https://avatar.spworlds.ru/face/55/" + user.UserName + ".png",
+            amount: user.Bet,
+            hasGradient: false,
+          };
+
+          addUserIfNotExist(usersRed.value, newUser, "Red");
+        }
+        if (user.BetColor == "Green") {
+          const newUser = {
+            name: user.UserName,
+            image:
+              "https://avatar.spworlds.ru/face/55/" + user.UserName + ".png",
+            amount: user.Bet,
+            hasGradient: false,
+          };
+
+          addUserIfNotExist(usersGreen.value, newUser, "Green");
+        }
+        if (user.BetColor == "Black") {
+          const newUser = {
+            name: user.UserName,
+            image:
+              "https://avatar.spworlds.ru/face/55/" + user.UserName + ".png",
+            amount: user.Bet,
+            hasGradient: false,
+          };
+
+          addUserIfNotExist(usersBlack.value, newUser, "Black");
+        }
+      });
     }
 
     async function loadGameHistory() {
@@ -385,13 +596,6 @@ export default {
       targetColor.value = "";
     }
 
-    function fetchUsers() {
-      return [
-        { id: 1, name: 'Alice', amount: 100, image: 'path/to/alice.png' },
-        { id: 2, name: 'Bob', amount: 200, image: 'path/to/bob.png' },
-      ];
-    }
-
     return {
       slides,
       slidesHistory,
@@ -401,7 +605,10 @@ export default {
       timeToGame,
       handleStepCarousel,
       stopAutoPlay,
-      users,
+      usersRed,
+      usersBlack,
+      usersGreen,
+      v$,
     };
   },
 };
