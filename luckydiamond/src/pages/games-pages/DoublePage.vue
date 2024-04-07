@@ -13,13 +13,25 @@
           <p>Крути, ставь, побеждай!</p>
           <div class="saper-start__choises diamonds diamonds-input__margin">
             <h3>Цвет победной ячейки</h3>
-            <button class="bet-button red" :class="{ active: activeButton === 'red' }" @click="handleClick('red')">
+            <button
+              class="bet-button red"
+              :class="{ active: activeButton === 'red' }"
+              @click="handleClick('red')"
+            >
               x2
             </button>
-            <button class="bet-button green" :class="{ active: activeButton === 'green' }" @click="handleClick('green')">
+            <button
+              class="bet-button green"
+              :class="{ active: activeButton === 'green' }"
+              @click="handleClick('green')"
+            >
               x20
             </button>
-            <button class="bet-button black" :class="{ active: activeButton === 'black' }" @click="handleClick('black')">
+            <button
+              class="bet-button black"
+              :class="{ active: activeButton === 'black' }"
+              @click="handleClick('black')"
+            >
               x2
             </button>
 
@@ -235,7 +247,10 @@ import AsideBarComponent from "@/components/AsidebarComponent.vue";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import ChatComponent from "@/components/ChatComponent.vue";
 import JackpotNumbers from "@/mocks/JackpotNumbers";
-import { GetNewestDoubleGames,JoinGame } from "@/assets/js/games/double/DoubleApi";
+import {
+  GetNewestDoubleGames,
+  JoinGame,
+} from "@/assets/js/games/double/DoubleApi";
 import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import { Carousel, Slide } from "vue3-carousel";
@@ -267,7 +282,7 @@ export default {
       JackpotNumbers,
       clickedColor: "",
       amountDeposit: 0,
-      activeButton: null
+      activeButton: null,
     };
   },
   methods: {
@@ -291,8 +306,7 @@ export default {
     async handleClick(color) {
       this.clickedColor = color;
       this.activeButton = color;
-    }
-,
+    },
     async clickPlayBtn() {
       this.v$.$touch();
       this.offBtn = true;
@@ -303,10 +317,9 @@ export default {
       ) {
         this.textError = "Некорректное значение. Введите целое число.";
         this.offBtn = false;
-        this.errorPlayButton();
       }
 
-      await JoinGame(this.amountDeposit,this.clickedColor).then((response) => {
+      await JoinGame(this.amountDeposit, this.clickedColor).then((response) => {
         if (
           response === `You can't join to started or ended game` ||
           response === "Player alredy in the game."
@@ -315,22 +328,22 @@ export default {
 
           if (response === `You can't join to started or ended game`) {
             this.textError = "Игра уже началась или только закончилась!";
-            this.errorPlayButton();
+            alert("Пожалуйста подождите");
           } else if (response === "Player alredy in the game.") {
             this.textError = "Вы уже в игре!";
-            this.errorPlayButton();
+            alert("Пожалуйста подождите");
           }
 
           return;
         }
 
-        // if (response.ok) {
-        //   this.offBtn = false;
-        //   this.startGame = true;
-        // }
+        if (!response.ok) {
+          this.textError = "Пожалуйста подождите";
+          alert("Пожалуйста подождите");
+        }
       });
       this.offBtn = false;
-    }
+    },
   },
   validations() {
     return {
@@ -451,7 +464,7 @@ export default {
         }
       });
     }
-    
+
     function addGradientClassToUser(user) {
       const element = document.getElementById("user-" + user.UserName);
 
