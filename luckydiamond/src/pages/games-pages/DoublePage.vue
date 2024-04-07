@@ -328,10 +328,8 @@ export default {
 
           if (response === `You can't join to started or ended game`) {
             this.textError = "Игра уже началась или только закончилась!";
-            alert("Пожалуйста подождите");
           } else if (response === "Player alredy in the game.") {
             this.textError = "Вы уже в игре!";
-            alert("Пожалуйста подождите");
           }
 
           return;
@@ -339,7 +337,6 @@ export default {
 
         if (!response.ok) {
           this.textError = "Пожалуйста подождите";
-          alert("Пожалуйста подождите");
         }
       });
       this.offBtn = false;
