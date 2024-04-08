@@ -2,6 +2,10 @@ body {
     overflow-y: scroll;
 }
 
+.header-mobile {
+    height: 70%;
+}
+
 .profile-mobile {
     grid-area: profile-mobile;
     width: 100%;
@@ -44,11 +48,8 @@ body {
 }
 
 .macroinfo-profile img {
-    width: 55%;
+    width: 45%;
     height: 100%;
-    background: #969c8d;
-    border-radius: 20px;
-    padding: 2%;
 }
 
 .img-margin img {

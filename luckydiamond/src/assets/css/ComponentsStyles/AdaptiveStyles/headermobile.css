@@ -5,14 +5,13 @@
     border-radius: 20px;
     background: #17181C;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    height: 130px;
+    height: 45%;
 }
 
 .header-mobile__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 5%;
 }
 
 .header-mobile__logo {
@@ -86,41 +85,4 @@
     margin-left: 15px;
 }
 
-.mobile-auth__card--content a {
-    padding: 6px 5px;
-    font-size: 14px;
-    margin-left: 5%;
-}
-
-.mobile-auth__card--content img {
-    width: 1.8em;
-}
-
-.mobile-discord__card {
-    margin: 0 1.5em 0 1.5em;
-}
-
-.mobile-discord__card .discord__card--name {
-    margin: 0 5% 0 -10%;
-}
-
-.mobile-discord__card .header__card--discord img {
-    width: 60%;
-}
-
 /* /Header */
-
-@media screen and (max-width: 430px) {
-    .header-mobile__end {
-        align-items: unset;
-        justify-content: unset;
-        flex-direction: column;
-        margin-top: .5em;
-    }
-    .header-mobile__balance--content {
-        margin-bottom: .5em;
-    }
-    .mobile-auth__card--content a {
-        padding: 6px 30px;
-    }
-}
