@@ -133,11 +133,6 @@ export default {
     withdrawClick() {
       this.openModal = true
       this.payments = false
-      this.openRef = false
-    },
-    referalClick() {
-      this.openModal = false
-      this.openRef = true
     },
     NotificationEventListener() {
       this.notification = true
