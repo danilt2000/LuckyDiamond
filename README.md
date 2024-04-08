@@ -39,6 +39,7 @@
 
 [Вдохновление](https://cs.fail/en/)
 
+
 ## Наша Команда
 
-![team](https://cdn.discordapp.com/attachments/1175674631684898866/1208428357952348170/Group_92.png?ex=65e33f9c&is=65d0ca9c&hm=9279223a5486b16e30267bced4fd1f7cc63ff59292cb5e29d741914b5902e5e0&)
+![Group 65](https://github.com/danilt2000/LuckyDiamond/assets/96600211/fb41b4fa-24d4-4372-8b58-089d1c9d4ca4)

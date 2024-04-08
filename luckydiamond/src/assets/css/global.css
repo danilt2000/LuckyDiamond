@@ -179,7 +179,7 @@ button {
     height: 86vh;
     position: relative;
     z-index: 3;
-   
+
 }
 
 /* /Chat */
@@ -236,7 +236,7 @@ button {
 
 .about {
     grid-area: about;
-    
+
 }
 
 
@@ -302,7 +302,7 @@ button {
     grid-area: help;
     display: flex;
     /* height:99%; */
-    height:86vh;
+    height: 86vh;
     border-radius: 3.125rem;
     background: #17181C;
     box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
@@ -310,7 +310,7 @@ button {
     /*height: 96.2%;*/
     width: 1000px;
     margin: 0 auto;
-    
+
 }
 
 
@@ -337,6 +337,7 @@ button {
     height: 35%;
     z-index: 0;
 }
+
 /* /Crash */
 
 /* Media */
