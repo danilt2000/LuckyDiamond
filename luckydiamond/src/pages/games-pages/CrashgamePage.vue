@@ -51,6 +51,11 @@
 
       <section class="crash-game__players" v-if="crashObject && crashObject.Players">
         <div class="crash-game-players__content">
+          <div class="crash__history">
+            <div class="crash-history__element"><br>
+              В РАЗРАБОТКЕ
+            </div>
+          </div>
           <ul class="user-list" v-if="crashObject.Players.length">
             <li class="user-crash" v-for="(player, index) in crashObject.Players.sort((a, b) => b.Bid - a.Bid)" :key="index">
               <div class="user-crash-content" :class="{ 'user-crash-content__lose' : crashObject.Status === 'GameEnd' && player.WinningX <= 0, 'user-crash-content__win' : player.WinningX >= 1 }">

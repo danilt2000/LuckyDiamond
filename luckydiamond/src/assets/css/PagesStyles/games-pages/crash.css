@@ -168,7 +168,30 @@
     font-weight: 700;
 }
 
-/* /Crash-Graph */
+/* /Crash-History */
+
+.crash__history {
+    background: linear-gradient(90deg, rgba(34, 37, 47, 0.8) -0.54%, rgba(34, 37, 47, 0.8) 83.03%, rgba(73, 59, 74, 0.64) 103.54%);
+    width: 66%;
+    height: 50px;
+    border-radius: 18px;
+    margin-left: 455px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    text-align: center;
+  }
+
+.crash-history__element {
+    height: 80%;
+    border-radius: 18px;
+    background: rgba(34, 37, 47, 0.8);
+}
 
 /* Crash-Players */
 
