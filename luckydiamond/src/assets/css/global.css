@@ -109,19 +109,19 @@ button {
     grid-gap: 0.625rem;
 }
 
-.content-grid--double {
+.jackpot-history__content-grid {
     display: grid;
     grid-auto-columns: 1fr;
     grid-template-columns: 0.35fr repeat(5, 1fr) 1fr;
     grid-template-rows: auto 0fr repeat(4, 1fr);
     grid-template-areas:
         "menu header header header header header header"
-        "menu double double double double double chat"
-        "menu double double double double double chat"
-        "menu double double double double double chat"
-        "menu double double double double double chat"
-        "menu double double double double double chat"
-        "menu double double double double double chat";
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat";
     grid-gap: 0.625rem;
 }
 
@@ -227,10 +227,11 @@ button {
     margin: 0.625rem 2.438rem 1.125rem 1.125rem; */
 }
 
-.double {
-    display: flex;
-    grid-area: double;
-   
+.jackpot-history {
+    grid-area: jackpot-history;
+    background: #17181C;
+    border-radius: 20px;
+    height: 97%;
 }
 
 .about {

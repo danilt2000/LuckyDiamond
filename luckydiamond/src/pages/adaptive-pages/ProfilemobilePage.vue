@@ -6,11 +6,11 @@
       <div class="profile-mobile__content">
         <div class="macroinfo-profile text-default-mobile img-margin">
           <h2>Профиль</h2>
-          <img src="@/assets/icons-test/person-icon-profile-userinfo.png">
+          <img :src="imageUrl">
         </div>
         <div class="info-profile">
-          <h3 class="text-nickname-user">Artmeka</h3>
-          <h3 class="balance-border balance-display balance-text"><img src="@/assets/icons-profile/icon-diamond-ore.png">999</h3>
+          <h3 class="text-nickname-user">{{ username }}</h3>
+          <h3 class="balance-border balance-display balance-text"><img src="@/assets/icons-profile/icon-diamond-ore.png">{{ balance }}</h3>
           <div class="profile-mobile__btns-payments">
             <a href="#" @click="paymetsCall('dep')" class="deposit-button"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-deposit.svg"> Пополнить</a>
             <a href="#" @click="paymetsCall('with')" class="withdraw-button"><img class="icon-margin-deposit-withdraw" src="@/assets/icons-profile/icon-withdraw.png"> Вывести</a>
@@ -28,7 +28,11 @@ import HeaderMobileComponent from "@/components/adaptive-components/HeaderMobile
 import MenuMobileComponent from "@/components/adaptive-components/MenuMobileComponent.vue";
 import PaymentsMobile from "@/components/adaptive-components/PaymentsMobile.vue";
 
+import { GetCookie } from "@/assets/js/storage/CookieStorage";
+import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
+
 import '@/assets/css/PagesStyles/adaptive-pages/profilemobile.css'
+import {eventBus} from "@/main";
 
 export default {
   components: { HeaderMobileComponent, MenuMobileComponent, PaymentsMobile },
@@ -36,9 +40,28 @@ export default {
     return {
       payments: {
         paymentsWindow: false,
-        paymentsView: false
+        paymentsView: false,
       },
+      username: 'Artemka',
+      imageUrl: '',
+      balance: 0
     }
+  },
+  created() {
+    if (GetCookie('AUTHTOKEN') && GetCookie('SearchToken')) {
+      this.username = GetCookie('SpUserName')
+      GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+          .then((response) => {
+            this.balance = response.currentMoney
+          })
+
+      this.imageUrl = `https://avatar.spworlds.ru/front/256/${this.username}`
+    }
+  },
+  mounted() {
+    eventBus.on("Updatebalance", () => {
+      this.updateBalanceMethod();
+    });
   },
   methods: {
     paymetsCall(view) {
@@ -47,7 +70,15 @@ export default {
     },
     paymentsClose() {
       this.payments.paymentsWindow = false
-    }
+    },
+    updateBalanceMethod() {
+      GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken")).then(
+          (response) => {
+            this.balance = response.currentMoney;
+          }
+      );
+      eventBus.emit("Updatebalance-saper");
+    },
   }
 }
 </script>
