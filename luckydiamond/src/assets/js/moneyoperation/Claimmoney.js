@@ -4,11 +4,7 @@ import {GetCookie} from "@/assets/js/storage/CookieStorage";
 
 export async function GettingMoneyOperation(amount) {
     const data = {
-        Amount: amount,
-        UserCredentials: {
-            searchToken: GetCookie('SearchToken'),
-            authtoken: GetCookie('AUTHTOKEN')
-        }
+        Amount: amount
     };
     try {
         const response = await fetch(`${BackendApiUrl}/payment/donate`, {

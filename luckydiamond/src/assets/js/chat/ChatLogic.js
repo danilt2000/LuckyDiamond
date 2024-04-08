@@ -10,6 +10,7 @@ export function ConnectToChat() {
     try {
 
         if (webSocket && webSocket.readyState === WebSocket.OPEN) {
+            console.log('WebSocket connection already established.');
             return;
         }
 
@@ -21,32 +22,17 @@ export function ConnectToChat() {
 
         webSocket.onmessage = function (event) {
 
-            try {
-                const dataObject = JSON.parse(event.data);
+            const dataObject = JSON.parse(event.data);
 
-                if (dataObject && Object.prototype.hasOwnProperty.call(dataObject, 'SpUserName') && Object.prototype.hasOwnProperty.call(dataObject, 'Message')) {
-                    eventBus.emit('dataChat', event.data);
-                    return;
-                }
-
-                if (dataObject.MessageType == 'DoubleGameState') {
-                    eventBus.emit('doubleGame', event.data)
-                    return;
-                }
-
-                if (dataObject.MessageType == "CrashGameState") {
-                    eventBus.emit('crash', event.data);
-                    return;
-                }
-
-                if (Array.isArray(dataObject.CurrentGame.PlayerList)) {
-                    eventBus.emit('jackpotGameTik', event.data);
-                    return;
-                }
-
-            } catch (error) {
-                void (error);
+            if (dataObject && Object.prototype.hasOwnProperty.call(dataObject, 'SpUserName') && Object.prototype.hasOwnProperty.call(dataObject, 'Message')) {
+                eventBus.emit('dataChat', event.data);
+                console.log('CHAT')
             }
+            else {
+                eventBus.emit('crash', event.data)
+            }
+
+            // console.log('Message from Server:', event.data);
         };
 
         webSocket.onclose = function () {

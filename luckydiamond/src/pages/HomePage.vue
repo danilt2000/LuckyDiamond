@@ -37,12 +37,12 @@
                 <h3 class="title-firstline">{{ mode.title }}</h3>
                 <div class="line__footer">
                   <img src="../assets/icons-gamemodes/bomb-icon.svg" />
-                  <div>
+                  <div class="line__btn--main">
                     <a
                       href="#"
                       @click="$router.push({ name: 'saper' })"
                       class="line__btn"
-                      >play <span class="line__btn--elm--saper"></span></a
+                      >play <span class="line__btn--elm--saper">></span></a
                     >
                   </div>
                 </div>
@@ -66,7 +66,7 @@
                       href="#"
                       @click="$router.push({ name: 'jackpot' })"
                       class="line__btn__jackpot"
-                      >   play <span class="line__btn--elm"></span></a
+                      >play <span class="line__btn--elm">></span></a
                     >
                   </div>
                 </div>
@@ -79,19 +79,15 @@
           <div class="gamemode__twolines">
             <div class="gamemode__twoline--first__element bg-early">
               <ul>
-                <li v-for="mode in twolinetwoelementGameMode" :key="mode.id">
+                <li v-for="mode in twolinefirstelementGameMode" :key="mode">
                   <div :class="'linecontent-' + mode.id">
-                    <h3 class="title-twoline">рулетка</h3>
+                    <h3 class="title-twoline">скоро</h3>
                   </div>
                   <div class="container">
-                    <!-- <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a> -->
-                    <a
-                      href="#"
-                      @click="$router.push({ name: 'double' })"
-                      class="line__btn--crash"
-                      >play <span class="line__btn--elm"></span></a
+                    <a href="#" class="line__btn"
+                      >play <span class="line__btn--elm">></span></a
                     >
-                    <img class="crash--img" src="@/assets/icons-gamemodes/slots-icon.png" />
+                    <img src="@/assets/icons-gamemodes/slots-icon.png" style="margin-bottom: 4%;" />
                   </div>
                 </li>
               </ul>
@@ -107,10 +103,10 @@
                     <a
                       href="#"
                       @click="$router.push({ name: 'crash' })"
-                      class="line__btn--crash"
-                      >play <span class="line__btn--elm"></span></a
+                      class="line__btn"
+                      >play <span class="line__btn--elm">></span></a
                     >
-                    <img class="crash--img" src="@/assets/icons-gamemodes/crush-icon.svg" />
+                    <img src="@/assets/icons-gamemodes/crush-icon.svg" />
                   </div>
                 </li>
               </ul>

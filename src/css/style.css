@@ -72,12 +72,6 @@
     font-family: Montserrat Alternates;
     font-size: 18px;
     font-weight: 700;
-    transition: 250ms;
-}
-
-.header_other_text_menu:hover {
-    color: #EF4444;
-
 }
 
 .flex-container {

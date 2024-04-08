@@ -29,8 +29,6 @@
           </li>
         </transition-group>
       </ul>
-    
-    
     </div>
     <writechat-component @send="ClaimDatamsg"></writechat-component>
     <!-- <div class="chat__mute-button">
@@ -70,11 +68,11 @@ export default {
     },
     ClaimDatamsg(msg) {
       const now = Date.now();
-      if (!this.lastMsgTime || now - this.lastMsgTime >= 1000) {
+      if (!this.lastMsgTime || now - this.lastMsgTime >= 2000) {
         SendMessageToChat(msg[0]);
         this.lastMsgTime = now;
       } else {
-        alert("Вы не можете отправлять сообщения так часто");
+        alert("Вы не можете отправлять сообщения чаще, чем раз в 2 секунды.");
       }
     },
     muteChat() {
@@ -137,4 +135,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

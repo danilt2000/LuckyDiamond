@@ -263,7 +263,7 @@ import "@/assets/css/PagesStyles/games-pages/jackpot.css";
 import "@/assets/css/global.css";
 import JackpotNumbers from "@/mocks/JackpotNumbers";
 import {
-  // ConnectToJackpotSocket,
+  ConnectToJackpotSocket,
   JoinJackpotGame,
 } from "@/assets/js/jackpot/JackpotLogic.js";
 import { useVuelidate } from "@vuelidate/core";
@@ -659,7 +659,7 @@ export default {
     },
   },
   mounted() {
-    // ConnectToJackpotSocket();
+    ConnectToJackpotSocket();
 
     eventBus.on("jackpotGameTik", (data) => {
       try {
