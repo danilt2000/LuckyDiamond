@@ -116,12 +116,6 @@ button {
     grid-template-rows: auto 0fr repeat(4, 1fr);
     grid-template-areas:
         "menu header header header header header header"
-        "menu double double double double double chat"
-        "menu double double double double double chat"
-        "menu double double double double double chat"
-        "menu double double double double double chat"
-        "menu double double double double double chat"
-        "menu double double double double double chat"
         "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
         "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
         "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"

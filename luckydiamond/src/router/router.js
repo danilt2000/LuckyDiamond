@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../pages/HomePage.vue";
 import ProfilePage from "@/pages/ProfilePage.vue";
 import SapergamePage from "@/pages/games-pages/SapergamePage.vue";
-import DoublePage from "@/pages/games-pages/DoublePage.vue";
 import SettingsPage from "@/pages/SettingsPage.vue";
 import CrashGamePage from "@/pages/games-pages/CrashgamePage.vue";
 import JackpotPage from "@/pages/games-pages/JackpotPage.vue";
@@ -17,7 +16,6 @@ export default createRouter({
         { path: '/', component: HomePage, name: 'home' },
         { path: '/profile', component: ProfilePage, name: 'profile' },
         { path: '/game/saper', component: SapergamePage, name: 'saper' },
-        { path: '/game/double', component: DoublePage, name: 'double' },
         { path: '/game/crash', component: CrashGamePage, name: 'crash' },
         { path: '/game/jackpot', component: JackpotPage, name: 'jackpot' },
         { path: '/game/jackpot/history', component: JackopthistoryPage, name: 'jackpot-history' },
