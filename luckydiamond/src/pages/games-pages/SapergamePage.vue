@@ -297,7 +297,7 @@ export default {
             }
           });
         } catch (e) {
-          console.error('Error in Percentage', e);
+          //console.error('Error in Percentage', e);
         }
       }
 
@@ -330,7 +330,7 @@ export default {
          this.offEventPointers = false
          let AnswerServer
 
-         let LimitClicked = this.amountCrystals
+         //let LimitClicked = this.amountCrystals
          let DepositDiamonds = this.amountDeposit
 
          const X_Cordinates = value[this.gamesCircle]
@@ -365,10 +365,10 @@ export default {
                })
          }
          catch (e) {
-           console.error(e)
+           //console.error(e)
          }
 
-         console.log(LimitClicked, DepositDiamonds, X_Cordinates)
+         //console.log(LimitClicked, DepositDiamonds, X_Cordinates)
          this.gamesCircle = this.gamesCircle + 1
          this.offEventPointers = true
          if (AnswerServer === 'You dead') {
@@ -457,7 +457,7 @@ export default {
         this.getBalanceUser()
       }
       catch (e) {
-        console.error('Error in GetData', e)
+        //console.error('Error in GetData', e)
       }
     }
     else {
@@ -507,7 +507,7 @@ export default {
             })
       }
       catch (e) {
-        console.error(e)
+        //console.error(e)
       }
     },
     async claimWinningAmount() {
@@ -528,7 +528,7 @@ export default {
           return eventBus.emit('Updatebalance')
         }
         catch (e) {
-          console.error(e)
+          //console.error(e)
         }
       }
     },
