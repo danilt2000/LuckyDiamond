@@ -104,53 +104,63 @@
 import "@/assets/css/ComponentsStyles/payments-modal.css";
 import { GetReferralData } from "@/assets/js/Profile/Referrals";
 import { WithdrawReferralMoney } from "@/assets/js/Profile/Referrals";
+import { eventBus } from "@/main";
 
 export default {
   data() {
     return {
-      referralData: {}, // Добавляем пустой объект для данных о реферале
-      errorDeposit: false, // Добавляем флаг для отслеживания ошибок
-      errorAgree: false, // Добавляем флаг для отслеживания ошибок
-      agreeUser: false, // Добавляем флаг для отслеживания согласия пользователя
-      amount: 0, // Устанавливаем начальное значение суммы
-      PaymentsModalNumbers: [], // Добавляем массив для номеров платежей (если он используется)
+      referralData: {},
+      errorDeposit: false,
+      errorAgree: false,
+      agreeUser: false,
+      amount: 0,
+      PaymentsModalNumbers: [],
     };
   },
   props: ["payments"],
   async created() {
-    // При создании компонента загружаем данные о реферале
     this.referralData = await GetReferralData();
   },
   computed: {
     avalibleAmountValue() {
-      if (this.referralData.avalibleAmount !== 0) {
-        return this.referralData.avalibleAmount;
-      } else {
-        return '0';
-      }
+      return this.referralData.avalibleAmount !== 0 ? this.referralData.avalibleAmount : '0';
     },
     activationsAmountValue() {
-      if (this.referralData.activationsAmount !== 0) {
-        return this.referralData.activationsAmount;
-      } else {
-        return '0';
-      }
+      return this.referralData.activationsAmount !== 0 ? this.referralData.activationsAmount : '0';
     }
   },
   methods: {
     async handleWithdraw() {
       try {
-        // Call the WithdrawReferralMoney function
-        await WithdrawReferralMoney();
-        // Handle success, e.g., show a success message or perform other actions
-        console.log("Withdrawal successful!");
+        if (!this.agreeUser) {
+          this.errorAgree = true;
+          setTimeout(() => {
+            this.errorAgree = false;
+          }, 1500);
+          return;
+        }
+
+        if (this.referralData.avalibleAmount == 0) {
+          window.alert("У вас нет денег на вывод :(");
+          return;
+        }
+
+        await WithdrawReferralMoney().then(async (response) => {
+          try {
+            console.log("work", response);
+          } catch (e) {
+            console.error(e);
+          }
+          await this.$emit("notifacetionmoney");
+          eventBus.emit("Updatebalance");
+          this.$emit("closemodal");
+        });
       } catch (error) {
-        // Handle errors, e.g., show an error message or perform other actions
         console.error("Error withdrawing referral money:", error);
       }
     },
     closeModal() {
-      return this.$emit("closemodal");
+      this.$emit("closemodal");
     },
   },
 };
