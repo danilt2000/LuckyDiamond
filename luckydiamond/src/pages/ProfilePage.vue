@@ -90,7 +90,7 @@ export default {
       arrayHistory: [],
     }
   },
-
+  
   emits: ['notificationremove'],
   mounted() {
     this.checkWindowSize()
@@ -100,57 +100,6 @@ export default {
     this.RemoveWindowListener()
   },
   created() {
-
-    const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Cookie", "ARRAffinity=a6e48b9e9d2653435be7b61998d8624b44115214104213d6c8b8c526cc56dc70; ARRAffinitySameSite=a6e48b9e9d2653435be7b61998d8624b44115214104213d6c8b8c526cc56dc70");
-
-  const userData = {
-    searchToken: GetCookie("SearchToken"),
-    authtoken: GetCookie("AUTHTOKEN"),
-  };
-
-  const raw = JSON.stringify({
-    "userCredentials": {
-      "searchToken": userData.searchToken,
-      "authtoken": userData.authtoken
-    }
-  });
-
-  const requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow"
-  };
-
-  fetch("https://spsystemcore20231122004605.azurewebsites.net/api/PromoCode/GetReferralInfo", requestOptions)
-    .then((response) => response.text())
-    .then((result) => {
-      console.log(result);
-      if (result == "\"The Referral is not created\"") {
-        const raw = JSON.stringify({
-          "userCredentials": {
-            "searchToken": userData.searchToken,
-            "authtoken": userData.authtoken
-          }
-        });
-
-        const requestOptions = {
-          method: "POST",
-          headers: myHeaders,
-          body: raw,
-          redirect: "follow"
-        };
-
-        fetch("https://spsystemcore20231122004605.azurewebsites.net/api/PromoCode/CreateReferal", requestOptions)
-          .then((response) => response.text())
-          .then((result) => console.log(result))
-          .catch((error) => console.error(error));
-      }
-    })
-    .catch((error) => console.error(error));
-
     axios.post('https://spsystemcore20231122004605.azurewebsites.net/api/Payment/GetPaymentHistory', {
       searchToken: GetCookie('SearchToken'),
       authtoken: GetCookie('AUTHTOKEN')
@@ -191,7 +140,7 @@ export default {
       this.payments = false
       this.openRef = false
     },
-   referalClick() {
+    referalClick() {
       this.openModal = false
       this.openRef = true
     },
