@@ -11,7 +11,16 @@
       <div class="bg-two"></div>
       <div class="saper-start" :class="{ 'game-start__menu-off' : gameStart }">
         <div class="saper-start__content title-saper padding-elements">
-          <h2>Сапёр</h2>
+          <div class="classMenegerSaper">
+            <h2>Сапёр</h2>
+            <div class="classNoMenegerSaper">
+            <a href="https://docs.google.com/document/d/1kW8bPmIZPrjK9EtKo6xsPLv989uOkgUn4wFk_uYOCUI/edit?usp=sharing" target="_blank">
+              <img src="@/assets/icons-games/double-game/info.svg" alt="" />
+           </a>
+          </div>
+            
+          </div>
+          
           <p>Находи изумруды на поле и избегай кристалы</p>
           <div class="saper-start__choises crystals">
             <h3>Количество кристалов</h3>

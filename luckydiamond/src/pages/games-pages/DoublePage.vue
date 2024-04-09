@@ -9,7 +9,16 @@
         <div
           class="jackpot-start__content title-saper padding-elements-jackpot"
         >
-          <h2>Рулетка</h2>
+          
+          <div class="classMenegerDouble">
+            <h2>Рулетка</h2>
+            <div class="classNoMenegerDouble">
+            <a href="https://docs.google.com/document/d/1kW8bPmIZPrjK9EtKo6xsPLv989uOkgUn4wFk_uYOCUI/edit?usp=sharing" target="_blank">
+              <img src="@/assets/icons-games/double-game/info.svg" alt="" />
+           </a>
+          </div>
+            
+          </div>
           <p>Крути, ставь, побеждай!</p>
           <div class="saper-start__choises diamonds diamonds-input__margin">
             <h3>Цвет победной ячейки</h3>
@@ -646,6 +655,15 @@ export default {
 <style scoped>
 .carousel__slide {
   padding: 1px;
+}
+.classMenegerDouble {
+  display: flex;
+ 
+ flex-direction: row;
+}
+.classNoMenegerDouble {
+  margin-left: 1vh;
+  margin-top: 2.4vh;
 }
 
 .carousel__viewport {
