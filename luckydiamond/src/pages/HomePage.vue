@@ -88,10 +88,10 @@
                     <a
                       href="#"
                       @click="$router.push({ name: 'double' })"
-                      class="line__btn--crash"
+                      class="line__btn--doubl"
                       >play <span class="line__btn--elm"></span></a
                     >
-                    <img class="crash--img" src="@/assets/icons-gamemodes/slots-icon.png" />
+                    <img class="doubl--img" src="@/assets/icons-games/double-game/DoubleLogo.svg" />
                   </div>
                 </li>
               </ul>

@@ -11,7 +11,16 @@
       <section class="crash-game">
         <div class="crash-game__content">
           <div class="crash-game__start-window">
-            <h2 class="crash__game-name">Краш</h2>
+            <div class="classMenegerCrash">
+              <h2 class="crash__game-name">Краш</h2>
+              <div class="classNoMenegerCrash">
+              <a href="https://docs.google.com/document/d/1kW8bPmIZPrjK9EtKo6xsPLv989uOkgUn4wFk_uYOCUI/edit?usp=sharing" target="_blank">
+                <img src="@/assets/icons-games/double-game/info.svg" alt="" />
+             </a>
+            </div>
+              
+            </div>
+           
             <p>Жди момента и забирай выигрыш</p>
             <div class="crash-game-window__inputs">
               <div class="crash-deposit">

@@ -262,6 +262,25 @@
     left: 2%;
     transition: 250ms;   
 }
+.line__btn--doubl {
+    border-radius: 21px;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 11px 0px 11px 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 5%;
+    left: 2%;
+    height: 7.4vh;
+    width: 16vh;
+    transition: 250ms;   
+}
 
 .line__btn--crash span:after {
     content: '\00bb';
@@ -281,6 +300,27 @@
   }
 
 .line__btn--crash:active {
+    left: 2%;
+  }
+  .line__btn--doubl span:after {
+    content: '\00bb';
+    opacity: 0;
+    transition: 250ms;
+    right: 0;
+  }
+
+.line__btn--doubl:hover span:after {
+    opacity: 1;
+    right: 0;
+    padding-right: 0px;
+  }
+
+.line__btn--doubl:hover {
+    padding:11px 11px 11px 22px ;
+    width: 20vh;
+  }
+
+.line__btn--doubl-:active {
     left: 5%;
   }
 
@@ -491,8 +531,8 @@
     }
 
     .crash--img {
-        height: 60px;
-        width: 60px;
+        height: 128px;
+        width: 128px;
     }
 
     .line__content {
