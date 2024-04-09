@@ -14,7 +14,7 @@
           <div class="classMenegerSaper">
             <h2>Сапёр</h2>
             <div class="classNoMenegerSaper">
-            <a href="https://docs.google.com/document/d/1kW8bPmIZPrjK9EtKo6xsPLv989uOkgUn4wFk_uYOCUI/edit?usp=sharing" target="_blank">
+            <a href="https://docs.google.com/document/d/1aoN7tqLxWxOBJ-NXUs4GHK8Nl2n2Q-Kw6JHzmujku6A" target="_blank">
               <img src="@/assets/icons-games/double-game/info.svg" alt="" />
            </a>
           </div>
