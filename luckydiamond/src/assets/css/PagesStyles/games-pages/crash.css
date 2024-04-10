@@ -176,21 +176,18 @@
     height: 50px;
     border-radius: 18px;
     margin-left: 455px;
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
     gap: 10px;
+    padding: 0 10px;
 }
 
-.grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    text-align: center;
-  }
-
-.crash-history__element {
+.crash-history__component {
+    background: linear-gradient(#18213E, #263873);
+    width: 12%;
     height: 80%;
-    border-radius: 18px;
-    background: rgba(34, 37, 47, 0.8);
+    display: inline;
+    margin: auto;
+    border-radius: 10px;
 }
 
 /* Crash-Players */
