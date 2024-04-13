@@ -85,13 +85,17 @@
                   </div>
                   <div class="container">
                     <!-- <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a> -->
+                     
                     <a
                       href="#"
                       @click="$router.push({ name: 'double' })"
                       class="line__btn--crash"
                       >play <span class="line__btn--elm"></span></a
                     >
+                 
+                    
                     <img class="crash--img" src="@/assets/icons-games/double-game/DoubleLogo.svg" />
+                 
                   </div>
                 </li>
               </ul>
@@ -110,6 +114,7 @@
                       class="line__btn--crash"
                       >play <span class="line__btn--elm"></span></a
                     >
+                    
                     <img class="crash--img" src="@/assets/icons-gamemodes/crush-icon.svg" />
                   </div>
                 </li>

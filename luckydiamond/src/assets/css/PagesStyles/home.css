@@ -247,10 +247,7 @@
 .line__btn:active {
     left: 5%;
   }
-.double--img {
-   
-    
-}
+
 .line__btn--crash {
     border-radius: 21px;
     background: #FFF;
@@ -437,9 +434,7 @@
     height:22.3vh ;
     
 }
-.container img {
-
-}
+.container {}
 .gamemode__twoline--two__element .container {
     display: flex;
     justify-content: center;
@@ -447,7 +442,17 @@
    
    
 }
-
+.linecontent-4 {
+    
+}
+.iconsGame {
+    bottom:  20px;
+    height: 20vh;
+}
+.ButtonPlayDouble {
+    width: 20vh;
+    margin-top: 1.6vh;
+}
 .gamemode__twoline--two__element .container a {
     margin-right: 10%;
 }
