@@ -94,7 +94,7 @@
                     >
                  
                     
-                    <img class="crash--img" src="@/assets/icons-games/double-game/DoubleLogo.svg" />
+                    <img class="double--img" src="@/assets/icons-games/double-game/DoubleLogo.svg" />
                  
                   </div>
                 </li>
