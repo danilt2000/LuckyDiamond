@@ -14,7 +14,7 @@
             <div class="classMenegerCrash">
               <h2 class="crash__game-name">Краш</h2>
               <div class="classNoMenegerCrash">
-              <a href="https://docs.google.com/document/d/1kW8bPmIZPrjK9EtKo6xsPLv989uOkgUn4wFk_uYOCUI/edit?usp=sharing" target="_blank">
+              <a href="https://docs.google.com/document/d/13jJx5IC0AC8pOpbSG5CU1i9tIQof0Vb0IUFzcR0aKcE" target="_blank">
                 <img src="@/assets/icons-games/double-game/info.svg" alt="" />
              </a>
             </div>
