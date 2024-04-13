@@ -85,17 +85,17 @@
                   </div>
                   <div class="container">
                     <!-- <a href="#" class="line__btn">play <span class="line__btn--elm">></span></a> -->
-                    <div class="ButtonPlayDouble">
+                     
                     <a
                       href="#"
                       @click="$router.push({ name: 'double' })"
                       class="line__btn--crash"
                       >play <span class="line__btn--elm"></span></a
                     >
-                  </div>
-                    <div class="iconsGame">
+                 
+                    
                     <img class="crash--img" src="@/assets/icons-games/double-game/DoubleLogo.svg" />
-                  </div>
+                 
                   </div>
                 </li>
               </ul>
