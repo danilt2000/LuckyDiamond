@@ -14,7 +14,7 @@
             <h2>Рулетка</h2>
             <div class="classNoMenegerDouble">
             <a href="https://docs.google.com/document/d/1kW8bPmIZPrjK9EtKo6xsPLv989uOkgUn4wFk_uYOCUI/edit?usp=sharing" target="_blank">
-              <img src="@/assets/icons-games/double-game/info.svg" alt="" />
+              <img src="--" alt="" />
            </a>
           </div>
             

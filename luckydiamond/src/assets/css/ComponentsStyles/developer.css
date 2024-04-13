@@ -4,10 +4,10 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    width: 1332px;
+    width: 100%;
     height: 732px;
     margin-top: 10px;
-    margin-left: 65px;
+   
 }
 .bottom_card {
     width: 1332px;
@@ -18,8 +18,7 @@
     margin-left: 295px;
 }
 .top_card {
-    width: 1204px;
-    height: 443px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-left: 287px;
@@ -397,7 +396,84 @@
     display: flex;
 }
 /*the and FUpir_card 1*/
+/*beginning Swino4ka_card 1*/
+.Swino4ka_card {
+    width: 250px;
+    height: 443px;
+    background-color: #6b4d3f;
+    border: 3px solid #595959 ;
+    border-color: #595959;
+    border-radius: 22px;
+}
+.Swino4ka_text_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    flex-flow: column-reverse;
+    
+}
 
+.Swino4ka_aboutinfo_2 {
+    margin-top: 30px;
+    margin-left: 19px;
+    
+}
+.Swino4ka_aboutinfo_2 p {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 14px;
+    width: 79px;
+    height: 19px;
+    margin-left: 4px;
+}
+.Swino4ka_aboutinfo_2 h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+    width: 177px;
+    height: 37px;
+    line-height: 30px;
+}
+.Swino4ka_whatjob_1 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 30px;
+    
+}
+.Swino4ka_whatjob_1 img {
+    width: 15px;
+    height: 17px;
+}
+.Swino4ka_whatjob_1 p {
+    margin-left: 3px;
+    
+}
+
+.Swino4ka_skin_2 {
+    width: 244px;
+    height: 221.5px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Swino4ka_skin_2_skin {
+    width: 212px;
+    height: 212px;
+    background-image: url(https://avatar.spworlds.ru/front/212/Swino4ka.png);
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 3px;
+}
+.Swino4ka_skinicons1 {
+   justify-content: space-around;
+    display: flex;
+}
+/*the and Swino4ka_card 1*/
 /*beginning busha888_card 1*/
 .busha888_card {
     width: 422px;
@@ -485,10 +561,11 @@
 }
 /*the and busha888_card 1*/
 
-/*beginning megatntmega_card 1*/
-.megatntmega_card {
+/*beginning GEDPOOL31_card 1*/
+.GEDPOOL31_card {
     width: 422px;
     height: 269px;
+    flex-direction: row;
     border-radius: 22px;
     border: 3px solid #595959 ;
     border-color: #595959;
@@ -498,32 +575,33 @@
 
 }
 
-.megatntmega_text {
-    width: 211px;
+.GEDPOOL31_text {
+    width: 200px;
     height: 269px;
 
  
 }
-.megatntmega_aboutinfo {
+.GEDPOOL31_aboutinfo {
     margin-top: 30px;
     margin-left: 15px;
     
     
 }
-.megatntmega_aboutinfo p {
+.GEDPOOL31_aboutinfo p {
     font-family: 'Montserrat';
     color: white;
     font-size: 14px;
-    
+    width: 200px;
     height: 16px;
+   
 }
-.megatntmega_aboutinfo h1 {
+.GEDPOOL31_aboutinfo h1 {
     font-family: 'Montserrat';
     color: white;
     font-size: 32px;
     
 }
-.megatntmega_whatjob {
+.GEDPOOL31_whatjob {
     display: flex;
     width: 183px;
     height: 16px;
@@ -533,15 +611,15 @@
    
     margin-top: 30px;
 }
-.megatntmega_whatjob p {
+.GEDPOOL31_whatjob p {
     margin-left: 3px;
     margin-top: 3px;
 }
-.megatntmega_whatjob img {
+.GEDPOOL31_whatjob img {
     width: 25px;
-    height: 24px;
+    height: 25px;
 }
-.megatntmega_icons {
+.GEDPOOL31_icons {
     width: 79px;
     height: 36px; 
     justify-content: space-around;
@@ -550,23 +628,23 @@
     margin-left: 72px;
     margin-bottom: 11px;
 }
-.megatntmega_icons img {
+.GEDPOOL31_icons img {
+    display: flex;
     width: 36px;
     height: 36px;
 }
-.megatntmega_skin {
+.GEDPOOL31_skin {   
     margin-top: 51px;
     margin-bottom: 3px;
     display: flex;
     width: 212px;
     height: 212px;
-    background-image: url(https://avatar.spworlds.ru/front/212/megatntmega.png);
 }
-.megatntmega_skin img {
+.GEDPOOL31_skin img {
     width: 212px;
     height: 212px;
 }
-/*the and megatntmega_card 1*/
+/*the and GEDPOOL31_card 1*/
 
 /*beginning CLARFFY_card 1*/
 .CLARFFY_card {
@@ -659,11 +737,15 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        width: 1332px;
+        width: 100%;
         height: 732px;
         margin-top: 80px;
-        margin-left: 142px;
+       
         
+        
+    }
+    .top_card {
+        width: 90%;
     }
 }
 

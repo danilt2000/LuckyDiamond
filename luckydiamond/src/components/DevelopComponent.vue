@@ -106,25 +106,49 @@
         </div>
       
     </div>
+    <div class="Swino4ka_card">
+      <div class="Swino4ka_text_2">
+        <div class="Swino4ka_aboutinfo_2">
+          <p>Фронтэндер</p>
+          <h1>Swino4ka</h1>
+        </div>
+        <div class="Swino4ka_whatjob_1">
+          <img src="@/assets/icons-developcard/html.png" alt="html">
+          <p>HTML 5,CSS</p>
+        </div>
+        </div>
+        <div class="Swino4ka_skin_2">
+          <div class="Swino4ka_skin_2_skin">
+            
+            <div class="Swino4ka_skinicons1">
+            <a href="https://t.me/Swino4ka_pon" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+            <a href="https://discordapp.com/users/472393576010088449" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+            <a href="https://github.com/swino4ka/" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
+           
+            </div>
+          </div>
+        </div>
+      
+    </div>
   </div>
   <div class="bottom_card">
-    <div class="megatntmega_card">
-      <div class="megatntmega_text">
-        <div class="megatntmega_aboutinfo">
-          <p>Дизайнер</p>
-          <h1>megatntmega</h1>
+    <div class="GEDPOOL31_card">
+      <div class="GEDPOOL31_text">
+        <div class="GEDPOOL31_aboutinfo">
+          <p>Техническая поддержка</p>
+          <h1>GEDPOOL31</h1>
         </div>
-        <div class="megatntmega_whatjob">
-          <img src="@/assets/icons-developcard/Figma.png" alt="html">
-          <p>Designer</p>
+        <div class="GEDPOOL31_whatjob">
+          <img src="@/assets/icons-developcard/tech-support.svg" alt="html">
+          <p>Tech-Support</p>
         </div>
-        <div class="megatntmega_icons">
-          <a href="https://t.me/random_ak" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href="https://discordapp.com/users/531420425255911424" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+        <div class="GEDPOOL31_icons">
+          <a href="https://t.me/GEDPOOL31" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
+          <a href="https://discord.com/users/1044186204884701227" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
         </div>
       </div>
-      <div class="megatntmega_skin">
-        
+      <div class="GEDPOOL31_skin">
+        <img src="https://avatar.spworlds.ru/front/212/GEDPOOL31.png" alt="">
         </div>
     </div>
     <div class="busha888_card">
