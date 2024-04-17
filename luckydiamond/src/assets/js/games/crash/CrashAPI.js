@@ -1,24 +1,5 @@
 import { BackendApiUrl } from '@/properties/Сonfig.js';
 
-
-export async function CrashHistory () {
-    const myHeaders = new Headers();
-myHeaders.append("Cookie", "ARRAffinity=a6e48b9e9d2653435be7b61998d8624b44115214104213d6c8b8c526cc56dc70; ARRAffinitySameSite=a6e48b9e9d2653435be7b61998d8624b44115214104213d6c8b8c526cc56dc70");
-
-const requestOptions = {
-  method: "POST",
-  headers: myHeaders,
-  redirect: "follow"
-};
-
-fetch("https://spsystemcore20231122004605.azurewebsites.net/api/GameCrash/GetCrashXHistory", requestOptions)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.error(error));
-}
-
-
-
 export async function JoinCrashGame(userData, amount) {
     const data = {
         userCredentials: {
