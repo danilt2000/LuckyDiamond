@@ -61,7 +61,7 @@
       <section class="crash-game__players" v-if="crashObject && crashObject.Players">
         <div class="crash-game-players__content">
           <div class="crash__history">
-              <div class="crash-history__component"> <h2>{{ game.winX }}</h2> </div>
+              <div class="crash-history__component"> <h2></h2> </div>
               <div class="crash-history__component"></div>
               <div class="crash-history__component"></div>
               <div class="crash-history__component"></div>
@@ -121,7 +121,6 @@ export default {
   components: { HeaderComponent, AsideBarComponent, ChatComponent, CrashGraphComponent },
   data() {
     return {
-      winX,
       SaperNumbers,
       clickedBtn: null,
       ErrorClick: false,
@@ -241,14 +240,6 @@ export default {
         this.clickedBtnChoice(index, DepositCount)
       }
     },
-  },
-  async created() {
-    if (GetCookie('AUTHTOKEN') && GetCookie('SearchToken')) {
-      await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
-          .then((response) => {
-            this.balance = response.currentMoney
-          })
-    }
   },
   props: ["payments"],
   async created() {
