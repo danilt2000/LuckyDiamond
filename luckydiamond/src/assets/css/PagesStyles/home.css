@@ -37,6 +37,7 @@
     text-transform: uppercase;
 }
 
+
 @keyframes RaindowAnimate {
     from {
         color: #6EEB21;
@@ -90,6 +91,7 @@
 }
 
 .bg-card {
+   
     border-radius: 40px;
     background: #EF4444;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -97,8 +99,9 @@
 
 .bg-early{
     border-radius: 40px;
-    background: #969B9E;
+    background: #EF4444;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 21.5vh;
 }
 
 .gamemode__main {
@@ -260,6 +263,29 @@
     position: relative;
     bottom: 5%;
     left: 2%;
+    transition: 250ms;  
+    height: 7vh; 
+    
+}
+
+
+.line__btn--doubl {
+    border-radius: 21px;
+    background: #FFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat Alternates;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 11px 0px 11px 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 5%;
+    left: 2%;
+    height: 7.4vh;
+    width: 16vh;
     transition: 250ms;   
 }
 
@@ -268,6 +294,7 @@
     opacity: 0;
     transition: 250ms;
     right: 20;
+    
   }
 
 .line__btn--crash:hover span:after {
@@ -281,7 +308,28 @@
   }
 
 .line__btn--crash:active {
-    left: 5%;
+    left: 2%;
+  }
+  .line__btn--doubl span:after {
+    content: '\00bb';
+    opacity: 0;
+    transition: 250ms;
+    right: 0;
+  }
+
+.line__btn--doubl:hover span:after {
+    opacity: 1;
+    right: 0;
+    padding-right: 0px;
+  }
+
+.line__btn--doubl:hover {
+    padding:11px 11px 11px 22px ;
+    width: 20vh;
+  }
+
+.line__btn--doubl-:active {
+    left: 2%;
   }
 
 .line__btn__jackpot {
@@ -325,6 +373,7 @@
 .line__btn--elm {
     color: #000;
     font-size: 38px ;
+    
 }
 
 .line__btn--elm--saper {
@@ -357,7 +406,7 @@
 .gamemode__twoline--first__element {
     width: 100%;
     margin: 2% 3.6% 0 5.5%;
-    min-height: 180px;
+    min-height: 209px;
 }
 
 .linecontent-3 {
@@ -370,41 +419,61 @@
     color: #fff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Montserrat Alternates;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 700;
     text-transform: uppercase;
     padding: 4.5% 2.2%;
 }
 
-.gamemode__twoline--first__element .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.gamemode__twoline--first__element .container a {
-    margin-right: 10%;
-    padding: 12px 10px;
-    margin-bottom: 3%;
-}
 
 .gamemode__twoline--two__element {
     margin-top: 2%;
     width: 100%;
     min-height: 180px;
+    height:22.3vh ;
+    
 }
-
+.container {}
 .gamemode__twoline--two__element .container {
     display: flex;
     justify-content: center;
+    
+   
+   
 }
-
+.linecontent-4 {
+    
+}
+.iconsGame {
+    bottom:  20px;
+    height: 20vh;
+}
+.ButtonPlayDouble {
+    width: 20vh;
+    margin-top: 1.6vh;
+}
 .gamemode__twoline--two__element .container a {
     margin-right: 10%;
 }
 
 .cumming_soon--img {
     margin-bottom: 4%;
+}
+.gamemode__twoline--two__element {
+    margin-top: 2%;
+    width: 100%;
+    min-height: 180px;
+}
+
+.gamemode__twoline--first__element .container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.gamemode__twoline--first__element .container a {
+    margin-right: 10%;
 }
 
 /* /GameMode */
@@ -430,7 +499,7 @@
     }
 
     .title-twoline {
-        font-size: 60px;
+        font-size: 40px;
     }
 
     .line__img__jackpot {
@@ -472,11 +541,7 @@
         width: 80px;
     }
 
-    .gamemode__twoline--first__element .container a {
-        margin-right: 10%;
-        padding: 2px 11px 11px 11px;
-        margin-bottom: 3%;
-    }
+    
 
     .line__btn__jackpot {
         border-radius: 16px;
@@ -490,8 +555,8 @@
     }
 
     .crash--img {
-        height: 60px;
-        width: 60px;
+        height: 128px;
+        width: 128px;
     }
 
     .line__content {
@@ -506,7 +571,7 @@
     }
 
     .title-twoline {
-        font-size: 40px;
+        font-size: 20px;
     }
 
     .line__img__jackpot {
@@ -549,11 +614,7 @@
         width: 80px;
     }
 
-    .gamemode__twoline--first__element .container a {
-        margin-right: 10%;
-        padding: 2px 11px 11px 11px;
-        margin-bottom: 3%;
-    }
+    
 
     .line__btn__jackpot {
         border-radius: 10px;
@@ -575,13 +636,14 @@
         height: 265px;
     }
 
-    .gamemode__twoline--first__element {
-        width: 100%;
-        margin: 0 3.6% 0 5.5%;
-        min-height: 60px;
-    }
+    
 
     .gamemode__twoline--two__element {
+        margin-top: 0;
+        width: 100%;
+        min-height: 60px;
+    }
+    .gamemode__twoline--first__element {
         margin-top: 0;
         width: 100%;
         min-height: 60px;

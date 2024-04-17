@@ -109,6 +109,38 @@ button {
     grid-gap: 0.625rem;
 }
 
+.content-grid--double {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 0.35fr repeat(5, 1fr) 1fr;
+    grid-template-rows: auto 0fr repeat(4, 1fr);
+    grid-template-areas:
+        "menu header header header header header header"
+        "menu double double double double double chat"
+        "menu double double double double double chat"
+        "menu double double double double double chat"
+        "menu double double double double double chat"
+        "menu double double double double double chat"
+        "menu double double double double double chat";
+    grid-gap: 0.625rem;
+}
+
+.jackpot-history__content-grid {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 0.35fr repeat(5, 1fr) 1fr;
+    grid-template-rows: auto 0fr repeat(4, 1fr);
+    grid-template-areas:
+        "menu header header header header header header"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat"
+        "menu jackpot-history jackpot-history jackpot-history jackpot-history jackpot-history chat";
+    grid-gap: 0.625rem;
+}
+
 .grid-crash {
     display: grid;
     grid-template-columns: 0.35fr repeat(5, 1fr) 1fr;
@@ -163,7 +195,7 @@ button {
     height: 86vh;
     position: relative;
     z-index: 3;
-   
+
 }
 
 /* /Chat */
@@ -211,9 +243,22 @@ button {
     margin: 0.625rem 2.438rem 1.125rem 1.125rem; */
 }
 
+.jackpot-history {
+    grid-area: jackpot-history;
+    background: #17181C;
+    border-radius: 20px;
+    height: 97%;
+}
+
+.double {
+    display: flex;
+    grid-area: double;
+   
+}
+
 .about {
     grid-area: about;
-    
+
 }
 
 
@@ -279,7 +324,7 @@ button {
     grid-area: help;
     display: flex;
     /* height:99%; */
-    height:86vh;
+    height: 86vh;
     border-radius: 3.125rem;
     background: #17181C;
     box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
@@ -287,7 +332,7 @@ button {
     /*height: 96.2%;*/
     width: 1000px;
     margin: 0 auto;
-    
+
 }
 
 
@@ -314,6 +359,7 @@ button {
     height: 35%;
     z-index: 0;
 }
+
 /* /Crash */
 
 /* Media */

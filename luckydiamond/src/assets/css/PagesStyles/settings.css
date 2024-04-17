@@ -76,3 +76,56 @@
   background: red; /* Цвет фона трека для Firefox */
   height: 8px; /* Высота трека для Firefox */
 }
+
+
+     
+/* toggle in label designing */
+.toggle {
+  position : relative ;
+  display : flex;
+  width : 60px;
+  height : 32px;
+  background-color: #000413;
+  border-radius: 5px;
+  justify-content: center;
+ align-items: center;
+ 
+  
+}
+     
+/* After slide changes */
+.toggle:after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ align-content: center;
+  background-color: #EF4444;
+  top: 5px; 
+  left: 6px;
+  transition:  all 0.5s;
+}
+     
+/* Toggle text */
+.toggle p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+     
+/* Checkbox checked effect */
+.checkbox:checked + .toggle::after {
+  
+  left : 34px; 
+}
+     
+/* Checkbox checked toggle label bg color */
+
+     
+/* Checkbox vanished */
+.checkbox { 
+  display : none;
+}
