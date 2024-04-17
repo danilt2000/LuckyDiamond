@@ -177,7 +177,27 @@
     font-weight: 700;
 }
 
-/* /Crash-Graph */
+/* /Crash-History */
+
+.crash__history {
+    background: linear-gradient(90deg, rgba(34, 37, 47, 0.8) -0.54%, rgba(34, 37, 47, 0.8) 83.03%, rgba(73, 59, 74, 0.64) 103.54%);
+    width: 66%;
+    height: 50px;
+    border-radius: 18px;
+    margin-left: 455px;
+    display: flex;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.crash-history__component {
+    background: linear-gradient(#18213E, #263873);
+    width: 12%;
+    height: 80%;
+    display: inline;
+    margin: auto;
+    border-radius: 10px;
+}
 
 /* Crash-Players */
 

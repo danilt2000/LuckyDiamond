@@ -69,14 +69,37 @@ export default {
       return msg.msg.includes(GetCookie("SpUserName"));
     },
     ClaimDatamsg(msg) {
-      const now = Date.now();
-      if (!this.lastMsgTime || now - this.lastMsgTime >= 1000) {
-        SendMessageToChat(msg[0]);
-        this.lastMsgTime = now;
-      } else {
-        alert("Вы не можете отправлять сообщения так часто");
-      }
-    },
+  const now = Date.now();
+  if (!this.lastMsgTime || now - this.lastMsgTime >= 1000) {
+    const processedMsg = this.processMessage(msg[0]);
+
+    SendMessageToChat(processedMsg);
+    this.lastMsgTime = now;
+  } else {
+    alert("Вы не можете отправлять сообщения так часто");
+  }
+},
+processMessage(message) {
+  const maxLength = 5; // Тут макс допустимых символов писать
+  const processedMessage = [];
+  let currentSymbol = "";
+  let count = 0;
+
+  for (let i = 0; i < message.length; i++) {
+    if (message[i] === currentSymbol) {
+      count++;
+    } else {
+      currentSymbol = message[i];
+      count = 1;
+    }
+
+    if (count <= maxLength) {
+      processedMessage.push(message[i]);
+    }
+  }
+
+  return processedMessage.join("");
+},
     muteChat() {
       // Mute the chat by disabling the event listener for incoming messages.
       this.eventBus.$off("dataChat");
@@ -110,29 +133,52 @@ export default {
     });
   },
   created() {
-    GetChatHistory().then((response) => {
-      if (response && response.length) {
-        response.forEach((element) => {
-          let imageUrl =
-            "https://avatar.spworlds.ru/face/55/" + element.userName;
+  GetChatHistory().then((response) => {
+    if (response && response.length) {
+      response.forEach((element) => {
+        let imageUrl =
+          "https://avatar.spworlds.ru/face/55/" + element.userName;
 
-          const MsgUser = {
-            id: this.id + 1,
-            msg: element.message,
-            username: element.userName,
-            icon: imageUrl,
-          };
+        const processedMsg = this.processMessage(element.message); // Process the message
 
-          if (MsgUser.username === "🛠️ System") {
-            MsgUser.icon = "https://avatar.spworlds.ru/face/55/CONSOLE";
-          }
+        const MsgUser = {
+          id: this.id + 1,
+          msg: processedMsg, // Use the processed message
+          username: element.userName,
+          icon: imageUrl,
+        };
 
-          this.array.push(MsgUser);
-        });
-        this.ScrollToBottom();
-      }
-    });
-  },
+        if (MsgUser.username === "🛠️ System") {
+          MsgUser.icon = "https://avatar.spworlds.ru/face/55/CONSOLE";
+        }
+
+        this.array.push(MsgUser);
+      });
+      this.ScrollToBottom();
+    }
+  });
+},
+processMessage(message) {
+  const maxLength = 5; // Тут макс допустимых символов писать
+  const processedMessage = [];
+  let currentSymbol = "";
+  let count = 0;
+
+  for (let i = 0; i < message.length; i++) {
+    if (message[i] === currentSymbol) {
+      count++;
+    } else {
+      currentSymbol = message[i];
+      count = 1;
+    }
+
+    if (count <= maxLength) {
+      processedMessage.push(message[i]);
+    }
+  }
+
+  return processedMessage.join("");
+},
 };
 </script>
 

@@ -68,7 +68,7 @@
             type="checkbox"
             :class="{ 'animate-start-btn': errorAgree }"
           />
-          <h3>Я согласен с <a href="https://docs.google.com/document/d/1lU_zTWJdD1lcMlIAFDIVz-DlZAoq3a-OFkoO8WBIkzo/edit?usp=sharing">пользовательским соглашением</a></h3>
+          <h3>Я согласен с <a href="https://docs.google.com/document/d/1ytKHnXr67o7mu5TKqlpgRjO8DEvQDRHNnaphhzbr_sg/edit?usp=sharing">пользовательским соглашением</a></h3>
         </div>
         <div
           class="btn-deposit btn-text-style btn-display-deposit btn-style-payments"
@@ -115,7 +115,7 @@
       </div>
       <div class="withdraw-checkbox checkbox-styles">
         <input @click="agreeUser = !agreeUser" type="checkbox" />
-        <h3>Я согласен <a href="https://docs.google.com/document/d/1lU_zTWJdD1lcMlIAFDIVz-DlZAoq3a-OFkoO8WBIkzo/edit?usp=sharing">пользовательским соглашением</a></h3>
+        <h3>Я согласен <a href="https://docs.google.com/document/d/1ytKHnXr67o7mu5TKqlpgRjO8DEvQDRHNnaphhzbr_sg/edit?usp=sharing">пользовательским соглашением</a></h3>
       </div>
       <div class="error-captcha" v-if="errorCaptcha && agreeUser === true">
         <h2>Пройдите проверку!</h2>

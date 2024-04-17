@@ -60,23 +60,37 @@
 
       <section class="crash-game__players" v-if="crashObject && crashObject.Players">
         <div class="crash-game-players__content">
+          <div class="crash__history">
+              <div class="crash-history__component"> <h2></h2> </div>
+              <div class="crash-history__component"></div>
+              <div class="crash-history__component"></div>
+              <div class="crash-history__component"></div>
+              <div class="crash-history__component"></div>
+              <div class="crash-history__component"></div>
+              <div class="crash-history__component"></div>
+              <div class="crash-history__component"></div>
+          </div>
           <ul class="user-list" v-if="crashObject.Players.length">
             <li class="user-crash" v-for="(player, index) in crashObject.Players.sort((a, b) => b.Bid - a.Bid)" :key="index">
               <div class="user-crash-content" :class="{ 'user-crash-content__lose' : crashObject.Status === 'GameEnd' && player.WinningX <= 0, 'user-crash-content__win' : player.WinningX >= 1 }">
+                
                 <div class="user-name-crash">
                   <img class="user-crash__icon" :src="`https://avatar.spworlds.ru/face/55/${player.UserName}`">
                   <h2>{{ player.UserName }}</h2>
                 </div>
+
                 <div class="user-bid-crash">
                   <h2 v-if="player.WinningMoney >= 1" class="wingame__win-bid-crash">{{ player.WinningMoney.toFixed(2) }}</h2>
                   <h2 v-else>{{ player.Bid }}</h2>
                   <img src="@/assets/icons-games/saper-game/icon-diamond-ore-saper.png">
                 </div>
+
                 <div class="user-game-status-crash">
                   <h2 class="ingame-crash" v-if="crashObject.Status === 'WaitingForPlayers' && player.WinningX <= 1 || crashObject.Status === 'InGame' && player.WinningX <= 0">В&nbsp;игре</h2>
                   <h2 class="lostgame-crash" v-if="crashObject.Status === 'GameEnd' && player.WinningX <= 0">Проиграл</h2>
                   <h2 class="wingame-crash" v-if="player.WinningX >= 1">{{ player.WinningX.toFixed(2) }}x</h2>
                 </div>
+                
               </div>
             </li>
           </ul>
@@ -101,7 +115,7 @@ import SaperNumbers from "@/mocks/SaperNumbers";
 import {GetCurrentMoney} from "@/assets/js/rest/RestMethods";
 import {GetCookie} from "@/assets/js/storage/CookieStorage";
 import {eventBus} from "@/main";
-import {ExitAndTakeMoneyFromCrashGame, JoinCrashGame} from "@/assets/js/games/crash/CrashAPI";
+import {ExitAndTakeMoneyFromCrashGame, JoinCrashGame, CrashHistory} from "@/assets/js/games/crash/CrashAPI";
 
 export default {
   components: { HeaderComponent, AsideBarComponent, ChatComponent, CrashGraphComponent },
@@ -227,13 +241,9 @@ export default {
       }
     },
   },
+  props: ["payments"],
   async created() {
-    if (GetCookie('AUTHTOKEN') && GetCookie('SearchToken')) {
-      await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
-          .then((response) => {
-            this.balance = response.currentMoney
-          })
-    }
+    this.CHistory = await CrashHistory();
   },
   methods: {
     async updateUserMoney() {

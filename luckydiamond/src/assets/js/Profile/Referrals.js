@@ -1,5 +1,8 @@
 import { BackendApiUrl } from '@/properties/Сonfig.js';
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
+
+
+
 export async function GetReferralData () {
     
     const myHeaders = new Headers();
