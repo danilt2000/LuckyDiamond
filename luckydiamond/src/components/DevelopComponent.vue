@@ -167,7 +167,7 @@
         </div>
         <div class="whatjob">
           <img src="@/assets/icons-developcard/html.png" alt="html">
-          <p>HTML 5,CSS</p>
+          <p>HTML 5, CSS</p>
         </div>
         <div class="icons">
           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" ><img src="@/assets/icons-developcard/odniclasniki.png" alt=""></a>
