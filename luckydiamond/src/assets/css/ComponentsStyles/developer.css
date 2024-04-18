@@ -407,7 +407,7 @@
 }
 .Swino4ka_text_2 {
     width: 244px;
-    height: 221.5px;
+    height: 219.7px;
     display: inline-block;
     flex-flow: column-reverse;
     
@@ -450,6 +450,36 @@
 .Swino4ka_whatjob_1 p {
     margin-left: 3px;
     
+}
+.Swino4ka__whatjob_2 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 10px;
+}
+.Swino4ka__whatjob_2 img {
+    width: 15px;
+    height: 17px;
+}
+.Swino4ka__whatjob_2 p {
+    margin-left: 3px;
+}
+.Swino4ka__whatjob_3 {
+    display: flex;
+    width: 183px;
+    height: 16px;
+    margin-left: 19px;
+    font-family: 'Montserrat';
+    margin-top: 9px;
+}
+.Swino4ka__whatjob_3 img {
+    width: 17px;
+    height: 15px;
+}
+.Swino4ka__whatjob_3 p {
+    margin-left: 3px;
 }
 
 .Swino4ka_skin_2 {

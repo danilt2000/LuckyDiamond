@@ -60,7 +60,7 @@
         </div>
         <div class="Ckutls__whatjob_1">
           <img src="@/assets/icons-developcard/html.png" alt="html">
-          <p>HTML 5,CSS</p>
+          <p>HTML 5, CSS</p>
         </div>
         <div class="Ckutls__whatjob_2">
           <img src="@/assets/icons-developcard/js.png" alt="html">
@@ -114,8 +114,16 @@
         </div>
         <div class="Swino4ka_whatjob_1">
           <img src="@/assets/icons-developcard/html.png" alt="html">
-          <p>HTML 5,CSS</p>
+          <p>HTML 5, CSS</p>
+          </div>
+          <div class="Swino4ka__whatjob_2">
+          <img src="@/assets/icons-developcard/js.png" alt="html">
+          <p>JavaScript</p>
         </div>
+        <div class="Swino4ka__whatjob_3">
+          <img src="@/assets/icons-developcard/Vue.png" alt="html">
+          <p>Vue 3</p>
+          </div>
         </div>
         <div class="Swino4ka_skin_2">
           <div class="Swino4ka_skin_2_skin">
