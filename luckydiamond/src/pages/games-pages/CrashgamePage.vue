@@ -145,7 +145,9 @@ export default {
 
       if (this.crashObject.Status === 'GameEnd' && this.startGame === true && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
         this.startGame = false
-        this.updateUserMoney()
+        setTimeout(() => {
+        this.updateUserMoney();
+    }, 3000);
       }
       if (
           this.crashObject.Players.some(player =>
