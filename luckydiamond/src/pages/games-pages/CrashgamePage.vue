@@ -144,13 +144,13 @@ export default {
        console.error(e)
       }
 
-      if (this.crashObject.Status === 'MoneyPaid' && this.startGame === true && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
+      if (this.crashObject.Status === 'GameEnd' && this.startGame === true && this.crashObject.Players.some(player => player.UserName === GetCookie('SpUserName'))) {
         this.startGame = false
         this.updateUserMoney()
       }
       if (
           this.crashObject.Players.some(player =>
-              player.UserName === GetCookie('SpUserName') && (player.UserGameState !== 'Win'|| player.UserGameState !== 'MoneyPaid')
+              player.UserName === GetCookie('SpUserName') && player.UserGameState !== 'Win'
           ) &&
           this.startGame === false &&
           this.crashObject.Status !== 'GameEnd'
