@@ -305,8 +305,9 @@ export default {
             .then((response) => {
               console.log(response)
               this.startGame = false
-
-              this.updateUserMoney()
+              setTimeout(() => {
+        this.updateUserMoney();
+    }, 3000);
             })
       }
     },
