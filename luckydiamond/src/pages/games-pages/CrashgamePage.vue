@@ -138,7 +138,6 @@ export default {
         const dataCrashParse = JSON.parse(dataCrash)
 
         this.crashObject = dataCrashParse
-        // console.log(this.crashObject)
       }
       catch (e) {
        console.error(e)
