@@ -50,7 +50,12 @@
             <img src="@/assets/icons-games/double-game/info.svg" alt="" />
          </a>
         </div>
-          
+          <div class="IstoriaMenedger">
+            
+              <a href="#" @click="$router.push({ name: 'jackpot-history' })"><img  class="IstoriaMenedger" src="@/assets/icons-games/double-game/Vector.svg"></a>
+              
+           
+          </div>
         </div>
           <p>Больше ставь, больше побеждай!</p>
           
