@@ -172,7 +172,7 @@
         <div class="icons">
           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" ><img src="@/assets/icons-developcard/odniclasniki.png" alt=""></a>
           <a href="https://t.me/Slayyyyyyyyyyyyyyyyy" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href="https://www.youtube.com/@busha1/featured" target="_blank" ><img src="@/assets/icons-developcard/like.png" alt=""></a>
+          <a href="https://www.youtube.com/" target="_blank" ><img src="@/assets/icons-developcard/like.png" alt=""></a>
           <a href="https://github.com/Madara0330E" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
         </div>
       </div>
