@@ -163,7 +163,7 @@
       <div class="text">
         <div class="aboutinfo">
           <p>Фронтэндер</p>
-          <h1>busha888</h1>
+          <h1>Madara0330H</h1>
         </div>
         <div class="whatjob">
           <img src="@/assets/icons-developcard/html.png" alt="html">
@@ -177,7 +177,7 @@
         </div>
       </div>
       <div class="skin">
-        <img src="https://avatar.spworlds.ru/front/212/busha888.png" alt="">
+        <img src="https://avatar.spworlds.ru/front/212/Madara0330H.png" alt="">
         </div>
     </div>
     <div class="CLARFFY_card">
