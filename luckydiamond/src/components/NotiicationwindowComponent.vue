@@ -1,7 +1,7 @@
 <template>
   <div class="notification" v-if="notification">
     <div class="notification__content">
-      <h3>Операция вывода отправлена</h3>
+      <h3>{{ text }}</h3>
     </div>
   </div>
 </template>
@@ -11,7 +11,8 @@ import '@/assets/css/ComponentsStyles/notification.css'
 
 export default {
   props: {
-    notification: Boolean
+    notification: Boolean,
+    text: String,
   },
   emits: ['notificationremove'],
   methods: {

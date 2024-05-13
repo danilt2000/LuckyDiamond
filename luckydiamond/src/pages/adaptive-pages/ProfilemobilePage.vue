@@ -24,10 +24,12 @@
 </template>
 
 <script>
+import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
+import { GetCookie } from "@/assets/js/storage/CookieStorage";
 import HeaderMobileComponent from "@/components/adaptive-components/HeaderMobileComponent.vue";
 import MenuMobileComponent from "@/components/adaptive-components/MenuMobileComponent.vue";
 import PaymentsMobile from "@/components/adaptive-components/PaymentsMobile.vue";
-
+import {eventBus} from "@/main"
 import '@/assets/css/PagesStyles/adaptive-pages/profilemobile.css'
 
 export default {
@@ -39,20 +41,6 @@ export default {
     },
     paymentsClose() {
       this.payments.paymentsWindow = false
-    },
-    logout() {
-      this.auth = false;
-      this.balance = 0;
-      this.authtoken = "";
-      DeleteAllCookie();
-    },
-    updateBalanceMethod() {
-      GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken")).then(
-        (response) => {
-          this.balance = response.currentMoney;
-        }
-      );
-      eventBus.emit("Updatebalance-saper");
     },
   },
   data() {
@@ -74,51 +62,6 @@ export default {
     });
   },
   created() {
-    try {
-      let authCode = this.$route.query.code;
-
-      if (authCode) {
-        LogIn(authCode)
-          .then((response) => {
-            SetCookie("UserId", response.userId);
-            SetCookie("SpUserName", response.spUserName);
-            SetCookie("AUTHTOKEN", response.authtoken);
-            SetCookie("SearchToken", response.searchToken);
-
-            this.imageUrl = this.imageUrl + `${response.spUserName}.png`;
-            this.userName = response.spUserName;
-            this.auth = true;
-            this.authtoken = response.authtoken;
-            GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
-              .then((response) => {
-                this.balance = response.currentMoney;
-              })
-              .catch((error) => {
-                console.error(error);
-              });
-          })
-          .catch(() => {
-            let currentUserName = GetCookie("SpUserName");
-            GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
-              .then((response) => {
-                this.balance = response.currentMoney;
-                console.log(response);
-              })
-              .catch((error) => {
-                console.error(error);
-              });
-
-            if (currentUserName) {
-              this.imageUrl = this.imageUrl + `${currentUserName}.png`;
-              this.userName = GetCookie("SpUserName");
-              this.auth = true;
-              this.authtoken = GetCookie("AUTHTOKEN");
-            } else {
-              this.auth = false;
-              this.balance = 0;
-            }
-          });
-      } else {
         let currentUserName = GetCookie("SpUserName");
         GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
           .then((response) => {
@@ -138,10 +81,7 @@ export default {
           this.auth = false;
           this.balance = 0;
         }
-      }
-    } catch (error) {
-      console.error("Auth Code error:", error);
-    }
+      
   },
   components: { HeaderMobileComponent, MenuMobileComponent, PaymentsMobile },
 }

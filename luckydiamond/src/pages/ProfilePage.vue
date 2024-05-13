@@ -60,7 +60,7 @@
   </section>
     <referal-modal v-if="openRef" @notifacetionmoney="NotificationEventListener" @closemodal="openRef = false"></referal-modal>
     <payments-modal v-if="openModal" @notifacetionmoney="NotificationEventListener" @closemodal="openModal = false" :payments="payments"></payments-modal>
-    <notiicationwindow-component @notificationremove="NotificationMethod" :notification="notification"></notiicationwindow-component>
+    <notiicationwindow-component @notificationremove="NotificationMethod" :notification="notification" text="Операция проведена успешно"></notiicationwindow-component>
   </div>
 </template>
 <script>

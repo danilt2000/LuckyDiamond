@@ -25,6 +25,16 @@
 
 <script>
 import '@/assets/css/ComponentsStyles/AdaptiveStyles/headermobile.css'
+import { LogIn } from "@/assets/js/authentication/AuthService.js";
+import { GetCurrentMoney } from "@/assets/js/rest/RestMethods.js";
+
+import { eventBus } from "@/main";
+
+import {
+  SetCookie,
+  GetCookie,
+  DeleteAllCookie,
+} from "@/assets/js/storage/CookieStorage.js";
 export default {
   methods: {
     logout() {
