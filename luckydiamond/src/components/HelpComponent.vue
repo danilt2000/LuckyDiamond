@@ -11,7 +11,7 @@
           <div class="Heading_p1">
             <div class="heding2"><h3>Поддержка</h3></div>
             <div class="heding2_text">
-            <p><b>При вопросах или проблемах на сайте обращайтесь в поддержку которая находиться в <a href="https://discord.gg/4ybrEqFzYh">Discord</a></b></p>
+            <p><b>При вопросах или проблемах на сайте обращайтесь в поддержку которая находиться в <a href="https://discord.gg/BwKrmxQbp9">Discord</a></b></p>
                 </div>
                 <div class="heding2"><h3>Спасибо за помощь</h3></div>
             <div class="heding2_text">
@@ -40,7 +40,7 @@
                   </div>
                   <div class="Social1icons">
                     <a href="https://t.me/lucky_diamond_spm" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-                    <a href="https://discord.gg/4HhZFY2PEv" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
+                    <a href="https://discord.gg/BwKrmxQbp9" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
                   </div>
                 </div>
 
