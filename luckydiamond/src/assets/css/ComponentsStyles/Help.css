@@ -7,14 +7,19 @@
     font-family: Montserrat Alternates;
     text-decoration: none;
 }
-.heding2 {
-
-}
 .heding2_text {
+    font-size: 17px ;
+    font-family: Montserrat;
     width: 949px;
-    height: 132px;
+    height: 80px;
     margin-top: 17px;
-    margin-bottom: 17px;
+}
+.heding5_text {
+    font-size: 15px ;
+    font-family: Montserrat;
+    width: 949px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 .Heading_p1 a {
     color: #5865F2 ;
@@ -82,12 +87,13 @@ margin-top: 3.5px;
 }
 .Social1where {
     flex-direction: row;
-    width: 400px;
+    width: 400px; /* Adjust the width as needed */
     display: flex;
-    justify-content: space-around;
-    align-content: center;
-    margin-top: 3vh;
-}
+    justify-content: flex-start; /* Align items to the start (left) */
+    align-items: center;       /* Vertically center items */
+    margin-top: 5vh;
+  }
+  
 
 @media (max-height: 879px) {
     .Social1where {
