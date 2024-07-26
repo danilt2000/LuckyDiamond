@@ -106,38 +106,6 @@
         </div>
       
     </div>
-    <div class="Swino4ka_card">
-      <div class="Swino4ka_text_2">
-        <div class="Swino4ka_aboutinfo_2">
-          <p>Фронтэндер</p>
-          <h1>Swino4ka</h1>
-        </div>
-        <div class="Swino4ka_whatjob_1">
-          <img src="@/assets/icons-developcard/html.png" alt="html">
-          <p>HTML 5, CSS</p>
-          </div>
-          <div class="Swino4ka__whatjob_2">
-          <img src="@/assets/icons-developcard/js.png" alt="html">
-          <p>JavaScript</p>
-        </div>
-        <div class="Swino4ka__whatjob_3">
-          <img src="@/assets/icons-developcard/Vue.png" alt="html">
-          <p>Vue 3</p>
-          </div>
-        </div>
-        <div class="Swino4ka_skin_2">
-          <div class="Swino4ka_skin_2_skin">
-            
-            <div class="Swino4ka_skinicons1">
-            <a href="https://t.me/Swino4ka_pon" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href="https://discordapp.com/users/472393576010088449" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href="https://github.com/swino4ka/" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
-           
-            </div>
-          </div>
-        </div>
-      
-    </div>
   </div>
   <div class="bottom_card">
     <div class="GEDPOOL31_card">
