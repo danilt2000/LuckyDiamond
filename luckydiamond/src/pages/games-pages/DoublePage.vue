@@ -553,7 +553,7 @@ export default {
           const newUser = {
             name: user.UserName,
             image:
-              "https://avatar.spworlds.ru/face/55/" + user.UserName + ".png",
+              "https://avatars.spworlds.ru/face/" + user.UserName + "?w=55",
             amount: user.Bet,
             hasGradient: false,
           };
@@ -564,7 +564,7 @@ export default {
           const newUser = {
             name: user.UserName,
             image:
-              "https://avatar.spworlds.ru/face/55/" + user.UserName + ".png",
+              "https://avatars.spworlds.ru/face/" + user.UserName + "?w=55",
             amount: user.Bet,
             hasGradient: false,
           };
@@ -575,7 +575,7 @@ export default {
           const newUser = {
             name: user.UserName,
             image:
-              "https://avatar.spworlds.ru/face/55/" + user.UserName + ".png",
+              "https://avatars.spworlds.ru/face/" + user.UserName + "?w=55",
             amount: user.Bet,
             hasGradient: false,
           };

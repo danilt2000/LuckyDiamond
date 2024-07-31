@@ -64,7 +64,7 @@
             <li class="user-crash" v-for="(player, index) in crashObject.Players.sort((a, b) => b.Bid - a.Bid)" :key="index">
               <div class="user-crash-content" :class="{ 'user-crash-content__lose' : crashObject.Status === 'GameEnd' && player.WinningX <= 0, 'user-crash-content__win' : player.WinningX >= 1 }">
                 <div class="user-name-crash">
-                  <img class="user-crash__icon" :src="`https://avatar.spworlds.ru/face/55/${player.UserName}`">
+                  <img class="user-crash__icon" :src="`https://avatars.spworlds.ru/face/${player.UserName}?w=55`">
                   <h2>{{ player.UserName }}</h2>
                 </div>
                 <div class="user-bid-crash">

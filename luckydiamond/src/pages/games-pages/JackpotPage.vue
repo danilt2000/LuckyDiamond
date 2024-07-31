@@ -325,7 +325,7 @@ export default {
       player: {
         name: "",
         gems: 100,
-        avatarUrl: "https://avatar.spworlds.ru/face/55/Hepatir",
+        avatarUrl: "https://avatars.spworlds.ru/face/rafael1209?w=55",
         chance: "100%",
         // name: "FUpir",
         // gems: 500,
@@ -486,7 +486,7 @@ export default {
     updatePlayerInfo(newName, newGems, newChance) {
       this.player.name = newName;
       this.player.avatarUrl =
-        "https://avatar.spworlds.ru/face/55/" + newName + ".png";
+        "https://avatars.spworlds.ru/face/" + newName + "?w=55";
       this.player.gems = newGems;
       this.player.chance = parseFloat(newChance).toFixed(2) + "%";
     },
@@ -496,7 +496,7 @@ export default {
 
       inGamePlayersBided.forEach((player) => {
         this.users.push({
-          avatarUrl: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
+          avatarUrl: `https://avatars.spworlds.ru/face/${player.UserName}?w=55`, // Предполагаем структуру URL из имени пользователя
           name: player.UserName,
           chance: parseFloat(player.WinningPercentage).toFixed(2) + "",
           gems: player.Bid,
@@ -516,13 +516,13 @@ export default {
             //   this.firstStartOfPage = false;
             // } else {
             this.slides.push({
-              img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
+              img: `https://avatars.spworlds.ru/face/${player.UserName}?w=55`, // Предполагаем структуру URL из имени пользователя
               nickname: player.UserName,
             });
             // }
           }
           this.slides.push({
-            img: `https://avatar.spworlds.ru/face/55/${player.UserName}.png`, // Предполагаем структуру URL из имени пользователя
+            img: `https://avatars.spworlds.ru/face/${player.UserName}?w=55`, // Предполагаем структуру URL из имени пользователя
             nickname: player.UserName,
           });
         }
@@ -661,7 +661,7 @@ export default {
       this.timerInterval = null;
     },
     changeLastFiveImages() {
-      const newImage = "https://avatar.spworlds.ru/face/55/Hepatir.png";
+      const newImage = "https://avatars.spworlds.ru/face/rafael1209?w=55";
       this.slides[9].img = newImage;
     },
     stopOnTarget(targetNickname) {

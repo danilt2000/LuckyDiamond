@@ -35,7 +35,7 @@ export default {
       balance: 0,
       auth: false,
       authtoken: "",
-      imageUrl: "https://avatar.spworlds.ru/face/55/",
+      imageUrl: "https://avatars.spworlds.ru/face/",
       userName: "",
     };
   },
@@ -56,7 +56,7 @@ export default {
             SetCookie("AUTHTOKEN", response.authtoken);
             SetCookie("SearchToken", response.searchToken);
 
-            this.imageUrl = this.imageUrl + `${response.spUserName}.png`;
+            this.imageUrl = this.imageUrl + `${response.spUserName}?w=55`;
             this.userName = response.spUserName;
             this.auth = true;
             this.authtoken = response.authtoken;
@@ -80,7 +80,7 @@ export default {
               });
 
             if (currentUserName) {
-              this.imageUrl = this.imageUrl + `${currentUserName}.png`;
+              this.imageUrl = this.imageUrl + `${currentUserName}?w=55`;
               this.userName = GetCookie("SpUserName");
               this.auth = true;
               this.authtoken = GetCookie("AUTHTOKEN");
@@ -101,7 +101,7 @@ export default {
           });
 
         if (currentUserName) {
-          this.imageUrl = this.imageUrl + `${currentUserName}.png`;
+          this.imageUrl = this.imageUrl + `${currentUserName}?w=55`;
           this.userName = GetCookie("SpUserName");
           this.auth = true;
           this.authtoken = GetCookie("AUTHTOKEN");
