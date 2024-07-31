@@ -124,7 +124,7 @@
         </div>
       </div>
       <div class="GEDPOOL31_skin">
-        <img src="https://avatar.spworlds.ru/front/212/GEDPOOL31.png" alt="">
+        <img src="https://avatars.spworlds.ru/frontbust/GEDPOOL31?w=256" alt="">
         </div>
     </div>
     <div class="busha888_card">
@@ -145,7 +145,7 @@
         </div>
       </div>
       <div class="skin">
-        <img src="https://avatar.spworlds.ru/front/212/Madara0330H.png" alt="">
+        <img src="https://avatars.spworlds.ru/frontbust/Madara0330H?w=256" alt="">
         </div>
     </div>
     <div class="CLARFFY_card">
@@ -164,7 +164,7 @@
         </div>
       </div>
       <div class="CLARFFY_skin">
-        <img src="https://avatar.spworlds.ru/front/212//CLARFFY.png" alt="">
+        <img src="https://avatars.spworlds.ru/frontbust/CLARFFY?w=256" alt="">
         </div>
     </div>
   </div>
