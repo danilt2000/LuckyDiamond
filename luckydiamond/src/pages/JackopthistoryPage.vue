@@ -14,7 +14,7 @@ t<template>
               <div class="jackpot-history__element">
                 <div class="element-info">
                   <div class="element-info__icon">
-                    <img :src="`https://avatar.spworlds.ru/face/55/${game.winnerUserName}`">
+                    <img :src="`https://avatars.spworlds.ru/face/${game.winnerUserName}?w=55`">
                   </div>
                   <div class="element-info__user-info">
                     <h2 class="username">{{ game.winnerUserName }}</h2>
