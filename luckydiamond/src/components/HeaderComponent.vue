@@ -185,7 +185,7 @@ export default {
           <!-- <div class="header__card--auth">  -->
           <div class="auth__card--content">
             <a
-              href="https://discord.com/oauth2/authorize?client_id=1148644854797176932&response_type=code&redirect_uri=https%3A%2F%2Fwww.lucky-diamonds.ru&scope=identify"
+              href="https://discord.com/oauth2/authorize?client_id=1356958703462387732&response_type=code&redirect_uri=https%3A%2F%2Ftest-ld-ui.chasman.engineer&scope=identify"
               @click="auth = true"
               ><span
                 ><img

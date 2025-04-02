@@ -124,7 +124,7 @@ export default {
     redirect: "follow"
   };
 
-  fetch("https://spsystemcore20231122004605.azurewebsites.net/api/PromoCode/GetReferralInfo", requestOptions)
+  fetch("https://casino.chasman.engineer/api/PromoCode/GetReferralInfo", requestOptions)
     .then((response) => response.text())
     .then((result) => {
       console.log(result);
@@ -143,7 +143,7 @@ export default {
           redirect: "follow"
         };
 
-        fetch("https://spsystemcore20231122004605.azurewebsites.net/api/PromoCode/CreateReferal", requestOptions)
+        fetch("https://casino.chasman.engineer/api/PromoCode/CreateReferal", requestOptions)
           .then((response) => response.text())
           .then((result) => console.log(result))
           .catch((error) => console.error(error));
@@ -151,7 +151,7 @@ export default {
     })
     .catch((error) => console.error(error));
 
-    axios.post('https://spsystemcore20231122004605.azurewebsites.net/api/Payment/GetPaymentHistory', {
+    axios.post('https://casino.chasman.engineer/api/Payment/GetPaymentHistory', {
       searchToken: GetCookie('SearchToken'),
       authtoken: GetCookie('AUTHTOKEN')
     })

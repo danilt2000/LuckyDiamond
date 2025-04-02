@@ -54,7 +54,7 @@ const requestOptions = {
   redirect: "follow"
 };
 
-fetch("https://spsystemcore20231122004605.azurewebsites.net/api/PromoCode/TakeMoneyReferral", requestOptions)
+fetch("https://casino.chasman.engineer/api/PromoCode/TakeMoneyReferral", requestOptions)
   .then((response) => response.text())
   .then((result) => console.log(result))
   .catch((error) => console.error(error));
