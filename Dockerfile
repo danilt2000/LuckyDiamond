@@ -1,7 +1,7 @@
 # Базовый образ с Node.js
 FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /luckydiamond/app
 
 COPY package*.json ./
 
