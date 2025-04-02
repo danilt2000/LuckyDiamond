@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f1ebde16-c441-41b1-8699-e40a95a5586d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/luckydiamond/src/assets/js/Profile/Referrals.js" beforeDir="false" afterPath="$PROJECT_DIR$/luckydiamond/src/assets/js/Profile/Referrals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/luckydiamond/src/components/HeaderComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/luckydiamond/src/components/HeaderComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/luckydiamond/src/pages/ProfilePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/luckydiamond/src/pages/ProfilePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/luckydiamond/src/properties/Сonfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/luckydiamond/src/properties/Сonfig.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>
